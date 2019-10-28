@@ -1,5 +1,7 @@
 # Avocado Nation Frontend 🥑
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/83c50317-9af2-4c3c-a396-3e2b1b4a25b1/deploy-status)](https://app.netlify.com/sites/vigorous-chandrasekhar-bbd3e9/deploys)
+
 ## Local development
 clone repo to your desktop via `git clone git@bitbucket.org:270b/avonation-frontend.git`
 
