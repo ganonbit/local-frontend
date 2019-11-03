@@ -89,7 +89,7 @@ const CloseModal = styled.div`
   cursor: pointer;
 `;
 
-const Title = styled.div`
+const Content = styled.div`
   font-size: ${p => p.theme.font.size.xs};
   border-bottom: 1px solid ${p => p.theme.colors.grey[100]};
   padding: ${p => p.theme.spacing.xs};
@@ -111,7 +111,7 @@ const PostPopup = ({ id, closeModal, usedInModal }) => {
         return (
           <Root usedInModal={usedInModal}>
             <Head
-              title={post.title ? post.title : `${post.author.username}'s post`}
+              content={post.content ? post.content : `${post.author.username}'s post`}
             />
 
             {closeModal && (
@@ -129,7 +129,7 @@ const PostPopup = ({ id, closeModal, usedInModal }) => {
                 <Spacing>
                   <PostPopupInfo author={post.author} />
 
-                  {post.title && <Title>{post.title}</Title>}
+                  {post.content && <Content>{post.content}</Content>}
 
                   <PostPopupComments
                     usedInModal={usedInModal}

@@ -138,7 +138,7 @@ const PostCard = ({
   author,
   imagePublicId,
   comments,
-  title,
+  content,
   createdAt,
   image,
   likes,
@@ -232,7 +232,7 @@ const PostCard = ({
         </TopRow>
 
         <Spacing left="sm" bottom="sm" top="xs">
-          <H3>{title}</H3>
+          <H3>{content}</H3>
         </Spacing>
 
         {image && <Poster src={image} onClick={openModal} />}
@@ -295,7 +295,7 @@ const PostCard = ({
 PostCard.propTypes = {
   author: PropTypes.object.isRequired,
   imagePublicId: PropTypes.string,
-  title: PropTypes.string.isRequired,
+  content: PropTypes.string.isRequired,
   image: PropTypes.string,
   likes: PropTypes.array.isRequired,
   comments: PropTypes.array,

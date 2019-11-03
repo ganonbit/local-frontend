@@ -65,7 +65,7 @@ export const GET_USER_POSTS = gql`
       count
       posts {
         id
-        title
+        content
         image
         imagePublicId
         createdAt

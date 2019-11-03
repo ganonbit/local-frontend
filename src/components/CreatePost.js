@@ -93,7 +93,7 @@ const Buttons = styled.div`
  */
 const CreatePost = () => {
   const [{ auth }] = useStore();
-  const [title, setTitle] = useState('');
+  const [content, setContent] = useState('');
   const [image, setImage] = useState('');
   const [isFocused, setIsFocused] = useState(false);
   const [error, setError] = useState('');
@@ -101,7 +101,7 @@ const CreatePost = () => {
   const message = useGlobalMessage();
 
   const handleReset = () => {
-    setTitle('');
+    setContent('');
     setImage('');
     setIsFocused(false);
     setError('');
@@ -127,7 +127,7 @@ const CreatePost = () => {
     e.target.value = null;
   };
 
-  const handleTitleChange = e => setTitle(e.target.value);
+  const handleContentChange = e => setContent(e.target.value);
 
   const handleSubmit = async (e, createPost) => {
     e.preventDefault();
@@ -138,7 +138,7 @@ const CreatePost = () => {
   return (
     <Mutation
       mutation={CREATE_POST}
-      variables={{ input: { title, image, authorId: auth.user.id } }}
+      variables={{ input: { content, image, authorId: auth.user.id } }}
       refetchQueries={() => [
         {
           query: GET_FOLLOWED_POSTS,
@@ -160,7 +160,7 @@ const CreatePost = () => {
       ]}
     >
       {(createPost, { loading, error: apiError }) => {
-        const isShareDisabled = loading || (!loading && !image && !title);
+        const isShareDisabled = loading || (!loading && !image && !content);
 
         return (
           <>
@@ -184,11 +184,11 @@ const CreatePost = () => {
 
                   <Textarea
                     type="textarea"
-                    name="title"
+                    name="content"
                     focus={isFocused}
-                    value={title}
+                    value={content}
                     onFocus={handleOnFocus}
-                    onChange={handleTitleChange}
+                    onChange={handleContentChange}
                     placeholder="Add a post"
                   />
 

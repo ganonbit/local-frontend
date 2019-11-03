@@ -128,7 +128,7 @@ const Home = () => {
                             postId={post.id}
                             comments={post.comments}
                             createdAt={post.createdAt}
-                            title={post.title}
+                            content={post.content}
                             image={post.image}
                             likes={post.likes}
                             openModal={() => openModal(post.id)}

@@ -97,7 +97,7 @@ const ProfilePosts = ({ username }) => {
                         postId={post.id}
                         imagePublicId={post.imagePublicId}
                         comments={post.comments}
-                        title={post.title}
+                        content={post.content}
                         image={post.image}
                         likes={post.likes}
                         createdAt={post.createdAt}
