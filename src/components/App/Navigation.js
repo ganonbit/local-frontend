@@ -8,6 +8,7 @@ import {
   NotificationIcon,
   HomeIcon,
   PeopleIcon,
+  MessageIcon
 } from 'components/icons';
 
 const Link = styled(NavLink)`
@@ -82,6 +83,14 @@ const Navigation = () => {
           <NotificationIcon width={18} />
           <Spacing right="sm" />
           Notifications
+        </ListItem>
+      </Link>
+
+      <Link exact activeClassName="selected" to="/messages">
+        <ListItem>
+          <MessageIcon width={18} />
+          <Spacing right="sm" />
+          Messages
         </ListItem>
       </Link>
     </List>

@@ -14,6 +14,8 @@ import Explore from 'pages/Explore';
 import People from 'pages/People';
 import Notifications from 'pages/Notifications';
 import Post from 'pages/Post/Post';
+import Messages from 'pages/Messages';
+import Message from 'pages/Message';
 
 import { useWindowSize } from 'hooks/useWindowSize';
 import { useClickOutside } from 'hooks/useClickOutside';
@@ -104,9 +106,17 @@ const AppLayout = ({ location }) => {
               component={Notifications}
             />
 
+            <Route
+              exact
+              path={Routes.MESSAGES}
+              component={Messages}
+            />
+
             <Route exact path={Routes.USER_PROFILE} component={Profile} />
 
             <Route exact path={Routes.POST} component={Post} />
+
+            <Route exact path={Routes.MESSAGE} component={Message} />
 
             <Route component={NotFound} />
           </Switch>

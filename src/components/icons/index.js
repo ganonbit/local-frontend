@@ -7,6 +7,7 @@ export { LikeIcon } from './LikeIcon';
 export { PostCommentIcon } from './PostCommentIcon';
 export { ExploreIcon } from './ExploreIcon';
 export { NotificationIcon } from './NotificationIcon';
+export { MessageIcon } from './MessageIcon';
 export { MenuIcon } from './MenuIcon';
 export { HomeIcon } from './HomeIcon';
 export { PeopleIcon } from './PeopleIcon';
