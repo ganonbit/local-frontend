@@ -1,144 +1,162 @@
-import React, { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
-import { withRouter } from 'react-router-dom';
-import { Mutation } from 'react-apollo';
-import styled from 'styled-components';
+import React, { useState } from 'react'
+import { Mutation } from 'react-apollo'
+import { Link, withRouter } from 'react-router-dom'
+import PropTypes from 'prop-types'
+import { SIGN_IN } from 'graphql/user'
 
-import { A } from 'components/Text';
-import { Spacing } from 'components/Layout';
-import { Error } from 'components/Text';
-import { InputText, Button } from 'components/Form';
-
-import { SIGN_IN } from 'graphql/user';
-
-import * as Routes from 'routes';
-
-const Root = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: space-between;
-  font-size: ${p => p.theme.font.size.xxs};
-  margin-top: ${p => p.theme.spacing.sm};
-`;
-
-const InputContainer = styled(Spacing)`
-  width: 100%;
-`;
-
-const ErrorMessage = styled.div`
-  position: absolute;
-  top: 1px;
-`;
-
-const ForgotPassword = styled.div`
-  font-size: ${p => p.theme.font.size.xxs};
-  margin-top: ${p => p.theme.spacing.xxs};
-  color: ${p => p.theme.colors.white};
-`;
-
-/**
- * Sign In page
- */
-const SignIn = ({ history, location, refetch }) => {
-  const [values, setValues] = useState({ emailOrUsername: '', password: '' });
-  const [error, setError] = useState('');
-
-  useEffect(() => {
-    setError('');
-  }, [location.pathname]);
+import { Field, ResetPasswordModal } from '../../components/Auth/index'
+import { validateFormField } from '../../utils/index'
+import { routes } from '../../route/index'
+const SignIn = ({ refetch, history }) => {
+  const [values, setValues] = useState({ emailOrUsername: '', password: '' })
+  const [error, setError] = useState({
+    emailOrUsername: '',
+    password: ''
+  })
+  const { emailOrUsername, password } = values
 
   const handleChange = e => {
-    const { name, value } = e.target;
-    setValues({ ...values, [name]: value });
-  };
+    const { name, value } = e.target
+    setValues({ ...values, [name]: value })
+    let fieldError = validateFormField(name, value)
+    setError({ ...error, ...fieldError })
+  }
+
+  const validate = () => {
+    if (!emailOrUsername || !password) {
+      if (!emailOrUsername)
+        setError({ ...error, emailOrUsername: 'all field are required' })
+      else if (!password)
+        setError({ ...error, password: 'all field are required' })
+      else return true
+    }
+    return false
+  }
 
   const handleSubmit = (e, signin) => {
-    e.preventDefault();
-
-    if (!emailOrUsername || !password) {
-      setError('All fields are required');
-      return;
-    }
-
-    setError('');
-    signin().then(async ({ data }) => {
-      localStorage.setItem('token', data.signin.token);
-      await refetch();
-      history.push(Routes.HOME);
-    });
-  };
-
-  const renderErrors = apiError => {
-    let errorMessage;
-
+    e.preventDefault()
+    const error = validate()
     if (error) {
-      errorMessage = error;
-    } else if (apiError) {
-      errorMessage = apiError.graphQLErrors[0].message;
+      return false
     }
-
-    if (errorMessage) {
-      return (
-        <ErrorMessage>
-          <Error size="xxs" color="white">
-            {errorMessage}
-          </Error>
-        </ErrorMessage>
-      );
-    }
-
-    return null;
-  };
-
-  const { emailOrUsername, password } = values;
-
+    signin().then(async ({ data }) => {
+      localStorage.setItem('token', data.signin.token)
+      await refetch()
+      history.push(routes.HOME)
+    })
+  }
   return (
     <Mutation
       mutation={SIGN_IN}
-      variables={{ input: { emailOrUsername, password } }}
-    >
-      {(signin, { loading, error: apiError }) => (
-        <form onSubmit={e => handleSubmit(e, signin)}>
-          <Root>
-            <InputContainer>
-              {renderErrors(apiError)}
+      variables={{
+        input: { emailOrUsername, password }
+      }}>
+      {(signin, { loading, error: apiError }) => {
+        return (
+          <div className="col col-xl-5 col-lg-6 col-md-12 col-sm-12 col-12">
+            {console.log('loding', loading)}
+            <div className="registration-login-form">
+              <div className="tab-content">
+                <div
+                  className="tab-pane active"
+                  id="profile"
+                  role="tabpanel"
+                  data-mh="log-tab">
+                  <div className="title h6">Login to your Account</div>
+                  <form
+                    className="content"
+                    onSubmit={e => handleSubmit(e, signin)}>
+                    <div className="row">
+                      <div className="col col-12 col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                        <Field
+                          fieldContainerClass="lg"
+                          placeholder="Your Email"
+                          type="email"
+                          name="emailOrUsername"
+                          value={emailOrUsername}
+                          handleChange={handleChange}
+                          error={error.emailOrUsername}
+                        />
+                        <Field
+                          fieldContainerClass="lg"
+                          placeholder="Your Password"
+                          type="password"
+                          name="password"
+                          value={password}
+                          handleChange={handleChange}
+                          error={error.password}
+                        />
 
-              <InputText
-                autoFocus
-                type="text"
-                name="emailOrUsername"
-                values={emailOrUsername}
-                onChange={handleChange}
-                placeholder="Email or Username"
-                borderColor="white"
-              />
-            </InputContainer>
+                        <div className="remember">
+                          <div className="checkbox">
+                            <label>
+                              <input name="optionsCheckboxes" type="checkbox" />
+                              Remember Me
+                            </label>
+                          </div>
+                          <a
+                            href="#1"
+                            className="forgot"
+                            data-toggle="modal"
+                            data-target="#restore-password">
+                            Forgot my Password
+                          </a>
+                        </div>
 
-            <InputContainer left="xs" right="xs">
-              <InputText
-                type="password"
-                name="password"
-                values={password}
-                onChange={handleChange}
-                placeholder="Password"
-                borderColor="white"
-              />
-              <A to={Routes.FORGOT_PASSWORD}>
-                <ForgotPassword>Forgot password?</ForgotPassword>
-              </A>
-            </InputContainer>
+                        <button
+                          type="submit"
+                          value="Login"
+                          className="btn btn-lg btn-primary full-width"
+                          disabled={
+                            !emailOrUsername ||
+                            !password ||
+                            error.emailOrUsername ||
+                            error.password
+                          }>
+                          Login
+                        </button>
 
-            <Button disabled={loading}>Log in</Button>
-          </Root>
-        </form>
-      )}
+                        <div className="or"></div>
+
+                        <a
+                          href="#1"
+                          className="btn btn-lg bg-facebook full-width btn-icon-left">
+                          <i
+                            className="fab fa-facebook-f"
+                            aria-hidden="true"></i>
+                          Login with Facebook
+                        </a>
+
+                        <a
+                          href="#1"
+                          className="btn btn-lg bg-twitter full-width btn-icon-left">
+                          <i className="fab fa-twitter" aria-hidden="true"></i>
+                          Login with Twitter
+                        </a>
+
+                        <p>
+                          Don’t you have an account?{' '}
+                          <Link to="/" className="btn-register">
+                            Register Now!
+                          </Link>
+                          it’s really simple and you can start enjoing all the
+                          benefits!
+                        </p>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+            {<ResetPasswordModal />}
+          </div>
+        )
+      }}
     </Mutation>
-  );
-};
-
+  )
+}
 SignIn.propTypes = {
   history: PropTypes.object.isRequired,
-  refetch: PropTypes.func.isRequired,
-};
-
-export default withRouter(SignIn);
+  refetch: PropTypes.func.isRequired
+}
+export default withRouter(SignIn)

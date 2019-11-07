@@ -18,10 +18,13 @@ const store = {
 /**
  * Combine reducers
  */
-const reducers = (store, action) => ({
+const reducers = (store, action) =>
+{
+  return ({
   message: messageReducer(store.message, action),
   auth: authReducer(store.auth, action),
 });
+}
 
 /**
  * Store context provider
