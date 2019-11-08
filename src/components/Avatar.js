@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 import { UserIcon } from './icons';
 
-const ImageContainer = styled.div`
+const Root = styled.div`
   width: ${p => (p.size ? `${p.size}px` : '30px')};
   height: ${p => (p.size ? `${p.size}px` : '30px')};
   border-radius: 50%;
@@ -19,13 +19,13 @@ const Image = styled.img`
 `;
 
 const Avatar = ({ size, image }) => (
-  <ImageContainer size={size}>
+  <Root size={size}>
     {image ? (
       <Image src={image} />
     ) : (
       <UserIcon width={size ? `${size}px` : 30} />
     )}
-  </ImageContainer>
+  </Root>
 );
 
 Avatar.propTypes = {
