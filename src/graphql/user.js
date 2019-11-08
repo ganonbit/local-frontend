@@ -17,6 +17,10 @@ const userPayload = `
   imagePublicId
   coverImage
   coverImagePublicId
+  isOnline
+  isVerified
+  isBlocked
+  isExpert
   createdAt
 `;
 
@@ -27,10 +31,6 @@ export const GET_USER = gql`
   query($username: String, $id: ID) {
     getUser(username: $username, id: $id) {
       ${userPayload}
-      isOnline
-      isVerified
-      isBlocked
-      isExpert
       posts {
         id
       }
@@ -69,7 +69,7 @@ export const GET_USER_POSTS = gql`
       count
       posts {
         id
-        title
+        content
         image
         imagePublicId
         createdAt
@@ -273,9 +273,6 @@ export const GET_CONVERSATIONS = gql`
       fullName
       image
       isOnline
-      isVerified
-      isBlocked
-      isExpert
       seen
       lastMessage
       lastMessageSender

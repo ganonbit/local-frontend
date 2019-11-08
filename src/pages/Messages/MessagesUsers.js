@@ -196,9 +196,9 @@ const MessagesUsers = ({ location, authUser }) => {
 
             return (
               <User
-                key={user.id}
+                key={user.username}
                 activeClassName="selected"
-                to={`/messages/${user.id}`}
+                to={`/messages/${user.username}`}
                 seen={unseen ? 0 : 1}
               >
                 <span>

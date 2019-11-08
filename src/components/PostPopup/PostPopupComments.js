@@ -1,73 +1,53 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { generatePath } from 'react-router-dom';
 
-import { A } from 'components/Text';
-import Follow from 'components/Follow';
+import Comment from 'components/Comment';
 import { Spacing } from 'components/Layout';
-import Avatar from 'components/Avatar';
-
-import * as Routes from 'routes';
-
-import { useStore } from 'store';
 
 const Root = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid ${p => p.theme.colors.grey[300]};
-  padding: ${p => p.theme.spacing.xs};
-  margin-bottom: ${p => p.theme.spacing.xxs};
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  padding-bottom: ${p => p.theme.spacing.sm};
+
+  @media (min-width: ${p => p.theme.screen.md}) {
+    max-height: 400px;
+  }
 `;
 
-const Author = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin-right: ${p => p.theme.spacing.sm};
-`;
-
-const UserName = styled.div`
-  max-width: 100%;
-  font-size: ${p => p.theme.font.size.xs};
-  font-weight: ${p => p.theme.font.weight.bold};
+const Comments = styled.div`
+  max-height: ${p => (p.usedInModal ? '100%' : '350px')};
+  width: 100%;
+  overflow-y: scroll;
+  box-sizing: content-box;
+  padding: 0 ${p => p.theme.spacing.xs};
 `;
 
 /**
- * Author info for PostPopup component
+ * Comments for PostPopup component
  */
-const PostPopupInfo = ({ author }) => {
-  const [{ auth }] = useStore();
+const PostPopupComments = ({ comments, postId, postAuthor, usedInModal }) => (
+  <Root usedInModal={usedInModal}>
+    <Spacing top="xs" />
 
-  return (
-    <Root>
-      <Author>
-        <A
-          to={generatePath(Routes.USER_PROFILE, { username: author.username })}
-        >
-          <Avatar image={author.image} />
-        </A>
+    <Comments usedInModal={usedInModal}>
+      {comments.map(comment => (
+        <Comment
+          key={comment.id}
+          comment={comment}
+          postId={postId}
+          postAuthor={postAuthor}
+        />
+      ))}
+    </Comments>
+  </Root>
+);
 
-        <Spacing left="xs" inline>
-          <A
-            to={generatePath(Routes.USER_PROFILE, {
-              username: author.username,
-            })}
-          >
-            <UserName>{author.fullName}</UserName>
-          </A>
-        </Spacing>
-      </Author>
-
-      {auth.user.id !== author.id && <Follow user={author} />}
-    </Root>
-  );
+PostPopupComments.propTypes = {
+  comments: PropTypes.array.isRequired,
+  postId: PropTypes.string.isRequired,
+  postAuthor: PropTypes.object.isRequired,
 };
 
-PostPopupInfo.propTypes = {
-  author: PropTypes.object.isRequired,
-};
-
-export default PostPopupInfo;
+export default PostPopupComments;
