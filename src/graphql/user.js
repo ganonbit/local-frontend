@@ -115,6 +115,14 @@ export const GET_AUTH_USER = gql`
           }
         }
       }
+      newConversations {
+        id
+        username
+        fullName
+        image
+        lastMessage
+        lastMessageCreatedAt
+      }
       likes {
         id
         user
