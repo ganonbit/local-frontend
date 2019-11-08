@@ -13,9 +13,8 @@ import Profile from 'pages/Profile';
 import Explore from 'pages/Explore';
 import People from 'pages/People';
 import Notifications from 'pages/Notifications';
-import Post from 'pages/Post/Post';
+import Post from 'pages/Post';
 import Messages from 'pages/Messages';
-import Message from 'pages/Message';
 
 import { useWindowSize } from 'hooks/useWindowSize';
 import { useClickOutside } from 'hooks/useClickOutside';
@@ -37,23 +36,6 @@ const Root = styled.div`
 
   @media (min-width: ${p => p.theme.screen.lg}) {
     width: ${p => p.theme.screen.lg};
-  }
-`;
-
-const Container = styled.div`
-  position: relative;
-  margin: 0 auto;
-  width: 100%;
-  z-index: ${p => p.zIndex && p.theme.zIndex[p.zIndex]};
-  width: 100%;
-  min-height: 500px;
-
-  @media (min-width: ${p => p.theme.screen.md}) {
-    width: ${p => p.theme.screen.xs};
-  }
-
-  @media (min-width: ${p => p.theme.screen.lg}) {
-    width: ${p => p.theme.screen.sm};
   }
 `;
 
@@ -92,37 +74,25 @@ const AppLayout = ({ location }) => {
       <Root>
         <SideBar isOpen={isSideBarOpen} sideBarRef={sideBarRef} />
 
-        <Container>
-          <Switch>
-            <Route exact path={Routes.HOME} component={Home} />
+        <Switch>
+          <Route exact path={Routes.HOME} component={Home} />
 
-            <Route exact path={Routes.EXPLORE} component={Explore} />
+          <Route exact path={Routes.EXPLORE} component={Explore} />
 
-            <Route exact path={Routes.PEOPLE} component={People} />
+          <Route exact path={Routes.PEOPLE} component={People} />
 
-            <Route
-              exact
-              path={Routes.NOTIFICATIONS}
-              component={Notifications}
-            />
+          <Route exact path={Routes.NOTIFICATIONS} component={Notifications} />
 
-            <Route
-              exact
-              path={Routes.MESSAGES}
-              component={Messages}
-            />
+          <Route exact path={Routes.MESSAGES} component={Messages} />
 
-            <Route exact path={Routes.USER_PROFILE} component={Profile} />
+          <Route exact path={Routes.USER_PROFILE} component={Profile} />
 
-            <Route exact path={Routes.POST} component={Post} />
+          <Route exact path={Routes.POST} component={Post} />
 
-            <Route exact path={Routes.MESSAGE} component={Message} />
+          <Route component={NotFound} />
+        </Switch>
 
-            <Route component={NotFound} />
-          </Switch>
-        </Container>
-
-        <UserSuggestions />
+        <UserSuggestions pathname={location.pathname} />
       </Root>
     </>
   );

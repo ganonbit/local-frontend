@@ -1,6 +1,8 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, generatePath } from 'react-router-dom';
 import styled from 'styled-components';
+
+import * as Routes from 'routes';
 
 import { Spacing } from 'components/Layout';
 import {
@@ -8,7 +10,7 @@ import {
   NotificationIcon,
   HomeIcon,
   PeopleIcon,
-  MessageIcon
+  EnvelopeIcon,
 } from 'components/icons';
 
 const Link = styled(NavLink)`
@@ -54,7 +56,7 @@ const ListItem = styled.li`
 const Navigation = () => {
   return (
     <List>
-      <Link exact activeClassName="selected" to="/">
+      <Link exact activeClassName="selected" to={generatePath(Routes.HOME)}>
         <ListItem>
           <HomeIcon />
           <Spacing right="sm" />
@@ -62,7 +64,7 @@ const Navigation = () => {
         </ListItem>
       </Link>
 
-      <Link exact activeClassName="selected" to="/explore">
+      <Link exact activeClassName="selected" to={generatePath(Routes.EXPLORE)}>
         <ListItem>
           <ExploreIcon width={20} />
           <Spacing right="sm" />
@@ -70,7 +72,7 @@ const Navigation = () => {
         </ListItem>
       </Link>
 
-      <Link exact activeClassName="selected" to="/people">
+      <Link exact activeClassName="selected" to={generatePath(Routes.PEOPLE)}>
         <ListItem>
           <PeopleIcon />
           <Spacing right="sm" />
@@ -78,7 +80,11 @@ const Navigation = () => {
         </ListItem>
       </Link>
 
-      <Link exact activeClassName="selected" to="/notifications">
+      <Link
+        exact
+        activeClassName="selected"
+        to={generatePath(Routes.NOTIFICATIONS)}
+      >
         <ListItem>
           <NotificationIcon width={18} />
           <Spacing right="sm" />
@@ -86,9 +92,13 @@ const Navigation = () => {
         </ListItem>
       </Link>
 
-      <Link exact activeClassName="selected" to="/messages">
+      <Link
+        exact
+        activeClassName="selected"
+        to={generatePath(Routes.MESSAGES, { userId: Routes.NEW_ID_VALUE })}
+      >
         <ListItem>
-          <MessageIcon width={18} />
+          <EnvelopeIcon width={18} />
           <Spacing right="sm" />
           Messages
         </ListItem>
