@@ -17,6 +17,7 @@
     "jwt-decode": "^2.2.0",
     "lodash": "^4.17.11",
     "logrocket": "^1.0.3",
+    "mention-hashtag": "^1.1.1",
     "normalize.css": "^8.0.1",
     "prop-types": "^15.7.2",
     "react": "^16.8.5",
