@@ -5,6 +5,14 @@ import { ApolloProvider } from 'react-apollo'
 import { ApolloProvider as ApolloHooksProvider } from 'react-apollo-hooks'
 import { createApolloClient } from 'utils/apollo-client'
 import { StoreProvider } from 'store'
+import './assets/index.scss'
+// import 'bootstrap/dist/css/bootstrap-reboot.css'
+// import 'bootstrap/dist/css/bootstrap.min.css'
+// import './assets/custom-bootstrap.css'
+// import 'bootstrap/dist/css/bootstrap-grid.css'
+// import './assets/sass/main.scss'
+// import './assets/main.css'
+// import './assets/custom.css'
 
 // GraphQL HTTP URL
 const API_URL = process.env.REACT_APP_API_URL

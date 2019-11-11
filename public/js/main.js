@@ -117,7 +117,7 @@ var CRUMINA = {};
 
 	// Close on "Esc" click
     $window.keydown(function (eventObject) {
-        if (eventObject.which === 27 && $sidebar.is(':visible')) {
+        if (eventObject.which == 27 && $sidebar.is(':visible')) {
             $sidebar.removeClass('open');
         }
     });
