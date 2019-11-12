@@ -5,7 +5,6 @@ import React from 'react'
  */
 
 const Home = () => (
-  
   <div className="page-has-left-panels page-has-right-panels pr-0">
     <div className="fixed-sidebar">
       <div className="fixed-sidebar-left sidebar--small" id="sidebar-left">
@@ -18,7 +17,7 @@ const Home = () => (
         <div className="mCustomScrollbar" data-mcs-theme="dark">
           <ul className="left-menu">
             <li>
-              <a href="#" className="js-sidebar-open">
+              <a href="/" className="js-sidebar-open">
                 <img
                   data-toggle="tooltip"
                   data-placement="right"
@@ -89,7 +88,7 @@ const Home = () => (
         <div className="mCustomScrollbar" data-mcs-theme="dark">
           <ul className="left-menu">
             <li>
-              <a href="#" className="js-sidebar-open">
+              <a href="/" className="js-sidebar-open">
                 <svg
                   className="olymp-close-icon left-menu-icon"
                   xlinkHref="svg-icons/sprites/icons.svg#olymp-close-icon"
@@ -241,7 +240,7 @@ const Home = () => (
             </div>
 
             <span>
-              Complete <a href="#">your profile</a> so people can know more
+              Complete <a href="/">your profile</a> so people can know more
               about you!
             </span>
           </div>
@@ -253,7 +252,7 @@ const Home = () => (
       <div
         className="fixed-sidebar-left sidebar--small"
         id="sidebar-left-responsive">
-        <a href="#" className="logo js-sidebar-open">
+        <a href="/" className="logo js-sidebar-open">
           <img src="img/avocado-img.png" alt="Olympus" />
         </a>
       </div>
@@ -261,7 +260,7 @@ const Home = () => (
       <div
         className="fixed-sidebar-left sidebar--large"
         id="sidebar-left-1-responsive">
-        <a href="#" className="logo">
+        <a href="/" className="logo">
           <div className="img-wrap">
             <img src="img/avocado-img.png" alt="Olympus" />
           </div>
@@ -271,7 +270,11 @@ const Home = () => (
           <div className="control-block">
             <div className="author-page author vcard inline-items">
               <div className="author-thumb">
-                <img alt="author" src="img/author-page.jpg" className="avatar" />
+                <img
+                  alt="author"
+                  src="img/author-page.jpg"
+                  className="avatar"
+                />
                 <span className="icon-status online"></span>
               </div>
               <a href="02-ProfilePage.html" className="author-name fn">
@@ -293,7 +296,7 @@ const Home = () => (
 
           <ul className="left-menu">
             <li>
-              <a href="#" className="js-sidebar-open">
+              <a href="/" className="js-sidebar-open">
                 <svg
                   className="olymp-close-icon left-menu-icon"
                   xlinkHref="svg-icons/sprites/icons.svg#olymp-close-icon"
@@ -410,7 +413,7 @@ const Home = () => (
               </a>
             </li>
             <li>
-              <a href="#">
+              <a href="/">
                 <svg
                   className="olymp-manage-widgets-icon left-menu-icon"
                   data-toggle="tooltip"
@@ -429,7 +432,7 @@ const Home = () => (
 
           <ul className="account-settings">
             <li>
-              <a href="#">
+              <a href="/">
                 <svg
                   className="olymp-menu-icon"
                   xlinkHref="svg-icons/sprites/icons.svg#olymp-menu-icon"
@@ -439,7 +442,7 @@ const Home = () => (
               </a>
             </li>
             <li>
-              <a href="#">
+              <a href="/">
                 <svg
                   className="olymp-star-icon left-menu-icon"
                   data-toggle="tooltip"
@@ -452,7 +455,7 @@ const Home = () => (
               </a>
             </li>
             <li>
-              <a href="#">
+              <a href="/">
                 <svg
                   className="olymp-logout-icon"
                   xlinkHref="svg-icons/sprites/icons.svg#olymp-logout-icon"
@@ -469,22 +472,22 @@ const Home = () => (
 
           <ul className="about-olympus">
             <li>
-              <a href="#">
+              <a href="/">
                 <span>Terms and Conditions</span>
               </a>
             </li>
             <li>
-              <a href="#">
+              <a href="/">
                 <span>FAQs</span>
               </a>
             </li>
             <li>
-              <a href="#">
+              <a href="/">
                 <span>Careers</span>
               </a>
             </li>
             <li>
-              <a href="#">
+              <a href="/">
                 <span>Contact</span>
               </a>
             </li>
@@ -495,7 +498,7 @@ const Home = () => (
 
     <header className="header" id="site-header">
       <div className="page-title">
-        <a href="#">
+        <a href="/">
           <img src="img/avocado-logo.png" alt="" />
         </a>
       </div>
@@ -517,7 +520,7 @@ const Home = () => (
           </div>
         </form>
 
-        {/* <a href="#" className="link-find-friend">
+        {/* <a href="/" className="link-find-friend">
           Find Friends
         </a> */}
 
@@ -532,8 +535,8 @@ const Home = () => (
             <div className="more-dropdown more-with-triangle triangle-top-center">
               <div className="ui-block-title ui-block-title-small">
                 <h6 className="title">FRIEND REQUESTS</h6>
-                <a href="#">Find Friends</a>
-                <a href="#">Settings</a>
+                <a href="/">Find Friends</a>
+                <a href="/">Settings</a>
               </div>
 
               <div className="mCustomScrollbar" data-mcs-theme="dark">
@@ -543,7 +546,7 @@ const Home = () => (
                       <img src="img/avatar55-sm.jpg" alt="author" />
                     </div>
                     <div className="notification-event">
-                      <a href="#" className="h6 notification-friend">
+                      <a href="/" className="h6 notification-friend">
                         Tamara Romanoff
                       </a>
                       <span className="chat-message-item">
@@ -551,7 +554,7 @@ const Home = () => (
                       </span>
                     </div>
                     <span className="notification-icon">
-                      <a href="#" className="accept-request">
+                      <a href="/" className="accept-request">
                         <span className="icon-add without-text">
                           <svg
                             className="olymp-happy-face-icon"
@@ -560,7 +563,7 @@ const Home = () => (
                         </span>
                       </a>
 
-                      <a href="#" className="accept-request request-del">
+                      <a href="/" className="accept-request request-del">
                         <span className="icon-minus">
                           <svg
                             className="olymp-happy-face-icon"
@@ -583,13 +586,13 @@ const Home = () => (
                       <img src="img/avatar56-sm.jpg" alt="author" />
                     </div>
                     <div className="notification-event">
-                      <a href="#" className="h6 notification-friend">
+                      <a href="/" className="h6 notification-friend">
                         Tony Stevens
                       </a>
                       <span className="chat-message-item">4 Friends in Common</span>
                     </div>
                     <span className="notification-icon">
-                      <a href="#" className="accept-request">
+                      <a href="/" className="accept-request">
                         <span className="icon-add without-text">
                           <svg
                             className="olymp-happy-face-icon"
@@ -598,7 +601,7 @@ const Home = () => (
                         </span>
                       </a>
 
-                      <a href="#" className="accept-request request-del">
+                      <a href="/" className="accept-request request-del">
                         <span className="icon-minus">
                           <svg
                             className="olymp-happy-face-icon"
@@ -622,11 +625,11 @@ const Home = () => (
                     </div>
                     <div className="notification-event">
                       You and{' '}
-                      <a href="#" className="h6 notification-friend">
+                      <a href="/" className="h6 notification-friend">
                         Mary Jane Stark
                       </a>{' '}
                       just became friends. Write on{' '}
-                      <a href="#" className="notification-link">
+                      <a href="/" className="notification-link">
                         her wall
                       </a>
                       .
@@ -655,13 +658,13 @@ const Home = () => (
                       <img src="img/avatar58-sm.jpg" alt="author" />
                     </div>
                     <div className="notification-event">
-                      <a href="#" className="h6 notification-friend">
+                      <a href="/" className="h6 notification-friend">
                         Stagg Clothing
                       </a>
                       <span className="chat-message-item">9 Friends in Common</span>
                     </div>
                     <span className="notification-icon">
-                      <a href="#" className="accept-request">
+                      <a href="/" className="accept-request">
                         <span className="icon-add without-text">
                           <svg
                             className="olymp-happy-face-icon"
@@ -670,7 +673,7 @@ const Home = () => (
                         </span>
                       </a>
 
-                      <a href="#" className="accept-request request-del">
+                      <a href="/" className="accept-request request-del">
                         <span className="icon-minus">
                           <svg
                             className="olymp-happy-face-icon"
@@ -690,7 +693,7 @@ const Home = () => (
                 </ul>
               </div>
 
-              <a href="#" className="view-all bg-blue">
+              <a href="/" className="view-all bg-blue">
                 Check all your Events
               </a>
             </div>
@@ -706,8 +709,8 @@ const Home = () => (
             <div className="more-dropdown more-with-triangle triangle-top-center">
               <div className="ui-block-title ui-block-title-small">
                 <h6 className="title">Chat / Messages</h6>
-                <a href="#">Mark all as read</a>
-                <a href="#">Settings</a>
+                <a href="/">Mark all as read</a>
+                <a href="/">Settings</a>
               </div>
 
               <div className="mCustomScrollbar" data-mcs-theme="dark">
@@ -717,7 +720,7 @@ const Home = () => (
                       <img src="img/avatar59-sm.jpg" alt="author" />
                     </div>
                     <div className="notification-event">
-                      <a href="#" className="h6 notification-friend">
+                      <a href="/" className="h6 notification-friend">
                         Diana Jameson
                       </a>
                       <span className="chat-message-item">
@@ -751,7 +754,7 @@ const Home = () => (
                       <img src="img/avatar60-sm.jpg" alt="author" />
                     </div>
                     <div className="notification-event">
-                      <a href="#" className="h6 notification-friend">
+                      <a href="/" className="h6 notification-friend">
                         Jake Parker
                       </a>
                       <span className="chat-message-item">
@@ -784,7 +787,7 @@ const Home = () => (
                       <img src="img/avatar61-sm.jpg" alt="author" />
                     </div>
                     <div className="notification-event">
-                      <a href="#" className="h6 notification-friend">
+                      <a href="/" className="h6 notification-friend">
                         Elaine Dreyfuss
                       </a>
                       <span className="chat-message-item">
@@ -821,7 +824,7 @@ const Home = () => (
                       <img src="img/avatar10-sm.jpg" alt="author" />
                     </div>
                     <div className="notification-event">
-                      <a href="#" className="h6 notification-friend">
+                      <a href="/" className="h6 notification-friend">
                         You, Faye, Ed &amp; Jet +3
                       </a>
                       <span className="last-message-author">Ed:</span>
@@ -852,7 +855,7 @@ const Home = () => (
                 </ul>
               </div>
 
-              <a href="#" className="view-all bg-purple">
+              <a href="/" className="view-all bg-purple">
                 View All Messages
               </a>
             </div>
@@ -869,8 +872,8 @@ const Home = () => (
             <div className="more-dropdown more-with-triangle triangle-top-center">
               <div className="ui-block-title ui-block-title-small">
                 <h6 className="title">Notifications</h6>
-                <a href="#">Mark all as read</a>
-                <a href="#">Settings</a>
+                <a href="/">Mark all as read</a>
+                <a href="/">Settings</a>
               </div>
 
               <div className="mCustomScrollbar" data-mcs-theme="dark">
@@ -881,11 +884,11 @@ const Home = () => (
                     </div>
                     <div className="notification-event">
                       <div>
-                        <a href="#" className="h6 notification-friend">
+                        <a href="/" className="h6 notification-friend">
                           Mathilda Brinker
                         </a>{' '}
                         commented on your new{' '}
-                        <a href="#" className="notification-link">
+                        <a href="/" className="notification-link">
                           profile status
                         </a>
                         .
@@ -924,11 +927,11 @@ const Home = () => (
                     <div className="notification-event">
                       <div>
                         You and{' '}
-                        <a href="#" className="h6 notification-friend">
+                        <a href="/" className="h6 notification-friend">
                           Nicholas Grissom
                         </a>{' '}
                         just became friends. Write on{' '}
-                        <a href="#" className="notification-link">
+                        <a href="/" className="notification-link">
                           his wall
                         </a>
                         .
@@ -966,11 +969,11 @@ const Home = () => (
                     </div>
                     <div className="notification-event">
                       <div>
-                        <a href="#" className="h6 notification-friend">
+                        <a href="/" className="h6 notification-friend">
                           Sarah Hetfield
                         </a>{' '}
                         commented on your{' '}
-                        <a href="#" className="notification-link">
+                        <a href="/" className="notification-link">
                           photo
                         </a>
                         .
@@ -991,7 +994,7 @@ const Home = () => (
                     </span>
 
                     <div className="comment-photo">
-                      <img src="img/comment-photo1.jpg" alt="photo" />
+                      <img src="img/comment-photo1.jpg" alt="Comment" />
                       <span>
                         “She looks incredible in that outfit! We should see
                         each...”
@@ -1016,11 +1019,11 @@ const Home = () => (
                     </div>
                     <div className="notification-event">
                       <div>
-                        <a href="#" className="h6 notification-friend">
+                        <a href="/" className="h6 notification-friend">
                           Green Goo Rock
                         </a>{' '}
                         invited you to attend to his event Goo in{' '}
-                        <a href="#" className="notification-link">
+                        <a href="/" className="notification-link">
                           Gotham Bar
                         </a>
                         .
@@ -1058,11 +1061,11 @@ const Home = () => (
                     </div>
                     <div className="notification-event">
                       <div>
-                        <a href="#" className="h6 notification-friend">
+                        <a href="/" className="h6 notification-friend">
                           James Summers
                         </a>{' '}
                         commented on your new{' '}
-                        <a href="#" className="notification-link">
+                        <a href="/" className="notification-link">
                           profile status
                         </a>
                         .
@@ -1096,7 +1099,7 @@ const Home = () => (
                 </ul>
               </div>
 
-              <a href="#" className="view-all bg-primary">
+              <a href="/" className="view-all bg-primary">
                 View All Notifications
               </a>
             </div>
@@ -1137,9 +1140,7 @@ const Home = () => (
                       </a>
                     </li>
                     <li>
-                      <a href="/login"
-                      onClick={()=>localStorage.clear()}
-                      >
+                      <a href="/login" onClick={() => localStorage.clear()}>
                         <svg
                           className="olymp-logout-icon"
                           xlinkHref="svg-icons/sprites/icons.svg#olymp-logout-icon"
@@ -1156,26 +1157,26 @@ const Home = () => (
 
                   <ul className="chat-settings">
                     <li>
-                      <a href="#">
+                      <a href="/">
                         <span className="icon-status online"></span>
                         <span>Online</span>
                       </a>
                     </li>
                     <li>
-                      <a href="#">
+                      <a href="/">
                         <span className="icon-status away"></span>
                         <span>Away</span>
                       </a>
                     </li>
                     <li>
-                      <a href="#">
+                      <a href="/">
                         <span className="icon-status disconected"></span>
                         <span>Disconnected</span>
                       </a>
                     </li>
 
                     <li>
-                      <a href="#">
+                      <a href="/">
                         <span className="icon-status status-invisible"></span>
                         <span>Invisible</span>
                       </a>
@@ -1208,22 +1209,22 @@ const Home = () => (
 
                   <ul>
                     <li>
-                      <a href="#">
+                      <a href="/">
                         <span>Terms and Conditions</span>
                       </a>
                     </li>
                     <li>
-                      <a href="#">
+                      <a href="/">
                         <span>FAQs</span>
                       </a>
                     </li>
                     <li>
-                      <a href="#">
+                      <a href="/">
                         <span>Careers</span>
                       </a>
                     </li>
                     <li>
-                      <a href="#">
+                      <a href="/">
                         <span>Contact</span>
                       </a>
                     </li>
@@ -1245,7 +1246,7 @@ const Home = () => (
         </div>
       </div>
     </header>
-<div className="header-spacer"></div>
+    <div className="header-spacer"></div>
     <div className="container">
       <div className="row">
         {/* <!-- Main Content --> */}
@@ -1320,11 +1321,13 @@ const Home = () => (
                       <label className="control-label">
                         Share what you are thinking here...
                       </label>
-                      <textarea className="form-control" placeholder=""></textarea>
+                      <textarea
+                        className="form-control"
+                        placeholder=""></textarea>
                     </div>
                     <div className="add-options-message">
                       <a
-                        href="#"
+                        href="/"
                         className="options-message"
                         data-toggle="tooltip"
                         data-placement="top"
@@ -1337,7 +1340,7 @@ const Home = () => (
                         />
                       </a>
                       <a
-                        href="#"
+                        href="/"
                         className="options-message"
                         data-toggle="tooltip"
                         data-placement="top"
@@ -1349,7 +1352,7 @@ const Home = () => (
                       </a>
 
                       <a
-                        href="#"
+                        href="/"
                         className="options-message"
                         data-toggle="tooltip"
                         data-placement="top"
@@ -1383,11 +1386,13 @@ const Home = () => (
                       <label className="control-label">
                         Share what you are thinking here...
                       </label>
-                      <textarea className="form-control" placeholder=""></textarea>
+                      <textarea
+                        className="form-control"
+                        placeholder=""></textarea>
                     </div>
                     <div className="add-options-message">
                       <a
-                        href="#"
+                        href="/"
                         className="options-message"
                         data-toggle="tooltip"
                         data-placement="top"
@@ -1400,7 +1405,7 @@ const Home = () => (
                         />
                       </a>
                       <a
-                        href="#"
+                        href="/"
                         className="options-message"
                         data-toggle="tooltip"
                         data-placement="top"
@@ -1412,7 +1417,7 @@ const Home = () => (
                       </a>
 
                       <a
-                        href="#"
+                        href="/"
                         className="options-message"
                         data-toggle="tooltip"
                         data-placement="top"
@@ -1446,11 +1451,13 @@ const Home = () => (
                       <label className="control-label">
                         Share what you are thinking here...
                       </label>
-                      <textarea className="form-control" placeholder=""></textarea>
+                      <textarea
+                        className="form-control"
+                        placeholder=""></textarea>
                     </div>
                     <div className="add-options-message">
                       <a
-                        href="#"
+                        href="/"
                         className="options-message"
                         data-toggle="tooltip"
                         data-placement="top"
@@ -1463,7 +1470,7 @@ const Home = () => (
                         />
                       </a>
                       <a
-                        href="#"
+                        href="/"
                         className="options-message"
                         data-toggle="tooltip"
                         data-placement="top"
@@ -1475,7 +1482,7 @@ const Home = () => (
                       </a>
 
                       <a
-                        href="#"
+                        href="/"
                         className="options-message"
                         data-toggle="tooltip"
                         data-placement="top"
@@ -1508,10 +1515,10 @@ const Home = () => (
                   <img src="img/avatar7-sm.jpg" alt="author" />
 
                   <div className="author-date">
-                    <a className="h6 post__author-name fn" href="#">
+                    <a className="h6 post__author-name fn" href="/">
                       Marina Valentine
                     </a>{' '}
-                    shared a <a href="#">link</a>
+                    shared a <a href="/">link</a>
                     <div className="post__date">
                       <time className="published" datetime="2004-07-24T18:18">
                         March 4 at 2:05pm
@@ -1526,30 +1533,30 @@ const Home = () => (
                     />
                     <ul className="more-dropdown">
                       <li>
-                        <a href="#">Edit Post</a>
+                        <a href="/">Edit Post</a>
                       </li>
                       <li>
-                        <a href="#">Delete Post</a>
+                        <a href="/">Delete Post</a>
                       </li>
                       <li>
-                        <a href="#">Turn Off Notifications</a>
+                        <a href="/">Turn Off Notifications</a>
                       </li>
                       <li>
-                        <a href="#">Select as Featured</a>
+                        <a href="/">Select as Featured</a>
                       </li>
                     </ul>
                   </div>
                 </div>
 
                 <p>
-                  Hey <a href="#">Cindi</a>, you should really check out this
+                  Hey <a href="/">Cindi</a>, you should really check out this
                   new song by Iron Maid. The next time they come to the city we
                   should totally go!
                 </p>
 
                 <div className="post-video">
                   <div className="video-thumb">
-                    <img src="img/video-youtube1.jpg" alt="photo" />
+                    <img src="img/video-youtube1.jpg" alt="video" />
                     <a
                       href="https://youtube.com/watch?v=excVFQ2TWig"
                       className="play-video">
@@ -1561,7 +1568,7 @@ const Home = () => (
                   </div>
 
                   <div className="video-content">
-                    <a href="#" className="h4 title">
+                    <a href="/" className="h4 title">
                       Iron Maid - ChillGroves
                     </a>
                     <p>
@@ -1569,14 +1576,14 @@ const Home = () => (
                       sed do eiusmod tempor incididunt ut labore et dolore magna
                       aliqua...
                     </p>
-                    <a href="#" className="link-site">
+                    <a href="/" className="link-site">
                       YOUTUBE.COM
                     </a>
                   </div>
                 </div>
 
                 <div className="post-additional-info inline-items">
-                  <a href="#" className="post-add-icon inline-items">
+                  <a href="/" className="post-add-icon inline-items">
                     <svg
                       className="olymp-heart-icon"
                       xlinkHref="svg-icons/sprites/icons.svg#olymp-heart-icon"
@@ -1586,40 +1593,40 @@ const Home = () => (
 
                   <ul className="friends-harmonic">
                     <li>
-                      <a href="#">
+                      <a href="/">
                         <img src="img/friend-harmonic9.jpg" alt="friend" />
                       </a>
                     </li>
                     <li>
-                      <a href="#">
+                      <a href="/">
                         <img src="img/friend-harmonic10.jpg" alt="friend" />
                       </a>
                     </li>
                     <li>
-                      <a href="#">
+                      <a href="/">
                         <img src="img/friend-harmonic7.jpg" alt="friend" />
                       </a>
                     </li>
                     <li>
-                      <a href="#">
+                      <a href="/">
                         <img src="img/friend-harmonic8.jpg" alt="friend" />
                       </a>
                     </li>
                     <li>
-                      <a href="#">
+                      <a href="/">
                         <img src="img/friend-harmonic11.jpg" alt="friend" />
                       </a>
                     </li>
                   </ul>
 
                   <div className="names-people-likes">
-                    <a href="#">Jenny</a>, <a href="#">Robert</a> and
+                    <a href="/">Jenny</a>, <a href="/">Robert</a> and
                     <br />
                     18 more liked this
                   </div>
 
                   <div className="comments-shared">
-                    <a href="#" className="post-add-icon inline-items">
+                    <a href="/" className="post-add-icon inline-items">
                       <svg
                         className="olymp-speech-balloon-icon"
                         xlinkHref="svg-icons/sprites/icons.svg#olymp-speech-balloon-icon"
@@ -1628,7 +1635,7 @@ const Home = () => (
                       <span>0</span>
                     </a>
 
-                    <a href="#" className="post-add-icon inline-items">
+                    <a href="/" className="post-add-icon inline-items">
                       <svg
                         className="olymp-share-icon"
                         xlinkHref="svg-icons/sprites/icons.svg#olymp-share-icon"
@@ -1640,19 +1647,19 @@ const Home = () => (
                 </div>
 
                 <div className="control-block-button post-control-button">
-                  <a href="#" className="btn btn-control likes">
+                  <a href="/" className="btn btn-control likes">
                     <img src="img/heart-icon.png" alt="" />
                     <div className="ripple-container"></div>
                   </a>
 
-                  <a href="#" className="btn btn-control ratings">
+                  <a href="/" className="btn btn-control ratings">
                     <img src="img/star-icon2.png" alt="" />
                   </a>
 
-                  <a href="#" className="btn btn-control share-link">
+                  <a href="/" className="btn btn-control share-link">
                     <img src="img/share-icon.png" alt="" />
                   </a>
-                  <a href="#" className="btn btn-control comments">
+                  <a href="/" className="btn btn-control comments">
                     <img src="img/comments-icon.png" alt="" />
                   </a>
                 </div>
@@ -1665,7 +1672,7 @@ const Home = () => (
                   <img src="img/avatar10-sm.jpg" alt="author" />
 
                   <div className="author-date">
-                    <a className="h6 post__author-name fn" href="#">
+                    <a className="h6 post__author-name fn" href="/">
                       Elaine Dreyfuss
                     </a>
                     <div className="post__date">
@@ -1682,16 +1689,16 @@ const Home = () => (
                     />
                     <ul className="more-dropdown">
                       <li>
-                        <a href="#">Edit Post</a>
+                        <a href="/">Edit Post</a>
                       </li>
                       <li>
-                        <a href="#">Delete Post</a>
+                        <a href="/">Delete Post</a>
                       </li>
                       <li>
-                        <a href="#">Turn Off Notifications</a>
+                        <a href="/">Turn Off Notifications</a>
                       </li>
                       <li>
-                        <a href="#">Select as Featured</a>
+                        <a href="/">Select as Featured</a>
                       </li>
                     </ul>
                   </div>
@@ -1705,7 +1712,7 @@ const Home = () => (
                 </p>
 
                 <div className="post-additional-info inline-items">
-                  <a href="#" className="post-add-icon inline-items">
+                  <a href="/" className="post-add-icon inline-items">
                     <svg
                       className="olymp-heart-icon"
                       xlinkHref="svg-icons/sprites/icons.svg#olymp-heart-icon"
@@ -1715,40 +1722,40 @@ const Home = () => (
 
                   <ul className="friends-harmonic">
                     <li>
-                      <a href="#">
+                      <a href="/">
                         <img src="img/friend-harmonic7.jpg" alt="friend" />
                       </a>
                     </li>
                     <li>
-                      <a href="#">
+                      <a href="/">
                         <img src="img/friend-harmonic8.jpg" alt="friend" />
                       </a>
                     </li>
                     <li>
-                      <a href="#">
+                      <a href="/">
                         <img src="img/friend-harmonic9.jpg" alt="friend" />
                       </a>
                     </li>
                     <li>
-                      <a href="#">
+                      <a href="/">
                         <img src="img/friend-harmonic10.jpg" alt="friend" />
                       </a>
                     </li>
                     <li>
-                      <a href="#">
+                      <a href="/">
                         <img src="img/friend-harmonic11.jpg" alt="friend" />
                       </a>
                     </li>
                   </ul>
 
                   <div className="names-people-likes">
-                    <a href="#">You</a>, <a href="#">Elaine</a> and
+                    <a href="/">You</a>, <a href="/">Elaine</a> and
                     <br />
                     22 more liked this
                   </div>
 
                   <div className="comments-shared">
-                    <a href="#" className="post-add-icon inline-items">
+                    <a href="/" className="post-add-icon inline-items">
                       <svg
                         className="olymp-speech-balloon-icon"
                         xlinkHref="svg-icons/sprites/icons.svg#olymp-speech-balloon-icon"
@@ -1756,7 +1763,7 @@ const Home = () => (
                       <span>17</span>
                     </a>
 
-                    <a href="#" className="post-add-icon inline-items">
+                    <a href="/" className="post-add-icon inline-items">
                       <svg
                         className="olymp-share-icon"
                         xlinkHref="svg-icons/sprites/icons.svg#olymp-share-icon"
@@ -1767,19 +1774,19 @@ const Home = () => (
                 </div>
 
                 <div className="control-block-button post-control-button">
-                  <a href="#" className="btn btn-control likes">
+                  <a href="/" className="btn btn-control likes">
                     <img src="img/heart-icon.png" alt="" />
                     <div className="ripple-container"></div>
                   </a>
 
-                  <a href="#" className="btn btn-control ratings">
+                  <a href="/" className="btn btn-control ratings">
                     <img src="img/star-icon2.png" alt="" />
                   </a>
 
-                  <a href="#" className="btn btn-control share-link">
+                  <a href="/" className="btn btn-control share-link">
                     <img src="img/share-icon.png" alt="" />
                   </a>
-                  <a href="#" className="btn btn-control comments">
+                  <a href="/" className="btn btn-control comments">
                     <img src="img/comments-icon.png" alt="" />
                   </a>
                 </div>
@@ -1805,7 +1812,7 @@ const Home = () => (
                       </div>
                     </div>
 
-                    <a href="#" className="more">
+                    <a href="/" className="more">
                       <svg
                         className="olymp-three-dots-icon"
                         xlinkHref="svg-icons/sprites/icons.svg#olymp-three-dots-icon"
@@ -1818,14 +1825,14 @@ const Home = () => (
                     voluptatem accusantium der doloremque laudantium.
                   </p>
 
-                  <a href="#" className="post-add-icon inline-items">
+                  <a href="/" className="post-add-icon inline-items">
                     <svg
                       className="olymp-heart-icon"
                       xlinkHref="svg-icons/sprites/icons.svg#olymp-heart-icon"
                     />
                     <span>3</span>
                   </a>
-                  <a href="#" className="reply">
+                  <a href="/" className="reply">
                     Reply
                   </a>
                 </li>
@@ -1834,7 +1841,7 @@ const Home = () => (
                     <img src="img/avatar1-sm.jpg" alt="author" />
 
                     <div className="author-date">
-                      <a className="h6 post__author-name fn" href="#">
+                      <a className="h6 post__author-name fn" href="/">
                         Mathilda Brinker
                       </a>
                       <div className="post__date">
@@ -1844,7 +1851,7 @@ const Home = () => (
                       </div>
                     </div>
 
-                    <a href="#" className="more">
+                    <a href="/" className="more">
                       <svg
                         className="olymp-three-dots-icon"
                         xlinkHref="svg-icons/sprites/icons.svg#olymp-three-dots-icon"
@@ -1859,14 +1866,14 @@ const Home = () => (
                     dolor in reprehenderit in voluptate velit esse cillum.
                   </p>
 
-                  <a href="#" className="post-add-icon inline-items">
+                  <a href="/" className="post-add-icon inline-items">
                     <svg
                       className="olymp-heart-icon"
                       xlinkHref="svg-icons/sprites/icons.svg#olymp-heart-icon"
                     />
                     <span>8</span>
                   </a>
-                  <a href="#" className="reply">
+                  <a href="/" className="reply">
                     Reply
                   </a>
                 </li>
@@ -1874,7 +1881,7 @@ const Home = () => (
 
               {/* <!-- ... end Comments --> */}
 
-              <a href="#" className="more-comments">
+              <a href="/" className="more-comments">
                 View more comments <span>+</span>
               </a>
 
@@ -1885,10 +1892,12 @@ const Home = () => (
                   <img src="img/author-page.jpg" alt="author" />
 
                   <div className="form-group with-icon-right ">
-                    <textarea className="form-control" placeholder=""></textarea>
+                    <textarea
+                      className="form-control"
+                      placeholder=""></textarea>
                     <div className="add-options-message">
                       <a
-                        href="#"
+                        href="/"
                         className="options-message"
                         data-toggle="modal"
                         data-target="#update-header-photo">
@@ -1901,7 +1910,9 @@ const Home = () => (
                   </div>
                 </div>
 
-                <button className="btn btn-md-2 btn-primary">Post Comment</button>
+                <button className="btn btn-md-2 btn-primary">
+                  Post Comment
+                </button>
 
                 <button className="btn btn-md-2 btn-border-think c-grey btn-transparent custom-color">
                   Cancel
@@ -1917,7 +1928,7 @@ const Home = () => (
                   <img src="img/avatar5-sm.jpg" alt="author" />
 
                   <div className="author-date">
-                    <a className="h6 post__author-name fn" href="#">
+                    <a className="h6 post__author-name fn" href="/">
                       Green Goo Rock
                     </a>
                     <div className="post__date">
@@ -1934,16 +1945,16 @@ const Home = () => (
                     />
                     <ul className="more-dropdown">
                       <li>
-                        <a href="#">Edit Post</a>
+                        <a href="/">Edit Post</a>
                       </li>
                       <li>
-                        <a href="#">Delete Post</a>
+                        <a href="/">Delete Post</a>
                       </li>
                       <li>
-                        <a href="#">Turn Off Notifications</a>
+                        <a href="/">Turn Off Notifications</a>
                       </li>
                       <li>
-                        <a href="#">Select as Featured</a>
+                        <a href="/">Select as Featured</a>
                       </li>
                     </ul>
                   </div>
@@ -1951,17 +1962,17 @@ const Home = () => (
 
                 <p>
                   Hey guys! We are gona be playing this Saturday of{' '}
-                  <a href="#">The Marina Bar</a> for their new Mystic Deer
+                  <a href="/">The Marina Bar</a> for their new Mystic Deer
                   Party. If you wanna hang out and have a really good time, come
                   and join us. We’l be waiting for you!
                 </p>
 
                 <div className="post-thumb">
-                  <img src="img/post__thumb1.jpg" alt="photo" />
+                  <img src="img/post__thumb1.jpg" alt="Post" />
                 </div>
 
                 <div className="post-additional-info inline-items">
-                  <a href="#" className="post-add-icon inline-items">
+                  <a href="/" className="post-add-icon inline-items">
                     <svg
                       className="olymp-heart-icon"
                       xlinkHref="svg-icons/sprites/icons.svg#olymp-heart-icon"
@@ -1971,40 +1982,40 @@ const Home = () => (
 
                   <ul className="friends-harmonic">
                     <li>
-                      <a href="#">
+                      <a href="/">
                         <img src="img/friend-harmonic9.jpg" alt="friend" />
                       </a>
                     </li>
                     <li>
-                      <a href="#">
+                      <a href="/">
                         <img src="img/friend-harmonic10.jpg" alt="friend" />
                       </a>
                     </li>
                     <li>
-                      <a href="#">
+                      <a href="/">
                         <img src="img/friend-harmonic7.jpg" alt="friend" />
                       </a>
                     </li>
                     <li>
-                      <a href="#">
+                      <a href="/">
                         <img src="img/friend-harmonic8.jpg" alt="friend" />
                       </a>
                     </li>
                     <li>
-                      <a href="#">
+                      <a href="/">
                         <img src="img/friend-harmonic11.jpg" alt="friend" />
                       </a>
                     </li>
                   </ul>
 
                   <div className="names-people-likes">
-                    <a href="#">Jimmy</a>, <a href="#">Andrea</a> and
+                    <a href="/">Jimmy</a>, <a href="/">Andrea</a> and
                     <br />
                     47 more liked this
                   </div>
 
                   <div className="comments-shared">
-                    <a href="#" className="post-add-icon inline-items">
+                    <a href="/" className="post-add-icon inline-items">
                       <svg
                         className="olymp-speech-balloon-icon"
                         xlinkHref="svg-icons/sprites/icons.svg#olymp-speech-balloon-icon"
@@ -2012,7 +2023,7 @@ const Home = () => (
                       <span>264</span>
                     </a>
 
-                    <a href="#" className="post-add-icon inline-items">
+                    <a href="/" className="post-add-icon inline-items">
                       <svg
                         className="olymp-share-icon"
                         xlinkHref="svg-icons/sprites/icons.svg#olymp-share-icon"
@@ -2023,19 +2034,19 @@ const Home = () => (
                 </div>
 
                 <div className="control-block-button post-control-button">
-                  <a href="#" className="btn btn-control likes">
+                  <a href="/" className="btn btn-control likes">
                     <img src="img/heart-icon.png" alt="" />
                     <div className="ripple-container"></div>
                   </a>
 
-                  <a href="#" className="btn btn-control ratings">
+                  <a href="/" className="btn btn-control ratings">
                     <img src="img/star-icon2.png" alt="" />
                   </a>
 
-                  <a href="#" className="btn btn-control share-link">
+                  <a href="/" className="btn btn-control share-link">
                     <img src="img/share-icon.png" alt="" />
                   </a>
-                  <a href="#" className="btn btn-control comments">
+                  <a href="/" className="btn btn-control comments">
                     <img src="img/comments-icon.png" alt="" />
                   </a>
                 </div>
@@ -2048,7 +2059,7 @@ const Home = () => (
                   <img src="img/avatar3-sm.jpg" alt="author" />
 
                   <div className="author-date">
-                    <a className="h6 post__author-name fn" href="#">
+                    <a className="h6 post__author-name fn" href="/">
                       Sarah Hetfield
                     </a>
                     <div className="post__date">
@@ -2065,16 +2076,16 @@ const Home = () => (
                     />
                     <ul className="more-dropdown">
                       <li>
-                        <a href="#">Edit Post</a>
+                        <a href="/">Edit Post</a>
                       </li>
                       <li>
-                        <a href="#">Delete Post</a>
+                        <a href="/">Delete Post</a>
                       </li>
                       <li>
-                        <a href="#">Turn Off Notifications</a>
+                        <a href="/">Turn Off Notifications</a>
                       </li>
                       <li>
-                        <a href="#">Select as Featured</a>
+                        <a href="/">Select as Featured</a>
                       </li>
                     </ul>
                   </div>
@@ -2089,7 +2100,7 @@ const Home = () => (
                 </p>
 
                 <div className="post-additional-info inline-items">
-                  <a href="#" className="post-add-icon inline-items">
+                  <a href="/" className="post-add-icon inline-items">
                     <svg
                       className="olymp-heart-icon"
                       xlinkHref="svg-icons/sprites/icons.svg#olymp-heart-icon"
@@ -2098,7 +2109,7 @@ const Home = () => (
                   </a>
 
                   <div className="comments-shared">
-                    <a href="#" className="post-add-icon inline-items">
+                    <a href="/" className="post-add-icon inline-items">
                       <svg
                         className="olymp-speech-balloon-icon"
                         xlinkHref="svg-icons/sprites/icons.svg#olymp-speech-balloon-icon"
@@ -2106,7 +2117,7 @@ const Home = () => (
                       <span>0 Comments</span>
                     </a>
 
-                    <a href="#" className="post-add-icon inline-items">
+                    <a href="/" className="post-add-icon inline-items">
                       <svg
                         className="olymp-share-icon"
                         xlinkHref="svg-icons/sprites/icons.svg#olymp-share-icon"
@@ -2117,19 +2128,19 @@ const Home = () => (
                 </div>
 
                 <div className="control-block-button post-control-button">
-                  <a href="#" className="btn btn-control likes">
+                  <a href="/" className="btn btn-control likes">
                     <img src="img/heart-icon.png" alt="" />
                     <div className="ripple-container"></div>
                   </a>
 
-                  <a href="#" className="btn btn-control ratings">
+                  <a href="/" className="btn btn-control ratings">
                     <img src="img/star-icon2.png" alt="" />
                   </a>
 
-                  <a href="#" className="btn btn-control share-link">
+                  <a href="/" className="btn btn-control share-link">
                     <img src="img/share-icon.png" alt="" />
                   </a>
-                  <a href="#" className="btn btn-control comments">
+                  <a href="/" className="btn btn-control comments">
                     <img src="img/comments-icon.png" alt="" />
                   </a>
                 </div>
@@ -2142,7 +2153,7 @@ const Home = () => (
                   <img src="img/avatar2-sm.jpg" alt="author" />
 
                   <div className="author-date">
-                    <a className="h6 post__author-name fn" href="#">
+                    <a className="h6 post__author-name fn" href="/">
                       Nicholas Grissom
                     </a>
                     <div className="post__date">
@@ -2159,16 +2170,16 @@ const Home = () => (
                     />
                     <ul className="more-dropdown">
                       <li>
-                        <a href="#">Edit Post</a>
+                        <a href="/">Edit Post</a>
                       </li>
                       <li>
-                        <a href="#">Delete Post</a>
+                        <a href="/">Delete Post</a>
                       </li>
                       <li>
-                        <a href="#">Turn Off Notifications</a>
+                        <a href="/">Turn Off Notifications</a>
                       </li>
                       <li>
-                        <a href="#">Select as Featured</a>
+                        <a href="/">Select as Featured</a>
                       </li>
                     </ul>
                   </div>
@@ -2183,7 +2194,7 @@ const Home = () => (
                 </p>
 
                 <div className="post-additional-info inline-items">
-                  <a href="#" className="post-add-icon inline-items">
+                  <a href="/" className="post-add-icon inline-items">
                     <svg
                       className="olymp-heart-icon"
                       xlinkHref="svg-icons/sprites/icons.svg#olymp-heart-icon"
@@ -2193,40 +2204,40 @@ const Home = () => (
 
                   <ul className="friends-harmonic">
                     <li>
-                      <a href="#">
+                      <a href="/">
                         <img src="img/friend-harmonic9.jpg" alt="friend" />
                       </a>
                     </li>
                     <li>
-                      <a href="#">
+                      <a href="/">
                         <img src="img/friend-harmonic10.jpg" alt="friend" />
                       </a>
                     </li>
                     <li>
-                      <a href="#">
+                      <a href="/">
                         <img src="img/friend-harmonic7.jpg" alt="friend" />
                       </a>
                     </li>
                     <li>
-                      <a href="#">
+                      <a href="/">
                         <img src="img/friend-harmonic8.jpg" alt="friend" />
                       </a>
                     </li>
                     <li>
-                      <a href="#">
+                      <a href="/">
                         <img src="img/friend-harmonic11.jpg" alt="friend" />
                       </a>
                     </li>
                   </ul>
 
                   <div className="names-people-likes">
-                    <a href="#">Jimmy</a>, <a href="#">Andrea</a> and
+                    <a href="/">Jimmy</a>, <a href="/">Andrea</a> and
                     <br />
                     47 more liked this
                   </div>
 
                   <div className="comments-shared">
-                    <a href="#" className="post-add-icon inline-items">
+                    <a href="/" className="post-add-icon inline-items">
                       <svg
                         className="olymp-speech-balloon-icon"
                         xlinkHref="svg-icons/sprites/icons.svg#olymp-speech-balloon-icon"
@@ -2234,7 +2245,7 @@ const Home = () => (
                       <span>0</span>
                     </a>
 
-                    <a href="#" className="post-add-icon inline-items">
+                    <a href="/" className="post-add-icon inline-items">
                       <svg
                         className="olymp-share-icon"
                         xlinkHref="svg-icons/sprites/icons.svg#olymp-share-icon"
@@ -2245,19 +2256,19 @@ const Home = () => (
                 </div>
 
                 <div className="control-block-button post-control-button">
-                  <a href="#" className="btn btn-control likes">
+                  <a href="/" className="btn btn-control likes">
                     <img src="img/heart-icon.png" alt="" />
                     <div className="ripple-container"></div>
                   </a>
 
-                  <a href="#" className="btn btn-control ratings">
+                  <a href="/" className="btn btn-control ratings">
                     <img src="img/star-icon2.png" alt="" />
                   </a>
 
-                  <a href="#" className="btn btn-control share-link">
+                  <a href="/" className="btn btn-control share-link">
                     <img src="img/share-icon.png" alt="" />
                   </a>
-                  <a href="#" className="btn btn-control comments">
+                  <a href="/" className="btn btn-control comments">
                     <img src="img/comments-icon.png" alt="" />
                   </a>
                 </div>
@@ -2267,7 +2278,7 @@ const Home = () => (
 
           <a
             id="load-more-button"
-            href="#"
+            href="/"
             className="btn btn-control btn-more"
             data-load-link="items-to-load.html"
             data-container="newsfeed-items-grid">
@@ -2287,7 +2298,7 @@ const Home = () => (
             {/* <!-- W-Weather --> */}
 
             <div className="widget w-wethear">
-              <a href="#" className="more">
+              <a href="/" className="more">
                 <svg
                   className="olymp-three-dots-icon"
                   xlinkHref="svg-icons/sprites/icons.svg#olymp-three-dots-icon"
@@ -2533,7 +2544,7 @@ const Home = () => (
           <div className="ui-block">
             <div className="ui-block-title block-title-bg">
               <h6 className="title">Pages You May Like</h6>
-              <a href="#" className="more">
+              <a href="/" className="more">
                 <svg
                   className="olymp-three-dots-icon"
                   xlinkHref="svg-icons/sprites/icons.svg#olymp-three-dots-icon"
@@ -2549,7 +2560,7 @@ const Home = () => (
                   <img src="img/avatar41-sm.jpg" alt="author" />
                 </div>
                 <div className="notification-event">
-                  <a href="#" className="h6 notification-friend">
+                  <a href="/" className="h6 notification-friend">
                     The Marina Bar
                   </a>
                   <span className="chat-message-item">Restaurant / Bar</span>
@@ -2559,7 +2570,7 @@ const Home = () => (
                   data-toggle="tooltip"
                   data-placement="top"
                   data-original-title="ADD TO YOUR FAVS">
-                  <a href="#">
+                  <a href="/">
                     <svg
                       className="olymp-star-icon"
                       xlinkHref="svg-icons/sprites/icons.svg#olymp-star-icon"
@@ -2573,7 +2584,7 @@ const Home = () => (
                   <img src="img/avatar42-sm.jpg" alt="author" />
                 </div>
                 <div className="notification-event">
-                  <a href="#" className="h6 notification-friend">
+                  <a href="/" className="h6 notification-friend">
                     Tapronus Rock
                   </a>
                   <span className="chat-message-item">Rock Band</span>
@@ -2583,7 +2594,7 @@ const Home = () => (
                   data-toggle="tooltip"
                   data-placement="top"
                   data-original-title="ADD TO YOUR FAVS">
-                  <a href="#">
+                  <a href="/">
                     <svg
                       className="olymp-star-icon"
                       xlinkHref="svg-icons/sprites/icons.svg#olymp-star-icon"
@@ -2597,7 +2608,7 @@ const Home = () => (
                   <img src="img/avatar43-sm.jpg" alt="author" />
                 </div>
                 <div className="notification-event">
-                  <a href="#" className="h6 notification-friend">
+                  <a href="/" className="h6 notification-friend">
                     Pixel Digital Design
                   </a>
                   <span className="chat-message-item">Company</span>
@@ -2607,7 +2618,7 @@ const Home = () => (
                   data-toggle="tooltip"
                   data-placement="top"
                   data-original-title="ADD TO YOUR FAVS">
-                  <a href="#">
+                  <a href="/">
                     <svg
                       className="olymp-star-icon"
                       xlinkHref="svg-icons/sprites/icons.svg#olymp-star-icon"
@@ -2621,7 +2632,7 @@ const Home = () => (
                   <img src="img/avatar44-sm.jpg" alt="author" />
                 </div>
                 <div className="notification-event">
-                  <a href="#" className="h6 notification-friend">
+                  <a href="/" className="h6 notification-friend">
                     Thompson’s Custom Clothing Boutique
                   </a>
                   <span className="chat-message-item">Clothing Store</span>
@@ -2631,7 +2642,7 @@ const Home = () => (
                   data-toggle="tooltip"
                   data-placement="top"
                   data-original-title="ADD TO YOUR FAVS">
-                  <a href="#">
+                  <a href="/">
                     <svg
                       className="olymp-star-icon"
                       xlinkHref="svg-icons/sprites/icons.svg#olymp-star-icon"
@@ -2645,7 +2656,7 @@ const Home = () => (
                   <img src="img/avatar45-sm.jpg" alt="author" />
                 </div>
                 <div className="notification-event">
-                  <a href="#" className="h6 notification-friend">
+                  <a href="/" className="h6 notification-friend">
                     Crimson Agency
                   </a>
                   <span className="chat-message-item">Company</span>
@@ -2655,7 +2666,7 @@ const Home = () => (
                   data-toggle="tooltip"
                   data-placement="top"
                   data-original-title="ADD TO YOUR FAVS">
-                  <a href="#">
+                  <a href="/">
                     <svg
                       className="olymp-star-icon"
                       xlinkHref="svg-icons/sprites/icons.svg#olymp-star-icon"
@@ -2669,7 +2680,7 @@ const Home = () => (
                   <img src="img/avatar46-sm.jpg" alt="author" />
                 </div>
                 <div className="notification-event">
-                  <a href="#" className="h6 notification-friend">
+                  <a href="/" className="h6 notification-friend">
                     Mannequin Angel
                   </a>
                   <span className="chat-message-item">Clothing Store</span>
@@ -2679,7 +2690,7 @@ const Home = () => (
                   data-toggle="tooltip"
                   data-placement="top"
                   data-original-title="ADD TO YOUR FAVS">
-                  <a href="#">
+                  <a href="/">
                     <svg
                       className="olymp-star-icon"
                       xlinkHref="svg-icons/sprites/icons.svg#olymp-star-icon"
@@ -2707,7 +2718,7 @@ const Home = () => (
                   className="olymp-cupcake-icon"
                   xlinkHref="svg-icons/sprites/icons.svg#olymp-cupcake-icon"
                 />
-                <a href="#" className="more">
+                <a href="/" className="more">
                   <svg
                     className="olymp-three-dots-icon"
                     xlinkHref="svg-icons/sprites/icons.svg#olymp-three-dots-icon"
@@ -2720,7 +2731,7 @@ const Home = () => (
                   <img src="img/avatar48-sm.jpg" alt="author" />
                 </div>
                 <span>Today is</span>
-                <a href="#" className="h4 title">
+                <a href="/" className="h4 title">
                   Marina Valentine’s Birthday!
                 </a>
                 <p>
@@ -2735,7 +2746,7 @@ const Home = () => (
           <div className="ui-block">
             <div className="ui-block-title block-title-bg">
               <h6 className="title">Friend Suggestions</h6>
-              <a href="#" className="more">
+              <a href="/" className="more">
                 <svg
                   className="olymp-three-dots-icon"
                   xlinkHref="svg-icons/sprites/icons.svg#olymp-three-dots-icon"
@@ -2751,13 +2762,13 @@ const Home = () => (
                   <img src="img/avatar38-sm.jpg" alt="author" />
                 </div>
                 <div className="notification-event">
-                  <a href="#" className="h6 notification-friend">
+                  <a href="/" className="h6 notification-friend">
                     Francine Smith
                   </a>
                   <span className="chat-message-item">8 Friends in Common</span>
                 </div>
                 <span className="notification-icon">
-                  <a href="#" className="accept-request">
+                  <a href="/" className="accept-request">
                     <span className="icon-add without-text">
                       <svg
                         className="olymp-happy-face-icon"
@@ -2773,13 +2784,13 @@ const Home = () => (
                   <img src="img/avatar39-sm.jpg" alt="author" />
                 </div>
                 <div className="notification-event">
-                  <a href="#" className="h6 notification-friend">
+                  <a href="/" className="h6 notification-friend">
                     Hugh Wilson
                   </a>
                   <span className="chat-message-item">6 Friends in Common</span>
                 </div>
                 <span className="notification-icon">
-                  <a href="#" className="accept-request">
+                  <a href="/" className="accept-request">
                     <span className="icon-add without-text">
                       <svg
                         className="olymp-happy-face-icon"
@@ -2795,13 +2806,13 @@ const Home = () => (
                   <img src="img/avatar40-sm.jpg" alt="author" />
                 </div>
                 <div className="notification-event">
-                  <a href="#" className="h6 notification-friend">
+                  <a href="/" className="h6 notification-friend">
                     Karen Masters
                   </a>
                   <span className="chat-message-item">6 Friends in Common</span>
                 </div>
                 <span className="notification-icon">
-                  <a href="#" className="accept-request">
+                  <a href="/" className="accept-request">
                     <span className="icon-add without-text">
                       <svg
                         className="olymp-happy-face-icon"
@@ -2819,7 +2830,7 @@ const Home = () => (
           <div className="ui-block">
             <div className="ui-block-title block-title-bg">
               <h6 className="title">Activity Feed</h6>
-              <a href="#" className="more">
+              <a href="/" className="more">
                 <svg
                   className="olymp-three-dots-icon"
                   xlinkHref="svg-icons/sprites/icons.svg#olymp-three-dots-icon"
@@ -2835,11 +2846,11 @@ const Home = () => (
                   <img src="img/avatar49-sm.jpg" alt="author" />
                 </div>
                 <div className="notification-event">
-                  <a href="#" className="h6 notification-friend">
+                  <a href="/" className="h6 notification-friend">
                     Marina Polson
                   </a>{' '}
                   commented on Jason Mark’s{' '}
-                  <a href="#" className="notification-link">
+                  <a href="/" className="notification-link">
                     photo.
                   </a>
                   .
@@ -2858,11 +2869,11 @@ const Home = () => (
                   <img src="img/avatar9-sm.jpg" alt="author" />
                 </div>
                 <div className="notification-event">
-                  <a href="#" className="h6 notification-friend">
+                  <a href="/" className="h6 notification-friend">
                     Jake Parker{' '}
                   </a>{' '}
                   liked Nicholas Grissom’s{' '}
-                  <a href="#" className="notification-link">
+                  <a href="/" className="notification-link">
                     status update.
                   </a>
                   .
@@ -2881,11 +2892,11 @@ const Home = () => (
                   <img src="img/avatar50-sm.jpg" alt="author" />
                 </div>
                 <div className="notification-event">
-                  <a href="#" className="h6 notification-friend">
+                  <a href="/" className="h6 notification-friend">
                     Mary Jane Stark{' '}
                   </a>{' '}
                   added 20 new photos to her{' '}
-                  <a href="#" className="notification-link">
+                  <a href="/" className="notification-link">
                     gallery album.
                   </a>
                   .
@@ -2904,11 +2915,11 @@ const Home = () => (
                   <img src="img/avatar51-sm.jpg" alt="author" />
                 </div>
                 <div className="notification-event">
-                  <a href="#" className="h6 notification-friend">
+                  <a href="/" className="h6 notification-friend">
                     Nicholas Grissom{' '}
                   </a>{' '}
                   updated his profile{' '}
-                  <a href="#" className="notification-link">
+                  <a href="/" className="notification-link">
                     photo
                   </a>
                   .
@@ -2926,11 +2937,11 @@ const Home = () => (
                   <img src="img/avatar48-sm.jpg" alt="author" />
                 </div>
                 <div className="notification-event">
-                  <a href="#" className="h6 notification-friend">
+                  <a href="/" className="h6 notification-friend">
                     Marina Valentine{' '}
                   </a>{' '}
                   commented on Chris Greyson’s{' '}
-                  <a href="#" className="notification-link">
+                  <a href="/" className="notification-link">
                     status update
                   </a>
                   .
@@ -2949,11 +2960,11 @@ const Home = () => (
                   <img src="img/avatar52-sm.jpg" alt="author" />
                 </div>
                 <div className="notification-event">
-                  <a href="#" className="h6 notification-friend">
+                  <a href="/" className="h6 notification-friend">
                     Green Goo Rock{' '}
                   </a>{' '}
                   posted a{' '}
-                  <a href="#" className="notification-link">
+                  <a href="/" className="notification-link">
                     status update
                   </a>
                   .
@@ -2971,11 +2982,11 @@ const Home = () => (
                   <img src="img/avatar10-sm.jpg" alt="author" />
                 </div>
                 <div className="notification-event">
-                  <a href="#" className="h6 notification-friend">
+                  <a href="/" className="h6 notification-friend">
                     Elaine Dreyfuss{' '}
                   </a>{' '}
                   liked your{' '}
-                  <a href="#" className="notification-link">
+                  <a href="/" className="notification-link">
                     blog post
                   </a>
                   .
@@ -2994,11 +3005,11 @@ const Home = () => (
                   <img src="img/avatar10-sm.jpg" alt="author" />
                 </div>
                 <div className="notification-event">
-                  <a href="#" className="h6 notification-friend">
+                  <a href="/" className="h6 notification-friend">
                     Elaine Dreyfuss{' '}
                   </a>{' '}
                   commented on your{' '}
-                  <a href="#" className="notification-link">
+                  <a href="/" className="notification-link">
                     blog post
                   </a>
                   .
@@ -3017,11 +3028,11 @@ const Home = () => (
                   <img src="img/avatar53-sm.jpg" alt="author" />
                 </div>
                 <div className="notification-event">
-                  <a href="#" className="h6 notification-friend">
+                  <a href="/" className="h6 notification-friend">
                     Bruce Peterson{' '}
                   </a>{' '}
                   changed his{' '}
-                  <a href="#" className="notification-link">
+                  <a href="/" className="notification-link">
                     profile picture
                   </a>
                   .

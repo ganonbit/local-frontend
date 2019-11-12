@@ -47,7 +47,12 @@ const ResetPassword = () => (
             </button>
             <div className="form-group label-floating">
               <label className="control-label">Enter the Code</label>
-              <input className="form-control" placeholder="" type="text" value="" />
+              <input
+                className="form-control"
+                placeholder=""
+                type="text"
+                value=""
+              />
             </div>
             <div className="form-group label-floating">
               <label className="control-label">Your New Password</label>

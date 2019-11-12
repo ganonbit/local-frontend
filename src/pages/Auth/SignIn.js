@@ -7,6 +7,7 @@ import { SIGN_IN } from 'graphql/user'
 import { Field, ResetPasswordModal } from '../../components/Auth/index'
 import { validateFormField } from '../../utils/index'
 import { routes } from '../../route/index'
+
 const SignIn = ({ refetch, history }) => {
   const [values, setValues] = useState({ emailOrUsername: '', password: '' })
   const [error, setError] = useState({
@@ -54,7 +55,6 @@ const SignIn = ({ refetch, history }) => {
       {(signin, { loading, error: apiError }) => {
         return (
           <div className="col col-xl-5 col-lg-6 col-md-12 col-sm-12 col-12">
-            {console.log('loding', loading)}
             <div className="registration-login-form">
               <div className="tab-content">
                 <div
@@ -98,7 +98,9 @@ const SignIn = ({ refetch, history }) => {
                             href="#1"
                             className="forgot"
                             data-toggle="modal"
-                            data-target="#restore-password">
+                            data-target="#restore-password"
+                            // onClick={toggle}
+                          >
                             Forgot my Password
                           </a>
                         </div>

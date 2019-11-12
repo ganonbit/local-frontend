@@ -1,16 +1,31 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import Headroom from 'react-headroom'
 /**
  * Main Layout for Registration
  */
 const MainLayout = ({ children }) => {
+  const [className, setClassName] = useState(
+    'header--standard header--standard-landing animated headroom--top headroom--not-bottom'
+  )
+
   return (
     <div className="landing-page">
       <div className="content-bg-wrap"></div>
       <div className="content-bg-wrap"></div>
-      <div
-        className="header--standard header--standard-landing"
-        id="header--standard">
+      <Headroom
+        disableInlineStyles
+        className={className}
+        onPin={() =>
+          setClassName(
+            'header--standard header--standard-landing animated headroom--not-bottom slideDown headroom--top'
+          )
+        }
+        onUnpin={() =>
+          setClassName(
+            'header--standard header--standard-landing animated headroom--not-bottom headroom--not-top slideUp'
+          )
+        }>
         <div className="container">
           <div className="header--standard-wrap">
             <Link to="/login" className="logo">
@@ -28,7 +43,8 @@ const MainLayout = ({ children }) => {
             </a>
           </div>
         </div>
-      </div>
+      </Headroom>
+
       <div className="header-spacer--standard"></div>
 
       <div className="container">
