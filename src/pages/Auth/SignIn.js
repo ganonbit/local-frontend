@@ -159,6 +159,13 @@ const SignIn = ({ refetch, history }) => {
 }
 SignIn.propTypes = {
   history: PropTypes.object.isRequired,
+<<<<<<< HEAD
   refetch: PropTypes.func.isRequired
 }
 export default withRouter(SignIn)
+=======
+  refetch: PropTypes.func.isRequired,
+};
+
+export default withRouter(SignIn);
+>>>>>>> master

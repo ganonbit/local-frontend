@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from 'react'
 import { render } from 'react-dom'
 import App from './route/App'
@@ -6,6 +7,21 @@ import { ApolloProvider as ApolloHooksProvider } from 'react-apollo-hooks'
 import { createApolloClient } from 'utils/apollo-client'
 import { StoreProvider } from 'store'
 import './assets/index.scss'
+=======
+import React from 'react';
+import { render } from 'react-dom';
+import { ApolloProvider } from 'react-apollo';
+import { ApolloProvider as ApolloHooksProvider } from '@apollo/react-hooks';
+import { ThemeProvider } from 'styled-components';
+import { createApolloClient } from 'utils/apollo-client';
+import { StoreProvider } from 'store';
+
+import 'normalize.css';
+import theme from 'theme';
+
+import App from 'components/App/App';
+
+>>>>>>> master
 // GraphQL HTTP URL
 const API_URL = process.env.REACT_APP_API_URL
 // GraphQL WebSocket (subscriptions) URL.
@@ -26,4 +42,8 @@ render(
     </ApolloHooksProvider>
   </ApolloProvider>,
   document.getElementById('root')
+<<<<<<< HEAD
 )
+=======
+);
+>>>>>>> master
