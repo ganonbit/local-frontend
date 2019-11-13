@@ -1,0 +1,31 @@
+.headroom {
+  width: 100%;
+  left: 0px;
+  top: 0px;
+  animation-duration: 0.5s;
+  animation-fill-mode: both;
+  will-change: transform, opacity;
+  background-color: transparent;
+  box-shadow: none;
+  color: #fff;
+  position: fixed;
+  padding: 35px 55px;
+  z-index: 19;
+}
+.headroom--unfixed {
+  animation-name: slideDown;
+}
+.headroom--unpinned {
+  background-color: #34923bad;
+  animation-name: slideUp;
+  box-shadow: 0 0 34px 0 rgba(63, 66, 87, 0.2);
+  padding: 0 55px;
+}
+.headroom--pinned {
+  background-color: #34923bad;
+  animation-name: slideDown;
+  box-shadow: 0 0 34px 0 rgba(63, 66, 87, 0.2);
+}
+.headroom-wrapper {
+  height: 0px !important;
+}
