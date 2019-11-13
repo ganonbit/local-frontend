@@ -1,223 +1,192 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
-import styled from 'styled-components';
-import { withRouter } from 'react-router-dom';
-import { Mutation } from 'react-apollo';
+import React, { useState } from "react";
+import { Mutation } from "react-apollo";
+import { withRouter } from "react-router-dom";
 
-import { Spacing, Container } from 'components/Layout';
-import { H1, Error } from 'components/Text';
-import { InputText, Button } from 'components/Form';
-import Head from 'components/Head';
+import { Field } from "../../components/Auth/index";
+import { SIGN_UP } from "graphql/user";
+import { validateFormField } from "../../utils/index";
 
-import { SIGN_UP } from 'graphql/user';
-
-import * as Routes from 'routes';
-
-const Root = styled(Container)`
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  margin-top: 60px;
-
-  @media (min-width: ${p => p.theme.screen.md}) {
-    justify-content: space-between;
-    margin-top: 120px;
-  }
-`;
-
-const Welcome = styled.div`
-  display: none;
-  flex-direction: column;
-  color: ${p => p.theme.colors.white};
-  max-width: ${p => p.theme.screen.xs};
-
-  @media (min-width: ${p => p.theme.screen.md}) {
-    display: flex;
-  }
-`;
-
-const Heading = styled(H1)`
-  margin-bottom: ${p => p.theme.spacing.sm};
-`;
-
-const Form = styled.div`
-  padding: ${p => p.theme.spacing.md};
-  border-radius: ${p => p.theme.radius.sm};
-  background-color: rgba(255, 255, 255, 0.8);
-  width: 100%;
-
-  @media (min-width: ${p => p.theme.screen.sm}) {
-    width: 450px;
-  }
-`;
-
-/**
- * Sign Up page
- */
-const SignUp = ({ history, refetch }) => {
-  const [error, setError] = useState('');
-  const [values, setValues] = useState({
-    fullName: '',
-    username: '',
-    email: '',
-    password: '',
+const SignUp = ({ refetch, history }) => {
+  const [error, setError] = useState({
+    fullName: "",
+    username: "",
+    email: "",
+    password: ""
   });
-
+  const [values, setValue] = useState({
+    fullName: "", //firstName
+    username: "", //latsNmae
+    email: "",
+    password: "",
+    dob: "",
+    gender: ""
+  });
+  const { fullName, username, email, password } = values;
   const handleChange = e => {
+    e.preventDefault();
     const { name, value } = e.target;
-    setValues({ ...values, [name]: value });
+    setValue({ ...values, [name]: value });
+
+    let fieldError = validateFormField(name, value);
+    setError({ ...error, ...fieldError });
   };
 
   const validate = () => {
     if (!fullName || !email || !username || !password) {
-      return 'All fields are required';
+      if (!fullName) setError({ ...error, fullName: "Name Field is required" });
+      else if (!email) setError({ ...error, email: "Email is required" });
+      else if (!username)
+        setError({ ...error, username: "User name  required" });
+      else if (!password)
+        setError({ ...error, password: "Password is required" });
+      else return true;
     }
-
-    if (fullName.length > 50) {
-      return 'Full name no more than 50 characters';
-    }
-
-    const emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    if (!emailRegex.test(String(email).toLowerCase())) {
-      return 'Enter a valid email address.';
-    }
-
-    const usernameRegex = /^(?!.*\.\.)(?!.*\.$)[^\W][\w.]{0,29}$/;
-    if (!usernameRegex.test(username)) {
-      return 'Usernames can only use letters, numbers, underscores and periods';
-    } else if (username.length > 20) {
-      return 'Username no more than 50 characters';
-    }
-
-    if (password.length < 6) {
-      return 'Password min 6 characters';
-    }
-
     return false;
   };
 
   const handleSubmit = (e, signup) => {
     e.preventDefault();
-
     const error = validate();
     if (error) {
-      setError(error);
       return false;
     }
-
     signup().then(async ({ data }) => {
-      localStorage.setItem('token', data.signup.token);
+      localStorage.setItem("token", data.signup.token);
       await refetch();
-      history.push(Routes.HOME);
+      // history.push(Routes.HOME);
     });
   };
 
-  const renderErrors = apiError => {
-    let errorMessage;
-
-    if (error) {
-      errorMessage = error;
-    } else if (apiError) {
-      errorMessage = apiError.graphQLErrors[0].message;
-    }
-
-    if (errorMessage) {
-      return (
-        <Spacing bottom="sm" top="sm">
-          <Error>{errorMessage}</Error>
-        </Spacing>
-      );
-    }
-
-    return null;
-  };
-
-  const { fullName, email, password, username } = values;
+  const disableButton =
+    !fullName ||
+    !username ||
+    !email ||
+    !password ||
+    error.fullName ||
+    error.username ||
+    error.email ||
+    error.password;
 
   return (
     <Mutation
       mutation={SIGN_UP}
-      variables={{ input: { fullName, email, password, username } }}
+      variables={{
+        input: { fullName, email, password, username }
+      }}
     >
       {(signup, { loading, error: apiError }) => {
         return (
-          <Root maxWidth="lg">
-            <Head />
+          <div className="col col-xl-5 col-lg-6 col-md-12 col-sm-12 col-12">
+            <div className="registration-login-form">
+              <div className="tab-content">
+                <div
+                  className="tab-pane active"
+                  id="home"
+                  role="tabpanel"
+                  data-mh="log-tab"
+                >
+                  <div className="title h6">Register to Avocado Nation</div>
+                  <form
+                    className="content"
+                    onSubmit={e => handleSubmit(e, signup)}
+                  >
+                    <div className="row">
+                      <Field
+                        fieldContainerClass="sm"
+                        placeholder="Full Name"
+                        type="text"
+                        value={fullName}
+                        handleChange={handleChange}
+                        name="fullName"
+                        error={error.fullName}
+                      />
 
-            <Welcome>
-              <div>
-                <Heading color="white">
-                  Connect with friends and the world around you.
-                </Heading>
+                      <Field
+                        fieldContainerClass="sm"
+                        placeholder="User Name"
+                        type="text"
+                        value={username}
+                        handleChange={handleChange}
+                        name="username"
+                        error={error.username}
+                      />
+                      <div className="col col-12 col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                        <Field
+                          fieldContainerClass="lg"
+                          placeholder="Your Email"
+                          type="email"
+                          value={email}
+                          handleChange={handleChange}
+                          name="email"
+                          error={error.email}
+                        />
+
+                        <Field
+                          fieldContainerClass="lg"
+                          placeholder="Your Password"
+                          type="password"
+                          value={password}
+                          handleChange={handleChange}
+                          name="password"
+                          error={error.password}
+                        />
+
+                        <div className="form-group date-time-picker label-floating">
+                          <label className="control-label">Your Birthday</label>
+                          <input
+                            name="datetimepicker"
+                            defaultValue="10/24/1984"
+                          />
+                          <span className="input-group-addon">
+                            <svg
+                              className="olymp-calendar-icon"
+                              xlinkHref="svg-icons/sprites/icons.svg#1olymp-calendar-icon"
+                            />
+                          </span>
+                        </div>
+
+                        <div className="form-group label-floating is-select">
+                          <label className="control-label">Your Gender</label>
+                          <select
+                            className="select picker form-control"
+                            onChange={handleChange}
+                          >
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                          </select>
+                        </div>
+
+                        <div class="remember">
+                          <div class="checkbox">
+                            <label>
+                              <input name="optionsCheckboxes" type="checkbox" />
+                              <span class="checkbox-material">
+                                <span class="check" />
+                              </span>
+                              I accept the <a href="#">Terms and Conditions</a>{" "}
+                              of the website
+                            </label>
+                          </div>
+                        </div>
+
+                        <button
+                          className="btn btn-green btn-lg full-width"
+                          type="submit"
+                          disabled={disableButton}
+                        >
+                          Complete Registration!
+                        </button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
               </div>
-
-              <p>See photos and updates from your friends.</p>
-              <p>Follow your interests.</p>
-              <p>Hear what people are talking about.</p>
-            </Welcome>
-
-            <Form>
-              <Spacing bottom="md">
-                <H1>Create Account</H1>
-              </Spacing>
-
-              <form onSubmit={e => handleSubmit(e, signup)}>
-                <InputText
-                  type="text"
-                  name="fullName"
-                  values={fullName}
-                  onChange={handleChange}
-                  placeholder="Full name"
-                  borderColor="white"
-                />
-                <Spacing top="xs" bottom="xs">
-                  <InputText
-                    type="text"
-                    name="email"
-                    values={email}
-                    onChange={handleChange}
-                    placeholder="Email"
-                    borderColor="white"
-                  />
-                </Spacing>
-                <InputText
-                  type="text"
-                  name="username"
-                  values={username}
-                  onChange={handleChange}
-                  placeholder="Username"
-                  borderColor="white"
-                />
-                <Spacing top="xs" bottom="xs">
-                  <InputText
-                    type="password"
-                    name="password"
-                    values={password}
-                    onChange={handleChange}
-                    placeholder="Password"
-                    borderColor="white"
-                  />
-                </Spacing>
-
-                {renderErrors(apiError)}
-
-                <Spacing top="sm" />
-                <Button size="large" disabled={loading}>
-                  Sign up
-                </Button>
-              </form>
-            </Form>
-          </Root>
+            </div>
+          </div>
         );
       }}
     </Mutation>
   );
-};
-
-SignUp.propTypes = {
-  history: PropTypes.object.isRequired,
-  refetch: PropTypes.func.isRequired,
 };
 
 export default withRouter(SignUp);

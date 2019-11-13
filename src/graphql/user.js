@@ -1,9 +1,9 @@
-import gql from 'graphql-tag';
+import gql from "graphql-tag";
 import {
   postCommentsPayload,
   postAuthorPayload,
-  postLikesPayload,
-} from './post';
+  postLikesPayload
+} from "./post";
 
 /**
  * Records to select from user
@@ -17,10 +17,6 @@ const userPayload = `
   imagePublicId
   coverImage
   coverImagePublicId
-  isOnline
-  isVerified
-  isBlocked
-  isExpert
   createdAt
 `;
 
@@ -114,14 +110,6 @@ export const GET_AUTH_USER = gql`
             image
           }
         }
-      }
-      newConversations {
-        id
-        username
-        fullName
-        image
-        lastMessage
-        lastMessageCreatedAt
       }
       likes {
         id
@@ -224,12 +212,12 @@ export const SIGN_IN = gql`
 `;
 
 /**
- * Request reset password
+ * Reset password
  */
-export const REQUEST_PASSWORD_RESET = gql`
-  mutation($input: RequestPasswordResetInput!) {
-    requestPasswordReset(input: $input) {
-      message
+export const RESET_PASSWORD = gql`
+  mutation($input: ResetPasswordInput!) {
+    resetPassword(input: $input) {
+      token
     }
   }
 `;
@@ -246,12 +234,12 @@ export const VERIFY_RESET_PASSWORD_TOKEN = gql`
 `;
 
 /**
- * Reset password
+ * Request reset password
  */
-export const RESET_PASSWORD = gql`
-  mutation($input: ResetPasswordInput!) {
-    resetPassword(input: $input) {
-      token
+export const REQUEST_PASSWORD_RESET = gql`
+  mutation($input: RequestPasswordResetInput!) {
+    requestPasswordReset(input: $input) {
+      message
     }
   }
 `;
