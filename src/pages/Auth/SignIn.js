@@ -1,71 +1,80 @@
-import React, { useState } from 'react'
-import { Mutation } from 'react-apollo'
-import { Link, withRouter } from 'react-router-dom'
-import PropTypes from 'prop-types'
-import { SIGN_IN } from 'graphql/user'
+import React, { useState } from "react";
+import { Mutation } from "react-apollo";
+import { Link, withRouter } from "react-router-dom";
+import PropTypes from "prop-types";
+import { SIGN_IN } from "graphql/user";
 
-import { Field, ResetPasswordModal } from '../../components/Auth/index'
-import { validateFormField } from '../../utils/index'
-import { routes } from '../../route/index'
-
+import { Field, ResetPasswordModal } from "../../components/Auth/index";
+import { validateFormField } from "../../utils/index";
+import { routes } from "../../route/index";
 const SignIn = ({ refetch, history }) => {
-  const [values, setValues] = useState({ emailOrUsername: '', password: '' })
+  const [reset, setReset] = useState(false);
+  const [values, setValues] = useState({ emailOrUsername: "", password: "" });
   const [error, setError] = useState({
-    emailOrUsername: '',
-    password: ''
-  })
-  const { emailOrUsername, password } = values
+    emailOrUsername: "",
+    password: ""
+  });
+  const { emailOrUsername, password } = values;
 
   const handleChange = e => {
-    const { name, value } = e.target
-    setValues({ ...values, [name]: value })
-    let fieldError = validateFormField(name, value)
-    setError({ ...error, ...fieldError })
-  }
+    const { name, value } = e.target;
+    setValues({ ...values, [name]: value });
+    let fieldError = validateFormField(name, value);
+    setError({ ...error, ...fieldError });
+  };
 
   const validate = () => {
     if (!emailOrUsername || !password) {
       if (!emailOrUsername)
-        setError({ ...error, emailOrUsername: 'all field are required' })
+        setError({ ...error, emailOrUsername: "all field are required" });
       else if (!password)
-        setError({ ...error, password: 'all field are required' })
-      else return true
+        setError({ ...error, password: "all field are required" });
+      else return true;
     }
-    return false
-  }
+    return false;
+  };
+  const handleReset = () => {
+    setReset(false);
+  };
 
   const handleSubmit = (e, signin) => {
-    e.preventDefault()
-    const error = validate()
+    e.preventDefault();
+    const error = validate();
     if (error) {
-      return false
+      return false;
     }
     signin().then(async ({ data }) => {
-      localStorage.setItem('token', data.signin.token)
-      await refetch()
-      history.push(routes.HOME)
-    })
-  }
+      localStorage.setItem("token", data.signin.token);
+      await refetch();
+      history.push(routes.HOME);
+    });
+  };
   return (
     <Mutation
       mutation={SIGN_IN}
       variables={{
         input: { emailOrUsername, password }
-      }}>
+      }}
+    >
       {(signin, { loading, error: apiError }) => {
         return (
           <div className="col col-xl-5 col-lg-6 col-md-12 col-sm-12 col-12">
+            {reset && (
+              <ResetPasswordModal handleReset={handleReset} show={true} />
+            )}
             <div className="registration-login-form">
               <div className="tab-content">
                 <div
                   className="tab-pane active"
                   id="profile"
                   role="tabpanel"
-                  data-mh="log-tab">
+                  data-mh="log-tab"
+                >
                   <div className="title h6">Login to your Account</div>
                   <form
                     className="content"
-                    onSubmit={e => handleSubmit(e, signin)}>
+                    onSubmit={e => handleSubmit(e, signin)}
+                  >
                     <div className="row">
                       <div className="col col-12 col-xl-12 col-lg-12 col-md-12 col-sm-12">
                         <Field
@@ -95,11 +104,11 @@ const SignIn = ({ refetch, history }) => {
                             </label>
                           </div>
                           <a
+                            onClick={() => setReset(true)}
                             href="#1"
                             className="forgot"
                             data-toggle="modal"
                             data-target="#restore-password"
-                            // onClick={toggle}
                           >
                             Forgot my Password
                           </a>
@@ -114,7 +123,8 @@ const SignIn = ({ refetch, history }) => {
                             !password ||
                             error.emailOrUsername ||
                             error.password
-                          }>
+                          }
+                        >
                           Login
                         </button>
 
@@ -122,22 +132,25 @@ const SignIn = ({ refetch, history }) => {
 
                         <a
                           href="#1"
-                          className="btn btn-lg bg-facebook full-width btn-icon-left">
+                          className="btn btn-lg bg-facebook full-width btn-icon-left"
+                        >
                           <i
                             className="fab fa-facebook-f"
-                            aria-hidden="true"></i>
+                            aria-hidden="true"
+                          ></i>
                           Login with Facebook
                         </a>
 
                         <a
                           href="#1"
-                          className="btn btn-lg bg-twitter full-width btn-icon-left">
+                          className="btn btn-lg bg-twitter full-width btn-icon-left"
+                        >
                           <i className="fab fa-twitter" aria-hidden="true"></i>
                           Login with Twitter
                         </a>
 
                         <p>
-                          Don’t you have an account?{' '}
+                          Don’t you have an account?{" "}
                           <Link to="/" className="btn-register">
                             Register Now!
                           </Link>
@@ -150,22 +163,15 @@ const SignIn = ({ refetch, history }) => {
                 </div>
               </div>
             </div>
-            {<ResetPasswordModal />}
+            {/* <ResetPasswordModal show={reset} /> */}
           </div>
-        )
+        );
       }}
     </Mutation>
-  )
-}
+  );
+};
 SignIn.propTypes = {
   history: PropTypes.object.isRequired,
-<<<<<<< HEAD
   refetch: PropTypes.func.isRequired
-}
-export default withRouter(SignIn)
-=======
-  refetch: PropTypes.func.isRequired,
 };
-
 export default withRouter(SignIn);
->>>>>>> master

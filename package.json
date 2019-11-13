@@ -32,10 +32,10 @@
     "react": "^16.8.5",
     "react-apollo": "^2.5.3",
     "react-apollo-hooks": "^0.4.5",
+    "react-bootstrap": "^1.0.0-beta.14",
     "react-dom": "^16.8.5",
     "react-headroom": "^3.0.0",
     "react-helmet": "^5.2.1",
-    "react-modal": "^3.11.1",
     "react-router-dom": "^5.0.0",
     "react-scripts": "3.0.1",
     "react-scrollmagic": "^2.1.1",
@@ -46,7 +46,6 @@
     "svgxuse": "^1.2.6",
     "swiper": "^5.2.0",
     "velocity": "^0.7.2"
-    "unfurl.js": "^5.0.1"
   },
   "scripts": {
     "start": "react-scripts start",

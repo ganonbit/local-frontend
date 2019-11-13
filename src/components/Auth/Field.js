@@ -1,18 +1,46 @@
-import React from 'react'
-const Field = ({
-  fieldContainerClass,
-  placeholder,
-  type,
-  handleChange,
-  value,
-  name,
-  error
-}) => {
-  return fieldContainerClass === 'sm' ? (
+import React, { useEffect } from "react";
+const Field = props => {
+  const {
+    fieldContainerClass,
+    placeholder,
+    type,
+    handleChange,
+    value,
+    name,
+    error
+  } = props;
+
+  const [isFocused, setIsFocused] = React.useState(false);
+
+  let handleOnFocus = event => {
+    // if (!value)
+    setIsFocused(true);
+  };
+
+  let handleBlur = event => {
+    if (!value) setIsFocused(false);
+  };
+
+  useEffect(() => {
+    if (props.value) setIsFocused(true);
+  }, [value]);
+
+  let focused = "form-group label-floating is-empty is-focused";
+  let notFocused = "form-group label-floating is-empty";
+
+  return fieldContainerClass === "sm" ? (
     <div className="col col-12 col-xl-6 col-lg-6 col-md-6 col-sm-12">
-      <div className="form-group label-floating">
+      <div
+        onBlur={() => handleBlur()}
+        onFocus={() => {
+          handleOnFocus();
+        }}
+        className={isFocused ? focused : notFocused}
+      >
         <label className="control-label">{placeholder}</label>
         <input
+          defaultValue=""
+          autoComplete="off"
           className="form-control"
           placeholder=""
           type={type}
@@ -24,9 +52,17 @@ const Field = ({
       </div>
     </div>
   ) : (
-    <div className="form-group label-floating">
+    <div
+      onBlur={() => handleBlur()}
+      onFocus={() => {
+        handleOnFocus();
+      }}
+      className={isFocused ? focused : notFocused}
+    >
       <label className="control-label">{placeholder}</label>
       <input
+        defaultValue={value}
+        autoComplete="off"
         className="form-control"
         placeholder=""
         type={type}
@@ -36,7 +72,7 @@ const Field = ({
       />
       {error && <span className="material-input-error">{error}</span>}
     </div>
-  )
-}
+  );
+};
 
-export default Field
+export default Field;
