@@ -32,8 +32,8 @@ const App = () => {
                 {!auth.user ? (
                   <Route exact render={() => <Auth refetch={refetch} />} />
                 ) : (
-                  <Route exact render={() => <AppLayout refetch={refetch} />} />
-                )}
+                    <Route exact render={() => <AppLayout refetch={refetch} />} />
+                  )}
               </Switch>
             </Router>
           );

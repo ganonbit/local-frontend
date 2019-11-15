@@ -163,7 +163,7 @@ const SignUp = ({ refetch, history }) => {
                               <span class="checkbox-material">
                                 <span class="check" />
                               </span>
-                              I accept the <a href="#">Terms and Conditions</a>{" "}
+                              I accept the <a href="#1">Terms and Conditions</a>{" "}
                               of the website
                             </label>
                           </div>

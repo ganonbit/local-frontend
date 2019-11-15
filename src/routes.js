@@ -23,4 +23,5 @@ export const POST = '/post/:id';
 /**
  * Value that's used in place of id when creating something new.
  */
+
 export const NEW_ID_VALUE = 'new';
