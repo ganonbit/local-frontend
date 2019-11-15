@@ -1,6 +1,8 @@
 import React from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-import Home from '../pages/Home'
+import Home from '../pages/HomeContainer/Home'
+
+import TopHeader from './TopHeader'
 
 /**
  * All other routes of Entire App
@@ -10,10 +12,24 @@ import Home from '../pages/Home'
 const AppLayout = ({ refetch }) => {
   return (
     <Router>
-      <Switch>
-        <Route path="/" render={() => <Home refetch={refetch} />} />
-      </Switch>
+      <div>     
+          <TopHeader />
+
+      </div>
+	    <div className="header-spacer"></div>
+      
+      <div className="container">
+          {/* sideNav Component */}
+          <Switch>
+          
+            <Route path="/" component={Home} />} />
+  
+        {/* MORE ROUTES GOES HERE....! */}
+
+
+          </Switch>
+          </div>
     </Router>
-  )
-}
-export default AppLayout
+      )
+    }
+    export default AppLayout
