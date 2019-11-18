@@ -1,15 +1,15 @@
 import React from 'react'
 const SidebarContent = ({ onSetSidebarOpen }) => (
-  <div class="fixed-sidebar-left sidebar--small" id="sidebar-left">
-    <a href="02-ProfilePage.html" class="logo">
-      <div class="img-wrap">
+  <div className="fixed-sidebar-left sidebar--small" id="sidebar-left">
+    <a href="02-ProfilePage.html" className="logo">
+      <div className="img-wrap">
         <img src="img/avocado-img.png" alt="Olympus" />
       </div>
     </a>
-    <div class="mCustomScrollbar" data-mcs-theme="dark">
-      <ul class="left-menu">
+    <div className="mCustomScrollbar" data-mcs-theme="dark">
+      <ul className="left-menu">
         <li>
-          <a href="#" class="js-sidebar-open">
+          <a href="#1" className="js-sidebar-open">
             <img
               data-toggle="tooltip"
               data-placement="right"
