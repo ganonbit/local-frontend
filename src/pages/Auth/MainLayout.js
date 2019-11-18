@@ -7,7 +7,7 @@ import { AppleLogo } from 'assets/svg-icons'
  */
 const MainLayout = ({ children }) => {
   const [className, setClassName] = useState(
-    'header--standard header--standard-landing animated headroom--top headroom--not-bottom'
+    'headroom--top headroom--not-bottom'
   )
 
   return (
@@ -16,16 +16,12 @@ const MainLayout = ({ children }) => {
       <div className="content-bg-wrap"></div>
       <Headroom
         disableInlineStyles
-        className={className}
+        className={`header--standard header--standard-landing animated ${className}`}
         onPin={() =>
-          setClassName(
-            'header--standard header--standard-landing animated headroom--not-bottom slideDown headroom--top'
-          )
+          setClassName('headroom--not-bottom slideDown headroom--top')
         }
         onUnpin={() =>
-          setClassName(
-            'header--standard header--standard-landing animated headroom--not-bottom headroom--not-top slideUp'
-          )
+          setClassName('headroom--not-bottom headroom--not-top slideUp')
         }>
         <div className="container">
           <div className="header--standard-wrap">

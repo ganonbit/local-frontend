@@ -152,14 +152,14 @@ const SignUp = ({ refetch, history }) => {
                           </select>
                         </div>
 
-                        <div class="remember">
-                          <div class="checkbox">
+                        <div className="remember">
+                          <div className="checkbox">
                             <label>
                               <input name="optionsCheckboxes" type="checkbox" />
                               <span class="checkbox-material">
                                 <span class="check" />
                               </span>
-                              I accept the <a href="#">Terms and Conditions</a>{' '}
+                              I accept the <a href="#1">Terms and Conditions</a>{' '}
                               of the website
                             </label>
                           </div>
