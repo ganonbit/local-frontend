@@ -1,8 +1,9 @@
 import React from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-// import Home from '../pages/Home'
-import { HomeLayout } from '../pages/HomeContainer/index'
-import { CreatePostForm } from '../components/HomeContainer/index'
+import Home from '../pages/HomeContainer/Home'
+
+import TopHeader from './TopHeader'
+
 /**
  * All other routes of Entire App
  * can be restructure depend on Complexity
@@ -11,10 +12,18 @@ import { CreatePostForm } from '../components/HomeContainer/index'
 const AppLayout = ({ refetch }) => {
   return (
     <Router>
-      <HomeLayout refetch={refetch} />
-      <Switch>
-        <Route render={() => <CreatePostForm refetch={refetch} />} />
-      </Switch>
+      <div>
+        <TopHeader />
+      </div>
+      <div className="header-spacer"></div>
+
+      <div className="container">
+        {/* sideNav Component */}
+        <Switch>
+          <Route path="/" component={Home} />} />
+          {/* MORE ROUTES GOES HERE....! */}
+        </Switch>
+      </div>
     </Router>
   )
 }

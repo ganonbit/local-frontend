@@ -11,7 +11,6 @@ import { ReactComponent as PlayIcon } from '../svg-icons/play-icon.svg'
 import { ReactComponent as PrevSong } from '../svg-icons/prev-song.svg'
 import { ReactComponent as RepeatOff } from '../svg-icons/repeat-off.svg'
 import { ReactComponent as Repeat } from '../svg-icons/repeat.svg'
-
 import { ReactComponent as ShuffleOn } from '../svg-icons/shuffle-on.svg'
 import { ReactComponent as Shuffle } from '../svg-icons/shuffle.svg'
 import { ReactComponent as Sound } from '../svg-icons/sound.svg'
