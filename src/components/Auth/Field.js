@@ -23,7 +23,7 @@ const Field = props => {
 
   useEffect(() => {
     if (props.value) setIsFocused(true);
-  }, [value]);
+  }, [props.value]);
 
   let focused = "form-group label-floating is-empty is-focused";
   let notFocused = "form-group label-floating is-empty";
@@ -52,27 +52,27 @@ const Field = props => {
       </div>
     </div>
   ) : (
-    <div
-      onBlur={() => handleBlur()}
-      onFocus={() => {
-        handleOnFocus();
-      }}
-      className={isFocused ? focused : notFocused}
-    >
-      <label className="control-label">{placeholder}</label>
-      <input
-        defaultValue={value}
-        autoComplete="off"
-        className="form-control"
-        placeholder=""
-        type={type}
-        onChange={handleChange}
-        value={value}
-        name={name}
-      />
-      {error && <span className="material-input-error">{error}</span>}
-    </div>
-  );
+      <div
+        onBlur={() => handleBlur()}
+        onFocus={() => {
+          handleOnFocus();
+        }}
+        className={isFocused ? focused : notFocused}
+      >
+        <label className="control-label">{placeholder}</label>
+        <input
+          defaultValue={value}
+          autoComplete="off"
+          className="form-control"
+          placeholder=""
+          type={type}
+          onChange={handleChange}
+          value={value}
+          name={name}
+        />
+        {error && <span className="material-input-error">{error}</span>}
+      </div>
+    );
 };
 
 export default Field;
