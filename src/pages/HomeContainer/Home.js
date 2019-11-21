@@ -7,7 +7,7 @@ import FriendsSuggestions from 'components/Widget/FriendsSuggestions'
 import ActivityFeed from 'components/Widget/ActivityFeed'
 import Olympus from 'components/Widget/Olympus'
 import NewsFeed from 'components/NewsFeedForm'
-import Post from 'components/Post'
+import Post from 'components/NewsFeed/post'
 
 export default class Home extends Component {
     render() {

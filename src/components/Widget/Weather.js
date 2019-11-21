@@ -1,11 +1,13 @@
 import React from 'react'
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faEllipsisV, faCloudSun, faSun, faCloudRain, faCloudShowersHeavy } from '@fortawesome/free-solid-svg-icons'
 export default function Weather() {
     return (
 
-        <div class="ui-block">
+        <div className="ui-block">
             <div className="widget w-wethear">
-                <a href="#" class="more">
+                <a href="#1" className="more">
+                    <FontAwesomeIcon icon={faEllipsisV} color="white" />
                     {/* <svg class="olymp-three-dots-icon">
                 <use xlink:href="#olymp-three-dots-icon"></use>
 							</svg> */}
@@ -18,10 +20,7 @@ export default function Weather() {
                         <span>76°</span>
                     </div>
 
-                    {/* <svg className="olymp-weather-partly-sunny-icon">
-                    <use xlink: href="#olymp-weather-partly-sunny-icon">
-								</use>
-							</svg> */}
+                    <FontAwesomeIcon size="2x" icon={faCloudSun} color="white" />
                 </div >
 
                 <div className="wethear-now-description">
@@ -34,57 +33,46 @@ export default function Weather() {
 
                     <li>
                         <div className="day">sun</div>
-                        {/* <svg className="olymp-weather-sunny-icon">
-                        <use xlink: href="#olymp-weather-sunny-icon">
-									</use>
-								</svg> */}
+                        <FontAwesomeIcon size="sm" icon={faSun} color="white" />
+
 
                         <div className="temperature-sensor-day">60°</div>
                     </li>
 
                     <li>
                         <div className="day">mon</div>
-                        {/* <svg className="olymp-weather-partly-sunny-icon">
-                        <use xlink: href="#olymp-weather-partly-sunny-icon">
-									</use>
-								</svg> */}
+                        <FontAwesomeIcon size="sm" icon={faCloudSun} color="white" />
+
                         <div className="temperature-sensor-day">58°</div>
                     </li >
 
                     <li>
                         <div className="day">tue</div>
-                        {/* <svg className="olymp-weather-cloudy-icon">
-                        <use xlink: href="#olymp-weather-cloudy-icon">
-									</use>
-								</svg> */}
+                        <FontAwesomeIcon size="sm" icon={faSun} color="white" />
+
 
                         <div className="temperature-sensor-day">67°</div>
                     </li >
 
                     <li>
                         <div className="day">wed</div>
-                        {/* <svg className="olymp-weather-rain-icon">
-                        <use xlink: href="#olymp-weather-rain-icon"></use>
-								</svg> */}
+                        <FontAwesomeIcon size="sm" icon={faCloudRain} color="white" />
+
 
                         <div className="temperature-sensor-day">70°</div>
                     </li >
 
                     <li>
                         <div className="day">thu</div>
-                        {/* <svg className="olymp-weather-storm-icon">
-                        <use xlink: href="#olymp-weather-storm-icon">
-									</use>
-								</svg> */}
+                        <FontAwesomeIcon size="sm" icon={faCloudRain} color="white" />
+
 
                         <div className="temperature-sensor-day">58°</div>
                     </li >
 
                     <li>
                         <div className="day">fri</div>
-                        {/* <svg className="olymp-weather-snow-icon">
-                        <use xlink: href="#olymp-weather-snow-icon"></use>
-								</svg> */}
+                        <FontAwesomeIcon icon={faCloudShowersHeavy} color="white" />
 
                         <div className="temperature-sensor-day">68°</div>
                     </li >
@@ -92,10 +80,8 @@ export default function Weather() {
                     <li>
                         <div className="day">sat</div>
 
-                        {/* <svg className="olymp-weather-wind-icon-header">
-                        <use xlink: href="#olymp-weather-wind-icon-header">
-									</use>
-								</svg> */}
+                        <FontAwesomeIcon icon={faCloudShowersHeavy} color="white" />
+
 
                         <div className="temperature-sensor-day">65°</div>
                     </li >
