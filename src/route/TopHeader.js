@@ -10,41 +10,26 @@ import SearchBar from '../pages/Header/SearchBar'
 import FriendRequest from '../pages/Header/FriendRequest'
 import ChatNotifications from '../pages/Header/ChatNotifications'
 export default class TopHeader extends Component {
-    render() {
-        return (
-            <header class="header" id="site-header">
+  render() {
+    return (
+      <header className="header" id="site-header">
+        <HeaderTitle />
+        <div className="header-content-wrapper">
+          <SearchBar />
 
-
-                <HeaderTitle />
-                <div class="header-content-wrapper">
-                    <SearchBar />
-
-                    <div class="control-block">
-
-                        <FriendRequest />
-                        <ChatNotifications />
-                        <Notifications />
-                        <AuthorPage />
-
-                    </div>
-
-                </div>
-                <div className="nav-right-section">
-
-                    {/* 
+          <div className="control-block">
+            <FriendRequest />
+            <ChatNotifications />
+            <Notifications />
+            <AuthorPage />
+          </div>
+        </div>
+        <div className="nav-right-section">
+          {/* 
                     <Notifications />
                     <AuthorPage /> */}
-
-                </div>
-
-
-
-
-
-
-            </header>
-
-
-        )
-    }
+        </div>
+      </header>
+    )
+  }
 }
