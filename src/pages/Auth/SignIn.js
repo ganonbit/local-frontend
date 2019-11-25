@@ -80,7 +80,7 @@ const SignIn = ({ refetch, history }) => {
                         <Field
                           fieldContainerClass="lg"
                           placeholder="Your Email"
-                          type="email"
+                          type="text"
                           name="emailOrUsername"
                           value={emailOrUsername}
                           handleChange={handleChange}

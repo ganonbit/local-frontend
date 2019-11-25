@@ -1,13 +1,14 @@
 import React from 'react'
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faEllipsisV, faStar } from '@fortawesome/free-solid-svg-icons'
 export default function RecomendedPages() {
     return (
-        <div class="ui-block">
-            <div class="ui-block-title block-title-bg">
-                <h6 class="title">Pages You May Like</h6>
-                {/* <a href="#" class="more"><svg class="olymp-three-dots-icon">
-								<use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use>
-							</svg></a> */}
+        <div className="ui-block">
+            <div className="ui-block-title block-title-bg">
+                <h6 className="title">Pages You May Like</h6>
+
+                <FontAwesomeIcon icon={faEllipsisV} color="white" />
+
             </div>
 
             <ul className="widget w-friend-pages-added notification-list friend-requests">
@@ -22,9 +23,8 @@ export default function RecomendedPages() {
                     <span className="notification-icon" data-toggle="tooltip" data-placement="top"
                         data-original-title="ADD TO YOUR FAVS">
                         <a href="#1">
-                            {/* <svg className="olymp-star-icon">
-                            <use xlink: href="svg-icons/sprites/icons.svg#olymp-star-icon"></use>
-                </svg> */}
+                            <FontAwesomeIcon icon={faStar} color="white" />
+
                         </a>
                     </span>
 
@@ -41,9 +41,8 @@ export default function RecomendedPages() {
                     <span className="notification-icon" data-toggle="tooltip" data-placement="top"
                         data-original-title="ADD TO YOUR FAVS">
                         <a href="#1">
-                            {/* <svg className="olymp-star-icon">
-                            <use xlink: href="svg-icons/sprites/icons.svg#olymp-star-icon"></use>
-                </svg> */}
+                            <FontAwesomeIcon icon={faStar} color="white" />
+
                         </a>
                     </span>
 
@@ -60,9 +59,8 @@ export default function RecomendedPages() {
                     <span className="notification-icon" data-toggle="tooltip" data-placement="top"
                         data-original-title="ADD TO YOUR FAVS">
                         <a href="#1">
-                            {/* <svg className="olymp-star-icon">
-                            <use xlink: href="svg-icons/sprites/icons.svg#olymp-star-icon"></use>
-                </svg> */}
+                            <FontAwesomeIcon icon={faStar} color="white" />
+
                         </a>
                     </span>
                 </li>
@@ -78,9 +76,8 @@ export default function RecomendedPages() {
                     <span className="notification-icon" data-toggle="tooltip" data-placement="top"
                         data-original-title="ADD TO YOUR FAVS">
                         <a href="#1">
-                            {/* <svg className="olymp-star-icon">
-                            <use xlink: href="svg-icons/sprites/icons.svg#olymp-star-icon"></use>
-                </svg> */}
+                            <FontAwesomeIcon icon={faStar} color="white" />
+
                         </a>
                     </span>
 
@@ -97,9 +94,8 @@ export default function RecomendedPages() {
                     <span className="notification-icon" data-toggle="tooltip" data-placement="top"
                         data-original-title="ADD TO YOUR FAVS">
                         <a href="#1">
-                            {/* <svg className="olymp-star-icon">
-                            <use xlink: href="svg-icons/sprites/icons.svg#olymp-star-icon"></use>
-                </svg> */}
+                            <FontAwesomeIcon icon={faStar} color="white" />
+
                         </a>
                     </span>
                 </li>
@@ -115,9 +111,8 @@ export default function RecomendedPages() {
                     <span className="notification-icon" data-toggle="tooltip" data-placement="top"
                         data-original-title="ADD TO YOUR FAVS">
                         <a href="#1">
-                            {/* <svg className="olymp-star-icon">
-                            <use xlink: href="svg-icons/sprites/icons.svg#olymp-star-icon"></use>
-                </svg> */}
+                            <FontAwesomeIcon icon={faStar} color="white" />
+
                         </a>
                     </span>
                 </li>

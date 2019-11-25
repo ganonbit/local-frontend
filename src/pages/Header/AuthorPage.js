@@ -92,7 +92,7 @@ export default class AuthorPage extends Component {
                                     className="form-control"
                                     placeholder=""
                                     type="text"
-                                    value="Space Cowboy"
+                                    defaultValue="Space Cowboy"
                                 />
 
                                 <button className="bg-purple">

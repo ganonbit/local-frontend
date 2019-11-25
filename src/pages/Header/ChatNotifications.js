@@ -1,20 +1,19 @@
 import React, { Component } from 'react'
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCommentAlt } from '@fortawesome/free-solid-svg-icons'
 export default class ChatNotifications extends Component {
     render() {
         return (
             <div className="control-icon more has-items">
-                <svg
-                    className="olymp-chat---messages-icon"
-                    xlinkHref="svg-icons/sprites/icons.svg#olymp-chat---messages-icon"
-                />
+
+                <FontAwesomeIcon icon={faCommentAlt} color="white" size="2x" />
                 <div className="label-avatar bg-purple">2</div>
 
                 <div className="more-dropdown more-with-triangle triangle-top-center">
                     <div className="ui-block-title ui-block-title-small">
                         <h6 className="title">Chat / Messages</h6>
-                        <a href="#">Mark all as read</a>
-                        <a href="#">Settings</a>
+                        <a href="#1">Mark all as read</a>
+                        <a href="#1">Settings</a>
                     </div>
 
                     <div className="mCustomScrollbar" data-mcs-theme="dark">
@@ -24,7 +23,7 @@ export default class ChatNotifications extends Component {
                                     <img src="img/avatar59-sm.jpg" alt="author" />
                                 </div>
                                 <div className="notification-event">
-                                    <a href="#" className="h6 notification-friend">
+                                    <a href="#1" className="h6 notification-friend">
                                         Diana Jameson
     </a>
                                     <span className="chat-message-item">
@@ -34,7 +33,7 @@ export default class ChatNotifications extends Component {
                                     <span className="notification-date">
                                         <time
                                             className="entry-date updated"
-                                            datetime="2004-07-24T18:18">
+                                            dateTime="2004-07-24T18:18">
                                             4 hours ago
       </time>
                                     </span>
@@ -58,7 +57,7 @@ export default class ChatNotifications extends Component {
                                     <img src="img/avatar60-sm.jpg" alt="author" />
                                 </div>
                                 <div className="notification-event">
-                                    <a href="#" className="h6 notification-friend">
+                                    <a href="#1" className="h6 notification-friend">
                                         Jake Parker
     </a>
                                     <span className="chat-message-item">
@@ -67,7 +66,7 @@ export default class ChatNotifications extends Component {
                                     <span className="notification-date">
                                         <time
                                             className="entry-date updated"
-                                            datetime="2004-07-24T18:18">
+                                            dateTime="2004-07-24T18:18">
                                             4 hours ago
       </time>
                                     </span>
@@ -91,7 +90,7 @@ export default class ChatNotifications extends Component {
                                     <img src="img/avatar61-sm.jpg" alt="author" />
                                 </div>
                                 <div className="notification-event">
-                                    <a href="#" className="h6 notification-friend">
+                                    <a href="#1" className="h6 notification-friend">
                                         Elaine Dreyfuss
     </a>
                                     <span className="chat-message-item">
@@ -101,7 +100,7 @@ export default class ChatNotifications extends Component {
                                     <span className="notification-date">
                                         <time
                                             className="entry-date updated"
-                                            datetime="2004-07-24T18:18">
+                                            dateTime="2004-07-24T18:18">
                                             Yesterday at 9:56pm
       </time>
                                     </span>
@@ -128,7 +127,7 @@ export default class ChatNotifications extends Component {
                                     <img src="img/avatar10-sm.jpg" alt="author" />
                                 </div>
                                 <div className="notification-event">
-                                    <a href="#" className="h6 notification-friend">
+                                    <a href="#1" className="h6 notification-friend">
                                         You, Faye, Ed &amp; Jet +3
     </a>
                                     <span className="last-message-author">Ed:</span>
@@ -138,7 +137,7 @@ export default class ChatNotifications extends Component {
                                     <span className="notification-date">
                                         <time
                                             className="entry-date updated"
-                                            datetime="2004-07-24T18:18">
+                                            dateTime="2004-07-24T18:18">
                                             March 16th at 10:23am
       </time>
                                     </span>
@@ -159,7 +158,7 @@ export default class ChatNotifications extends Component {
                         </ul>
                     </div>
 
-                    <a href="#" className="view-all bg-purple">
+                    <a href="#1" className="view-all bg-purple">
                         View All Messages
 </a>
                 </div>
