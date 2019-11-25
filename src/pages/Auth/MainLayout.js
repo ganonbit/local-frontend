@@ -50,7 +50,6 @@ const MainLayout = ({ children }) => {
         <div className="row display-flex">
           <div className="col col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
             <div className="landing-content">
-              <AppleLogo width={20} height={20} />
               <h1>Welcome to the Biggest Social Network in the World</h1>
               <p>
                 We are the best and biggest social network with 5 billion active

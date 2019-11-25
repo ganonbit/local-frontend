@@ -1,6 +1,0 @@
-.fixed-sidebar ::-webkit-scrollbar {
-  width: 0;
-}
-.fixed-sidebar .mCustomScrollbar {
-  overflow: auto !important;
-}
