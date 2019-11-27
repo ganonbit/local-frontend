@@ -7,29 +7,25 @@ import HeaderTitle from '../pages/Header/HeaderTitle'
 import SearchBar from '../pages/Header/SearchBar'
 
 export default class TopHeader extends Component {
-    render() {
-        return (
-            <header className="header" id="site-header">
-                <HeaderTitle />
-                <div className="header-content-wrapper">
-                    <SearchBar />
-                    <div className="control-block">
-                        {/* <FriendRequest /> */}
-                        {/* <ChatNotifications /> */}
-                        <Notifications />
-                        <AuthorPage />
-                    </div>
-                </div>
-                <div className="nav-right-section">
-
-                    {/* 
+  render() {
+    return (
+      <header className="header" id="site-header">
+        <HeaderTitle />
+        <div className="header-content-wrapper">
+          <SearchBar />
+          <div className="control-block">
+            {/* <FriendRequest /> */}
+            {/* <ChatNotifications /> */}
+            <Notifications />
+            <AuthorPage />
+          </div>
+        </div>
+        <div className="nav-right-section">
+          {/* 
                     <Notifications />
                     <AuthorPage /> */}
-
-                </div>
-            </header>
-
-
-        )
-    }
+        </div>
+      </header>
+    )
+  }
 }

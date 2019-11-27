@@ -1,61 +1,61 @@
-import React, { useState } from "react";
-import { Mutation } from "react-apollo";
-import { withRouter } from "react-router-dom";
+import React, { useState } from 'react'
+import { Mutation } from 'react-apollo'
+import { withRouter } from 'react-router-dom'
 
-import { Field } from "../../components/Auth/index";
-import { SIGN_UP } from "graphql/user";
-import { validateFormField } from "../../utils/index";
+import { Field } from '../../components/Auth/index'
+import { SIGN_UP } from 'graphql/user'
+import { validateFormField } from '../../utils/index'
 
 const SignUp = ({ refetch, history }) => {
   const [error, setError] = useState({
-    fullName: "",
-    username: "",
-    email: "",
-    password: ""
-  });
+    fullName: '',
+    username: '',
+    email: '',
+    password: ''
+  })
   const [values, setValue] = useState({
-    fullName: "", //firstName
-    username: "", //latsNmae
-    email: "",
-    password: "",
-    dob: "",
-    gender: ""
-  });
-  const { fullName, username, email, password } = values;
+    fullName: '', //firstName
+    username: '', //latsNmae
+    email: '',
+    password: '',
+    dob: '',
+    gender: ''
+  })
+  const { fullName, username, email, password } = values
   const handleChange = e => {
-    e.preventDefault();
-    const { name, value } = e.target;
-    setValue({ ...values, [name]: value });
+    e.preventDefault()
+    const { name, value } = e.target
+    setValue({ ...values, [name]: value })
 
-    let fieldError = validateFormField(name, value);
-    setError({ ...error, ...fieldError });
-  };
+    let fieldError = validateFormField(name, value)
+    setError({ ...error, ...fieldError })
+  }
 
   const validate = () => {
     if (!fullName || !email || !username || !password) {
-      if (!fullName) setError({ ...error, fullName: "Name Field is required" });
-      else if (!email) setError({ ...error, email: "Email is required" });
+      if (!fullName) setError({ ...error, fullName: 'Name Field is required' })
+      else if (!email) setError({ ...error, email: 'Email is required' })
       else if (!username)
-        setError({ ...error, username: "User name  required" });
+        setError({ ...error, username: 'User name  required' })
       else if (!password)
-        setError({ ...error, password: "Password is required" });
-      else return true;
+        setError({ ...error, password: 'Password is required' })
+      else return true
     }
-    return false;
-  };
+    return false
+  }
 
   const handleSubmit = (e, signup) => {
-    e.preventDefault();
-    const error = validate();
+    e.preventDefault()
+    const error = validate()
     if (error) {
-      return false;
+      return false
     }
     signup().then(async ({ data }) => {
-      localStorage.setItem("token", data.signup.token);
-      await refetch();
+      localStorage.setItem('token', data.signup.token)
+      await refetch()
       // history.push(Routes.HOME);
-    });
-  };
+    })
+  }
 
   const disableButton =
     !fullName ||
@@ -65,15 +65,14 @@ const SignUp = ({ refetch, history }) => {
     error.fullName ||
     error.username ||
     error.email ||
-    error.password;
+    error.password
 
   return (
     <Mutation
       mutation={SIGN_UP}
       variables={{
         input: { fullName, email, password, username }
-      }}
-    >
+      }}>
       {(signup, { loading, error: apiError }) => {
         return (
           <div className="col col-xl-5 col-lg-6 col-md-12 col-sm-12 col-12">
@@ -83,13 +82,11 @@ const SignUp = ({ refetch, history }) => {
                   className="tab-pane active"
                   id="home"
                   role="tabpanel"
-                  data-mh="log-tab"
-                >
+                  data-mh="log-tab">
                   <div className="title h6">Register to Avocado Nation</div>
                   <form
                     className="content"
-                    onSubmit={e => handleSubmit(e, signup)}
-                  >
+                    onSubmit={e => handleSubmit(e, signup)}>
                     <div className="row">
                       <Field
                         fieldContainerClass="sm"
@@ -149,21 +146,20 @@ const SignUp = ({ refetch, history }) => {
                           <label className="control-label">Your Gender</label>
                           <select
                             className="select picker form-control"
-                            onChange={handleChange}
-                          >
+                            onChange={handleChange}>
                             <option value="male">Male</option>
                             <option value="female">Female</option>
                           </select>
                         </div>
 
-                        <div class="remember">
-                          <div class="checkbox">
+                        <div className="remember">
+                          <div className="checkbox">
                             <label>
                               <input name="optionsCheckboxes" type="checkbox" />
                               <span class="checkbox-material">
                                 <span class="check" />
                               </span>
-                              I accept the <a href="#1">Terms and Conditions</a>{" "}
+                              I accept the <a href="#1">Terms and Conditions</a>{' '}
                               of the website
                             </label>
                           </div>
@@ -172,8 +168,7 @@ const SignUp = ({ refetch, history }) => {
                         <button
                           className="btn btn-green btn-lg full-width"
                           type="submit"
-                          disabled={disableButton}
-                        >
+                          disabled={disableButton}>
                           Complete Registration!
                         </button>
                       </div>
@@ -183,10 +178,10 @@ const SignUp = ({ refetch, history }) => {
               </div>
             </div>
           </div>
-        );
+        )
       }}
     </Mutation>
-  );
-};
+  )
+}
 
-export default withRouter(SignUp);
+export default withRouter(SignUp)
