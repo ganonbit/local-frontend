@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import Footer from './Footer'
-import { useStore } from '../../../store/index'
+import Footer from './PostFooter'
+import { useStore } from '../../store/index'
 const PostForm = ({
   status,
   handleStatusChange,

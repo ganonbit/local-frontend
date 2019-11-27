@@ -1,14 +1,13 @@
 import React from 'react'
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSmile, faEllipsisV } from '@fortawesome/free-solid-svg-icons'
 export default function FriendsSuggestions() {
   return (
     <div className="ui-block">
       <div className="ui-block-title block-title-bg">
         <h6 className="title">Friend Suggestions</h6>
         <a href="#1" className="more">
-          {/* <svg className="olymp-three-dots-icon">
-                    <use xlink: href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use>
-							</svg> */}
+          <FontAwesomeIcon icon={faEllipsisV} color="white" />
         </a>
       </div>
 
@@ -26,6 +25,7 @@ export default function FriendsSuggestions() {
           <span className="notification-icon">
             <a href="#1" className="accept-request">
               <span className="icon-add without-text">
+                <FontAwesomeIcon icon={faSmile} color="white" />
                 {/* <svg className="olymp-happy-face-icon">
                                     <use xlink: href="svg-icons/sprites/icons.svg#olymp-happy-face-icon"></use>
 										</svg> */}
@@ -47,9 +47,7 @@ export default function FriendsSuggestions() {
           <span className="notification-icon">
             <a href="#1" className="accept-request">
               <span className="icon-add without-text">
-                {/* <svg className="olymp-happy-face-icon">
-                                    <use xlink: href="svg-icons/sprites/icons.svg#olymp-happy-face-icon"></use>
-										</svg> */}
+                <FontAwesomeIcon icon={faSmile} color="white" />
               </span>
             </a>
           </span>
@@ -68,9 +66,7 @@ export default function FriendsSuggestions() {
           <span className="notification-icon">
             <a href="#1" className="accept-request">
               <span className="icon-add without-text">
-                {/* <svg className="olymp-happy-face-icon">
-                                            <use xlink: href="svg-icons/sprites/icons.svg#olymp-happy-face-icon"></use>
-										</svg> */}
+                <FontAwesomeIcon icon={faSmile} color="white" />
               </span>
             </a>
           </span>

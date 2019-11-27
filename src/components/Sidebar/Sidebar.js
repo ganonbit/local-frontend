@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import Sidebar from 'react-sidebar'
 import SidebarContent from './SidebarContent'
-import SidebarMainContent from './SidebarMainContent'
+import SidebarMainContent from './SidebarContentDetail'
 import './style/customSidebar.css'
-import SidebarStyles from './Sidebar.css'
+import SidebarStyles from './SidebarConfig'
 const SidebarNavigation = () => {
   const [sidebarOpen, setSidebarOpen] = useState({
     open: false,

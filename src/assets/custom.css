@@ -595,41 +595,15 @@ span.material-input-error {
   right: 0;
   color: #fff;
 }
-
 .author-title-custom {
   color: #fff;
 }
-.author-name {
-  /* padding-left: 10px; */
+.post-img {
+  min-height: 250px;
 }
-.vcard {
-  /* padding-right: 30px; */
+.post-img img {
+  width: 100%;
 }
-
-.author-subTitle-custom {
-  /* color:#fff;
-  padding-left: 5px;
-  font-size: 9px; */
-  /* margin-top: -10px; */
-}
-.nav-bar-custom {
-  /* margin-left: 10px; */
-}
-.control-block {
-  /* margin-right: 70px; */
-}
-.homeContainer {
-  /* margin-top:100px; */
-  /* width:"100%"; */
-  /* height: '100%'; */
-  /* background-color: green; */
-
-  /* height: 100vh; */
-  /* margin-left: 100px; */
-}
-/* .fixed-sidebar .mCustomScrollbar {
-  overflow: inherit !important;
-} */
 .upload-box {
   position: relative;
 }
@@ -648,6 +622,9 @@ span.material-input-error {
   box-shadow: none;
   opacity: 0;
   z-index: 9;
+  cursor: pointer;
+}
+.more-comments {
   cursor: pointer;
 }
 
@@ -683,10 +660,14 @@ span.material-input-error {
 }
 @media (max-width: 1080px) {
   .header-content-wrapper {
-    display: block;
+    display: flex;
   }
   .header .page-title {
     display: none;
+  }
+  .search-bar.w-search {
+    max-width: 100%;
+    width: 50%;
   }
 }
 @media (max-width: 1024px) {
@@ -716,13 +697,40 @@ span.material-input-error {
     padding: 25px 15px;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 800px) {
   .profile-banner {
     margin-right: 0;
   }
   .search-bar.w-search {
     max-width: 100%;
+    width: 40%;
+    display: none;
+  }
+  .header,
+  .fixed-sidebar {
+    display: block;
+  }
+  .control-block {
+    display: flex;
     width: 100%;
+    margin-left: auto;
+    justify-content: space-around;
+  }
+  .author-page {
+    display: none;
+  }
+  .control-icon .more-dropdown {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 70px;
+  }
+  .more-with-triangle:before {
+    content: none;
+  }
+  .ui-block-title {
+    display: flex;
+    justify-content: space-around;
   }
 }
 @media (max-width: 640px) {
@@ -754,6 +762,14 @@ span.material-input-error {
   .video-thumb {
     height: auto;
     width: 100%;
+  }
+  .post-additional-info {
+    padding: 20px 0 0;
+    border-top: 1px solid #e6ecf5;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    justify-items: baseline;
   }
 }
 @media (max-width: 369px) {

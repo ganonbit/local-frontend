@@ -1,13 +1,13 @@
 import React from 'react'
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faEllipsisV, faStar } from '@fortawesome/free-solid-svg-icons'
 export default function RecomendedPages() {
   return (
     <div className="ui-block">
       <div className="ui-block-title block-title-bg">
         <h6 className="title">Pages You May Like</h6>
-        {/* <a href="#1" className="more"><svg className="olymp-three-dots-icon">
-								<use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use>
-							</svg></a> */}
+
+        <FontAwesomeIcon icon={faEllipsisV} color="white" />
       </div>
 
       <ul className="widget w-friend-pages-added notification-list friend-requests">
@@ -27,9 +27,7 @@ export default function RecomendedPages() {
             data-placement="top"
             data-original-title="ADD TO YOUR FAVS">
             <a href="#1">
-              {/* <svg className="olymp-star-icon">
-                            <use xlink: href="svg-icons/sprites/icons.svg#olymp-star-icon"></use>
-                </svg> */}
+              <FontAwesomeIcon icon={faStar} color="white" />
             </a>
           </span>
         </li>
@@ -50,9 +48,7 @@ export default function RecomendedPages() {
             data-placement="top"
             data-original-title="ADD TO YOUR FAVS">
             <a href="#1">
-              {/* <svg className="olymp-star-icon">
-                            <use xlink: href="svg-icons/sprites/icons.svg#olymp-star-icon"></use>
-                </svg> */}
+              <FontAwesomeIcon icon={faStar} color="white" />
             </a>
           </span>
         </li>
@@ -73,9 +69,7 @@ export default function RecomendedPages() {
             data-placement="top"
             data-original-title="ADD TO YOUR FAVS">
             <a href="#1">
-              {/* <svg className="olymp-star-icon">
-                            <use xlink: href="svg-icons/sprites/icons.svg#olymp-star-icon"></use>
-                </svg> */}
+              <FontAwesomeIcon icon={faStar} color="white" />
             </a>
           </span>
         </li>
@@ -96,9 +90,7 @@ export default function RecomendedPages() {
             data-placement="top"
             data-original-title="ADD TO YOUR FAVS">
             <a href="#1">
-              {/* <svg className="olymp-star-icon">
-                            <use xlink: href="svg-icons/sprites/icons.svg#olymp-star-icon"></use>
-                </svg> */}
+              <FontAwesomeIcon icon={faStar} color="white" />
             </a>
           </span>
         </li>
@@ -119,9 +111,7 @@ export default function RecomendedPages() {
             data-placement="top"
             data-original-title="ADD TO YOUR FAVS">
             <a href="#1">
-              {/* <svg className="olymp-star-icon">
-                            <use xlink: href="svg-icons/sprites/icons.svg#olymp-star-icon"></use>
-                </svg> */}
+              <FontAwesomeIcon icon={faStar} color="white" />
             </a>
           </span>
         </li>
@@ -142,9 +132,7 @@ export default function RecomendedPages() {
             data-placement="top"
             data-original-title="ADD TO YOUR FAVS">
             <a href="#1">
-              {/* <svg className="olymp-star-icon">
-                            <use xlink: href="svg-icons/sprites/icons.svg#olymp-star-icon"></use>
-                </svg> */}
+              <FontAwesomeIcon icon={faStar} color="white" />
             </a>
           </span>
         </li>

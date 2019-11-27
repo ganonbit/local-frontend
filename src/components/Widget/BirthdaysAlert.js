@@ -1,16 +1,14 @@
 import React from 'react'
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBirthdayCake, faEllipsisV } from '@fortawesome/free-solid-svg-icons'
 export default function BirthdaysAlert() {
   return (
     <div className="widget w-birthday-alert">
       <div className="icons-block">
-        {/* <svg className="olymp-cupcake-icon">
-                    <use xlink: href="svg-icons/sprites/icons.svg#olymp-cupcake-icon"></use>
-							</svg> */}
+        <FontAwesomeIcon icon={faBirthdayCake} size="2x" />
+
         <a href="#1" className="more">
-          {/* <svg className="olymp-three-dots-icon">
-                <use xlink: href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use>
-								</svg> */}
+          <FontAwesomeIcon icon={faEllipsisV} color="white" />
         </a>
       </div>
 

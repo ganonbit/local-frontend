@@ -12,7 +12,7 @@ const Auth = ({ refetch }) => {
             exact
             render={() => <SignUp refetch={refetch} />}
           />
-           <Route
+          <Route
             render={() => <SignIn refetch={refetch} />}
           />
         </Switch>

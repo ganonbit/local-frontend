@@ -1,20 +1,21 @@
 import React from 'react'
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {
+  faSmile,
+  faAngry,
+  faEllipsisV
+} from '@fortawesome/free-solid-svg-icons'
 const FriendRequest = () => {
   return (
     <div className="control-icon more has-items">
-      <svg className="olymp-happy-face-icon">
-        {/* <use xlink: href="svg-icons/sprites/icons.svg#olymp-happy-face-icon"></use> */}
-      </svg>
+      <FontAwesomeIcon icon={faSmile} color="white" size="2x" />
       <div className="label-avatar bg-blue">6</div>
-
       <div className="more-dropdown more-with-triangle triangle-top-center">
         <div className="ui-block-title ui-block-title-small">
           <h6 className="title">FRIEND REQUESTS</h6>
           <a href="#1">Find Friends</a>
           <a href="#1">Settings</a>
         </div>
-
         <div className="mCustomScrollbar" data-mcs-theme="dark">
           <ul className="notification-list friend-requests">
             <li>
@@ -32,27 +33,17 @@ const FriendRequest = () => {
               <span className="notification-icon">
                 <a href="#1" className="accept-request">
                   <span className="icon-add without-text">
-                    <svg className="olymp-happy-face-icon">
-                      {/* <use xlink: href="svg-icons/sprites/icons.svg#olymp-happy-face-icon"> */}
-                      {/* </use> */}
-                    </svg>
+                    <FontAwesomeIcon icon={faSmile} color="white" size="2x" />
                   </span>
                 </a>
-
                 <a href="#1" className="accept-request request-del">
                   <span className="icon-minus">
-                    <svg className="olymp-happy-face-icon">
-                      {/* <use xlink: href="svg-icons/sprites/icons.svg#olymp-happy-face-icon">
-													</use> */}
-                    </svg>
+                    <FontAwesomeIcon icon={faAngry} color="red" size="2x" />
                   </span>
                 </a>
               </span>
-
               <div className="more">
-                <svg className="olymp-three-dots-icon">
-                  {/* <use xlink: href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use> */}
-                </svg>
+                <FontAwesomeIcon icon={faEllipsisV} color="white" />
               </div>
             </li>
 
@@ -155,9 +146,7 @@ const FriendRequest = () => {
               </span>
 
               <div className="more">
-                <svg className="olymp-three-dots-icon">
-                  {/* <use xlink: href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use> */}
-                </svg>
+                <FontAwesomeIcon icon={faEllipsisV} color="white" />
               </div>
             </li>
           </ul>

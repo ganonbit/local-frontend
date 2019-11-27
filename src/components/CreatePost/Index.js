@@ -1,13 +1,13 @@
 import React, { useState } from 'react'
-import UploadImage from '../../Modals/NewsFeed/UploadImage'
-import ChooseImage from '../../Modals/NewsFeed/ChooseImage'
-import useModal from '../../../hooks/useModel'
-import { useStore } from '../../../store/index'
-import Header from './Header'
+import UploadImage from '../Modals/NewsFeed/UploadImage'
+import ChooseImage from '../Modals/NewsFeed/ChooseImage'
+import useModal from '../../hooks/useModel'
+import { useStore } from '../../store/index'
+import Header from './PostHeader'
 import PostForm from './PostForm'
 
 import { Mutation } from 'react-apollo'
-import { CREATE_POST } from '../../../graphql/post'
+import { CREATE_POST } from '../../graphql/post'
 
 import { css } from '@emotion/core'
 import { BeatLoader } from 'react-spinners'
@@ -18,7 +18,7 @@ const override = css`
   left: 40%;
 `
 
-const CreatePost = props => {
+export const CreatePost = props => {
   const [{ auth }] = useStore()
   let { isShowing, toggle } = useModal()
   const [isOpen, setIsOpen] = useState(false)
@@ -36,16 +36,15 @@ const CreatePost = props => {
     const { name, value } = e.target
     setPostContent({ ...postContent, [name]: value })
   }
-
   let handleSubmitForm = (e, createPost) => {
     e.preventDefault()
     createPost().then(async ({ data }) => {
-      setPostContent({ status: '' })
+      setPostContent({ ...postContent, status: '', image: '' })
     })
   }
 
   const handleImageUpload = e => {
-    setPostContent({ image: e.target.files[0] })
+    setPostContent({ ...postContent, image: e.target.files[0] })
   }
   return (
     <Mutation
@@ -104,4 +103,3 @@ const CreatePost = props => {
     </Mutation>
   )
 }
-export default CreatePost

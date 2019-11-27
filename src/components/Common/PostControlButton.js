@@ -8,6 +8,11 @@ export default function PostControlButton() {
         <div className="ripple-container"></div>
       </a>
 
+      <a href="#1" className="btn btn-control likes">
+        <img src="img/heart-icon.png" alt="" />
+        <div className="ripple-container"></div>
+      </a>
+
       <a href="#1" className="btn btn-control ratings">
         <img src="img/star-icon2.png" alt="" />
       </a>
