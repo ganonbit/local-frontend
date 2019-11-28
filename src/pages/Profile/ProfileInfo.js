@@ -1,20 +1,20 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import styled from 'styled-components';
-import { Link, generatePath } from 'react-router-dom';
-import { useSubscription } from '@apollo/react-hooks';
+import React from "react";
+import PropTypes from "prop-types";
+import styled from "styled-components";
+import { Link, generatePath } from "react-router-dom";
+import { useSubscription } from "@apollo/react-hooks";
 
-import { IS_USER_ONLINE_SUBSCRIPTION } from 'graphql/user';
+import { IS_USER_ONLINE_SUBSCRIPTION } from "graphql/user";
 
-import { H1 } from 'components/Text';
-import { Spacing } from 'components/Layout';
-import Follow from 'components/Follow';
-import ProfileImageUpload from './ProfileImageUpload';
-import ProfileCoverUpload from './ProfileCoverUpload';
+import { H1 } from "components/Text";
+import { Spacing } from "components/Layout";
+import Follow from "components/Follow";
+import ProfileImageUpload from "./ProfileImageUpload";
+import ProfileCoverUpload from "./ProfileCoverUpload";
 
-import { useStore } from 'store';
+import { useStore } from "store";
 
-import * as Routes from 'routes';
+import * as Routes from "routes";
 
 const Root = styled.div`
   display: flex;
@@ -92,7 +92,7 @@ const ProfileInfo = ({ user }) => {
   const [{ auth }] = useStore();
 
   const { data, loading } = useSubscription(IS_USER_ONLINE_SUBSCRIPTION, {
-    variables: { authUserId: auth.user.id, userId: user.id },
+    variables: { authUserId: auth.user.id, userId: user.id }
   });
 
   let isUserOnline = user.isOnline;
@@ -117,7 +117,9 @@ const ProfileInfo = ({ user }) => {
         />
 
         <Name>
-          <H1>{user.firstName} &nbsp; {user.lastName}</H1>
+          <H1>
+            {user.firstName} &nbsp; {user.lastName}
+          </H1>
 
           {isUserOnline && auth.user.id !== user.id && <Online />}
 
@@ -150,7 +152,7 @@ const ProfileInfo = ({ user }) => {
 };
 
 ProfileInfo.propTypes = {
-  user: PropTypes.object.isRequired,
+  user: PropTypes.object.isRequired
 };
 
 export default ProfileInfo;

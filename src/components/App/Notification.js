@@ -1,21 +1,21 @@
-import React, { useEffect } from 'react';
-import PropTypes from 'prop-types';
-import { generatePath } from 'react-router-dom';
-import styled from 'styled-components';
-import { withApollo } from 'react-apollo';
+import React, { useEffect } from "react";
+import PropTypes from "prop-types";
+import { generatePath } from "react-router-dom";
+import styled from "styled-components";
+import { withApollo } from "react-apollo";
 
-import { A } from 'components/Text';
-import { Spacing } from 'components/Layout';
-import Avatar from 'components/Avatar';
+import { A } from "components/Text";
+import { Spacing } from "components/Layout";
+import Avatar from "components/Avatar";
 
-import { useClickOutside } from 'hooks/useClickOutside';
+import { useClickOutside } from "hooks/useClickOutside";
 
-import { GET_AUTH_USER } from 'graphql/user';
-import { UPDATE_NOTIFICATION_SEEN } from 'graphql/notification';
+import { GET_AUTH_USER } from "graphql/user";
+import { UPDATE_NOTIFICATION_SEEN } from "graphql/notification";
 
-import { useStore } from 'store';
+import { useStore } from "store";
 
-import * as Routes from 'routes';
+import * as Routes from "routes";
 
 const NotificationItem = styled.div`
   display: flex;
@@ -81,10 +81,10 @@ const Notification = ({ notification, close, client }) => {
           mutation: UPDATE_NOTIFICATION_SEEN,
           variables: {
             input: {
-              userId: auth.user.id,
-            },
+              userId: auth.user.id
+            }
           },
-          refetchQueries: () => [{ query: GET_AUTH_USER }],
+          refetchQueries: () => [{ query: GET_AUTH_USER }]
         });
       } catch (err) {}
     };
@@ -96,7 +96,7 @@ const Notification = ({ notification, close, client }) => {
     <NotificationItem ref={ref}>
       <A
         to={generatePath(Routes.USER_PROFILE, {
-          username: notification.author.username,
+          username: notification.author.username
         })}
       >
         <LeftSide>
@@ -104,7 +104,10 @@ const Notification = ({ notification, close, client }) => {
 
           <Spacing left="xs" />
 
-          <Name>{notification.author.firstName} &nbsp; {notification.author.lastName}</Name>
+          <Name>
+            {notification.author.firstName} &nbsp;{" "}
+            {notification.author.lastName}
+          </Name>
         </LeftSide>
       </A>
 
@@ -139,7 +142,7 @@ const Notification = ({ notification, close, client }) => {
 
 Notification.propTypes = {
   client: PropTypes.object.isRequired,
-  close: PropTypes.func,
+  close: PropTypes.func
 };
 
 export default withApollo(Notification);

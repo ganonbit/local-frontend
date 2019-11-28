@@ -1,7 +1,7 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import { CameraIcon } from '../icons/index'
-import OverlayTriggers from '../Common/ToolTip'
+import React from "react";
+import { Link } from "react-router-dom";
+import { CameraIcon } from "../icons/index";
+import OverlayTriggers from "../Common/ToolTip";
 
 const Footer = ({ toggle }) => (
   <div className="add-options-message">
@@ -15,5 +15,5 @@ const Footer = ({ toggle }) => (
       Preview
     </button>
   </div>
-)
-export default Footer
+);
+export default Footer;

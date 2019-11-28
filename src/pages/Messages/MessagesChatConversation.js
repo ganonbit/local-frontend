@@ -1,19 +1,19 @@
-import React, { useState, useRef, useEffect } from 'react';
-import styled from 'styled-components';
-import PropTypes from 'prop-types';
-import { useMutation } from '@apollo/react-hooks';
+import React, { useState, useRef, useEffect } from "react";
+import styled from "styled-components";
+import PropTypes from "prop-types";
+import { useMutation } from "@apollo/react-hooks";
 
-import { Button, Textarea } from 'components/Form';
-import { SendIcon } from 'components/icons';
-import Avatar from 'components/Avatar';
-import { Spacing } from 'components/Layout';
+import { Button, Textarea } from "components/Form";
+import { SendIcon } from "components/icons";
+import Avatar from "components/Avatar";
+import { Spacing } from "components/Layout";
 
-import { CREATE_MESSAGE } from 'graphql/messages';
-import { GET_CONVERSATIONS } from 'graphql/user';
+import { CREATE_MESSAGE } from "graphql/messages";
+import { GET_CONVERSATIONS } from "graphql/user";
 
-import { currentDate } from 'utils/date';
+import { currentDate } from "utils/date";
 
-import * as Routes from 'routes';
+import * as Routes from "routes";
 
 const Root = styled.div`
   padding: 0 ${p => p.theme.spacing.sm};
@@ -62,7 +62,7 @@ const MessageDate = styled.span`
 const MessageWrapper = styled.div`
   display: flex;
   position: relative;
-  justify-content: ${p => p.userMessage && 'flex-end'};
+  justify-content: ${p => p.userMessage && "flex-end"};
   margin: ${p => p.theme.spacing.md} 0;
 
   &:hover ${MessageDate} {
@@ -114,11 +114,11 @@ const MessagesChatConversation = ({
   authUser,
   chatUser,
   data,
-  match,
+  match
 }) => {
   const bottomRef = useRef(null);
 
-  const [messageText, setMessageText] = useState('');
+  const [messageText, setMessageText] = useState("");
 
   const [createMessage] = useMutation(CREATE_MESSAGE);
 
@@ -133,25 +133,25 @@ const MessagesChatConversation = ({
 
     if (!messageText) return;
 
-    setMessageText('');
+    setMessageText("");
     createMessage({
       variables: {
         input: {
           sender: authUser.id,
           receiver: chatUser ? chatUser.id : null,
-          message: messageText,
-        },
+          message: messageText
+        }
       },
       refetchQueries: ({ data }) => {
         if (data && data.createMessage && data.createMessage.isFirstMessage) {
           return [
             {
               query: GET_CONVERSATIONS,
-              variables: { authUserId: authUser.id },
-            },
+              variables: { authUserId: authUser.id }
+            }
           ];
         }
-      },
+      }
     });
   };
 
@@ -211,7 +211,7 @@ MessagesChatConversation.propTypes = {
   authUser: PropTypes.object.isRequired,
   chatUser: PropTypes.object,
   data: PropTypes.any,
-  match: PropTypes.object.isRequired,
+  match: PropTypes.object.isRequired
 };
 
 export default MessagesChatConversation;

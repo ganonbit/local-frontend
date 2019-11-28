@@ -1,8 +1,8 @@
-import React from 'react';
-import styled from 'styled-components';
-import PropTypes from 'prop-types';
+import React from "react";
+import styled from "styled-components";
+import PropTypes from "prop-types";
 
-import Notification from '../Notification';
+import Notification from "../Notification";
 
 const Root = styled.div`
   position: absolute;
@@ -31,7 +31,7 @@ const Empty = styled.div`
 const HeaderNotificationDropDown = ({
   notificationRef,
   dropdownData,
-  closeDropDown,
+  closeDropDown
 }) => {
   return (
     <Root ref={notificationRef}>
@@ -53,7 +53,7 @@ const HeaderNotificationDropDown = ({
 HeaderNotificationDropDown.propTypes = {
   notificationRef: PropTypes.object,
   dropdownData: PropTypes.array,
-  closeDropDown: PropTypes.func,
+  closeDropDown: PropTypes.func
 };
 
 export default HeaderNotificationDropDown;

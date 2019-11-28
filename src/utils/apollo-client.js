@@ -1,21 +1,21 @@
-import { ApolloClient } from 'apollo-client';
-import { InMemoryCache } from 'apollo-cache-inmemory';
-import { onError } from 'apollo-link-error';
-import { ApolloLink, Observable, split } from 'apollo-link';
-import { createUploadLink } from 'apollo-upload-client';
-import { getMainDefinition } from 'apollo-utilities';
-import { WebSocketLink } from 'apollo-link-ws';
+import { ApolloClient } from "apollo-client";
+import { InMemoryCache } from "apollo-cache-inmemory";
+import { onError } from "apollo-link-error";
+import { ApolloLink, Observable, split } from "apollo-link";
+import { createUploadLink } from "apollo-upload-client";
+import { getMainDefinition } from "apollo-utilities";
+import { WebSocketLink } from "apollo-link-ws";
 
 /**
  * Creates a Apollo Link, that adds authentication token to request
  */
 const createAuthLink = () => {
   const request = operation => {
-    const token = localStorage.getItem('token');
+    const token = localStorage.getItem("token");
     operation.setContext({
       headers: {
-        authorization: token,
-      },
+        authorization: token
+      }
     });
   };
 
@@ -29,7 +29,7 @@ const createAuthLink = () => {
             handle = forward(operation).subscribe({
               next: observer.next.bind(observer),
               error: observer.error.bind(observer),
-              complete: observer.complete.bind(observer),
+              complete: observer.complete.bind(observer)
             });
           })
           .catch(observer.error.bind(observer));
@@ -47,10 +47,10 @@ const createAuthLink = () => {
 const handleErrors = () => {
   return onError(({ graphQLErrors, networkError }) => {
     if (graphQLErrors) {
-      console.log('graphQLErrors', graphQLErrors);
+      console.log("graphQLErrors", graphQLErrors);
     }
     if (networkError) {
-      console.log('networkError', networkError);
+      console.log("networkError", networkError);
     }
   });
 };
@@ -69,16 +69,16 @@ export const createApolloClient = (apiUrl, websocketApiUrl) => {
   const uploadLink = createUploadLink({ uri: apiUrl }); // Upload link also creates an HTTP link
 
   // Create WebSocket link
-  const authToken = localStorage.getItem('token');
+  const authToken = localStorage.getItem("token");
   const wsLink = new WebSocketLink({
     uri: websocketApiUrl,
     options: {
       timeout: 60000,
       reconnect: true,
       connectionParams: {
-        authorization: authToken,
-      },
-    },
+        authorization: authToken
+      }
+    }
   });
 
   // Temporary fix for early websocket closure resulting in websocket connections not being instantiated
@@ -91,7 +91,7 @@ export const createApolloClient = (apiUrl, websocketApiUrl) => {
   const terminatingLink = split(
     ({ query }) => {
       const { kind, operation } = getMainDefinition(query);
-      return kind === 'OperationDefinition' && operation === 'subscription';
+      return kind === "OperationDefinition" && operation === "subscription";
     },
     wsLink,
     uploadLink
@@ -99,6 +99,6 @@ export const createApolloClient = (apiUrl, websocketApiUrl) => {
 
   return new ApolloClient({
     link: ApolloLink.from([errorLink, authLink, terminatingLink]),
-    cache,
+    cache
   });
 };

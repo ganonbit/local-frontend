@@ -1,31 +1,31 @@
-import React, { useEffect, useState, useRef } from 'react';
-import PropTypes from 'prop-types';
-import { withRouter } from 'react-router-dom';
-import { Switch, Route } from 'react-router-dom';
-import styled from 'styled-components';
+import React, { useEffect, useState, useRef } from "react";
+import PropTypes from "prop-types";
+import { withRouter } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
+import styled from "styled-components";
 
-import Header from 'components/App/Header';
-import NotFound from 'components/NotFound';
-import SideBar from './SideBar';
-import UserSuggestions from './UserSuggestions';
+import Header from "components/App/Header";
+import NotFound from "components/NotFound";
+import SideBar from "./SideBar";
+import UserSuggestions from "./UserSuggestions";
 
-import Home from 'pages/Home';
-import Profile from 'pages/Profile';
-import Explore from 'pages/Explore';
-import People from 'pages/People';
-import Notifications from 'pages/Notifications';
-import Post from 'pages/Post';
-import Messages from 'pages/Messages';
+import Home from "pages/Home";
+import Profile from "pages/Profile";
+import Explore from "pages/Explore";
+import People from "pages/People";
+import Notifications from "pages/Notifications";
+import Post from "pages/Post";
+import Messages from "pages/Messages";
 
-import { useWindowSize } from 'hooks/useWindowSize';
-import { useClickOutside } from 'hooks/useClickOutside';
+import { useWindowSize } from "hooks/useWindowSize";
+import { useClickOutside } from "hooks/useClickOutside";
 
-import * as Routes from 'routes';
+import * as Routes from "routes";
 
-import theme from 'theme';
+import theme from "theme";
 
-import { useStore } from 'store';
-import { SET_AUTH_USER } from 'store/auth';
+import { useStore } from "store";
+import { SET_AUTH_USER } from "store/auth";
 
 const Root = styled.div`
   display: flex;
@@ -53,7 +53,7 @@ const AppLayout = ({ location, authUser }) => {
   const isDesktop = windowSize.width >= parseInt(theme.screen.md, 10);
   const [isSideBarOpen, setIsSidebarOpen] = useState(isDesktop);
 
-  const sideBarRef = useRef('');
+  const sideBarRef = useRef("");
 
   useEffect(() => {
     dispatch({ type: SET_AUTH_USER, payload: authUser });
@@ -112,7 +112,7 @@ const AppLayout = ({ location, authUser }) => {
 
 AppLayout.propTypes = {
   location: PropTypes.object.isRequired,
-  authUser: PropTypes.object.isRequired,
+  authUser: PropTypes.object.isRequired
 };
 
 export default withRouter(AppLayout);

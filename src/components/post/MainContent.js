@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 
 export default function MainContent(props) {
   return (
@@ -8,5 +8,5 @@ export default function MainContent(props) {
         <img className="postImage" alt="postImage" src={props.image} />
       </div>
     </div>
-  )
+  );
 }

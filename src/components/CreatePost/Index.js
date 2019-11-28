@@ -1,51 +1,51 @@
-import React, { useState } from 'react'
-import UploadImage from '../Modals/NewsFeed/UploadImage'
-import ChooseImage from '../Modals/NewsFeed/ChooseImage'
-import useModal from '../../hooks/useModel'
-import { useStore } from '../../store/index'
-import Header from './PostHeader'
-import PostForm from './PostForm'
+import React, { useState } from "react";
+import UploadImage from "../Modals/NewsFeed/UploadImage";
+import ChooseImage from "../Modals/NewsFeed/ChooseImage";
+import useModal from "../../hooks/useModel";
+import { useStore } from "../../store/index";
+import Header from "./PostHeader";
+import PostForm from "./PostForm";
 
-import { Mutation } from 'react-apollo'
-import { CREATE_POST } from '../../graphql/post'
+import { Mutation } from "react-apollo";
+import { CREATE_POST } from "../../graphql/post";
 
-import { css } from '@emotion/core'
-import { BeatLoader } from 'react-spinners'
+import { css } from "@emotion/core";
+import { BeatLoader } from "react-spinners";
 
 const override = css`
   position: absolute;
   top: 50%;
   left: 40%;
-`
+`;
 
 export const CreatePost = props => {
-  const [{ auth }] = useStore()
-  let { isShowing, toggle } = useModal()
-  const [isOpen, setIsOpen] = useState(false)
+  const [{ auth }] = useStore();
+  let { isShowing, toggle } = useModal();
+  const [isOpen, setIsOpen] = useState(false);
   const [postContent, setPostContent] = useState({
-    status: '',
-    image: ''
-  })
-  const { status, image } = postContent
+    status: "",
+    image: ""
+  });
+  const { status, image } = postContent;
 
   let toggleModel = () => {
-    setIsOpen(!isOpen)
-  }
+    setIsOpen(!isOpen);
+  };
 
   let handleStatusChange = e => {
-    const { name, value } = e.target
-    setPostContent({ ...postContent, [name]: value })
-  }
+    const { name, value } = e.target;
+    setPostContent({ ...postContent, [name]: value });
+  };
   let handleSubmitForm = (e, createPost) => {
-    e.preventDefault()
+    e.preventDefault();
     createPost().then(async ({ data }) => {
-      setPostContent({ ...postContent, status: '', image: '' })
-    })
-  }
+      setPostContent({ ...postContent, status: "", image: "" });
+    });
+  };
 
   const handleImageUpload = e => {
-    setPostContent({ ...postContent, image: e.target.files[0] })
-  }
+    setPostContent({ ...postContent, image: e.target.files[0] });
+  };
   return (
     <Mutation
       mutation={CREATE_POST}
@@ -74,19 +74,20 @@ export const CreatePost = props => {
 
               <Header />
 
-              <div className="tab-content" style={{ position: 'relative' }}>
+              <div className="tab-content" style={{ position: "relative" }}>
                 <BeatLoader
                   css={override}
-                  sizeUnit={'px'}
+                  sizeUnit={"px"}
                   size={20}
-                  color={'#123abc'}
+                  color={"#123abc"}
                   loading={loading}
                 />
                 <div
                   className="tab-pane active"
                   id="home-1"
                   role="tabpanel"
-                  aria-expanded="true">
+                  aria-expanded="true"
+                >
                   <PostForm
                     status={status}
                     toggle={toggle}
@@ -98,8 +99,8 @@ export const CreatePost = props => {
               </div>
             </div>
           </div>
-        )
+        );
       }}
     </Mutation>
-  )
-}
+  );
+};

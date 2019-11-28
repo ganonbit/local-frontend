@@ -20,8 +20,8 @@
 // export { NotFoundIcon } from './NotFoundIcon'
 // export { EnvelopeIcon } from './EnvelopeIcon'
 // export { EnvelopeOpenIcon } from './EnvelopeOpenIcon'
-export { SendIcon } from './SendIcon'
+export { SendIcon } from "./SendIcon";
 // export { PencilIcon } from './PencilIcon'
-export { CameraIcon } from './CameraIcon'
-export { LocationIcon } from './LocationIcon'
-export { TagIcon } from './TagIcon'
+export { CameraIcon } from "./CameraIcon";
+export { LocationIcon } from "./LocationIcon";
+export { TagIcon } from "./TagIcon";

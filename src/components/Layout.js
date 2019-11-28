@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 // prettier-ignore
 
@@ -77,6 +77,6 @@ export const Overlay = styled.div`
     0,
     0,
     0,
-    ${p => (p.transparency ? p.transparency : '0.8')}
+    ${p => (p.transparency ? p.transparency : "0.8")}
   );
 `;

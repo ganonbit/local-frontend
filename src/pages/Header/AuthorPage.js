@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 
 export default class AuthorPage extends Component {
   render() {
@@ -132,7 +132,7 @@ export default class AuthorPage extends Component {
         </div>
         <a href="02-ProfilePage.html" className="author-name fn my-auto">
           <div className="author-title author-title-custom">
-            James Spiegel{' '}
+            James Spiegel{" "}
             {/* <svg
                             className="olymp-dropdown-arrow-icon"
                             xlinkHref="svg-icons/sprites/icons.svg#olymp-dropdown-arrow-icon"
@@ -143,6 +143,6 @@ export default class AuthorPage extends Component {
           </span>
         </a>
       </div>
-    )
+    );
   }
 }

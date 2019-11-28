@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components';
+import styled, { keyframes } from "styled-components";
 
 // prettier-ignore
 
@@ -62,7 +62,7 @@ export const LoadingDots = styled.div`
   &::after {
     display: block;
     animation: ellipsis 1s infinite;
-    content: '.';
+    content: ".";
     text-align: center;
     color: ${p =>
       p.color ? p.theme.colors[p.color] : p.theme.colors.text.secondary};
@@ -71,13 +71,13 @@ export const LoadingDots = styled.div`
 
   @keyframes ellipsis {
     0% {
-      content: '.';
+      content: ".";
     }
     33% {
-      content: '..';
+      content: "..";
     }
     66% {
-      content: '...';
+      content: "...";
     }
   }
 `;

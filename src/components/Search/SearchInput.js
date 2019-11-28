@@ -1,8 +1,8 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import styled from 'styled-components';
+import React from "react";
+import PropTypes from "prop-types";
+import styled from "styled-components";
 
-import { SearchIcon } from 'components/icons';
+import { SearchIcon } from "components/icons";
 
 const Root = styled.div`
   width: 100%;
@@ -51,7 +51,7 @@ const SearchInput = ({
   placeholder,
   hideIcon,
   children,
-  autoFocus,
+  autoFocus
 }) => {
   return (
     <Root>
@@ -87,7 +87,7 @@ SearchInput.propTypes = {
   placeholder: PropTypes.string,
   hideIcon: PropTypes.bool,
   children: PropTypes.node,
-  autoFocus: PropTypes.bool,
+  autoFocus: PropTypes.bool
 };
 
 export default SearchInput;

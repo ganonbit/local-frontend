@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
 
-import CommentsHeader from './CommentsHeader'
-import CommentsFooter from './CommentsFooter'
+import CommentsHeader from "./CommentsHeader";
+import CommentsFooter from "./CommentsFooter";
 export default function Comments(props) {
-  const [numOfComments, setNumOfComments] = useState(2)
+  const [numOfComments, setNumOfComments] = useState(2);
   return (
     <>
       <ul className="comments-list">
@@ -15,7 +15,7 @@ export default function Comments(props) {
                   <p>{comment.comment}</p>
                   <CommentsFooter />
                 </li>
-              )
+              );
             })
           : null}
         {numOfComments < props.comments.length ? (
@@ -23,12 +23,13 @@ export default function Comments(props) {
             href="#1"
             className="more-comments more-comments"
             onClick={() => {
-              setNumOfComments(numOfComments + 2)
-            }}>
+              setNumOfComments(numOfComments + 2);
+            }}
+          >
             View more comments <span>+</span>
           </div>
         ) : null}
       </ul>
     </>
-  )
+  );
 }

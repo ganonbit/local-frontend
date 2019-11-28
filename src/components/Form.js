@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { get } from 'lodash';
+import styled from "styled-components";
+import { get } from "lodash";
 
 // prettier-ignore
 

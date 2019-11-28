@@ -1,8 +1,8 @@
-import React from 'react'
-import { Tooltip } from 'react-bootstrap'
-import { OverlayTrigger } from 'react-bootstrap'
+import React from "react";
+import { Tooltip } from "react-bootstrap";
+import { OverlayTrigger } from "react-bootstrap";
 
-const ToolTip = props => <Tooltip>{props}</Tooltip>
+const ToolTip = props => <Tooltip>{props}</Tooltip>;
 
 const OverlayTriggers = props => {
   return (
@@ -10,10 +10,11 @@ const OverlayTriggers = props => {
       trigger="hover"
       placement={props.placement}
       delay={{ show: 0, hide: 1 }}
-      overlay={ToolTip(props.toolTipText)}>
+      overlay={ToolTip(props.toolTipText)}
+    >
       {props.children}
     </OverlayTrigger>
-  )
-}
+  );
+};
 
-export default OverlayTriggers
+export default OverlayTriggers;

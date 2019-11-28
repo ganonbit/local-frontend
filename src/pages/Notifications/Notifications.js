@@ -1,20 +1,20 @@
-import React from 'react';
-import styled from 'styled-components';
-import { Query } from 'react-apollo';
+import React from "react";
+import styled from "styled-components";
+import { Query } from "react-apollo";
 
-import { Container, Content } from 'components/Layout';
-import { Loading } from 'components/Loading';
-import Skeleton from 'components/Skeleton';
-import Notification from 'components/App/Notification';
-import InfiniteScroll from 'components/InfiniteScroll';
-import Empty from 'components/Empty';
-import Head from 'components/Head';
+import { Container, Content } from "components/Layout";
+import { Loading } from "components/Loading";
+import Skeleton from "components/Skeleton";
+import Notification from "components/App/Notification";
+import InfiniteScroll from "components/InfiniteScroll";
+import Empty from "components/Empty";
+import Head from "components/Head";
 
-import { useStore } from 'store';
+import { useStore } from "store";
 
-import { GET_USER_NOTIFICATION } from 'graphql/notification';
+import { GET_USER_NOTIFICATION } from "graphql/notification";
 
-import { NOTIFICATIONS_PAGE_NOTIFICATION_LIMIT } from 'constants/DataLimit';
+import { NOTIFICATIONS_PAGE_NOTIFICATION_LIMIT } from "constants/DataLimit";
 
 const Root = styled(Container)`
   margin-top: ${p => p.theme.spacing.lg};
@@ -35,7 +35,7 @@ const Notifications = () => {
   const variables = {
     userId: auth.user.id,
     skip: 0,
-    limit: NOTIFICATIONS_PAGE_NOTIFICATION_LIMIT,
+    limit: NOTIFICATIONS_PAGE_NOTIFICATION_LIMIT
   };
 
   return (

@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 export const Loading = () => (
   <div id="hellopreloader">
     <div className="preloader">
@@ -6,4 +6,4 @@ export const Loading = () => (
       <div className="text">Loading ...</div>
     </div>
   </div>
-)
+);

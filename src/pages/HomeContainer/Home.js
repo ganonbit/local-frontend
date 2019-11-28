@@ -1,9 +1,9 @@
-import React, { Component } from 'react'
-import RecomendedPages from 'components/Widget/RecomendedPages'
-import FriendsSuggestions from 'components/Widget/FriendsSuggestions'
-import ActivityFeed from 'components/Widget/ActivityFeed'
-import { CreatePost } from '../../components/CreatePost/Index'
-import Post from '../../components/post/index'
+import React, { Component } from "react";
+import RecomendedPages from "components/Widget/RecomendedPages";
+import FriendsSuggestions from "components/Widget/FriendsSuggestions";
+import ActivityFeed from "components/Widget/ActivityFeed";
+import { CreatePost } from "../../components/CreatePost/Index";
+import Post from "../../components/post/index";
 
 export default class Home extends Component {
   render() {
@@ -27,6 +27,6 @@ export default class Home extends Component {
           </aside>
         </div>
       </div>
-    )
+    );
   }
 }

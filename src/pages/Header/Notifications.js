@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBell } from '@fortawesome/free-solid-svg-icons'
+import React, { Component } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBell } from "@fortawesome/free-solid-svg-icons";
 export default class Notifications extends Component {
   render() {
     return (
@@ -26,8 +26,8 @@ export default class Notifications extends Component {
                     <div>
                       <a href="#1" className="h6 notification-friend">
                         Mathilda Brinker
-                      </a>{' '}
-                      commented on your new{' '}
+                      </a>{" "}
+                      commented on your new{" "}
                       <a href="#1" className="notification-link">
                         profile status
                       </a>
@@ -35,7 +35,8 @@ export default class Notifications extends Component {
                     <span className="notification-date">
                       <time
                         className="entry-date updated"
-                        dateTime="2004-07-24T18:18">
+                        dateTime="2004-07-24T18:18"
+                      >
                         4 hours ago
                       </time>
                     </span>
@@ -65,11 +66,11 @@ export default class Notifications extends Component {
                   </div>
                   <div className="notification-event">
                     <div>
-                      You and{' '}
+                      You and{" "}
                       <a href="#1" className="h6 notification-friend">
                         Nicholas Grissom
-                      </a>{' '}
-                      just became friends. Write on{' '}
+                      </a>{" "}
+                      just became friends. Write on{" "}
                       <a href="#1" className="notification-link">
                         his wall
                       </a>
@@ -78,7 +79,8 @@ export default class Notifications extends Component {
                     <span className="notification-date">
                       <time
                         className="entry-date updated"
-                        dateTime="2004-07-24T18:18">
+                        dateTime="2004-07-24T18:18"
+                      >
                         9 hours ago
                       </time>
                     </span>
@@ -110,8 +112,8 @@ export default class Notifications extends Component {
                     <div>
                       <a href="#1" className="h6 notification-friend">
                         Sarah Hetfield
-                      </a>{' '}
-                      commented on your{' '}
+                      </a>{" "}
+                      commented on your{" "}
                       <a href="#1" className="notification-link">
                         photo
                       </a>
@@ -120,7 +122,8 @@ export default class Notifications extends Component {
                     <span className="notification-date">
                       <time
                         className="entry-date updated"
-                        dateTime="2004-07-24T18:18">
+                        dateTime="2004-07-24T18:18"
+                      >
                         Yesterday at 5:32am
                       </time>
                     </span>
@@ -141,6 +144,6 @@ export default class Notifications extends Component {
           </div>
         </div>
       </div>
-    )
+    );
   }
 }

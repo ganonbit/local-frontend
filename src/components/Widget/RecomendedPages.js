@@ -1,6 +1,6 @@
-import React from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faEllipsisV, faStar } from '@fortawesome/free-solid-svg-icons'
+import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEllipsisV, faStar } from "@fortawesome/free-solid-svg-icons";
 export default function RecomendedPages() {
   return (
     <div className="ui-block">
@@ -25,7 +25,8 @@ export default function RecomendedPages() {
             className="notification-icon"
             data-toggle="tooltip"
             data-placement="top"
-            data-original-title="ADD TO YOUR FAVS">
+            data-original-title="ADD TO YOUR FAVS"
+          >
             <a href="#1">
               <FontAwesomeIcon icon={faStar} color="white" />
             </a>
@@ -46,7 +47,8 @@ export default function RecomendedPages() {
             className="notification-icon"
             data-toggle="tooltip"
             data-placement="top"
-            data-original-title="ADD TO YOUR FAVS">
+            data-original-title="ADD TO YOUR FAVS"
+          >
             <a href="#1">
               <FontAwesomeIcon icon={faStar} color="white" />
             </a>
@@ -67,7 +69,8 @@ export default function RecomendedPages() {
             className="notification-icon"
             data-toggle="tooltip"
             data-placement="top"
-            data-original-title="ADD TO YOUR FAVS">
+            data-original-title="ADD TO YOUR FAVS"
+          >
             <a href="#1">
               <FontAwesomeIcon icon={faStar} color="white" />
             </a>
@@ -88,7 +91,8 @@ export default function RecomendedPages() {
             className="notification-icon"
             data-toggle="tooltip"
             data-placement="top"
-            data-original-title="ADD TO YOUR FAVS">
+            data-original-title="ADD TO YOUR FAVS"
+          >
             <a href="#1">
               <FontAwesomeIcon icon={faStar} color="white" />
             </a>
@@ -109,7 +113,8 @@ export default function RecomendedPages() {
             className="notification-icon"
             data-toggle="tooltip"
             data-placement="top"
-            data-original-title="ADD TO YOUR FAVS">
+            data-original-title="ADD TO YOUR FAVS"
+          >
             <a href="#1">
               <FontAwesomeIcon icon={faStar} color="white" />
             </a>
@@ -130,7 +135,8 @@ export default function RecomendedPages() {
             className="notification-icon"
             data-toggle="tooltip"
             data-placement="top"
-            data-original-title="ADD TO YOUR FAVS">
+            data-original-title="ADD TO YOUR FAVS"
+          >
             <a href="#1">
               <FontAwesomeIcon icon={faStar} color="white" />
             </a>
@@ -138,5 +144,5 @@ export default function RecomendedPages() {
         </li>
       </ul>
     </div>
-  )
+  );
 }

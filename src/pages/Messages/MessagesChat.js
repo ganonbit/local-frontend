@@ -1,20 +1,20 @@
-import React, { useEffect, useCallback } from 'react';
-import PropTypes from 'prop-types';
-import styled from 'styled-components';
-import { useQuery, useApolloClient } from '@apollo/react-hooks';
+import React, { useEffect, useCallback } from "react";
+import PropTypes from "prop-types";
+import styled from "styled-components";
+import { useQuery, useApolloClient } from "@apollo/react-hooks";
 
-import { LoadingDots } from 'components/Loading';
-import MessagesChatConversation from './MessagesChatConversation';
-import MessagesChatHeading from './MessagesChatHeading';
+import { LoadingDots } from "components/Loading";
+import MessagesChatConversation from "./MessagesChatConversation";
+import MessagesChatHeading from "./MessagesChatHeading";
 
 import {
   GET_MESSAGES,
   GET_MESSAGES_SUBSCRIPTION,
-  UPDATE_MESSAGE_SEEN,
-} from 'graphql/messages';
-import { GET_USER, GET_CONVERSATIONS, GET_AUTH_USER } from 'graphql/user';
+  UPDATE_MESSAGE_SEEN
+} from "graphql/messages";
+import { GET_USER, GET_CONVERSATIONS, GET_AUTH_USER } from "graphql/user";
 
-import * as Routes from 'routes';
+import * as Routes from "routes";
 
 const Root = styled.div`
   width: 100%;
@@ -31,17 +31,17 @@ const MessagesChat = ({ match, authUser }) => {
 
   const { data, loading } = useQuery(GET_USER, {
     variables: { id: userId },
-    skip: userId === Routes.NEW_ID_VALUE,
+    skip: userId === Routes.NEW_ID_VALUE
   });
 
   const {
     subscribeToMore,
     data: messages,
-    loading: messagesLoading,
+    loading: messagesLoading
   } = useQuery(GET_MESSAGES, {
     variables: { authUserId: authUser.id, userId },
     skip: userId === Routes.NEW_ID_VALUE,
-    fetchPolicy: 'network-only',
+    fetchPolicy: "network-only"
   });
 
   const updateMessageSeen = useCallback(async () => {
@@ -51,16 +51,16 @@ const MessagesChat = ({ match, authUser }) => {
         variables: {
           input: {
             receiver: authUser.id,
-            sender: userId,
-          },
+            sender: userId
+          }
         },
         refetchQueries: () => [
           {
             query: GET_CONVERSATIONS,
-            variables: { authUserId: authUser.id },
+            variables: { authUserId: authUser.id }
           },
-          { query: GET_AUTH_USER },
-        ],
+          { query: GET_AUTH_USER }
+        ]
       });
     } catch (err) {}
   }, [authUser.id, client, userId]);
@@ -78,7 +78,7 @@ const MessagesChat = ({ match, authUser }) => {
         const mergedMessages = [...prev.getMessages, newMessage];
 
         return { getMessages: mergedMessages };
-      },
+      }
     });
 
     return () => {
@@ -122,7 +122,7 @@ const MessagesChat = ({ match, authUser }) => {
 
 MessagesChat.propTypes = {
   match: PropTypes.object.isRequired,
-  authUser: PropTypes.object.isRequired,
+  authUser: PropTypes.object.isRequired
 };
 
 export default MessagesChat;

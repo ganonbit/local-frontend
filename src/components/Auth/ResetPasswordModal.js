@@ -45,7 +45,7 @@ function ResetPassword(props) {
                       className="form-control"
                       placeholder=""
                       type="email"
-                    // value="james-spiegel@yourmail.com"
+                      // value="james-spiegel@yourmail.com"
                     />
                   </div>
                   <button

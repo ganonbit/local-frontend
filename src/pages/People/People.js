@@ -1,21 +1,21 @@
-import React, { Fragment } from 'react';
-import styled from 'styled-components';
+import React, { Fragment } from "react";
+import styled from "styled-components";
 
-import { Container } from 'components/Layout';
-import Skeleton from 'components/Skeleton';
-import { Loading } from 'components/Loading';
-import Empty from 'components/Empty';
-import InfiniteScroll from 'components/InfiniteScroll';
-import Head from 'components/Head';
-import PeopleCard from './PeopleCard';
+import { Container } from "components/Layout";
+import Skeleton from "components/Skeleton";
+import { Loading } from "components/Loading";
+import Empty from "components/Empty";
+import InfiniteScroll from "components/InfiniteScroll";
+import Head from "components/Head";
+import PeopleCard from "./PeopleCard";
 
-import { GET_USERS } from 'graphql/user';
+import { GET_USERS } from "graphql/user";
 
-import { PEOPLE_PAGE_USERS_LIMIT } from 'constants/DataLimit';
+import { PEOPLE_PAGE_USERS_LIMIT } from "constants/DataLimit";
 
-import { useStore } from 'store';
+import { useStore } from "store";
 
-import { Query } from 'react-apollo';
+import { Query } from "react-apollo";
 
 const Root = styled(Container)`
   margin-top: ${p => p.theme.spacing.lg};
@@ -42,7 +42,7 @@ const People = () => {
   const variables = {
     userId: auth.user.id,
     skip: 0,
-    limit: PEOPLE_PAGE_USERS_LIMIT,
+    limit: PEOPLE_PAGE_USERS_LIMIT
   };
 
   return (

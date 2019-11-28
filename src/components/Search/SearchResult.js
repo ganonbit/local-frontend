@@ -1,13 +1,13 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import styled from 'styled-components';
-import { generatePath } from 'react-router-dom';
+import React from "react";
+import PropTypes from "prop-types";
+import styled from "styled-components";
+import { generatePath } from "react-router-dom";
 
-import { Spacing } from 'components/Layout';
-import { A } from 'components/Text';
-import Avatar from 'components/Avatar';
+import { Spacing } from "components/Layout";
+import { A } from "components/Text";
+import Avatar from "components/Avatar";
 
-import * as Routes from 'routes';
+import * as Routes from "routes";
 
 const Root = styled.div`
   width: 100%;
@@ -78,7 +78,9 @@ const SearchResult = ({ users, forMessage }) => {
             <Avatar image={user.image} size={34} />
 
             <Spacing left="xs">
-              <Name>{user.firstName} &nbsp; {user.lastName}</Name>
+              <Name>
+                {user.firstName} &nbsp; {user.lastName}
+              </Name>
               <UserName>@{user.username}</UserName>
             </Spacing>
           </Item>
@@ -90,7 +92,7 @@ const SearchResult = ({ users, forMessage }) => {
 
 SearchResult.propTypes = {
   users: PropTypes.array.isRequired,
-  forMessage: PropTypes.bool,
+  forMessage: PropTypes.bool
 };
 
 export default SearchResult;

@@ -1,6 +1,6 @@
-import { useApolloClient } from 'react-apollo-hooks';
-import { CREATE_MESSAGE, DELETE_MESSAGE } from 'graphql/message';
-import { useStore } from 'store';
+import { useApolloClient } from "react-apollo-hooks";
+import { CREATE_MESSAGE, DELETE_MESSAGE } from "graphql/message";
+import { useStore } from "store";
 
 /**
  * React hook that Creates or Deletes a message after like, follow or comment
@@ -17,10 +17,10 @@ export const useMessages = () => {
     try {
       return await client.mutate({
         mutation,
-        variables: { input: { ...variables } },
+        variables: { input: { ...variables } }
       });
     } catch (error) {
-      console.error('Error while mutating a message', error);
+      console.error("Error while mutating a message", error);
     }
   };
 
@@ -34,29 +34,21 @@ export const useMessages = () => {
       content: String,
       image: String,
       imagePublicId: String
-
     });
   };
 
   /**
    * Removes a message
    */
-  const remove = ({ messageId }) =>
-    mutate(DELETE_MESSAGE, { id: messageId });
+  const remove = ({ messageId }) => mutate(DELETE_MESSAGE, { id: messageId });
 
   /**
    * Checks if user has already a message and based on that Creates or Deletes a message
    */
-  const toggle = ({
-    user,
-    content,
-    hasDone,
-  }) => {
-    const isNotified = user.messages.find(
-      n => hasDone === hasDone.id
-    );
+  const toggle = ({ user, content, hasDone }) => {
+    const isNotified = user.messages.find(n => hasDone === hasDone.id);
     const messageId = isNotified ? isNotified.id : null;
-    const operation = messageId ? 'delete' : 'create';
+    const operation = messageId ? "delete" : "create";
     const options = {
       create: {
         mutation: CREATE_MESSAGE,
@@ -65,13 +57,13 @@ export const useMessages = () => {
           userId: user.id,
           content: String,
           image: String,
-          imagePublicId: String,
-        },
+          imagePublicId: String
+        }
       },
       delete: {
         mutation: DELETE_MESSAGE,
-        variables: { id: messageId },
-      },
+        variables: { id: messageId }
+      }
     };
 
     return mutate(options[operation].mutation, options[operation].variables);

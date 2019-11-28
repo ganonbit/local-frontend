@@ -1,10 +1,10 @@
-import React from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faSmile,
   faAngry,
   faEllipsisV
-} from '@fortawesome/free-solid-svg-icons'
+} from "@fortawesome/free-solid-svg-icons";
 const FriendRequest = () => {
   return (
     <div className="control-icon more has-items">
@@ -89,11 +89,11 @@ const FriendRequest = () => {
                 <img src="img/avatar57-sm.jpg" alt="author" />
               </div>
               <div className="notification-event">
-                You and{' '}
+                You and{" "}
                 <a href="#1" className="h6 notification-friend">
                   Mary Jane Stark
-                </a>{' '}
-                just became friends. Write on{' '}
+                </a>{" "}
+                just became friends. Write on{" "}
                 <a href="#1" className="notification-link">
                   her wall
                 </a>
@@ -157,6 +157,6 @@ const FriendRequest = () => {
         </a>
       </div>
     </div>
-  )
-}
-export default FriendRequest
+  );
+};
+export default FriendRequest;

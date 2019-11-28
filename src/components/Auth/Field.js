@@ -52,27 +52,27 @@ const Field = props => {
       </div>
     </div>
   ) : (
-      <div
-        onBlur={() => handleBlur()}
-        onFocus={() => {
-          handleOnFocus();
-        }}
-        className={isFocused ? focused : notFocused}
-      >
-        <label className="control-label">{placeholder}</label>
-        <input
-          defaultValue={value}
-          autoComplete="off"
-          className="form-control"
-          placeholder=""
-          type={type}
-          onChange={handleChange}
-          value={value}
-          name={name}
-        />
-        {error && <span className="material-input-error">{error}</span>}
-      </div>
-    );
+    <div
+      onBlur={() => handleBlur()}
+      onFocus={() => {
+        handleOnFocus();
+      }}
+      className={isFocused ? focused : notFocused}
+    >
+      <label className="control-label">{placeholder}</label>
+      <input
+        defaultValue={value}
+        autoComplete="off"
+        className="form-control"
+        placeholder=""
+        type={type}
+        onChange={handleChange}
+        value={value}
+        name={name}
+      />
+      {error && <span className="material-input-error">{error}</span>}
+    </div>
+  );
 };
 
 export default Field;

@@ -1,15 +1,15 @@
-import React from 'react'
-import ListItem from './ListItem'
+import React from "react";
+import ListItem from "./ListItem";
 const SidebarMainContent = ({ onSetSidebarOpen }) => {
   const sidebarList = [
-    'Collapse Menu',
-    'Newsfeed',
-    'Fav Pages Feedback',
-    'Friend Groups',
-    'Community Badges',
-    'Account Stats',
-    'Manage Widgets'
-  ]
+    "Collapse Menu",
+    "Newsfeed",
+    "Fav Pages Feedback",
+    "Friend Groups",
+    "Community Badges",
+    "Account Stats",
+    "Manage Widgets"
+  ];
   return (
     <div className="fixed-sidebar-left sidebar--large" id="sidebar-left-1">
       <a href="02-ProfilePage.html" className="logo">
@@ -31,7 +31,7 @@ const SidebarMainContent = ({ onSetSidebarOpen }) => {
               onSetSidebarOpen={(open, activeSideClass) =>
                 onSetSidebarOpen(open, activeSideClass)
               }
-              sideBarOpenModel={title === 'Collapse Menu'}
+              sideBarOpenModel={title === "Collapse Menu"}
             />
           ))}
         </ul>
@@ -46,14 +46,16 @@ const SidebarMainContent = ({ onSetSidebarOpen }) => {
                   data-speed="1000"
                   data-refresh-interval="50"
                   data-to="76"
-                  data-from="0"></span>
+                  data-from="0"
+                ></span>
                 <span className="units">76%</span>
               </span>
             </div>
             <div className="skills-item-meter">
               <span
                 className="skills-item-meter-active bg-primary"
-                style={{ width: '76%' }}></span>
+                style={{ width: "76%" }}
+              ></span>
             </div>
           </div>
 
@@ -64,6 +66,6 @@ const SidebarMainContent = ({ onSetSidebarOpen }) => {
         </div>
       </div>
     </div>
-  )
-}
-export default SidebarMainContent
+  );
+};
+export default SidebarMainContent;

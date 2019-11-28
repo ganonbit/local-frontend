@@ -1,6 +1,6 @@
-import React from 'react'
-import { Modal, ModalBody } from 'react-bootstrap'
-import { SendIcon } from '../../icons/index'
+import React from "react";
+import { Modal, ModalBody } from "react-bootstrap";
+import { SendIcon } from "../../icons/index";
 
 const UploadImageModal = ({
   isShowing,
@@ -11,7 +11,8 @@ const UploadImageModal = ({
   <Modal
     show={isShowing}
     onHide={() => hide()}
-    dialogClassName="window-popup update-header-photo">
+    dialogClassName="window-popup update-header-photo"
+  >
     <Modal.Header closeButton>
       <h6 className="title">Update Header Photo</h6>
     </Modal.Header>
@@ -22,7 +23,8 @@ const UploadImageModal = ({
         tabindex="-1"
         role="dialog"
         aria-labelledby="update-header-photo"
-        aria-hidden="true">
+        aria-hidden="true"
+      >
         <div className="" role="document">
           <div className="modal-content">
             <div className="modal-body">
@@ -48,7 +50,8 @@ const UploadImageModal = ({
                 href="#1"
                 className="upload-photo-item"
                 data-toggle="modal"
-                data-target="#choose-from-my-photo">
+                data-target="#choose-from-my-photo"
+              >
                 <SendIcon
                   width="28"
                   color="grey[300]"
@@ -63,5 +66,5 @@ const UploadImageModal = ({
       </div>
     </ModalBody>
   </Modal>
-)
-export default UploadImageModal
+);
+export default UploadImageModal;

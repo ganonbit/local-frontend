@@ -1,5 +1,5 @@
-import React from 'react'
-import OverlayTriggers from '../Common/ToolTip'
+import React from "react";
+import OverlayTriggers from "../Common/ToolTip";
 
 const SidebarContent = ({ onSetSidebarOpen }) => {
   return (
@@ -18,7 +18,7 @@ const SidebarContent = ({ onSetSidebarOpen }) => {
                 <img
                   src="img/menu-img.png"
                   alt="OPEN MENU"
-                  onClick={() => onSetSidebarOpen(true, 'fixed-sidebar open')}
+                  onClick={() => onSetSidebarOpen(true, "fixed-sidebar open")}
                 />
               </OverlayTriggers>
             </a>
@@ -58,6 +58,6 @@ const SidebarContent = ({ onSetSidebarOpen }) => {
         </ul>
       </div>
     </div>
-  )
-}
-export default SidebarContent
+  );
+};
+export default SidebarContent;

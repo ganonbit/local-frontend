@@ -1,13 +1,13 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import styled from 'styled-components';
+import React from "react";
+import PropTypes from "prop-types";
+import styled from "styled-components";
 
-import { useStore } from 'store';
+import { useStore } from "store";
 
-import { HEADER_HEIGHT } from 'constants/Layout';
+import { HEADER_HEIGHT } from "constants/Layout";
 
-import MessagesUsers from './MessagesUsers';
-import MessagesChat from './MessagesChat';
+import MessagesUsers from "./MessagesUsers";
+import MessagesChat from "./MessagesChat";
 
 const Root = styled.div`
   background-color: ${p => p.theme.colors.white};
@@ -42,7 +42,7 @@ const Messages = ({ match }) => {
 };
 
 Messages.propTypes = {
-  match: PropTypes.object.isRequired,
+  match: PropTypes.object.isRequired
 };
 
 export default Messages;

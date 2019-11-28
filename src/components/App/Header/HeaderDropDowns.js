@@ -1,9 +1,9 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
-import HeaderUserDropDown from './HeaderUserDropDown';
-import HeaderNotificationDropDown from './HeaderNotificationDropDown';
-import HeaderMessageDropdown from './HeaderMessageDropdown';
+import HeaderUserDropDown from "./HeaderUserDropDown";
+import HeaderNotificationDropDown from "./HeaderNotificationDropDown";
+import HeaderMessageDropdown from "./HeaderMessageDropdown";
 
 /**
  * Component that renders DropDown's of Header
@@ -14,7 +14,7 @@ const HeaderDropDowns = ({
   userRef,
   dropdownOpen,
   dropdownData,
-  closeDropDown,
+  closeDropDown
 }) => {
   const DropDowns = {
     USER: <HeaderUserDropDown userRef={userRef} />,
@@ -30,7 +30,7 @@ const HeaderDropDowns = ({
         messageRef={messageRef}
         dropdownData={dropdownData}
       />
-    ),
+    )
   };
 
   return dropdownOpen ? DropDowns[dropdownOpen] : null;
@@ -42,7 +42,7 @@ HeaderDropDowns.propTypes = {
   userRef: PropTypes.object,
   dropdownOpen: PropTypes.string,
   dropdownData: PropTypes.array,
-  closeDropDown: PropTypes.func,
+  closeDropDown: PropTypes.func
 };
 
 export default HeaderDropDowns;

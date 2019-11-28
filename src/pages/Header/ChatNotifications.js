@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCommentAlt } from '@fortawesome/free-solid-svg-icons'
+import React, { Component } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCommentAlt } from "@fortawesome/free-solid-svg-icons";
 export default class ChatNotifications extends Component {
   render() {
     return (
@@ -32,7 +32,8 @@ export default class ChatNotifications extends Component {
                   <span className="notification-date">
                     <time
                       className="entry-date updated"
-                      dateTime="2004-07-24T18:18">
+                      dateTime="2004-07-24T18:18"
+                    >
                       4 hours ago
                     </time>
                   </span>
@@ -65,7 +66,8 @@ export default class ChatNotifications extends Component {
                   <span className="notification-date">
                     <time
                       className="entry-date updated"
-                      dateTime="2004-07-24T18:18">
+                      dateTime="2004-07-24T18:18"
+                    >
                       4 hours ago
                     </time>
                   </span>
@@ -99,7 +101,8 @@ export default class ChatNotifications extends Component {
                   <span className="notification-date">
                     <time
                       className="entry-date updated"
-                      dateTime="2004-07-24T18:18">
+                      dateTime="2004-07-24T18:18"
+                    >
                       Yesterday at 9:56pm
                     </time>
                   </span>
@@ -136,7 +139,8 @@ export default class ChatNotifications extends Component {
                   <span className="notification-date">
                     <time
                       className="entry-date updated"
-                      dateTime="2004-07-24T18:18">
+                      dateTime="2004-07-24T18:18"
+                    >
                       March 16th at 10:23am
                     </time>
                   </span>
@@ -162,6 +166,6 @@ export default class ChatNotifications extends Component {
           </a>
         </div>
       </div>
-    )
+    );
   }
 }

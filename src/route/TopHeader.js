@@ -1,10 +1,10 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 
-import AuthorPage from '../pages/Header/AuthorPage'
-import Notifications from '../pages/Header/Notifications'
-import '../assets/svg-icons/back-to-top.svg'
-import HeaderTitle from '../pages/Header/HeaderTitle'
-import SearchBar from '../pages/Header/SearchBar'
+import AuthorPage from "../pages/Header/AuthorPage";
+import Notifications from "../pages/Header/Notifications";
+import "../assets/svg-icons/back-to-top.svg";
+import HeaderTitle from "../pages/Header/HeaderTitle";
+import SearchBar from "../pages/Header/SearchBar";
 
 export default class TopHeader extends Component {
   render() {
@@ -26,6 +26,6 @@ export default class TopHeader extends Component {
                     <AuthorPage /> */}
         </div>
       </header>
-    )
+    );
   }
 }

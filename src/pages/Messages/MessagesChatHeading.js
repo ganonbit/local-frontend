@@ -1,17 +1,17 @@
-import React from 'react';
-import styled from 'styled-components';
-import PropTypes from 'prop-types';
-import { generatePath, withRouter, Link } from 'react-router-dom';
-import { useSubscription } from '@apollo/react-hooks';
+import React from "react";
+import styled from "styled-components";
+import PropTypes from "prop-types";
+import { generatePath, withRouter, Link } from "react-router-dom";
+import { useSubscription } from "@apollo/react-hooks";
 
-import Search from 'components/Search';
-import Avatar from 'components/Avatar';
+import Search from "components/Search";
+import Avatar from "components/Avatar";
 
-import { IS_USER_ONLINE_SUBSCRIPTION } from 'graphql/user';
+import { IS_USER_ONLINE_SUBSCRIPTION } from "graphql/user";
 
-import * as Routes from 'routes';
+import * as Routes from "routes";
 
-import { useStore } from 'store';
+import { useStore } from "store";
 
 const Root = styled.div`
   position: relative;
@@ -80,9 +80,9 @@ const MessagesChatHeading = ({ location, match, chatUser }) => {
   const { data, loading } = useSubscription(IS_USER_ONLINE_SUBSCRIPTION, {
     variables: {
       authUserId: auth.user.id,
-      userId: chatUser ? chatUser.id : null,
+      userId: chatUser ? chatUser.id : null
     },
-    skip: !chatUser,
+    skip: !chatUser
   });
 
   // Update user's isOnline field in real time
@@ -113,13 +113,15 @@ const MessagesChatHeading = ({ location, match, chatUser }) => {
       <Root>
         <User
           to={generatePath(Routes.USER_PROFILE, {
-            username: chatUser.username,
+            username: chatUser.username
           })}
         >
           <Avatar image={chatUser.image} size={40} />
 
           <Info>
-            <Name>{chatUser.firstName} &nbsp; {chatUser.lastName}</Name>
+            <Name>
+              {chatUser.firstName} &nbsp; {chatUser.lastName}
+            </Name>
 
             {chatUser.isOnline && <Online />}
           </Info>
@@ -133,7 +135,7 @@ const MessagesChatHeading = ({ location, match, chatUser }) => {
 
 MessagesChatHeading.propTypes = {
   match: PropTypes.object.isRequired,
-  chatUser: PropTypes.object,
+  chatUser: PropTypes.object
 };
 
 export default withRouter(MessagesChatHeading);

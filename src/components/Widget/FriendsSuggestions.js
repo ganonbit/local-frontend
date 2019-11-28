@@ -1,6 +1,6 @@
-import React from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSmile, faEllipsisV } from '@fortawesome/free-solid-svg-icons'
+import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSmile, faEllipsisV } from "@fortawesome/free-solid-svg-icons";
 export default function FriendsSuggestions() {
   return (
     <div className="ui-block">
@@ -73,5 +73,5 @@ export default function FriendsSuggestions() {
         </li>
       </ul>
     </div>
-  )
+  );
 }

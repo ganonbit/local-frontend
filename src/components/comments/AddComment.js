@@ -1,27 +1,27 @@
-import React, { useState } from 'react'
-import PropTypes from 'prop-types'
-import { CREATE_COMMENT } from '../../graphql/comment'
-import { GET_POSTS } from '../../graphql/post'
-import { Mutation } from 'react-apollo'
+import React, { useState } from "react";
+import PropTypes from "prop-types";
+import { CREATE_COMMENT } from "../../graphql/comment";
+import { GET_POSTS } from "../../graphql/post";
+import { Mutation } from "react-apollo";
 
 export default function AddComment({ authorId, postId, onCancle }) {
   const [commentContent, setCommentContent] = useState({
-    comment: '',
-    image: '',
+    comment: "",
+    image: "",
     // imagePublicid: '',
     author: authorId,
     postId: postId
-  })
+  });
   const onAddComment = (e, createComment) => {
-    e.preventDefault()
+    e.preventDefault();
     createComment.then(async ({ data }) => {},
-    setCommentContent({ ...commentContent, comment: '', image: '' }))
-  }
+    setCommentContent({ ...commentContent, comment: "", image: "" }));
+  };
   const onCommentChange = e => {
-    e.preventDefault()
-    const { name, value } = e.target
-    setCommentContent({ ...commentContent, [name]: value })
-  }
+    e.preventDefault();
+    const { name, value } = e.target;
+    setCommentContent({ ...commentContent, [name]: value });
+  };
   return (
     <Mutation
       mutation={CREATE_COMMENT}
@@ -33,12 +33,14 @@ export default function AddComment({ authorId, postId, onCancle }) {
           query: GET_POSTS,
           variables: { authUserId: authorId, skip: 0, limit: 15 }
         }
-      ]}>
+      ]}
+    >
       {(createComment, { loading, error: apiError }) => {
         return (
           <form
             className="comment-form inline-items"
-            onSubmit={e => onAddComment(e, createComment())}>
+            onSubmit={e => onAddComment(e, createComment())}
+          >
             <div className="post__author author vcard inline-items">
               <img src="img/author-page.jpg" alt="author" />
 
@@ -49,13 +51,15 @@ export default function AddComment({ authorId, postId, onCancle }) {
                   placeholder=""
                   name="comment"
                   value={commentContent.comment}
-                  onChange={e => onCommentChange(e)}></textarea>
+                  onChange={e => onCommentChange(e)}
+                ></textarea>
                 <div className="add-options-message">
                   <a
                     href="#1"
                     className="options-message"
                     data-toggle="modal"
-                    data-target="#update-header-photo">
+                    data-target="#update-header-photo"
+                  >
                     {/* <svg className="olymp-camera-icon">
                                     <use xlink: href="svg-icons/sprites/icons.svg#olymp-camera-icon"></use>
 											</svg> */}
@@ -70,16 +74,17 @@ export default function AddComment({ authorId, postId, onCancle }) {
 
             <button
               className="btn btn-md-2 btn-border-think c-grey btn-transparent custom-color"
-              onClick={() => onCancle(false)}>
+              onClick={() => onCancle(false)}
+            >
               Cancel
             </button>
           </form>
-        )
+        );
       }}
     </Mutation>
-  )
+  );
 }
 AddComment.propTypes = {
   authorId: PropTypes.string.isRequired,
   postId: PropTypes.string.isRequired
-}
+};

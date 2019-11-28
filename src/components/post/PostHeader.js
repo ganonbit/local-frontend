@@ -1,16 +1,16 @@
-import React from 'react'
-import moment from 'moment'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faEllipsisV } from '@fortawesome/free-solid-svg-icons'
+import React from "react";
+import moment from "moment";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEllipsisV } from "@fortawesome/free-solid-svg-icons";
 export default function PostHeader(props) {
-  const { author, postId, user } = props
-  let postDate = moment(1519129853500).format('YYYYMMDD')
-  console.log('--------------------user', user)
+  const { author, postId, user } = props;
+  let postDate = moment(1519129853500).format("YYYYMMDD");
+  console.log("--------------------user", user);
   let isUserPost = () => {
-    let result = user.posts.find(x => x.id === postId)
-    console.log('---------result', result)
-  }
-  isUserPost()
+    let result = user.posts.find(x => x.id === postId);
+    console.log("---------result", result);
+  };
+  isUserPost();
   return (
     <div className="post__author author vcard inline-items">
       <img src={author.image} alt="author" />
@@ -20,7 +20,7 @@ export default function PostHeader(props) {
         </a>
         <div className="post__date">
           <time className="published" dateTime="2004-07-24T18:18">
-            {moment(postDate, 'YYYYMMDD').fromNow()}
+            {moment(postDate, "YYYYMMDD").fromNow()}
           </time>
         </div>
       </div>
@@ -31,7 +31,7 @@ export default function PostHeader(props) {
           size="lg"
           color="black"
           icon={faEllipsisV}
-          style={{ height: '8px' }}
+          style={{ height: "8px" }}
         />
         <ul className="more-dropdown">
           <li>
@@ -49,5 +49,5 @@ export default function PostHeader(props) {
         </ul>
       </div>
     </div>
-  )
+  );
 }

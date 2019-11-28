@@ -1,64 +1,73 @@
-import React, { useState } from 'react'
-import { Mutation } from 'react-apollo'
-import { withRouter } from 'react-router-dom'
+import React, { useState } from "react";
+import { Mutation } from "react-apollo";
+import { withRouter } from "react-router-dom";
 
-import { Field } from '../../components/Auth/index'
-import { SIGN_UP } from 'graphql/user'
-import { validateFormField } from '../../utils/index'
+import { Field } from "../../components/Auth/index";
+import { SIGN_UP } from "graphql/user";
+import { validateFormField } from "../../utils/index";
+
+import * as Routes from "routes";
 
 const SignUp = ({ refetch, history }) => {
   const [error, setError] = useState({
-    firstName: '',
-    lastName: '',
-    username: '',
-    email: '',
-    password: ''
-  })
-  const [values, setValue] = useState({
-    firstName: '',
-    lastName: '',
-    username: '', 
-    email: '',
-    password: '',
-    dob: '',
-    gender: ''
-  })
-  const { firstName, lastName, username, email, password } = values
-  const handleChange = e => {
-    e.preventDefault()
-    const { name, value } = e.target
-    setValue({ ...values, [name]: value })
+    firstName: "",
+    lastName: "",
+    username: "",
+    email: "",
+    password: ""
+  });
+  const [values, setValues] = useState({
+    firstName: "",
+    lastName: "",
+    username: "",
+    email: "",
+    password: "",
+    dob: "",
+    gender: ""
+  });
 
-    let fieldError = validateFormField(name, value)
-    setError({ ...error, ...fieldError })
-  }
+  const { firstName, lastName, username, email, password } = values;
+
+  const handleChange = e => {
+    e.preventDefault();
+    const { name, value } = e.target;
+    setValues({ ...values, [name]: value });
+
+    let fieldError = validateFormField(name, value);
+    setError({ ...error, ...fieldError });
+  };
 
   const validate = () => {
     if (!firstName || !lastName || !email || !username || !password) {
-      if (!firstName) setError({ ...error, firstName: 'First Name is required' })
-      else if (!lastName) setError({ ...error, lastName: 'Last Name is required' })
-      else if (!email) setError({ ...error, email: 'Email is required' })
+      if (!firstName)
+        setError({ ...error, firstName: "First Name is required" });
+      else if (!lastName)
+        setError({ ...error, lastName: "Last Name is required" });
+      else if (!email) setError({ ...error, email: "Email is required" });
       else if (!username)
-        setError({ ...error, username: 'User name  required' })
+        setError({ ...error, username: "User name  required" });
       else if (!password)
-        setError({ ...error, password: 'Password is required' })
-      else return true
+        setError({ ...error, password: "Password is required" });
+      else return true;
     }
-    return false
-  }
+    return false;
+  };
 
   const handleSubmit = (e, signup) => {
-    e.preventDefault()
-    const error = validate()
+    e.preventDefault();
+
+    const error = validate();
     if (error) {
-      return false
+      setError(error);
+      return false;
     }
+
     signup().then(async ({ data }) => {
-      localStorage.setItem('token', data.signup.token)
-      await refetch()
-      // history.push(Routes.HOME);
-    })
-  }
+      localStorage.setItem("token", data.signup.token);
+      await refetch();
+      history.push(Routes.HOME);
+    });
+  };
 
   const disableButton =
     !firstName ||
@@ -70,15 +79,16 @@ const SignUp = ({ refetch, history }) => {
     error.lastName ||
     error.username ||
     error.email ||
-    error.password
+    error.password;
 
   return (
     <Mutation
       mutation={SIGN_UP}
       variables={{
         input: { firstName, lastName, email, password, username }
-      }}>
-      {(signup, { loading, error: apiError }) => {
+      }}
+    >
+      {signup => {
         return (
           <div className="col col-xl-5 col-lg-6 col-md-12 col-sm-12 col-12">
             <div className="registration-login-form">
@@ -87,11 +97,13 @@ const SignUp = ({ refetch, history }) => {
                   className="tab-pane active"
                   id="home"
                   role="tabpanel"
-                  data-mh="log-tab">
+                  data-mh="log-tab"
+                >
                   <div className="title h6">Register to Avocado Nation</div>
                   <form
                     className="content"
-                    onSubmit={e => handleSubmit(e, signup)}>
+                    onSubmit={e => handleSubmit(e, signup)}
+                  >
                     <div className="row">
                       <Field
                         fieldContainerClass="sm"
@@ -113,7 +125,7 @@ const SignUp = ({ refetch, history }) => {
                       />
                       <Field
                         fieldContainerClass="sm"
-                        placeholder="User Name"
+                        placeholder="Username"
                         type="text"
                         value={username}
                         handleChange={handleChange}
@@ -143,10 +155,7 @@ const SignUp = ({ refetch, history }) => {
 
                         <div className="form-group date-time-picker label-floating">
                           <label className="control-label">Your Birthday</label>
-                          <input
-                            name="datetimepicker"
-                            defaultValue="10/24/1984"
-                          />
+                          <input name="birthday" defaultValue="10/24/1984" />
                           <span className="input-group-addon">
                             <svg
                               className="olymp-calendar-icon"
@@ -159,9 +168,11 @@ const SignUp = ({ refetch, history }) => {
                           <label className="control-label">Your Gender</label>
                           <select
                             className="select picker form-control"
-                            onChange={handleChange}>
+                            onChange={handleChange}
+                          >
                             <option value="male">Male</option>
                             <option value="female">Female</option>
+                            <option value="custom">Custom</option>
                           </select>
                         </div>
 
@@ -172,7 +183,7 @@ const SignUp = ({ refetch, history }) => {
                               <span class="checkbox-material">
                                 <span class="check" />
                               </span>
-                              I accept the <a href="#1">Terms and Conditions</a>{' '}
+                              I accept the <a href="#1">Terms and Conditions</a>{" "}
                               of the website
                             </label>
                           </div>
@@ -181,7 +192,8 @@ const SignUp = ({ refetch, history }) => {
                         <button
                           className="btn btn-green btn-lg full-width"
                           type="submit"
-                          disabled={disableButton}>
+                          disabled={disableButton}
+                        >
                           Complete Registration!
                         </button>
                       </div>
@@ -191,10 +203,10 @@ const SignUp = ({ refetch, history }) => {
               </div>
             </div>
           </div>
-        )
+        );
       }}
     </Mutation>
-  )
-}
+  );
+};
 
-export default withRouter(SignUp)
+export default withRouter(SignUp);

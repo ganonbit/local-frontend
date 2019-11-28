@@ -1,21 +1,21 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { generatePath, withRouter, NavLink } from 'react-router-dom';
-import styled from 'styled-components';
+import React from "react";
+import PropTypes from "prop-types";
+import { generatePath, withRouter, NavLink } from "react-router-dom";
+import styled from "styled-components";
 
-import { Spacing } from 'components/Layout';
-import Navigation from './Navigation';
-import Avatar from 'components/Avatar';
+import { Spacing } from "components/Layout";
+import Navigation from "./Navigation";
+import Avatar from "components/Avatar";
 
 import {
   SIDEBAR_DESKTOP_WIDTH,
   SIDEBAR_MOBILE_WIDTH,
-  HEADER_HEIGHT,
-} from 'constants/Layout';
+  HEADER_HEIGHT
+} from "constants/Layout";
 
-import { useStore } from 'store';
+import { useStore } from "store";
 
-import * as Routes from 'routes';
+import * as Routes from "routes";
 
 const Root = styled.div`
   position: fixed;
@@ -102,7 +102,7 @@ const SideBar = ({ location, isOpen, sideBarRef }) => {
 
 SideBar.propTypes = {
   location: PropTypes.object.isRequired,
-  isOpen: PropTypes.bool.isRequired,
+  isOpen: PropTypes.bool.isRequired
 };
 
 export default withRouter(SideBar);

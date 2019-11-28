@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 
 const SearchBar = () => {
   return (
@@ -16,7 +16,7 @@ const SearchBar = () => {
         </button>
       </div>
     </form>
-  )
-}
+  );
+};
 
-export default SearchBar
+export default SearchBar;

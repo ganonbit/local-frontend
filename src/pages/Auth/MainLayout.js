@@ -1,14 +1,14 @@
-import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
-import Headroom from 'react-headroom'
-import { AppleLogo } from 'assets/svg-icons'
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import Headroom from "react-headroom";
+import { AppleLogo } from "assets/svg-icons";
 /**
  * Main Layout for Registration
  */
 const MainLayout = ({ children }) => {
   const [className, setClassName] = useState(
-    'headroom--top headroom--not-bottom'
-  )
+    "headroom--top headroom--not-bottom"
+  );
 
   return (
     <div className="landing-page">
@@ -18,11 +18,12 @@ const MainLayout = ({ children }) => {
         disableInlineStyles
         className={`header--standard header--standard-landing animated ${className}`}
         onPin={() =>
-          setClassName('headroom--not-bottom slideDown headroom--top')
+          setClassName("headroom--not-bottom slideDown headroom--top")
         }
         onUnpin={() =>
-          setClassName('headroom--not-bottom headroom--not-top slideUp')
-        }>
+          setClassName("headroom--not-bottom headroom--not-top slideUp")
+        }
+      >
         <div className="container">
           <div className="header--standard-wrap">
             <Link to="/login" className="logo">
@@ -32,7 +33,8 @@ const MainLayout = ({ children }) => {
             </Link>
             <a
               href="#1"
-              className="open-responsive-menu js-open-responsive-menu">
+              className="open-responsive-menu js-open-responsive-menu"
+            >
               <AppleLogo className="olymp-menu-icon" width={20} height={20} />
 
               {/* <svg
@@ -59,8 +61,9 @@ const MainLayout = ({ children }) => {
               </p>
 
               <Link
-                to={{ pathname: '/signup' }}
-                className="btn btn-md btn-border c-white">
+                to={{ pathname: "/signup" }}
+                className="btn btn-md btn-border c-white"
+              >
                 Register Now
               </Link>
             </div>
@@ -69,6 +72,6 @@ const MainLayout = ({ children }) => {
         </div>
       </div>
     </div>
-  )
-}
-export default MainLayout
+  );
+};
+export default MainLayout;

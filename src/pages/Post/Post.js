@@ -1,9 +1,9 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { withRouter } from 'react-router-dom';
+import React from "react";
+import PropTypes from "prop-types";
+import { withRouter } from "react-router-dom";
 
-import { Content } from 'components/Layout';
-import PostPopup from 'components/PostPopup';
+import { Content } from "components/Layout";
+import PostPopup from "components/PostPopup";
 
 /**
  * Post detail page
@@ -17,7 +17,7 @@ const Post = ({ match }) => {
 };
 
 Post.propTypes = {
-  match: PropTypes.object.isRequired,
+  match: PropTypes.object.isRequired
 };
 
 export default withRouter(Post);

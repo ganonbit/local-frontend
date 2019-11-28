@@ -1,14 +1,14 @@
-import React from 'react';
-import styled, { css } from 'styled-components';
-import { generatePath } from 'react-router-dom';
-import PropTypes from 'prop-types';
+import React from "react";
+import styled, { css } from "styled-components";
+import { generatePath } from "react-router-dom";
+import PropTypes from "prop-types";
 
-import SignOut from 'components/App/SignOut';
-import { A } from 'components/Text';
+import SignOut from "components/App/SignOut";
+import { A } from "components/Text";
 
-import * as Routes from 'routes';
+import * as Routes from "routes";
 
-import { useStore } from 'store';
+import { useStore } from "store";
 
 const Root = styled.div`
   text-align: center;
@@ -49,7 +49,7 @@ const HeaderUserDropDown = ({ userRef }) => {
     <Root ref={userRef}>
       <Link
         to={generatePath(Routes.USER_PROFILE, {
-          username: auth.user.username,
+          username: auth.user.username
         })}
       >
         My Profile
@@ -63,7 +63,7 @@ const HeaderUserDropDown = ({ userRef }) => {
 };
 
 HeaderUserDropDown.propTypes = {
-  userRef: PropTypes.object,
+  userRef: PropTypes.object
 };
 
 export default HeaderUserDropDown;

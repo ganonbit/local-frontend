@@ -1,20 +1,20 @@
-import React, { useEffect } from 'react';
-import PropTypes from 'prop-types';
-import styled from 'styled-components';
-import { NavLink, generatePath } from 'react-router-dom';
-import { useApolloClient } from '@apollo/react-hooks';
+import React, { useEffect } from "react";
+import PropTypes from "prop-types";
+import styled from "styled-components";
+import { NavLink, generatePath } from "react-router-dom";
+import { useApolloClient } from "@apollo/react-hooks";
 
-import { UPDATE_MESSAGE_SEEN } from 'graphql/messages';
-import { GET_AUTH_USER } from 'graphql/user';
+import { UPDATE_MESSAGE_SEEN } from "graphql/messages";
+import { GET_AUTH_USER } from "graphql/user";
 
-import Avatar from 'components/Avatar';
-import { A } from 'components/Text';
+import Avatar from "components/Avatar";
+import { A } from "components/Text";
 
-import { timeAgo } from 'utils/date';
+import { timeAgo } from "utils/date";
 
-import * as Routes from 'routes';
+import * as Routes from "routes";
 
-import { useStore } from 'store';
+import { useStore } from "store";
 
 const Root = styled.div`
   position: absolute;
@@ -85,7 +85,6 @@ const Name = styled.div`
   width: 100%;
 `;
 
-
 const LastMessage = styled.div`
   margin-top: ${p => p.theme.spacing.xxs};
   font-size: ${p => p.theme.font.size.xxs};
@@ -113,10 +112,10 @@ const HeaderMessageDropdown = ({ messageRef, dropdownData }) => {
           variables: {
             input: {
               receiver: auth.user.id,
-              sender: userId,
-            },
+              sender: userId
+            }
           },
-          refetchQueries: () => [{ query: GET_AUTH_USER }],
+          refetchQueries: () => [{ query: GET_AUTH_USER }]
         });
       } catch (err) {}
     };
@@ -148,7 +147,9 @@ const HeaderMessageDropdown = ({ messageRef, dropdownData }) => {
 
             <Info>
               <div>
-                <Name>{user.firstName} &nbsp; {user.lastName}</Name>
+                <Name>
+                  {user.firstName} &nbsp; {user.lastName}
+                </Name>
 
                 <LastMessage>{user.lastMessage}</LastMessage>
               </div>
@@ -164,7 +165,7 @@ const HeaderMessageDropdown = ({ messageRef, dropdownData }) => {
 
 HeaderMessageDropdown.propTypes = {
   messageRef: PropTypes.object,
-  dropdownData: PropTypes.array,
+  dropdownData: PropTypes.array
 };
 
 export default HeaderMessageDropdown;

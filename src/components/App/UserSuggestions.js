@@ -1,22 +1,22 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import styled from 'styled-components';
-import { matchPath } from 'react-router';
-import { generatePath } from 'react-router-dom';
-import { Query } from 'react-apollo';
+import React from "react";
+import PropTypes from "prop-types";
+import styled from "styled-components";
+import { matchPath } from "react-router";
+import { generatePath } from "react-router-dom";
+import { Query } from "react-apollo";
 
-import { Loading } from 'components/Loading';
-import { H3, A } from 'components/Text';
-import { Spacing } from 'components/Layout';
-import Avatar from 'components/Avatar';
+import { Loading } from "components/Loading";
+import { H3, A } from "components/Text";
+import { Spacing } from "components/Layout";
+import Avatar from "components/Avatar";
 
-import { useStore } from 'store';
+import { useStore } from "store";
 
-import { USER_SUGGESTIONS } from 'graphql/user';
+import { USER_SUGGESTIONS } from "graphql/user";
 
-import { USER_SUGGESTIONS_WIDTH, HEADER_HEIGHT } from 'constants/Layout';
+import { USER_SUGGESTIONS_WIDTH, HEADER_HEIGHT } from "constants/Layout";
 
-import * as Routes from 'routes';
+import * as Routes from "routes";
 
 const Root = styled.div`
   display: none;
@@ -68,7 +68,7 @@ const UserSuggestions = ({ pathname }) => {
   const [{ auth }] = useStore();
 
   const hideUserSuggestions = matchPath(pathname, {
-    path: [Routes.MESSAGES, Routes.PEOPLE, Routes.EXPLORE, Routes.USER_PROFILE],
+    path: [Routes.MESSAGES, Routes.PEOPLE, Routes.EXPLORE, Routes.USER_PROFILE]
   });
 
   if (hideUserSuggestions) return null;
@@ -96,7 +96,7 @@ const UserSuggestions = ({ pathname }) => {
                 <ListItem key={user.id}>
                   <A
                     to={generatePath(Routes.USER_PROFILE, {
-                      username: user.username,
+                      username: user.username
                     })}
                   >
                     <Avatar image={user.image} />
@@ -105,10 +105,12 @@ const UserSuggestions = ({ pathname }) => {
                   <Spacing left="xs">
                     <A
                       to={generatePath(Routes.USER_PROFILE, {
-                        username: user.username,
+                        username: user.username
                       })}
                     >
-                      <Name>{user.firstName} &nbsp; {user.lastName}</Name>
+                      <Name>
+                        {user.firstName} &nbsp; {user.lastName}
+                      </Name>
                       <UserName>@{user.username}</UserName>
                     </A>
                   </Spacing>
@@ -123,7 +125,7 @@ const UserSuggestions = ({ pathname }) => {
 };
 
 UserSuggestions.propTypes = {
-  pathname: PropTypes.string.isRequired,
+  pathname: PropTypes.string.isRequired
 };
 
 export default UserSuggestions;

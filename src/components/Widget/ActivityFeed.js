@@ -1,6 +1,6 @@
-import React from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faEllipsisV } from '@fortawesome/free-solid-svg-icons'
+import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEllipsisV } from "@fortawesome/free-solid-svg-icons";
 export default function ActivityFeed() {
   return (
     <div className="ui-block">
@@ -19,7 +19,7 @@ export default function ActivityFeed() {
           <div className="notification-event">
             <a href="#1" className="h6 notification-friend">
               Marina Polson
-            </a>{' '}
+            </a>{" "}
             commented on Jason Mark’s
             <a href="#1" className="notification-link">
               photo.
@@ -39,9 +39,9 @@ export default function ActivityFeed() {
           </div>
           <div className="notification-event">
             <a href="#1" className="h6 notification-friend">
-              Jake Parker{' '}
-            </a>{' '}
-            liked Nicholas Grissom’s{' '}
+              Jake Parker{" "}
+            </a>{" "}
+            liked Nicholas Grissom’s{" "}
             <a href="#1" className="notification-link">
               status update.
             </a>
@@ -60,9 +60,9 @@ export default function ActivityFeed() {
           </div>
           <div className="notification-event">
             <a href="#1" className="h6 notification-friend">
-              Mary Jane Stark{' '}
-            </a>{' '}
-            added 20 new photos to her{' '}
+              Mary Jane Stark{" "}
+            </a>{" "}
+            added 20 new photos to her{" "}
             <a href="#1" className="notification-link">
               gallery album.
             </a>
@@ -81,9 +81,9 @@ export default function ActivityFeed() {
           </div>
           <div className="notification-event">
             <a href="#1" className="h6 notification-friend">
-              Nicholas Grissom{' '}
-            </a>{' '}
-            updated his profile{' '}
+              Nicholas Grissom{" "}
+            </a>{" "}
+            updated his profile{" "}
             <a href="#1" className="notification-link">
               photo
             </a>
@@ -101,9 +101,9 @@ export default function ActivityFeed() {
           </div>
           <div className="notification-event">
             <a href="#1" className="h6 notification-friend">
-              Marina Valentine{' '}
-            </a>{' '}
-            commented on Chris Greyson’s{' '}
+              Marina Valentine{" "}
+            </a>{" "}
+            commented on Chris Greyson’s{" "}
             <a href="#1" className="notification-link">
               status update
             </a>
@@ -122,9 +122,9 @@ export default function ActivityFeed() {
           </div>
           <div className="notification-event">
             <a href="#1" className="h6 notification-friend">
-              Green Goo Rock{' '}
-            </a>{' '}
-            posted a{' '}
+              Green Goo Rock{" "}
+            </a>{" "}
+            posted a{" "}
             <a href="#1" className="notification-link">
               status update
             </a>
@@ -142,9 +142,9 @@ export default function ActivityFeed() {
           </div>
           <div className="notification-event">
             <a href="#1" className="h6 notification-friend">
-              Elaine Dreyfuss{' '}
-            </a>{' '}
-            liked your{' '}
+              Elaine Dreyfuss{" "}
+            </a>{" "}
+            liked your{" "}
             <a href="#1" className="notification-link">
               blog post
             </a>
@@ -163,9 +163,9 @@ export default function ActivityFeed() {
           </div>
           <div className="notification-event">
             <a href="#1" className="h6 notification-friend">
-              Elaine Dreyfuss{' '}
-            </a>{' '}
-            commented on your{' '}
+              Elaine Dreyfuss{" "}
+            </a>{" "}
+            commented on your{" "}
             <a href="#1" className="notification-link">
               blog post
             </a>
@@ -184,9 +184,9 @@ export default function ActivityFeed() {
           </div>
           <div className="notification-event">
             <a href="#1" className="h6 notification-friend">
-              Bruce Peterson{' '}
-            </a>{' '}
-            changed his{' '}
+              Bruce Peterson{" "}
+            </a>{" "}
+            changed his{" "}
             <a href="#1" className="notification-link">
               profile picture
             </a>
@@ -205,9 +205,9 @@ export default function ActivityFeed() {
           </div>
           <div className="notification-event">
             <a href="#1" className="h6 notification-friend">
-              Green Goo Rock{' '}
-            </a>{' '}
-            posted a{' '}
+              Green Goo Rock{" "}
+            </a>{" "}
+            posted a{" "}
             <a href="#1" className="notification-link">
               status update
             </a>
@@ -225,9 +225,9 @@ export default function ActivityFeed() {
           </div>
           <div className="notification-event">
             <a href="#1" className="h6 notification-friend">
-              Elaine Dreyfuss{' '}
-            </a>{' '}
-            liked your{' '}
+              Elaine Dreyfuss{" "}
+            </a>{" "}
+            liked your{" "}
             <a href="#1" className="notification-link">
               blog post
             </a>
@@ -246,9 +246,9 @@ export default function ActivityFeed() {
           </div>
           <div className="notification-event">
             <a href="#1" className="h6 notification-friend">
-              Elaine Dreyfuss{' '}
-            </a>{' '}
-            commented on your{' '}
+              Elaine Dreyfuss{" "}
+            </a>{" "}
+            commented on your{" "}
             <a href="#1" className="notification-link">
               blog post
             </a>
@@ -267,9 +267,9 @@ export default function ActivityFeed() {
           </div>
           <div className="notification-event">
             <a href="#1" className="h6 notification-friend">
-              Bruce Peterson{' '}
-            </a>{' '}
-            changed his{' '}
+              Bruce Peterson{" "}
+            </a>{" "}
+            changed his{" "}
             <a href="#1" className="notification-link">
               profile picture
             </a>
@@ -283,5 +283,5 @@ export default function ActivityFeed() {
         </li>
       </ul>
     </div>
-  )
+  );
 }

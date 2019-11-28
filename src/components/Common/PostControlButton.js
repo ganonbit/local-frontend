@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 
 export default function PostControlButton() {
   return (
@@ -24,5 +24,5 @@ export default function PostControlButton() {
         <img src="img/comments-icon.png" alt="" />
       </a>
     </div>
-  )
+  );
 }

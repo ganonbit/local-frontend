@@ -1,9 +1,9 @@
-import React from 'react'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-import Home from '../pages/HomeContainer/Home'
+import React from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Home from "../pages/HomeContainer/Home";
 
-import { Sidebar } from '../components/Sidebar/index'
-import TopHeader from './TopHeader'
+import { Sidebar } from "../components/Sidebar/index";
+import TopHeader from "./TopHeader";
 
 /**
  * All other routes of Entire App
@@ -23,6 +23,6 @@ const AppLayout = ({ refetch }) => {
         </Switch>
       </div>
     </Router>
-  )
-}
-export default AppLayout
+  );
+};
+export default AppLayout;
