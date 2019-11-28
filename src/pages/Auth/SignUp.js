@@ -123,8 +123,9 @@ const SignUp = ({ refetch, history }) => {
                         name="lastName"
                         error={error.lastName}
                       />
+                      <div className="col col-12 col-xl-12 col-lg-12 col-md-12 col-sm-12">
                       <Field
-                        fieldContainerClass="sm"
+                        fieldContainerClass="lg"
                         placeholder="Username"
                         type="text"
                         value={username}
@@ -132,7 +133,6 @@ const SignUp = ({ refetch, history }) => {
                         name="username"
                         error={error.username}
                       />
-                      <div className="col col-12 col-xl-12 col-lg-12 col-md-12 col-sm-12">
                         <Field
                           fieldContainerClass="lg"
                           placeholder="Your Email"
@@ -180,8 +180,8 @@ const SignUp = ({ refetch, history }) => {
                           <div className="checkbox">
                             <label>
                               <input name="optionsCheckboxes" type="checkbox" />
-                              <span class="checkbox-material">
-                                <span class="check" />
+                              <span className="checkbox-material">
+                                <span className="check" />
                               </span>
                               I accept the <a href="#1">Terms and Conditions</a>{" "}
                               of the website
