@@ -1,11 +1,7 @@
 import React, { Component } from 'react'
-import Weather from 'components/widget/Weather'
-import Calender from '../../components/widget/Calender'
-import RecomendedPages from 'components/widget/RecomendedPages'
-import BirthdaysAlert from 'components/widget/BirthdaysAlert'
-import FriendsSuggestions from 'components/widget/FriendsSuggestions'
-import ActivityFeed from 'components/widget/ActivityFeed'
-import Olympus from 'components/widget/Olympus'
+import RecomendedPages from 'components/Widget/RecomendedPages'
+import FriendsSuggestions from 'components/Widget/FriendsSuggestions'
+import ActivityFeed from 'components/Widget/ActivityFeed'
 import { CreatePost } from '../../components/CreatePost/Index'
 import Post from '../../components/post/index'
 
@@ -16,8 +12,6 @@ export default class Home extends Component {
         <div className="row">
           {/* <div className="page-has-left-panels page-has-right-panels pr-0"> */}
           <aside className="col col-xl-3 order-xl-1 col-lg-6 order-lg-2 col-md-6 order-md-2 col-sm-12 order-sm-3 col-xs-12 order-xs-2 order-1 col-12">
-            <Weather />
-            <Calender />
             <RecomendedPages />
           </aside>
           {/* </div> */}
@@ -28,11 +22,8 @@ export default class Home extends Component {
           </aside>
 
           <aside className="col col-xl-3 order-xl-3 col-lg-6 order-lg-3 col-md-6 order-md-2 col-sm-12 order-sm-2 col-xs-12 order-xs-3 col-12">
-            <BirthdaysAlert />
-            <br />
             <FriendsSuggestions />
             <ActivityFeed />
-            <Olympus />
           </aside>
         </div>
       </div>
