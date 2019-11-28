@@ -7,7 +7,7 @@ function ResetPassword(props) {
     props.handleReset();
     setShow(false);
   };
-  const handleShow = () => setShow(true);
+  // const handleShow = () => setShow(true);
   const [tempAPISuccess, setSuccess] = useState(false);
 
   return (
@@ -45,7 +45,7 @@ function ResetPassword(props) {
                       className="form-control"
                       placeholder=""
                       type="email"
-                      // value="james-spiegel@yourmail.com"
+                    // value="james-spiegel@yourmail.com"
                     />
                   </div>
                   <button

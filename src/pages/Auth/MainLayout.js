@@ -1,12 +1,13 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Headroom from 'react-headroom'
+import { AppleLogo } from 'assets/svg-icons'
 /**
  * Main Layout for Registration
  */
 const MainLayout = ({ children }) => {
   const [className, setClassName] = useState(
-    'header--standard header--standard-landing animated headroom--top headroom--not-bottom'
+    'headroom--top headroom--not-bottom'
   )
 
   return (
@@ -15,16 +16,12 @@ const MainLayout = ({ children }) => {
       <div className="content-bg-wrap"></div>
       <Headroom
         disableInlineStyles
-        className={className}
+        className={`header--standard header--standard-landing animated ${className}`}
         onPin={() =>
-          setClassName(
-            'header--standard header--standard-landing animated headroom--not-bottom slideDown headroom--top'
-          )
+          setClassName('headroom--not-bottom slideDown headroom--top')
         }
         onUnpin={() =>
-          setClassName(
-            'header--standard header--standard-landing animated headroom--not-bottom headroom--not-top slideUp'
-          )
+          setClassName('headroom--not-bottom headroom--not-top slideUp')
         }>
         <div className="container">
           <div className="header--standard-wrap">
@@ -36,10 +33,12 @@ const MainLayout = ({ children }) => {
             <a
               href="#1"
               className="open-responsive-menu js-open-responsive-menu">
-              <svg
+              <AppleLogo className="olymp-menu-icon" width={20} height={20} />
+
+              {/* <svg
                 className="olymp-menu-icon"
                 xlinkHref="svg-icons/sprites/icons.svg#1olymp-menu-icon"
-              />
+              /> */}
             </a>
           </div>
         </div>

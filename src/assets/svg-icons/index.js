@@ -1,4 +1,3 @@
-
 import { ReactComponent as AppleLogo } from '../svg-icons/apple-logotype.svg'
 
 import { ReactComponent as BackToTop } from '../svg-icons/back-to-top.svg'
@@ -17,10 +16,21 @@ import { ReactComponent as Shuffle } from '../svg-icons/shuffle.svg'
 import { ReactComponent as Sound } from '../svg-icons/sound.svg'
 import { ReactComponent as WeekCalendar } from '../svg-icons/week-calendar-icon.svg'
 
-
-
-
-export { AppleLogo, BackToTop, DayCalendar, GooglePlay, MonthCalendar, NextSong, NoSound, PauseIcon, PlayIcon, PrevSong, RepeatOff, Repeat, ShuffleOn, Shuffle, Sound, WeekCalendar }
-
-
-
+export {
+  AppleLogo,
+  BackToTop,
+  DayCalendar,
+  GooglePlay,
+  MonthCalendar,
+  NextSong,
+  NoSound,
+  PauseIcon,
+  PlayIcon,
+  PrevSong,
+  RepeatOff,
+  Repeat,
+  ShuffleOn,
+  Shuffle,
+  Sound,
+  WeekCalendar
+}
