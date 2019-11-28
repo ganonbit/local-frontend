@@ -3,7 +3,9 @@
 
 .social-menu-tabs {
   border-bottom: none;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 
   &.nav-tabs .nav-link.active {
 	color: $primary-color;
@@ -11,8 +13,12 @@
   }
 
   &.nav-tabs .nav-link {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	align-items: center;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
 	padding: 25px;
 	border: none;
 	border-bottom: 3px solid transparent;

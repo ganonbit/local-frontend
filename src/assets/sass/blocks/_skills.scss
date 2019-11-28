@@ -33,21 +33,32 @@
   display: inline-block;
   border-radius: 10px;
   opacity: 0;
+  -webkit-transition: all .2s ease;
   transition: all .2s ease;
   top: 0;
   left: 0;
 
   &.skills-animate {
-	animation: skills-animated 1.2s ease-out;
+	-webkit-animation: skills-animated 1.2s ease-out;
+	        animation: skills-animated 1.2s ease-out;
   }
 
   &.skills-animate-opacity {
-	animation: skills-animated-opacity .2s ease-out;
+	-webkit-animation: skills-animated-opacity .2s ease-out;
+	        animation: skills-animated-opacity .2s ease-out;
   }
+}
+
+@-webkit-keyframes skills-animated {
+  0% {width: 0;}
 }
 
 @keyframes skills-animated {
   0% {width: 0;}
+}
+
+@-webkit-keyframes skills-animated-opacity {
+  100% {opacity: 1;}
 }
 
 @keyframes skills-animated-opacity {

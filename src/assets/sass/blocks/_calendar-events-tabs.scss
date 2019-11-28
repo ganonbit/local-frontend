@@ -136,13 +136,15 @@
     }
 
     &:focus {
-      box-shadow: none;
+      -webkit-box-shadow: none;
+              box-shadow: none;
     }
   }
 
   .fc-button-primary:not(:disabled):active:focus,
   .fc-button-primary:not(:disabled).fc-button-active:focus {
-    box-shadow: none;
+    -webkit-box-shadow: none;
+            box-shadow: none;
   }
 
   .fc-toolbar.fc-header-toolbar {

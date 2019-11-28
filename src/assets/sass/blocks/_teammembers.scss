@@ -11,14 +11,17 @@
 	  &.hover {
 		top: 0;
 		left: 0;
-		transform: scale(2) translate(0, 0);
+		-webkit-transform: scale(2) translate(0, 0);
+		        transform: scale(2) translate(0, 0);
 		opacity: 0;
-		filter: grayscale(0);
+		-webkit-filter: grayscale(0);
+		        filter: grayscale(0);
 		visibility: hidden;
 	  }
 
 	  &.main {
-		filter: grayscale(0);
+		-webkit-filter: grayscale(0);
+		        filter: grayscale(0);
 	  }
 	}
   }
@@ -43,8 +46,10 @@
   display: inline-block;
 
   img {
+	-webkit-transition: all 1s ease-out;
 	transition: all 1s ease-out;
-	filter: grayscale(100%);
+	-webkit-filter: grayscale(100%);
+	        filter: grayscale(100%);
 	display: block;
 	margin: 0 auto;
 
@@ -52,7 +57,8 @@
 	  position: absolute;
 	  left: 50%;
 	  top: 50%;
-	  transform: translate(-50%, -50%);
+	  -webkit-transform: translate(-50%, -50%);
+	          transform: translate(-50%, -50%);
 	}
   }
 }

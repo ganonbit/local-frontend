@@ -246,7 +246,8 @@ figure {
 	top: 50%;
 	left: 50%;
 	color: $white-color;
-	transform: translate(-50%, -50%);
+	-webkit-transform: translate(-50%, -50%);
+	        transform: translate(-50%, -50%);
 	text-align: center;
 	z-index: 20;
   }
@@ -314,6 +315,7 @@ figure {
 	top: 25px;
 	right: 55px;
 	opacity: 0;
+	-webkit-transition: all .3s ease;
 	transition: all .3s ease;
 	fill: $white-color;
 
@@ -326,6 +328,8 @@ figure {
 
 .open-photo-popup-v2 {
   width: 1200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 
   .open-photo-thumb {
@@ -547,7 +551,8 @@ figure {
 	  top: auto;
 	  bottom: auto;
 	  left: auto;
-	  box-shadow: none;
+	  -webkit-box-shadow: none;
+	          box-shadow: none;
 	  border-radius: 0 0 0.25rem 0.25rem;
 	  border: none;
 	}
@@ -603,7 +608,8 @@ figure {
   max-width: 100%;
   top: 0 !important;
   left: 0;
-  transform: none;
+  -webkit-transform: none;
+          transform: none;
   height: 100vh;
   position: fixed;
   visibility: hidden;
@@ -805,7 +811,8 @@ figure {
   position: relative;
   top: auto;
   left: auto;
-  transform: none;
+  -webkit-transform: none;
+          transform: none;
 }
 
 .edit-my-poll-popup {
@@ -819,8 +826,12 @@ figure {
   .edit-my-poll-head {
 	border-radius: 5px 5px 0 0;
 	padding: 35px 60px;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	align-items: center;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
 
 	.poll-img {
 	  margin-left: auto;
@@ -877,6 +888,8 @@ figure {
 }
 
 .modal.show .modal-dialog {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
   display: flex !important;
 }
 
@@ -904,7 +917,8 @@ figure {
 
   .search-form {
 	padding: 30px;
-	box-shadow: none;
+	-webkit-box-shadow: none;
+	        box-shadow: none;
   }
 
   .form-group {
@@ -974,6 +988,8 @@ figure {
 
   .choose-from-my-photo .nav-tabs .nav-link {
 	height: 100%;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
   }
 
@@ -1011,7 +1027,10 @@ figure {
 @media (max-width: 580px) {
   .edit-my-poll-popup .edit-my-poll-head {
 	padding: 20px 40px;
-	flex-direction: column;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
   }
 
   .edit-my-poll-popup .edit-my-poll-content {
@@ -1080,9 +1099,14 @@ figure {
   }
 
   .main-popup-search .search-form {
-	flex-direction: column;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
 	padding: 0;
-	align-items: flex-start;
+	-webkit-box-align: start;
+	    -ms-flex-align: start;
+	        align-items: flex-start;
 
 	.btn {
 	  border-radius: 5px;

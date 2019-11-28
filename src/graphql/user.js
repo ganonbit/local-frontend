@@ -18,6 +18,8 @@ const userPayload = `
   imagePublicId
   coverImage
   coverImagePublicId
+  isOnline
+  isVerified
   createdAt
 `;
 
@@ -112,6 +114,15 @@ export const GET_AUTH_USER = gql`
             image
           }
         }
+      }
+      newConversations {
+        id
+        username
+        firstName
+        lastName
+        image
+        lastMessage
+        lastMessageCreatedAt
       }
       likes {
         id
@@ -216,6 +227,28 @@ export const SIGN_IN = gql`
 `;
 
 /**
+ * Request reset password
+ */
+export const REQUEST_PASSWORD_RESET = gql`
+  mutation($input: RequestPasswordResetInput!) {
+    requestPasswordReset(input: $input) {
+      message
+    }
+  }
+`;
+
+/**
+ * Verify reset password token
+ */
+export const VERIFY_TOKEN = gql`
+  query($email: String!, $token: String!) {
+    verifyToken(email: $email, token: $token) {
+      message
+    }
+  }
+`;
+
+/**
  * Reset password
  */
 export const RESET_PASSWORD = gql`
@@ -227,23 +260,12 @@ export const RESET_PASSWORD = gql`
 `;
 
 /**
- * Verify reset password token
+ * Reset password
  */
-export const VERIFY_RESET_PASSWORD_TOKEN = gql`
-  query($email: String!, $token: String!) {
-    verifyResetPasswordToken(email: $email, token: $token) {
-      message
-    }
-  }
-`;
-
-/**
- * Request reset password
- */
-export const REQUEST_PASSWORD_RESET = gql`
-  mutation($input: RequestPasswordResetInput!) {
-    requestPasswordReset(input: $input) {
-      message
+export const VERIFY_ACCOUNT = gql`
+  mutation($input: VerifyAccountInput!) {
+    verifyAccount(input: $input) {
+      token
     }
   }
 `;

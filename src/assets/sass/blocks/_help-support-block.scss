@@ -7,8 +7,12 @@
 
   .title {
 	margin-bottom: 60px;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	align-items: center;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
 
 	.total-topic {
 	  margin-left: 15px;
@@ -38,8 +42,12 @@
 
 .help-support-list {
   li {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	align-items: flex-start;
+	-webkit-box-align: start;
+	    -ms-flex-align: start;
+	        align-items: flex-start;
 
 	svg {
 	  margin-right: 20px;
@@ -102,8 +110,12 @@
   border-top: 1px solid $border-color;
   border-bottom: 1px solid $border-color;
   margin-top: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   font-size: 12px;
 
   b {

@@ -44,8 +44,12 @@ if the page has a “right panel”, add a class for BODY -- ".page-has-right-pa
   }
 
   &.header--logout {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	align-items: center;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
 	padding-right: 0;
 
 	.page-title {
@@ -54,8 +58,12 @@ if the page has a “right panel”, add a class for BODY -- ".page-has-right-pa
 
 	.header-content-wrapper {
 	  width: 100%;
+	  display: -webkit-box;
+	  display: -ms-flexbox;
 	  display: flex;
-	  align-items: center;
+	  -webkit-box-align: center;
+	      -ms-flex-align: center;
+	          align-items: center;
 	}
 
 	.logo {
@@ -119,7 +127,8 @@ if the page has a “right panel”, add a class for BODY -- ".page-has-right-pa
 	background-color: $white-color;
 	z-index: 50;
 	border: 1px solid #e6ecf5;
-	box-shadow: 0 0 34px 0 rgba(63, 66, 87, 0.1);
+	-webkit-box-shadow: 0 0 34px 0 rgba(63, 66, 87, 0.1);
+	        box-shadow: 0 0 34px 0 rgba(63, 66, 87, 0.1);
   }
 
   .selectize-input {
@@ -174,11 +183,13 @@ if the page has a “right panel”, add a class for BODY -- ".page-has-right-pa
 	top: -100%;
 	visibility: hidden;
 	opacity: 0;
+	-webkit-transition: all .3s ease;
 	transition: all .3s ease;
 	z-index: 50;
 	background: #fff;
 	width: 100%;
-	box-shadow: 0 0 34px 0 rgba(63, 66, 87, 0.1);
+	-webkit-box-shadow: 0 0 34px 0 rgba(63, 66, 87, 0.1);
+	        box-shadow: 0 0 34px 0 rgba(63, 66, 87, 0.1);
 	border-right: 1px solid $border-color;
 	border-left: 1px solid $border-color;
   }
@@ -192,8 +203,12 @@ if the page has a “right panel”, add a class for BODY -- ".page-has-right-pa
 .control-block {
   float: right;
   height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin-right: 15px;
 
   .author-thumb {
@@ -511,7 +526,8 @@ if the page has a “right panel”, add a class for BODY -- ".page-has-right-pa
 
   &.top-header-favorit {
 	.top-header-author {
-	  transform: translate(0);
+	  -webkit-transform: translate(0);
+	          transform: translate(0);
 	  left: 100px;
 	  bottom: -40px;
 	  z-index: 5;
@@ -554,7 +570,8 @@ if the page has a “right panel”, add a class for BODY -- ".page-has-right-pa
 	left: 0;
 	width: 100%;
 	height: 100%;
-	box-shadow: inset 0px -120px 55px -30px rgba(0,0,0,0.5);
+	-webkit-box-shadow: inset 0px -120px 55px -30px rgba(0,0,0,0.5);
+	        box-shadow: inset 0px -120px 55px -30px rgba(0,0,0,0.5);
   }
 
 }
@@ -567,7 +584,8 @@ if the page has a “right panel”, add a class for BODY -- ".page-has-right-pa
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  justify-content: space-around;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 
   li {
 
@@ -615,7 +633,8 @@ if the page has a “right panel”, add a class for BODY -- ".page-has-right-pa
 .top-header-author {
   position: absolute;
   left: 50%;
-  transform: translate(-50%, 0);
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
   bottom: 15px;
   text-align: center;
   max-width: 200px;
@@ -752,13 +771,21 @@ if the page has a “right panel”, add a class for BODY -- ".page-has-right-pa
 .header-menu {
   float: left;
   height: 100%;
+  -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
+  transition: -webkit-transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
   transition: transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
+  transition: transform 0.5s cubic-bezier(0.55, 0, 0.1, 1), -webkit-transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
   background-color: $white-color;
 
    ul {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	align-items: center;
-	justify-content: space-around;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	-ms-flex-pack: distribute;
+	    justify-content: space-around;
 	margin-bottom: 0;
 	height: 100%;
   }
@@ -793,12 +820,14 @@ if the page has a “right panel”, add a class for BODY -- ".page-has-right-pa
 	visibility: hidden;
 	opacity: 0;
 	display: block;
+	-webkit-transition: all .3s ease;
 	transition: all .3s ease;
 	margin: 0;
 	padding: 0;
 	background-color: $secondary-color;
 	border-color: $border-color;
-	box-shadow: 0 0 34px 0 rgba(63, 66, 87, 0.1);
+	-webkit-box-shadow: 0 0 34px 0 rgba(63, 66, 87, 0.1);
+	        box-shadow: 0 0 34px 0 rgba(63, 66, 87, 0.1);
   }
 
   .dropdown-item:focus, .dropdown-item:hover {
@@ -807,7 +836,8 @@ if the page has a “right panel”, add a class for BODY -- ".page-has-right-pa
   }
 
   &.open {
-	 transform: translateX(70px);
+	 -webkit-transform: translateX(70px);
+	         transform: translateX(70px);
   }
 
   .dropdown-toggle::after {
@@ -823,8 +853,12 @@ if the page has a “right panel”, add a class for BODY -- ".page-has-right-pa
 }
 
 .header--standard-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   position: relative;
 }
 
@@ -834,7 +868,8 @@ if the page has a “right panel”, add a class for BODY -- ".page-has-right-pa
   position: fixed;
   left: 70px;
   padding: 35px 55px;
-  box-shadow: 0 0 34px 0 rgba(63, 66, 87, 0.1);
+  -webkit-box-shadow: 0 0 34px 0 rgba(63, 66, 87, 0.1);
+          box-shadow: 0 0 34px 0 rgba(63, 66, 87, 0.1);
   z-index: 19;
 
   .logo {
@@ -963,6 +998,7 @@ if the page has a “right panel”, add a class for BODY -- ".page-has-right-pa
   fill: $icon-color;
   display: none;
   cursor: pointer;
+  -webkit-transition: all .3s ease;
   transition: all .3s ease;
 
   svg {
@@ -1011,6 +1047,7 @@ if the page has a “right panel”, add a class for BODY -- ".page-has-right-pa
    position: absolute;
    bottom: 0;
    left: 20px;
+   -webkit-transition: width .3s ease;
    transition: width .3s ease;
  }
 
@@ -1030,7 +1067,8 @@ if the page has a “right panel”, add a class for BODY -- ".page-has-right-pa
 .header--standard-landing {
   width: 100%;
   background-color: transparent;
-  box-shadow: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
   color: $white-color;
 
   svg {
@@ -1046,6 +1084,7 @@ if the page has a “right panel”, add a class for BODY -- ".page-has-right-pa
 
 	.img-wrap {
 	  margin-right: 13px;
+	  -webkit-transition: opacity .3s ease;
 	  transition: opacity .3s ease;
 	}
 
@@ -1107,7 +1146,8 @@ if the page has a “right panel”, add a class for BODY -- ".page-has-right-pa
 	}
 
 	&.open {
-	  transform: translateX(0);
+	  -webkit-transform: translateX(0);
+	          transform: translateX(0);
 	}
   }
 
@@ -1166,7 +1206,8 @@ if the page has a “right panel”, add a class for BODY -- ".page-has-right-pa
 
   &.headroom--not-top {
 	background-color: $white-color;
-	box-shadow: 0 0 34px 0 rgba(63, 66, 87, 0.2);
+	-webkit-box-shadow: 0 0 34px 0 rgba(63, 66, 87, 0.2);
+	        box-shadow: 0 0 34px 0 rgba(63, 66, 87, 0.2);
 
 	.logo {
 	  color: $heading-color;
@@ -1217,11 +1258,21 @@ if the page has a “right panel”, add a class for BODY -- ".page-has-right-pa
 	background-image: url("../../img/landing-users.png");
 	background-position: 0 0;
 	background-repeat: repeat;
-	animation: sidedownscroll 30s linear infinite;
+	-webkit-animation: sidedownscroll 30s linear infinite;
+	        animation: sidedownscroll 30s linear infinite;
 	background-size: auto;
 
 	&:before {
 	  background-color: rgba(255,94,58,.95);
+	}
+
+	@-webkit-keyframes sidedownscroll {
+	  0% {
+		background-position: 0 0;
+	  }
+	  100% {
+		background-position: -2000px 2000px;
+	  }
 	}
 
 	@keyframes sidedownscroll {
@@ -1251,8 +1302,10 @@ if the page has a “right panel”, add a class for BODY -- ".page-has-right-pa
   height: 100%;
   margin: 0;
   text-align: center;
-  box-sizing: border-box;
-  animation: slide 50s linear infinite;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-animation: slide 50s linear infinite;
+          animation: slide 50s linear infinite;
   will-change: background-position;
   background-size: auto;
 
@@ -1274,6 +1327,15 @@ if the page has a “right panel”, add a class for BODY -- ".page-has-right-pa
 	}
   }
 
+  @-webkit-keyframes sidedownscroll {
+	0% {
+	  background-position: 0 0;
+	}
+	100% {
+	  background-position: -2000px 2000px;
+	}
+  }
+
   @keyframes sidedownscroll {
 	0% {
 	  background-position: 0 0;
@@ -1284,7 +1346,8 @@ if the page has a “right panel”, add a class for BODY -- ".page-has-right-pa
   }
 
   &.without-animation {
-	animation: none;
+	-webkit-animation: none;
+	        animation: none;
   }
 }
 
@@ -1311,12 +1374,8 @@ if the page has a “right panel”, add a class for BODY -- ".page-has-right-pa
 
 .animated {
   -webkit-animation-duration: .5s;
-  -moz-animation-duration: .5s;
-  -o-animation-duration: .5s;
   animation-duration: .5s;
   -webkit-animation-fill-mode: both;
-  -moz-animation-fill-mode: both;
-  -o-animation-fill-mode: both;
   animation-fill-mode: both;
   will-change: transform,opacity;
 }
@@ -1329,35 +1388,19 @@ if the page has a “right panel”, add a class for BODY -- ".page-has-right-pa
 	-webkit-transform:perspective(400px) rotateX(0deg)
   }
 }
-@-moz-keyframes swingInX {
-  0% {
-	-moz-transform:perspective(400px) rotateX(-90deg)
-  }
-  100% {
-	-moz-transform:perspective(400px) rotateX(0deg)
-  }
-}
-@-o-keyframes swingInX {
-  0% {
-	-o-transform:perspective(400px) rotateX(-90deg)
-  }
-  100% {
-	-o-transform:perspective(400px) rotateX(0deg)
-  }
-}
 @keyframes swingInX {
   0% {
-	transform:perspective(400px) rotateX(-90deg)
+	-webkit-transform:perspective(400px) rotateX(-90deg);
+	        transform:perspective(400px) rotateX(-90deg)
   }
   100% {
-	transform:perspective(400px) rotateX(0deg)
+	-webkit-transform:perspective(400px) rotateX(0deg);
+	        transform:perspective(400px) rotateX(0deg)
   }
 }
 .animated.swingInX {
   -webkit-transform-origin:top;
-  -moz-transform-origin:top;
   -ie-transform-origin:top;
-  -o-transform-origin:top;
   transform-origin:top;
   -webkit-backface-visibility:visible !important;
   -webkit-animation-name:swingInX;
@@ -1376,28 +1419,14 @@ if the page has a “right panel”, add a class for BODY -- ".page-has-right-pa
 	-webkit-transform:perspective(400px) rotateX(-90deg)
   }
 }
-@-moz-keyframes swingOutX {
-  0% {
-	-moz-transform:perspective(400px) rotateX(0deg)
-  }
-  100% {
-	-moz-transform:perspective(400px) rotateX(-90deg)
-  }
-}
-@-o-keyframes swingOutX {
-  0% {
-	-o-transform:perspective(400px) rotateX(0deg)
-  }
-  100% {
-	-o-transform:perspective(400px) rotateX(-90deg)
-  }
-}
 @keyframes swingOutX {
   0% {
-	transform:perspective(400px) rotateX(0deg)
+	-webkit-transform:perspective(400px) rotateX(0deg);
+	        transform:perspective(400px) rotateX(0deg)
   }
   100% {
-	transform:perspective(400px) rotateX(-90deg)
+	-webkit-transform:perspective(400px) rotateX(-90deg);
+	        transform:perspective(400px) rotateX(-90deg)
   }
 }
 .animated.swingOutX {
@@ -1419,34 +1448,18 @@ if the page has a “right panel”, add a class for BODY -- ".page-has-right-pa
 	-webkit-transform:translateY(0)
   }
 }
-@-moz-keyframes slideDown {
-  0% {
-	-moz-transform:translateY(-100%)
-  }
-  100% {
-	-moz-transform:translateY(0)
-  }
-}
-@-o-keyframes slideDown {
-  0% {
-	-o-transform:translateY(-100%)
-  }
-  100% {
-	-o-transform:translateY(0)
-  }
-}
 @keyframes slideDown {
   0% {
-	transform:translateY(-100%)
+	-webkit-transform:translateY(-100%);
+	        transform:translateY(-100%)
   }
   100% {
-	transform:translateY(0)
+	-webkit-transform:translateY(0);
+	        transform:translateY(0)
   }
 }
 .animated.slideDown {
   -webkit-animation-name:slideDown;
-  -moz-animation-name:slideDown;
-  -o-animation-name:slideDown;
   animation-name:slideDown;
 }
 @-webkit-keyframes slideUp {
@@ -1457,34 +1470,18 @@ if the page has a “right panel”, add a class for BODY -- ".page-has-right-pa
 	-webkit-transform:translateY(-100%)
   }
 }
-@-moz-keyframes slideUp {
-  0% {
-	-moz-transform:translateY(0)
-  }
-  100% {
-	-moz-transform:translateY(-100%)
-  }
-}
-@-o-keyframes slideUp {
-  0% {
-	-o-transform:translateY(0)
-  }
-  100% {
-	-o-transform:translateY(-100%)
-  }
-}
 @keyframes slideUp {
   0% {
-	transform:translateY(0)
+	-webkit-transform:translateY(0);
+	        transform:translateY(0)
   }
   100% {
-	transform:translateY(-100%)
+	-webkit-transform:translateY(-100%);
+	        transform:translateY(-100%)
   }
 }
 .animated.slideUp {
   -webkit-animation-name:slideUp;
-  -moz-animation-name:slideUp;
-  -o-animation-name:slideUp;
   animation-name:slideUp;
 }
 @-webkit-keyframes swingInX {
@@ -1495,28 +1492,14 @@ if the page has a “right panel”, add a class for BODY -- ".page-has-right-pa
 	-webkit-transform:perspective(400px) rotateX(0deg)
   }
 }
-@-moz-keyframes swingInX {
-  0% {
-	-moz-transform:perspective(400px) rotateX(-90deg)
-  }
-  100% {
-	-moz-transform:perspective(400px) rotateX(0deg)
-  }
-}
-@-o-keyframes swingInX {
-  0% {
-	-o-transform:perspective(400px) rotateX(-90deg)
-  }
-  100% {
-	-o-transform:perspective(400px) rotateX(0deg)
-  }
-}
 @keyframes swingInX {
   0% {
-	transform:perspective(400px) rotateX(-90deg)
+	-webkit-transform:perspective(400px) rotateX(-90deg);
+	        transform:perspective(400px) rotateX(-90deg)
   }
   100% {
-	transform:perspective(400px) rotateX(0deg)
+	-webkit-transform:perspective(400px) rotateX(0deg);
+	        transform:perspective(400px) rotateX(0deg)
   }
 }
 
@@ -1531,33 +1514,15 @@ if the page has a “right panel”, add a class for BODY -- ".page-has-right-pa
 	opacity:1
   }
 }
-@-moz-keyframes flipInX {
-  0% {
-	-moz-transform:perspective(400px) rotateX(90deg);
-	opacity:0
-  }
-  100% {
-	-moz-transform:perspective(400px) rotateX(0deg);
-	opacity:1
-  }
-}
-@-o-keyframes flipInX {
-  0% {
-	-o-transform:perspective(400px) rotateX(90deg);
-	opacity:0
-  }
-  100% {
-	-o-transform:perspective(400px) rotateX(0deg);
-	opacity:1
-  }
-}
 @keyframes flipInX {
   0% {
-	transform:perspective(400px) rotateX(90deg);
+	-webkit-transform:perspective(400px) rotateX(90deg);
+	        transform:perspective(400px) rotateX(90deg);
 	opacity:0
   }
   100% {
-	transform:perspective(400px) rotateX(0deg);
+	-webkit-transform:perspective(400px) rotateX(0deg);
+	        transform:perspective(400px) rotateX(0deg);
 	opacity:1
   }
 }
@@ -1581,33 +1546,15 @@ if the page has a “right panel”, add a class for BODY -- ".page-has-right-pa
 	opacity:0
   }
 }
-@-moz-keyframes flipOutX {
-  0% {
-	-moz-transform:perspective(400px) rotateX(0deg);
-	opacity:1
-  }
-  100% {
-	-moz-transform:perspective(400px) rotateX(90deg);
-	opacity:0
-  }
-}
-@-o-keyframes flipOutX {
-  0% {
-	-o-transform:perspective(400px) rotateX(0deg);
-	opacity:1
-  }
-  100% {
-	-o-transform:perspective(400px) rotateX(90deg);
-	opacity:0
-  }
-}
 @keyframes flipOutX {
   0% {
-	transform:perspective(400px) rotateX(0deg);
+	-webkit-transform:perspective(400px) rotateX(0deg);
+	        transform:perspective(400px) rotateX(0deg);
 	opacity:1
   }
   100% {
-	transform:perspective(400px) rotateX(90deg);
+	-webkit-transform:perspective(400px) rotateX(90deg);
+	        transform:perspective(400px) rotateX(90deg);
 	opacity:0
   }
 }
@@ -1637,58 +1584,28 @@ if the page has a “right panel”, add a class for BODY -- ".page-has-right-pa
 	-webkit-transform:translateY(0)
   }
 }
-@-moz-keyframes bounceInDown {
-  0% {
-	opacity:0;
-	-moz-transform:translateY(-200px)
-  }
-  60% {
-	opacity:1;
-	-moz-transform:translateY(30px)
-  }
-  80% {
-	-moz-transform:translateY(-10px)
-  }
-  100% {
-	-moz-transform:translateY(0)
-  }
-}
-@-o-keyframes bounceInDown {
-  0% {
-	opacity:0;
-	-o-transform:translateY(-200px)
-  }
-  60% {
-	opacity:1;
-	-o-transform:translateY(30px)
-  }
-  80% {
-	-o-transform:translateY(-10px)
-  }
-  100% {
-	-o-transform:translateY(0)
-  }
-}
 @keyframes bounceInDown {
   0% {
 	opacity:0;
-	transform:translateY(-200px)
+	-webkit-transform:translateY(-200px);
+	        transform:translateY(-200px)
   }
   60% {
 	opacity:1;
-	transform:translateY(30px)
+	-webkit-transform:translateY(30px);
+	        transform:translateY(30px)
   }
   80% {
-	transform:translateY(-10px)
+	-webkit-transform:translateY(-10px);
+	        transform:translateY(-10px)
   }
   100% {
-	transform:translateY(0)
+	-webkit-transform:translateY(0);
+	        transform:translateY(0)
   }
 }
 .animated.bounceInDown {
   -webkit-animation-name:bounceInDown;
-  -moz-animation-name:bounceInDown;
-  -o-animation-name:bounceInDown;
   animation-name:bounceInDown;
 }
 @-webkit-keyframes bounceOutUp {
@@ -1704,49 +1621,24 @@ if the page has a “right panel”, add a class for BODY -- ".page-has-right-pa
 	-webkit-transform:translateY(-200px)
   }
 }
-@-moz-keyframes bounceOutUp {
-  0% {
-	-moz-transform:translateY(0)
-  }
-  30% {
-	opacity:1;
-	-moz-transform:translateY(20px)
-  }
-  100% {
-	opacity:0;
-	-moz-transform:translateY(-200px)
-  }
-}
-@-o-keyframes bounceOutUp {
-  0% {
-	-o-transform:translateY(0)
-  }
-  30% {
-	opacity:1;
-	-o-transform:translateY(20px)
-  }
-  100% {
-	opacity:0;
-	-o-transform:translateY(-200px)
-  }
-}
 @keyframes bounceOutUp {
   0% {
-	transform:translateY(0)
+	-webkit-transform:translateY(0);
+	        transform:translateY(0)
   }
   30% {
 	opacity:1;
-	transform:translateY(20px)
+	-webkit-transform:translateY(20px);
+	        transform:translateY(20px)
   }
   100% {
 	opacity:0;
-	transform:translateY(-200px)
+	-webkit-transform:translateY(-200px);
+	        transform:translateY(-200px)
   }
 }
 .animated.bounceOutUp {
   -webkit-animation-name:bounceOutUp;
-  -moz-animation-name:bounceOutUp;
-  -o-animation-name:bounceOutUp;
   animation-name:bounceOutUp;
 }
 
@@ -1832,8 +1724,12 @@ if the page has a “right panel”, add a class for BODY -- ".page-has-right-pa
   }
 
   .header-content-wrapper {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	justify-content: space-between;
+	-webkit-box-pack: justify;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
   }
 
 }
@@ -1862,7 +1758,10 @@ if the page has a “right panel”, add a class for BODY -- ".page-has-right-pa
 
 @media (max-width: 960px) {
   .header--standard-wrap {
-	flex-direction: column;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
   }
 
   .header--standard .logo {
@@ -1913,7 +1812,8 @@ if the page has a “right panel”, add a class for BODY -- ".page-has-right-pa
 	  right: auto;
 	  top: -30px;
 	  left: 50%;
-	  transform: translate(-50%, 0);
+	  -webkit-transform: translate(-50%, 0);
+	          transform: translate(-50%, 0);
 	  bottom: auto;
 	  width: 100%;
 	  text-align: center;
@@ -1927,7 +1827,8 @@ if the page has a “right panel”, add a class for BODY -- ".page-has-right-pa
 		right: 38px;
 		top: -31px;
 		left: auto;
-		transform: none;
+		-webkit-transform: none;
+		        transform: none;
 		width: auto;
 	  }
 	}
@@ -2067,7 +1968,9 @@ if the page has a “right panel”, add a class for BODY -- ".page-has-right-pa
 
   .header--standard-landing .logo {
 	float: none;
-	justify-content: center;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
 	margin-top: 0;
   }
 
@@ -2084,7 +1987,10 @@ if the page has a “right panel”, add a class for BODY -- ".page-has-right-pa
   }
 
   .header--standard-wrap {
-	flex-direction: row;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: row;
+	        flex-direction: row;
   }
 
   .header--standard .logo {
@@ -2093,19 +1999,28 @@ if the page has a “right panel”, add a class for BODY -- ".page-has-right-pa
 
   .header-menu {
 	margin: auto;
-	flex-direction: column;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
 	position: fixed;
 	height: 100vh;
 	width: 270px;
-	transform: translateX(calc(100% + 70px));
+	-webkit-transform: translateX(calc(100% + 70px));
+	        transform: translateX(calc(100% + 70px));
 	right: 0;
 	top: 0;
 	text-align: left;
-	justify-content: baseline;
-	align-items: baseline;
+	-webkit-box-pack: baseline;
+	    -ms-flex-pack: baseline;
+	        justify-content: baseline;
+	-webkit-box-align: baseline;
+	    -ms-flex-align: baseline;
+	        align-items: baseline;
 	padding-top: 50px;
 	border-left: 1px solid $border-color;
-	box-shadow: 0 0 34px 0 rgba(63, 66, 87, 0.1);
+	-webkit-box-shadow: 0 0 34px 0 rgba(63, 66, 87, 0.1);
+	        box-shadow: 0 0 34px 0 rgba(63, 66, 87, 0.1);
 
 	a {
 	  padding: 15px 25px;
@@ -2122,7 +2037,8 @@ if the page has a “right panel”, add a class for BODY -- ".page-has-right-pa
 	  position: relative !important;
 	  margin-bottom: 15px;
 	  display: block;
-	  transform: none !important;
+	  -webkit-transform: none !important;
+	          transform: none !important;
 	}
 
 	& > * {
@@ -2177,7 +2093,8 @@ if the page has a “right panel”, add a class for BODY -- ".page-has-right-pa
   .header--standard {
 	z-index: 31;
 	height: 70px;
-	animation: none;
+	-webkit-animation: none;
+	        animation: none;
 
 	.ps {
 	  -ms-touch-action: auto;
@@ -2264,7 +2181,10 @@ if the page has a “right panel”, add a class for BODY -- ".page-has-right-pa
   }
 
   .top-header.top-header-favorit .profile-menu {
-	flex-direction: column;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
 
 	li {
 	  margin-bottom: 5px;

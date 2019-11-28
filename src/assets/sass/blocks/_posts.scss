@@ -94,7 +94,8 @@
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	transform: translate(-50%, -50%);
+	-webkit-transform: translate(-50%, -50%);
+	        transform: translate(-50%, -50%);
 	z-index: 5;
 	font-weight: 700;
 	margin-left: -8px;
@@ -135,8 +136,12 @@
 .post-additional-info {
   padding: 20px 0 0;
   border-top: 1px solid $border-color;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 
   & > * {
 	margin-right: 15px;
@@ -168,6 +173,7 @@
 
   & > * {
 	vertical-align: middle;
+	-webkit-transition: all .15s ease;
 	transition: all .15s ease;
   }
 
@@ -277,7 +283,8 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   text-align: center;
 
   .title {
@@ -332,8 +339,13 @@
 @media (max-width: 480px) {
 
   .post-additional-info {
-	flex-direction: column;
-	align-items: flex-start;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	-webkit-box-align: start;
+	    -ms-flex-align: start;
+	        align-items: flex-start;
   }
 
   .post-additional-info > * {

@@ -35,7 +35,8 @@
   .search-friend {
 	position: relative;
 	bottom: auto;
-	box-shadow: none;
+	-webkit-box-shadow: none;
+	        box-shadow: none;
   }
 
   .fixed-sidebar {
@@ -95,6 +96,7 @@
   }
 
   .fixed-sidebar {
+	-webkit-transition: all .3s ease;
 	transition: all .3s ease;
   }
 
@@ -162,7 +164,8 @@
 	  right: auto;
 	  top: auto;
 	  left: 50%;
-	  transform: translate(-50%, 0);
+	  -webkit-transform: translate(-50%, 0);
+	          transform: translate(-50%, 0);
 	  bottom: -22px;
 	  width: 100%;
 	  text-align: center;
@@ -243,7 +246,8 @@
   }
 
   .profile-settings-responsive {
-	transform: translateX(-100%);
+	-webkit-transform: translateX(-100%);
+	        transform: translateX(-100%);
   }
 
   &.page-has-left-panels {
@@ -275,8 +279,11 @@
 .mobile-app-tabs {
   background-color: $secondary-color;
   border-bottom-color: transparent;
-  justify-content: space-around;
-  align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin-bottom: 7px;
   height: 70px;
   padding: 0 13px;
@@ -287,9 +294,16 @@
 	height: 100%;
 	border-color: transparent;
 	padding: 0 20px;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	flex-direction: column;
-	justify-content: center;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
 	border-bottom: 3px solid transparent;
 
 	&:hover, &:focus {
@@ -340,6 +354,8 @@
   .control-icon {
 	position: relative;
 	margin-right: 0;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
   }
 

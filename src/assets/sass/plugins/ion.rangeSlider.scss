@@ -11,7 +11,6 @@
   display: block;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
-  -khtml-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
@@ -258,7 +257,6 @@
   top: 0;
   padding: 1px 3px;
   background: rgba(0, 0, 0, 0.1);
-  -moz-border-radius: 3px;
   border-radius: 3px;
 }
 .lt-ie9 .irs-min,
@@ -275,7 +273,6 @@
   text-shadow: none;
   padding: 1px 5px;
   background: rgba(0, 0, 0, 0.3);
-  -moz-border-radius: 3px;
   border-radius: 3px;
 }
 .lt-ie9 .irs-from,

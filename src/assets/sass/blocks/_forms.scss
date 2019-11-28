@@ -160,8 +160,12 @@ select.form-control {
   border: none;
   height: 100%;
   padding: 1.1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 
   svg {
     fill: $icon-color;
@@ -201,7 +205,10 @@ select.form-control {
   margin-bottom: 20px;
 }
 .togglebutton, .togglebutton label, .togglebutton input, .togglebutton .toggle {
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 .togglebutton label {
   cursor: pointer;
@@ -234,6 +241,7 @@ fieldset[disabled] .form-group.is-focused .togglebutton label {
   background-color: rgba(80, 80, 80, 0.7);
   border-radius: 15px;
   margin-right: 0;
+  -webkit-transition: background 0.3s ease;
   transition: background 0.3s ease;
   vertical-align: middle;
 }
@@ -248,14 +256,18 @@ fieldset[disabled] .form-group.is-focused .togglebutton label {
   position: relative;
   left: 3px;
   top: 3px;
+  -webkit-transition: left 0.3s ease, background 0.3s ease, -webkit-box-shadow 0.1s ease;
+  transition: left 0.3s ease, background 0.3s ease, -webkit-box-shadow 0.1s ease;
   transition: left 0.3s ease, background 0.3s ease, box-shadow 0.1s ease;
+  transition: left 0.3s ease, background 0.3s ease, box-shadow 0.1s ease, -webkit-box-shadow 0.1s ease;
   text-align: center;
 }
 .togglebutton label input[type=checkbox][disabled] + .toggle:after, .togglebutton label input[type=checkbox][disabled]:checked + .toggle:after {
   background-color: #BDBDBD;
 }
 .togglebutton label input[type=checkbox] + .toggle:active:after, .togglebutton label input[type=checkbox][disabled] + .toggle:active:after {
-  box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.4), 0 0 0 15px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.4), 0 0 0 15px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.4), 0 0 0 15px rgba(0, 0, 0, 0.1);
 }
 .togglebutton label input[type=checkbox]:checked + .toggle:after {
   left: 39px;
@@ -267,7 +279,8 @@ fieldset[disabled] .form-group.is-focused .togglebutton label {
   background-color: $blue;
 }
 .togglebutton label input[type=checkbox]:checked + .toggle:active:after {
-  box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.4), 0 0 0 15px rgba(156, 39, 176, 0.1);
+  -webkit-box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.4), 0 0 0 15px rgba(156, 39, 176, 0.1);
+          box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.4), 0 0 0 15px rgba(156, 39, 176, 0.1);
 }
 .description-toggle {
   display: table;
@@ -289,8 +302,12 @@ fieldset[disabled] .form-group.is-focused .togglebutton label {
 }
 
 .add-field {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   color: $body-font-color;
   fill: $body-font-color;
   margin-bottom: 1rem;
@@ -352,6 +369,7 @@ fieldset[disabled] .form-group.is-focused .togglebutton label {
   padding: 0.5rem 1rem;
   font-size: 0.812rem;
   border-radius: 0.25rem;
+  -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 
 
@@ -388,7 +406,9 @@ fieldset[disabled] .form-group.is-focused .togglebutton label {
   margin: 40px 0 20px;
 
   .form-group {
-    flex: 1 0 auto;
+    -webkit-box-flex: 1;
+        -ms-flex: 1 0 auto;
+            flex: 1 0 auto;
     margin-bottom: 0;
   }
 
@@ -402,8 +422,12 @@ fieldset[disabled] .form-group.is-focused .togglebutton label {
 
   li {
     color: $heading-color;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 
     & + li {
       margin-top: 30px;
@@ -440,10 +464,13 @@ fieldset[disabled] .form-group.is-focused .togglebutton label {
   padding: 50px 40px;
   background-color: $white-color;
   border-radius: 5px;
-  box-shadow: 0 0 34px 0 rgba(63, 66, 87, 0.1);
+  -webkit-box-shadow: 0 0 34px 0 rgba(63, 66, 87, 0.1);
+          box-shadow: 0 0 34px 0 rgba(63, 66, 87, 0.1);
 
   .form-group {
-    flex: 1 0 auto;
+    -webkit-box-flex: 1;
+        -ms-flex: 1 0 auto;
+            flex: 1 0 auto;
     margin-bottom: 0;
   }
 
@@ -476,7 +503,8 @@ fieldset[disabled] .form-group.is-focused .togglebutton label {
   position: absolute;
   left: 10px;
   top: 0;
-  transition-duration: 0.2s;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
 }
 .radio label .circle {
   border: 1px solid #dde0e9;
@@ -490,9 +518,6 @@ fieldset[disabled] .form-group.is-focused .togglebutton label {
   border-radius: 100%;
   background-color: $primary-color;
   -webkit-transform: scale3d(0,0,0);
-  -moz-transform: scale3d(0,0,0);
-  -o-transform: scale3d(0,0,0);
-  -ms-transform: scale3d(0,0,0);
   transform: scale3d(0,0,0);
 }
 .radio label .check:after {
@@ -509,9 +534,6 @@ fieldset[disabled] .form-group.is-focused .togglebutton label {
   opacity: 0;
   margin: 0;
   -webkit-transform: scale3d(1.5,1.5,1);
-  -moz-transform: scale3d(1.5,1.5,1);
-  -o-transform: scale3d(1.5,1.5,1);
-  -ms-transform: scale3d(1.5,1.5,1);
   transform: scale3d(1.5,1.5,1);
 }
 
@@ -533,9 +555,6 @@ fieldset[disabled] .form-group.is-focused .togglebutton label {
 }
 .radio input[type=radio]:checked ~ .check {
   -webkit-transform: scale3d(0.45, 0.45, 1);
-  -moz-transform: scale3d(0.45, 0.45, 1);
-  -o-transform: scale3d(0.45, 0.45, 1);
-  -ms-transform: scale3d(0.45, 0.45, 1);
   transform: scale3d(0.45, 0.45, 1);
 }
 .radio input[type=radio][disabled] ~ .check, .radio input[type=radio][disabled] ~ .circle {
@@ -548,7 +567,30 @@ fieldset[disabled] .form-group.is-focused .togglebutton label {
   border-color: #000000;
 }
 
+@-webkit-keyframes rippleOn {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 @keyframes rippleOn {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes rippleOff {
   0% {
     opacity: 0;
   }
@@ -622,9 +664,6 @@ fieldset[disabled] .form-group.is-focused .checkbox label {
   margin: 0;
   top: 0;
   -webkit-transform: scale3d(2.3,2.3,1);
-  -moz-transform: scale3d(2.3,2.3,1);
-  -o-transform: scale3d(2.3,2.3,1);
-  -ms-transform: scale3d(2.3,2.3,1);
   transform: scale3d(2.3,2.3,1);
 }
 .checkbox .checkbox-material .check {
@@ -639,18 +678,17 @@ fieldset[disabled] .form-group.is-focused .checkbox label {
 .checkbox .checkbox-material .check:before {
   position: absolute;
   content: "";
-  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
   display: block;
   margin-top: -3px;
   margin-left: 7px;
   width: 0;
   height: 0;
   background: red;
-  box-shadow: 0 0 0 0 inset;
+  -webkit-box-shadow: 0 0 0 0 inset;
+          box-shadow: 0 0 0 0 inset;
   -webkit-animation: checkbox-off 0.3s forwards;
-  -moz-animation: checkbox-off 0.3s forwards;
-  -o-animation: checkbox-off 0.3s forwards;
-  -ms-animation: checkbox-off 0.3s forwards;
   animation: checkbox-off 0.3s forwards;
 }
 .checkbox input[type=checkbox]:focus + .checkbox-material .check:after {
@@ -661,39 +699,25 @@ fieldset[disabled] .form-group.is-focused .checkbox label {
 }
 .checkbox input[type=checkbox]:checked + .checkbox-material .check:before {
   color: #FFFFFF;
-  box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0 0 20px, 0px 32px 0 20px, -5px 5px 0 10px, 20px -12px 0 11px;
+  -webkit-box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0 0 20px, 0px 32px 0 20px, -5px 5px 0 10px, 20px -12px 0 11px;
+          box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0 0 20px, 0px 32px 0 20px, -5px 5px 0 10px, 20px -12px 0 11px;
   -webkit-animation: checkbox-on 0.3s forwards;
-  -moz-animation: checkbox-on 0.3s forwards;
-  -o-animation: checkbox-on 0.3s forwards;
-  -ms-animation: checkbox-on 0.3s forwards;
   animation: checkbox-on 0.3s forwards;
 }
 .checkbox.clicked input[type=checkbox]:checked + .checkbox-material:before {
   -webkit-animation: rippleOn 500ms;
-  -moz-animation: rippleOn 500ms;
-  -o-animation: rippleOn 500ms;
-  -ms-animation: rippleOn 500ms;
   animation: rippleOn 500ms;
 }
 .checkbox.clicked input[type=checkbox]:checked + .checkbox-material .check:after {
   -webkit-animation: rippleOn 500ms forwards;
-  -moz-animation: rippleOn 500ms forwards;
-  -o-animation: rippleOn 500ms forwards;
-  -ms-animation: rippleOn 500ms forwards;
   animation: rippleOn 500ms forwards;
 }
 .checkbox.clicked input[type=checkbox]:not(:checked) + .checkbox-material:before {
   -webkit-animation: rippleOff 500ms;
-  -moz-animation: rippleOff 500ms;
-  -o-animation: rippleOff 500ms;
-  -ms-animation: rippleOff 500ms;
   animation: rippleOff 500ms;
 }
 .checkbox.clicked input[type=checkbox]:not(:checked) + .checkbox-material .check:after {
   -webkit-animation: rippleOff 500ms;
-  -moz-animation: rippleOff 500ms;
-  -o-animation: rippleOff 500ms;
-  -ms-animation: rippleOff 500ms;
   animation: rippleOff 500ms;
 }
 fieldset[disabled] .checkbox, fieldset[disabled] .checkbox input[type=checkbox],
@@ -707,7 +731,8 @@ fieldset[disabled] .checkbox, fieldset[disabled] .checkbox input[type=checkbox],
 }
 .checkbox input[type=checkbox][disabled] + .checkbox-material .check:after {
   background-color: rgba(0,0,0, 0.87);
-  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
 }
 
 // Styles for checkbox validation (forms)
@@ -726,15 +751,33 @@ fieldset[disabled] .checkbox, fieldset[disabled] .checkbox input[type=checkbox],
   }
 }
 
-@keyframes checkbox-on {
+@-webkit-keyframes checkbox-on {
   0% {
-    box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0 0 20px, 0px 32px 0 20px, -5px 5px 0 10px, 15px 2px 0 11px;
+    -webkit-box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0 0 20px, 0px 32px 0 20px, -5px 5px 0 10px, 15px 2px 0 11px;
+            box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0 0 20px, 0px 32px 0 20px, -5px 5px 0 10px, 15px 2px 0 11px;
   }
   50% {
-    box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0 0 20px, 0px 32px 0 20px, -5px 5px 0 10px, 20px 2px 0 11px;
+    -webkit-box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0 0 20px, 0px 32px 0 20px, -5px 5px 0 10px, 20px 2px 0 11px;
+            box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0 0 20px, 0px 32px 0 20px, -5px 5px 0 10px, 20px 2px 0 11px;
   }
   100% {
-    box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0 0 20px, 0px 32px 0 20px, -5px 5px 0 10px, 20px -12px 0 11px;
+    -webkit-box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0 0 20px, 0px 32px 0 20px, -5px 5px 0 10px, 20px -12px 0 11px;
+            box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0 0 20px, 0px 32px 0 20px, -5px 5px 0 10px, 20px -12px 0 11px;
+  }
+}
+
+@keyframes checkbox-on {
+  0% {
+    -webkit-box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0 0 20px, 0px 32px 0 20px, -5px 5px 0 10px, 15px 2px 0 11px;
+            box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0 0 20px, 0px 32px 0 20px, -5px 5px 0 10px, 15px 2px 0 11px;
+  }
+  50% {
+    -webkit-box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0 0 20px, 0px 32px 0 20px, -5px 5px 0 10px, 20px 2px 0 11px;
+            box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0 0 20px, 0px 32px 0 20px, -5px 5px 0 10px, 20px 2px 0 11px;
+  }
+  100% {
+    -webkit-box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0 0 20px, 0px 32px 0 20px, -5px 5px 0 10px, 20px -12px 0 11px;
+            box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0 0 20px, 0px 32px 0 20px, -5px 5px 0 10px, 20px -12px 0 11px;
   }
 }
 @keyframes rippleOn {

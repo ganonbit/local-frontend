@@ -154,6 +154,7 @@
   margin: 0 auto;
 
   span {
+	-webkit-transition: all .3s ease;
 	transition: all .3s ease;
   }
 
@@ -180,8 +181,12 @@
 
   .post__author {
 	margin-bottom: 0;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	align-items: center;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
 
 	img {
 	  margin-right: 10px;
@@ -201,6 +206,7 @@
   textarea {
 	min-height: 60px;
 	height: 60px;
+	-webkit-transition: all .3s ease;
 	transition: all .3s ease;
 
 	&:focus {

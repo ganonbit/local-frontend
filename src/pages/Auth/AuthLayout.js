@@ -4,7 +4,13 @@ import { Switch, Route, Redirect } from "react-router-dom";
 import styled from "styled-components";
 
 import { Overlay } from "components/Layout";
-import { AuthHeader, SignUp, ForgotPassword, ResetPassword } from "pages/Auth";
+import {
+  AuthHeader,
+  SignUp,
+  ForgotPassword,
+  ResetPassword,
+  VerifyAccount
+} from "pages/Auth";
 
 import * as Routes from "routes";
 
@@ -65,6 +71,11 @@ const AuthLayout = ({ refetch }) => {
               exact
               path={Routes.RESET_PASSWORD}
               render={() => <ResetPassword refetch={refetch} />}
+            />
+            <Route
+              exact
+              path={Routes.VERIFY_ACCOUNT}
+              render={() => <VerifyAccount refetch={refetch} />}
             />
             <Redirect to={Routes.HOME} />
           </Switch>

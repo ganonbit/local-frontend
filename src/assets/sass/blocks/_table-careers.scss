@@ -10,8 +10,10 @@
 	padding: 30px 35px;
 	border: 1px solid $border-color;
 	margin-top: 18px;
-	box-shadow: 0 0 34px 0 rgba(63, 66, 87, 0.1);
+	-webkit-box-shadow: 0 0 34px 0 rgba(63, 66, 87, 0.1);
+	        box-shadow: 0 0 34px 0 rgba(63, 66, 87, 0.1);
 	border-radius: 5px;
+	-webkit-transition: background-color .3s ease;
 	transition: background-color .3s ease;
 
 	&:hover {
@@ -31,7 +33,8 @@
 
   .head {
 	border: none;
-	box-shadow: none;
+	-webkit-box-shadow: none;
+	        box-shadow: none;
 
 	span {
 	  font-size: 10px;

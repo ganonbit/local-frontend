@@ -2,6 +2,8 @@
 
 
 .photo-gallery {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   top: 0;
   right: 65px;
@@ -83,6 +85,7 @@
 	color: $white-color;
 	fill: $white-color;
 	opacity: 0;
+	-webkit-transition: all .3s ease;
 	transition: all .3s ease;
   }
 
@@ -91,6 +94,7 @@
 	bottom: 25px;
 	left: 20px;
 	opacity: 0;
+	-webkit-transition: all .3s ease;
 	transition: all .3s ease;
 
 	.title {
@@ -111,6 +115,7 @@
 	right: 25px;
 	bottom: 30px;
 	opacity: 0;
+	-webkit-transition: all .3s ease;
 	transition: all .3s ease;
   }
 
@@ -189,7 +194,8 @@
 	  position: absolute;
 	  top: 50%;
 	  left: 50%;
-	  transform: translate(-50%, -50%);
+	  -webkit-transform: translate(-50%, -50%);
+	          transform: translate(-50%, -50%);
 	  width: 90%;
 	}
 
@@ -242,7 +248,8 @@
 
   .photo-album-item.create-album .content {
 	position: relative;
-	transform: none;
+	-webkit-transform: none;
+	        transform: none;
 	top: auto;
 	left: auto;
 	width: 100%;
