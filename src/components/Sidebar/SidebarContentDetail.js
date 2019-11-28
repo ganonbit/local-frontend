@@ -6,11 +6,7 @@ const SidebarMainContent = ({ onSetSidebarOpen }) => {
     'Newsfeed',
     'Fav Pages Feedback',
     'Friend Groups',
-    'Music & playlist',
-    'Weather App',
-    'Calender and Event',
-    'Community Bagges',
-    'Friends Birthdays',
+    'Community Badges',
     'Account Stats',
     'Manage Widgets'
   ]
