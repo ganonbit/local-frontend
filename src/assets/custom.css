@@ -451,8 +451,13 @@ ul.user-btns li span {
   top: 30px;
 }
 .tabs-buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row-reverse;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
 }
 .left-menu a:hover svg {
   fill: var(--theme-color-secondary);
@@ -482,6 +487,7 @@ ul.user-btns li span {
   background-color: var(--theme-color);
 }
 .birthday-item.badges .skills-item-meter-active {
+  background: -webkit-gradient(linear, left top, right top, from(var(--theme-color)), to(var(--theme-color)));
   background: linear-gradient(to right, var(--theme-color), var(--theme-color));
 }
 .content-bg-wrap.bg-landing:before {
@@ -535,13 +541,15 @@ a.btn-register {
   color: var(--theme-color);
 }
 .landing-page .content-bg-wrap {
-  animation: sidedownscroll 120s linear infinite;
+  -webkit-animation: sidedownscroll 120s linear infinite;
+          animation: sidedownscroll 120s linear infinite;
 }
 .restore-password-popup {
   position: absolute;
   right: 0;
   left: 0;
-  transform: translate(0%, -50%) !important;
+  -webkit-transform: translate(0%, -50%) !important;
+          transform: translate(0%, -50%) !important;
   top: 50%;
   margin: auto;
 }
@@ -581,6 +589,21 @@ span.material-input-error {
   color: var(--theme-color-pink);
 }
 
+.searchInput::-webkit-input-placeholder {
+  color: white;
+  font-size: 12px;
+}
+
+.searchInput:-ms-input-placeholder {
+  color: white;
+  font-size: 12px;
+}
+
+.searchInput::-ms-input-placeholder {
+  color: white;
+  font-size: 12px;
+}
+
 .searchInput::placeholder {
   color: white;
   font-size: 12px;
@@ -588,8 +611,12 @@ span.material-input-error {
 .nav-right-section {
   /* float: right; */
   /* height: 100%; */
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   /* margin-right: 15px; */
   position: absolute;
   right: 0;
@@ -619,7 +646,8 @@ span.material-input-error {
   font-size: 0;
   border: none;
   outline: none;
-  box-shadow: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
   opacity: 0;
   z-index: 9;
   cursor: pointer;
@@ -639,9 +667,15 @@ span.material-input-error {
   }
   .header .page-title {
     width: 300px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
   .search-bar.w-search {
     width: 410px;
@@ -660,6 +694,8 @@ span.material-input-error {
 }
 @media (max-width: 1080px) {
   .header-content-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
   }
   .header .page-title {
@@ -711,10 +747,13 @@ span.material-input-error {
     display: block;
   }
   .control-block {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     width: 100%;
     margin-left: auto;
-    justify-content: space-around;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
   }
   .author-page {
     display: none;
@@ -729,8 +768,11 @@ span.material-input-error {
     content: none;
   }
   .ui-block-title {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-around;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
   }
 }
 @media (max-width: 640px) {
@@ -751,8 +793,12 @@ span.material-input-error {
     margin-bottom: 20px;
   }
   .tabs-buttons {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
   .tabs-buttons button {
     margin: 0 5px;
@@ -766,9 +812,16 @@ span.material-input-error {
   .post-additional-info {
     padding: 20px 0 0;
     border-top: 1px solid #e6ecf5;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
     justify-items: baseline;
   }
 }
