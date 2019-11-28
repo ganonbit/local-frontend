@@ -12,7 +12,8 @@ const userPayload = `
   id
   username
   email
-  fullName
+  firstName
+  lastName
   image
   imagePublicId
   coverImage
@@ -89,7 +90,8 @@ export const GET_AUTH_USER = gql`
         createdAt
         author {
           id
-          fullName
+          firstName
+          lastName
           username
           image
         }
@@ -139,7 +141,8 @@ export const GET_USERS = gql`
       count
       users {
         id
-        fullName
+        firstName
+        lastName
         username
         image
         following {
@@ -165,13 +168,14 @@ export const GET_USERS = gql`
 `;
 
 /**
- * Searches users by username or fullName
+ * Searches users by username or name
  */
 export const SEARCH_USERS = gql`
   query($searchQuery: String!) {
     searchUsers(searchQuery: $searchQuery) {
       id
-      fullName
+      firstName
+      lastName
       username
       image
     }
@@ -251,7 +255,8 @@ export const USER_SUGGESTIONS = gql`
   query($userId: String!) {
     suggestPeople(userId: $userId) {
       id
-      fullName
+      firstName
+      lastName
       username
       image
     }
@@ -266,7 +271,8 @@ export const GET_CONVERSATIONS = gql`
     getConversations(authUserId: $authUserId) {
       id
       username
-      fullName
+      firstName
+      lastName
       image
       isOnline
       seen

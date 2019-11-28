@@ -104,7 +104,7 @@ const Notification = ({ notification, close, client }) => {
 
           <Spacing left="xs" />
 
-          <Name>{notification.author.fullName}</Name>
+          <Name>{notification.author.firstName} &nbsp; {notification.author.lastName}</Name>
         </LeftSide>
       </A>
 

@@ -51,7 +51,7 @@ const ListItem = styled.li`
   }
 `;
 
-const FullName = styled.div`
+const Name = styled.div`
   font-weight: ${p => p.theme.font.weight.bold};
   color: ${p =>
     p.active ? p.theme.colors.primary.main : p.theme.colors.text.primary};
@@ -108,7 +108,7 @@ const UserSuggestions = ({ pathname }) => {
                         username: user.username,
                       })}
                     >
-                      <FullName>{user.fullName}</FullName>
+                      <Name>{user.firstName} &nbsp; {user.lastName}</Name>
                       <UserName>@{user.username}</UserName>
                     </A>
                   </Spacing>

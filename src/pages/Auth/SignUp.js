@@ -8,20 +8,22 @@ import { validateFormField } from '../../utils/index'
 
 const SignUp = ({ refetch, history }) => {
   const [error, setError] = useState({
-    fullName: '',
+    firstName: '',
+    lastName: '',
     username: '',
     email: '',
     password: ''
   })
   const [values, setValue] = useState({
-    fullName: '', //firstName
-    username: '', //latsNmae
+    firstName: '',
+    lastName: '',
+    username: '', 
     email: '',
     password: '',
     dob: '',
     gender: ''
   })
-  const { fullName, username, email, password } = values
+  const { firstName, lastName, username, email, password } = values
   const handleChange = e => {
     e.preventDefault()
     const { name, value } = e.target
@@ -32,8 +34,9 @@ const SignUp = ({ refetch, history }) => {
   }
 
   const validate = () => {
-    if (!fullName || !email || !username || !password) {
-      if (!fullName) setError({ ...error, fullName: 'Name Field is required' })
+    if (!firstName || !lastName || !email || !username || !password) {
+      if (!firstName) setError({ ...error, firstName: 'First Name is required' })
+      else if (!lastName) setError({ ...error, lastName: 'Last Name is required' })
       else if (!email) setError({ ...error, email: 'Email is required' })
       else if (!username)
         setError({ ...error, username: 'User name  required' })
@@ -58,11 +61,13 @@ const SignUp = ({ refetch, history }) => {
   }
 
   const disableButton =
-    !fullName ||
+    !firstName ||
+    !lastName ||
     !username ||
     !email ||
     !password ||
-    error.fullName ||
+    error.firstName ||
+    error.lastName ||
     error.username ||
     error.email ||
     error.password
@@ -71,7 +76,7 @@ const SignUp = ({ refetch, history }) => {
     <Mutation
       mutation={SIGN_UP}
       variables={{
-        input: { fullName, email, password, username }
+        input: { firstName, lastName, email, password, username }
       }}>
       {(signup, { loading, error: apiError }) => {
         return (
@@ -90,14 +95,22 @@ const SignUp = ({ refetch, history }) => {
                     <div className="row">
                       <Field
                         fieldContainerClass="sm"
-                        placeholder="Full Name"
+                        placeholder="First Name"
                         type="text"
-                        value={fullName}
+                        value={firstName}
                         handleChange={handleChange}
-                        name="fullName"
-                        error={error.fullName}
+                        name="firstName"
+                        error={error.firstName}
                       />
-
+                      <Field
+                        fieldContainerClass="sm"
+                        placeholder="Last Name"
+                        type="text"
+                        value={lastName}
+                        handleChange={handleChange}
+                        name="lastName"
+                        error={error.lastName}
+                      />
                       <Field
                         fieldContainerClass="sm"
                         placeholder="User Name"

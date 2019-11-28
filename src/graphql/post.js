@@ -10,7 +10,8 @@ export const postCommentsPayload = `
     author {
       id
       username
-      fullName
+      firstName
+      lastName
       image
     }
   }
@@ -23,7 +24,8 @@ export const postAuthorPayload = `
   author {
     id
     username
-    fullName
+    firstName
+    lastName
     image
     following {
       id

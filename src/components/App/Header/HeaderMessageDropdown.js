@@ -80,10 +80,11 @@ const Info = styled.div`
   align-items: center;
 `;
 
-const FullName = styled.div`
+const Name = styled.div`
   text-overflow: ellipsis;
   width: 100%;
 `;
+
 
 const LastMessage = styled.div`
   margin-top: ${p => p.theme.spacing.xxs};
@@ -147,7 +148,7 @@ const HeaderMessageDropdown = ({ messageRef, dropdownData }) => {
 
             <Info>
               <div>
-                <FullName>{user.fullName}</FullName>
+                <Name>{user.firstName} &nbsp; {user.lastName}</Name>
 
                 <LastMessage>{user.lastMessage}</LastMessage>
               </div>

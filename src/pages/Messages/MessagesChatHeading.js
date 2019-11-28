@@ -56,7 +56,7 @@ const Info = styled.div`
   align-items: center;
 `;
 
-const FullName = styled.div`
+const Name = styled.div`
   font-size: ${p => p.theme.font.size.sm};
   color: ${p => p.theme.colors.text.primary};
   font-weight: ${p => p.theme.font.weight.bold};
@@ -119,7 +119,7 @@ const MessagesChatHeading = ({ location, match, chatUser }) => {
           <Avatar image={chatUser.image} size={40} />
 
           <Info>
-            <FullName>{chatUser.fullName}</FullName>
+            <Name>{chatUser.firstName} &nbsp; {chatUser.lastName}</Name>
 
             {chatUser.isOnline && <Online />}
           </Info>

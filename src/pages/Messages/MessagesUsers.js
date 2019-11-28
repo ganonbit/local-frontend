@@ -108,7 +108,7 @@ const Info = styled.div`
   }
 `;
 
-const FullNameUnSeen = styled.div`
+const NameUnSeen = styled.div`
   width: 100%;
   font-size: ${p => p.theme.font.size.sm};
   display: flex;
@@ -117,7 +117,7 @@ const FullNameUnSeen = styled.div`
   align-items: center;
 `;
 
-const FullName = styled.div`
+const Name = styled.div`
   text-overflow: ellipsis;
   width: 100%;
 `;
@@ -210,11 +210,11 @@ const MessagesUsers = ({ location, authUser }) => {
                 </span>
 
                 <Info>
-                  <FullNameUnSeen>
-                    <FullName>{user.fullName}</FullName>
+                  <NameUnSeen>
+                    <Name>{user.firstName} &nbsp; {user.firstName}</Name>
 
                     {unseen && <UnSeen />}
-                  </FullNameUnSeen>
+                  </NameUnSeen>
 
                   <LastMessage>
                     {user.lastMessageSender && 'You:'} {user.lastMessage}

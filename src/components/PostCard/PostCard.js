@@ -198,7 +198,7 @@ const PostCard = ({
             <Avatar image={author.image} />
 
             <Spacing left="xs">
-              <Name>{author.fullName}</Name>
+              <Name>{author.firstName} &nbsp; {author.lastName}</Name>
               <CreatedAt>{timeAgo(createdAt)}</CreatedAt>
             </Spacing>
           </Author>
