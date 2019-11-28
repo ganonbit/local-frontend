@@ -16,7 +16,7 @@ export default function PostHeader(props) {
       <img src={author.image} alt="author" />
       <div className="author-date">
         <a className="h6 post__author-name fn" href="#1">
-          {author.fullName}
+          {author.firstName} &nbsp; {author.lastName}
         </a>
         <div className="post__date">
           <time className="published" dateTime="2004-07-24T18:18">

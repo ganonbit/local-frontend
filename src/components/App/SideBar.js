@@ -62,7 +62,7 @@ const User = styled(NavLink)`
   }
 `;
 
-const FullName = styled.div`
+const Name = styled.div`
   font-weight: ${p => p.theme.font.weight.bold};
   color: ${p =>
     p.active ? p.theme.colors.primary.main : p.theme.colors.text.primary};
@@ -87,9 +87,9 @@ const SideBar = ({ location, isOpen, sideBarRef }) => {
         <Avatar image={auth.user.image} size={20} />
 
         <Spacing left="xxs">
-          <FullName active={isAuthUsersProfilePage}>
-            {auth.user.fullName}
-          </FullName>
+          <Name active={isAuthUsersProfilePage}>
+            {auth.user.firstName} &nbsp; {auth.user.lastName}
+          </Name>
         </Spacing>
       </User>
 

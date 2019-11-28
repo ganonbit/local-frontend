@@ -10,14 +10,16 @@ export const GET_MESSAGES = gql`
       receiver {
         id
         username
-        fullName
+        firstName
+        lastName
         image
         createdAt
       }
       sender {
         id
         username
-        fullName
+        firstName
+        lastName
         image
         createdAt
       }
@@ -37,14 +39,16 @@ export const GET_MESSAGES_SUBSCRIPTION = gql`
       receiver {
         id
         username
-        fullName
+        firstName
+        lastName
         image
         createdAt
       }
       sender {
         id
         username
-        fullName
+        firstName
+        lastName
         image
         createdAt
       }
@@ -74,7 +78,8 @@ export const GET_NEW_CONVERSATIONS_SUBSCRIPTION = gql`
     newConversation {
       id
       username
-      fullName
+      firstName
+      lastName
       image
       isOnline
       seen

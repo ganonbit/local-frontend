@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEllipsisV } from '@fortawesome/free-solid-svg-icons'
 
 export default function CommentsHeader({ author }) {
-  const { fullName, image } = author
+  const { firstName, lastName, image } = author
   var commentDate = moment(1573580476000).format('YYYYMMDD')
   return (
     <>
@@ -12,7 +12,7 @@ export default function CommentsHeader({ author }) {
         <img src={image} alt="author" />
         <div className="author-date">
           <a className="h6 post__author-name fn" href="#1">
-            {fullName}
+            {firstName} &nbsp; {lastName}
           </a>
           <div className="post__date">
             <time className="published" dateTime="2004-07-24T18:18">

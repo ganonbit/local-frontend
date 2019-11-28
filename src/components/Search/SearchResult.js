@@ -78,7 +78,7 @@ const SearchResult = ({ users, forMessage }) => {
             <Avatar image={user.image} size={34} />
 
             <Spacing left="xs">
-              <Name>{user.fullName}</Name>
+              <Name>{user.firstName} &nbsp; {user.lastName}</Name>
               <UserName>@{user.username}</UserName>
             </Spacing>
           </Item>

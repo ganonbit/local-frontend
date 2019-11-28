@@ -29,7 +29,7 @@ const ProfileImage = styled.div`
   margin-top: -140px;
 `;
 
-const FullName = styled.div`
+const Name = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -116,8 +116,8 @@ const ProfileInfo = ({ user }) => {
           username={user.username}
         />
 
-        <FullName>
-          <H1>{user.fullName}</H1>
+        <Name>
+          <H1>{user.firstName} &nbsp; {user.lastName}</H1>
 
           {isUserOnline && auth.user.id !== user.id && <Online />}
 
@@ -131,7 +131,7 @@ const ProfileInfo = ({ user }) => {
               </Message>
             </FollowAndMessage>
           )}
-        </FullName>
+        </Name>
       </ProfileImage>
 
       <Info>

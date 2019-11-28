@@ -34,7 +34,8 @@ export const GET_USER_NOTIFICATION = gql`
         createdAt
         author {
           id
-          fullName
+          firstName
+          lastName
           username
           image
         }
