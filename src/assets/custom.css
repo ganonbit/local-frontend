@@ -13,6 +13,10 @@
   --theme-color-pink-dark: #773282;
 }
 
+svg {
+  cursor: pointer;
+}
+
 #hellopreloader {
   background: var(--theme-color-secondary);
 }
@@ -637,8 +641,8 @@ span.material-input-error {
 .upload-box input#multi {
   position: absolute;
   top: -5px;
-  width: 30px;
-  height: 30px;
+  width: 50px;
+  height: 50px;
   padding: 0;
   margin: 0 auto;
   left: 0;

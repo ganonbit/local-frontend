@@ -1,4 +1,4 @@
-import styled, { keyframes } from "styled-components";
+import styled, { keyframes } from 'styled-components';
 
 // prettier-ignore
 
@@ -38,46 +38,46 @@ const Round = keyframes`
  * Displays loading spinner
  */
 export const Loading = styled.div`
-  text-indent: -9999em;
-  overflow: hidden;
-  width: 1em;
-  height: 1em;
-  border-radius: 50%;
-  position: relative;
-  transform: translateZ(0);
-  animation: ${Load} 1.7s infinite ease, ${Round} 1.7s infinite ease;
-  margin: 0 auto;
-  margin-top: ${p => p.top && p.theme.spacing[p.top]};
-  margin-bottom: ${p => p.bottom && p.theme.spacing[p.bottom]};
-  color: ${p =>
-    p.color ? p.theme.colors[p.color] : p.theme.colors.text.secondary};
-  font-size: ${p =>
-    p.size ? p.theme.font.size[p.size] : p.theme.font.size.sm};
+	text-indent: -9999em;
+	overflow: hidden;
+	width: 1em;
+	height: 1em;
+	border-radius: 50%;
+	position: relative;
+	transform: translateZ(0);
+	animation: ${Load} 1.7s infinite ease, ${Round} 1.7s infinite ease;
+	margin: 0 auto;
+	margin-top: ${p => p.top && p.theme.spacing[p.top]};
+	margin-bottom: ${p => p.bottom && p.theme.spacing[p.bottom]};
+	color: ${p =>
+		p.color ? p.theme.colors[p.color] : p.theme.colors.text.secondary};
+	font-size: ${p =>
+		p.size ? p.theme.font.size[p.size] : p.theme.font.size.sm};
 `;
 
 /**
  * Displays loading dots
  */
 export const LoadingDots = styled.div`
-  &::after {
-    display: block;
-    animation: ellipsis 1s infinite;
-    content: ".";
-    text-align: center;
-    color: ${p =>
-      p.color ? p.theme.colors[p.color] : p.theme.colors.text.secondary};
-    font-size: ${p => p.theme.font.size.xl};
-  }
+	&::after {
+		display: block;
+		animation: ellipsis 1s infinite;
+		content: '.';
+		text-align: center;
+		color: ${p =>
+			p.color ? p.theme.colors[p.color] : p.theme.colors.text.secondary};
+		font-size: ${p => p.theme.font.size.xl};
+	}
 
-  @keyframes ellipsis {
-    0% {
-      content: ".";
-    }
-    33% {
-      content: "..";
-    }
-    66% {
-      content: "...";
-    }
-  }
+	@keyframes ellipsis {
+		0% {
+			content: '.';
+		}
+		33% {
+			content: '..';
+		}
+		66% {
+			content: '...';
+		}
+	}
 `;

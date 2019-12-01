@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 // prettier-ignore
 
@@ -23,19 +23,19 @@ export const Container = styled.div`
 `;
 
 export const Content = styled.div`
-  position: relative;
-  margin: 0 auto;
-  width: 100%;
-  z-index: ${p => p.zIndex && p.theme.zIndex[p.zIndex]};
-  min-height: 500px;
+	position: relative;
+	margin: 0 auto;
+	width: 100%;
+	z-index: ${p => p.zIndex && p.theme.zIndex[p.zIndex]};
+	min-height: 500px;
 
-  @media (min-width: ${p => p.theme.screen.md}) {
-    width: ${p => p.theme.screen.xs};
-  }
+	@media (min-width: ${p => p.theme.screen.md}) {
+		width: ${p => p.theme.screen.xs};
+	}
 
-  @media (min-width: ${p => p.theme.screen.lg}) {
-    width: ${p => p.theme.screen.sm};
-  }
+	@media (min-width: ${p => p.theme.screen.lg}) {
+		width: ${p => p.theme.screen.sm};
+	}
 `;
 
 /**
@@ -56,8 +56,8 @@ export const Spacing = styled.div`
 
   @media (max-width: ${p => p.theme.screen.sm}) {
     ${p =>
-      p.hideOnSm &&
-      `
+		p.hideOnSm &&
+		`
       display: none;
     `}
   }
@@ -67,16 +67,16 @@ export const Spacing = styled.div`
  * Overlay, on top of the whole UI
  */
 export const Overlay = styled.div`
-  position: fixed;
-  width: 100%;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  z-index: ${p => p.theme.zIndex.md};
-  background-color: rgba(
-    0,
-    0,
-    0,
-    ${p => (p.transparency ? p.transparency : "0.8")}
-  );
+	position: fixed;
+	width: 100%;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	z-index: ${p => p.theme.zIndex.md};
+	background-color: rgba(
+		0,
+		0,
+		0,
+		${p => (p.transparency ? p.transparency : '0.8')}
+	);
 `;

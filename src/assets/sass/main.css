@@ -7874,8 +7874,8 @@ body.body--fixed {
 
 .upload-photo-item svg {
   margin-bottom: 30px;
-  width: 22px;
-  height: 20px;
+  width: 55px;
+  height: 50px;
 }
 
 .upload-photo-item span {
@@ -21682,4 +21682,3 @@ label.mejs-speed-selected {
 .irs-grid-text {
   color: #99a4ac;
 }
-/*# sourceMappingURL=main.css.map */
