@@ -2,6 +2,8 @@
 
 
 .follow-instagram {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   border-radius: 5px;
   overflow: hidden;
@@ -15,7 +17,8 @@
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	transform: translate(-50%, -50%);
+	-webkit-transform: translate(-50%, -50%);
+	        transform: translate(-50%, -50%);
   }
 
   &:hover {

@@ -117,7 +117,9 @@
   width: 100%;
   will-change: transform;
   transition: -webkit-transform 0.5s ease-in-out;
+  -webkit-transition: -webkit-transform 0.5s ease-in-out;
   transition: transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
   background-size: 100%;
   background-repeat: no-repeat;
 }
@@ -194,5 +196,3 @@
 .mejs-container.mep-slider .mejs-playlist > a.mep-next:hover {
   background-position: left -700px;
 }
-
-/*# sourceMappingURL=mediaelement-playlist-plugin.min.css.map */

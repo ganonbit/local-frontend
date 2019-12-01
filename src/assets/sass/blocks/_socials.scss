@@ -6,6 +6,7 @@
 .socials {
   i, svg {
 	font-size: 15px;
+	-webkit-transition: all .3s ease;
 	transition: all .3s ease;
   }
 
@@ -196,13 +197,18 @@
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	transform: translate(-50%, -50%);
+	-webkit-transform: translate(-50%, -50%);
+	        transform: translate(-50%, -50%);
   }
 }
 
 .socials-shared {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   padding: 60px;
 
   .social-item {

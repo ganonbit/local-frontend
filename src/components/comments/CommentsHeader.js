@@ -1,30 +1,51 @@
-import React from 'react'
-import moment from 'moment'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faEllipsisV } from '@fortawesome/free-solid-svg-icons'
+import React from 'react';
+import moment from 'moment';
+import { generatePath } from 'react-router-dom';
 
-export default function CommentsHeader({ author }) {
-  const { firstName, lastName, image } = author
-  var commentDate = moment(1573580476000).format('YYYYMMDD')
-  return (
-    <>
-      <div className="post__author author vcard inline-items">
-        <img src={image} alt="author" />
-        <div className="author-date">
-          <a className="h6 post__author-name fn" href="#1">
-            {firstName} &nbsp; {lastName}
-          </a>
-          <div className="post__date">
-            <time className="published" dateTime="2004-07-24T18:18">
-              {moment(commentDate, 'YYYYMMDD').fromNow()}
-            </time>
-          </div>
-        </div>
+import Avatar from 'components/Avatar';
 
-        <a onClick={() => alert('Hey..')} href="#1" className="more">
-          <FontAwesomeIcon size="sm" color="black" icon={faEllipsisV} />
-        </a>
-      </div>
-    </>
-  )
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEllipsisV } from '@fortawesome/free-solid-svg-icons';
+
+import * as Routes from 'routes';
+
+export default function CommentsHeader(props) {
+	const { author, createdAt } = props;
+	const rawTime = parseInt(createdAt);
+	const commentDate = new Date(rawTime);
+	console.log(author);
+	console.log(author.username);
+
+	return (
+		<>
+			<div className='post__author author vcard inline-items'>
+				<a
+					href={generatePath(Routes.USER_PROFILE, {
+						username: author.username,
+					})}>
+					<Avatar image={author.image} />
+				</a>
+				<div className='author-date'>
+					<a className='h6 post__author-name fn' href='#1'>
+						{author.firstName} {author.lastName}
+					</a>
+					<div className='post__date'>
+						<time className='published' dateTime={commentDate}>
+							{moment(commentDate, 'YYYYMMDDHHmms').fromNow()}
+						</time>
+					</div>
+				</div>
+
+				<a onClick={() => alert('Hey..')} href='#1' className='more'>
+					<FontAwesomeIcon
+						className='olymp-three-dots-icon'
+						size='sm'
+						color='black'
+						icon={faEllipsisV}
+						style={{ height: '10px' }}
+					/>
+				</a>
+			</div>
+		</>
+	);
 }

@@ -1,7 +1,3 @@
-/**
- * Data limit constants for infinite scroll
- */
-
 export const HOME_PAGE_POSTS_LIMIT = 6;
 
 export const EXPLORE_PAGE_POSTS_LIMIT = 15;

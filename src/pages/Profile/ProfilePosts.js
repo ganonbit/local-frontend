@@ -22,103 +22,118 @@ import * as Routes from 'routes';
  * Renders posts in profile page
  */
 const ProfilePosts = ({ username }) => {
-  const [isPostPopupOpen, setIsPostPopupOpen] = useState(false);
-  const [modalPostId, setModalPostId] = useState('');
+	const [isPostPopupOpen, setIsPostPopupOpen] = useState(false);
+	const [modalPostId, setModalPostId] = useState('');
 
-  const openModal = postId => {
-    window.history.pushState('', '', generatePath(Routes.POST, { id: postId }));
-    setModalPostId(postId);
-    setIsPostPopupOpen(true);
-  };
+	const openModal = postId => {
+		window.history.pushState(
+			'',
+			'',
+			generatePath(Routes.POST, { id: postId })
+		);
+		setModalPostId(postId);
+		setIsPostPopupOpen(true);
+	};
 
-  const closeModal = () => {
-    window.history.pushState(
-      '',
-      '',
-      generatePath(Routes.USER_PROFILE, { username })
-    );
-    setIsPostPopupOpen(false);
-  };
+	const closeModal = () => {
+		window.history.pushState(
+			'',
+			'',
+			generatePath(Routes.USER_PROFILE, { username })
+		);
+		setIsPostPopupOpen(false);
+	};
 
-  const variables = { username, skip: 0, limit: PROFILE_PAGE_POSTS_LIMIT };
+	const variables = { username, skip: 0, limit: PROFILE_PAGE_POSTS_LIMIT };
 
-  return (
-    <Query
-      query={GET_USER_POSTS}
-      variables={variables}
-      notifyOnNetworkStatusChange
-    >
-      {({ data, loading, fetchMore, networkStatus }) => {
-        if (loading && networkStatus === 1) {
-          return (
-            <Skeleton
-              height={500}
-              bottom="lg"
-              top="lg"
-              count={PROFILE_PAGE_POSTS_LIMIT}
-            />
-          );
-        }
+	return (
+		<Query
+			query={GET_USER_POSTS}
+			variables={variables}
+			notifyOnNetworkStatusChange>
+			{({ data, loading, fetchMore, networkStatus }) => {
+				if (loading && networkStatus === 1) {
+					return (
+						<Skeleton
+							height={500}
+							bottom='lg'
+							top='lg'
+							count={PROFILE_PAGE_POSTS_LIMIT}
+						/>
+					);
+				}
 
-        const { posts, count } = data.getUserPosts;
+				const { posts, count } = data.getUserPosts;
 
-        if (!posts.length > 0) {
-          return (
-            <Spacing bottom="lg">
-              <Empty text="No posts yet." />
-            </Spacing>
-          );
-        }
+				if (!posts.length > 0) {
+					return (
+						<Spacing bottom='lg'>
+							<Empty text='No posts yet.' />
+						</Spacing>
+					);
+				}
 
-        return (
-          <InfiniteScroll
-            data={posts}
-            dataKey="getUserPosts.posts"
-            count={parseInt(count)}
-            variables={variables}
-            fetchMore={fetchMore}
-          >
-            {data => {
-              return data.map((post, i) => {
-                const showNextLoading =
-                  loading && networkStatus === 3 && data.length - 1 === i;
+				return (
+					<InfiniteScroll
+						data={posts}
+						dataKey='getUserPosts.posts'
+						count={parseInt(count)}
+						variables={variables}
+						fetchMore={fetchMore}>
+						{data => {
+							return data.map((post, i) => {
+								const showNextLoading =
+									loading &&
+									networkStatus === 3 &&
+									data.length - 1 === i;
 
-                return (
-                  <Fragment key={post.id}>
-                    {modalPostId === post.id && (
-                      <Modal open={isPostPopupOpen} onClose={closeModal}>
-                        <PostPopup id={post.id} closeModal={closeModal} />
-                      </Modal>
-                    )}
+								return (
+									<Fragment key={post.id}>
+										{modalPostId === post.id && (
+											<Modal
+												open={isPostPopupOpen}
+												onClose={closeModal}>
+												<PostPopup
+													id={post.id}
+													closeModal={closeModal}
+												/>
+											</Modal>
+										)}
 
-                    <Spacing bottom="lg">
-                      <PostCard
-                        author={post.author}
-                        postId={post.id}
-                        imagePublicId={post.imagePublicId}
-                        comments={post.comments}
-                        content={post.content}
-                        image={post.image}
-                        likes={post.likes}
-                        createdAt={post.createdAt}
-                        openModal={() => openModal(post.id)}
-                      />
-                    </Spacing>
+										<Spacing bottom='lg'>
+											<PostCard
+												author={post.author}
+												postId={post.id}
+												imagePublicId={
+													post.imagePublicId
+												}
+												comments={post.comments}
+												content={post.content}
+												image={post.image}
+												likes={post.likes}
+												createdAt={post.createdAt}
+												openModal={() =>
+													openModal(post.id)
+												}
+											/>
+										</Spacing>
 
-                    {showNextLoading && <Loading top="lg" />}
-                  </Fragment>
-                );
-              });
-            }}
-          </InfiniteScroll>
-        );
-      }}
-    </Query>
-  );
+										{showNextLoading && (
+											<Loading top='lg' />
+										)}
+									</Fragment>
+								);
+							});
+						}}
+					</InfiniteScroll>
+				);
+			}}
+		</Query>
+	);
 };
 
 ProfilePosts.propTypes = {
-  username: PropTypes.string.isRequired,
+	username: PropTypes.string.isRequired,
 };
 
 export default ProfilePosts;

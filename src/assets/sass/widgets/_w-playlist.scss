@@ -6,6 +6,7 @@
 
 	li {
 	  padding: 13px 10px;
+	  -webkit-transition: all .3s ease;
 	  transition: all .3s ease;
 	  cursor: pointer;
 
@@ -47,7 +48,8 @@
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	transform: translate(-50%, -50%);
+	-webkit-transform: translate(-50%, -50%);
+	        transform: translate(-50%, -50%);
 	fill: $white-color;
 	color: $white-color;
 	width: 14px;
@@ -68,6 +70,7 @@
   }
 
   time {
+	-webkit-transition: all .3s ease;
 	transition: all .3s ease;
 	margin-right: 10px;
   }

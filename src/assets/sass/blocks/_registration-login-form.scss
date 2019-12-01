@@ -112,7 +112,8 @@
 	position: absolute;
 	left: 50%;
 	top: 50%;
-	transform: translate(-50%, -50%);
+	-webkit-transform: translate(-50%, -50%);
+	        transform: translate(-50%, -50%);
 	background-color: $white-color;
 	padding: 0 25px;
 	font-size: 10px;
@@ -125,7 +126,9 @@
   margin-right: 30px;
 
   form {
-	justify-content: flex-end;
+	-webkit-box-pack: end;
+	    -ms-flex-pack: end;
+	        justify-content: flex-end;
   }
 
   .form-control {

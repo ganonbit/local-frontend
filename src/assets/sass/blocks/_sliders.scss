@@ -9,6 +9,7 @@
   margin: auto 10px;
   border-radius: 50%;
   cursor: pointer;
+  -webkit-transition: all .3s ease;
   transition: all .3s ease;
   border: 2px solid #d9dbe7;
 
@@ -33,7 +34,8 @@
 .swiper-pagination {
   bottom: 0;
   left: 50%;
-  transform: translate(-50%, 0);
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
 }
 
 .pagination-bottom {
@@ -51,11 +53,13 @@
   height: 18px;
   display: block;
   z-index: 10;
+  -webkit-transition: all .2s ease-in;
   transition: all .2s ease-in;
   fill: $white-color;
   stroke: inherit;
   top: 50%;
-  transform: translate(0, -50%);
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
 
   &:hover {
     fill: $primary-color;

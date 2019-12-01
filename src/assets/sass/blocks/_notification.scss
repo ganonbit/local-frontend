@@ -9,6 +9,7 @@
 	border-bottom: 1px solid $border-color;
 	display: block;
 	position: relative;
+	-webkit-transition: all .3s ease;
 	transition: all .3s ease;
 
 	& > * {
@@ -53,8 +54,12 @@
 	max-width: 280px;
 	border-radius: 10px;
 	overflow: hidden;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	align-items: center;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
 
 	span {
 	  background-color: #f5f7fb;
@@ -416,6 +421,7 @@
 	}
 
 	.skills-item-meter-active {
+	  background: -webkit-gradient(linear, left top, right top, from(#ff613a), to(#ff9432));
 	  background: linear-gradient(to right, #ff613a, #ff9432);
 	}
 

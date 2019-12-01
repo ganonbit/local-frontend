@@ -64,48 +64,50 @@ ${p => p.ghost && `
  * Input type text
  */
 export const InputText = styled.input`
-  outline: 0;
-  height: 36px;
-  width: 100%;
-  transition: border 0.1s;
-  border-radius: ${p => p.theme.radius.sm};
-  padding-left: ${p => p.theme.spacing.xs};
-  border: 1px solid
-    ${p =>
-      p.borderColor ? p.theme.colors[p.borderColor] : p.theme.colors.grey[300]};
-  color: ${p => p.theme.colors.text.secondary};
+	outline: 0;
+	height: 36px;
+	width: 100%;
+	transition: border 0.1s;
+	border-radius: ${p => p.theme.radius.sm};
+	padding-left: ${p => p.theme.spacing.xs};
+	border: 1px solid
+		${p =>
+			p.borderColor
+				? p.theme.colors[p.borderColor]
+				: p.theme.colors.grey[300]};
+	color: ${p => p.theme.colors.text.secondary};
 
-  &:focus {
-    border-color: ${p => p.theme.colors.grey[400]};
-  }
+	&:focus {
+		border-color: ${p => p.theme.colors.grey[400]};
+	}
 `;
 
 /**
  * Textarea
  */
 export const Textarea = styled.textarea`
-  outline: 0;
-  height: 50px;
-  width: 100%;
-  resize: none;
-  border: 0;
-  padding-left: ${p => p.theme.spacing.sm};
-  padding-top: ${p => p.theme.spacing.xs};
-  color: ${p => p.theme.colors.text.main};
-  font-size: ${p => p.theme.font.size.xs};
+	outline: 0;
+	height: 50px;
+	width: 100%;
+	resize: none;
+	border: 0;
+	padding-left: ${p => p.theme.spacing.sm};
+	padding-top: ${p => p.theme.spacing.xs};
+	color: ${p => p.theme.colors.text.main};
+	font-size: ${p => p.theme.font.size.xs};
 
-  &::placeholder {
-    color: ${p => p.theme.colors.text.secondary};
-  }
+	&::placeholder {
+		color: ${p => p.theme.colors.text.secondary};
+	}
 `;
 
 /**
  * Form component
  */
 export const Form = styled.form`
-  display: block;
-  border-radius: ${p => p.theme.radius.sm};
-  padding: ${p => p.theme.spacing.lg} ${p => p.theme.spacing.sm};
-  background-color: ${p => p.theme.colors.white};
-  border: 1px solid ${p => p.theme.colors.grey[300]};
+	display: block;
+	border-radius: ${p => p.theme.radius.sm};
+	padding: ${p => p.theme.spacing.lg} ${p => p.theme.spacing.sm};
+	background-color: ${p => p.theme.colors.white};
+	border: 1px solid ${p => p.theme.colors.grey[300]};
 `;

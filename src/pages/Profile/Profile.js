@@ -17,63 +17,65 @@ import { GET_USER } from 'graphql/user';
 import { useStore } from 'store';
 
 const Root = styled.div`
-  width: 100%;
+	width: 100%;
 
-  @media (min-width: ${p => p.theme.screen.lg}) {
-    margin-left: ${p => p.theme.spacing.lg};
-    padding: 0;
-  }
+	@media (min-width: ${p => p.theme.screen.lg}) {
+		margin-left: ${p => p.theme.spacing.lg};
+		padding: 0;
+	}
 `;
 
 /**
  * User Profile Page
  */
 const Profile = ({ match }) => {
-  const [{ auth }] = useStore();
-  const { username } = match.params;
+	const [{ auth }] = useStore();
+	const { username } = match.params;
 
-  return (
-    <Root>
-      <Head title={username} />
+	return (
+		<Root>
+			<Head title={username} />
 
-      <Query query={GET_USER} variables={{ username }}>
-        {({ data, loading, error }) => {
-          if (loading) {
-            return (
-              <Container padding="xxs">
-                <Skeleton height={350} />
-                <Container maxWidth="sm">
-                  <Spacing top="lg" bottom="lg">
-                    <Skeleton height={82} />
-                  </Spacing>
-                </Container>
-              </Container>
-            );
-          }
+			<Query query={GET_USER} variables={{ username }}>
+				{({ data, loading, error }) => {
+					if (loading) {
+						return (
+							<Container padding='xxs'>
+								<Skeleton height={350} />
+								<Container maxWidth='sm'>
+									<Spacing top='lg' bottom='lg'>
+										<Skeleton height={82} />
+									</Spacing>
+								</Container>
+							</Container>
+						);
+					}
 
-          if (error || !data.getUser) return <NotFound />;
+					if (error || !data.getUser) return <NotFound />;
 
-          return (
-            <Container padding="xxs">
-              <ProfileInfo user={data.getUser} />
+					return (
+						<Container padding='xxs'>
+							<ProfileInfo user={data.getUser} />
 
-              <Container maxWidth="sm">
-                <Spacing top="lg" bottom="lg">
-                  {username === auth.user.username && <CreatePost />}
-                </Spacing>
+							<Container maxWidth='sm'>
+								<Spacing top='lg' bottom='lg'>
+									{username === auth.user.username && (
+										<CreatePost />
+									)}
+								</Spacing>
 
-                <ProfilePosts username={username} />
-              </Container>
-            </Container>
-          );
-        }}
-      </Query>
-    </Root>
-  );
+								<ProfilePosts username={username} />
+							</Container>
+						</Container>
+					);
+				}}
+			</Query>
+		</Root>
+	);
 };
 
 Profile.propTypes = {
-  match: PropTypes.object.isRequired,
+	match: PropTypes.object.isRequired,
 };
 
 export default withRouter(Profile);
