@@ -39,6 +39,7 @@ export default function MainContent(props) {
 										author={post.author}
 										image={post.image}
 										createdAt={post.createdAt}
+										user={auth.user}
 									/>
 									{/* {props.newPost ? <NewPost content={props.content} /> : <PostVideo tag={props.tag} body={props.body} />} */}
 									<PostContent

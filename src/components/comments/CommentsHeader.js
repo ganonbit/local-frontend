@@ -13,9 +13,6 @@ export default function CommentsHeader(props) {
 	const { author, createdAt } = props;
 	const rawTime = parseInt(createdAt);
 	const commentDate = new Date(rawTime);
-	console.log(author);
-	console.log(author.username);
-
 	return (
 		<>
 			<div className='post__author author vcard inline-items'>

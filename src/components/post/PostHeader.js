@@ -11,7 +11,7 @@ import { GET_AUTH_USER } from '../../graphql/user';
 const PostHeader = props => {
 	const { author, postId, user, client } = props;
 	let postDate = moment(1519129853500).format('YYYYMMDD');
-	let isUserPost = () => !!user.posts.find(x => x.id === postId);
+	let isUserPost = () => !user.posts.find(x => x.id === postId);
 	const deletePost = async () => {
 		try {
 			await client.mutate({
@@ -38,7 +38,7 @@ const PostHeader = props => {
 			<img src={author.image} alt='author' />
 			<div className='author-date'>
 				<a className='h6 post__author-name fn' href='#1'>
-					{author.fullName}
+					{`${author.firstName} ${author.lastName}`}
 				</a>
 				<div className='post__date'>
 					<time className='published' dateTime='2004-07-24T18:18'>
