@@ -13,7 +13,6 @@ import { GET_FOLLOWED_POSTS } from '../../graphql/post'
 export default function MainContent(props) {
   const [{ auth }] = useStore()
   const [isCommentOPen, setCommentOPen] = useState(false)
-
   let showCommentHandler = show => {
     setCommentOPen(show)
   }

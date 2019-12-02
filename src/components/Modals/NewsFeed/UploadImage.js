@@ -36,6 +36,7 @@ const UploadImageModal = ({
                   />
                   <input
                     type="file"
+                    name="image"
                     id="multi"
                     onChange={e => handleImageUpload(e)}
                   />

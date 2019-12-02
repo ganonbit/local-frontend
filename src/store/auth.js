@@ -1,15 +1,16 @@
 /**
  * Actions types
  */
-export const SET_AUTH_USER = 'SET_AUTH_USER';
-export const CLEAR_AUTH_USER = 'CLEAR_AUTH_USER';
+export const SET_AUTH_USER = 'SET_AUTH_USER'
+export const CLEAR_AUTH_USER = 'CLEAR_AUTH_USER'
+export const UPDATE_AUTH_USER = 'UPDATE_AUTH_USER'
 
 /**
  * Initial State
  */
 export const authInitialState = {
-  user: null,
-};
+  user: null
+}
 
 /**
  * User Reducer
@@ -19,16 +20,25 @@ export const authReducer = (state = authInitialState, action) => {
     case SET_AUTH_USER:
       return {
         ...state,
-        user: action.payload,
-      };
+        user: action.payload
+      }
     case CLEAR_AUTH_USER: {
       return {
         ...state,
-        ...authInitialState,
-      };
+        ...authInitialState
+      }
     }
+    case UPDATE_AUTH_USER:
+      return {
+        ...state,
+        user: {
+          posts: {
+            id: action.payload
+          }
+        }
+      }
 
     default:
-      return state;
+      return state
   }
-};
+}

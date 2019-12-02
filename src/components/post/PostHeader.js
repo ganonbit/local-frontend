@@ -25,7 +25,10 @@ const PostHeader = props => {
               skip: 0
             }
           },
-          { query: GET_AUTH_USER }
+          {
+            query: GET_AUTH_USER,
+            options: { fetchPolicy: 'cache-and-network' }
+          }
         ]
       })
     } catch (err) {}

@@ -9,6 +9,8 @@ import PostForm from './PostForm'
 import { Mutation } from 'react-apollo'
 import { CREATE_POST, GET_FOLLOWED_POSTS } from '../../graphql/post'
 
+// import { UPDATE_AUTH_USER } from '../../store/auth'
+
 import { css } from '@emotion/core'
 import { BeatLoader } from 'react-spinners'
 
@@ -39,7 +41,7 @@ export const CreatePost = props => {
   let handleSubmitForm = (e, createPost) => {
     e.preventDefault()
     createPost().then(async ({ data }) => {
-      setPostContent({ ...postContent, status: '', image: '' })
+      setPostContent({ ...postContent, status: '', image: null })
     })
   }
 
@@ -56,6 +58,9 @@ export const CreatePost = props => {
           authorId: auth.user.id
         }
       }}
+      // onCompleted={data =>
+      //   dispatch({ type: UPDATE_AUTH_USER, payload: data.createPost.id })
+      // }
       refetchQueries={() => [
         {
           query: GET_FOLLOWED_POSTS,

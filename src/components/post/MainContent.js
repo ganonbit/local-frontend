@@ -1,12 +1,13 @@
 import React from 'react'
 
-export default function MainContent(props) {
+const MainContent = ({ content, image }) => {
   return (
     <div className="postContainer">
-      <p>{props.content}</p>
+      {content && <p>{content}</p>}
       <div className="post-img">
-        <img className="postImage" alt="postImage" src={props.image} />
+        {image && <img className="postImage" alt="postImage" src={image} />}
       </div>
     </div>
   )
 }
+export default MainContent
