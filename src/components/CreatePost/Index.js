@@ -7,7 +7,7 @@ import Header from './PostHeader'
 import PostForm from './PostForm'
 
 import { Mutation } from 'react-apollo'
-import { CREATE_POST } from '../../graphql/post'
+import { CREATE_POST, GET_FOLLOWED_POSTS } from '../../graphql/post'
 
 import { css } from '@emotion/core'
 import { BeatLoader } from 'react-spinners'
@@ -56,8 +56,15 @@ export const CreatePost = props => {
           authorId: auth.user.id
         }
       }}
-      // refetchQueries={() => [{ query: GET_POSTS }]}
-    >
+      refetchQueries={() => [
+        {
+          query: GET_FOLLOWED_POSTS,
+          variables: {
+            userId: auth.user.id,
+            skip: 0
+          }
+        }
+      ]}>
       {(createPost, { loading, error: apiError }) => {
         return (
           <div className="ui-block">

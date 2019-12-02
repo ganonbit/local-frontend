@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 import Weather from 'components/widget/Weather'
-import Calender from '../../components/widget/Calender'
+import Calender from 'components/widget/Calender'
 import RecomendedPages from 'components/widget/RecomendedPages'
 import BirthdaysAlert from 'components/widget/BirthdaysAlert'
 import FriendsSuggestions from 'components/widget/FriendsSuggestions'
 import ActivityFeed from 'components/widget/ActivityFeed'
 import Olympus from 'components/widget/Olympus'
-import { CreatePost } from '../../components/CreatePost/Index'
-import Post from '../../components/post/index'
+import { CreatePost } from 'components/CreatePost/Index'
+import Post from 'components/post/index'
 
 export default class Home extends Component {
   render() {

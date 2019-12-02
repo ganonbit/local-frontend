@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import { CREATE_COMMENT } from '../../graphql/comment'
-import { GET_POSTS } from '../../graphql/post'
+import { GET_FOLLOWED_POSTS } from '../../graphql/post'
 import { Mutation } from 'react-apollo'
 
 export default function AddComment({ authorId, postId, onCancle }) {
@@ -30,8 +30,8 @@ export default function AddComment({ authorId, postId, onCancle }) {
       }}
       refetchQueries={() => [
         {
-          query: GET_POSTS,
-          variables: { authUserId: authorId, skip: 0, limit: 15 }
+          query: GET_FOLLOWED_POSTS,
+          variables: { userId: authorId, skip: 0, limit: 15 }
         }
       ]}>
       {(createComment, { loading, error: apiError }) => {

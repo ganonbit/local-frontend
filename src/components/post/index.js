@@ -23,8 +23,8 @@ export default function MainContent(props) {
       query={GET_FOLLOWED_POSTS}
       variables={{
         userId: auth.user.id,
-        skip: 0,
-        limit: 15
+        skip: 0
+        // limit: 15
       }}>
       {({ data, loading }) => {
         return loading === true ? (

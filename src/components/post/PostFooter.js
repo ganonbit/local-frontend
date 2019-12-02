@@ -5,7 +5,6 @@ import { faComment, faShare, faHeart } from '@fortawesome/free-solid-svg-icons'
 const PostFooter = (props, { showCommentHandler }) => {
   let onLikeHandler = e => {
     e.preventDefault()
-    console.log('liked')
   }
   return (
     <div className="post-additional-info inline-items">
