@@ -45,15 +45,10 @@ const VerifyAccount = ({ history, location, refetch }) => {
 
 			<div>
 				<Query query={VERIFY_TOKEN} variables={{ email, token }}>
-					{({ loading, error: apiError }) => {
-						// if (loading) return <Loading top="lg" />;
-						if (apiError)
-							return (
-								<h1>
-									{error}
-								</h1>
-							);
-
+					{({ error: apiError }) => {
+						// if (apiError) {
+						// 	return (<h1>This token is either invalid or expired!</h1>);
+						// }
 						return (
 							<Mutation
 								mutation={VERIFY_ACCOUNT}
@@ -65,44 +60,65 @@ const VerifyAccount = ({ history, location, refetch }) => {
 									if (apiError) return <h1>{apiError}</h1>;
 
 									return (
-										<>
+										// <>
 											<div className='col col-xl-5 col-lg-6 col-md-12 col-sm-12 col-12'>
-						<div className='registration-login-form'>
-							<div className='tab-content'>
-								<div
-									className='tab-pane active'
-									id='home'
-									role='tabpanel'
-									data-mh='log-tab'>
-									<div className='title h6'>
-										Verify Account
-									</div>
+												<div className='registration-login-form'>
+													<div className='tab-content'>
+														<div
+															className='tab-pane active'
+															id='home'
+															role='tabpanel'
+															data-mh='log-tab'>
+															<div className='title h6'>
+																Verify Account
+															</div>
 
-											<form
-												onSubmit={e =>
-													handleSubmit(
-														e,
-														verifyAccount
-													)
-												}>
-												<Field
-													type='text'
-													name='token'
-													values={token}
-													placeholder={token}
-												/>
+															<form	
+																className='content'
+																onSubmit={e =>
+																	handleSubmit(
+																		e,
+																		verifyAccount
+																	)
+																}>
+																<div className='row'>
+																<div className='col col-12 col-xl-12 col-lg-12 col-md-12 col-sm-12'></div>
+																	<Field
+																		type='text'
+																		name='token'
+																		values={
+																			token
+																		}
+																		placeholder={
+																			token
+																		}
+																		disabled="disabled"
+																	/>
 
-												{error && (
-													<div bottom='sm' top='sm'>
-														<p>{error}</p>
+																	{error && (
+																		<div
+																			bottom='sm'
+																			top='sm'>
+																			<p>
+																				{
+																					error
+																				}
+																			</p>
+																		</div>
+																	)}
+
+																	<button
+																		className='btn btn-lg btn-primary full-width'
+																		>
+																		Verify Account
+																	</button>
+																</div>
+															</form>
+														</div>
 													</div>
-												)}
-
-												<button disabled={loading}>
-													Verify Account
-												</button>
-											</form>
-										</>
+												</div>
+											</div>
+										// </>
 									);
 								}}
 							</Mutation>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { SignIn, SignUp, VerifyAccount, MainLayout } from '../pages/Auth/index';
+import { SignIn, SignUp, VerifyAccount, MainLayout } from 'pages/Auth';
 
 const Auth = ({ refetch }) => {
 	return (

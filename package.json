@@ -81,7 +81,7 @@
 		"tabWidth": 4,
 		"trailingComma": "es5",
 		"useTabs": true,
-		"jsxBracketSameLine": true
+		"jsxBracketSameLine": false
 	},
 	"devDependencies": {
 		"prettier": "^1.19.1"
