@@ -10,6 +10,7 @@
 
 	svg {
 	  fill: $primary-color;
+	  -webkit-transition: opacity .3s ease;
 	  transition: opacity .3s ease;
 	}
 
@@ -51,8 +52,12 @@
   }
 
   .card-header a {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	align-items: baseline;
+	-webkit-box-align: baseline;
+	    -ms-flex-align: baseline;
+	        align-items: baseline;
   }
 }
 

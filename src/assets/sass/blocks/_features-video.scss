@@ -3,8 +3,12 @@
 
 
 .features-video {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin-bottom: 15px;
 
   .video-player {
@@ -26,7 +30,8 @@
   .video-content {
 	left: 50%;
 	bottom: 30%;
-	transform: translate(-50%, -50%);
+	-webkit-transform: translate(-50%, -50%);
+	        transform: translate(-50%, -50%);
 	text-align: center;
   }
 
@@ -105,7 +110,8 @@
 
 	.video-content {
 	  bottom: 20px;
-	  transform: translate(-50%, 0);
+	  -webkit-transform: translate(-50%, 0);
+	          transform: translate(-50%, 0);
 	}
   }
 

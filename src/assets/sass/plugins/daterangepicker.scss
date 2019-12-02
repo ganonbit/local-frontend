@@ -320,7 +320,8 @@
 .daterangepicker {
   width: 270px;
   border-color: #e6ecf5;
-  box-shadow: 0 0 34px 0 rgba(63, 66, 87, 0.1);
+  -webkit-box-shadow: 0 0 34px 0 rgba(63, 66, 87, 0.1);
+          box-shadow: 0 0 34px 0 rgba(63, 66, 87, 0.1);
 }
 
 .daterangepicker.single.ltr .calendar {

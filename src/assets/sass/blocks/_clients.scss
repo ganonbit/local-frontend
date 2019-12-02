@@ -14,15 +14,19 @@
   &:hover {
 	img {
 	  opacity: 1;
-	  filter: grayscale(0);
+	  -webkit-filter: grayscale(0);
+	          filter: grayscale(0);
 	}
   }
 
   img {
+	-webkit-transition: all .3s linear;
 	transition: all .3s linear;
-	transform-style: preserve-3d;
+	-webkit-transform-style: preserve-3d;
+	        transform-style: preserve-3d;
 	opacity: 0.3;
-	filter: grayscale(100%);
+	-webkit-filter: grayscale(100%);
+	        filter: grayscale(100%);
 	max-width: 100%;
 	display: block;
   }

@@ -4,7 +4,8 @@
 .pagination {
   margin-top: 40px;
   margin-bottom: 40px;
-  flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 
   .page-item {
 	font-size: 12px;

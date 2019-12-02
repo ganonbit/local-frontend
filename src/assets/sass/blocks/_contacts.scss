@@ -26,6 +26,7 @@
 	width: 15%;
 	height: 2px;
 	background-color: $primary-color;
+	-webkit-transition: width .3s ease-in-out;
 	transition: width .3s ease-in-out;
   }
 }

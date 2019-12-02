@@ -8,6 +8,8 @@ export const FORGOT_PASSWORD = '/forgot-password';
 
 export const RESET_PASSWORD = '/reset-password';
 
+export const VERIFY_ACCOUNT = '/verify';
+
 export const USER_PROFILE = '/:username';
 
 export const EXPLORE = '/explore';

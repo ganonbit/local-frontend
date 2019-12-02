@@ -9,15 +9,15 @@ import PostPopup from 'components/PostPopup';
  * Post detail page
  */
 const Post = ({ match }) => {
-  return (
-    <Content>
-      <PostPopup usedInModal={false} id={match.params.id} />
-    </Content>
-  );
+	return (
+		<Content>
+			<PostPopup usedInModal={false} id={match.params.id} />
+		</Content>
+	);
 };
 
 Post.propTypes = {
-  match: PropTypes.object.isRequired,
+	match: PropTypes.object.isRequired,
 };
 
 export default withRouter(Post);

@@ -12,7 +12,8 @@
   }
 
   & > .negative {
-	transform: rotate(180deg);
+	-webkit-transform: rotate(180deg);
+	        transform: rotate(180deg);
   }
 
   .olymp-stats-arrow {
@@ -185,7 +186,8 @@
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	transform: translate(-50%, -50%);
+	-webkit-transform: translate(-50%, -50%);
+	        transform: translate(-50%, -50%);
   }
 }
 
@@ -265,7 +267,8 @@
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	transform: translate(-50%, -50%);
+	-webkit-transform: translate(-50%, -50%);
+	        transform: translate(-50%, -50%);
 	font-size: 42px;
 	color: $heading-color;
   }

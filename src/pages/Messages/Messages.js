@@ -10,39 +10,39 @@ import MessagesUsers from './MessagesUsers';
 import MessagesChat from './MessagesChat';
 
 const Root = styled.div`
-  background-color: ${p => p.theme.colors.white};
-  position: relative;
-  margin-top: -${HEADER_HEIGHT}px;
-  padding-top: ${HEADER_HEIGHT}px;
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  flex-direction: row;
+	background-color: ${p => p.theme.colors.white};
+	position: relative;
+	margin-top: -${HEADER_HEIGHT}px;
+	padding-top: ${HEADER_HEIGHT}px;
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	flex-direction: row;
 
-  @media (min-width: ${p => p.theme.screen.md}) {
-    margin-left: ${p => p.theme.spacing.lg};
-    border-left: 1px solid ${p => p.theme.colors.grey[300]};
-    border-right: 1px solid ${p => p.theme.colors.grey[300]};
-  }
+	@media (min-width: ${p => p.theme.screen.md}) {
+		margin-left: ${p => p.theme.spacing.lg};
+		border-left: 1px solid ${p => p.theme.colors.grey[300]};
+		border-right: 1px solid ${p => p.theme.colors.grey[300]};
+	}
 `;
 
 /**
  * Messages page
  */
 const Messages = ({ match }) => {
-  const [{ auth }] = useStore();
+	const [{ auth }] = useStore();
 
-  return (
-    <Root>
-      <MessagesUsers authUser={auth.user} match={match} />
+	return (
+		<Root>
+			<MessagesUsers authUser={auth.user} match={match} />
 
-      <MessagesChat match={match} authUser={auth.user} />
-    </Root>
-  );
+			<MessagesChat match={match} authUser={auth.user} />
+		</Root>
+	);
 };
 
 Messages.propTypes = {
-  match: PropTypes.object.isRequired,
+	match: PropTypes.object.isRequired,
 };
 
 export default Messages;

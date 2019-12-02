@@ -92,8 +92,13 @@
   .responsive-flex1200 {
 
     .ui-block-title {
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
-      flex-direction: column;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
 
       & > * {
         margin-bottom: 10px;
@@ -131,8 +136,13 @@
   .responsive-flex {
 
     .ui-block-title  {
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
-      flex-direction: column;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
 
       & > * {
         margin-bottom: 10px;
@@ -164,7 +174,9 @@
     .photo-gallery {
       position: relative;
       right: auto;
-      order: 5;
+      -webkit-box-ordinal-group: 6;
+          -ms-flex-order: 5;
+              order: 5;
       left: auto;
       bottom: auto;
       top: auto;
@@ -213,7 +225,10 @@
 
 @media (max-width: 480px) {
   .ui-block-content.display-flex.content-around {
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
 
     & > * {
       margin-bottom: 15px;

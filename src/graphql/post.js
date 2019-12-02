@@ -7,10 +7,12 @@ export const postCommentsPayload = `
   comments {
     id
     comment
+    createdAt
     author {
       id
       username
-      fullName
+      firstName
+      lastName
       image
     }
   }
@@ -23,7 +25,8 @@ export const postAuthorPayload = `
   author {
     id
     username
-    fullName
+    firstName
+    lastName
     image
     following {
       id
@@ -67,11 +70,11 @@ export const postLikesPayload = `
  * Creates a post
  */
 export const CREATE_POST = gql`
-  mutation($input: CreatePostInput!) {
-    createPost(input: $input) {
-      id
-    }
-  }
+	mutation($input: CreatePostInput!) {
+		createPost(input: $input) {
+			id
+		}
+	}
 `;
 
 /**
@@ -135,9 +138,9 @@ export const GET_POST = gql`
  * Deletes a post
  */
 export const DELETE_POST = gql`
-  mutation($input: DeletePostInput!) {
-    deletePost(input: $input) {
-      id
-    }
-  }
+	mutation($input: DeletePostInput!) {
+		deletePost(input: $input) {
+			id
+		}
+	}
 `;

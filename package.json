@@ -73,5 +73,13 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "prettier": {
+    "singleQuote": true,
+    "jsxSingleQuote": true,
+    "tabWidth": 4,
+    "trailingComma": "es5",
+    "useTabs": true,
+    "jsxBracketSameLine": true
+  }
 }

@@ -6,6 +6,8 @@
   margin-bottom: 30px;
 
   .product-thumb {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
 	background-color: #f2f4f8;
 	margin-bottom: 10px;
@@ -16,8 +18,12 @@
   }
 
   .product-content {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	align-items: center;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
 
 	.block-price {
 	  margin-left: auto;
@@ -43,6 +49,7 @@
 
   .product-content .title {
 	font-size: 16px;
+	-webkit-transition: opacity .3s ease;
 	transition: opacity .3s ease;
   }
 
@@ -50,6 +57,7 @@
 	margin-right: 0;
 	font-size: 16px;
 	font-weight: 700;
+	-webkit-transition: opacity .3s ease;
 	transition: opacity .3s ease;
 
 	&.with-sale {
@@ -137,13 +145,15 @@
 	position: absolute;
 	right: 0;
 	top: 50%;
-	transform: translate(0, -50%);
+	-webkit-transform: translate(0, -50%);
+	        transform: translate(0, -50%);
 	opacity: 0;
 	width: 40px;
 	height: 40px;
 	border-radius: 5px;
 	text-align: center;
 	background-color: $blue;
+	-webkit-transition: opacity .3s ease;
 	transition: opacity .3s ease;
 
 	svg {
@@ -152,7 +162,8 @@
 	  position: absolute;
 	  top: 50%;
 	  left: 50%;
-	  transform: translate(-50%, -50%);
+	  -webkit-transform: translate(-50%, -50%);
+	          transform: translate(-50%, -50%);
 	}
   }
 }
@@ -164,8 +175,12 @@
 
 .shop-product-detail {
   .thumbs-wrap {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	align-items: flex-start;
+	-webkit-box-align: start;
+	    -ms-flex-align: start;
+	        align-items: flex-start;
   }
 }
 
@@ -173,6 +188,8 @@
   margin-right: 10px;
 
   .small-thumb {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
 	width: 80px;
 	height: 80px;
@@ -192,6 +209,8 @@
 .shop-product-detail-thumb {
   height: 560px;
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   background-color: #f2f4f8;
 
@@ -211,9 +230,15 @@
   }
 
   .main-content-wrap {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	align-items: center;
-	justify-content: space-between;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	-webkit-box-pack: justify;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
 	margin-bottom: 30px;
 
 	.title {
@@ -235,9 +260,13 @@
   }
 
   .inputs-wrap {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
 	margin-bottom: 50px;
-	align-items: center;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
 
 	& > * + * {
 	  margin-left: 20px;
@@ -308,7 +337,9 @@
 .product-description {
   .nav-tabs {
 	border-bottom: none;
-	justify-content: center;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
 	margin-bottom: 80px;
 
 	.nav-link {
@@ -356,9 +387,15 @@
 }
 
 .comments-title-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   margin-bottom: 10px;
 
   .rait-stars .star-icon {
