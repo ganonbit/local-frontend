@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import RecommendedPages from 'components/widget/RecommendedPages';
-import FriendsSuggestions from 'components/widget/FriendsSuggestions';
-import ActivityFeed from 'components/widget/ActivityFeed';
-import { CreatePost } from '../../components/CreatePost/Index';
-import Post from '../../components/post/index';
+import RecommendedPages from 'components/Widget/RecommendedPages';
+import FriendsSuggestions from 'components/Widget/FriendsSuggestions';
+import ActivityFeed from 'components/Widget/ActivityFeed';
+import { CreatePost } from 'components/CreatePost/index';
+import Post from 'components/Post/index';
 
 export default class Home extends Component {
 	render() {
