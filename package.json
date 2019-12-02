@@ -82,5 +82,8 @@
 		"trailingComma": "es5",
 		"useTabs": true,
 		"jsxBracketSameLine": true
+	},
+	"devDependencies": {
+		"prettier": "^1.19.1"
 	}
 }

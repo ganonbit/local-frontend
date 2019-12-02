@@ -5,7 +5,7 @@ import { Query, Mutation } from 'react-apollo';
 
 import { VERIFY_TOKEN, VERIFY_ACCOUNT } from 'graphql/user';
 
-import { Field } from '../../components/Auth/index';
+import { Field } from 'components/Auth';
 
 import * as Routes from 'routes';
 
@@ -50,7 +50,7 @@ const VerifyAccount = ({ history, location, refetch }) => {
 						if (apiError)
 							return (
 								<h1>
-									This token is either invalid or expired!
+									{error}
 								</h1>
 							);
 
@@ -66,9 +66,17 @@ const VerifyAccount = ({ history, location, refetch }) => {
 
 									return (
 										<>
-											<div bottom='md'>
-												<h1>Verify Account</h1>
-											</div>
+											<div className='col col-xl-5 col-lg-6 col-md-12 col-sm-12 col-12'>
+						<div className='registration-login-form'>
+							<div className='tab-content'>
+								<div
+									className='tab-pane active'
+									id='home'
+									role='tabpanel'
+									data-mh='log-tab'>
+									<div className='title h6'>
+										Verify Account
+									</div>
 
 											<form
 												onSubmit={e =>
@@ -104,12 +112,6 @@ const VerifyAccount = ({ history, location, refetch }) => {
 			</div>
 		</div>
 	);
-};
-
-VerifyAccount.propTypes = {
-	location: PropTypes.object.isRequired,
-	history: PropTypes.object.isRequired,
-	refetch: PropTypes.func.isRequired,
 };
 
 export default withRouter(VerifyAccount);
