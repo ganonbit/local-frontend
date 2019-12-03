@@ -95,7 +95,6 @@ Description: "HTML-template"
 	2.28 Widget birthday alert
 	2.29 Widget action
 	2.30 Widget activity feed
-	2.31 Widget weather
 	2.32 Widget last video
 	2.33 Widget pool
 	2.34 Widget badges
@@ -788,6 +787,7 @@ if the page has a “right panel”, add a class for BODY -- ".page-has-right-pa
   -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
   transition: -webkit-transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
   transition: transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
+  transition: transform 0.5s cubic-bezier(0.55, 0, 0.1, 1), -webkit-transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
   transition: transform 0.5s cubic-bezier(0.55, 0, 0.1, 1),
     -webkit-transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
   background-color: #fff;
@@ -3252,7 +3252,10 @@ input {
     -webkit-box-shadow ease-in-out 0.15s;
   transition: border-color ease-in-out 0.15s,
     -webkit-box-shadow ease-in-out 0.15s;
+  -webkit-transition: border-color ease-in-out 0.15s, -webkit-box-shadow ease-in-out 0.15s;
+  transition: border-color ease-in-out 0.15s, -webkit-box-shadow ease-in-out 0.15s;
   transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s, -webkit-box-shadow ease-in-out 0.15s;
   transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s,
     -webkit-box-shadow ease-in-out 0.15s;
 }
@@ -4491,7 +4494,9 @@ fieldset[disabled] .form-group.is-focused .togglebutton label {
   -webkit-transition: left 0.3s ease, background 0.3s ease,
     -webkit-box-shadow 0.1s ease;
   transition: left 0.3s ease, background 0.3s ease, -webkit-box-shadow 0.1s ease;
+  -webkit-transition: left 0.3s ease, background 0.3s ease, -webkit-box-shadow 0.1s ease;
   transition: left 0.3s ease, background 0.3s ease, box-shadow 0.1s ease;
+  transition: left 0.3s ease, background 0.3s ease, box-shadow 0.1s ease, -webkit-box-shadow 0.1s ease;
   transition: left 0.3s ease, background 0.3s ease, box-shadow 0.1s ease,
     -webkit-box-shadow 0.1s ease;
   text-align: center;
@@ -5174,6 +5179,7 @@ fieldset[disabled] .checkbox input[type='checkbox'],
   -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
   transition: -webkit-transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
   transition: transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
+  transition: transform 0.5s cubic-bezier(0.55, 0, 0.1, 1), -webkit-transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
   transition: transform 0.5s cubic-bezier(0.55, 0, 0.1, 1),
     -webkit-transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
 }
@@ -5191,6 +5197,7 @@ fieldset[disabled] .checkbox input[type='checkbox'],
   -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
   transition: -webkit-transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
   transition: transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
+  transition: transform 0.5s cubic-bezier(0.55, 0, 0.1, 1), -webkit-transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
   transition: transform 0.5s cubic-bezier(0.55, 0, 0.1, 1),
     -webkit-transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
 }
@@ -5234,6 +5241,7 @@ fieldset[disabled] .checkbox input[type='checkbox'],
   -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
   transition: -webkit-transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
   transition: transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
+  transition: transform 0.5s cubic-bezier(0.55, 0, 0.1, 1), -webkit-transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
   transition: transform 0.5s cubic-bezier(0.55, 0, 0.1, 1),
     -webkit-transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
   -webkit-box-shadow: 0 0 34px 0 rgba(63, 66, 87, 0.1);
@@ -5289,6 +5297,7 @@ fieldset[disabled] .checkbox input[type='checkbox'],
   -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
   transition: -webkit-transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
   transition: transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
+  transition: transform 0.5s cubic-bezier(0.55, 0, 0.1, 1), -webkit-transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
   transition: transform 0.5s cubic-bezier(0.55, 0, 0.1, 1),
     -webkit-transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
   -webkit-box-shadow: 0 0 34px 0 rgba(63, 66, 87, 0.1);
@@ -5431,9 +5440,6 @@ fieldset[disabled] .checkbox input[type='checkbox'],
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
   margin-right: 25px;
-}
-.left-menu .olymp-weather-icon {
-  width: 26px;
 }
 .left-menu .olymp-happy-faces-icon {
   width: 23px;
@@ -6493,16 +6499,8 @@ fieldset[disabled] .checkbox input[type='checkbox'],
   background-image: url('../../img/top-header5.png');
 }
 
-.bg-weather {
-  background-image: url('../../img/top-header6.png');
-}
-
 .bg-group {
   background-image: url('../../img/bg-group.png');
-}
-
-.bg-music {
-  background-image: url('../../img/top-header7.png');
 }
 
 .bg-landing {
@@ -7055,13 +7053,7 @@ fieldset[disabled] .checkbox input[type='checkbox'],
   }
 }
 .birthday-item.badges .skills-item-meter-active {
-  background: -webkit-gradient(
-    linear,
-    left top,
-    right top,
-    from(#ff613a),
-    to(#ff9432)
-  );
+  background: -webkit-gradient(linear, left top, right top, from(#ff613a), to(#ff9432));
   background: linear-gradient(to right, #ff613a, #ff9432);
 }
 
@@ -10050,14 +10042,6 @@ ol ol li {
 
 .crumina-full-calendar .fc-button.fc-dayGridMonth-button {
   background-image: url('../../svg-icons/month-calendar-icon.svg');
-}
-
-.crumina-full-calendar .fc-button.fc-timeGridWeek-button {
-  background-image: url('../../svg-icons/week-calendar-icon.svg');
-}
-
-.crumina-full-calendar .fc-button.fc-timeGridDay-button {
-  background-image: url('../../svg-icons/day-calendar-icon.svg');
 }
 
 .crumina-full-calendar .fc-button-primary:not(:disabled):active {
@@ -13351,6 +13335,7 @@ ol ol li {
   -webkit-transition: -webkit-transform 150ms cubic-bezier(0.4, 0, 1, 1);
   transition: -webkit-transform 150ms cubic-bezier(0.4, 0, 1, 1);
   transition: transform 150ms cubic-bezier(0.4, 0, 1, 1);
+  transition: transform 150ms cubic-bezier(0.4, 0, 1, 1), -webkit-transform 150ms cubic-bezier(0.4, 0, 1, 1);
   transition: transform 150ms cubic-bezier(0.4, 0, 1, 1),
     -webkit-transform 150ms cubic-bezier(0.4, 0, 1, 1);
 }
@@ -14690,290 +14675,6 @@ ol ol li {
 
 .w-activity-feed li > * {
   vertical-align: top;
-}
-
-/*------------- #W-WEATHER --------------*/
-.w-wethear {
-  background-image: url('../../img/bg-wethear.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  padding: 25px;
-  position: relative;
-  color: #fff;
-  text-align: center;
-  background-color: #38a9ff;
-}
-.w-wethear .olymp-weather-partly-sunny-icon {
-  width: 64px;
-  height: 65px;
-}
-.w-wethear .weekly-forecast {
-  margin-right: -25px;
-  margin-left: -25px;
-  position: relative;
-  padding: 0 20px;
-}
-.w-wethear .weekly-forecast li {
-  display: inline-block;
-  vertical-align: top;
-  padding: 15px 3px;
-  text-transform: uppercase;
-  font-size: 10px;
-  font-weight: 700;
-}
-.w-wethear .weekly-forecast li > * {
-  margin-bottom: 8px;
-}
-.w-wethear .weekly-forecast li > *:last-child {
-  margin-bottom: 0;
-}
-.w-wethear .weekly-forecast li svg {
-  height: 22px;
-  width: 22px;
-}
-.w-wethear .weekly-forecast li .olymp-weather-partly-sunny-icon {
-  height: 22px;
-  width: 22px;
-}
-.w-wethear .weekly-forecast:before {
-  content: '';
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #fff;
-  opacity: 0.1;
-}
-.w-wethear .more {
-  position: absolute;
-  right: 25px;
-  top: 20px;
-  opacity: 0.8;
-  color: #fff;
-  fill: #fff;
-}
-.w-wethear .temperature-sensor {
-  font-size: 60px;
-  line-height: 1;
-}
-.w-wethear > * {
-  margin-bottom: 25px;
-}
-.w-wethear > *:last-child {
-  margin-bottom: 0;
-}
-.w-wethear .max-min-temperature {
-  margin-right: 20px;
-}
-.w-wethear .max-min-temperature span {
-  display: block;
-}
-.w-wethear svg {
-  fill: #fff;
-}
-.w-wethear .climate {
-  font-size: 18px;
-}
-.w-wethear .wethear-now {
-  margin-top: 10px;
-}
-.w-wethear .wethear-now-description span {
-  font-size: 11px;
-}
-.w-wethear .wethear-now-description span > span {
-  font-weight: 500;
-}
-.w-wethear .wethear-now-description span + span {
-  margin-left: 15px;
-}
-.w-wethear .date {
-  font-weight: 400;
-  color: #fff;
-  margin-bottom: 0;
-}
-
-.swiper-slide-weather {
-  border-bottom: 1px solid #e6ecf5;
-}
-
-.day-wethear-item {
-  float: left;
-  padding: 25px 0 20px;
-  border-right: 1px solid #e6ecf5;
-  text-align: center;
-  width: 16.5%;
-}
-.day-wethear-item:last-child {
-  border-right: none;
-}
-.day-wethear-item .title {
-  font-size: 12px;
-  font-weight: 700;
-  color: #515365;
-  margin-bottom: 40px;
-}
-.day-wethear-item .icon {
-  fill: #38a9ff;
-  margin-bottom: 30px;
-  min-height: 54px;
-  width: 55px;
-}
-.day-wethear-item .temperature-sensor {
-  font-size: 18px;
-  color: #515365;
-  margin-bottom: 10px;
-}
-.day-wethear-item .wethear-now {
-  font-weight: 700;
-}
-.day-wethear-item .wethear-now span {
-  font-size: 11px;
-  color: #c5c8d8;
-}
-.day-wethear-item .wethear-now span + span {
-  margin-left: 12px;
-}
-.day-wethear-item .wethear-now .high {
-  color: #888da8;
-}
-
-.wethear-content {
-  color: #fff;
-  text-align: center;
-}
-.wethear-content .icon {
-  fill: #fff;
-  margin-bottom: 20px;
-}
-.wethear-content .temperature-sensor {
-  font-size: 84px;
-  margin-bottom: 10px;
-  line-height: 1;
-}
-.wethear-content .wethear-now {
-  margin-bottom: 15px;
-}
-.wethear-content .wethear-now span {
-  font-size: 13px;
-}
-.wethear-content .wethear-now span + span {
-  margin-left: 12px;
-}
-.wethear-content .climate {
-  font-size: 24px;
-  margin-bottom: 15px;
-}
-.wethear-content .wethear-now-description {
-  font-size: 12px;
-}
-.wethear-content .wethear-now-description > * {
-  display: inline-block;
-  padding: 0 25px;
-}
-.wethear-content .wethear-now-description .icon {
-  margin-bottom: 10px;
-}
-.wethear-content .wethear-now-description span {
-  font-weight: 700;
-}
-
-.main-header-weather {
-  padding: 20px 30px 30px;
-}
-.main-header-weather .img-bottom {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  -webkit-transform: translate(-50%, 0);
-  transform: translate(-50%, 0);
-  margin-bottom: 0;
-}
-.main-header-weather .date-and-place {
-  position: absolute;
-  top: 40px;
-  left: 30px;
-  color: #fff;
-}
-.main-header-weather .date {
-  font-size: 16px;
-}
-.main-header-weather .place {
-  font-size: 11px;
-}
-.main-header-weather .wethear-update {
-  position: absolute;
-  top: 40px;
-  right: 30px;
-  font-size: 10px;
-  color: #fff;
-  fill: #fff;
-}
-.main-header-weather .wethear-update svg {
-  margin-left: 10px;
-  width: 12px;
-  height: 13px;
-}
-.main-header-weather .olymp-weather-partly-sunny-icon {
-  width: 64px;
-  height: 65px;
-}
-.main-header-weather .olymp-weather-wind-icon-header {
-  width: 47px;
-  height: 34px;
-}
-.main-header-weather .olymp-weather-rain-drops-icon {
-  width: 47px;
-  height: 34px;
-}
-.main-header-weather .olymp-weather-thermometer-icon {
-  width: 47px;
-  height: 34px;
-}
-
-/*------------- Responsive mode styles --------------*/
-@media (max-width: 1400px) {
-  .w-wethear .weekly-forecast li {
-    padding: 15px 1px;
-  }
-}
-
-@media (max-width: 540px) {
-  .day-wethear-item {
-    width: 33%;
-  }
-}
-
-@media (max-width: 480px) {
-  .wethear-content {
-    margin-top: 100px;
-  }
-}
-
-@media (max-width: 360px) {
-  .day-wethear-item {
-    width: 49%;
-  }
-  .wethear-content .wethear-now-description > * {
-    padding: 0 5px;
-  }
-  .main-header-weather .date-and-place {
-    position: relative;
-    top: auto;
-    left: auto;
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  .main-header-weather .wethear-update {
-    position: relative;
-    top: auto;
-    right: auto;
-    text-align: center;
-  }
-  .wethear-content {
-    margin-top: 20px;
-  }
 }
 
 /*------------- #W-LAST-VIDEO --------------*/
@@ -18856,13 +18557,7 @@ img.mfp-img {
   background: #333;
   background: url('../../img/background.png');
   background: rgba(0, 0, 0, 0.9);
-  background: -webkit-gradient(
-    linear,
-    left top,
-    left bottom,
-    from(rgba(50, 50, 50, 0.9)),
-    to(rgba(0, 0, 0, 0.9))
-  );
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(50, 50, 50, 0.9)), to(rgba(0, 0, 0, 0.9)));
   background: linear-gradient(rgba(50, 50, 50, 0.9), rgba(0, 0, 0, 0.9));
 }
 
@@ -18982,13 +18677,7 @@ img.mfp-img {
   margin: 5px;
   background: #333;
   background: rgba(50, 50, 50, 0.8);
-  background: -webkit-gradient(
-    linear,
-    left top,
-    left bottom,
-    from(rgba(30, 30, 30, 0.8)),
-    to(rgba(60, 60, 60, 0.8))
-  );
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(30, 30, 30, 0.8)), to(rgba(60, 60, 60, 0.8)));
   background: linear-gradient(rgba(30, 30, 30, 0.8), rgba(60, 60, 60, 0.8));
 }
 
@@ -19033,13 +18722,7 @@ img.mfp-img {
 }
 
 .mejs-controls .mejs-time-rail .mejs-time-current {
-  background: -webkit-gradient(
-    linear,
-    left top,
-    left bottom,
-    from(#20d862),
-    to(#5bf692)
-  );
+  background: -webkit-gradient(linear, left top, left bottom, from(#20d862), to(#5bf692));
   background: linear-gradient(#20d862, #5bf692);
   width: 0;
 }
@@ -19254,13 +18937,7 @@ img.mfp-img {
   border-radius: 5px;
   background: #fff;
   background: rgba(255, 255, 255, 0.8);
-  background: -webkit-gradient(
-    linear,
-    left top,
-    left bottom,
-    from(#20d862),
-    to(#5bf692)
-  );
+  background: -webkit-gradient(linear, left top, left bottom, from(#20d862), to(#5bf692));
   background: linear-gradient(#20d862, #5bf692);
 }
 
@@ -19349,13 +19026,7 @@ img.mfp-img {
   float: left;
   background: #222;
   background: rgba(0, 0, 0, 0.7);
-  background: -webkit-gradient(
-    linear,
-    left top,
-    left bottom,
-    from(rgba(50, 50, 50, 0.7)),
-    to(rgba(0, 0, 0, 0.7))
-  );
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(50, 50, 50, 0.7)), to(rgba(0, 0, 0, 0.7)));
   background: linear-gradient(rgba(50, 50, 50, 0.7), rgba(0, 0, 0, 0.7));
   filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, startColorstr=#323232,endColorstr=#000000);
   overflow: hidden;
@@ -19379,13 +19050,7 @@ img.mfp-img {
 .mejs-chapters .mejs-chapter .mejs-chapter-block:hover {
   background: #666;
   background: rgba(102, 102, 102, 0.7);
-  background: -webkit-gradient(
-    linear,
-    left top,
-    left bottom,
-    from(rgba(102, 102, 102, 0.7)),
-    to(rgba(50, 50, 50, 0.6))
-  );
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(102, 102, 102, 0.7)), to(rgba(50, 50, 50, 0.6)));
   background: linear-gradient(rgba(102, 102, 102, 0.7), rgba(50, 50, 50, 0.6));
   filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, startColorstr=#666666,endColorstr=#323232);
 }
@@ -19730,71 +19395,6 @@ div.mejs-speed-button {
 }
 
 /* End: Skip Back */
-/* Custom Olympus-player Style */
-.mejs-container .mejs-controls > div + div {
-  margin-left: 30px;
-}
-
-.mejs-container .mejs-controls > div.mejs-nexttrack {
-  margin-left: 21px;
-}
-
-.mejs-controls > .mejs-button.mejs-pause button {
-  margin: 3px 0;
-}
-
-.mejs-controls > .mejs-button.mejs-volume-button {
-  margin: 0 10px;
-}
-
-.mejs-controls > .mejs-button > button {
-  background-position: 0 0;
-}
-
-.mejs-controls .mejs-button button:focus {
-  outline: none;
-}
-
-.mejs-controls .mejs-prevtrack button {
-  background: transparent url('../../svg-icons/prev-song.svg') no-repeat;
-}
-
-.mejs-controls .mejs-nexttrack button {
-  background: transparent url('../../svg-icons/next-song.svg') no-repeat;
-}
-
-.mejs-controls .mejs-play button {
-  background: transparent url('../../svg-icons/play-icon.svg') no-repeat;
-}
-
-.mejs-controls .mejs-pause button {
-  background: transparent url('../../svg-icons/pause-icon.svg') no-repeat;
-}
-
-.mejs-controls .mejs-loop-button.mejs-loop-off button {
-  background: transparent url('../../svg-icons/repeat.svg') no-repeat;
-}
-
-.mejs-controls .mejs-loop-button.mejs-loop-on button {
-  background: transparent url('../../svg-icons/repeat-off.svg') no-repeat;
-}
-
-.mejs-controls .mejs-shuffle-button.mejs-shuffle-off button {
-  background: transparent url('../../svg-icons/shuffle.svg') no-repeat;
-}
-
-.mejs-controls .mejs-shuffle-button.mejs-shuffle-on button {
-  background: transparent url('../../svg-icons/shuffle-on.svg') no-repeat;
-}
-
-.mejs-controls .mejs-mute button {
-  background: transparent url('../../svg-icons/sound.svg') no-repeat;
-}
-
-.mejs-controls .mejs-unmute button {
-  background: transparent url('../../svg-icons/no-sound.svg') no-repeat;
-}
-
 /*================= Responsive Mode ============*/
 @media (max-width: 768px) {
   .mejs-container .mejs-controls > div + div {
@@ -20065,8 +19665,7 @@ div.mejs-speed-button {
 .swiper-container-3d .swiper-slide-shadow-left {
   background-image: -webkit-gradient(
     linear,
-    right top,
-    left top,
+    right top, left top,
     from(rgba(0, 0, 0, 0.5)),
     to(rgba(0, 0, 0, 0))
   );
@@ -20080,8 +19679,7 @@ div.mejs-speed-button {
 .swiper-container-3d .swiper-slide-shadow-right {
   background-image: -webkit-gradient(
     linear,
-    left top,
-    right top,
+    left top, right top,
     from(rgba(0, 0, 0, 0.5)),
     to(rgba(0, 0, 0, 0))
   );
@@ -20095,8 +19693,7 @@ div.mejs-speed-button {
 .swiper-container-3d .swiper-slide-shadow-top {
   background-image: -webkit-gradient(
     linear,
-    left bottom,
-    left top,
+    left bottom, left top,
     from(rgba(0, 0, 0, 0.5)),
     to(rgba(0, 0, 0, 0))
   );
@@ -20110,8 +19707,7 @@ div.mejs-speed-button {
 .swiper-container-3d .swiper-slide-shadow-bottom {
   background-image: -webkit-gradient(
     linear,
-    left top,
-    left bottom,
+    left top, left bottom,
     from(rgba(0, 0, 0, 0.5)),
     to(rgba(0, 0, 0, 0))
   );

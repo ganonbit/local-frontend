@@ -28,20 +28,19 @@ const MainLayout = ({ children }) => {
           <div className='header--standard-wrap'>
             <Link to='/login' className='logo'>
               <div className='img-wrap'>
-                <img src='img/avocado-logo.png' alt='AvoCado' />
+                <img src='img/avocado-logo.png' alt='Avocado' />
               </div>
             </Link>
-            <a
-              href='#1'
-              className='open-responsive-menu js-open-responsive-menu'
-            >
-              <AppleLogo className='olymp-menu-icon' width={20} height={20} />
-
-              {/* <svg
-                className="olymp-menu-icon"
-                xlinkHref="svg-icons/sprites/icons.svg#1olymp-menu-icon"
-              /> */}
-            </a>
+            <div className="nav nav-pills nav1 header-menu">
+              <div className="mCustomScrollbar ps ps--theme_default ps--active-y">
+                <a
+                  href='#1'
+                  className='nav-item js-expanded-menu'
+                >
+                  <AppleLogo className='olymp-menu-icon' width={20} height={20} />
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </Headroom>
