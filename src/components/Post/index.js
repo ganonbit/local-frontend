@@ -1,14 +1,12 @@
 import React, { useState } from 'react';
-import PostControlButton from '../Common/PostControlButton';
-// import { GooglePlay } from '../../assets/svg-icons'
 import PostHeader from './PostHeader';
 import PostFooter from './PostFooter';
 import PostContent from './MainContent';
 import Comments from 'components/Comments/Comments';
 import AddComment from 'components/Comments/AddComment';
-import { useStore } from '../../store/index';
+import { useStore } from 'store/index';
 import { Query } from 'react-apollo';
-import { GET_FOLLOWED_POSTS } from '../../graphql/post';
+import { GET_FOLLOWED_POSTS } from 'graphql/post';
 
 export default function MainContent(props) {
   const [{ auth }] = useStore();
@@ -38,8 +36,9 @@ export default function MainContent(props) {
                   <PostHeader
                     author={post.author}
                     image={post.image}
-					createdAt={post.createdAt}
-					user={auth.user}
+                    createdAt={post.createdAt}
+                    user={auth.user}
+                    postId={post.id}
                   />
                   {/* {props.newPost ? <NewPost content={props.content} /> : <PostVideo tag={props.tag} body={props.body} />} */}
                   <PostContent content={post.content} image={post.image} />
@@ -54,6 +53,7 @@ export default function MainContent(props) {
                 {isCommentOpen && (
                   <AddComment
                     authorId={auth.user.id}
+                    author={auth.user}
                     postId={post.id}
                     onCancel={showCommentHandler}
                   />

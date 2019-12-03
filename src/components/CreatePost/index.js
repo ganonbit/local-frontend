@@ -1,5 +1,3 @@
-export { default as CreatePost } from './CreatePost';
-
 import React, { useState } from 'react';
 import UploadImage from '../Modals/NewsFeed/UploadImage';
 import ChooseImage from '../Modals/NewsFeed/ChooseImage';
@@ -58,7 +56,6 @@ export const CreatePost = props => {
           authorId: auth.user.id,
         },
       }}
-      // refetchQueries={() => [{ query: GET_POSTS }]}
     >
       {(createPost, { loading, error: apiError }) => {
         return (

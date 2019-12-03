@@ -8,9 +8,9 @@ export default function Comments(props) {
     <>
       <ul className='comments-list'>
         {props.comments
-          ? props.comments.slice(0, numOfComments).map(comment => {
+          ? props.comments.slice(0, numOfComments).map((comment, index) => {
               return (
-                <li key={comment} className='comment-item'>
+                <li key={index} className='comment-item'>
                   <CommentsHeader
                     author={comment.author}
                     createdAt={comment.createdAt}

@@ -1,52 +1,19 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
+import { generatePath } from 'react-router-dom';
+
 import { CREATE_COMMENT } from '../../graphql/comment';
-import { GET_FOLLOWED_POSTS } from '../../graphql/post';
+import { GET_POSTS } from '../../graphql/post';
 import { Mutation } from 'react-apollo';
 
-export default function AddComment({ authorId, postId, onCancel }) {
-<<<<<<< HEAD
-	const [commentContent, setCommentContent] = useState({
-		comment: '',
-		image: '',
-		// imagePublicid: '',
-		author: authorId,
-		postId: postId,
-	});
-	const onAddComment = (e, createComment) => {
-		e.preventDefault();
-		createComment.then(async ({ data }) => {},
-		setCommentContent({ ...commentContent, comment: '', image: '' }));
-	};
-	const onCommentChange = e => {
-		e.preventDefault();
-		const { name, value } = e.target;
-		setCommentContent({ ...commentContent, [name]: value });
-	};
-	return (
-		<Mutation
-			mutation={CREATE_COMMENT}
-			variables={{
-				input: commentContent,
-			}}
-			refetchQueries={() => [
-				{
-					query: GET_FOLLOWED_POSTS,
-					variables: { userId: authorId, skip: 0, limit: 15 },
-				},
-			]}>
-			{(createComment, { loading, error: apiError }) => {
-				return (
-					<form
-						className='comment-form inline-items'
-						onSubmit={e => onAddComment(e, createComment())}>
-						<div className='post__author author vcard inline-items'>
-							<img src='img/author-page.jpg' alt='author' />
-=======
+import Avatar from '../Avatar';
+
+import * as Routes from 'routes';
+
+export default function AddComment({ authorId, author, postId, onCancel }) {
   const [commentContent, setCommentContent] = useState({
     comment: '',
-    image: '',
-    // imagePublicid: '',
+    image: null,
+    imagePublicId: null,
     author: authorId,
     postId: postId,
   });
@@ -80,8 +47,14 @@ export default function AddComment({ authorId, postId, onCancel }) {
             onSubmit={e => onAddComment(e, createComment())}
           >
             <div className='post__author author vcard inline-items'>
-              <img src='img/author-page.jpg' alt='author' />
->>>>>>> master
+            <a
+              className='author-thumb'
+              href={generatePath(Routes.USER_PROFILE, {
+                username: author.username,
+              })}
+            >
+              <Avatar image={author.image} />
+            </a>
 
               <div className='form-group with-icon-right '>
                 <textarea
@@ -99,9 +72,6 @@ export default function AddComment({ authorId, postId, onCancel }) {
                     data-toggle='modal'
                     data-target='#update-header-photo'
                   >
-                    {/* <svg className="olymp-camera-icon">
-                                    <use xlink: href="svg-icons/sprites/icons.svg#olymp-camera-icon"></use>
-											</svg> */}
                   </a>
                 </div>
               </div>
@@ -122,8 +92,4 @@ export default function AddComment({ authorId, postId, onCancel }) {
       }}
     </Mutation>
   );
-}
-AddComment.propTypes = {
-  authorId: PropTypes.string.isRequired,
-  postId: PropTypes.string.isRequired,
 };
