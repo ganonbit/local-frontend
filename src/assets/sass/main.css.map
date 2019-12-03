@@ -81,7 +81,6 @@
         "widgets/_w-birthday-alert.scss",
         "widgets/_w-action.scss",
         "widgets/_w-activity-feed.scss",
-        "widgets/_w-wethear.scss",
         "widgets/_w-last-video.scss",
         "widgets/_w-pool.scss",
         "widgets/_w-badges.scss",

@@ -2,9 +2,10 @@ import React, { useState } from 'react';
 import { Mutation } from 'react-apollo';
 import { withRouter } from 'react-router-dom';
 
-import { Field } from '../../components/Auth/index';
+import { Field } from 'components/Auth';
 import { SIGN_UP } from 'graphql/user';
-import { validateFormField } from '../../utils/index';
+import { validateFormField } from 'utils';
+import { MonthCalendar } from 'assets/svg-icons';
 
 import { useStore } from 'store';
 import { CLEAR_AUTH_USER } from 'store/auth';
@@ -162,10 +163,7 @@ const SignUp = ({ refetch, history }) => {
                           <label className='control-label'>Your Birthday</label>
                           <input name='birthday' defaultValue='10/24/1984' />
                           <span className='input-group-addon'>
-                            <svg
-                              className='olymp-calendar-icon'
-                              xlinkHref='svg-icons/sprites/icons.svg#1olymp-calendar-icon'
-                            />
+                          <MonthCalendar className='olymp-menu-icon' width={20} height={20} />
                           </span>
                         </div>
 
