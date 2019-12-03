@@ -14,31 +14,31 @@ import { useStore } from 'store';
  * Root Component of App
  */
 const App = () => {
-	const [{ auth }, dispatch] = useStore();
-	return (
-		<Query
-			query={GET_AUTH_USER}
-			onCompleted={data => {
-				dispatch({ type: SET_AUTH_USER, payload: data.getAuthUser });
-			}}
-		>
-			{({ loading, refetch }) => {
-				if (loading) {
-					return <Loading />;
-				} else
-					return (
-						<Router>
-							<Switch>
-								{!auth.user ? (
-									<Route exact render={() => <Auth refetch={refetch} />} />
-								) : (
-									<Route exact render={() => <AppLayout refetch={refetch} />} />
-								)}
-							</Switch>
-						</Router>
-					);
-			}}
-		</Query>
-	);
+  const [{ auth }, dispatch] = useStore();
+  return (
+    <Query
+      query={GET_AUTH_USER}
+      onCompleted={data => {
+        dispatch({ type: SET_AUTH_USER, payload: data.getAuthUser });
+      }}
+    >
+      {({ loading, refetch }) => {
+        if (loading) {
+          return <Loading />;
+        } else
+          return (
+            <Router>
+              <Switch>
+                {!auth.user ? (
+                  <Route exact render={() => <Auth refetch={refetch} />} />
+                ) : (
+                  <Route exact render={() => <AppLayout refetch={refetch} />} />
+                )}
+              </Switch>
+            </Router>
+          );
+      }}
+    </Query>
+  );
 };
 export default App;

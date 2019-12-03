@@ -17,82 +17,82 @@ import PostPopupOptions from './PostPopupOptions';
 import { GET_POST } from 'graphql/post';
 
 const Root = styled.div`
-	margin: 0 auto;
-	margin: ${p => !p.usedInModal && p.theme.spacing.lg} 0;
-	box-shadow: ${p => p.theme.shadows.sm};
-	border-radius: ${p => p.theme.radius.sm};
-	z-index: ${p => (p.usedInModal ? p.theme.zIndex.xl : 'inherit')};
-	overflow: hidden;
-	width: 100%;
+  margin: 0 auto;
+  margin: ${p => !p.usedInModal && p.theme.spacing.lg} 0;
+  box-shadow: ${p => p.theme.shadows.sm};
+  border-radius: ${p => p.theme.radius.sm};
+  z-index: ${p => (p.usedInModal ? p.theme.zIndex.xl : 'inherit')};
+  overflow: hidden;
+  width: 100%;
 
-	@media (min-width: ${p => p.theme.screen.md}) {
-		width: auto;
-	}
+  @media (min-width: ${p => p.theme.screen.md}) {
+    width: auto;
+  }
 `;
 
 const Container = styled.div`
-	max-height: ${p => (p.usedInModal ? '600px' : 'auto')};
-	overflow-y: ${p => (p.usedInModal ? 'auto' : 'inherit')};
-	max-width: 1300px;
-	background-color: ${p => p.theme.colors.white};
-	display: flex;
-	flex-direction: column;
+  max-height: ${p => (p.usedInModal ? '600px' : 'auto')};
+  overflow-y: ${p => (p.usedInModal ? 'auto' : 'inherit')};
+  max-width: 1300px;
+  background-color: ${p => p.theme.colors.white};
+  display: flex;
+  flex-direction: column;
 
-	@media (min-width: ${p => p.theme.screen.md}) {
-		flex-direction: ${p => (p.usedInModal ? 'row' : 'column')};
-		max-height: ${p => (p.usedInModal ? '600px' : 'auto')};
-		overflow-y: inherit;
-	}
+  @media (min-width: ${p => p.theme.screen.md}) {
+    flex-direction: ${p => (p.usedInModal ? 'row' : 'column')};
+    max-height: ${p => (p.usedInModal ? '600px' : 'auto')};
+    overflow-y: inherit;
+  }
 `;
 
 const Left = styled.div`
-	display: flex;
-	flex-direction: row;
-	align-items: ${p => (p.usedInModal ? 'center' : 'flex-start')};
-	justify-content: center;
-	background-color: ${p => p.theme.colors.black};
-	width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: ${p => (p.usedInModal ? 'center' : 'flex-start')};
+  justify-content: center;
+  background-color: ${p => p.theme.colors.black};
+  width: 100%;
 
-	@media (min-width: ${p => p.theme.screen.md}) {
-		max-width: 1000px;
-		min-width: 500px;
-		height: ${p => (p.usedInModal ? '600px' : 'auto')};
-	}
+  @media (min-width: ${p => p.theme.screen.md}) {
+    max-width: 1000px;
+    min-width: 500px;
+    height: ${p => (p.usedInModal ? '600px' : 'auto')};
+  }
 `;
 
 const Image = styled.img`
-	display: block;
-	max-width: 100%;
-	width: ${p => !p.usedInModal && '100%'};
-	max-height: ${p => (p.usedInModal ? '600px' : '100%')};
+  display: block;
+  max-width: 100%;
+  width: ${p => !p.usedInModal && '100%'};
+  max-height: ${p => (p.usedInModal ? '600px' : '100%')};
 `;
 
 const Right = styled.div`
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	position: relative;
-	width: 100%;
-	background-color: ${p => p.theme.colors.white};
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  width: 100%;
+  background-color: ${p => p.theme.colors.white};
 
-	@media (min-width: ${p => p.theme.screen.md}) {
-		width: ${p => (p.usedInModal ? '360px' : '100%')};
-		min-width: 360px;
-	}
+  @media (min-width: ${p => p.theme.screen.md}) {
+    width: ${p => (p.usedInModal ? '360px' : '100%')};
+    min-width: 360px;
+  }
 `;
 
 const CloseModal = styled.div`
-	display: block;
-	position: fixed;
-	right: 20px;
-	top: 15px;
-	cursor: pointer;
+  display: block;
+  position: fixed;
+  right: 20px;
+  top: 15px;
+  cursor: pointer;
 `;
 
 const Content = styled.div`
-	font-size: ${p => p.theme.font.size.xs};
-	border-bottom: 1px solid ${p => p.theme.colors.grey[100]};
-	padding: ${p => p.theme.spacing.xs};
+  font-size: ${p => p.theme.font.size.xs};
+  border-bottom: 1px solid ${p => p.theme.colors.grey[100]};
+  padding: ${p => p.theme.spacing.xs};
 `;
 
 /**
@@ -100,73 +100,73 @@ const Content = styled.div`
  * Meant to be used in Modal or Page component
  */
 const PostPopup = ({ id, closeModal, usedInModal }) => {
-	return (
-		<Query query={GET_POST} variables={{ id }}>
-			{({ data, loading, error }) => {
-				if (loading) return <Loading top='lg' />;
-				if (error) return <NotFound />;
+  return (
+    <Query query={GET_POST} variables={{ id }}>
+      {({ data, loading, error }) => {
+        if (loading) return <Loading top='lg' />;
+        if (error) return <NotFound />;
 
-				const post = data.getPost;
+        const post = data.getPost;
 
-				return (
-					<Root usedInModal={usedInModal}>
-						<Head
-							content={
-								post.content ? post.content : `${post.author.username}'s post`
-							}
-						/>
+        return (
+          <Root usedInModal={usedInModal}>
+            <Head
+              content={
+                post.content ? post.content : `${post.author.username}'s post`
+              }
+            />
 
-						{closeModal && (
-							<CloseModal onClick={closeModal}>
-								<CloseIcon width='16' color='white' />
-							</CloseModal>
-						)}
+            {closeModal && (
+              <CloseModal onClick={closeModal}>
+                <CloseIcon width='16' color='white' />
+              </CloseModal>
+            )}
 
-						<Container usedInModal={usedInModal}>
-							<Left usedInModal={usedInModal}>
-								<Image src={post.image} usedInModal={usedInModal} />
-							</Left>
+            <Container usedInModal={usedInModal}>
+              <Left usedInModal={usedInModal}>
+                <Image src={post.image} usedInModal={usedInModal} />
+              </Left>
 
-							<Right usedInModal={usedInModal}>
-								<Spacing>
-									<PostPopupInfo author={post.author} />
+              <Right usedInModal={usedInModal}>
+                <Spacing>
+                  <PostPopupInfo author={post.author} />
 
-									{post.content && <Content>{post.content}</Content>}
+                  {post.content && <Content>{post.content}</Content>}
 
-									<PostPopupComments
-										usedInModal={usedInModal}
-										comments={post.comments}
-										postId={post.id}
-										postAuthor={post.author}
-									/>
-								</Spacing>
+                  <PostPopupComments
+                    usedInModal={usedInModal}
+                    comments={post.comments}
+                    postId={post.id}
+                    postAuthor={post.author}
+                  />
+                </Spacing>
 
-								<Spacing>
-									<PostPopupOptions
-										postId={post.id}
-										postAuthor={post.author}
-										postLikes={post.likes}
-									/>
+                <Spacing>
+                  <PostPopupOptions
+                    postId={post.id}
+                    postAuthor={post.author}
+                    postLikes={post.likes}
+                  />
 
-									<CreateComment post={post} />
-								</Spacing>
-							</Right>
-						</Container>
-					</Root>
-				);
-			}}
-		</Query>
-	);
+                  <CreateComment post={post} />
+                </Spacing>
+              </Right>
+            </Container>
+          </Root>
+        );
+      }}
+    </Query>
+  );
 };
 
 PostPopup.propTypes = {
-	id: PropTypes.string.isRequired,
-	closeModal: PropTypes.func,
-	usedInModal: PropTypes.bool.isRequired,
+  id: PropTypes.string.isRequired,
+  closeModal: PropTypes.func,
+  usedInModal: PropTypes.bool.isRequired,
 };
 
 PostPopup.defaultProps = {
-	usedInModal: true,
+  usedInModal: true,
 };
 
 export default withRouter(PostPopup);

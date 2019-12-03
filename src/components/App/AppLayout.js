@@ -28,91 +28,91 @@ import { useStore } from 'store';
 import { SET_AUTH_USER } from 'store/auth';
 
 const Root = styled.div`
-	display: flex;
-	flex-direction: row;
-	margin: 0 auto;
-	width: 100%;
-	position: relative;
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
 
-	@media (min-width: ${p => p.theme.screen.md}) {
-		width: ${p => p.theme.screen.md};
-	}
+  @media (min-width: ${p => p.theme.screen.md}) {
+    width: ${p => p.theme.screen.md};
+  }
 
-	@media (min-width: ${p => p.theme.screen.lg}) {
-		width: ${p => p.theme.screen.lg};
-	}
+  @media (min-width: ${p => p.theme.screen.lg}) {
+    width: ${p => p.theme.screen.lg};
+  }
 `;
 
 /**
  * Main layout of the app, when user is authenticated
  */
 const AppLayout = ({ location, authUser }) => {
-	const [{ auth }, dispatch] = useStore();
+  const [{ auth }, dispatch] = useStore();
 
-	const windowSize = useWindowSize();
-	const isDesktop = windowSize.width >= parseInt(theme.screen.md, 10);
-	const [isSideBarOpen, setIsSidebarOpen] = useState(isDesktop);
+  const windowSize = useWindowSize();
+  const isDesktop = windowSize.width >= parseInt(theme.screen.md, 10);
+  const [isSideBarOpen, setIsSidebarOpen] = useState(isDesktop);
 
-	const sideBarRef = useRef('');
+  const sideBarRef = useRef('');
 
-	useEffect(() => {
-		dispatch({ type: SET_AUTH_USER, payload: authUser });
-	}, [dispatch, authUser]);
+  useEffect(() => {
+    dispatch({ type: SET_AUTH_USER, payload: authUser });
+  }, [dispatch, authUser]);
 
-	useClickOutside(sideBarRef, () => {
-		if (!isDesktop && isSideBarOpen) {
-			setIsSidebarOpen(false);
-		}
-	});
+  useClickOutside(sideBarRef, () => {
+    if (!isDesktop && isSideBarOpen) {
+      setIsSidebarOpen(false);
+    }
+  });
 
-	useEffect(() => {
-		setIsSidebarOpen(isDesktop);
-	}, [isDesktop]);
+  useEffect(() => {
+    setIsSidebarOpen(isDesktop);
+  }, [isDesktop]);
 
-	useEffect(() => {
-		return () => {
-			if (!isDesktop) {
-				setIsSidebarOpen(false);
-			}
-		};
-	}, [location.pathname, isDesktop]);
+  useEffect(() => {
+    return () => {
+      if (!isDesktop) {
+        setIsSidebarOpen(false);
+      }
+    };
+  }, [location.pathname, isDesktop]);
 
-	if (!auth.user) return null;
+  if (!auth.user) return null;
 
-	return (
-		<>
-			<Header toggleSideBar={() => setIsSidebarOpen(!isSideBarOpen)} />
+  return (
+    <>
+      <Header toggleSideBar={() => setIsSidebarOpen(!isSideBarOpen)} />
 
-			<Root>
-				<SideBar isOpen={isSideBarOpen} sideBarRef={sideBarRef} />
+      <Root>
+        <SideBar isOpen={isSideBarOpen} sideBarRef={sideBarRef} />
 
-				<Switch>
-					<Route exact path={Routes.HOME} component={Home} />
+        <Switch>
+          <Route exact path={Routes.HOME} component={Home} />
 
-					<Route exact path={Routes.EXPLORE} component={Explore} />
+          <Route exact path={Routes.EXPLORE} component={Explore} />
 
-					<Route exact path={Routes.PEOPLE} component={People} />
+          <Route exact path={Routes.PEOPLE} component={People} />
 
-					<Route exact path={Routes.NOTIFICATIONS} component={Notifications} />
+          <Route exact path={Routes.NOTIFICATIONS} component={Notifications} />
 
-					<Route exact path={Routes.MESSAGES} component={Messages} />
+          <Route exact path={Routes.MESSAGES} component={Messages} />
 
-					<Route exact path={Routes.USER_PROFILE} component={Profile} />
+          <Route exact path={Routes.USER_PROFILE} component={Profile} />
 
-					<Route exact path={Routes.POST} component={Post} />
+          <Route exact path={Routes.POST} component={Post} />
 
-					<Route component={NotFound} />
-				</Switch>
+          <Route component={NotFound} />
+        </Switch>
 
-				<UserSuggestions pathname={location.pathname} />
-			</Root>
-		</>
-	);
+        <UserSuggestions pathname={location.pathname} />
+      </Root>
+    </>
+  );
 };
 
 AppLayout.propTypes = {
-	location: PropTypes.object.isRequired,
-	authUser: PropTypes.object.isRequired,
+  location: PropTypes.object.isRequired,
+  authUser: PropTypes.object.isRequired,
 };
 
 export default withRouter(AppLayout);
