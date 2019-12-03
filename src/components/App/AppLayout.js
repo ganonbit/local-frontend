@@ -93,19 +93,11 @@ const AppLayout = ({ location, authUser }) => {
 
 					<Route exact path={Routes.PEOPLE} component={People} />
 
-					<Route
-						exact
-						path={Routes.NOTIFICATIONS}
-						component={Notifications}
-					/>
+					<Route exact path={Routes.NOTIFICATIONS} component={Notifications} />
 
 					<Route exact path={Routes.MESSAGES} component={Messages} />
 
-					<Route
-						exact
-						path={Routes.USER_PROFILE}
-						component={Profile}
-					/>
+					<Route exact path={Routes.USER_PROFILE} component={Profile} />
 
 					<Route exact path={Routes.POST} component={Post} />
 

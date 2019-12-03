@@ -18,7 +18,8 @@ const ChooseImage = ({ isShowing, hide }) => {
 		<Modal
 			show={isShowing}
 			onHide={() => hide()}
-			dialogClassName='modal-dialog window-popup choose-from-my-photo'>
+			dialogClassName='modal-dialog window-popup choose-from-my-photo'
+		>
 			<ModalHeader>
 				<h6 className='title'>Choose from My Photos</h6>
 
@@ -29,7 +30,8 @@ const ChooseImage = ({ isShowing, hide }) => {
 							data-toggle='tab'
 							href='#home'
 							role='tab'
-							aria-expanded='true'>
+							aria-expanded='true'
+						>
 							<svg
 								className='olymp-photos-icon'
 								XlinkHref='svg-icons/sprites/icons.svg#olymp-photos-icon'
@@ -42,7 +44,8 @@ const ChooseImage = ({ isShowing, hide }) => {
 							data-toggle='tab'
 							href='#profile'
 							role='tab'
-							aria-expanded='false'>
+							aria-expanded='false'
+						>
 							<svg
 								className='olymp-albums-icon'
 								XlinkHref='svg-icons/sprites/icons.svg#olymp-albums-icon'
@@ -57,19 +60,18 @@ const ChooseImage = ({ isShowing, hide }) => {
 						className='tab-pane active'
 						id='home'
 						role='tabpanel'
-						aria-expanded='true'>
+						aria-expanded='true'
+					>
 						{pictures.map((url, index) => (
 							<div
 								className='choose-photo-item'
 								data-mh='choose-item'
-								key={index}>
+								key={index}
+							>
 								<div className='radio'>
 									<label className='custom-radio'>
 										<img src={url} alt='Images' />
-										<input
-											type='radio'
-											name='optionsRadios'
-										/>
+										<input type='radio' name='optionsRadios' />
 									</label>
 								</div>
 							</div>
@@ -78,12 +80,11 @@ const ChooseImage = ({ isShowing, hide }) => {
 						<a
 							href='#1'
 							className='btn btn-secondary btn-lg btn--half-width'
-							onClick={() => hide()}>
+							onClick={() => hide()}
+						>
 							Cancel
 						</a>
-						<a
-							href='#1'
-							className='btn btn-primary btn-lg btn--half-width'>
+						<a href='#1' className='btn btn-primary btn-lg btn--half-width'>
 							Confirm Photo
 						</a>
 					</div>

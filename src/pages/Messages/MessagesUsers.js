@@ -150,11 +150,7 @@ const MessagesUsers = ({ location, authUser }) => {
 			updateQuery: (prev, { subscriptionData }) => {
 				const { data } = subscriptionData;
 				if (!data) return prev;
-				if (
-					prev.getConversations.some(
-						u => u.id === data.newConversation.id
-					)
-				) {
+				if (prev.getConversations.some(u => u.id === data.newConversation.id)) {
 					return prev;
 				}
 
@@ -182,7 +178,8 @@ const MessagesUsers = ({ location, authUser }) => {
 					activeClassName='selected'
 					to={generatePath(Routes.MESSAGES, {
 						userId: Routes.NEW_ID_VALUE,
-					})}>
+					})}
+				>
 					<PencilIcon />
 				</NewMessage>
 			</HeadingContainer>
@@ -208,7 +205,8 @@ const MessagesUsers = ({ location, authUser }) => {
 								key={user.id}
 								activeClassName='selected'
 								to={`/messages/${user.id}`}
-								seen={unseen ? 0 : 1}>
+								seen={unseen ? 0 : 1}
+							>
 								<span>
 									<Avatar image={user.image} size={50} />
 								</span>
@@ -223,8 +221,7 @@ const MessagesUsers = ({ location, authUser }) => {
 									</NameUnSeen>
 
 									<LastMessage>
-										{user.lastMessageSender && 'You:'}{' '}
-										{user.lastMessage}
+										{user.lastMessageSender && 'You:'} {user.lastMessage}
 									</LastMessage>
 								</Info>
 							</User>

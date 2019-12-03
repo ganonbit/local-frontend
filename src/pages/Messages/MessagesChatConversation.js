@@ -81,9 +81,7 @@ const Message = styled.div`
 	border-radius: ${p => p.theme.radius.lg};
 	color: ${p => p.userMessage && p.theme.colors.white};
 	background-color: ${p =>
-		p.userMessage
-			? p.theme.colors.primary.light
-			: p.theme.colors.grey[200]};
+		p.userMessage ? p.theme.colors.primary.light : p.theme.colors.grey[200]};
 `;
 
 const Form = styled.form`
@@ -145,11 +143,7 @@ const MessagesChatConversation = ({
 				},
 			},
 			refetchQueries: ({ data }) => {
-				if (
-					data &&
-					data.createMessage &&
-					data.createMessage.isFirstMessage
-				) {
+				if (data && data.createMessage && data.createMessage.isFirstMessage) {
 					return [
 						{
 							query: GET_CONVERSATIONS,
@@ -171,13 +165,10 @@ const MessagesChatConversation = ({
 		<Root>
 			<Conversation>
 				{messages.map(message => {
-					const isAuthUserReceiver =
-						authUser.id === message.sender.id;
+					const isAuthUserReceiver = authUser.id === message.sender.id;
 
 					return (
-						<MessageWrapper
-							userMessage={isAuthUserReceiver}
-							key={message.id}>
+						<MessageWrapper userMessage={isAuthUserReceiver} key={message.id}>
 							{!isAuthUserReceiver && (
 								<Spacing right='xs'>
 									<Avatar image={message.sender.image} />

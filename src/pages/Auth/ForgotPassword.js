@@ -82,7 +82,8 @@ const ForgotPassword = () => {
 	return (
 		<Mutation
 			mutation={REQUEST_PASSWORD_RESET}
-			variables={{ input: { email } }}>
+			variables={{ input: { email } }}
+		>
 			{(requestResetPassword, { data, loading, error: apiError }) => (
 				<Root>
 					<Head title='Forgot Password' />
@@ -91,16 +92,12 @@ const ForgotPassword = () => {
 						<Spacing bottom='sm'>
 							<H1>Reset Password</H1>
 							<Text>
-								Enter the email address associated with your
-								account, and we’ll email you a link to reset
-								your password.
+								Enter the email address associated with your account, and we’ll
+								email you a link to reset your password.
 							</Text>
 						</Spacing>
 
-						<form
-							onSubmit={e =>
-								handleSubmit(e, requestResetPassword)
-							}>
+						<form onSubmit={e => handleSubmit(e, requestResetPassword)}>
 							<InputText
 								type='text'
 								name='email'
@@ -119,9 +116,7 @@ const ForgotPassword = () => {
 								<Spacing bottom='sm' top='sm'>
 									<Error>
 										{apiError.graphQLErrors.map(e => (
-											<div key={e.message}>
-												{e.message}
-											</div>
+											<div key={e.message}>{e.message}</div>
 										))}
 									</Error>
 								</Spacing>

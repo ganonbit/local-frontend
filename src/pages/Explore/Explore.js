@@ -52,11 +52,7 @@ const Explore = () => {
 	};
 
 	const openModal = postId => {
-		window.history.pushState(
-			'',
-			'',
-			generatePath(Routes.POST, { id: postId })
-		);
+		window.history.pushState('', '', generatePath(Routes.POST, { id: postId }));
 		setModalPostId(postId);
 	};
 
@@ -73,23 +69,20 @@ const Explore = () => {
 			<Query
 				query={GET_POSTS}
 				variables={variables}
-				notifyOnNetworkStatusChange>
+				notifyOnNetworkStatusChange
+			>
 				{({ data, loading, fetchMore, networkStatus }) => {
 					if (loading && networkStatus === 1) {
 						return (
 							<PostsContainer>
-								<Skeleton
-									height={300}
-									count={EXPLORE_PAGE_POSTS_LIMIT}
-								/>
+								<Skeleton height={300} count={EXPLORE_PAGE_POSTS_LIMIT} />
 							</PostsContainer>
 						);
 					}
 
 					const { posts, count } = data.getPosts;
 
-					if (!posts.length > 0)
-						return <Empty text='No posts yet.' />;
+					if (!posts.length > 0) return <Empty text='No posts yet.' />;
 
 					return (
 						<InfiniteScroll
@@ -97,12 +90,11 @@ const Explore = () => {
 							dataKey='getPosts.posts'
 							count={parseInt(count)}
 							variables={variables}
-							fetchMore={fetchMore}>
+							fetchMore={fetchMore}
+						>
 							{data => {
 								const showNextLoading =
-									loading &&
-									networkStatus === 3 &&
-									count !== data.length;
+									loading && networkStatus === 3 && count !== data.length;
 
 								return (
 									<Fragment>
@@ -110,38 +102,23 @@ const Explore = () => {
 											{data.map(post => (
 												<Fragment key={post.id}>
 													<Modal
-														open={
-															modalPostId ===
-															post.id
-														}
-														onClose={closeModal}>
-														<PostPopup
-															id={post.id}
-															closeModal={
-																closeModal
-															}
-														/>
+														open={modalPostId === post.id}
+														onClose={closeModal}
+													>
+														<PostPopup id={post.id} closeModal={closeModal} />
 													</Modal>
 
 													<ExploreCard
 														image={post.image}
-														countLikes={
-															post.likes.length
-														}
-														countComments={
-															post.comments.length
-														}
-														openPostPopup={() =>
-															openModal(post.id)
-														}
+														countLikes={post.likes.length}
+														countComments={post.comments.length}
+														openPostPopup={() => openModal(post.id)}
 													/>
 												</Fragment>
 											))}
 										</PostsContainer>
 
-										{showNextLoading && (
-											<Loading top='lg' />
-										)}
+										{showNextLoading && <Loading top='lg' />}
 									</Fragment>
 								);
 							}}

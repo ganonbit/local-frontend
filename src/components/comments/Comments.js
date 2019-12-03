@@ -27,7 +27,8 @@ export default function Comments(props) {
 						className='more-comments more-comments'
 						onClick={() => {
 							setNumOfComments(numOfComments + 2);
-						}}>
+						}}
+					>
 						View more comments <span>+</span>
 					</div>
 				) : null}

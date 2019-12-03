@@ -6,11 +6,7 @@ export default function MainContent(props) {
 			<p>{props.content}</p>
 			{props.image && (
 				<div className='post-img'>
-					<img
-						className='postImage'
-						alt='postImage'
-						src={props.image}
-					/>
+					<img className='postImage' alt='postImage' src={props.image} />
 				</div>
 			)}
 		</div>

@@ -72,9 +72,7 @@ export const InputText = styled.input`
 	padding-left: ${p => p.theme.spacing.xs};
 	border: 1px solid
 		${p =>
-			p.borderColor
-				? p.theme.colors[p.borderColor]
-				: p.theme.colors.grey[300]};
+			p.borderColor ? p.theme.colors[p.borderColor] : p.theme.colors.grey[300]};
 	color: ${p => p.theme.colors.text.secondary};
 
 	&:focus {

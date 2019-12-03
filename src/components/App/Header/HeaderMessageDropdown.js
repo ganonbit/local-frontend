@@ -129,7 +129,8 @@ const HeaderMessageDropdown = ({ messageRef, dropdownData }) => {
 				<Link
 					to={generatePath(Routes.MESSAGES, {
 						userId: Routes.NEW_ID_VALUE,
-					})}>
+					})}
+				>
 					New Message
 				</Link>
 			</Heading>
@@ -140,7 +141,8 @@ const HeaderMessageDropdown = ({ messageRef, dropdownData }) => {
 				dropdownData.map(user => (
 					<User
 						key={user.id}
-						to={generatePath(Routes.MESSAGES, { userId: user.id })}>
+						to={generatePath(Routes.MESSAGES, { userId: user.id })}
+					>
 						<span>
 							<Avatar image={user.image} size={50} />
 						</span>
@@ -154,9 +156,7 @@ const HeaderMessageDropdown = ({ messageRef, dropdownData }) => {
 								<LastMessage>{user.lastMessage}</LastMessage>
 							</div>
 
-							<CreatedAt>
-								{timeAgo(user.lastMessageCreatedAt)}
-							</CreatedAt>
+							<CreatedAt>{timeAgo(user.lastMessageCreatedAt)}</CreatedAt>
 						</Info>
 					</User>
 				))

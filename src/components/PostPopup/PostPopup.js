@@ -112,9 +112,7 @@ const PostPopup = ({ id, closeModal, usedInModal }) => {
 					<Root usedInModal={usedInModal}>
 						<Head
 							content={
-								post.content
-									? post.content
-									: `${post.author.username}'s post`
+								post.content ? post.content : `${post.author.username}'s post`
 							}
 						/>
 
@@ -126,19 +124,14 @@ const PostPopup = ({ id, closeModal, usedInModal }) => {
 
 						<Container usedInModal={usedInModal}>
 							<Left usedInModal={usedInModal}>
-								<Image
-									src={post.image}
-									usedInModal={usedInModal}
-								/>
+								<Image src={post.image} usedInModal={usedInModal} />
 							</Left>
 
 							<Right usedInModal={usedInModal}>
 								<Spacing>
 									<PostPopupInfo author={post.author} />
 
-									{post.content && (
-										<Content>{post.content}</Content>
-									)}
+									{post.content && <Content>{post.content}</Content>}
 
 									<PostPopupComments
 										usedInModal={usedInModal}

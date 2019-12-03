@@ -64,9 +64,7 @@ const ExploreCard = ({ openPostPopup, image, countLikes, countComments }) => {
 
 	return (
 		<Root>
-			<Photo
-				style={imageLoaded ? { backgroundImage: `url(${image})` } : {}}
-			/>
+			<Photo style={imageLoaded ? { backgroundImage: `url(${image})` } : {}} />
 
 			<Overlay onClick={openPostPopup}>
 				<LikeIcon color='white' />

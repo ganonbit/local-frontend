@@ -88,22 +88,16 @@ const ResetPassword = ({ history, location, refetch }) => {
 					{({ loading, error: apiError }) => {
 						if (loading) return <Loading top='lg' />;
 						if (apiError)
-							return (
-								<H1>
-									This token is either invalid or expired!
-								</H1>
-							);
+							return <H1>This token is either invalid or expired!</H1>;
 
 						return (
 							<Mutation
 								mutation={RESET_PASSWORD}
 								variables={{
 									input: { email, password, token },
-								}}>
-								{(
-									resetPassword,
-									{ loading, error: apiError }
-								) => {
+								}}
+							>
+								{(resetPassword, { loading, error: apiError }) => {
 									if (apiError) return <H1>{apiError}</H1>;
 
 									return (
@@ -112,13 +106,7 @@ const ResetPassword = ({ history, location, refetch }) => {
 												<H1>Password Reset</H1>
 											</Spacing>
 
-											<form
-												onSubmit={e =>
-													handleSubmit(
-														e,
-														resetPassword
-													)
-												}>
+											<form onSubmit={e => handleSubmit(e, resetPassword)}>
 												<InputText
 													type='password'
 													name='password'
@@ -138,16 +126,12 @@ const ResetPassword = ({ history, location, refetch }) => {
 												</Spacing>
 
 												{error && (
-													<Spacing
-														bottom='sm'
-														top='sm'>
+													<Spacing bottom='sm' top='sm'>
 														<Error>{error}</Error>
 													</Spacing>
 												)}
 
-												<Button disabled={loading}>
-													Reset Password
-												</Button>
+												<Button disabled={loading}>Reset Password</Button>
 											</form>
 										</>
 									);

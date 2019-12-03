@@ -55,7 +55,8 @@ const Like = ({ postId, user, likes }) => {
 					query: GET_FOLLOWED_POSTS,
 					variables: { userId: auth.user.id },
 				},
-			]}>
+			]}
+		>
 			{mutate => {
 				return (
 					<FontAwesomeIcon

@@ -70,16 +70,9 @@ export const CreatePost = props => {
 									handleImageUpload={handleImageUpload}
 								/>
 							}
-							{
-								<ChooseImage
-									isShowing={isOpen}
-									hide={toggleModel}
-								/>
-							}
+							{<ChooseImage isShowing={isOpen} hide={toggleModel} />}
 
-							<div
-								className='tab-content'
-								style={{ position: 'relative' }}>
+							<div className='tab-content' style={{ position: 'relative' }}>
 								<BeatLoader
 									css={override}
 									sizeUnit={'px'}
@@ -91,7 +84,8 @@ export const CreatePost = props => {
 									className='tab-pane active'
 									id='home-1'
 									role='tabpanel'
-									aria-expanded='true'>
+									aria-expanded='true'
+								>
 									<PostForm
 										status={status}
 										toggle={toggle}

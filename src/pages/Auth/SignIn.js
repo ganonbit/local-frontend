@@ -57,15 +57,13 @@ const SignIn = ({ refetch, history }) => {
 			mutation={SIGN_IN}
 			variables={{
 				input: { emailOrUsername, password },
-			}}>
+			}}
+		>
 			{(signin, { loading, error: apiError }) => {
 				return (
 					<div className='col col-xl-5 col-lg-6 col-md-12 col-sm-12 col-12'>
 						{reset && (
-							<ResetPasswordModal
-								handleReset={handleReset}
-								show={true}
-							/>
+							<ResetPasswordModal handleReset={handleReset} show={true} />
 						)}
 						<div className='registration-login-form'>
 							<div className='tab-content'>
@@ -73,13 +71,13 @@ const SignIn = ({ refetch, history }) => {
 									className='tab-pane active'
 									id='profile'
 									role='tabpanel'
-									data-mh='log-tab'>
-									<div className='title h6'>
-										Login to your Account
-									</div>
+									data-mh='log-tab'
+								>
+									<div className='title h6'>Login to your Account</div>
 									<form
 										className='content'
-										onSubmit={e => handleSubmit(e, signin)}>
+										onSubmit={e => handleSubmit(e, signin)}
+									>
 										<div className='row'>
 											<div className='col col-12 col-xl-12 col-lg-12 col-md-12 col-sm-12'>
 												<Field
@@ -89,9 +87,7 @@ const SignIn = ({ refetch, history }) => {
 													name='emailOrUsername'
 													value={emailOrUsername}
 													handleChange={handleChange}
-													error={
-														error.emailOrUsername
-													}
+													error={error.emailOrUsername}
 												/>
 												<Field
 													fieldContainerClass='lg'
@@ -106,21 +102,17 @@ const SignIn = ({ refetch, history }) => {
 												<div className='remember'>
 													<div className='checkbox'>
 														<label>
-															<input
-																name='optionsCheckboxes'
-																type='checkbox'
-															/>
+															<input name='optionsCheckboxes' type='checkbox' />
 															Remember Me
 														</label>
 													</div>
 													<a
-														onClick={() =>
-															setReset(true)
-														}
+														onClick={() => setReset(true)}
 														href='#1'
 														className='forgot'
 														data-toggle='modal'
-														data-target='#restore-password'>
+														data-target='#restore-password'
+													>
 														Forgot my Password
 													</a>
 												</div>
@@ -134,7 +126,8 @@ const SignIn = ({ refetch, history }) => {
 														!password ||
 														error.emailOrUsername ||
 														error.password
-													}>
+													}
+												>
 													Login
 												</button>
 
@@ -142,32 +135,30 @@ const SignIn = ({ refetch, history }) => {
 
 												<a
 													href='#1'
-													className='btn btn-lg bg-facebook full-width btn-icon-left'>
+													className='btn btn-lg bg-facebook full-width btn-icon-left'
+												>
 													<i
 														// className="fab fa-facebook-f"
 														className='fas fa-camera'
-														aria-hidden='true'></i>
+														aria-hidden='true'
+													></i>
 													Login with Facebook
 												</a>
 
 												<a
 													href='#1'
-													className='btn btn-lg bg-twitter full-width btn-icon-left'>
-													<i
-														className='fab fa-twitter'
-														aria-hidden='true'></i>
+													className='btn btn-lg bg-twitter full-width btn-icon-left'
+												>
+													<i className='fab fa-twitter' aria-hidden='true'></i>
 													Login with Twitter
 												</a>
 
 												<p>
 													Don’t you have an account?{' '}
-													<Link
-														to='/'
-														className='btn-register'>
+													<Link to='/' className='btn-register'>
 														Register Now!
 													</Link>
-													it’s really simple and you
-													can start enjoing all the
+													it’s really simple and you can start enjoing all the
 													benefits!
 												</p>
 											</div>

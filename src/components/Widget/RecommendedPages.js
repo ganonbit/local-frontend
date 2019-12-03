@@ -19,15 +19,14 @@ export default function RecommendedPages() {
 						<a href='#1' className='h6 notification-friend'>
 							The Marina Bar
 						</a>
-						<span className='chat-message-item'>
-							Restaurant / Bar
-						</span>
+						<span className='chat-message-item'>Restaurant / Bar</span>
 					</div>
 					<span
 						className='notification-icon'
 						data-toggle='tooltip'
 						data-placement='top'
-						data-original-title='ADD TO YOUR FAVS'>
+						data-original-title='ADD TO YOUR FAVS'
+					>
 						<a href='#1'>
 							<FontAwesomeIcon icon={faStar} color='white' />
 						</a>
@@ -48,7 +47,8 @@ export default function RecommendedPages() {
 						className='notification-icon'
 						data-toggle='tooltip'
 						data-placement='top'
-						data-original-title='ADD TO YOUR FAVS'>
+						data-original-title='ADD TO YOUR FAVS'
+					>
 						<a href='#1'>
 							<FontAwesomeIcon icon={faStar} color='white' />
 						</a>
@@ -69,7 +69,8 @@ export default function RecommendedPages() {
 						className='notification-icon'
 						data-toggle='tooltip'
 						data-placement='top'
-						data-original-title='ADD TO YOUR FAVS'>
+						data-original-title='ADD TO YOUR FAVS'
+					>
 						<a href='#1'>
 							<FontAwesomeIcon icon={faStar} color='white' />
 						</a>
@@ -84,15 +85,14 @@ export default function RecommendedPages() {
 						<a href='#1' className='h6 notification-friend'>
 							Thompson’s Custom Clothing Boutique
 						</a>
-						<span className='chat-message-item'>
-							Clothing Store
-						</span>
+						<span className='chat-message-item'>Clothing Store</span>
 					</div>
 					<span
 						className='notification-icon'
 						data-toggle='tooltip'
 						data-placement='top'
-						data-original-title='ADD TO YOUR FAVS'>
+						data-original-title='ADD TO YOUR FAVS'
+					>
 						<a href='#1'>
 							<FontAwesomeIcon icon={faStar} color='white' />
 						</a>
@@ -113,7 +113,8 @@ export default function RecommendedPages() {
 						className='notification-icon'
 						data-toggle='tooltip'
 						data-placement='top'
-						data-original-title='ADD TO YOUR FAVS'>
+						data-original-title='ADD TO YOUR FAVS'
+					>
 						<a href='#1'>
 							<FontAwesomeIcon icon={faStar} color='white' />
 						</a>
@@ -128,15 +129,14 @@ export default function RecommendedPages() {
 						<a href='#1' className='h6 notification-friend'>
 							Mannequin Angel
 						</a>
-						<span className='chat-message-item'>
-							Clothing Store
-						</span>
+						<span className='chat-message-item'>Clothing Store</span>
 					</div>
 					<span
 						className='notification-icon'
 						data-toggle='tooltip'
 						data-placement='top'
-						data-original-title='ADD TO YOUR FAVS'>
+						data-original-title='ADD TO YOUR FAVS'
+					>
 						<a href='#1'>
 							<FontAwesomeIcon icon={faStar} color='white' />
 						</a>

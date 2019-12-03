@@ -1875,10 +1875,7 @@ if the page has a “right panel”, add a class for BODY -- ".page-has-right-pa
 		height: 70px;
 	}
 	.header--standard-landing.headroom--not-top .header-menu li .nav-link,
-	.header--standard-landing.headroom--not-top
-		.header-menu
-		li
-		.nav-link:hover {
+	.header--standard-landing.headroom--not-top .header-menu li .nav-link:hover {
 		color: #fff;
 		fill: #fff;
 	}
@@ -4381,8 +4378,7 @@ fieldset[disabled] .form-group.is-focused .togglebutton label {
 	top: 3px;
 	-webkit-transition: left 0.3s ease, background 0.3s ease,
 		-webkit-box-shadow 0.1s ease;
-	transition: left 0.3s ease, background 0.3s ease,
-		-webkit-box-shadow 0.1s ease;
+	transition: left 0.3s ease, background 0.3s ease, -webkit-box-shadow 0.1s ease;
 	transition: left 0.3s ease, background 0.3s ease, box-shadow 0.1s ease;
 	transition: left 0.3s ease, background 0.3s ease, box-shadow 0.1s ease,
 		-webkit-box-shadow 0.1s ease;
@@ -4907,20 +4903,20 @@ fieldset[disabled] .checkbox input[type='checkbox'],
 	0% {
 		-webkit-box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0 0 20px,
 			0px 32px 0 20px, -5px 5px 0 10px, 15px 2px 0 11px;
-		box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0 0 20px,
-			0px 32px 0 20px, -5px 5px 0 10px, 15px 2px 0 11px;
+		box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0 0 20px, 0px 32px 0 20px,
+			-5px 5px 0 10px, 15px 2px 0 11px;
 	}
 	50% {
 		-webkit-box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0 0 20px,
 			0px 32px 0 20px, -5px 5px 0 10px, 20px 2px 0 11px;
-		box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0 0 20px,
-			0px 32px 0 20px, -5px 5px 0 10px, 20px 2px 0 11px;
+		box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0 0 20px, 0px 32px 0 20px,
+			-5px 5px 0 10px, 20px 2px 0 11px;
 	}
 	100% {
 		-webkit-box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0 0 20px,
 			0px 32px 0 20px, -5px 5px 0 10px, 20px -12px 0 11px;
-		box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0 0 20px,
-			0px 32px 0 20px, -5px 5px 0 10px, 20px -12px 0 11px;
+		box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0 0 20px, 0px 32px 0 20px,
+			-5px 5px 0 10px, 20px -12px 0 11px;
 	}
 }
 
@@ -4928,20 +4924,20 @@ fieldset[disabled] .checkbox input[type='checkbox'],
 	0% {
 		-webkit-box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0 0 20px,
 			0px 32px 0 20px, -5px 5px 0 10px, 15px 2px 0 11px;
-		box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0 0 20px,
-			0px 32px 0 20px, -5px 5px 0 10px, 15px 2px 0 11px;
+		box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0 0 20px, 0px 32px 0 20px,
+			-5px 5px 0 10px, 15px 2px 0 11px;
 	}
 	50% {
 		-webkit-box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0 0 20px,
 			0px 32px 0 20px, -5px 5px 0 10px, 20px 2px 0 11px;
-		box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0 0 20px,
-			0px 32px 0 20px, -5px 5px 0 10px, 20px 2px 0 11px;
+		box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0 0 20px, 0px 32px 0 20px,
+			-5px 5px 0 10px, 20px 2px 0 11px;
 	}
 	100% {
 		-webkit-box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0 0 20px,
 			0px 32px 0 20px, -5px 5px 0 10px, 20px -12px 0 11px;
-		box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0 0 20px,
-			0px 32px 0 20px, -5px 5px 0 10px, 20px -12px 0 11px;
+		box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0 0 20px, 0px 32px 0 20px,
+			-5px 5px 0 10px, 20px -12px 0 11px;
 	}
 }
 
@@ -19280,10 +19276,7 @@ img.mfp-img {
 		from(rgba(102, 102, 102, 0.7)),
 		to(rgba(50, 50, 50, 0.6))
 	);
-	background: linear-gradient(
-		rgba(102, 102, 102, 0.7),
-		rgba(50, 50, 50, 0.6)
-	);
+	background: linear-gradient(rgba(102, 102, 102, 0.7), rgba(50, 50, 50, 0.6));
 	filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, startColorstr=#666666,endColorstr=#323232);
 }
 

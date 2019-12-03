@@ -498,11 +498,7 @@ ul.user-btns li span {
 		from(var(--theme-color)),
 		to(var(--theme-color))
 	);
-	background: linear-gradient(
-		to right,
-		var(--theme-color),
-		var(--theme-color)
-	);
+	background: linear-gradient(to right, var(--theme-color), var(--theme-color));
 }
 .content-bg-wrap.bg-landing:before {
 	background-color: var(--theme-color);

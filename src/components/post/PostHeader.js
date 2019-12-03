@@ -19,7 +19,8 @@ export default function PostHeader(props) {
 			<a
 				href={generatePath(Routes.USER_PROFILE, {
 					username: author.username,
-				})}>
+				})}
+			>
 				<Avatar image={author.image} />
 			</a>
 			<div className='author-date'>
@@ -27,7 +28,8 @@ export default function PostHeader(props) {
 					className='h6 post__author-name fn'
 					href={generatePath(Routes.USER_PROFILE, {
 						username: author.username,
-					})}>
+					})}
+				>
 					{author.firstName} {author.lastName}
 				</a>
 				<div className='post__date'>

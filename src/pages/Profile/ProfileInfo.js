@@ -131,7 +131,8 @@ const ProfileInfo = ({ user }) => {
 							<Message
 								to={generatePath(Routes.MESSAGES, {
 									userId: user.id,
-								})}>
+								})}
+							>
 								Message
 							</Message>
 						</FollowAndMessage>

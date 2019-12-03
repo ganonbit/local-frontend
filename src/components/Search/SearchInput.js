@@ -22,8 +22,7 @@ const Input = styled.input`
 	width: 100%;
 	border: 0;
 	border-radius: ${p => p.theme.radius.sm};
-	padding-left: ${p =>
-		p.hideIcon ? p.theme.spacing.xs : p.theme.spacing.lg};
+	padding-left: ${p => (p.hideIcon ? p.theme.spacing.xs : p.theme.spacing.lg)};
 	padding-right: ${p => p.theme.spacing.lg};
 	color: ${p => p.theme.colors.text.main};
 	font-size: ${p => p.theme.font.size.xs};

@@ -76,10 +76,7 @@ export const useNotifications = () => {
 			},
 		};
 
-		return mutate(
-			options[operation].mutation,
-			options[operation].variables
-		);
+		return mutate(options[operation].mutation, options[operation].variables);
 	};
 
 	return { create, remove, toggle };

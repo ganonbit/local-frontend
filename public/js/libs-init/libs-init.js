@@ -621,18 +621,12 @@ $(document).ready(function() {
 			$crossfade = $t.data('crossfade') ? $t.data('crossfade') : true,
 			$loop = $t.data('loop') == false ? $t.data('loop') : true,
 			$showItems = $t.data('show-items') ? $t.data('show-items') : 1,
-			$scrollItems = $t.data('scroll-items')
-				? $t.data('scroll-items')
-				: 1,
+			$scrollItems = $t.data('scroll-items') ? $t.data('scroll-items') : 1,
 			$scrollDirection = $t.data('direction')
 				? $t.data('direction')
 				: 'horizontal',
-			$mouseScroll = $t.data('mouse-scroll')
-				? $t.data('mouse-scroll')
-				: false,
-			$autoplay = $t.data('autoplay')
-				? parseInt($t.data('autoplay'), 10)
-				: 0,
+			$mouseScroll = $t.data('mouse-scroll') ? $t.data('mouse-scroll') : false,
+			$autoplay = $t.data('autoplay') ? parseInt($t.data('autoplay'), 10) : 0,
 			$autoheight = $t.hasClass('auto-height') ? true : false,
 			$slidesSpace = $showItems > 1 ? 20 : 0;
 
@@ -674,9 +668,7 @@ $(document).ready(function() {
 			onSlideChangeStart: function(swiper) {
 				var sliderThumbs = $t.siblings('.slider-slides');
 				if (sliderThumbs.length) {
-					sliderThumbs
-						.find('.slide-active')
-						.removeClass('slide-active');
+					sliderThumbs.find('.slide-active').removeClass('slide-active');
 					var realIndex = swiper.slides
 						.eq(swiper.activeIndex)
 						.attr('data-swiper-slide-index');

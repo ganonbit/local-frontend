@@ -92,9 +92,7 @@ export const createApolloClient = (apiUrl, websocketApiUrl) => {
 	const terminatingLink = split(
 		({ query }) => {
 			const { kind, operation } = getMainDefinition(query);
-			return (
-				kind === 'OperationDefinition' && operation === 'subscription'
-			);
+			return kind === 'OperationDefinition' && operation === 'subscription';
 		},
 		wsLink,
 		uploadLink

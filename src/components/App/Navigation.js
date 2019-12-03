@@ -93,7 +93,8 @@ const Navigation = () => {
 				activeClassName='selected'
 				to={generatePath(Routes.MESSAGES, {
 					userId: Routes.NEW_ID_VALUE,
-				})}>
+				})}
+			>
 				<ListItem>
 					<EnvelopeIcon width={18} />
 					<Spacing right='sm' />

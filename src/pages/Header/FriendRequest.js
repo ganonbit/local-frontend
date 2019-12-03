@@ -33,30 +33,17 @@ const FriendRequest = () => {
 							<span className='notification-icon'>
 								<a href='#1' className='accept-request'>
 									<span className='icon-add without-text'>
-										<FontAwesomeIcon
-											icon={faSmile}
-											color='white'
-											size='2x'
-										/>
+										<FontAwesomeIcon icon={faSmile} color='white' size='2x' />
 									</span>
 								</a>
-								<a
-									href='#1'
-									className='accept-request request-del'>
+								<a href='#1' className='accept-request request-del'>
 									<span className='icon-minus'>
-										<FontAwesomeIcon
-											icon={faAngry}
-											color='red'
-											size='2x'
-										/>
+										<FontAwesomeIcon icon={faAngry} color='red' size='2x' />
 									</span>
 								</a>
 							</span>
 							<div className='more'>
-								<FontAwesomeIcon
-									icon={faEllipsisV}
-									color='white'
-								/>
+								<FontAwesomeIcon icon={faEllipsisV} color='white' />
 							</div>
 						</li>
 
@@ -68,9 +55,7 @@ const FriendRequest = () => {
 								<a href='#1' className='h6 notification-friend'>
 									Tony Stevens
 								</a>
-								<span className='chat-message-item'>
-									4 Friends in Common
-								</span>
+								<span className='chat-message-item'>4 Friends in Common</span>
 							</div>
 							<span className='notification-icon'>
 								<a href='#1' className='accept-request'>
@@ -82,9 +67,7 @@ const FriendRequest = () => {
 									</span>
 								</a>
 
-								<a
-									href='#1'
-									className='accept-request request-del'>
+								<a href='#1' className='accept-request request-del'>
 									<span className='icon-minus'>
 										<svg className='olymp-happy-face-icon'>
 											{/* <use xlink: href="svg-icons/sprites/icons.svg#olymp-happy-face-icon">
@@ -140,9 +123,7 @@ const FriendRequest = () => {
 								<a href='#1' className='h6 notification-friend'>
 									Stagg Clothing
 								</a>
-								<span className='chat-message-item'>
-									9 Friends in Common
-								</span>
+								<span className='chat-message-item'>9 Friends in Common</span>
 							</div>
 							<span className='notification-icon'>
 								<a href='#1' className='accept-request'>
@@ -154,9 +135,7 @@ const FriendRequest = () => {
 									</span>
 								</a>
 
-								<a
-									href='#1'
-									className='accept-request request-del'>
+								<a href='#1' className='accept-request request-del'>
 									<span className='icon-minus'>
 										<svg className='olymp-happy-face-icon'>
 											{/* <use xlink: href="svg-icons/sprites/icons.svg#olymp-happy-face-icon"> */}
@@ -167,10 +146,7 @@ const FriendRequest = () => {
 							</span>
 
 							<div className='more'>
-								<FontAwesomeIcon
-									icon={faEllipsisV}
-									color='white'
-								/>
+								<FontAwesomeIcon icon={faEllipsisV} color='white' />
 							</div>
 						</li>
 					</ul>

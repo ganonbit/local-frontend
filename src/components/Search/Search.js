@@ -89,7 +89,8 @@ const Search = ({
 			hideIcon={hideIcon}
 			backgroundColor={backgroundColor}
 			autoFocus={autoFocus}
-			{...others}>
+			{...others}
+		>
 			{loading && <StyledLoading size='xxs' />}
 
 			{isOpenSearchResult && (

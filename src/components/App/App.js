@@ -47,10 +47,7 @@ const App = () => {
 				}
 
 				// Merge conversations
-				const mergeConversations = [
-					newConversation,
-					...oldConversations,
-				];
+				const mergeConversations = [newConversation, ...oldConversations];
 
 				// Attach new conversation to authUser
 				const authUser = prev.getAuthUser;
@@ -69,30 +66,30 @@ const App = () => {
 
 	return (
 		<Router>
-		<GlobalStyle />
-  
-		<ScrollToTop>
-		  <Switch>
-			{data.getAuthUser ? (
-			  <Route
-				exact
-				render={() => <AppLayout authUser={data.getAuthUser} />}
-			  />
-			) : (
-			  <Route exact render={() => <AuthLayout refetch={refetch} />} />
+			<GlobalStyle />
+
+			<ScrollToTop>
+				<Switch>
+					{data.getAuthUser ? (
+						<Route
+							exact
+							render={() => <AppLayout authUser={data.getAuthUser} />}
+						/>
+					) : (
+						<Route exact render={() => <AuthLayout refetch={refetch} />} />
+					)}
+				</Switch>
+			</ScrollToTop>
+
+			{message.content.text && (
+				<Message
+					type={message.content.type}
+					autoClose={message.content.autoClose}
+				>
+					{message.content.text}
+				</Message>
 			)}
-		  </Switch>
-		</ScrollToTop>
-  
-		{message.content.text && (
-		  <Message
-			type={message.content.type}
-			autoClose={message.content.autoClose}
-		  >
-			{message.content.text}
-		  </Message>
-		)}
-	  </Router>
+		</Router>
 	);
 };
 

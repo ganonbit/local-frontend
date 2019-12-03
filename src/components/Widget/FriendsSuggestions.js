@@ -20,9 +20,7 @@ export default function FriendsSuggestions() {
 						<a href='#1' className='h6 notification-friend'>
 							Francine Smith
 						</a>
-						<span className='chat-message-item'>
-							8 Friends in Common
-						</span>
+						<span className='chat-message-item'>8 Friends in Common</span>
 					</div>
 					<span className='notification-icon'>
 						<a href='#1' className='accept-request'>
@@ -44,9 +42,7 @@ export default function FriendsSuggestions() {
 						<a href='#1' className='h6 notification-friend'>
 							Hugh Wilson
 						</a>
-						<span className='chat-message-item'>
-							6 Friends in Common
-						</span>
+						<span className='chat-message-item'>6 Friends in Common</span>
 					</div>
 					<span className='notification-icon'>
 						<a href='#1' className='accept-request'>
@@ -65,9 +61,7 @@ export default function FriendsSuggestions() {
 						<a href='#1' className='h6 notification-friend'>
 							Karen Masters
 						</a>
-						<span className='chat-message-item'>
-							6 Friends in Common
-						</span>
+						<span className='chat-message-item'>6 Friends in Common</span>
 					</div>
 					<span className='notification-icon'>
 						<a href='#1' className='accept-request'>

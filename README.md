@@ -18,9 +18,9 @@ After running the server, you can navigate to `http://localhost:3000`
 
 ~~- Push repository on Bitbucket.
 
--   Create new site on [Netlify](https://www.netlify.com/) and connect that repository to it.
--   Add environment variables to Netlify based on `frontend/.env` file, make sure to replace API and Frontend URLs, e.g. `REACT_APP_API_URL=https://avonation-api.heroku.com/graphql` and `REACT_APP_FRONTEND_URL=https://vigorous-chandrasekhar-bbd3e9.netlify.com`~~
+- Create new site on [Netlify](https://www.netlify.com/) and connect that repository to it.
+- Add environment variables to Netlify based on `frontend/.env` file, make sure to replace API and Frontend URLs, e.g. `REACT_APP_API_URL=https://avonation-api.heroku.com/graphql` and `REACT_APP_FRONTEND_URL=https://vigorous-chandrasekhar-bbd3e9.netlify.com`~~
 
--   After every change to the master branch in Bitbucket, Netlify will build and deploy frontend automatically!
+- After every change to the master branch in Bitbucket, Netlify will build and deploy frontend automatically!
 
 ### NOTE: if changing environment var on netlify you MUST redeploy to see changes!

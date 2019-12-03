@@ -172,22 +172,15 @@ const Header = ({ location, toggleSideBar }) => {
 					<Logo to={Routes.HOME}>{SiteInfo.name}</Logo>
 
 					<Spacing left='sm' right='md'>
-						<Search
-							location={location}
-							placeholder='Search people'
-						/>
+						<Search location={location} placeholder='Search people' />
 					</Spacing>
 				</LeftSide>
 
 				<RightSide>
 					<Spacing right='md'>
-						<Button
-							ghost
-							onClick={() => handleIconClick('MESSAGE')}>
+						<Button ghost onClick={() => handleIconClick('MESSAGE')}>
 							{auth.user.newConversations.length > 0 && (
-								<MessageCount>
-									{auth.user.newConversations.length}
-								</MessageCount>
+								<MessageCount>{auth.user.newConversations.length}</MessageCount>
 							)}
 
 							<EnvelopeOpenIcon />
@@ -195,9 +188,7 @@ const Header = ({ location, toggleSideBar }) => {
 					</Spacing>
 
 					<Spacing right='md'>
-						<Button
-							ghost
-							onClick={() => handleIconClick('NOTIFICATION')}>
+						<Button ghost onClick={() => handleIconClick('NOTIFICATION')}>
 							{auth.user.newNotifications.length > 0 && (
 								<NotificationCount>
 									{auth.user.newNotifications.length}

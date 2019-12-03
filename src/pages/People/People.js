@@ -52,23 +52,20 @@ const People = () => {
 			<Query
 				query={GET_USERS}
 				variables={variables}
-				notifyOnNetworkStatusChange>
+				notifyOnNetworkStatusChange
+			>
 				{({ data, loading, fetchMore, networkStatus }) => {
 					if (loading && networkStatus === 1) {
 						return (
 							<PeopleContainer>
-								<Skeleton
-									height={280}
-									count={PEOPLE_PAGE_USERS_LIMIT}
-								/>
+								<Skeleton height={280} count={PEOPLE_PAGE_USERS_LIMIT} />
 							</PeopleContainer>
 						);
 					}
 
 					const { users, count } = data.getUsers;
 
-					if (!users.length > 0)
-						return <Empty text='No people yet.' />;
+					if (!users.length > 0) return <Empty text='No people yet.' />;
 
 					return (
 						<InfiniteScroll
@@ -76,27 +73,21 @@ const People = () => {
 							dataKey='getUsers.users'
 							count={parseInt(count)}
 							variables={variables}
-							fetchMore={fetchMore}>
+							fetchMore={fetchMore}
+						>
 							{data => {
 								const showNextLoading =
-									loading &&
-									networkStatus === 3 &&
-									count !== data.length;
+									loading && networkStatus === 3 && count !== data.length;
 
 								return (
 									<Fragment>
 										<PeopleContainer>
 											{data.map(user => (
-												<PeopleCard
-													key={user.id}
-													user={user}
-												/>
+												<PeopleCard key={user.id} user={user} />
 											))}
 										</PeopleContainer>
 
-										{showNextLoading && (
-											<Loading top='lg' />
-										)}
+										{showNextLoading && <Loading top='lg' />}
 									</Fragment>
 								);
 							}}

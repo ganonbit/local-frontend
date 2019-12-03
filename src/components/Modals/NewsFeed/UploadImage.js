@@ -6,7 +6,8 @@ const UploadImageModal = ({ isShowing, hide, handleImageUpload }) => (
 	<Modal
 		show={isShowing}
 		onHide={() => hide()}
-		dialogClassName='window-popup update-header-photo'>
+		dialogClassName='window-popup update-header-photo'
+	>
 		<Modal.Header closeButton>
 			<h6 className='title'>Upload Photo</h6>
 		</Modal.Header>
@@ -17,7 +18,8 @@ const UploadImageModal = ({ isShowing, hide, handleImageUpload }) => (
 				tabindex='-1'
 				role='dialog'
 				aria-labelledby='update-header-photo'
-				aria-hidden='true'>
+				aria-hidden='true'
+			>
 				<div className='' role='document'>
 					<div className='modal-content'>
 						<div className='modal-body'>

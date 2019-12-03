@@ -41,10 +41,7 @@ export default function MainContent(props) {
 										createdAt={post.createdAt}
 									/>
 									{/* {props.newPost ? <NewPost content={props.content} /> : <PostVideo tag={props.tag} body={props.body} />} */}
-									<PostContent
-										content={post.content}
-										image={post.image}
-									/>
+									<PostContent content={post.content} image={post.image} />
 									<PostFooter
 										showCommentHandler={showCommentHandler}
 										post={post}

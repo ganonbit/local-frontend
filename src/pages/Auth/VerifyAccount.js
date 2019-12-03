@@ -1,11 +1,8 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 import { Query, Mutation } from 'react-apollo';
 
 import { VERIFY_TOKEN, VERIFY_ACCOUNT } from 'graphql/user';
-
-import { Field } from 'components/Auth';
 
 import * as Routes from 'routes';
 
@@ -45,18 +42,20 @@ const VerifyAccount = ({ history, location, refetch }) => {
 				<Query query={VERIFY_TOKEN} variables={{ email, token }}>
 					{({ error: apiError }) => {
 						if (apiError) {
-							return (<h1 className='btn-green'>This token is either invalid or expired!</h1>);
+							return (
+								<h1 className='btn-green'>
+									This token is either invalid or expired!
+								</h1>
+							);
 						}
 						return (
 							<Mutation
 								mutation={VERIFY_ACCOUNT}
 								variables={{ input: { email, token } }}
 							>
-								{(
-									verifyAccount,
-									{ loading, error: apiError }
-								) => {
-									if (apiError) return <h1 className='btn-green'>{apiError}</h1>;
+								{(verifyAccount, { loading, error: apiError }) => {
+									if (apiError)
+										return <h1 className='btn-green'>{apiError}</h1>;
 
 									return (
 										// <>
@@ -69,38 +68,23 @@ const VerifyAccount = ({ history, location, refetch }) => {
 														role='tabpanel'
 														data-mh='log-tab'
 													>
-														<div className='title h6'>
-															Verify Account
-														</div>
+														<div className='title h6'>Verify Account</div>
 
 														<form
 															className='content'
-															onSubmit={e =>
-																handleSubmit(
-																	e,
-																	verifyAccount
-																)
-															}
+															onSubmit={e => handleSubmit(e, verifyAccount)}
 														>
 															<div className='row'>
 																<div className='col col-12 col-xl-12 col-lg-12 col-md-12 col-sm-12'></div>
 
 																{error && (
-																	<div
-																		bottom='sm'
-																		top='sm'
-																	>
-																		<p>
-																			{
-																				error
-																			}
-																		</p>
+																	<div bottom='sm' top='sm'>
+																		<p>{error}</p>
 																	</div>
 																)}
 
 																<button className='btn btn-lg btn-primary full-width'>
-																	Verify
-																	Account
+																	Verify Account
 																</button>
 															</div>
 														</form>

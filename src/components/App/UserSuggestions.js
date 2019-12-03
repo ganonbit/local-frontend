@@ -68,12 +68,7 @@ const UserSuggestions = ({ pathname }) => {
 	const [{ auth }] = useStore();
 
 	const hideUserSuggestions = matchPath(pathname, {
-		path: [
-			Routes.MESSAGES,
-			Routes.PEOPLE,
-			Routes.EXPLORE,
-			Routes.USER_PROFILE,
-		],
+		path: [Routes.MESSAGES, Routes.PEOPLE, Routes.EXPLORE, Routes.USER_PROFILE],
 	});
 
 	if (hideUserSuggestions) return null;
@@ -102,24 +97,21 @@ const UserSuggestions = ({ pathname }) => {
 									<A
 										to={generatePath(Routes.USER_PROFILE, {
 											username: user.username,
-										})}>
+										})}
+									>
 										<Avatar image={user.image} />
 									</A>
 
 									<Spacing left='xs'>
 										<A
-											to={generatePath(
-												Routes.USER_PROFILE,
-												{
-													username: user.username,
-												}
-											)}>
+											to={generatePath(Routes.USER_PROFILE, {
+												username: user.username,
+											})}
+										>
 											<Name>
 												{user.firstName} {user.lastName}
 											</Name>
-											<UserName>
-												@{user.username}
-											</UserName>
+											<UserName>@{user.username}</UserName>
 										</A>
 									</Spacing>
 								</ListItem>

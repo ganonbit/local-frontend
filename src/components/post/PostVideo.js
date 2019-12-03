@@ -32,7 +32,8 @@ export default function PostVideo(props) {
 						target='_blank'
 						rel='noopener noreferrer'
 						href={props.link}
-						className='link-site'>
+						className='link-site'
+					>
 						{props.link}
 					</a>
 				</div>

@@ -56,8 +56,8 @@ export const Spacing = styled.div`
 
   @media (max-width: ${p => p.theme.screen.sm}) {
     ${p =>
-		p.hideOnSm &&
-		`
+			p.hideOnSm &&
+			`
       display: none;
     `}
   }

@@ -26,11 +26,7 @@ const ProfilePosts = ({ username }) => {
 	const [modalPostId, setModalPostId] = useState('');
 
 	const openModal = postId => {
-		window.history.pushState(
-			'',
-			'',
-			generatePath(Routes.POST, { id: postId })
-		);
+		window.history.pushState('', '', generatePath(Routes.POST, { id: postId }));
 		setModalPostId(postId);
 		setIsPostPopupOpen(true);
 	};
@@ -50,7 +46,8 @@ const ProfilePosts = ({ username }) => {
 		<Query
 			query={GET_USER_POSTS}
 			variables={variables}
-			notifyOnNetworkStatusChange>
+			notifyOnNetworkStatusChange
+		>
 			{({ data, loading, fetchMore, networkStatus }) => {
 				if (loading && networkStatus === 1) {
 					return (
@@ -79,24 +76,18 @@ const ProfilePosts = ({ username }) => {
 						dataKey='getUserPosts.posts'
 						count={parseInt(count)}
 						variables={variables}
-						fetchMore={fetchMore}>
+						fetchMore={fetchMore}
+					>
 						{data => {
 							return data.map((post, i) => {
 								const showNextLoading =
-									loading &&
-									networkStatus === 3 &&
-									data.length - 1 === i;
+									loading && networkStatus === 3 && data.length - 1 === i;
 
 								return (
 									<Fragment key={post.id}>
 										{modalPostId === post.id && (
-											<Modal
-												open={isPostPopupOpen}
-												onClose={closeModal}>
-												<PostPopup
-													id={post.id}
-													closeModal={closeModal}
-												/>
+											<Modal open={isPostPopupOpen} onClose={closeModal}>
+												<PostPopup id={post.id} closeModal={closeModal} />
 											</Modal>
 										)}
 
@@ -104,23 +95,17 @@ const ProfilePosts = ({ username }) => {
 											<PostCard
 												author={post.author}
 												postId={post.id}
-												imagePublicId={
-													post.imagePublicId
-												}
+												imagePublicId={post.imagePublicId}
 												comments={post.comments}
 												content={post.content}
 												image={post.image}
 												likes={post.likes}
 												createdAt={post.createdAt}
-												openModal={() =>
-													openModal(post.id)
-												}
+												openModal={() => openModal(post.id)}
 											/>
 										</Spacing>
 
-										{showNextLoading && (
-											<Loading top='lg' />
-										)}
+										{showNextLoading && <Loading top='lg' />}
 									</Fragment>
 								);
 							});

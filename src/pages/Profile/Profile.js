@@ -59,9 +59,7 @@ const Profile = ({ match }) => {
 
 							<Container maxWidth='sm'>
 								<Spacing top='lg' bottom='lg'>
-									{username === auth.user.username && (
-										<CreatePost />
-									)}
+									{username === auth.user.username && <CreatePost />}
 								</Spacing>
 
 								<ProfilePosts username={username} />

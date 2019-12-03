@@ -114,7 +114,8 @@ const MessagesChatHeading = ({ location, match, chatUser }) => {
 				<User
 					to={generatePath(Routes.USER_PROFILE, {
 						username: chatUser.username,
-					})}>
+					})}
+				>
 					<Avatar image={chatUser.image} size={40} />
 
 					<Info>

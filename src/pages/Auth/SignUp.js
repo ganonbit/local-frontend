@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mutation, } from 'react-apollo';
+import { Mutation } from 'react-apollo';
 import { withRouter } from 'react-router-dom';
 
 import { Field } from '../../components/Auth/index';
@@ -8,8 +8,6 @@ import { validateFormField } from '../../utils/index';
 
 import { useStore } from 'store';
 import { CLEAR_AUTH_USER } from 'store/auth';
-
-
 
 import * as Routes from 'routes';
 
@@ -33,7 +31,6 @@ const SignUp = ({ refetch, history }) => {
 	const [, dispatch] = useStore();
 
 	const { firstName, lastName, username, email, password } = values;
-	
 
 	const handleChange = e => {
 		e.preventDefault();
@@ -72,8 +69,8 @@ const SignUp = ({ refetch, history }) => {
 		signup().then(async () => {
 			await refetch();
 			dispatch({ type: CLEAR_AUTH_USER });
-    		localStorage.removeItem('token');
-    		history.push(Routes.HOME);
+			localStorage.removeItem('token');
+			history.push(Routes.HOME);
 		});
 	};
 
@@ -94,7 +91,8 @@ const SignUp = ({ refetch, history }) => {
 			mutation={SIGN_UP}
 			variables={{
 				input: { firstName, lastName, email, password, username },
-			}}>
+			}}
+		>
 			{signup => {
 				return (
 					<div className='col col-xl-5 col-lg-6 col-md-12 col-sm-12 col-12'>
@@ -104,13 +102,13 @@ const SignUp = ({ refetch, history }) => {
 									className='tab-pane active'
 									id='home'
 									role='tabpanel'
-									data-mh='log-tab'>
-									<div className='title h6'>
-										Register to Avocado Nation
-									</div>
+									data-mh='log-tab'
+								>
+									<div className='title h6'>Register to Avocado Nation</div>
 									<form
 										className='content'
-										onSubmit={e => handleSubmit(e, signup)}>
+										onSubmit={e => handleSubmit(e, signup)}
+									>
 										<div className='row'>
 											<Field
 												fieldContainerClass='sm'
@@ -161,13 +159,8 @@ const SignUp = ({ refetch, history }) => {
 												/>
 
 												<div className='form-group date-time-picker label-floating'>
-													<label className='control-label'>
-														Your Birthday
-													</label>
-													<input
-														name='birthday'
-														defaultValue='10/24/1984'
-													/>
+													<label className='control-label'>Your Birthday</label>
+													<input name='birthday' defaultValue='10/24/1984' />
 													<span className='input-group-addon'>
 														<svg
 															className='olymp-calendar-icon'
@@ -177,39 +170,25 @@ const SignUp = ({ refetch, history }) => {
 												</div>
 
 												<div className='form-group label-floating is-select'>
-													<label className='control-label'>
-														Your Gender
-													</label>
+													<label className='control-label'>Your Gender</label>
 													<select
 														className='select picker form-control'
-														onChange={handleChange}>
-														<option value='male'>
-															Male
-														</option>
-														<option value='female'>
-															Female
-														</option>
-														<option value='custom'>
-															Custom
-														</option>
+														onChange={handleChange}
+													>
+														<option value='male'>Male</option>
+														<option value='female'>Female</option>
+														<option value='custom'>Custom</option>
 													</select>
 												</div>
 
 												<div className='remember'>
 													<div className='checkbox'>
 														<label>
-															<input
-																name='optionsCheckboxes'
-																type='checkbox'
-															/>
+															<input name='optionsCheckboxes' type='checkbox' />
 															<span className='checkbox-material'>
 																<span className='check' />
 															</span>
-															I accept the{' '}
-															<a href='#1'>
-																Terms and
-																Conditions
-															</a>{' '}
+															I accept the <a href='#1'>Terms and Conditions</a>{' '}
 															of the website
 														</label>
 													</div>
@@ -218,7 +197,8 @@ const SignUp = ({ refetch, history }) => {
 												<button
 													className='btn btn-green btn-lg full-width'
 													type='submit'
-													disabled={disableButton}>
+													disabled={disableButton}
+												>
 													Complete Registration!
 												</button>
 											</div>

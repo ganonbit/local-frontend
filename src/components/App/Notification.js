@@ -97,7 +97,8 @@ const Notification = ({ notification, close, client }) => {
 			<A
 				to={generatePath(Routes.USER_PROFILE, {
 					username: notification.author.username,
-				})}>
+				})}
+			>
 				<LeftSide>
 					<Avatar image={notification.author.image} size={34} />
 
@@ -118,7 +119,8 @@ const Notification = ({ notification, close, client }) => {
 					<A
 						to={generatePath(Routes.POST, {
 							id: notification.like.post.id,
-						})}>
+						})}
+					>
 						<PostImage>
 							<Image src={notification.like.post.image} />
 						</PostImage>
@@ -132,7 +134,8 @@ const Notification = ({ notification, close, client }) => {
 					<A
 						to={generatePath(Routes.POST, {
 							id: notification.comment.post.id,
-						})}>
+						})}
+					>
 						<PostImage>
 							<Image src={notification.comment.post.image} />
 						</PostImage>

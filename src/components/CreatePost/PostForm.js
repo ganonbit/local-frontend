@@ -38,13 +38,15 @@ const PostForm = ({
 				className='author-thumb'
 				href={generatePath(Routes.USER_PROFILE, {
 					username: auth.user.username,
-				})}>
+				})}
+			>
 				<Avatar image={auth.user.image} />
 			</a>
 			<div
 				className={`form-group with-icon label-floating ${activeClass}`}
 				onFocus={() => handleFocus('focus')}
-				onBlur={() => handleFocus('blur')}>
+				onBlur={() => handleFocus('blur')}
+			>
 				<label className='control-label'>
 					Share what you are thinking here...
 				</label>

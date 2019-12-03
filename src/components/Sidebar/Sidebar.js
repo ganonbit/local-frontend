@@ -19,7 +19,8 @@ const SidebarNavigation = () => {
 				open={sidebarOpen.open}
 				// onSetOpen={sidebarOpen.open}
 				docked={true}
-				styles={SidebarStyles}>
+				styles={SidebarStyles}
+			>
 				<SidebarMainContent onSetSidebarOpen={onSetSidebarOpen} />
 			</Sidebar>
 		</div>

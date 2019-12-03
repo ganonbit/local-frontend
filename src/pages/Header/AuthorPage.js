@@ -5,11 +5,7 @@ export default class AuthorPage extends Component {
 		return (
 			<div className='author-page author vcard inline-items more'>
 				<div className='author-thumb'>
-					<img
-						alt='author'
-						src='img/author-page.jpg'
-						className='avatar'
-					/>
+					<img alt='author' src='img/author-page.jpg' className='avatar' />
 					<span className='icon-status online'></span>
 					<div className='more-dropdown more-with-triangle'>
 						<div className='mCustomScrollbar' data-mcs-theme='dark'>
@@ -42,9 +38,7 @@ export default class AuthorPage extends Component {
 									</a>
 								</li>
 								<li>
-									<a
-										href='/login'
-										onClick={() => localStorage.clear()}>
+									<a href='/login' onClick={() => localStorage.clear()}>
 										<svg
 											className='olymp-logout-icon'
 											xlinkHref='svg-icons/sprites/icons.svg#olymp-logout-icon'
@@ -136,9 +130,7 @@ export default class AuthorPage extends Component {
 						</div>
 					</div>
 				</div>
-				<a
-					href='02-ProfilePage.html'
-					className='author-name fn my-auto'>
+				<a href='02-ProfilePage.html' className='author-name fn my-auto'>
 					<div className='author-title author-title-custom'>
 						James Spiegel{' '}
 						{/* <svg

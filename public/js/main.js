@@ -82,7 +82,8 @@ var CRUMINA = {};
 			function() {
 				var btn = $(this);
 				var input = btn.closest('.number-spinner').find('input');
-				btn.closest('.number-spinner')
+				btn
+					.closest('.number-spinner')
 					.find('button')
 					.prop('disabled', false);
 
@@ -113,13 +114,9 @@ var CRUMINA = {};
 				}
 			}
 		);
-		$(document).on(
-			'touchend mouseup',
-			'.number-spinner button',
-			function() {
-				clearInterval(action);
-			}
-		);
+		$(document).on('touchend mouseup', '.number-spinner button', function() {
+			clearInterval(action);
+		});
 	});
 
 	/* -----------------------------
@@ -159,10 +156,7 @@ var CRUMINA = {};
 
 	// Close on click outside elements.
 	$document.on('click', function(event) {
-		if (
-			!$(event.target).closest($sidebar).length &&
-			$sidebar.is(':visible')
-		) {
+		if (!$(event.target).closest($sidebar).length && $sidebar.is(':visible')) {
 			$sidebar.removeClass('open');
 		}
 	});
@@ -266,11 +260,7 @@ var CRUMINA = {};
 		var controller = new ScrollMagic.Controller();
 
 		new ScrollMagic.Scene({ triggerElement: '.call-to-action-animation' })
-			.setVelocity(
-				'.first-img',
-				{ opacity: 1, bottom: '0', scale: '1' },
-				1200
-			)
+			.setVelocity('.first-img', { opacity: 1, bottom: '0', scale: '1' }, 1200)
 			.triggerHook(1)
 			.addTo(controller);
 
@@ -331,11 +321,7 @@ var CRUMINA = {};
 		var controller = new ScrollMagic.Controller();
 
 		new ScrollMagic.Scene({ triggerElement: '.planer-animation' })
-			.setVelocity(
-				'.planer',
-				{ opacity: 1, left: '80%', scale: '1' },
-				2000
-			)
+			.setVelocity('.planer', { opacity: 1, left: '80%', scale: '1' }, 2000)
 			.triggerHook(0.1)
 			.addTo(controller);
 	};

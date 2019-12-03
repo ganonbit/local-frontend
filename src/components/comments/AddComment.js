@@ -33,12 +33,14 @@ export default function AddComment({ authorId, postId, onCancel }) {
 					query: GET_POSTS,
 					variables: { authUserId: authorId, skip: 0, limit: 15 },
 				},
-			]}>
+			]}
+		>
 			{(createComment, { loading, error: apiError }) => {
 				return (
 					<form
 						className='comment-form inline-items'
-						onSubmit={e => onAddComment(e, createComment())}>
+						onSubmit={e => onAddComment(e, createComment())}
+					>
 						<div className='post__author author vcard inline-items'>
 							<img src='img/author-page.jpg' alt='author' />
 
@@ -49,15 +51,15 @@ export default function AddComment({ authorId, postId, onCancel }) {
 									placeholder=''
 									name='comment'
 									value={commentContent.comment}
-									onChange={e =>
-										onCommentChange(e)
-									}></textarea>
+									onChange={e => onCommentChange(e)}
+								></textarea>
 								<div className='add-options-message'>
 									<a
 										href='#1'
 										className='options-message'
 										data-toggle='modal'
-										data-target='#update-header-photo'>
+										data-target='#update-header-photo'
+									>
 										{/* <svg className="olymp-camera-icon">
                                     <use xlink: href="svg-icons/sprites/icons.svg#olymp-camera-icon"></use>
 											</svg> */}
@@ -66,15 +68,14 @@ export default function AddComment({ authorId, postId, onCancel }) {
 							</div>
 						</div>
 
-						<button
-							className='btn btn-md-2 btn-primary'
-							type='post'>
+						<button className='btn btn-md-2 btn-primary' type='post'>
 							Post Comment
 						</button>
 
 						<button
 							className='btn btn-md-2 btn-border-think c-grey btn-transparent custom-color'
-							onClick={() => onCancel(false)}>
+							onClick={() => onCancel(false)}
+						>
 							Cancel
 						</button>
 					</form>

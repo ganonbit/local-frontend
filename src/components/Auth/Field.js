@@ -35,7 +35,8 @@ const Field = props => {
 				onFocus={() => {
 					handleOnFocus();
 				}}
-				className={isFocused ? focused : notFocused}>
+				className={isFocused ? focused : notFocused}
+			>
 				<label className='control-label'>{placeholder}</label>
 				<input
 					defaultValue=''
@@ -56,7 +57,8 @@ const Field = props => {
 			onFocus={() => {
 				handleOnFocus();
 			}}
-			className={isFocused ? focused : notFocused}>
+			className={isFocused ? focused : notFocused}
+		>
 			<label className='control-label'>{placeholder}</label>
 			<input
 				defaultValue={value}

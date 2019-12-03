@@ -20,7 +20,8 @@ const App = () => {
 			query={GET_AUTH_USER}
 			onCompleted={data => {
 				dispatch({ type: SET_AUTH_USER, payload: data.getAuthUser });
-			}}>
+			}}
+		>
 			{({ loading, refetch }) => {
 				if (loading) {
 					return <Loading />;
@@ -29,19 +30,9 @@ const App = () => {
 						<Router>
 							<Switch>
 								{!auth.user ? (
-									<Route
-										exact
-										render={() => (
-											<Auth refetch={refetch} />
-										)}
-									/>
+									<Route exact render={() => <Auth refetch={refetch} />} />
 								) : (
-									<Route
-										exact
-										render={() => (
-											<AppLayout refetch={refetch} />
-										)}
-									/>
+									<Route exact render={() => <AppLayout refetch={refetch} />} />
 								)}
 							</Switch>
 						</Router>

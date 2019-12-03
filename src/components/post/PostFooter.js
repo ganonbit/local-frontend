@@ -31,7 +31,8 @@ const PostFooter = props => {
 						alert('share');
 					}}
 					href='#1'
-					className='post-add-icon inline-items'>
+					className='post-add-icon inline-items'
+				>
 					<FontAwesomeIcon icon={faShare} />
 
 					<span>{props.numShares}</span>

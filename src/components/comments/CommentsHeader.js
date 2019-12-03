@@ -22,7 +22,8 @@ export default function CommentsHeader(props) {
 				<a
 					href={generatePath(Routes.USER_PROFILE, {
 						username: author.username,
-					})}>
+					})}
+				>
 					<Avatar image={author.image} />
 				</a>
 				<div className='author-date'>

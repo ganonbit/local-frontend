@@ -84,7 +84,8 @@ const SideBar = ({ location, isOpen, sideBarRef }) => {
 				to={generatePath(Routes.USER_PROFILE, {
 					username: auth.user.username,
 				})}
-				activeClassName='selected'>
+				activeClassName='selected'
+			>
 				<Avatar image={auth.user.image} size={20} />
 
 				<Spacing left='xxs'>

@@ -39,29 +39,29 @@ const SidebarMainContent = ({ onSetSidebarOpen }) => {
 				<div className='profile-completion'>
 					<div className='skills-item'>
 						<div className='skills-item-info'>
-							<span className='skills-item-title'>
-								Profile Completion
-							</span>
+							<span className='skills-item-title'>Profile Completion</span>
 							<span className='skills-item-count'>
 								<span
 									className='count-animate'
 									data-speed='1000'
 									data-refresh-interval='50'
 									data-to='76'
-									data-from='0'></span>
+									data-from='0'
+								></span>
 								<span className='units'>76%</span>
 							</span>
 						</div>
 						<div className='skills-item-meter'>
 							<span
 								className='skills-item-meter-active bg-primary'
-								style={{ width: '76%' }}></span>
+								style={{ width: '76%' }}
+							></span>
 						</div>
 					</div>
 
 					<span>
-						Complete <a href='#1'>your profile</a> so people can
-						know more about you!
+						Complete <a href='#1'>your profile</a> so people can know more about
+						you!
 					</span>
 				</div>
 			</div>

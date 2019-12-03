@@ -10,7 +10,8 @@ const OverlayTriggers = props => {
 			trigger='hover'
 			placement={props.placement}
 			delay={{ show: 0, hide: 1 }}
-			overlay={ToolTip(props.toolTipText)}>
+			overlay={ToolTip(props.toolTipText)}
+		>
 			{props.children}
 		</OverlayTrigger>
 	);

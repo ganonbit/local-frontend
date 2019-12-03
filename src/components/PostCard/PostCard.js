@@ -193,7 +193,8 @@ const PostCard = ({
 					<Author
 						to={generatePath(Routes.USER_PROFILE, {
 							username: author.username,
-						})}>
+						})}
+					>
 						<Avatar image={author.image} />
 
 						<Spacing left='xs'>
@@ -234,12 +235,8 @@ const PostCard = ({
 								likes={likes}
 							/>
 
-							<Button
-								fullWidth
-								text
-								onClick={toggleCreateComment}>
-								<PostCommentIcon />{' '}
-								<Spacing inline left='xxs' /> <b>Comment</b>
+							<Button fullWidth text onClick={toggleCreateComment}>
+								<PostCommentIcon /> <Spacing inline left='xxs' /> <b>Comment</b>
 							</Button>
 						</Icons>
 					</CountAndIcons>

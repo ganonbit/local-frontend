@@ -74,7 +74,8 @@ const SearchResult = ({ users, forMessage }) => {
 							: generatePath(Routes.USER_PROFILE, {
 									username: user.username,
 							  })
-					}>
+					}
+				>
 					<Item>
 						<Avatar image={user.image} size={34} />
 

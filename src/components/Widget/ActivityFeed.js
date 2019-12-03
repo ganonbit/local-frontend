@@ -26,9 +26,7 @@ export default function ActivityFeed() {
 						</a>
 						.
 						<span className='notification-date'>
-							<time
-								className='entry-date updated'
-								dateTime='2004-07-24T18:18'>
+							<time className='entry-date updated' dateTime='2004-07-24T18:18'>
 								2 mins ago
 							</time>
 						</span>
@@ -49,9 +47,7 @@ export default function ActivityFeed() {
 						</a>
 						.
 						<span className='notification-date'>
-							<time
-								className='entry-date updated'
-								dateTime='2004-07-24T18:18'>
+							<time className='entry-date updated' dateTime='2004-07-24T18:18'>
 								5 mins ago
 							</time>
 						</span>
@@ -72,9 +68,7 @@ export default function ActivityFeed() {
 						</a>
 						.
 						<span className='notification-date'>
-							<time
-								className='entry-date updated'
-								dateTime='2004-07-24T18:18'>
+							<time className='entry-date updated' dateTime='2004-07-24T18:18'>
 								12 mins ago
 							</time>
 						</span>
@@ -95,9 +89,7 @@ export default function ActivityFeed() {
 						</a>
 						.
 						<span className='notification-date'>
-							<time
-								className='entry-date updated'
-								dateTime='2004-07-24T18:18'>
+							<time className='entry-date updated' dateTime='2004-07-24T18:18'>
 								1 hour ago
 							</time>
 						</span>
@@ -117,9 +109,7 @@ export default function ActivityFeed() {
 						</a>
 						.
 						<span className='notification-date'>
-							<time
-								className='entry-date updated'
-								dateTime='2004-07-24T18:18'>
+							<time className='entry-date updated' dateTime='2004-07-24T18:18'>
 								1 hour ago
 							</time>
 						</span>
@@ -140,9 +130,7 @@ export default function ActivityFeed() {
 						</a>
 						.
 						<span className='notification-date'>
-							<time
-								className='entry-date updated'
-								dateTime='2004-07-24T18:18'>
+							<time className='entry-date updated' dateTime='2004-07-24T18:18'>
 								1 hour ago
 							</time>
 						</span>
@@ -162,9 +150,7 @@ export default function ActivityFeed() {
 						</a>
 						.
 						<span className='notification-date'>
-							<time
-								className='entry-date updated'
-								dateTime='2004-07-24T18:18'>
+							<time className='entry-date updated' dateTime='2004-07-24T18:18'>
 								2 hours ago
 							</time>
 						</span>
@@ -185,9 +171,7 @@ export default function ActivityFeed() {
 						</a>
 						.
 						<span className='notification-date'>
-							<time
-								className='entry-date updated'
-								dateTime='2004-07-24T18:18'>
+							<time className='entry-date updated' dateTime='2004-07-24T18:18'>
 								2 hours ago
 							</time>
 						</span>
@@ -208,9 +192,7 @@ export default function ActivityFeed() {
 						</a>
 						.
 						<span className='notification-date'>
-							<time
-								className='entry-date updated'
-								dateTime='2004-07-24T18:18'>
+							<time className='entry-date updated' dateTime='2004-07-24T18:18'>
 								15 hours ago
 							</time>
 						</span>
@@ -231,9 +213,7 @@ export default function ActivityFeed() {
 						</a>
 						.
 						<span className='notification-date'>
-							<time
-								className='entry-date updated'
-								dateTime='2004-07-24T18:18'>
+							<time className='entry-date updated' dateTime='2004-07-24T18:18'>
 								1 hour ago
 							</time>
 						</span>
@@ -253,9 +233,7 @@ export default function ActivityFeed() {
 						</a>
 						.
 						<span className='notification-date'>
-							<time
-								className='entry-date updated'
-								dateTime='2004-07-24T18:18'>
+							<time className='entry-date updated' dateTime='2004-07-24T18:18'>
 								2 hours ago
 							</time>
 						</span>
@@ -276,9 +254,7 @@ export default function ActivityFeed() {
 						</a>
 						.
 						<span className='notification-date'>
-							<time
-								className='entry-date updated'
-								dateTime='2004-07-24T18:18'>
+							<time className='entry-date updated' dateTime='2004-07-24T18:18'>
 								2 hours ago
 							</time>
 						</span>
@@ -299,9 +275,7 @@ export default function ActivityFeed() {
 						</a>
 						.
 						<span className='notification-date'>
-							<time
-								className='entry-date updated'
-								dateTime='2004-07-24T18:18'>
+							<time className='entry-date updated' dateTime='2004-07-24T18:18'>
 								15 hours ago
 							</time>
 						</span>

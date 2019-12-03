@@ -48,11 +48,7 @@ const Home = () => {
 	};
 
 	const openModal = postId => {
-		window.history.pushState(
-			'',
-			'',
-			generatePath(Routes.POST, { id: postId })
-		);
+		window.history.pushState('', '', generatePath(Routes.POST, { id: postId }));
 		setModalPostId(postId);
 	};
 
@@ -73,7 +69,8 @@ const Home = () => {
 			<Query
 				query={GET_FOLLOWED_POSTS}
 				variables={variables}
-				notifyOnNetworkStatusChange>
+				notifyOnNetworkStatusChange
+			>
 				{({ data, loading, fetchMore, networkStatus }) => {
 					if (loading && networkStatus === 1) {
 						return (
@@ -108,53 +105,40 @@ const Home = () => {
 							dataKey='getFollowedPosts.posts'
 							count={parseInt(count)}
 							variables={variables}
-							fetchMore={fetchMore}>
+							fetchMore={fetchMore}
+						>
 							{data => {
 								const showNextLoading =
-									loading &&
-									networkStatus === 3 &&
-									count !== data.length;
+									loading && networkStatus === 3 && count !== data.length;
 
 								return (
 									<Fragment>
 										{data.map(post => (
 											<Fragment key={post.id}>
 												<Modal
-													open={
-														modalPostId === post.id
-													}
-													onClose={closeModal}>
-													<PostPopup
-														id={post.id}
-														closeModal={closeModal}
-													/>
+													open={modalPostId === post.id}
+													onClose={closeModal}
+												>
+													<PostPopup id={post.id} closeModal={closeModal} />
 												</Modal>
 
 												<Spacing bottom='lg' top='lg'>
 													<PostCard
 														author={post.author}
-														imagePublicId={
-															post.imagePublicId
-														}
+														imagePublicId={post.imagePublicId}
 														postId={post.id}
 														comments={post.comments}
-														createdAt={
-															post.createdAt
-														}
+														createdAt={post.createdAt}
 														content={post.content}
 														image={post.image}
 														likes={post.likes}
-														openModal={() =>
-															openModal(post.id)
-														}
+														openModal={() => openModal(post.id)}
 													/>
 												</Spacing>
 											</Fragment>
 										))}
 
-										{showNextLoading && (
-											<Loading top='lg' />
-										)}
+										{showNextLoading && <Loading top='lg' />}
 									</Fragment>
 								);
 							}}

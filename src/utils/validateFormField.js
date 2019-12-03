@@ -7,22 +7,19 @@ export const validateFormField = (name, value) => {
 			else return { emailOrUsername: '' };
 
 		case 'password':
-			if (value.length < 5)
-				return { password: 'Password min 6 characters' };
+			if (value.length < 5) return { password: 'Password min 6 characters' };
 			else return { password: '' };
 
 		case 'firstName':
 			if (value.length > 20)
 				return { firstName: 'First name no more than 20 characters' };
-			else if (value.length < 2)
-				return { firstName: 'First name is Required' };
+			else if (value.length < 2) return { firstName: 'First name is Required' };
 			else return { firstName: '' };
 
 		case 'lastName':
 			if (value.length > 20)
 				return { lastName: 'Last name no more than 20 characters' };
-			else if (value.length < 2)
-				return { lastName: 'Last name is Required' };
+			else if (value.length < 2) return { lastName: 'Last name is Required' };
 			else return { lastName: '' };
 
 		case 'username':

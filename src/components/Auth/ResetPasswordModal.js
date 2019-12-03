@@ -20,7 +20,8 @@ function ResetPassword(props) {
 								href='123'
 								className='close icon-close'
 								data-dismiss='modal'
-								aria-label='Close'>
+								aria-label='Close'
+							>
 								<svg
 									className='olymp-close-icon'
 									xlinkHref='svg-icons/sprites/icons.svg#olymp-close-icon'
@@ -34,15 +35,12 @@ function ResetPassword(props) {
 							<div className='modal-body'>
 								<form>
 									<p>
-										Enter your email and click the send code
-										button. You’ll receive a code in your
-										email. Please use that code below to
+										Enter your email and click the send code button. You’ll
+										receive a code in your email. Please use that code below to
 										change the old password for a new one.
 									</p>
 									<div className='form-group label-floating'>
-										<label className='control-label'>
-											Your Email
-										</label>
+										<label className='control-label'>Your Email</label>
 										<input
 											className='form-control'
 											placeholder=''
@@ -56,16 +54,15 @@ function ResetPassword(props) {
 												setSuccess(true);
 											}, 3000);
 										}}
-										className='btn btn-green btn-lg full-width'>
+										className='btn btn-green btn-lg full-width'
+									>
 										Send me the Code
 									</button>
 									{tempAPISuccess ? (
 										<div>
 											{' '}
 											<div className='form-group label-floating'>
-												<label className='control-label'>
-													Enter the Code
-												</label>
+												<label className='control-label'>Enter the Code</label>
 												<input
 													className='form-control'
 													placeholder=''

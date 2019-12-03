@@ -22,7 +22,8 @@ const Header = () => {
 						// href="#home-1"
 						// role="tab"
 						// aria-expanded="true"
-						onClick={() => setActiveTab(tab.id)}>
+						onClick={() => setActiveTab(tab.id)}
+					>
 						<svg
 							className='olymp-status-icon'
 							xlinkHref='svg-icons/sprites/icons.svg#olymp-status-icon'

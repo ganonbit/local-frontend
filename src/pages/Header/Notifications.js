@@ -20,29 +20,23 @@ export default class Notifications extends Component {
 							<ul className='notification-list'>
 								<li>
 									<div className='author-thumb'>
-										<img
-											src='img/avatar62-sm.jpg'
-											alt='author'
-										/>
+										<img src='img/avatar62-sm.jpg' alt='author' />
 									</div>
 									<div className='notification-event'>
 										<div>
-											<a
-												href='#1'
-												className='h6 notification-friend'>
+											<a href='#1' className='h6 notification-friend'>
 												Mathilda Brinker
 											</a>{' '}
 											commented on your new{' '}
-											<a
-												href='#1'
-												className='notification-link'>
+											<a href='#1' className='notification-link'>
 												profile status
 											</a>
 										</div>
 										<span className='notification-date'>
 											<time
 												className='entry-date updated'
-												dateTime='2004-07-24T18:18'>
+												dateTime='2004-07-24T18:18'
+											>
 												4 hours ago
 											</time>
 										</span>
@@ -68,23 +62,16 @@ export default class Notifications extends Component {
 
 								<li className='un-read'>
 									<div className='author-thumb'>
-										<img
-											src='img/avatar63-sm.jpg'
-											alt='author'
-										/>
+										<img src='img/avatar63-sm.jpg' alt='author' />
 									</div>
 									<div className='notification-event'>
 										<div>
 											You and{' '}
-											<a
-												href='#1'
-												className='h6 notification-friend'>
+											<a href='#1' className='h6 notification-friend'>
 												Nicholas Grissom
 											</a>{' '}
 											just became friends. Write on{' '}
-											<a
-												href='#1'
-												className='notification-link'>
+											<a href='#1' className='notification-link'>
 												his wall
 											</a>
 											.
@@ -92,7 +79,8 @@ export default class Notifications extends Component {
 										<span className='notification-date'>
 											<time
 												className='entry-date updated'
-												dateTime='2004-07-24T18:18'>
+												dateTime='2004-07-24T18:18'
+											>
 												9 hours ago
 											</time>
 										</span>
@@ -118,22 +106,15 @@ export default class Notifications extends Component {
 
 								<li className='with-comment-photo'>
 									<div className='author-thumb'>
-										<img
-											src='img/avatar64-sm.jpg'
-											alt='author'
-										/>
+										<img src='img/avatar64-sm.jpg' alt='author' />
 									</div>
 									<div className='notification-event'>
 										<div>
-											<a
-												href='#1'
-												className='h6 notification-friend'>
+											<a href='#1' className='h6 notification-friend'>
 												Sarah Hetfield
 											</a>{' '}
 											commented on your{' '}
-											<a
-												href='#1'
-												className='notification-link'>
+											<a href='#1' className='notification-link'>
 												photo
 											</a>
 											.
@@ -141,7 +122,8 @@ export default class Notifications extends Component {
 										<span className='notification-date'>
 											<time
 												className='entry-date updated'
-												dateTime='2004-07-24T18:18'>
+												dateTime='2004-07-24T18:18'
+											>
 												Yesterday at 5:32am
 											</time>
 										</span>
