@@ -3,7 +3,7 @@ import RecommendedPages from 'components/Widget/RecommendedPages';
 import FriendsSuggestions from 'components/Widget/FriendsSuggestions';
 import ActivityFeed from 'components/Widget/ActivityFeed';
 import { CreatePost } from 'components/CreatePost';
-import Post from 'components/post';
+import Post from 'components/Post';
 
 export default class Home extends Component {
   render() {

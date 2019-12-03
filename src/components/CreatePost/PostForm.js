@@ -30,8 +30,6 @@ const PostForm = ({
       default:
     }
   };
-  console.log(auth);
-  console.log(auth.user);
   return (
     <form onSubmit={e => handleSubmitForm(e, createPost)}>
       <a

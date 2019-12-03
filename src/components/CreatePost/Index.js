@@ -3,7 +3,6 @@ import UploadImage from '../Modals/NewsFeed/UploadImage';
 import ChooseImage from '../Modals/NewsFeed/ChooseImage';
 import useModal from '../../hooks/useModel';
 import { useStore } from '../../store/index';
-import Header from './PostHeader';
 import PostForm from './PostForm';
 
 import { Mutation } from 'react-apollo';
@@ -56,7 +55,6 @@ export const CreatePost = props => {
           authorId: auth.user.id,
         },
       }}
-      // refetchQueries={() => [{ query: GET_POSTS }]}
     >
       {(createPost, { loading, error: apiError }) => {
         return (

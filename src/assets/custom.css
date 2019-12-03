@@ -665,6 +665,9 @@ span.material-input-error {
 .more-comments {
   cursor: pointer;
 }
+.upload-photo-item {
+  width: 50% !important;
+}
 
 @media (max-width: 1454px) {
   .search-bar.w-search {
