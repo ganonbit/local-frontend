@@ -47,14 +47,14 @@ export default function AddComment({ authorId, author, postId, onCancel }) {
             onSubmit={e => onAddComment(e, createComment())}
           >
             <div className='post__author author vcard inline-items'>
-            <a
-              className='author-thumb'
-              href={generatePath(Routes.USER_PROFILE, {
-                username: author.username,
-              })}
-            >
-              <Avatar image={author.image} />
-            </a>
+              <a
+                className='author-thumb'
+                href={generatePath(Routes.USER_PROFILE, {
+                  username: author.username,
+                })}
+              >
+                <Avatar image={author.image} />
+              </a>
 
               <div className='form-group with-icon-right '>
                 <textarea
@@ -71,8 +71,7 @@ export default function AddComment({ authorId, author, postId, onCancel }) {
                     className='options-message'
                     data-toggle='modal'
                     data-target='#update-header-photo'
-                  >
-                  </a>
+                  ></a>
                 </div>
               </div>
             </div>
@@ -92,4 +91,4 @@ export default function AddComment({ authorId, author, postId, onCancel }) {
       }}
     </Mutation>
   );
-};
+}

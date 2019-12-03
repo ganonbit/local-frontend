@@ -13,32 +13,34 @@ import { GET_AUTH_USER } from 'graphql/user';
 import * as Routes from 'routes';
 
 function PostHeader(props) {
-	const { author, postId, client, createdAt, user } = props;
-	const rawTime = parseInt(createdAt);
-	const postDate = new Date(rawTime);
-	const deletePost = async () => {
-		try {
-			await client.mutate({
-				mutation: DELETE_POST,
-				variables: { input: { id: postId } },
-				refetchQueries: () => [
-					{
-						query: GET_FOLLOWED_POSTS,
-						variables: {
-							userId: user.id,
-							skip: 0,
-						},
-					},
-					{
-						query: GET_AUTH_USER,
-						options: { fetchPolicy: 'cache-and-network' },
-					},
-				],
-			});
-		} catch (err) { console.log(err);}
-	};
-	return (
-		<div className='post__author author vcard inline-items'>
+  const { author, postId, client, createdAt, user } = props;
+  const rawTime = parseInt(createdAt);
+  const postDate = new Date(rawTime);
+  const deletePost = async () => {
+    try {
+      await client.mutate({
+        mutation: DELETE_POST,
+        variables: { input: { id: postId } },
+        refetchQueries: () => [
+          {
+            query: GET_FOLLOWED_POSTS,
+            variables: {
+              userId: user.id,
+              skip: 0,
+            },
+          },
+          {
+            query: GET_AUTH_USER,
+            options: { fetchPolicy: 'cache-and-network' },
+          },
+        ],
+      });
+    } catch (err) {
+      console.log(err);
+    }
+  };
+  return (
+    <div className='post__author author vcard inline-items'>
       <a
         href={generatePath(Routes.USER_PROFILE, {
           username: author.username,
@@ -62,37 +64,37 @@ function PostHeader(props) {
         </div>
       </div>
 
-			<div className='more'>
-				<FontAwesomeIcon
-					className='olymp-three-dots-icon'
-					size='lg'
-					color='black'
-					icon={faEllipsisV}
-					style={{ height: '12px' }}
-				/>
-				<ul className='more-dropdown'>
-					{postId && (
-						<li>
-							<a href='#2'>Edit Post</a>
-						</li>
-					)}
-					{postId && (
-						<li>
-							<a href='#2' onClick={e => deletePost(e)}>
-								Delete Post
-							</a>
-						</li>
-					)}
-					<li>
-						<a href='#2'>Turn Off Notifications</a>
-					</li>
-					<li>
-						<a href='#2'>Select as Featured</a>
-					</li>
-				</ul>
-			</div>
-		</div>
-	);
-};
+      <div className='more'>
+        <FontAwesomeIcon
+          className='olymp-three-dots-icon'
+          size='lg'
+          color='black'
+          icon={faEllipsisV}
+          style={{ height: '12px' }}
+        />
+        <ul className='more-dropdown'>
+          {postId && (
+            <li>
+              <a href='#2'>Edit Post</a>
+            </li>
+          )}
+          {postId && (
+            <li>
+              <a href='#2' onClick={e => deletePost(e)}>
+                Delete Post
+              </a>
+            </li>
+          )}
+          <li>
+            <a href='#2'>Turn Off Notifications</a>
+          </li>
+          <li>
+            <a href='#2'>Select as Featured</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  );
+}
 
 export default withApollo(PostHeader);
