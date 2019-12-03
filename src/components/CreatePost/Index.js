@@ -3,7 +3,6 @@ import UploadImage from '../Modals/NewsFeed/UploadImage';
 import ChooseImage from '../Modals/NewsFeed/ChooseImage';
 import useModal from '../../hooks/useModel';
 import { useStore } from '../../store/index';
-import Header from './PostHeader';
 import PostForm from './PostForm';
 
 import { Mutation } from 'react-apollo';

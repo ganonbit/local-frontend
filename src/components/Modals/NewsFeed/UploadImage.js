@@ -37,7 +37,7 @@ const UploadImageModal = ({
         <div
           className=''
           id='update-header-photo'
-          tabindex='-1'
+          tabIndex='-1'
           role='dialog'
           aria-labelledby='update-header-photo'
           aria-hidden='true'
