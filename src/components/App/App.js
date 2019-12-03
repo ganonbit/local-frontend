@@ -69,34 +69,30 @@ const App = () => {
 
 	return (
 		<Router>
-			<GlobalStyle />
-
-			<ScrollToTop>
-				<Switch>
-					{data.getAuthUser ? (
-						<Route
-							exact
-							render={() => (
-								<AppLayout authUser={data.getAuthUser} />
-							)}
-						/>
-					) : (
-						<Route
-							exact
-							render={() => <AuthLayout refetch={refetch} />}
-						/>
-					)}
-				</Switch>
-			</ScrollToTop>
-
-			{message.content.text && (
-				<Message
-					type={message.content.type}
-					autoClose={message.content.autoClose}>
-					{message.content.text}
-				</Message>
+		<GlobalStyle />
+  
+		<ScrollToTop>
+		  <Switch>
+			{data.getAuthUser ? (
+			  <Route
+				exact
+				render={() => <AppLayout authUser={data.getAuthUser} />}
+			  />
+			) : (
+			  <Route exact render={() => <AuthLayout refetch={refetch} />} />
 			)}
-		</Router>
+		  </Switch>
+		</ScrollToTop>
+  
+		{message.content.text && (
+		  <Message
+			type={message.content.type}
+			autoClose={message.content.autoClose}
+		  >
+			{message.content.text}
+		  </Message>
+		)}
+	  </Router>
 	);
 };
 

@@ -1,10 +1,15 @@
 import React, { useState } from 'react';
-import { Mutation } from 'react-apollo';
+import { Mutation, } from 'react-apollo';
 import { withRouter } from 'react-router-dom';
 
 import { Field } from '../../components/Auth/index';
 import { SIGN_UP } from 'graphql/user';
 import { validateFormField } from '../../utils/index';
+
+import { useStore } from 'store';
+import { CLEAR_AUTH_USER } from 'store/auth';
+
+
 
 import * as Routes from 'routes';
 
@@ -25,8 +30,10 @@ const SignUp = ({ refetch, history }) => {
 		dob: '',
 		gender: '',
 	});
+	const [, dispatch] = useStore();
 
 	const { firstName, lastName, username, email, password } = values;
+	
 
 	const handleChange = e => {
 		e.preventDefault();
@@ -62,10 +69,11 @@ const SignUp = ({ refetch, history }) => {
 			return false;
 		}
 
-		signup().then(async ({ data }) => {
-			localStorage.setItem('token', data.signup.token);
+		signup().then(async () => {
 			await refetch();
-			history.push(Routes.HOME);
+			dispatch({ type: CLEAR_AUTH_USER });
+    		localStorage.removeItem('token');
+    		history.push(Routes.HOME);
 		});
 	};
 
