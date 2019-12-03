@@ -659,7 +659,19 @@ span.material-input-error {
 .upload-photo-item {
   width: 50% !important;
 }
-
+ul.sidebar-box {
+  height: 257px;
+  overflow-y: auto;
+}
+ul.sidebar-box::-webkit-scrollbar {
+  display: none;
+}
+ul.sidebar-box::-moz-scrollbar {
+  display: none;
+}
+ul.sidebar-box {
+  -ms-overflow-style: none;
+}
 @media (max-width: 1454px) {
   .search-bar.w-search {
     width: 410px;
