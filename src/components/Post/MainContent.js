@@ -1,5 +1,6 @@
 import React from 'react';
 
+<<<<<<< HEAD
 const MainContent = ({ content, image }) => {
 	return (
 		<div className='postContainer'>
@@ -13,3 +14,17 @@ const MainContent = ({ content, image }) => {
 	);
 };
 export default MainContent;
+=======
+export default function MainContent(props) {
+  return (
+    <div className='postContainer'>
+      <p>{props.content}</p>
+      {props.image && (
+        <div className='post-img'>
+          <img className='postImage' alt='postImage' src={props.image} />
+        </div>
+      )}
+    </div>
+  );
+}
+>>>>>>> master

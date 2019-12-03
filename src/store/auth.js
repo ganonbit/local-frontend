@@ -9,27 +9,27 @@ export const UPDATE_AUTH_USER = 'UPDATE_AUTH_USER';
  * Initial State
  */
 export const authInitialState = {
-	user: null,
+  user: null,
 };
 
 /**
  * User Reducer
  */
 export const authReducer = (state = authInitialState, action) => {
-	switch (action.type) {
-		case SET_AUTH_USER:
-			return {
-				...state,
-				user: action.payload,
-			};
-		case CLEAR_AUTH_USER: {
-			return {
-				...state,
-				...authInitialState,
-			};
-		}
+  switch (action.type) {
+    case SET_AUTH_USER:
+      return {
+        ...state,
+        user: action.payload,
+      };
+    case CLEAR_AUTH_USER: {
+      return {
+        ...state,
+        ...authInitialState,
+      };
+    }
 
-		default:
-			return state;
-	}
+    default:
+      return state;
+  }
 };

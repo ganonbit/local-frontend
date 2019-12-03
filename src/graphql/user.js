@@ -1,8 +1,8 @@
 import gql from 'graphql-tag';
 import {
-	postCommentsPayload,
-	postAuthorPayload,
-	postLikesPayload,
+  postCommentsPayload,
+  postAuthorPayload,
+  postLikesPayload,
 } from './post';
 
 /**
@@ -147,172 +147,172 @@ export const GET_AUTH_USER = gql`
  * Gets all available users
  */
 export const GET_USERS = gql`
-	query($userId: String!, $skip: Int, $limit: Int) {
-		getUsers(userId: $userId, skip: $skip, limit: $limit) {
-			count
-			users {
-				id
-				firstName
-				lastName
-				username
-				image
-				following {
-					id
-					user
-				}
-				followers {
-					id
-				}
-				notifications {
-					id
-					author {
-						id
-						username
-					}
-					follow {
-						id
-					}
-				}
-			}
-		}
-	}
+  query($userId: String!, $skip: Int, $limit: Int) {
+    getUsers(userId: $userId, skip: $skip, limit: $limit) {
+      count
+      users {
+        id
+        firstName
+        lastName
+        username
+        image
+        following {
+          id
+          user
+        }
+        followers {
+          id
+        }
+        notifications {
+          id
+          author {
+            id
+            username
+          }
+          follow {
+            id
+          }
+        }
+      }
+    }
+  }
 `;
 
 /**
  * Searches users by username or name
  */
 export const SEARCH_USERS = gql`
-	query($searchQuery: String!) {
-		searchUsers(searchQuery: $searchQuery) {
-			id
-			firstName
-			lastName
-			username
-			image
-		}
-	}
+  query($searchQuery: String!) {
+    searchUsers(searchQuery: $searchQuery) {
+      id
+      firstName
+      lastName
+      username
+      image
+    }
+  }
 `;
 
 /**
  * Uploads user photo
  */
 export const UPLOAD_PHOTO = gql`
-	mutation($input: UploadUserPhotoInput!) {
-		uploadUserPhoto(input: $input) {
-			id
-		}
-	}
+  mutation($input: UploadUserPhotoInput!) {
+    uploadUserPhoto(input: $input) {
+      id
+    }
+  }
 `;
 
 /**
  * Sign up user
  */
 export const SIGN_UP = gql`
-	mutation($input: SignUpInput!) {
-		signup(input: $input) {
-			token
-		}
-	}
+  mutation($input: SignUpInput!) {
+    signup(input: $input) {
+      token
+    }
+  }
 `;
 
 /**
  * Sign in user
  */
 export const SIGN_IN = gql`
-	mutation($input: SignInInput!) {
-		signin(input: $input) {
-			token
-		}
-	}
+  mutation($input: SignInInput!) {
+    signin(input: $input) {
+      token
+    }
+  }
 `;
 
 /**
  * Request reset password
  */
 export const REQUEST_PASSWORD_RESET = gql`
-	mutation($input: RequestPasswordResetInput!) {
-		requestPasswordReset(input: $input) {
-			message
-		}
-	}
+  mutation($input: RequestPasswordResetInput!) {
+    requestPasswordReset(input: $input) {
+      message
+    }
+  }
 `;
 
 /**
  * Verify reset password token
  */
 export const VERIFY_TOKEN = gql`
-	query($email: String!, $token: String!) {
-		verifyToken(email: $email, token: $token) {
-			message
-		}
-	}
+  query($email: String!, $token: String!) {
+    verifyToken(email: $email, token: $token) {
+      message
+    }
+  }
 `;
 
 /**
  * Reset password
  */
 export const RESET_PASSWORD = gql`
-	mutation($input: ResetPasswordInput!) {
-		resetPassword(input: $input) {
-			token
-		}
-	}
+  mutation($input: ResetPasswordInput!) {
+    resetPassword(input: $input) {
+      token
+    }
+  }
 `;
 
 /**
  * Reset password
  */
 export const VERIFY_ACCOUNT = gql`
-	mutation($input: VerifyAccountInput!) {
-		verifyAccount(input: $input) {
-			token
-		}
-	}
+  mutation($input: VerifyAccountInput!) {
+    verifyAccount(input: $input) {
+      token
+    }
+  }
 `;
 
 /**
  * People suggestions for auth user
  */
 export const USER_SUGGESTIONS = gql`
-	query($userId: String!) {
-		suggestPeople(userId: $userId) {
-			id
-			firstName
-			lastName
-			username
-			image
-		}
-	}
+  query($userId: String!) {
+    suggestPeople(userId: $userId) {
+      id
+      firstName
+      lastName
+      username
+      image
+    }
+  }
 `;
 
 /**
  * Get users with whom authUser had a conversation
  */
 export const GET_CONVERSATIONS = gql`
-	query($authUserId: ID!) {
-		getConversations(authUserId: $authUserId) {
-			id
-			username
-			firstName
-			lastName
-			image
-			isOnline
-			seen
-			lastMessage
-			lastMessageSender
-			lastMessageCreatedAt
-		}
-	}
+  query($authUserId: ID!) {
+    getConversations(authUserId: $authUserId) {
+      id
+      username
+      firstName
+      lastName
+      image
+      isOnline
+      seen
+      lastMessage
+      lastMessageSender
+      lastMessageCreatedAt
+    }
+  }
 `;
 
 /**
  * Checks if user is online in real time
  */
 export const IS_USER_ONLINE_SUBSCRIPTION = gql`
-	subscription($authUserId: ID!, $userId: ID!) {
-		isUserOnline(authUserId: $authUserId, userId: $userId) {
-			userId
-			isOnline
-		}
-	}
+  subscription($authUserId: ID!, $userId: ID!) {
+    isUserOnline(authUserId: $authUserId, userId: $userId) {
+      userId
+      isOnline
+    }
+  }
 `;
