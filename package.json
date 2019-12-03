@@ -63,7 +63,8 @@
     "scss": "node-sass src/assets/sass/main.scss -o src/assets/style/css/",
     "scss:watch": "node-sass -w src/assets/sass/main.scss -o src/assets/css/",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "format": "prettier --write \"./**/*.{js,json,md,css,sass}\""
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -77,9 +78,11 @@
   "prettier": {
     "singleQuote": true,
     "jsxSingleQuote": true,
-    "tabWidth": 4,
+    "tabWidth": 2,
     "trailingComma": "es5",
-    "useTabs": true,
-    "jsxBracketSameLine": true
+    "jsxBracketSameLine": false
+  },
+  "devDependencies": {
+    "prettier": "^1.19.1"
   }
 }

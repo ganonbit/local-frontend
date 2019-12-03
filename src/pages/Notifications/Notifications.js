@@ -17,98 +17,89 @@ import { GET_USER_NOTIFICATION } from 'graphql/notification';
 import { NOTIFICATIONS_PAGE_NOTIFICATION_LIMIT } from 'constants/DataLimit';
 
 const Root = styled(Container)`
-	margin-top: ${p => p.theme.spacing.lg};
+  margin-top: ${p => p.theme.spacing.lg};
 `;
 
 const List = styled.div`
-	overflow: hidden;
-	box-shadow: ${p => p.theme.shadows.sm};
-	border-radius: ${p => p.theme.radius.sm};
+  overflow: hidden;
+  box-shadow: ${p => p.theme.shadows.sm};
+  border-radius: ${p => p.theme.radius.sm};
 `;
 
 /**
  * Notifications page
  */
 const Notifications = () => {
-	const [{ auth }] = useStore();
+  const [{ auth }] = useStore();
 
-	const variables = {
-		userId: auth.user.id,
-		skip: 0,
-		limit: NOTIFICATIONS_PAGE_NOTIFICATION_LIMIT,
-	};
+  const variables = {
+    userId: auth.user.id,
+    skip: 0,
+    limit: NOTIFICATIONS_PAGE_NOTIFICATION_LIMIT,
+  };
 
-	return (
-		<Content>
-			<Root maxWidth='md'>
-				<Head title={`${auth.user.username}'s Notifications`} />
+  return (
+    <Content>
+      <Root maxWidth='md'>
+        <Head title={`${auth.user.username}'s Notifications`} />
 
-				<Query
-					query={GET_USER_NOTIFICATION}
-					variables={variables}
-					notifyOnNetworkStatusChange>
-					{({ data, loading, fetchMore, networkStatus }) => {
-						if (loading && networkStatus === 1) {
-							return (
-								<Skeleton
-									height={56}
-									bottom='xxs'
-									count={
-										NOTIFICATIONS_PAGE_NOTIFICATION_LIMIT
-									}
-								/>
-							);
-						}
+        <Query
+          query={GET_USER_NOTIFICATION}
+          variables={variables}
+          notifyOnNetworkStatusChange
+        >
+          {({ data, loading, fetchMore, networkStatus }) => {
+            if (loading && networkStatus === 1) {
+              return (
+                <Skeleton
+                  height={56}
+                  bottom='xxs'
+                  count={NOTIFICATIONS_PAGE_NOTIFICATION_LIMIT}
+                />
+              );
+            }
 
-						const {
-							notifications,
-							count,
-						} = data.getUserNotifications;
+            const { notifications, count } = data.getUserNotifications;
 
-						if (!notifications.length) {
-							return <Empty text='No notifications yet.' />;
-						}
+            if (!notifications.length) {
+              return <Empty text='No notifications yet.' />;
+            }
 
-						return (
-							<InfiniteScroll
-								data={notifications}
-								dataKey='getUserNotifications.notifications'
-								count={parseInt(count)}
-								variables={variables}
-								fetchMore={fetchMore}>
-								{data => {
-									const showNextLoading =
-										loading &&
-										networkStatus === 3 &&
-										count !== data.length;
+            return (
+              <InfiniteScroll
+                data={notifications}
+                dataKey='getUserNotifications.notifications'
+                count={parseInt(count)}
+                variables={variables}
+                fetchMore={fetchMore}
+              >
+                {data => {
+                  const showNextLoading =
+                    loading && networkStatus === 3 && count !== data.length;
 
-									return (
-										<>
-											<List>
-												{data.map(notification => (
-													<Notification
-														key={notification.id}
-														notification={
-															notification
-														}
-														close={() => false}
-													/>
-												))}
-											</List>
+                  return (
+                    <>
+                      <List>
+                        {data.map(notification => (
+                          <Notification
+                            key={notification.id}
+                            notification={notification}
+                            close={() => false}
+                          />
+                        ))}
+                      </List>
 
-											{showNextLoading && (
-												<Loading top='lg' />
-											)}
-										</>
-									);
-								}}
-							</InfiniteScroll>
-						);
-					}}
-				</Query>
-			</Root>
-		</Content>
-	);
+                      {showNextLoading && <Loading top='lg' />}
+                    </>
+                  );
+                }}
+              </InfiniteScroll>
+            );
+          }}
+        </Query>
+      </Root>
+    </Content>
+  );
 };
 
 export default Notifications;

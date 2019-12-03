@@ -11,18 +11,18 @@ import TopHeader from './TopHeader';
  */
 
 const AppLayout = ({ refetch }) => {
-	return (
-		<Router>
-			<div className='page-has-left-panels page-has-right-panels pr-0'>
-				<Sidebar refetch={refetch} />
-				<TopHeader refetch={refetch} />
-				<div className='header-spacer'></div>
-				<Switch>
-					<Route component={Home} />} />
-					{/* MORE ROUTES GOES HERE....! */}
-				</Switch>
-			</div>
-		</Router>
-	);
+  return (
+    <Router>
+      <div className='page-has-left-panels page-has-right-panels pr-0'>
+        <Sidebar refetch={refetch} />
+        <TopHeader refetch={refetch} />
+        <div className='header-spacer'></div>
+        <Switch>
+          <Route component={Home} />} />
+          {/* MORE ROUTES GOES HERE....! */}
+        </Switch>
+      </div>
+    </Router>
+  );
 };
 export default AppLayout;

@@ -115,11 +115,11 @@
   width: 100px;
   height: 100px;
   margin: -50px 0 0 -50px;
-  background: url("../../img/bigplay.svg") no-repeat;
+  background: url('../../img/bigplay.svg') no-repeat;
 }
 
 .no-svg .mejs-overlay-button {
-  background-image: url("../../img/bigplay.png");
+  background-image: url('../../img/bigplay.png');
 }
 
 .mejs-overlay:hover .mejs-overlay-button {
@@ -134,9 +134,15 @@
   height: 80px;
   margin: -40px 0 0 -40px;
   background: #333;
-  background: url("../../img/background.png");
+  background: url('../../img/background.png');
   background: rgba(0, 0, 0, 0.9);
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(50, 50, 50, 0.9)), to(rgba(0, 0, 0, 0.9)));
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(rgba(50, 50, 50, 0.9)),
+    to(rgba(0, 0, 0, 0.9))
+  );
   background: linear-gradient(rgba(50, 50, 50, 0.9), rgba(0, 0, 0, 0.9));
 }
 
@@ -144,7 +150,7 @@
   display: block;
   width: 80px;
   height: 80px;
-  background: transparent url("../../img/loading.gif") 50% 50% no-repeat;
+  background: transparent url('../../img/loading.gif') 50% 50% no-repeat;
 }
 
 /* End: LAYERS */
@@ -184,11 +190,11 @@
   height: 27px;
   width: 27px;
   border: 0;
-  background: transparent url("../../img/controls.svg") no-repeat;
+  background: transparent url('../../img/controls.svg') no-repeat;
 }
 
 .no-svg .mejs-controls .mejs-button button {
-  background-image: url("../../img/controls.png");
+  background-image: url('../../img/controls.png');
 }
 
 /* :focus for accessibility */
@@ -256,13 +262,28 @@
   margin: 5px;
   background: #333;
   background: rgba(50, 50, 50, 0.8);
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(30, 30, 30, 0.8)), to(rgba(60, 60, 60, 0.8)));
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(rgba(30, 30, 30, 0.8)),
+    to(rgba(60, 60, 60, 0.8))
+  );
   background: linear-gradient(rgba(30, 30, 30, 0.8), rgba(60, 60, 60, 0.8));
 }
 
 .mejs-controls .mejs-time-rail .mejs-time-buffering {
   width: 100%;
-  background-image: linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(
+    -45deg,
+    rgba(255, 255, 255, 0.15) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.15) 50%,
+    rgba(255, 255, 255, 0.15) 75%,
+    transparent 75%,
+    transparent
+  );
   background-size: 15px 15px;
   -webkit-animation: buffering-stripes 2s linear infinite;
   animation: buffering-stripes 2s linear infinite;
@@ -292,7 +313,13 @@
 }
 
 .mejs-controls .mejs-time-rail .mejs-time-current {
-  background: -webkit-gradient(linear, left top, left bottom, from(#20d862), to(#5bf692));
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#20d862),
+    to(#5bf692)
+  );
   background: linear-gradient(#20d862, #5bf692);
   width: 0;
 }
@@ -402,7 +429,7 @@
   display: none;
   height: 115px;
   width: 25px;
-  background: url("../../img/background.png");
+  background: url('../../img/background.png');
   background: rgba(50, 50, 50, 0.7);
   border-radius: 0;
   top: -115px;
@@ -481,8 +508,8 @@
 }
 
 .mejs-controls
-.mejs-horizontal-volume-slider
-.mejs-horizontal-volume-current:after {
+  .mejs-horizontal-volume-slider
+  .mejs-horizontal-volume-current:after {
   content: '';
   display: block;
   position: absolute;
@@ -507,7 +534,13 @@
   border-radius: 5px;
   background: #fff;
   background: rgba(255, 255, 255, 0.8);
-  background: -webkit-gradient(linear, left top, left bottom, from(#20d862), to(#5bf692));
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#20d862),
+    to(#5bf692)
+  );
   background: linear-gradient(#20d862, #5bf692);
 }
 
@@ -532,7 +565,7 @@
   right: -51px;
   width: 85px;
   height: 100px;
-  background: url("../../img/background.png");
+  background: url('../../img/background.png');
   background: rgba(50, 50, 50, 0.7);
   border: solid 1px transparent;
   padding: 10px 10px 0 10px;
@@ -596,7 +629,13 @@
   float: left;
   background: #222;
   background: rgba(0, 0, 0, 0.7);
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(50, 50, 50, 0.7)), to(rgba(0, 0, 0, 0.7)));
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(rgba(50, 50, 50, 0.7)),
+    to(rgba(0, 0, 0, 0.7))
+  );
   background: linear-gradient(rgba(50, 50, 50, 0.7), rgba(0, 0, 0, 0.7));
   filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, startColorstr=#323232,endColorstr=#000000);
   overflow: hidden;
@@ -620,7 +659,13 @@
 .mejs-chapters .mejs-chapter .mejs-chapter-block:hover {
   background: #666;
   background: rgba(102, 102, 102, 0.7);
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(102, 102, 102, 0.7)), to(rgba(50, 50, 50, 0.6)));
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(rgba(102, 102, 102, 0.7)),
+    to(rgba(50, 50, 50, 0.6))
+  );
   background: linear-gradient(rgba(102, 102, 102, 0.7), rgba(50, 50, 50, 0.6));
   filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, startColorstr=#666666,endColorstr=#323232);
 }
@@ -677,7 +722,7 @@
 
 .mejs-captions-text {
   padding: 3px 5px;
-  background: url("../../img/background.png");
+  background: url('../../img/background.png');
   background: rgba(20, 20, 20, 0.5);
   white-space: pre-wrap;
 }
@@ -771,7 +816,7 @@
   right: -10px;
   width: 130px;
   height: 100px;
-  background: url("../../img/background.png");
+  background: url('../../img/background.png');
   background: rgba(50, 50, 50, 0.7);
   border: solid 1px transparent;
   padding: 10px;
@@ -797,22 +842,22 @@
 }
 
 .mejs-controls
-.mejs-sourcechooser-button
-.mejs-sourcechooser-selector
-ul
-li
-input {
+  .mejs-sourcechooser-button
+  .mejs-sourcechooser-selector
+  ul
+  li
+  input {
   clear: both;
   float: left;
   margin: 3px 3px 0 5px;
 }
 
 .mejs-controls
-.mejs-sourcechooser-button
-.mejs-sourcechooser-selector
-ul
-li
-label {
+  .mejs-sourcechooser-button
+  .mejs-sourcechooser-selector
+  ul
+  li
+  label {
   width: 100px;
   float: left;
   padding: 4px 0 0 0;
@@ -829,7 +874,7 @@ label {
   left: 0;
   width: 100%;
   height: 100%;
-  background: url("../../img/background.png");
+  background: url('../../img/background.png');
   background: rgba(50, 50, 50, 0.7);
   z-index: 1000;
   overflow: hidden;
@@ -844,7 +889,7 @@ label {
   position: absolute;
   right: 0;
   top: 0;
-  background: url("../../img/background.png");
+  background: url('../../img/background.png');
   background: rgba(50, 50, 50, 0.7);
   color: #fff;
   padding: 4px;
@@ -874,7 +919,7 @@ div.mejs-speed-button {
   left: -10px;
   width: 60px;
   height: 100px;
-  background: url("../../img/background.png");
+  background: url('../../img/background.png');
   background: rgba(50, 50, 50, 0.7);
   border: solid 1px transparent;
   padding: 0;
@@ -887,11 +932,11 @@ div.mejs-speed-button {
 }
 
 .mejs-controls
-.mejs-speed-button
-.mejs-speed-selector
-ul
-li
-label.mejs-speed-selected {
+  .mejs-speed-button
+  .mejs-speed-selector
+  ul
+  li
+  label.mejs-speed-selected {
   color: #21f8f8;
 }
 
@@ -939,7 +984,7 @@ label.mejs-speed-selected {
 /* End: Speed */
 /* Start: Jump Forward */
 .mejs-controls .mejs-button.mejs-jump-forward-button {
-  background: transparent url("../../img/jumpforward.png") no-repeat;
+  background: transparent url('../../img/jumpforward.png') no-repeat;
   background-position: 3px 3px;
 }
 
@@ -953,7 +998,7 @@ label.mejs-speed-selected {
 /* End: Jump Forward */
 /* Start: Skip Back */
 .mejs-controls .mejs-button.mejs-skip-back-button {
-  background: transparent url("../../img/skipback.png") no-repeat;
+  background: transparent url('../../img/skipback.png') no-repeat;
   background-position: 3px 3px;
 }
 
@@ -991,43 +1036,43 @@ label.mejs-speed-selected {
 }
 
 .mejs-controls .mejs-prevtrack button {
-  background: transparent url("../../svg-icons/prev-song.svg") no-repeat;
+  background: transparent url('../../svg-icons/prev-song.svg') no-repeat;
 }
 
 .mejs-controls .mejs-nexttrack button {
-  background: transparent url("../../svg-icons/next-song.svg") no-repeat;
+  background: transparent url('../../svg-icons/next-song.svg') no-repeat;
 }
 
 .mejs-controls .mejs-play button {
-  background: transparent url("../../svg-icons/play-icon.svg") no-repeat;
+  background: transparent url('../../svg-icons/play-icon.svg') no-repeat;
 }
 
 .mejs-controls .mejs-pause button {
-  background: transparent url("../../svg-icons/pause-icon.svg") no-repeat;
+  background: transparent url('../../svg-icons/pause-icon.svg') no-repeat;
 }
 
 .mejs-controls .mejs-loop-button.mejs-loop-off button {
-  background: transparent url("../../svg-icons/repeat.svg") no-repeat;
+  background: transparent url('../../svg-icons/repeat.svg') no-repeat;
 }
 
 .mejs-controls .mejs-loop-button.mejs-loop-on button {
-  background: transparent url("../../svg-icons/repeat-off.svg") no-repeat;
+  background: transparent url('../../svg-icons/repeat-off.svg') no-repeat;
 }
 
 .mejs-controls .mejs-shuffle-button.mejs-shuffle-off button {
-  background: transparent url("../../svg-icons/shuffle.svg") no-repeat;
+  background: transparent url('../../svg-icons/shuffle.svg') no-repeat;
 }
 
 .mejs-controls .mejs-shuffle-button.mejs-shuffle-on button {
-  background: transparent url("../../svg-icons/shuffle-on.svg") no-repeat;
+  background: transparent url('../../svg-icons/shuffle-on.svg') no-repeat;
 }
 
 .mejs-controls .mejs-mute button {
-  background: transparent url("../../svg-icons/sound.svg") no-repeat;
+  background: transparent url('../../svg-icons/sound.svg') no-repeat;
 }
 
 .mejs-controls .mejs-unmute button {
-  background: transparent url("../../svg-icons/no-sound.svg") no-repeat;
+  background: transparent url('../../svg-icons/no-sound.svg') no-repeat;
 }
 
 /*================= Responsive Mode ============*/
