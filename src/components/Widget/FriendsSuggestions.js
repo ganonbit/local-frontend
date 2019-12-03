@@ -26,7 +26,7 @@ const FriendsSuggestions = ({ client }) => {
     try {
       await client.mutate({
         mutation: CREATE_FOLLOW,
-        variables: { input: { userId: auth.user.id, followerId: follower.id } },
+        variables: { input: { userId: follower.id, followerId: auth.user.id } },
         refetchQueries: () => [
           {
             query: USER_SUGGESTIONS,
