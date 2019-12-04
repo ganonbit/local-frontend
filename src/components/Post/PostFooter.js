@@ -9,20 +9,13 @@ const PostFooter = props => {
   return (
     <div className='post-additional-info inline-items'>
       <span className='post-add-icon inline-items'>
-        <Like
-          user={author}
-          postId={postId}
-          likes={likes}
-        />
+        <Like user={author} postId={postId} likes={likes} />
         <span>{likes.length}</span>
       </span>
 
       <div className='comments-shared'>
         <a href='#1' className='post-add-icon inline-items'>
-          <FontAwesomeIcon
-            icon={faComment}
-            onClick={toggle}
-          />
+          <FontAwesomeIcon icon={faComment} onClick={toggle} />
 
           <span>{comments.length}</span>
         </a>

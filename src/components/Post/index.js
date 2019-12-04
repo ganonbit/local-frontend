@@ -48,12 +48,13 @@ export default function MainContent(props) {
                     postId={post.id}
                     likes={post.likes}
                   />
-                  <PostControlButton  
+                  <PostControlButton
                     toggle={toggle}
                     comments={post.comments}
                     author={post.author}
                     postId={post.id}
-                    likes={post.likes} />
+                    likes={post.likes}
+                  />
                 </article>
                 {isCommentOpen && (
                   <AddComment
