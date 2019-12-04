@@ -61,7 +61,6 @@ const Like = ({ postId, user, likes }) => {
           <FontAwesomeIcon
             disabled={loading}
             icon={faHeart}
-            color='red'
             size='2x'
             onClick={() => handleButtonClick(mutate)}
           />

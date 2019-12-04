@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PostControlButton from '../Common/PostControlButton';
 import PostHeader from './PostHeader';
 import PostFooter from './PostFooter';
 import PostContent from './MainContent';
@@ -10,11 +11,9 @@ import { GET_FOLLOWED_POSTS } from 'graphql/post';
 
 export default function MainContent(props) {
   const [{ auth }] = useStore();
-  const [isCommentOpen, setCommentOpen] = useState(false);
+  const [isCommentOpen, setCommentOpen] = useState(true);
+  const toggle = () => setCommentOpen(!isCommentOpen);
 
-  let showCommentHandler = show => {
-    setCommentOpen(show);
-  };
   const articleClass = props.newPost ? 'hentry post' : 'hentry post video';
 
   const variables = {
@@ -43,8 +42,15 @@ export default function MainContent(props) {
                   {/* {props.newPost ? <NewPost content={props.content} /> : <PostVideo tag={props.tag} body={props.body} />} */}
                   <PostContent content={post.content} image={post.image} />
                   <PostFooter
-                    showCommentHandler={showCommentHandler}
-                    post={post}
+                    toggle={toggle}
+                    comments={post.comments}
+                    author={post.author}
+                    postId={post.id}
+                    likes={post.likes}
+                  />
+                  <PostControlButton
+                    toggle={toggle}
+                    comments={post.comments}
                     author={post.author}
                     postId={post.id}
                     likes={post.likes}
@@ -55,7 +61,7 @@ export default function MainContent(props) {
                     authorId={auth.user.id}
                     author={auth.user}
                     postId={post.id}
-                    onCancel={showCommentHandler}
+                    onCancel={toggle}
                   />
                 )}
 

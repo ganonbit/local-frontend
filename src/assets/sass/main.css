@@ -879,7 +879,8 @@ if the page has a “right panel”, add a class for BODY -- ".page-has-right-pa
   -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
   transition: -webkit-transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
   transition: transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
-  transition: transform 0.5s cubic-bezier(0.55, 0, 0.1, 1), -webkit-transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
+  transition: transform 0.5s cubic-bezier(0.55, 0, 0.1, 1),
+    -webkit-transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
   transition: transform 0.5s cubic-bezier(0.55, 0, 0.1, 1),
     -webkit-transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
   background-color: #fff;
@@ -3514,10 +3515,13 @@ input {
     -webkit-box-shadow ease-in-out 0.15s;
   transition: border-color ease-in-out 0.15s,
     -webkit-box-shadow ease-in-out 0.15s;
-  -webkit-transition: border-color ease-in-out 0.15s, -webkit-box-shadow ease-in-out 0.15s;
-  transition: border-color ease-in-out 0.15s, -webkit-box-shadow ease-in-out 0.15s;
+  -webkit-transition: border-color ease-in-out 0.15s,
+    -webkit-box-shadow ease-in-out 0.15s;
+  transition: border-color ease-in-out 0.15s,
+    -webkit-box-shadow ease-in-out 0.15s;
   transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
-  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s, -webkit-box-shadow ease-in-out 0.15s;
+  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s,
+    -webkit-box-shadow ease-in-out 0.15s;
   transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s,
     -webkit-box-shadow ease-in-out 0.15s;
 }
@@ -4823,9 +4827,11 @@ fieldset[disabled] .form-group.is-focused .togglebutton label {
   -webkit-transition: left 0.3s ease, background 0.3s ease,
     -webkit-box-shadow 0.1s ease;
   transition: left 0.3s ease, background 0.3s ease, -webkit-box-shadow 0.1s ease;
-  -webkit-transition: left 0.3s ease, background 0.3s ease, -webkit-box-shadow 0.1s ease;
+  -webkit-transition: left 0.3s ease, background 0.3s ease,
+    -webkit-box-shadow 0.1s ease;
   transition: left 0.3s ease, background 0.3s ease, box-shadow 0.1s ease;
-  transition: left 0.3s ease, background 0.3s ease, box-shadow 0.1s ease, -webkit-box-shadow 0.1s ease;
+  transition: left 0.3s ease, background 0.3s ease, box-shadow 0.1s ease,
+    -webkit-box-shadow 0.1s ease;
   transition: left 0.3s ease, background 0.3s ease, box-shadow 0.1s ease,
     -webkit-box-shadow 0.1s ease;
   text-align: center;
@@ -5547,7 +5553,8 @@ fieldset[disabled] .checkbox input[type='checkbox'],
   -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
   transition: -webkit-transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
   transition: transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
-  transition: transform 0.5s cubic-bezier(0.55, 0, 0.1, 1), -webkit-transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
+  transition: transform 0.5s cubic-bezier(0.55, 0, 0.1, 1),
+    -webkit-transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
   transition: transform 0.5s cubic-bezier(0.55, 0, 0.1, 1),
     -webkit-transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
 }
@@ -5568,7 +5575,8 @@ fieldset[disabled] .checkbox input[type='checkbox'],
   -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
   transition: -webkit-transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
   transition: transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
-  transition: transform 0.5s cubic-bezier(0.55, 0, 0.1, 1), -webkit-transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
+  transition: transform 0.5s cubic-bezier(0.55, 0, 0.1, 1),
+    -webkit-transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
   transition: transform 0.5s cubic-bezier(0.55, 0, 0.1, 1),
     -webkit-transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
 }
@@ -5616,7 +5624,8 @@ fieldset[disabled] .checkbox input[type='checkbox'],
   -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
   transition: -webkit-transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
   transition: transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
-  transition: transform 0.5s cubic-bezier(0.55, 0, 0.1, 1), -webkit-transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
+  transition: transform 0.5s cubic-bezier(0.55, 0, 0.1, 1),
+    -webkit-transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
   transition: transform 0.5s cubic-bezier(0.55, 0, 0.1, 1),
     -webkit-transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
   -webkit-box-shadow: 0 0 34px 0 rgba(63, 66, 87, 0.1);
@@ -5676,7 +5685,8 @@ fieldset[disabled] .checkbox input[type='checkbox'],
   -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
   transition: -webkit-transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
   transition: transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
-  transition: transform 0.5s cubic-bezier(0.55, 0, 0.1, 1), -webkit-transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
+  transition: transform 0.5s cubic-bezier(0.55, 0, 0.1, 1),
+    -webkit-transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
   transition: transform 0.5s cubic-bezier(0.55, 0, 0.1, 1),
     -webkit-transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
   -webkit-box-shadow: 0 0 34px 0 rgba(63, 66, 87, 0.1);
@@ -7643,7 +7653,13 @@ fieldset[disabled] .checkbox input[type='checkbox'],
 }
 
 .birthday-item.badges .skills-item-meter-active {
-  background: -webkit-gradient(linear, left top, right top, from(#ff613a), to(#ff9432));
+  background: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(#ff613a),
+    to(#ff9432)
+  );
   background: linear-gradient(to right, #ff613a, #ff9432);
 }
 
@@ -14639,7 +14655,8 @@ ol ol li {
   -webkit-transition: -webkit-transform 150ms cubic-bezier(0.4, 0, 1, 1);
   transition: -webkit-transform 150ms cubic-bezier(0.4, 0, 1, 1);
   transition: transform 150ms cubic-bezier(0.4, 0, 1, 1);
-  transition: transform 150ms cubic-bezier(0.4, 0, 1, 1), -webkit-transform 150ms cubic-bezier(0.4, 0, 1, 1);
+  transition: transform 150ms cubic-bezier(0.4, 0, 1, 1),
+    -webkit-transform 150ms cubic-bezier(0.4, 0, 1, 1);
   transition: transform 150ms cubic-bezier(0.4, 0, 1, 1),
     -webkit-transform 150ms cubic-bezier(0.4, 0, 1, 1);
 }
@@ -20023,7 +20040,13 @@ img.mfp-img {
   background: #333;
   background: url('../../img/background.png');
   background: rgba(0, 0, 0, 0.9);
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(50, 50, 50, 0.9)), to(rgba(0, 0, 0, 0.9)));
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(rgba(50, 50, 50, 0.9)),
+    to(rgba(0, 0, 0, 0.9))
+  );
   background: linear-gradient(rgba(50, 50, 50, 0.9), rgba(0, 0, 0, 0.9));
 }
 
@@ -20143,7 +20166,13 @@ img.mfp-img {
   margin: 5px;
   background: #333;
   background: rgba(50, 50, 50, 0.8);
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(30, 30, 30, 0.8)), to(rgba(60, 60, 60, 0.8)));
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(rgba(30, 30, 30, 0.8)),
+    to(rgba(60, 60, 60, 0.8))
+  );
   background: linear-gradient(rgba(30, 30, 30, 0.8), rgba(60, 60, 60, 0.8));
 }
 
@@ -20188,7 +20217,13 @@ img.mfp-img {
 }
 
 .mejs-controls .mejs-time-rail .mejs-time-current {
-  background: -webkit-gradient(linear, left top, left bottom, from(#20d862), to(#5bf692));
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#20d862),
+    to(#5bf692)
+  );
   background: linear-gradient(#20d862, #5bf692);
   width: 0;
 }
@@ -20403,7 +20438,13 @@ img.mfp-img {
   border-radius: 5px;
   background: #fff;
   background: rgba(255, 255, 255, 0.8);
-  background: -webkit-gradient(linear, left top, left bottom, from(#20d862), to(#5bf692));
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#20d862),
+    to(#5bf692)
+  );
   background: linear-gradient(#20d862, #5bf692);
 }
 
@@ -20492,7 +20533,13 @@ img.mfp-img {
   float: left;
   background: #222;
   background: rgba(0, 0, 0, 0.7);
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(50, 50, 50, 0.7)), to(rgba(0, 0, 0, 0.7)));
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(rgba(50, 50, 50, 0.7)),
+    to(rgba(0, 0, 0, 0.7))
+  );
   background: linear-gradient(rgba(50, 50, 50, 0.7), rgba(0, 0, 0, 0.7));
   filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, startColorstr=#323232,endColorstr=#000000);
   overflow: hidden;
@@ -20516,7 +20563,13 @@ img.mfp-img {
 .mejs-chapters .mejs-chapter .mejs-chapter-block:hover {
   background: #666;
   background: rgba(102, 102, 102, 0.7);
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(102, 102, 102, 0.7)), to(rgba(50, 50, 50, 0.6)));
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(rgba(102, 102, 102, 0.7)),
+    to(rgba(50, 50, 50, 0.6))
+  );
   background: linear-gradient(rgba(102, 102, 102, 0.7), rgba(50, 50, 50, 0.6));
   filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, startColorstr=#666666,endColorstr=#323232);
 }
@@ -21115,7 +21168,8 @@ div.mejs-speed-button {
 .swiper-container-3d .swiper-slide-shadow-left {
   background-image: -webkit-gradient(
     linear,
-    right top, left top,
+    right top,
+    left top,
     from(rgba(0, 0, 0, 0.5)),
     to(rgba(0, 0, 0, 0))
   );
@@ -21129,7 +21183,8 @@ div.mejs-speed-button {
 .swiper-container-3d .swiper-slide-shadow-right {
   background-image: -webkit-gradient(
     linear,
-    left top, right top,
+    left top,
+    right top,
     from(rgba(0, 0, 0, 0.5)),
     to(rgba(0, 0, 0, 0))
   );
@@ -21143,7 +21198,8 @@ div.mejs-speed-button {
 .swiper-container-3d .swiper-slide-shadow-top {
   background-image: -webkit-gradient(
     linear,
-    left bottom, left top,
+    left bottom,
+    left top,
     from(rgba(0, 0, 0, 0.5)),
     to(rgba(0, 0, 0, 0))
   );
@@ -21157,7 +21213,8 @@ div.mejs-speed-button {
 .swiper-container-3d .swiper-slide-shadow-bottom {
   background-image: -webkit-gradient(
     linear,
-    left top, left bottom,
+    left top,
+    left bottom,
     from(rgba(0, 0, 0, 0.5)),
     to(rgba(0, 0, 0, 0))
   );

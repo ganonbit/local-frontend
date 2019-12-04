@@ -163,7 +163,11 @@ const SignUp = ({ refetch, history }) => {
                           <label className='control-label'>Your Birthday</label>
                           <input name='birthday' defaultValue='10/24/1984' />
                           <span className='input-group-addon'>
-                          <MonthCalendar className='olymp-menu-icon' width={20} height={20} />
+                            <MonthCalendar
+                              className='olymp-menu-icon'
+                              width={20}
+                              height={20}
+                            />
                           </span>
                         </div>
 

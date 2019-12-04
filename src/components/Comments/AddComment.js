@@ -82,7 +82,7 @@ export default function AddComment({ authorId, author, postId, onCancel }) {
 
             <button
               className='btn btn-md-2 btn-border-think c-grey btn-transparent custom-color'
-              onClick={() => onCancel(false)}
+              onClick={onCancel}
             >
               Cancel
             </button>
