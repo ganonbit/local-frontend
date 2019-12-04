@@ -4,12 +4,10 @@ import Home from '../pages/HomeContainer/Home';
 
 import { Sidebar } from '../components/Sidebar/index';
 import TopHeader from './TopHeader';
-
 /**
  * All other routes of Entire App
  * can be restructure depends on Complexity
  */
-
 const AppLayout = ({ refetch }) => {
   return (
     <Router>
