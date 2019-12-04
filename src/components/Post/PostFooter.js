@@ -5,25 +5,26 @@ import { faComment, faShare } from '@fortawesome/free-solid-svg-icons';
 import Like from 'components/Like';
 
 const PostFooter = props => {
+  const { author, postId, comments, likes, toggle } = props;
   return (
     <div className='post-additional-info inline-items'>
       <span className='post-add-icon inline-items'>
         <Like
-          user={props.post.author}
-          postId={props.post.id}
-          likes={props.post.likes}
+          user={author}
+          postId={postId}
+          likes={likes}
         />
-        <span>{props.post.likes.length}</span>
+        <span>{likes.length}</span>
       </span>
 
       <div className='comments-shared'>
         <a href='#1' className='post-add-icon inline-items'>
           <FontAwesomeIcon
             icon={faComment}
-            onClick={() => props.showCommentHandler(true)}
+            onClick={toggle}
           />
 
-          <span>{props.post.comments.length}</span>
+          <span>{comments.length}</span>
         </a>
 
         <a

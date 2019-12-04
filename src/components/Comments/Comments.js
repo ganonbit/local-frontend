@@ -16,7 +16,6 @@ export default function Comments(props) {
                     createdAt={comment.createdAt}
                   />
                   <p>{comment.comment}</p>
-                  <CommentsFooter />
                 </li>
               );
             })

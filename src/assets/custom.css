@@ -535,6 +535,10 @@ a.btn-register {
   fill: var(--theme-color);
   color: var(--theme-color);
 }
+.post-add-icon .fa-heart:hover, .post-add-icon .fa-heart:active  {
+  fill: var(--theme-color-pink);
+  color: var(--theme-color-pink);
+}
 .page-link:hover {
   background: var(--theme-color);
 }
