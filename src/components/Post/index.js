@@ -50,7 +50,6 @@ export default function MainContent(props) {
                   />
                   <PostControlButton
                     toggle={toggle}
-                    comments={post.comments}
                     author={post.author}
                     postId={post.id}
                     likes={post.likes}
