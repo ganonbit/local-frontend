@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 
 import CommentsHeader from './CommentsHeader';
-import CommentsFooter from './CommentsFooter';
 export default function Comments(props) {
   const [numOfComments, setNumOfComments] = useState(2);
   return (
