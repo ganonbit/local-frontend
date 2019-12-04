@@ -17,7 +17,6 @@ const SidebarNavigation = () => {
       <Sidebar
         sidebar={<SidebarContent onSetSidebarOpen={onSetSidebarOpen} />}
         open={sidebarOpen.open}
-        // onSetOpen={sidebarOpen.open}
         docked={true}
         styles={SidebarStyles}
       >

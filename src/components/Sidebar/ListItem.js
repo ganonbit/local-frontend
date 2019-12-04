@@ -6,25 +6,15 @@ const ListItem = ({
   title,
   onSetSidebarOpen,
   sideBarOpenModel,
+  image,
+  path,
 }) => (
-  <li>
-    <NavLink className={linkClass} to='/home'>
-      <svg
-        className='olymp-close-icon left-menu-icon'
-        data-toggle='tooltip'
-        data-placement='right'
-        data-original-title='FRIEND GROUPS'
-      >
-        {/* <use xlink:href="svg-icons/sprites/icons.svg#olymp-happy-faces-icon"></use> */}
-      </svg>
-      <span
-        className={titleClass}
-        onClick={() =>
-          sideBarOpenModel && onSetSidebarOpen(false, 'fixed-sidebar')
-        }
-      >
-        {title}
-      </span>
+  <li
+    onClick={() => sideBarOpenModel && onSetSidebarOpen(false, 'fixed-sidebar')}
+  >
+    <NavLink className={linkClass} to={path}>
+      <img src={image} alt='img' className='left-menu-icon' />
+      <span className={titleClass}>{title}</span>
     </NavLink>
   </li>
 );
