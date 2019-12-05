@@ -10,7 +10,7 @@ const Welcome = () => {
   return (
     <div className='page-has-left-panels page-has-right-panels pr-0'>
       <WelcomeHeader />
-      <Sidebar />
+      <Sidebar isAutuh={false} />
       <div className='header-spacer'></div>
       <VideoSection />
       <WelcomeIntro />
