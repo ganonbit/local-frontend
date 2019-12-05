@@ -2,14 +2,14 @@ import React, { useState } from 'react';
 import PostControlButton from '../Common/PostControlButton';
 import PostHeader from './PostHeader';
 import PostFooter from './PostFooter';
-import PostContent from './MainContent';
+import PostContent from './PostContent';
 import Comments from 'components/Comments/Comments';
 import AddComment from 'components/Comments/AddComment';
 import { useStore } from 'store/index';
 import { Query } from 'react-apollo';
 import { GET_FOLLOWED_POSTS } from 'graphql/post';
 
-export default function MainContent(props) {
+export default function Post(props) {
   const [{ auth }] = useStore();
   const [isCommentOpen, setCommentOpen] = useState(true);
   const toggle = () => setCommentOpen(!isCommentOpen);
