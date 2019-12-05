@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { SignIn, SignUp, VerifyAccount } from 'pages/Auth';
-import Registration from 'pages/Welcome/Registration';
+import Welcome from 'pages/Welcome';
 const Auth = ({ refetch }) => {
   return (
     <Router>
@@ -21,7 +21,7 @@ const Auth = ({ refetch }) => {
           exact
           render={() => <SignIn refetch={refetch} />}
         />
-        <Route render={() => <Registration />} />
+        <Route render={() => <Welcome />} />
       </Switch>
     </Router>
   );

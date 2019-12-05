@@ -9,7 +9,6 @@ import AppLayout from '../route/AppLayout';
 import { Loading } from '../components/Common/Loading';
 import Auth from '../route/Auth';
 import { useStore } from 'store';
-import Registration from 'pages/Welcome/Registration';
 /**
  * Root Component of App
  */
