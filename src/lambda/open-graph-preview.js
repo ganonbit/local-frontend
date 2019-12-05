@@ -4,7 +4,7 @@ import urlParser from "url";
 
 export function handler(event, context, callback) {
   const text = event.queryStringParameters.q;
-  const urls = getUrl(text);
+  const urls = getUrl(text, {requireSchemeOrWww: false});
 
   // Return if there is no urls in text
   if (!urls.size) {
@@ -33,10 +33,6 @@ function getUrlDomain(url) {
   return urlObj.host;
 }
 
-function cleanText(text) {
-  return text.replace(/(?:https?|ftp):\/\/[\n\S]+/g, "");
-}
-
 function buildResponseObject(statusCode, result, text) {
   let meta = statusCode === 200 ? result.data : null;
 
@@ -56,7 +52,7 @@ function buildResponseObject(statusCode, result, text) {
 
   const body = {
     meta: meta,
-    text: cleanText(text),
+    text: text,
     error: statusCode !== 200 ? result.error : null
   };
 

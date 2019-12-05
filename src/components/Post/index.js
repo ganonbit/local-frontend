@@ -41,7 +41,6 @@ export default function Post(props) {
                     postId={post.id}
                     isAuth={isAuth}
                   />
-                  {/* {props.newPost ? <NewPost content={props.content} /> : <PostVideo tag={props.tag} body={props.body} />} */}
                   <PostContent content={post.content} image={post.image} />
                   <PostFooter
                     toggle={toggle}

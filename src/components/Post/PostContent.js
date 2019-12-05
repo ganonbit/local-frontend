@@ -1,45 +1,51 @@
-import React from 'react';
-import { useState, useEffect } from 'react'
+import React, { useState, useEffect }  from 'react';
 import Preview from "../PostPreview";
+import Linkify from 'react-linkify';
+import linkDecorator from '../Common/linkDecorator';
 
 
 export default function PostContent(props) {
-  const { image, content, meta } = props;
+  const { image, content } = props;
   const rawContent = content;
 
-  const fetchUrlFromContentPreview = async (rawContent) => {
+  const fetchMetaFromContentPreview = async (rawContent) => {
     try {
       const response = await fetch(`/.netlify/functions/open-graph-preview?q=${rawContent}`)
       if (!response.ok) {
         throw new Error('Netlify network response was not ok.');
       }
-      const urlFromContentPreview = await response.json()
-      return urlFromContentPreview
+      const metaFromContentPreview = await response.json()
+      return metaFromContentPreview;
     } catch (error) {
       console.log('There has been a problem with your fetch operation: ', error.message);
     }
   }
-  const [urlFromContentPreview, setUrlFromContentPreview] = useState(null)
+  const [metaFromContentPreview, setMetaFromContentPreview] = useState('');
 
   useEffect(() => {
     async function fetchData() {
-      const result = await fetchUrlFromContentPreview(rawContent);
-      setUrlFromContentPreview(result);
+      const result = await fetchMetaFromContentPreview(rawContent);
+      setMetaFromContentPreview(result);
     }
 
     fetchData();
-  }, []);
+  }, [rawContent]);
 
+  console.log(metaFromContentPreview.meta);
+  
 
-  if(!urlFromContentPreview || urlFromContentPreview.error !== null) {return rawContent}
   return (
     <div className='postContainer'>
-      <p>{urlFromContentPreview.text}</p>
-      {urlFromContentPreview.meta ? <Preview {...urlFromContentPreview.meta} /> : null}
+      <Linkify componentDecorator={linkDecorator}>
+        <p>{rawContent}</p>
+      </Linkify>
 
+      {metaFromContentPreview.meta && !image ? <Preview {...metaFromContentPreview.meta} /> : null}
+      {!image ? null : 
         <div className='post-img'>
           <img className='postImage' alt='postImage' src={image} />
         </div>
+      }
     </div>
   );
 }
