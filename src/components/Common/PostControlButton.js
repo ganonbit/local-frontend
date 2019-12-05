@@ -3,11 +3,16 @@ import React from 'react';
 import Like from 'components/Like';
 
 export default function PostControlButton(props) {
-  const { author, postId, comments, likes, toggle } = props;
+  const { author, postId, likes, toggle } = props;
   return (
     <div className='control-block-button post-control-button'>
       <a href='#1' className='btn btn-control likes'>
-        {props.isAuth && <Like user={author} postId={postId} likes={likes} />}
+        {!props.isAuth ? (
+           <img src='img/heart-icon.png' alt='' />
+          ) : (
+           <Like user={author} postId={postId} likes={likes} /> 
+          )
+        }
         <div className='ripple-container'></div>
       </a>
 

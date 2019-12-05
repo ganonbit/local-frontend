@@ -1,5 +1,4 @@
 import React from 'react';
-import AvocadoGame from './AvocadoGame';
 import SideMenu from './SideMenu';
 import LeftVideoSection from './LeftVideoSection';
 
@@ -10,7 +9,6 @@ export default function LeftSection() {
       <div className='ui-block'>
         <img className='health-bnr' src='img/health-bnr-img.png' alt='' />
       </div>
-      <AvocadoGame />
       <SideMenu />
     </aside>
   );
