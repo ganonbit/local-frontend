@@ -12,8 +12,8 @@ import { GET_AUTH_USER } from 'graphql/user';
 
 import * as Routes from 'routes';
 
-function PostHeader(props) {
-  const { author, postId, client, createdAt, user } = props;
+const PostHeader = props => {
+  const { author, postId, client, createdAt, user, isAuth } = props;
   const rawTime = parseInt(createdAt);
   const postDate = new Date(rawTime);
   const deletePost = async () => {
@@ -65,13 +65,15 @@ function PostHeader(props) {
       </div>
 
       <div className='more'>
-        <FontAwesomeIcon
-          className='olymp-three-dots-icon'
-          size='lg'
-          color='black'
-          icon={faEllipsisV}
-          style={{ height: '12px' }}
-        />
+        {isAuth && (
+          <FontAwesomeIcon
+            className='olymp-three-dots-icon'
+            size='lg'
+            color='black'
+            icon={faEllipsisV}
+            style={{ height: '12px' }}
+          />
+        )}
         <ul className='more-dropdown'>
           {postId && (
             <li>
@@ -95,6 +97,6 @@ function PostHeader(props) {
       </div>
     </div>
   );
-}
+};
 
 export default withApollo(PostHeader);

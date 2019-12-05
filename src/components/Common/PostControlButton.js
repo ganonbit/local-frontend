@@ -7,7 +7,7 @@ export default function PostControlButton(props) {
   return (
     <div className='control-block-button post-control-button'>
       <a href='#1' className='btn btn-control likes'>
-        <Like user={author} postId={postId} likes={likes} />
+        {props.isAuth && <Like user={author} postId={postId} likes={likes} />}
         <div className='ripple-container'></div>
       </a>
 

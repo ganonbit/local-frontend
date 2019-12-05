@@ -9,7 +9,6 @@ import AppLayout from '../route/AppLayout';
 import { Loading } from '../components/Common/Loading';
 import Auth from '../route/Auth';
 import { useStore } from 'store';
-
 /**
  * Root Component of App
  */

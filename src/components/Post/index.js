@@ -9,15 +9,15 @@ import { useStore } from 'store/index';
 import { Query } from 'react-apollo';
 import { GET_FOLLOWED_POSTS } from 'graphql/post';
 
-export default function MainContent(props) {
+export default function MainContent({ userId, isAuth }) {
   const [{ auth }] = useStore();
   const [isCommentOpen, setCommentOpen] = useState(true);
   const toggle = () => setCommentOpen(!isCommentOpen);
 
-  const articleClass = props.newPost ? 'hentry post' : 'hentry post video';
+  const articleClass = 'hentry post';
 
   const variables = {
-    userId: auth.user.id,
+    userId: userId,
     skip: 0,
     limit: 15,
   };
@@ -38,6 +38,7 @@ export default function MainContent(props) {
                     createdAt={post.createdAt}
                     user={auth.user}
                     postId={post.id}
+                    isAuth={isAuth}
                   />
                   {/* {props.newPost ? <NewPost content={props.content} /> : <PostVideo tag={props.tag} body={props.body} />} */}
                   <PostContent content={post.content} image={post.image} />
@@ -47,6 +48,7 @@ export default function MainContent(props) {
                     author={post.author}
                     postId={post.id}
                     likes={post.likes}
+                    isAuth={isAuth}
                   />
                   <PostControlButton
                     toggle={toggle}
@@ -54,9 +56,10 @@ export default function MainContent(props) {
                     author={post.author}
                     postId={post.id}
                     likes={post.likes}
+                    isAuth={isAuth}
                   />
                 </article>
-                {isCommentOpen && (
+                {isAuth && isCommentOpen && (
                   <AddComment
                     authorId={auth.user.id}
                     author={auth.user}
@@ -65,7 +68,7 @@ export default function MainContent(props) {
                   />
                 )}
 
-                <Comments comments={post.comments} />
+                {isAuth && <Comments comments={post.comments} />}
               </div>
             );
           })
