@@ -14,10 +14,10 @@ export default function Post(props) {
   const [isCommentOpen, setCommentOpen] = useState(true);
   const toggle = () => setCommentOpen(!isCommentOpen);
 
-  const articleClass = props.newPost ? 'hentry post' : 'hentry post video';
+  const articleClass = 'hentry post';
 
   const variables = {
-    userId: auth.user.id,
+    userId: userId,
     skip: 0,
     limit: 15,
   };
@@ -38,6 +38,7 @@ export default function Post(props) {
                     createdAt={post.createdAt}
                     user={auth.user}
                     postId={post.id}
+                    isAuth={isAuth}
                   />
                   {/* {props.newPost ? <NewPost content={props.content} /> : <PostVideo tag={props.tag} body={props.body} />} */}
                   <PostContent content={post.content} image={post.image} newContent={props.newContent}/>
@@ -47,15 +48,17 @@ export default function Post(props) {
                     author={post.author}
                     postId={post.id}
                     likes={post.likes}
+                    isAuth={isAuth}
                   />
                   <PostControlButton
                     toggle={toggle}
                     author={post.author}
                     postId={post.id}
                     likes={post.likes}
+                    isAuth={isAuth}
                   />
                 </article>
-                {isCommentOpen && (
+                {isAuth && isCommentOpen && (
                   <AddComment
                     authorId={auth.user.id}
                     author={auth.user}
@@ -64,7 +67,7 @@ export default function Post(props) {
                   />
                 )}
 
-                <Comments comments={post.comments} />
+                {isAuth && <Comments comments={post.comments} />}
               </div>
             );
           })
