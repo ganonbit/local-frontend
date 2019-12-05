@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import UploadImage from '../Modals/NewsFeed/UploadImage';
 import ChooseImage from '../Modals/NewsFeed/ChooseImage';
 import useModal from '../../hooks/useModel';
@@ -16,6 +16,7 @@ const override = css`
   top: 50%;
   left: 40%;
 `;
+
 
 export const CreatePost = props => {
   const [{ auth }] = useStore();
@@ -35,6 +36,7 @@ export const CreatePost = props => {
     const { name, value } = e.target;
     setPostContent({ ...postContent, [name]: value });
   };
+  
   let handleSubmitForm = (e, createPost) => {
     e.preventDefault();
     createPost().then(async ({ data }) => {
@@ -56,7 +58,7 @@ export const CreatePost = props => {
         },
       }}
     >
-      {(createPost, { loading, error: apiError }) => {
+      {(createPost, { loading, error: apiError, fetchPublication }) => {
         return (
           <div className='ui-block'>
             <div className='news-feed-form'>

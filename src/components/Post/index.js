@@ -40,7 +40,7 @@ export default function MainContent(props) {
                     postId={post.id}
                   />
                   {/* {props.newPost ? <NewPost content={props.content} /> : <PostVideo tag={props.tag} body={props.body} />} */}
-                  <PostContent content={post.content} image={post.image} />
+                  <PostContent content={post.content} image={post.image} newContent={props.newContent}/>
                   <PostFooter
                     toggle={toggle}
                     comments={post.comments}
