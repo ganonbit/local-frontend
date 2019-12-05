@@ -58,9 +58,14 @@ const Description = styled.span`
 const Preview = props => {
   return (
     <Container>
-      {props.ogImage && props.ogImage.url ? (
-        <ImageWrapper src={props.ogImage.url} />
-      ) : null}
+      <a
+        href={props.ogUrl ? `https://${props.ogUrl}` : '#'}
+        target='_blank'
+      >
+        {props.ogImage && props.ogImage.url ? (
+          <ImageWrapper src={props.ogImage.url} />
+        ) : null}
+      </a>
       <Info>
         <SiteName>{props.ogUrl}</SiteName>
         <Title>{props.ogTitle}</Title>
