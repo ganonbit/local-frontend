@@ -30,16 +30,16 @@ export default function PostContent(props) {
     fetchData();
   }, []);
 
+
   if(!urlFromContentPreview || urlFromContentPreview.error !== null) {return rawContent}
   return (
     <div className='postContainer'>
       <p>{urlFromContentPreview.text}</p>
       {urlFromContentPreview.meta ? <Preview {...urlFromContentPreview.meta} /> : null}
-      {!urlFromContentPreview.meta && image && (
+
         <div className='post-img'>
           <img className='postImage' alt='postImage' src={image} />
         </div>
-      )}
     </div>
   );
 }

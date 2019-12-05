@@ -5,11 +5,12 @@ import PostFooter from './PostFooter';
 import PostContent from './PostContent';
 import Comments from 'components/Comments/Comments';
 import AddComment from 'components/Comments/AddComment';
-import { useStore } from 'store/index';
+import { useStore } from 'store';
 import { Query } from 'react-apollo';
 import { GET_FOLLOWED_POSTS } from 'graphql/post';
 
 export default function Post(props) {
+  const {userId, isAuth} = props;
   const [{ auth }] = useStore();
   const [isCommentOpen, setCommentOpen] = useState(true);
   const toggle = () => setCommentOpen(!isCommentOpen);
@@ -41,7 +42,7 @@ export default function Post(props) {
                     isAuth={isAuth}
                   />
                   {/* {props.newPost ? <NewPost content={props.content} /> : <PostVideo tag={props.tag} body={props.body} />} */}
-                  <PostContent content={post.content} image={post.image} newContent={props.newContent}/>
+                  <PostContent content={post.content} image={post.image} />
                   <PostFooter
                     toggle={toggle}
                     comments={post.comments}

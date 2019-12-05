@@ -61,6 +61,7 @@ const Preview = props => {
       <a
         href={props.ogUrl ? `https://${props.ogUrl}` : '#'}
         target='_blank'
+        rel="noopener noreferrer"
       >
         {props.ogImage && props.ogImage.url ? (
           <ImageWrapper src={props.ogImage.url} />
