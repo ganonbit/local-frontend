@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Headroom from 'react-headroom';
-import { AppleLogo } from 'assets/svg-icons';
 /**
  * Main Layout for Registration
  */
@@ -31,17 +30,6 @@ const MainLayout = ({ children }) => {
                 <img src='img/avocado-logo.png' alt='Avocado' />
               </div>
             </Link>
-            <div className='nav nav-pills nav1 header-menu'>
-              <div className='mCustomScrollbar ps ps--theme_default ps--active-y'>
-                <a href='#1' className='nav-item js-expanded-menu'>
-                  <AppleLogo
-                    className='olymp-menu-icon'
-                    width={20}
-                    height={20}
-                  />
-                </a>
-              </div>
-            </div>
           </div>
         </div>
       </Headroom>

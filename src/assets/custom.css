@@ -683,6 +683,16 @@ ul.sidebar-box::-moz-scrollbar {
 ul.sidebar-box {
   -ms-overflow-style: none;
 }
+.left-menu .left-menu-title {
+  color: #8fc42c;
+}
+.left-menu a:hover .left-menu-title {
+  color: #039242;
+}
+.left-menu .left-menu-icon {
+  margin-right: 16px;
+}
+
 @media (max-width: 1454px) {
   .search-bar.w-search {
     width: 410px;
