@@ -1,8 +1,22 @@
+import React from 'react';
+import { Sidebar } from 'components/Sidebar/index';
+import WelcomeFooter from './WelcomeFooter';
+import WelcomeHeader from './WelcomeHeader';
+import MainContent from './MainContent';
+import VideoSection from './VideoSection';
+import WelcomeIntro from './WelcomeIntro';
 
-import LandingFooter from './LandingFooter'
-import LandingHeader from './LandingHeader'
-import MainContent from './MainContent'
-import Video from './Video'
-import Welcome from './Welcome'
-
-export { LandingFooter, LandingHeader, MainContent, Video, Welcome } 
+const Welcome = () => {
+  return (
+    <div className='page-has-left-panels page-has-right-panels pr-0'>
+      <WelcomeHeader />
+      <Sidebar />
+      <div className='header-spacer'></div>
+      <VideoSection />
+      <WelcomeIntro />
+      <MainContent />
+      <WelcomeFooter />
+    </div>
+  );
+};
+export default Welcome;

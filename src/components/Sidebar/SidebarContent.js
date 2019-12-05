@@ -14,7 +14,7 @@ const SidebarContent = ({ onSetSidebarOpen }) => {
       <div className='mCustomScrollbarr' data-mcs-theme='dark'>
         <ul className='left-menu'>
           <li>
-            <Link className='js-sidebar-open'>
+            <Link to='/' className='js-sidebar-open'>
               <OverlayTriggers toolTipText='OPEN MENU' placement='right'>
                 <img
                   src='img/menu-img.png'
