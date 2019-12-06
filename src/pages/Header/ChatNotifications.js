@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCommentAlt } from '@fortawesome/free-solid-svg-icons';
 export default class ChatNotifications extends Component {
   render() {
     return (
       <div className='control-icon more has-items'>
-        <FontAwesomeIcon icon={faCommentAlt} color='white' size='2x' />
+        <img src='img/inbox-img.png' alt='chatt' />
         <div className='label-avatar bg-purple'>2</div>
 
         <div className='more-dropdown more-with-triangle triangle-top-center'>

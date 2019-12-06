@@ -1,28 +1,35 @@
 import React from 'react';
 import { CreatePost } from 'components/CreatePost';
+import Post from 'components/Post';
 import {
   TrendingPost,
   TrendingTopics,
   TopRatedUsers,
-  AvocadoGame,
-  NewsFeedAdd,
+  // AvocadoGame,
+  // NewsFeedAdd,
 } from 'components/Widget';
 
-import Post from 'components/Post';
+import { GET_FOLLOWED_POSTS } from 'graphql/post';
+
 import { useStore } from 'store';
 const Home = () => {
   const [{ auth }] = useStore();
+  const queryOptions = {
+    query: GET_FOLLOWED_POSTS,
+    variables: { userId: auth.user.id, skip: 0, limit: 15 },
+    callback: 'getFollowedPosts',
+  };
   return (
     <div className='container'>
       <div className='row'>
         <main class='col col-xl-6 order-xl-2 col-lg-12 order-lg-1 col-md-12 col-sm-12 col-12'>
           <CreatePost />
-          <Post userId={auth.user.id} isAuth={true} />
+          <Post queryOptions={queryOptions} isAuth={true} />
         </main>
         <aside className='col col-xl-3 order-xl-1 col-lg-6 order-lg-2 col-md-6 col-sm-6 col-12'>
           <TrendingPost />
-          <AvocadoGame />
-          <NewsFeedAdd />
+          {/* <AvocadoGame /> */}
+          {/* <NewsFeedAdd /> */}
         </aside>
 
         <aside className='col col-xl-3 order-xl-3 col-lg-6 order-lg-3 col-md-6 col-sm-6 col-12'>
