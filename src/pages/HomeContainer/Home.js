@@ -22,7 +22,7 @@ const Home = () => {
   return (
     <div className='container'>
       <div className='row'>
-        <main class='col col-xl-6 order-xl-2 col-lg-12 order-lg-1 col-md-12 col-sm-12 col-12'>
+        <main className='col col-xl-6 order-xl-2 col-lg-12 order-lg-1 col-md-12 col-sm-12 col-12'>
           <CreatePost />
           <Post queryOptions={queryOptions} isAuth={true} />
         </main>

@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import PostControlButton from '../Common/PostControlButton';
 import PostHeader from './PostHeader';
 import PostFooter from './PostFooter';
-import PostContent from './MainContent';
+import PostContent from './PostContent';
 import Comments from 'components/Comments/Comments';
 import AddComment from 'components/Comments/AddComment';
-import { useStore } from 'store/index';
+import { useStore } from 'store';
 import { Query } from 'react-apollo';
 
-export default function MainContent({ queryOptions, isAuth }) {
+export default function Post({ queryOptions, isAuth }) {
   const [{ auth }] = useStore();
   const [isCommentOpen, setCommentOpen] = useState(true);
   const toggle = () => setCommentOpen(!isCommentOpen);
