@@ -52,7 +52,7 @@ const TopRatedUsers = ({ client }) => {
                     <div className='notification-event'>
                       <Link
                         className='h6 notification-friend'
-                        to={generatePath(`/user${Routes.USER_PROFILE}`, {
+                        to={generatePath(Routes.USER_PROFILE, {
                           username: user.username,
                         })}
                       >

@@ -42,7 +42,7 @@ const PostHeader = props => {
   return (
     <div className='post__author author vcard inline-items'>
       <Link
-        to={generatePath(`/user${Routes.USER_PROFILE}`, {
+        to={generatePath(Routes.USER_PROFILE, {
           username: author.username,
         })}
       >
@@ -51,7 +51,7 @@ const PostHeader = props => {
       <div className='author-date'>
         <Link
           className='h6 post__author-name fn'
-          to={generatePath(`/user${Routes.USER_PROFILE}`, {
+          to={generatePath(Routes.USER_PROFILE, {
             username: author.username,
           })}
         >

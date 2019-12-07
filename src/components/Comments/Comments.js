@@ -1,7 +1,4 @@
 import React, { useState } from 'react';
-import Linkify from 'react-linkify';
-import linkDecorator from '../Common/linkDecorator';
-
 
 import CommentsHeader from './CommentsHeader';
 export default function Comments(props) {
@@ -17,9 +14,7 @@ export default function Comments(props) {
                     author={comment.author}
                     createdAt={comment.createdAt}
                   />
-                  <Linkify componentDecorator={linkDecorator}>
-                    <p>{comment.comment}</p>
-                  </Linkify>
+                  <p>{comment.comment}</p>
                 </li>
               );
             })
