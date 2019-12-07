@@ -9,16 +9,18 @@ const SidebarContent = ({ onSetSidebarOpen, isAuth }) => {
   const [{ auth }] = useStore();
   return (
     <div className='fixed-sidebar-left sidebar--small' id='sidebar-left'>
-      <Link
-        to={generatePath(`/user${Routes.USER_PROFILE}`, {
-          username: auth.user.username,
-        })}
-        className='logo'
-      >
+      {isAuth && (
+        <Link
+          to={generatePath(`/user${Routes.USER_PROFILE}`, {
+            username: auth.user.username,
+          })}
+          className='logo'
+        >
         <div className='img-wrap'>
           <img src='img/avocado-img.png' alt='Olympus' />
         </div>
       </Link>
+      )}
 
       <div className='mCustomScrollbarr' data-mcs-theme='dark'>
         {isAuth && (
