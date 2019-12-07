@@ -23,7 +23,8 @@ const App = () => {
     >
       {({ loading, refetch }) => {
         if (loading) {
-          return <Loading />;
+          return <></>;
+          // <Loading />;
         } else
           return (
             <Router>

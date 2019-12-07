@@ -7,28 +7,24 @@ import Comments from 'components/Comments/Comments';
 import AddComment from 'components/Comments/AddComment';
 import { useStore } from 'store/index';
 import { Query } from 'react-apollo';
-import { GET_FOLLOWED_POSTS } from 'graphql/post';
 
-export default function MainContent({ userId, isAuth }) {
+export default function MainContent({ queryOptions, isAuth }) {
   const [{ auth }] = useStore();
   const [isCommentOpen, setCommentOpen] = useState(true);
   const toggle = () => setCommentOpen(!isCommentOpen);
 
   const articleClass = 'hentry post';
-
-  const variables = {
-    userId: userId,
-    skip: 0,
-    limit: 15,
-  };
-
   return (
-    <Query query={GET_FOLLOWED_POSTS} variables={variables}>
+    <Query query={queryOptions.query} variables={queryOptions.variables}>
       {({ data, loading }) => {
-        return loading === true ? (
+        let postData =
+          queryOptions.callback === 'getFollowedPosts'
+            ? data.getFollowedPosts
+            : data.getUserPosts;
+        return postData === undefined ? (
           <h1>loading...!</h1>
         ) : (
-          data.getFollowedPosts.posts.map(post => {
+          postData.posts.map(post => {
             return (
               <div key={post.id} className='ui-block'>
                 <article className={articleClass}>
@@ -67,7 +63,6 @@ export default function MainContent({ userId, isAuth }) {
                     onCancel={toggle}
                   />
                 )}
-
                 {isAuth && <Comments comments={post.comments} />}
               </div>
             );

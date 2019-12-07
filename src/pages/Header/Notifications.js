@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBell } from '@fortawesome/free-solid-svg-icons';
 export default class Notifications extends Component {
   render() {
     return (
       <div className='icon-outer'>
         <div className='control-icon more has-items'>
-          <FontAwesomeIcon icon={faBell} color='white' />
+          <img src='img/notification-img.png' alt='notifi' />
           <div className='label-avatar bg-primary'>8</div>
 
           <div className='more-dropdown more-with-triangle triangle-top-center'>
