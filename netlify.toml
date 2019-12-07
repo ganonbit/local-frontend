@@ -1,6 +1,7 @@
 [build]
-publish = "build/"
-command = "npm run build"
+command = "yarn build && yarn build:lambda"
+functions = "lambda"
+publish = "build"
 
 [[redirects]]
   from = "/*"
