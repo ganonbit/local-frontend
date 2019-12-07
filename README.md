@@ -8,7 +8,7 @@ clone repo to your desktop via `git clone git@bitbucket.org:270b/avonation-front
 
 run `yarn` to populate `node_modules` folder and to create your `yarn.lock` file needed
 
-install `yarn add netlify-dev` to use ntl dev to run netlify serverless/lambda functions locally while also running react at the same time in one command.
+install `yarn add netlify-cli` to use ntl dev to run netlify serverless/lambda functions locally while also running react at the same time in one command.
 
 to start the server locally you'll either need to request the `.env` file from me, or have it connect to the staging environment vis your own `.env` file. that allows us to safely use environment variables with passwords/credentials without fear of it getting exposed to clients/hackers as it is only used locally and not pushed to git.
 
