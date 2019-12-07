@@ -31,3 +31,4 @@ export { SettingIcon } from './SettingIcon';
 export { LogOut } from './LogOutIcon';
 export { CheckIcon } from './CheckIcon';
 export { DropDownArrowIcon } from './DropDownArrowIcon';
+export { HappyFaceIcon } from './HappyFaceIcon';

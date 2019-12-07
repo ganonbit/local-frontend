@@ -1,9 +1,13 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Home from '../pages/HomeContainer/Home';
+import UserProfile from 'pages/UserProfile';
 
 import { Sidebar } from '../components/Sidebar/index';
 import TopHeader from './TopHeader';
+import Discover from 'pages/Discover';
+
+import * as Routes from 'routes';
 /**
  * All other routes of Entire App
  * can be restructure depends on Complexity
@@ -12,12 +16,17 @@ const AppLayout = ({ refetch }) => {
   return (
     <Router>
       <div className='page-has-left-panels page-has-right-panels pr-0'>
-        <Sidebar refetch={refetch} />
+        <Sidebar refetch={refetch} isAuth={true} />
         <TopHeader refetch={refetch} />
         <div className='header-spacer'></div>
         <Switch>
-          <Route component={Home} />} />
-          {/* MORE ROUTES GOES HERE....! */}
+          <Route
+            exact
+            path={`/user${Routes.USER_PROFILE}`}
+            render={props => <UserProfile {...props} />}
+          />
+          <Route exact path='/discover' render={() => <Discover />} />
+          <Route path={`${Routes.HOME}`} component={Home} />} />
         </Switch>
       </div>
     </Router>

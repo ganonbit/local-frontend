@@ -1,7 +1,7 @@
 import React from 'react';
 import { withApollo } from 'react-apollo';
 import { generatePath } from 'react-router-dom';
-
+import { Link } from 'react-router-dom';
 import Avatar from 'components/Avatar';
 import moment from 'moment';
 
@@ -41,22 +41,22 @@ const PostHeader = props => {
   };
   return (
     <div className='post__author author vcard inline-items'>
-      <a
-        href={generatePath(Routes.USER_PROFILE, {
+      <Link
+        to={generatePath(`/user${Routes.USER_PROFILE}`, {
           username: author.username,
         })}
       >
         <Avatar image={author.image} />
-      </a>
+      </Link>
       <div className='author-date'>
-        <a
+        <Link
           className='h6 post__author-name fn'
-          href={generatePath(Routes.USER_PROFILE, {
+          to={generatePath(`/user${Routes.USER_PROFILE}`, {
             username: author.username,
           })}
         >
           {author.firstName} {author.lastName}
-        </a>
+        </Link>
         <div className='post__date'>
           <time className='published' dateTime={postDate}>
             {moment(postDate, 'YYYYMMDDHHmms').fromNow()}

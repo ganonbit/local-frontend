@@ -4,7 +4,7 @@ import SidebarContent from './SidebarContent';
 import SidebarMainContent from './SidebarContentDetail';
 import './style/customSidebar.css';
 import SidebarStyles from './SidebarConfig';
-const SidebarNavigation = () => {
+const SidebarNavigation = ({ isAuth }) => {
   const [sidebarOpen, setSidebarOpen] = useState({
     open: false,
     activeClass: 'fixed-sidebar',
@@ -15,7 +15,9 @@ const SidebarNavigation = () => {
   return (
     <div className={sidebarOpen.activeClass} style={{ width: '270px' }}>
       <Sidebar
-        sidebar={<SidebarContent onSetSidebarOpen={onSetSidebarOpen} />}
+        sidebar={
+          <SidebarContent onSetSidebarOpen={onSetSidebarOpen} isAuth={isAuth} />
+        }
         open={sidebarOpen.open}
         docked={true}
         styles={SidebarStyles}

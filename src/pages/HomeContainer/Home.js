@@ -1,29 +1,40 @@
 import React from 'react';
-import RecommendedPages from 'components/Widget/RecommendedPages';
-import FriendsSuggestions from 'components/Widget/FriendsSuggestions';
-import ActivityFeed from 'components/Widget/ActivityFeed';
 import { CreatePost } from 'components/CreatePost';
 import Post from 'components/Post';
+import {
+  TrendingPost,
+  TrendingTopics,
+  TopRatedUsers,
+  // AvocadoGame,
+  // NewsFeedAdd,
+} from 'components/Widget';
+
+import { GET_FOLLOWED_POSTS } from 'graphql/post';
+
 import { useStore } from 'store';
 const Home = () => {
   const [{ auth }] = useStore();
+  const queryOptions = {
+    query: GET_FOLLOWED_POSTS,
+    variables: { userId: auth.user.id, skip: 0, limit: 15 },
+    callback: 'getFollowedPosts',
+  };
   return (
     <div className='container'>
       <div className='row'>
-        {/* <div className="page-has-left-panels page-has-right-panels pr-0"> */}
-        <aside className='col col-xl-3 order-xl-1 col-lg-6 order-lg-2 col-md-6 order-md-2 col-sm-12 order-sm-3 col-xs-12 order-xs-2 order-1 col-12'>
-          <RecommendedPages />
-        </aside>
-        {/* </div> */}
-
-        <aside className='col col-xl-6 order-xl-2 col-lg-12 order-lg-1 col-md-12 order-md-1 col-sm-12 order-sm-1 col-xs-12 order-xs-1 col-12'>
+        <main className='col col-xl-6 order-xl-2 col-lg-12 order-lg-1 col-md-12 col-sm-12 col-12'>
           <CreatePost />
-          <Post userId={auth.user.id} isAuth={true} />
+          <Post queryOptions={queryOptions} isAuth={true} />
+        </main>
+        <aside className='col col-xl-3 order-xl-1 col-lg-6 order-lg-2 col-md-6 col-sm-6 col-12'>
+          <TrendingPost />
+          {/* <AvocadoGame /> */}
+          {/* <NewsFeedAdd /> */}
         </aside>
 
-        <aside className='col col-xl-3 order-xl-3 col-lg-6 order-lg-3 col-md-6 order-md-2 col-sm-12 order-sm-2 col-xs-12 order-xs-3 col-12'>
-          <FriendsSuggestions />
-          <ActivityFeed />
+        <aside className='col col-xl-3 order-xl-3 col-lg-6 order-lg-3 col-md-6 col-sm-6 col-12'>
+          <TrendingTopics />
+          <TopRatedUsers />
         </aside>
       </div>
     </div>

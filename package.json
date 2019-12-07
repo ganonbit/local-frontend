@@ -25,6 +25,8 @@
     "graphql": "^14.2.0",
     "graphql-tag": "^2.10.1",
     "i": "^0.3.6",
+    "imagesloaded": "^4.1.4",
+    "isotope-layout": "^3.0.6",
     "jquery": "^3.4.1",
     "jwt-decode": "^2.2.0",
     "lodash": "^4.17.11",

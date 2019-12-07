@@ -12,10 +12,17 @@ const ListItem = ({
   <li
     onClick={() => sideBarOpenModel && onSetSidebarOpen(false, 'fixed-sidebar')}
   >
-    <NavLink className={linkClass} to={path}>
-      <img src={image} alt='img' className='left-menu-icon' />
-      <span className={titleClass}>{title}</span>
-    </NavLink>
+    {path ? (
+      <NavLink className={linkClass} to={path}>
+        <img src={image} alt='img' className='left-menu-icon' />
+        <span className={titleClass}>{title}</span>
+      </NavLink>
+    ) : (
+      <div className={linkClass}>
+        <img src={image} alt='img' className='left-menu-icon' />
+        <span className={titleClass}>{title}</span>
+      </div>
+    )}
   </li>
 );
 export default ListItem;
