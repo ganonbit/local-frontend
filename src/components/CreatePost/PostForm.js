@@ -30,7 +30,6 @@ const PostForm = ({
       default:
     }
   };
-  
   return (
     <form onSubmit={e => handleSubmitForm(e, createPost)}>
       <a

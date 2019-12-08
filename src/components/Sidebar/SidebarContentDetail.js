@@ -4,9 +4,9 @@ const SidebarMainContent = ({ onSetSidebarOpen }) => {
   const sidebarList = [
     { title: 'Collapse Menu', image: 'img/close-icon.png', path: null },
     { title: 'Home page', image: 'img/avocado-icon.png', path: '/' },
-    { title: 'Discover', image: 'img/search-icon.png', path: '/' },
+    { title: 'Discover', image: 'img/search-icon.png', path: '/explore' },
     { title: 'Favs', image: 'img/star-icon.png', path: '/' },
-    { title: 'Post', image: 'img/chat-icon.png', path: '/' },
+    { title: 'Favs', image: 'img/star-icon.png', path: '/' },
   ];
   return (
     <div className='fixed-sidebar-left sidebar--large' id='sidebar-left-1'>

@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 
 const NewsFeedAdd = () => (
   <>
-    <div class='ui-block'>
-      <img class='health-bnr' src='img/health-bnr-img.png' alt='' />
+    <div className='ui-block'>
+      <img className='health-bnr' src='img/health-bnr-img.png' alt='' />
     </div>
     <div className='ui-block-menu ui-block-menu-sidebar'>
       <ul className='d-flex'>

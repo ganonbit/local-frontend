@@ -8,7 +8,7 @@ import AddComment from 'components/Comments/AddComment';
 import { useStore } from 'store';
 import { Query } from 'react-apollo';
 
-export default function Post(queryOptions, isAuth) {
+export default function Post({ queryOptions, isAuth }) {
   const [{ auth }] = useStore();
   const [isCommentOpen, setCommentOpen] = useState(true);
   const toggle = () => setCommentOpen(!isCommentOpen);
@@ -36,6 +36,7 @@ export default function Post(queryOptions, isAuth) {
                     postId={post.id}
                     isAuth={isAuth}
                   />
+                  {/* {props.newPost ? <NewPost content={props.content} /> : <PostVideo tag={props.tag} body={props.body} />} */}
                   <PostContent content={post.content} image={post.image} />
                   <PostFooter
                     toggle={toggle}
@@ -47,6 +48,7 @@ export default function Post(queryOptions, isAuth) {
                   />
                   <PostControlButton
                     toggle={toggle}
+                    comments={post.comments}
                     author={post.author}
                     postId={post.id}
                     likes={post.likes}

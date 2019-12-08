@@ -20,13 +20,13 @@ const AppLayout = ({ refetch }) => {
         <TopHeader refetch={refetch} />
         <div className='header-spacer'></div>
         <Switch>
-          <Route
+          <Route exact path={Routes.EXPLORE} render={() => <Discover />} />
+          <Route path={Routes.HOME} render={props => <Home {...props} />} />
+          {/* <Route
             exact
-            path={`/user${Routes.USER_PROFILE}`}
+            path={Routes.USER_PROFILE}
             render={props => <UserProfile {...props} />}
-          />
-          <Route exact path='/discover' render={() => <Discover />} />
-          <Route path={`${Routes.HOME}`} component={Home} />} />
+          /> */}
         </Switch>
       </div>
     </Router>
