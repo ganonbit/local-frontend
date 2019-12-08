@@ -36,6 +36,7 @@ export default function Post({ queryOptions, isAuth }) {
                     postId={post.id}
                     isAuth={isAuth}
                   />
+                  {/* {props.newPost ? <NewPost content={props.content} /> : <PostVideo tag={props.tag} body={props.body} />} */}
                   <PostContent content={post.content} image={post.image} />
                   <PostFooter
                     toggle={toggle}
@@ -47,6 +48,7 @@ export default function Post({ queryOptions, isAuth }) {
                   />
                   <PostControlButton
                     toggle={toggle}
+                    comments={post.comments}
                     author={post.author}
                     postId={post.id}
                     likes={post.likes}

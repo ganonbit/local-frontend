@@ -11,7 +11,7 @@ const SidebarContent = ({ onSetSidebarOpen, isAuth }) => {
     <div className='fixed-sidebar-left sidebar--small' id='sidebar-left'>
       {isAuth ? (
         <Link
-          to={generatePath(`/user${Routes.USER_PROFILE}`, {
+          to={generatePath(Routes.USER_PROFILE, {
             username: auth.user.username,
           })}
           className='logo'
