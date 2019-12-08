@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Home from '../pages/HomeContainer/Home';
 import UserProfile from 'pages/UserProfile';
+import ProfileSetting from 'pages/ProfileSetting';
 
 import { Sidebar } from '../components/Sidebar/index';
 import TopHeader from './TopHeader';
@@ -25,8 +26,13 @@ const AppLayout = ({ refetch }) => {
             path={`/user${Routes.USER_PROFILE}`}
             render={props => <UserProfile {...props} />}
           />
-          <Route exact path='/discover' render={() => <Discover />} />
-          <Route path={`${Routes.HOME}`} component={Home} />} />
+          <Route exact path={Routes.EXPLORE} render={() => <Discover />} />
+          <Route
+            exact
+            path={Routes.SETTING}
+            render={() => <ProfileSetting />}
+          />
+          <Route path={Routes.HOME} render={() => <Home />} />
         </Switch>
       </div>
     </Router>

@@ -8,7 +8,7 @@ import AddComment from 'components/Comments/AddComment';
 import { useStore } from 'store';
 import { Query } from 'react-apollo';
 
-export default function Post(queryOptions, isAuth) {
+export default function Post({ queryOptions, isAuth }) {
   const [{ auth }] = useStore();
   const [isCommentOpen, setCommentOpen] = useState(true);
   const toggle = () => setCommentOpen(!isCommentOpen);

@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import Avatar from 'components/Avatar';
+import * as Routes from 'routes';
 
 import {
   OlympMenu,
@@ -29,7 +30,7 @@ const AuthorPage = ({ user }) => {
                 </Link>
               </li>
               <li>
-                <Link>
+                <Link to={Routes.SETTING}>
                   <SettingIcon className='olymp-star-icon left-menu-icon' />
 
                   <span>Settings</span>

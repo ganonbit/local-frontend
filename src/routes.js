@@ -26,6 +26,8 @@ export const MESSAGES = '/messages/:userId';
 
 export const POST = '/post/:id';
 
+export const SETTING = '/setting';
+
 /**
  * Value that's used in place of id when creating something new.
  */
