@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Home from '../pages/HomeContainer/Home';
 import UserProfile from 'pages/UserProfile';
+import ProfileSetting from 'pages/ProfileSetting';
 
 import { Sidebar } from '../components/Sidebar/index';
 import TopHeader from './TopHeader';

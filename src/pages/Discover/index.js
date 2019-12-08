@@ -2,7 +2,7 @@ import React from 'react';
 import Isotope from 'isotope-layout';
 import Masonry from 'react-masonry-component';
 
-const IsotopeReact = () => {
+const Discover = () => {
   const [isotope, setIsotope] = React.useState(null);
   const [filterKey, setFilterKey] = React.useState('*');
   let handleImagesLoaded = () => {
@@ -191,4 +191,4 @@ const IsotopeReact = () => {
     </Masonry>
   );
 };
-export default IsotopeReact;
+export default Discover;

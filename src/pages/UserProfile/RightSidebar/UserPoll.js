@@ -7,9 +7,6 @@ export default function Poll() {
                 <h6 className="title">James's Poll</h6>
             </div>
             <div className="ui-block-content">
-
-                {/* <!-- W-Pool --> */}
-
                 <ul className="widget w-pool">
                     <li>
                         <p>If you had to choose, which actor do you prefer to be the next Darkman? </p>
@@ -38,52 +35,52 @@ export default function Poll() {
 
                             <ul className="friends-harmonic">
                                 <li>
-                                    <a href="#">
+                                   <a href='#1'>
                                         <img src="img/friend-harmonic1.jpg" alt="friend" />
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                   <a href='#1'>
                                         <img src="img/friend-harmonic2.jpg" alt="friend" />
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                   <a href='#1'>
                                         <img src="img/friend-harmonic3.jpg" alt="friend" />
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                   <a href='#1'>
                                         <img src="img/friend-harmonic4.jpg" alt="friend" />
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                   <a href='#1'>
                                         <img src="img/friend-harmonic5.jpg" alt="friend" />
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                   <a href='#1'>
                                         <img src="img/friend-harmonic6.jpg" alt="friend" />
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                   <a href='#1'>
                                         <img src="img/friend-harmonic7.jpg" alt="friend" />
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                   <a href='#1'>
                                         <img src="img/friend-harmonic8.jpg" alt="friend" />
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                   <a href='#1'>
                                         <img src="img/friend-harmonic9.jpg" alt="friend" />
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#" className="all-users">+3</a>
+                                   <a href='#1' className="all-users">+3</a>
                                 </li>
                             </ul>
                         </div>
@@ -112,37 +109,37 @@ export default function Poll() {
 
                             <ul className="friends-harmonic">
                                 <li>
-                                    <a href="#">
+                                   <a href='#1'>
                                         <img src="img/friend-harmonic7.jpg" alt="friend" />
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                   <a href='#1'>
                                         <img src="img/friend-harmonic8.jpg" alt="friend" />
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                   <a href='#1'>
                                         <img src="img/friend-harmonic9.jpg" alt="friend" />
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                   <a href='#1'>
                                         <img src="img/friend-harmonic10.jpg" alt="friend" />
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                   <a href='#1'>
                                         <img src="img/friend-harmonic11.jpg" alt="friend" />
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                   <a href='#1'>
                                         <img src="img/friend-harmonic12.jpg" alt="friend" />
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                   <a href='#1'>
                                         <img src="img/friend-harmonic13.jpg" alt="friend" />
                                     </a>
                                 </li>
@@ -174,12 +171,12 @@ export default function Poll() {
 
                             <ul className="friends-harmonic">
                                 <li>
-                                    <a href="#">
+                                   <a href='#1'>
                                         <img src="img/friend-harmonic14.jpg" alt="friend" />
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                   <a href='#1'>
                                         <img src="img/friend-harmonic15.jpg" alt="friend" />
                                     </a>
                                 </li>
@@ -189,7 +186,7 @@ export default function Poll() {
                 </ul>
 
                 {/* <!-- .. end W-Pool --> */}
-                <a href="#" className="btn btn-md-2 btn-border-think custom-color c-grey full-width">Vote Now!</a>
+               <a href='#1' className="btn btn-md-2 btn-border-think custom-color c-grey full-width">Vote Now!</a>
             </div>
         </div>
 

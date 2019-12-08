@@ -71,7 +71,9 @@ export default function AddComment({ authorId, author, postId, onCancel }) {
                     className='options-message'
                     data-toggle='modal'
                     data-target='#update-header-photo'
-                  ></a>
+                  >
+                    {' '}
+                  </a>
                 </div>
               </div>
             </div>

@@ -21,8 +21,10 @@ const SidebarContent = ({ onSetSidebarOpen, isAuth }) => {
           </div>
         </Link>
       ) : (
-        <div className='img-wrap' className='logo'>
-          <img src='img/avocado-img.png' alt='Olympus' />
+        <div className='logo'>
+          <div className='img-wrap'>
+            <img src='img/avocado-img.png' alt='Olympus' />
+          </div>
         </div>
       )}
 
