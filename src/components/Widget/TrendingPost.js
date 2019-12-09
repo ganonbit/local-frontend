@@ -14,7 +14,10 @@ const TrendingPost = () => {
               to='https://vimeo.com/ondemand/viewfromabluemoon4k/147865858'
               className='play-video play-video--small'
             >
-              <img src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/play-btn_ztzdw1.png' alt='' />
+              <img
+                src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/play-btn_ztzdw1.png'
+                alt=''
+              />
             </Link>
             <img
               className='video-bnr'
@@ -34,7 +37,10 @@ const TrendingPost = () => {
               to='https://youtube.com/watch?v=excVFQ2TWig'
               className='play-video play-video--small'
             >
-              <img src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/play-btn_ztzdw1.png' alt='' />
+              <img
+                src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/play-btn_ztzdw1.png'
+                alt=''
+              />
             </Link>
             <img
               className='video-bnr'
@@ -50,7 +56,11 @@ const TrendingPost = () => {
             <div className='overlay'></div>
           </li>
           <li>
-            <img className='video-bnr' src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/video-bnr_z8anqe.png' alt='video' />
+            <img
+              className='video-bnr'
+              src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/video-bnr_z8anqe.png'
+              alt='video'
+            />
           </li>
         </ul>
       </div>

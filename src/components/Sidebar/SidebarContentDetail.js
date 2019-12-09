@@ -2,16 +2,34 @@ import React from 'react';
 import ListItem from './ListItem';
 const SidebarMainContent = ({ onSetSidebarOpen }) => {
   const sidebarList = [
-    { title: 'Collapse Menu', image: 'https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/close-icon_butmdd.png', path: null },
-    { title: 'Home page', image: 'https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avocado-icon_rwvve0.png', path: '/' },
-    { title: 'Discover', image: 'https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/search-icon_vpzkxv.png', path: '/discover' },
+    {
+      title: 'Collapse Menu',
+      image:
+        'https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/close-icon_butmdd.png',
+      path: null,
+    },
+    {
+      title: 'Home page',
+      image:
+        'https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avocado-icon_rwvve0.png',
+      path: '/',
+    },
+    {
+      title: 'Discover',
+      image:
+        'https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/search-icon_vpzkxv.png',
+      path: '/discover',
+    },
     // { title: 'Favs', image: 'https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/star-icon_qbwpz1.png', path: '/' },
   ];
   return (
     <div className='fixed-sidebar-left sidebar--large' id='sidebar-left-1'>
       <a href='02-ProfilePage.html' className='logo'>
         <div className='img-wrap'>
-          <img src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avocado-img_fwdb02.png' alt='Olympus' />
+          <img
+            src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avocado-img_fwdb02.png'
+            alt='Olympus'
+          />
         </div>
       </a>
       <div className='mCustomScrollbar' data-mcs-theme='dark'>

@@ -69,7 +69,6 @@ const Discover = () => {
                   </a>
                 </li>
               </ul>
-
               <div
                 className='sorting-container'
                 id='clients-grid-1'
@@ -79,7 +78,10 @@ const Discover = () => {
                   <div className='ui-block'>
                     <article className='hentry blog-post'>
                       <div className='post-thumb'>
-                        <img src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avocado-thumbnail1_gxlj9t.png' alt='photo1' />
+                        <img
+                          src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avocado-thumbnail1_gxlj9t.png'
+                          alt='photo1'
+                        />
                       </div>
                     </article>
                   </div>
@@ -88,7 +90,10 @@ const Discover = () => {
                   <div className='ui-block'>
                     <article className='hentry blog-post'>
                       <div className='post-thumb'>
-                        <img src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avocado-thumbnail2_qhaaym.png' alt='photo1' />
+                        <img
+                          src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avocado-thumbnail2_qhaaym.png'
+                          alt='photo1'
+                        />
                       </div>
                     </article>
                   </div>
@@ -97,7 +102,10 @@ const Discover = () => {
                   <div className='ui-block'>
                     <article className='hentry blog-post'>
                       <div className='post-thumb'>
-                        <img src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avocado-thumbnail3_rbctce.png' alt='photo1' />
+                        <img
+                          src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avocado-thumbnail3_rbctce.png'
+                          alt='photo1'
+                        />
                       </div>
                     </article>
                   </div>
@@ -106,7 +114,10 @@ const Discover = () => {
                   <div className='ui-block'>
                     <article className='hentry blog-post'>
                       <div className='post-thumb'>
-                        <img src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avocado-thumbnail4_erjgjp.png' alt='photo1' />
+                        <img
+                          src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avocado-thumbnail4_erjgjp.png'
+                          alt='photo1'
+                        />
                       </div>
                     </article>
                   </div>
@@ -115,7 +126,10 @@ const Discover = () => {
                   <div className='ui-block'>
                     <article className='hentry blog-post'>
                       <div className='post-thumb'>
-                        <img src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avocado-thumbnail5_svtx5s.png' alt='photo1' />
+                        <img
+                          src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avocado-thumbnail5_svtx5s.png'
+                          alt='photo1'
+                        />
                       </div>
                     </article>
                   </div>
@@ -124,7 +138,10 @@ const Discover = () => {
                   <div className='ui-block'>
                     <article className='hentry blog-post'>
                       <div className='post-thumb'>
-                        <img src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avocado-thumbnail6_jgxf20.png' alt='photo1' />
+                        <img
+                          src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avocado-thumbnail6_jgxf20.png'
+                          alt='photo1'
+                        />
                       </div>
                     </article>
                   </div>
@@ -133,7 +150,10 @@ const Discover = () => {
                   <div className='ui-block'>
                     <article className='hentry blog-post'>
                       <div className='post-thumb'>
-                        <img src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avocado-thumbnail7_txbt3c.png' alt='photo1' />
+                        <img
+                          src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avocado-thumbnail7_txbt3c.png'
+                          alt='photo1'
+                        />
                       </div>
                     </article>
                   </div>
@@ -142,7 +162,10 @@ const Discover = () => {
                   <div className='ui-block'>
                     <article className='hentry blog-post'>
                       <div className='post-thumb'>
-                        <img src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avocado-thumbnail8_hie7vd.png' alt='photo1' />
+                        <img
+                          src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avocado-thumbnail8_hie7vd.png'
+                          alt='photo1'
+                        />
                       </div>
                     </article>
                   </div>
@@ -151,7 +174,10 @@ const Discover = () => {
                   <div className='ui-block'>
                     <article className='hentry blog-post'>
                       <div className='post-thumb'>
-                        <img src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avocado-thumbnail9_wzxekz.png' alt='photo1' />
+                        <img
+                          src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avocado-thumbnail9_wzxekz.png'
+                          alt='photo1'
+                        />
                       </div>
                     </article>
                   </div>
@@ -160,7 +186,10 @@ const Discover = () => {
                   <div className='ui-block'>
                     <article className='hentry blog-post'>
                       <div className='post-thumb'>
-                        <img src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avocado-thumbnail10_lgm7cc.png' alt='photo1' />
+                        <img
+                          src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avocado-thumbnail10_lgm7cc.png'
+                          alt='photo1'
+                        />
                       </div>
                     </article>
                   </div>
@@ -169,7 +198,10 @@ const Discover = () => {
                   <div className='ui-block'>
                     <article className='hentry blog-post'>
                       <div className='post-thumb'>
-                        <img src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avocado-thumbnail11_s1y9za.png' alt='photo1' />
+                        <img
+                          src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avocado-thumbnail11_s1y9za.png'
+                          alt='photo1'
+                        />
                       </div>
                     </article>
                   </div>
@@ -178,7 +210,10 @@ const Discover = () => {
                   <div className='ui-block'>
                     <article className='hentry blog-post'>
                       <div className='post-thumb'>
-                        <img src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avocado-thumbnail12_grsbnd.png' alt='photo1' />
+                        <img
+                          src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avocado-thumbnail12_grsbnd.png'
+                          alt='photo1'
+                        />
                       </div>
                     </article>
                   </div>

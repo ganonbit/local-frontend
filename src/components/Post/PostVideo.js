@@ -18,7 +18,10 @@ export default function PostVideo(props) {
       </p>
       <div className='post-video'>
         <div className='video-thumb'>
-          <img src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/video-youtube1.jpg' alt='video-icon' />
+          <img
+            src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/video-youtube1.jpg'
+            alt='video-icon'
+          />
           <a href={props.link} className='play-video'>
             <PlayIcon />
           </a>

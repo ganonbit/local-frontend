@@ -8,7 +8,14 @@ const ProfileHeader = ({ user }) => {
           <div className='ui-block'>
             <div className='top-header'>
               <div className='top-header-thumb'>
-                <img src={user.coverImage} alt='nature' />
+                {user.coverImage ? (
+                  <img src={user.coverImage} alt='nature' />
+                ) : (
+                  <img
+                    src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/top-header1.jpg'
+                    alt='nature'
+                  />
+                )}
               </div>
               <div className='profile-section'>
                 <div className='row'>
@@ -95,7 +102,14 @@ const ProfileHeader = ({ user }) => {
               </div>
               <div className='top-header-author'>
                 <Link to='/' className='author-thumb'>
-                  <img src={user.image} alt='author' />
+                  {user.image ? (
+                    <img src={user.coverImage} alt='nature' />
+                  ) : (
+                    <img
+                      src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/author-main1.jpg'
+                      alt='nature'
+                    />
+                  )}
                 </Link>
                 <div className='author-content'>
                   <Link to='/' className='h4 author-name'>

@@ -17,13 +17,19 @@ const SidebarContent = ({ onSetSidebarOpen, isAuth }) => {
           className='logo'
         >
           <div className='img-wrap'>
-            <img src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avocado-img_fwdb02.png' alt='Olympus' />
+            <img
+              src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avocado-img_fwdb02.png'
+              alt='Olympus'
+            />
           </div>
         </Link>
       ) : (
         <div className='logo'>
           <div className='img-wrap'>
-            <img src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avocado-img_fwdb02.png' alt='Olympus' />
+            <img
+              src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avocado-img_fwdb02.png'
+              alt='Olympus'
+            />
           </div>
         </div>
       )}
@@ -45,14 +51,20 @@ const SidebarContent = ({ onSetSidebarOpen, isAuth }) => {
             <li>
               <a href='/'>
                 <OverlayTriggers toolTipText='HOME PAGE' placement='right'>
-                  <img src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avocado-icon_rwvve0.png' alt='' />
+                  <img
+                    src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avocado-icon_rwvve0.png'
+                    alt=''
+                  />
                 </OverlayTriggers>
               </a>
             </li>
             <li>
               <a href='/discover'>
                 <OverlayTriggers toolTipText='DISCOVER' placement='right'>
-                  <img src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/search-icon_vpzkxv.png' alt='' />
+                  <img
+                    src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/search-icon_vpzkxv.png'
+                    alt=''
+                  />
                 </OverlayTriggers>
               </a>
             </li>
@@ -66,7 +78,10 @@ const SidebarContent = ({ onSetSidebarOpen, isAuth }) => {
             <li>
               <a href='/'>
                 <OverlayTriggers toolTipText='POST' placement='right'>
-                  <img src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/chat-icon_bb8rk2.png' alt='' />
+                  <img
+                    src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/chat-icon_bb8rk2.png'
+                    alt=''
+                  />
                 </OverlayTriggers>
               </a>
             </li>
