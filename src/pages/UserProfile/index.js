@@ -5,8 +5,10 @@ import Right from './RightSidebar';
 import Post from 'components/Post';
 import { Query } from 'react-apollo';
 import { GET_USER_POSTS, GET_USER } from 'graphql/user';
+import { useStore } from 'store';
 
 export default function Profile(props) {
+  const [{ auth }] = useStore();
   const queryOptions = {
     query: GET_USER_POSTS,
     variables: { username: props.match.params.username, skip: 0, limit: 15 },

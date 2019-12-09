@@ -10,7 +10,10 @@ export default function FavouritePages() {
       <ul className='widget w-friend-pages-added notification-list friend-requests'>
         <li className='inline-items'>
           <div className='author-thumb'>
-            <img src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avatar41-sm.jpg' alt='author' />
+            <img
+              src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avatar41-sm.jpg'
+              alt='author'
+            />
           </div>
           <div className='notification-event'>
             <a href='#1' className='h6 notification-friend'>
@@ -35,7 +38,10 @@ export default function FavouritePages() {
 
         <li className='inline-items'>
           <div className='author-thumb'>
-            <img src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avatar42-sm.jpg' alt='author' />
+            <img
+              src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avatar42-sm.jpg'
+              alt='author'
+            />
           </div>
           <div className='notification-event'>
             <a href='#1' className='h6 notification-friend'>
@@ -60,7 +66,10 @@ export default function FavouritePages() {
 
         <li className='inline-items'>
           <div className='author-thumb'>
-            <img src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avatar43-sm.jpg' alt='author' />
+            <img
+              src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avatar43-sm.jpg'
+              alt='author'
+            />
           </div>
           <div className='notification-event'>
             <a href='#1' className='h6 notification-friend'>
@@ -85,7 +94,10 @@ export default function FavouritePages() {
 
         <li className='inline-items'>
           <div className='author-thumb'>
-            <img src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avatar44-sm.jpg' alt='author' />
+            <img
+              src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avatar44-sm.jpg'
+              alt='author'
+            />
           </div>
           <div className='notification-event'>
             <a href='#1' className='h6 notification-friend'>
@@ -110,7 +122,10 @@ export default function FavouritePages() {
 
         <li className='inline-items'>
           <div className='author-thumb'>
-            <img src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avatar45-sm.jpg' alt='author' />
+            <img
+              src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avatar45-sm.jpg'
+              alt='author'
+            />
           </div>
           <div className='notification-event'>
             <a href='#1' className='h6 notification-friend'>
@@ -135,7 +150,10 @@ export default function FavouritePages() {
 
         <li className='inline-items'>
           <div className='author-thumb'>
-            <img src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avatar46-sm.jpg' alt='author' />
+            <img
+              src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avatar46-sm.jpg'
+              alt='author'
+            />
           </div>
           <div className='notification-event'>
             <a href='#1' className='h6 notification-friend'>

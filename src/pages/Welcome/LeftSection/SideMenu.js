@@ -38,7 +38,10 @@ const SideMenu = () => {
         </li>
       </ul>
       <h5>Avocado Nation © 2019</h5>
-      <img src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avocado-primary-logo_y2ribz.png' alt='' />
+      <img
+        src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avocado-primary-logo_y2ribz.png'
+        alt=''
+      />
     </div>
   );
 };

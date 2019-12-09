@@ -22,12 +22,17 @@ const AppLayout = ({ refetch }) => {
         <div className='header-spacer'></div>
         <Switch>
           <Route exact path={Routes.DISCOVER} render={props => <Discover />} />
-          <Route path={Routes.HOME} render={props => <Home {...props} />} />
-          {/* <Route
+          <Route
+            exact
+            path={Routes.SETTINGS}
+            render={() => <ProfileSetting />}
+          />
+          <Route
             exact
             path={Routes.USER_PROFILE}
             render={props => <UserProfile {...props} />}
-          /> */}
+          />
+          <Route path={Routes.HOME} render={props => <Home {...props} />} />
         </Switch>
       </div>
     </Router>
