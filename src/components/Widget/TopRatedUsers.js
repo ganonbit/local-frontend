@@ -10,7 +10,7 @@ import { CREATE_FOLLOW } from 'graphql/follow';
 
 import * as Routes from 'routes';
 
-import { useStore } from 'store/store';
+import { useStore } from 'store';
 
 const TopRatedUsers = ({ client }) => {
   const [{ auth }] = useStore();
