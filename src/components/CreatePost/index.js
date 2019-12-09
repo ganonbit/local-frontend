@@ -39,7 +39,12 @@ const CreatePost = props => {
   let handleSubmitForm = (e, createPost) => {
     e.preventDefault();
     createPost().then(async ({ data }) => {
-      setPostContent({ ...postContent, status: '', image: '' });
+      setPostContent({
+        ...postContent,
+        status: '',
+        image: '',
+        imagePreview: '',
+      });
     });
   };
 
