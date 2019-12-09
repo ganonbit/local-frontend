@@ -3,8 +3,8 @@ import React from 'react';
 export default function LastPhotos() {
   return (
     <div className='ui-block'>
-      <div className='ui-block-title block-title-bg Last Photos'>
-        <h6 className='title'>Last Photos</h6>
+      <div className='ui-block-title ui-block-photos'>
+        <h6 className='title'>Latest Photos</h6>
       </div>
       <div className='ui-block-content'>
         {/* <!-- W-Latest-Photo --> */}
@@ -34,6 +34,7 @@ export default function LastPhotos() {
               />
             </a>
           </li>
+
           <li>
             <a href='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/last-phot13-large.jpg'>
               <img

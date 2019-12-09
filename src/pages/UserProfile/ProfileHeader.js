@@ -58,47 +58,6 @@ const ProfileHeader = ({ user }) => {
                     </ul>
                   </div>
                 </div>
-
-                <div className='control-block-button'>
-                  <Link
-                    href='35-YourAccount-FriendsRequests.html'
-                    className='btn btn-control bg-blue'
-                  >
-                    {/* <svg className="olymp-happy-face-icon"><use xlink: href="svg-icons/sprites/icons.svg#olymp-happy-face-icon"></use></svg> */}
-                  </Link>
-
-                  <Link to='/' className='btn btn-control bg-purple'>
-                    {/* <svg className="olymp-chat---messages-icon"><use xlink: href="svg-icons/sprites/icons.svg#olymp-chat---messages-icon"></use></svg> */}
-                  </Link>
-
-                  <div className='btn btn-control bg-primary more'>
-                    {/* <svg className="olymp-settings-icon"><use xlink: href="svg-icons/sprites/icons.svg#olymp-settings-icon"></use></svg> */}
-
-                    <ul className='more-dropdown more-with-triangle triangle-bottom-right'>
-                      <li>
-                        <Link
-                          to='/'
-                          data-toggle='modal'
-                          data-target='#update-header-photo'
-                        >
-                          Update Profile Photo
-                        </Link>
-                      </li>
-                      <li>
-                        <Link
-                          to='/'
-                          data-toggle='modal'
-                          data-target='#update-header-photo'
-                        >
-                          Update Header Photo
-                        </Link>
-                      </li>
-                      <li>
-                        <Link to='/'>Account Settings</Link>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
               </div>
               <div className='top-header-author'>
                 <Link to='/' className='author-thumb'>

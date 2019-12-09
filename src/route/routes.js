@@ -13,6 +13,6 @@ const routes = {
   MESSAGES: '/messages/:userId',
   POST: '/post/:id',
   NEW_ID_VALUE: 'new',
-  SETTINGS:  `/settings`
+  SETTINGS: `/settings`,
 };
 export default routes;

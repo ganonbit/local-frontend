@@ -3,8 +3,8 @@ import React from 'react';
 export default function FavouritePages() {
   return (
     <div className='ui-block'>
-      <div className='ui-block-title block-title-bg'>
-        <h6 className='title'>Favourite Pages</h6>
+      <div className='ui-block-title'>
+        <h6 className='title'>Favs</h6>
       </div>
 
       <ul className='widget w-friend-pages-added notification-list friend-requests'>
