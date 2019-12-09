@@ -1,7 +1,7 @@
 # Dependencies
 node_modules/
 build/
-lambda/open-graph-preview.js
+lambda/*.js
 
 # IDE
 .idea/
