@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { generatePath } from 'react-router-dom';
 
-import { CREATE_COMMENT } from '../../graphql/comment';
+import { EDIT_COMMENT } from '../../graphql/comment';
 import { GET_POSTS } from '../../graphql/post';
 import { Mutation, withApollo } from 'react-apollo';
 
@@ -9,18 +9,18 @@ import Avatar from '../Avatar';
 
 import * as Routes from 'routes';
 
-function AddComment({ authorId, author, postId, onCancel }) {
+function EditComment({ authorId, comment, author, postId, onCancel }) {
   const [commentContent, setCommentContent] = useState({
-    comment: '',
-    image: null,
-    imagePublicId: null,
+    comment: comment.comment,
+    image: comment.image,
+    imagePublicId: comment.imagePublicId,
     author: authorId,
     postId: postId,
   });
-  const onAddComment = (e, createComment) => {
+  const onEditComment = (e, editComment) => {
     e.preventDefault();
-    createComment.then(async ({ data }) => {},
-    setCommentContent({ ...commentContent, comment: '', image: '' }));
+    editComment.then(async ({ data }) => {},
+    setCommentContent({ ...commentContent }));
   };
   const onCommentChange = e => {
     e.preventDefault();
@@ -29,7 +29,7 @@ function AddComment({ authorId, author, postId, onCancel }) {
   };
   return (
     <Mutation
-      mutation={CREATE_COMMENT}
+      mutation={EDIT_COMMENT}
       variables={{
         input: commentContent,
       }}
@@ -40,11 +40,11 @@ function AddComment({ authorId, author, postId, onCancel }) {
         },
       ]}
     >
-      {(createComment, { loading, error: apiError }) => {
+      {(editComment, { loading, error: apiError }) => {
         return (
           <form
             className='comment-form inline-items'
-            onSubmit={e => onAddComment(e, createComment())}
+            onSubmit={e => onEditComment(e, editComment())}
           >
             <div className='post__author author vcard inline-items'>
               <a
@@ -95,4 +95,4 @@ function AddComment({ authorId, author, postId, onCancel }) {
   );
 }
 
-export default withApollo(AddComment);
+export default withApollo(EditComment);

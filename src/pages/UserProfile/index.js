@@ -16,6 +16,7 @@ export default function Profile(props) {
     <Query
       query={GET_USER}
       variables={{ username: props.match.params.username }}
+      notifyOnNetworkStatusChange
     >
       {({ data, loading }) => {
         return loading ? (

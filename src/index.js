@@ -2,9 +2,9 @@ import React from 'react';
 import { render } from 'react-dom';
 import App from './route/App';
 import { ApolloProvider } from 'react-apollo';
-import { ApolloProvider as ApolloHooksProvider } from 'react-apollo-hooks';
+import { ApolloProvider as ApolloHooksProvider } from '@apollo/react-hooks';
 import { createApolloClient } from 'utils/apollo-client';
-import { StoreProvider } from 'store';
+import { StoreProvider } from 'store/index';
 import './assets/index.scss';
 // GraphQL HTTP URL
 const API_URL = process.env.REACT_APP_API_URL;

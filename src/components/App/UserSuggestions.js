@@ -74,7 +74,7 @@ const UserSuggestions = ({ pathname }) => {
   if (hideUserSuggestions) return null;
 
   return (
-    <Query query={USER_SUGGESTIONS} variables={{ userId: auth.user.id }}>
+    <Query query={USER_SUGGESTIONS} variables={{ userId: auth.user.id }} notifyOnNetworkStatusChange>
       {({ data, loading }) => {
         if (loading)
           return (

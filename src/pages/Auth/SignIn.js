@@ -136,7 +136,7 @@ const SignIn = ({ refetch, history }) => {
                             Login
                           </button>
 
-                          <div className='or'></div>
+                          {/* <div className='or'></div>
 
                           <a
                             href='#1'
@@ -159,7 +159,7 @@ const SignIn = ({ refetch, history }) => {
                               aria-hidden='true'
                             ></i>
                             Login with Twitter
-                          </a>
+                          </a> */}
 
                           <p>
                             Don’t you have an account?{' '}

@@ -1,5 +1,5 @@
 import React from 'react';
-import { CreatePost } from 'components/CreatePost';
+import CreatePost from 'components/CreatePost';
 import Post from 'components/Post';
 import {
   TrendingPost,
@@ -10,8 +10,8 @@ import {
 } from 'components/Widget';
 
 import { GET_FOLLOWED_POSTS } from 'graphql/post';
-
 import { useStore } from 'store';
+
 const Home = () => {
   const [{ auth }] = useStore();
   const queryOptions = {

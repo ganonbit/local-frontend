@@ -63,7 +63,6 @@ const handleErrors = () => {
  */
 export const createApolloClient = (apiUrl, websocketApiUrl) => {
   const cache = new InMemoryCache();
-
   const errorLink = handleErrors();
   const authLink = createAuthLink();
   const uploadLink = createUploadLink({ uri: apiUrl }); // Upload link also creates an HTTP link
@@ -100,6 +99,6 @@ export const createApolloClient = (apiUrl, websocketApiUrl) => {
 
   return new ApolloClient({
     link: ApolloLink.from([errorLink, authLink, terminatingLink]),
-    cache,
+    cache
   });
 };

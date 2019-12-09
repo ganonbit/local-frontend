@@ -30,7 +30,6 @@ export function handler(event, context, callback) {
 
 function getUrlDomain(url) {
   const urlObj = urlParser.parse(url);
-  console.log(urlObj);
   return urlObj.href;
 }
 
