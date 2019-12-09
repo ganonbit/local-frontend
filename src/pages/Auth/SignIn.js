@@ -8,7 +8,7 @@ import { MainLayout } from 'pages/Auth';
 import { Field, ResetPasswordModal } from '../../components/Auth/index';
 import { validateFormField } from '../../utils/index';
 import { routes } from '../../route/index';
-const SignIn = ({ refetch, history }) => {
+const SignIn = ({ refetch, history, location }) => {
   const [reset, setReset] = useState(false);
   const [values, setValues] = useState({ emailOrUsername: '', password: '' });
   const [error, setError] = useState({
@@ -50,7 +50,7 @@ const SignIn = ({ refetch, history }) => {
     signin().then(async ({ data }) => {
       localStorage.setItem('token', data.signin.token);
       await refetch();
-      history.push(routes.HOME);
+      history.push('/');
     });
   };
   return (

@@ -9,6 +9,7 @@ import TopHeader from './TopHeader';
 import Discover from 'pages/Discover';
 
 import * as Routes from 'routes';
+import routes from './routes';
 /**
  * All other routes of Entire App
  * can be restructure depends on Complexity
@@ -21,18 +22,17 @@ const AppLayout = ({ refetch }) => {
         <TopHeader refetch={refetch} />
         <div className='header-spacer'></div>
         <Switch>
-          <Route exact path={Routes.DISCOVER} render={props => <Discover />} />
           <Route
             exact
-            path={Routes.SETTINGS}
-            render={() => <ProfileSetting />}
+            path={Routes.HOME}
+            render={props => <Home {...props} />}
           />
+          <Route path={Routes.DISCOVER} render={props => <Discover />} />
+          <Route path={Routes.SETTINGS} render={() => <ProfileSetting />} />
           <Route
-            exact
             path={Routes.USER_PROFILE}
             render={props => <UserProfile {...props} />}
           />
-          <Route path={Routes.HOME} render={props => <Home {...props} />} />
         </Switch>
       </div>
     </Router>

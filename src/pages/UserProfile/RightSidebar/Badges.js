@@ -3,8 +3,8 @@ import React from 'react';
 export default function Badges() {
   return (
     <div className='ui-block'>
-      <div className='ui-block-title block-title-bg'>
-        <h6 className='title'>James’s Badges</h6>
+      <div class='ui-block-title topics'>
+        <h6 className='title'>Badges</h6>
       </div>
       <div className='ui-block-content'>
         {/* <!-- W-Badges --> */}
@@ -18,7 +18,6 @@ export default function Badges() {
                 src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/badge1_uylxzt.png'
                 alt='author'
               />
-              <div className='label-avatar bg-primary'>2</div>
             </a>
           </li>
           <li>
@@ -35,7 +34,6 @@ export default function Badges() {
                 src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/badge3_ainxuo.png'
                 alt='author'
               />
-              <div className='label-avatar bg-blue'>4</div>
             </a>
           </li>
           <li>
@@ -76,7 +74,6 @@ export default function Badges() {
                 src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/badge13_rgeymj.png'
                 alt='author'
               />
-              <div className='label-avatar bg-breez'>2</div>
             </a>
           </li>
           <li>
@@ -96,8 +93,6 @@ export default function Badges() {
             </a>
           </li>
         </ul>
-
-        {/* <!--.. end W-Badges --> */}
       </div>
     </div>
   );

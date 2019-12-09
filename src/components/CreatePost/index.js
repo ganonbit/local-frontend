@@ -19,13 +19,14 @@ const override = css`
 
 const CreatePost = props => {
   const [{ auth }] = useStore();
-  let { isShowing, toggle } = useModal();
+  let { isShowing, toggle, setIsShowing } = useModal();
   const [isOpen, setIsOpen] = useState(false);
   const [postContent, setPostContent] = useState({
     status: '',
     image: '',
+    imagePreview: '',
   });
-  const { status, image } = postContent;
+  const { status, image, imagePreview } = postContent;
 
   let toggleModel = () => {
     setIsOpen(!isOpen);
@@ -43,7 +44,12 @@ const CreatePost = props => {
   };
 
   const handleImageUpload = e => {
-    setPostContent({ ...postContent, image: e.target.files[0] });
+    setPostContent({
+      ...postContent,
+      image: e.target.files[0],
+      imagePreview: URL.createObjectURL(e.target.files[0]),
+    });
+    setIsShowing(false);
   };
   return (
     <Mutation
@@ -96,6 +102,7 @@ const CreatePost = props => {
                     handleStatusChange={handleStatusChange}
                     handleSubmitForm={handleSubmitForm}
                     createPost={createPost}
+                    imagePreview={imagePreview}
                   />
                 </div>
               </div>

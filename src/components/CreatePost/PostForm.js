@@ -14,6 +14,7 @@ const PostForm = ({
   toggle,
   handleSubmitForm,
   createPost,
+  imagePreview,
 }) => {
   const [{ auth }] = useStore();
   const [activeClass, setActiveClass] = useState('is-empty');
@@ -55,7 +56,7 @@ const PostForm = ({
           onChange={e => handleStatusChange(e)}
         />
       </div>
-      <Footer toggle={toggle} />
+      <Footer toggle={toggle} imagePreview={imagePreview} />
     </form>
   );
 };
