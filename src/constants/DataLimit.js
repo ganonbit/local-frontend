@@ -1,6 +1,6 @@
 export const HOME_PAGE_POSTS_LIMIT = 6;
 
-export const EXPLORE_PAGE_POSTS_LIMIT = 15;
+export const DISCOVER_PAGE_POSTS_LIMIT = 15;
 
 export const PEOPLE_PAGE_USERS_LIMIT = 15;
 

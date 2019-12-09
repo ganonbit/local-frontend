@@ -12,7 +12,7 @@ export default function SpotifyPlaylist() {
             <ol className="widget w-playlist">
                 <li className="js-open-popup" data-popup-target=".playlist-popup">
                     <div className="playlist-thumb">
-                        <img src="img/playlist6.jpg" alt="thumb-composition" />
+                        <img src="https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/playlist6.jpg" alt="thumb-composition" />
                         <div className="overlay"></div>
                         <a href="#" className="play-icon">
                             {/* <svg className="olymp-music-play-icon-big">
@@ -47,7 +47,7 @@ export default function SpotifyPlaylist() {
 
                 <li className="js-open-popup" data-popup-target=".playlist-popup">
                     <div className="playlist-thumb">
-                        <img src="img/playlist7.jpg" alt="thumb-composition" />
+                        <img src="https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/playlist7.jpg" alt="thumb-composition" />
                         <div className="overlay"></div>
                         <a href="#" className="play-icon">
                             {/* <svg className="olymp-music-play-icon-big">
@@ -81,7 +81,7 @@ export default function SpotifyPlaylist() {
                 </li>
                 <li className="js-open-popup" data-popup-target=".playlist-popup">
                     <div className="playlist-thumb">
-                        <img src="img/playlist8.jpg" alt="thumb-composition" />
+                        <img src="https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/playlist8.jpg" alt="thumb-composition" />
                         <div className="overlay"></div>
                         <a href="#" className="play-icon">
                             {/* <svg className="olymp-music-play-icon-big">
@@ -115,7 +115,7 @@ export default function SpotifyPlaylist() {
                 </li>
                 <li className="js-open-popup" data-popup-target=".playlist-popup">
                     <div className="playlist-thumb">
-                        <img src="img/playlist9.jpg" alt="thumb-composition" />
+                        <img src="https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/playlist9.jpg" alt="thumb-composition" />
                         <div className="overlay"></div>
                         <a href="#" className="play-icon">
                             {/* <svg className="olymp-music-play-icon-big">
@@ -149,7 +149,7 @@ export default function SpotifyPlaylist() {
                 </li>
                 <li className="js-open-popup" data-popup-target=".playlist-popup">
                     <div className="playlist-thumb">
-                        <img src="img/playlist10.jpg" alt="thumb-composition" />
+                        <img src="https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/playlist10.jpg" alt="thumb-composition" />
                         <div className="overlay"></div>
                         <a href="#" className="play-icon">
                             {/* <svg className="olymp-music-play-icon-big">

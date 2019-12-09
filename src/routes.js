@@ -16,7 +16,7 @@ export const VERIFY_ACCOUNT = '/verify';
 
 export const USER_PROFILE = '/:username';
 
-export const EXPLORE = '/explore';
+export const DISCOVER = '/DISCOVER';
 
 export const PEOPLE = '/people';
 
@@ -26,7 +26,7 @@ export const MESSAGES = '/messages/:userId';
 
 export const POST = '/post/:id';
 
-export const SETTING = '/setting';
+export const SETTINGS = '/settings';
 
 /**
  * Value that's used in place of id when creating something new.

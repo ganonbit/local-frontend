@@ -17,13 +17,13 @@ const SidebarContent = ({ onSetSidebarOpen, isAuth }) => {
           className='logo'
         >
           <div className='img-wrap'>
-            <img src='img/avocado-img.png' alt='Olympus' />
+            <img src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avocado-img_fwdb02.png' alt='Olympus' />
           </div>
         </Link>
       ) : (
         <div className='logo'>
           <div className='img-wrap'>
-            <img src='img/avocado-img.png' alt='Olympus' />
+            <img src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avocado-img_fwdb02.png' alt='Olympus' />
           </div>
         </div>
       )}
@@ -35,7 +35,7 @@ const SidebarContent = ({ onSetSidebarOpen, isAuth }) => {
               <div className='js-sidebar-open'>
                 <OverlayTriggers toolTipText='OPEN MENU' placement='right'>
                   <img
-                    src='img/menu-img.png'
+                    src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/menu-img_powmte.png'
                     alt='OPEN MENU'
                     onClick={() => onSetSidebarOpen(true, 'fixed-sidebar open')}
                   />
@@ -45,28 +45,28 @@ const SidebarContent = ({ onSetSidebarOpen, isAuth }) => {
             <li>
               <a href='/'>
                 <OverlayTriggers toolTipText='HOME PAGE' placement='right'>
-                  <img src='img/avocado-icon.png' alt='' />
+                  <img src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avocado-icon_rwvve0.png' alt='' />
                 </OverlayTriggers>
               </a>
             </li>
             <li>
-              <a href='/'>
+              <a href='/discover'>
                 <OverlayTriggers toolTipText='DISCOVER' placement='right'>
-                  <img src='img/search-icon.png' alt='' />
+                  <img src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/search-icon_vpzkxv.png' alt='' />
                 </OverlayTriggers>
               </a>
             </li>
-            <li>
+            {/* <li>
               <a href='/'>
                 <OverlayTriggers toolTipText='FAVS' placement='right'>
-                  <img src='img/star-icon.png' alt='' />
+                  <img src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/star-icon_qbwpz1.png' alt='' />
                 </OverlayTriggers>
               </a>
-            </li>
+            </li> */}
             <li>
               <a href='/'>
                 <OverlayTriggers toolTipText='POST' placement='right'>
-                  <img src='img/chat-icon.png' alt='' />
+                  <img src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/chat-icon_bb8rk2.png' alt='' />
                 </OverlayTriggers>
               </a>
             </li>

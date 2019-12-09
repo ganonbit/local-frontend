@@ -64,11 +64,11 @@ const Navigation = () => {
         </ListItem>
       </Link>
 
-      <Link exact activeClassName='selected' to={Routes.EXPLORE}>
+      <Link exact activeClassName='selected' to={Routes.DISCOVER}>
         <ListItem>
           <ExploreIcon width={20} />
           <Spacing right='sm' />
-          Explore
+          Discover
         </ListItem>
       </Link>
 

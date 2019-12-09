@@ -879,6 +879,7 @@ if the page has a “right panel”, add a class for BODY -- ".page-has-right-pa
   -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
   transition: -webkit-transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
   transition: transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
+  transition: transform 0.5s cubic-bezier(0.55, 0, 0.1, 1), -webkit-transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
   transition: transform 0.5s cubic-bezier(0.55, 0, 0.1, 1),
     -webkit-transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
   transition: transform 0.5s cubic-bezier(0.55, 0, 0.1, 1),
@@ -1358,7 +1359,7 @@ if the page has a “right panel”, add a class for BODY -- ".page-has-right-pa
 }
 
 .landing-page .content-bg-wrap {
-  background-image: url('../../img/landing-users.png');
+  background-image: url('https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/landing-users_s9srpx.png');
   background-position: 0 0;
   background-repeat: repeat;
   -webkit-animation: sidedownscroll 30s linear infinite;
@@ -2328,23 +2329,23 @@ if the page has a “right panel”, add a class for BODY -- ".page-has-right-pa
 
 /*------------- #SECTION --------------*/
 .bg-section1 {
-  background-image: url('../../img/bg-section1.png');
+  background-image: url('https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/bg-section1.png');
 }
 
 .bg-section2 {
-  background-image: url('../../img/bg-section2.png');
+  background-image: url('https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/bg-section2.png');
 }
 
 .bg-section3 {
-  background-image: url('../../img/bg-section3.png');
+  background-image: url('https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/bg-section3.png');
 }
 
 .bg-section4 {
-  background-image: url('../../img/bg-section4.png');
+  background-image: url('https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/bg-section4.png');
 }
 
 .bg-section5 {
-  background-image: url('../../img/bg-section5.png');
+  background-image: url('https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/bg-section5.png');
 }
 
 section {
@@ -2626,7 +2627,7 @@ section {
 }
 
 .stunning-header-bg1 {
-  background-image: url('../../img/landing-users.png');
+  background-image: url('https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/landing-users_s9srpx.png');
 }
 
 .breadcrumbs-item {
@@ -3519,7 +3520,10 @@ input {
     -webkit-box-shadow ease-in-out 0.15s;
   transition: border-color ease-in-out 0.15s,
     -webkit-box-shadow ease-in-out 0.15s;
+  -webkit-transition: border-color ease-in-out 0.15s, -webkit-box-shadow ease-in-out 0.15s;
+  transition: border-color ease-in-out 0.15s, -webkit-box-shadow ease-in-out 0.15s;
   transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s, -webkit-box-shadow ease-in-out 0.15s;
   transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s,
     -webkit-box-shadow ease-in-out 0.15s;
   transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s,
@@ -4829,7 +4833,9 @@ fieldset[disabled] .form-group.is-focused .togglebutton label {
   transition: left 0.3s ease, background 0.3s ease, -webkit-box-shadow 0.1s ease;
   -webkit-transition: left 0.3s ease, background 0.3s ease,
     -webkit-box-shadow 0.1s ease;
+  -webkit-transition: left 0.3s ease, background 0.3s ease, -webkit-box-shadow 0.1s ease;
   transition: left 0.3s ease, background 0.3s ease, box-shadow 0.1s ease;
+  transition: left 0.3s ease, background 0.3s ease, box-shadow 0.1s ease, -webkit-box-shadow 0.1s ease;
   transition: left 0.3s ease, background 0.3s ease, box-shadow 0.1s ease,
     -webkit-box-shadow 0.1s ease;
   transition: left 0.3s ease, background 0.3s ease, box-shadow 0.1s ease,
@@ -5553,6 +5559,7 @@ fieldset[disabled] .checkbox input[type='checkbox'],
   -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
   transition: -webkit-transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
   transition: transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
+  transition: transform 0.5s cubic-bezier(0.55, 0, 0.1, 1), -webkit-transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
   transition: transform 0.5s cubic-bezier(0.55, 0, 0.1, 1),
     -webkit-transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
   transition: transform 0.5s cubic-bezier(0.55, 0, 0.1, 1),
@@ -5575,6 +5582,7 @@ fieldset[disabled] .checkbox input[type='checkbox'],
   -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
   transition: -webkit-transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
   transition: transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
+  transition: transform 0.5s cubic-bezier(0.55, 0, 0.1, 1), -webkit-transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
   transition: transform 0.5s cubic-bezier(0.55, 0, 0.1, 1),
     -webkit-transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
   transition: transform 0.5s cubic-bezier(0.55, 0, 0.1, 1),
@@ -5624,6 +5632,7 @@ fieldset[disabled] .checkbox input[type='checkbox'],
   -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
   transition: -webkit-transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
   transition: transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
+  transition: transform 0.5s cubic-bezier(0.55, 0, 0.1, 1), -webkit-transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
   transition: transform 0.5s cubic-bezier(0.55, 0, 0.1, 1),
     -webkit-transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
   transition: transform 0.5s cubic-bezier(0.55, 0, 0.1, 1),
@@ -5685,6 +5694,7 @@ fieldset[disabled] .checkbox input[type='checkbox'],
   -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
   transition: -webkit-transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
   transition: transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
+  transition: transform 0.5s cubic-bezier(0.55, 0, 0.1, 1), -webkit-transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
   transition: transform 0.5s cubic-bezier(0.55, 0, 0.1, 1),
     -webkit-transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
   transition: transform 0.5s cubic-bezier(0.55, 0, 0.1, 1),
@@ -7002,39 +7012,39 @@ fieldset[disabled] .checkbox input[type='checkbox'],
 }
 
 .bg-account {
-  background-image: url('../../img/top-header3.png');
+  background-image: url('https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/top-header3.png');
 }
 
 .bg-birthday {
-  background-image: url('../../img/top-header6.png');
+  background-image: url('https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/top-header6.png');
 }
 
 .bg-badges {
-  background-image: url('../../img/top-header4.png');
+  background-image: url('https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/top-header4.png');
 }
 
 .bg-events {
-  background-image: url('../../img/top-header5.png');
+  background-image: url('https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/top-header5.png');
 }
 
 .bg-weather {
-  background-image: url('../../img/top-header6.png');
+  background-image: url('https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/top-header6.png');
 }
 
 .bg-group {
-  background-image: url('../../img/bg-group.png');
+  background-image: url('https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/bg-group.png');
 }
 
 .bg-music {
-  background-image: url('../../img/top-header7.png');
+  background-image: url('https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/top-header7.png');
 }
 
 .bg-landing {
-  background-image: url('../../img/landing-users.png');
+  background-image: url('https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/landing-users_s9srpx.png');
 }
 
 .bg-users {
-  background-image: url('../../img/bg-users.png');
+  background-image: url('https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/bg-users.png');
 }
 
 .main-header-content {
@@ -7653,13 +7663,7 @@ fieldset[disabled] .checkbox input[type='checkbox'],
 }
 
 .birthday-item.badges .skills-item-meter-active {
-  background: -webkit-gradient(
-    linear,
-    left top,
-    right top,
-    from(#ff613a),
-    to(#ff9432)
-  );
+  background: -webkit-gradient(linear, left top, right top, from(#ff613a), to(#ff9432));
   background: linear-gradient(to right, #ff613a, #ff9432);
 }
 
@@ -10829,7 +10833,7 @@ ol ol li {
 
 .today-events-thumb {
   position: relative;
-  background-image: url('../../img/bg-event-day.jpg');
+  background-image: url('https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/bg-event-day.jpg');
   text-align: center;
   padding: 25px;
   color: #fff;
@@ -11863,7 +11867,7 @@ ol ol li {
 }
 
 .blog-post.format-link .bg-link {
-  background-image: url('../../img/post6.jpg');
+  background-image: url('https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/post6.jpg');
 }
 
 .blog-post.format-link .post-thumb {
@@ -11968,7 +11972,7 @@ ol ol li {
 
 .blog-post.format-quote .post-thumb {
   padding: 60px 50px;
-  background-image: url('../../img/quote-bg.png');
+  background-image: url('https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/quote-bg.png');
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 5px;
@@ -12826,7 +12830,7 @@ ol ol li {
 .testimonial-header-thumb {
   height: 90px;
   overflow: hidden;
-  background-image: url('../../img/testimonial-header.png');
+  background-image: url('https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/testimonial-header.png');
   background-size: cover;
 }
 
@@ -13316,7 +13320,7 @@ ol ol li {
   position: relative;
   padding: 50px 40px;
   color: #fff;
-  background-image: url('../../img/contact-bg.png');
+  background-image: url('https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/contact-bg.png');
   background-size: cover;
   background-repeat: no-repeat;
   width: 40%;
@@ -14655,6 +14659,7 @@ ol ol li {
   -webkit-transition: -webkit-transform 150ms cubic-bezier(0.4, 0, 1, 1);
   transition: -webkit-transform 150ms cubic-bezier(0.4, 0, 1, 1);
   transition: transform 150ms cubic-bezier(0.4, 0, 1, 1);
+  transition: transform 150ms cubic-bezier(0.4, 0, 1, 1), -webkit-transform 150ms cubic-bezier(0.4, 0, 1, 1);
   transition: transform 150ms cubic-bezier(0.4, 0, 1, 1),
     -webkit-transform 150ms cubic-bezier(0.4, 0, 1, 1);
   transition: transform 150ms cubic-bezier(0.4, 0, 1, 1),
@@ -15990,7 +15995,7 @@ ol ol li {
 
 /*------------- #W-BIRTHDAY-ALERT --------------*/
 .w-birthday-alert {
-  background-image: url('../../img/bg-birthdays.jpg');
+  background-image: url('https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/bg-birthdays.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   padding: 25px;
@@ -16068,7 +16073,7 @@ ol ol li {
 
 /*------------- #W-ACTION --------------*/
 .w-action {
-  background-image: url('../../img/landing-bg.jpg');
+  background-image: url('https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/landing-bg.jpg');
   padding: 50px 45px 40px;
   text-align: center;
   color: #fff;
@@ -16400,7 +16405,7 @@ ol ol li {
   padding: 25px;
   color: #fff;
   position: relative;
-  background: url(../../img/bg-birthdays.jpg) no-repeat;
+  background: url(https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/bg-birthdays.jpg) no-repeat;
   background-size: cover;
   border-radius: 5px;
 }
@@ -19676,7 +19681,7 @@ img.mfp-img {
 .mejs-controls .mejs-nexttrack button,
 .mejs-controls .mejs-shuffle-on button,
 .mejs-controls .mejs-shuffle-off button {
-  background: transparent url('../../img/controls-playlist.png') no-repeat;
+  background: transparent url('https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/controls-playlist.png') no-repeat;
 }
 
 .mejs-controls .mejs-show-playlist button {
@@ -19755,7 +19760,7 @@ img.mfp-img {
   border-top: 1px solid white;
   border-bottom: 1px solid black;
   background-color: rgba(50, 50, 50, 0.7);
-  background-image: url('../../img/mep-playlist-icons.png');
+  background-image: url('https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/mep-playlist-icons.png');
   background-position: right 10px top 100px;
   background-repeat: no-repeat;
 }
@@ -19830,7 +19835,7 @@ img.mfp-img {
   position: absolute;
   border: none;
   background-color: transparent;
-  background-image: url('../../img/bigplay.png');
+  background-image: url('https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/bigplay_pph4q5.png');
   background-position: right 10px top 0px;
   top: 50%;
   left: 50%;
@@ -19874,7 +19879,7 @@ img.mfp-img {
   width: 100px;
   opacity: 0.9;
   cursor: pointer;
-  background: transparent url('../../img/bigplay.png') left -400px no-repeat;
+  background: transparent url('https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/bigplay_pph4q5.png') left -400px no-repeat;
   margin-top: -75px;
 }
 
@@ -20019,11 +20024,11 @@ img.mfp-img {
   width: 100px;
   height: 100px;
   margin: -50px 0 0 -50px;
-  background: url('../../img/bigplay.svg') no-repeat;
+  background: url('https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/bigplay_pph4q5.svg') no-repeat;
 }
 
 .no-svg .mejs-overlay-button {
-  background-image: url('../../img/bigplay.png');
+  background-image: url('https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/bigplay_pph4q5.png');
 }
 
 .mejs-overlay:hover .mejs-overlay-button {
@@ -20038,15 +20043,9 @@ img.mfp-img {
   height: 80px;
   margin: -40px 0 0 -40px;
   background: #333;
-  background: url('../../img/background.png');
+  background: url('https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/background_eihfvr.png');
   background: rgba(0, 0, 0, 0.9);
-  background: -webkit-gradient(
-    linear,
-    left top,
-    left bottom,
-    from(rgba(50, 50, 50, 0.9)),
-    to(rgba(0, 0, 0, 0.9))
-  );
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(50, 50, 50, 0.9)), to(rgba(0, 0, 0, 0.9)));
   background: linear-gradient(rgba(50, 50, 50, 0.9), rgba(0, 0, 0, 0.9));
 }
 
@@ -20054,7 +20053,7 @@ img.mfp-img {
   display: block;
   width: 80px;
   height: 80px;
-  background: transparent url('../../img/loading.gif') 50% 50% no-repeat;
+  background: transparent url('https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/loading.gif') 50% 50% no-repeat;
 }
 
 /* End: LAYERS */
@@ -20094,11 +20093,11 @@ img.mfp-img {
   height: 27px;
   width: 27px;
   border: 0;
-  background: transparent url('../../img/controls.svg') no-repeat;
+  background: transparent url('https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/controls.svg') no-repeat;
 }
 
 .no-svg .mejs-controls .mejs-button button {
-  background-image: url('../../img/controls.png');
+  background-image: url('https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/controls.png');
 }
 
 /* :focus for accessibility */
@@ -20166,13 +20165,7 @@ img.mfp-img {
   margin: 5px;
   background: #333;
   background: rgba(50, 50, 50, 0.8);
-  background: -webkit-gradient(
-    linear,
-    left top,
-    left bottom,
-    from(rgba(30, 30, 30, 0.8)),
-    to(rgba(60, 60, 60, 0.8))
-  );
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(30, 30, 30, 0.8)), to(rgba(60, 60, 60, 0.8)));
   background: linear-gradient(rgba(30, 30, 30, 0.8), rgba(60, 60, 60, 0.8));
 }
 
@@ -20217,13 +20210,7 @@ img.mfp-img {
 }
 
 .mejs-controls .mejs-time-rail .mejs-time-current {
-  background: -webkit-gradient(
-    linear,
-    left top,
-    left bottom,
-    from(#20d862),
-    to(#5bf692)
-  );
+  background: -webkit-gradient(linear, left top, left bottom, from(#20d862), to(#5bf692));
   background: linear-gradient(#20d862, #5bf692);
   width: 0;
 }
@@ -20333,7 +20320,7 @@ img.mfp-img {
   display: none;
   height: 115px;
   width: 25px;
-  background: url('../../img/background.png');
+  background: url('https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/background_eihfvr.png');
   background: rgba(50, 50, 50, 0.7);
   border-radius: 0;
   top: -115px;
@@ -20438,13 +20425,7 @@ img.mfp-img {
   border-radius: 5px;
   background: #fff;
   background: rgba(255, 255, 255, 0.8);
-  background: -webkit-gradient(
-    linear,
-    left top,
-    left bottom,
-    from(#20d862),
-    to(#5bf692)
-  );
+  background: -webkit-gradient(linear, left top, left bottom, from(#20d862), to(#5bf692));
   background: linear-gradient(#20d862, #5bf692);
 }
 
@@ -20469,7 +20450,7 @@ img.mfp-img {
   right: -51px;
   width: 85px;
   height: 100px;
-  background: url('../../img/background.png');
+  background: url('https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/background_eihfvr.png');
   background: rgba(50, 50, 50, 0.7);
   border: solid 1px transparent;
   padding: 10px 10px 0 10px;
@@ -20533,13 +20514,7 @@ img.mfp-img {
   float: left;
   background: #222;
   background: rgba(0, 0, 0, 0.7);
-  background: -webkit-gradient(
-    linear,
-    left top,
-    left bottom,
-    from(rgba(50, 50, 50, 0.7)),
-    to(rgba(0, 0, 0, 0.7))
-  );
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(50, 50, 50, 0.7)), to(rgba(0, 0, 0, 0.7)));
   background: linear-gradient(rgba(50, 50, 50, 0.7), rgba(0, 0, 0, 0.7));
   filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, startColorstr=#323232,endColorstr=#000000);
   overflow: hidden;
@@ -20563,13 +20538,7 @@ img.mfp-img {
 .mejs-chapters .mejs-chapter .mejs-chapter-block:hover {
   background: #666;
   background: rgba(102, 102, 102, 0.7);
-  background: -webkit-gradient(
-    linear,
-    left top,
-    left bottom,
-    from(rgba(102, 102, 102, 0.7)),
-    to(rgba(50, 50, 50, 0.6))
-  );
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(102, 102, 102, 0.7)), to(rgba(50, 50, 50, 0.6)));
   background: linear-gradient(rgba(102, 102, 102, 0.7), rgba(50, 50, 50, 0.6));
   filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, startColorstr=#666666,endColorstr=#323232);
 }
@@ -20626,7 +20595,7 @@ img.mfp-img {
 
 .mejs-captions-text {
   padding: 3px 5px;
-  background: url('../../img/background.png');
+  background: url('https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/background_eihfvr.png');
   background: rgba(20, 20, 20, 0.5);
   white-space: pre-wrap;
 }
@@ -20720,7 +20689,7 @@ img.mfp-img {
   right: -10px;
   width: 130px;
   height: 100px;
-  background: url('../../img/background.png');
+  background: url('https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/background_eihfvr.png');
   background: rgba(50, 50, 50, 0.7);
   border: solid 1px transparent;
   padding: 10px;
@@ -20778,7 +20747,7 @@ img.mfp-img {
   left: 0;
   width: 100%;
   height: 100%;
-  background: url('../../img/background.png');
+  background: url('https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/background_eihfvr.png');
   background: rgba(50, 50, 50, 0.7);
   z-index: 1000;
   overflow: hidden;
@@ -20793,7 +20762,7 @@ img.mfp-img {
   position: absolute;
   right: 0;
   top: 0;
-  background: url('../../img/background.png');
+  background: url('https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/background_eihfvr.png');
   background: rgba(50, 50, 50, 0.7);
   color: #fff;
   padding: 4px;
@@ -20823,7 +20792,7 @@ div.mejs-speed-button {
   left: -10px;
   width: 60px;
   height: 100px;
-  background: url('../../img/background.png');
+  background: url('https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/background_eihfvr.png');
   background: rgba(50, 50, 50, 0.7);
   border: solid 1px transparent;
   padding: 0;
@@ -20888,7 +20857,7 @@ div.mejs-speed-button {
 /* End: Speed */
 /* Start: Jump Forward */
 .mejs-controls .mejs-button.mejs-jump-forward-button {
-  background: transparent url('../../img/jumpforward.png') no-repeat;
+  background: transparent url('https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/jumpforward_hs3abv.png') no-repeat;
   background-position: 3px 3px;
 }
 
@@ -20902,7 +20871,7 @@ div.mejs-speed-button {
 /* End: Jump Forward */
 /* Start: Skip Back */
 .mejs-controls .mejs-button.mejs-skip-back-button {
-  background: transparent url('../../img/skipback.png') no-repeat;
+  background: transparent url('https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/skipback.png') no-repeat;
   background-position: 3px 3px;
 }
 
@@ -21168,8 +21137,7 @@ div.mejs-speed-button {
 .swiper-container-3d .swiper-slide-shadow-left {
   background-image: -webkit-gradient(
     linear,
-    right top,
-    left top,
+    right top, left top,
     from(rgba(0, 0, 0, 0.5)),
     to(rgba(0, 0, 0, 0))
   );
@@ -21183,8 +21151,7 @@ div.mejs-speed-button {
 .swiper-container-3d .swiper-slide-shadow-right {
   background-image: -webkit-gradient(
     linear,
-    left top,
-    right top,
+    left top, right top,
     from(rgba(0, 0, 0, 0.5)),
     to(rgba(0, 0, 0, 0))
   );
@@ -21198,8 +21165,7 @@ div.mejs-speed-button {
 .swiper-container-3d .swiper-slide-shadow-top {
   background-image: -webkit-gradient(
     linear,
-    left bottom,
-    left top,
+    left bottom, left top,
     from(rgba(0, 0, 0, 0.5)),
     to(rgba(0, 0, 0, 0))
   );
@@ -21213,8 +21179,7 @@ div.mejs-speed-button {
 .swiper-container-3d .swiper-slide-shadow-bottom {
   background-image: -webkit-gradient(
     linear,
-    left top,
-    left bottom,
+    left top, left bottom,
     from(rgba(0, 0, 0, 0.5)),
     to(rgba(0, 0, 0, 0))
   );

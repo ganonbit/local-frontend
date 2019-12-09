@@ -21,7 +21,7 @@ const AppLayout = ({ refetch }) => {
         <TopHeader refetch={refetch} />
         <div className='header-spacer'></div>
         <Switch>
-          <Route exact path={Routes.EXPLORE} render={() => <Discover />} />
+          <Route exact path={Routes.DISCOVER} render={() => <Discover />} />
           <Route path={Routes.HOME} render={props => <Home {...props} />} />
           {/* <Route
             exact

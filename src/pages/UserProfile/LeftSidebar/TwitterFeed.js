@@ -12,7 +12,7 @@ export default function TwitterFeed() {
             <ul className="widget w-twitter">
                 <li className="twitter-item">
                     <div className="author-folder">
-                        <img src="img/twitter-avatar1.png" alt="avatar" />
+                        <img src="https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/twitter-avatar1.png" alt="avatar" />
                         <div className="author">
                             <a href="#" className="author-name">Space Cowboy</a>
                             <a href="#" className="group">@james_spiegelOK</a>
@@ -28,7 +28,7 @@ export default function TwitterFeed() {
                 </li>
                 <li className="twitter-item">
                     <div className="author-folder">
-                        <img src="img/twitter-avatar1.png" alt="avatar" />
+                        <img src="https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/twitter-avatar1.png" alt="avatar" />
                         <div className="author">
                             <a href="#" className="author-name">Space Cowboy</a>
                             <a href="#" className="group">@james_spiegelOK</a>
@@ -43,7 +43,7 @@ export default function TwitterFeed() {
                 </li>
                 <li className="twitter-item">
                     <div className="author-folder">
-                        <img src="img/twitter-avatar1.png" alt="avatar" />
+                        <img src="https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/twitter-avatar1.png" alt="avatar" />
                         <div className="author">
                             <a href="#" className="author-name">Space Cowboy</a>
                             <a href="#" className="group">@james_spiegelOK</a>

@@ -15,22 +15,22 @@ const route = () => {
         <Switch>
           <Route
             exact
-            path='/setting/changepassword'
+            path='/settings/changepassword'
             render={props => <ChangePassword {...props} />}
           />
           <Route
             exact
-            path='/setting/account'
+            path='/settings/account'
             render={props => <Account {...props} />}
           />
           <Route
             exact
-            path='/setting/notification'
+            path='/settings/notification'
             render={props => <Notification {...props} />}
           />
           <Route
             exact
-            path='/setting/friendrequest'
+            path='/settings/friendrequest'
             render={props => <FriendRequest {...props} />}
           />
           <Route

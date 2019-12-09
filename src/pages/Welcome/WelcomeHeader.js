@@ -9,7 +9,7 @@ const WelcomeHeader = () => {
     >
       <div className='page-title'>
         <Link to='/'>
-          <img src='img/avocado-logo.png' alt='' />
+          <img src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avocado-logo_i9pyxb.png' alt='' />
         </Link>
       </div>
       <div className='header-content-wrapper'>

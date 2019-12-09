@@ -4,7 +4,7 @@ export default class Notifications extends Component {
     return (
       <div className='icon-outer'>
         <div className='control-icon more has-items'>
-          <img src='img/notification-img.png' alt='notifi' />
+          <img src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/notification-img_cporyu.png' alt='notifi' />
           <div className='label-avatar bg-primary'>8</div>
 
           <div className='more-dropdown more-with-triangle triangle-top-center'>
@@ -18,7 +18,7 @@ export default class Notifications extends Component {
               <ul className='notification-list'>
                 <li>
                   <div className='author-thumb'>
-                    <img src='img/avatar62-sm.jpg' alt='author' />
+                    <img src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avatar62-sm.jpg' alt='author' />
                   </div>
                   <div className='notification-event'>
                     <div>
@@ -60,7 +60,7 @@ export default class Notifications extends Component {
 
                 <li className='un-read'>
                   <div className='author-thumb'>
-                    <img src='img/avatar63-sm.jpg' alt='author' />
+                    <img src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avatar63-sm.jpg' alt='author' />
                   </div>
                   <div className='notification-event'>
                     <div>
@@ -104,7 +104,7 @@ export default class Notifications extends Component {
 
                 <li className='with-comment-photo'>
                   <div className='author-thumb'>
-                    <img src='img/avatar64-sm.jpg' alt='author' />
+                    <img src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avatar64-sm.jpg' alt='author' />
                   </div>
                   <div className='notification-event'>
                     <div>

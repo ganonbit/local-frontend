@@ -5,10 +5,10 @@ const AvocadoGame = () => {
     <div className='ui-block'>
       <div className='widget w-action'>
         <div className='ui-block-title'>
-          <img src='img/star-icon2.png' alt='' />
+          <img src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/star-icon2_es9h9w.png' alt='' />
           <Link to='' className='more'></Link>
         </div>
-        <img src='img/game-remote.png' alt='Olympus' />
+        <img src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/game-remote_zxpou0.png' alt='Olympus' />
         <div className='content'>
           <span>Game</span>
           <h4 className='title'>

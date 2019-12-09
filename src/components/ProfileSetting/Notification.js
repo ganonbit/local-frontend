@@ -13,7 +13,7 @@ const Notification = () => (
     <ul class='notification-list'>
       <li>
         <div class='author-thumb'>
-          <img src='img/avatar1-sm.jpg' alt='author' />
+          <img src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avatar1-sm.jpg' alt='author' />
         </div>
         <div class='notification-event'>
           <a href='#1' class='h6 notification-friend'>
@@ -48,7 +48,7 @@ const Notification = () => (
 
       <li class='un-read'>
         <div class='author-thumb'>
-          <img src='img/avatar2-sm.jpg' alt='author' />
+          <img src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avatar2-sm.jpg' alt='author' />
         </div>
         <div class='notification-event'>
           You and{' '}
@@ -84,7 +84,7 @@ const Notification = () => (
 
       <li class='with-comment-photo1'>
         <div class='author-thumb'>
-          <img src='img/avatar3-sm.jpg' alt='author' />
+          <img src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avatar3-sm.jpg' alt='author' />
         </div>
         <div class='notification-event'>
           <a href='#1' class='h6 notification-friend'>
@@ -108,7 +108,7 @@ const Notification = () => (
         </span>
 
         <div class='comment-photo1'>
-          <img src='img/comment-photo1.jpg' alt='photo1' />
+          <img src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/comment-photo1.jpg' alt='photo1' />
           <span>
             “She looks incredible in that outfit! We should see each...”
           </span>
@@ -125,7 +125,7 @@ const Notification = () => (
 
       <li>
         <div class='author-thumb'>
-          <img src='img/avatar4-sm.jpg' alt='author' />
+          <img src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avatar4-sm.jpg' alt='author' />
         </div>
         <div class='notification-event'>
           <a href='#1' class='h6 notification-friend'>
@@ -159,7 +159,7 @@ const Notification = () => (
 
       <li>
         <div class='author-thumb'>
-          <img src='img/avatar5-sm.jpg' alt='author' />
+          <img src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avatar5-sm.jpg' alt='author' />
         </div>
         <div class='notification-event'>
           <a href='#1' class='h6 notification-friend'>
@@ -194,7 +194,7 @@ const Notification = () => (
 
       <li>
         <div class='author-thumb'>
-          <img src='img/avatar6-sm.jpg' alt='author' />
+          <img src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avatar6-sm.jpg' alt='author' />
         </div>
         <div class='notification-event'>
           <a href='#1' class='h6 notification-friend'>
@@ -229,7 +229,7 @@ const Notification = () => (
 
       <li>
         <div class='author-thumb'>
-          <img src='img/avatar7-sm.jpg' alt='author' />
+          <img src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avatar7-sm.jpg' alt='author' />
         </div>
         <div class='notification-event'>
           <a href='#1' class='h6 notification-friend'>

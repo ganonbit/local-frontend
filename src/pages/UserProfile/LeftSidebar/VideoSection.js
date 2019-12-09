@@ -17,7 +17,7 @@ export default function LastVideo() {
 									<use xlink:href="svg-icons/sprites/icons.svg#olymp-play-icon"></use>
 								</svg> */}
                         </a>
-                        <img src="img/video8.jpg" alt="video" />
+                        <img src="https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/video8.jpg" alt="video" />
                         <div className="video-content">
                             <div className="title">System of a Revenge - Hypnotize...</div>
                             <time className="published" dateTime="2017-03-24T18:18">3:25</time>
@@ -30,7 +30,7 @@ export default function LastVideo() {
                                     <use xlink: href="svg-icons/sprites/icons.svg#olymp-play-icon"></use>
 								</svg> */}
                         </a>
-                        <img src="img/video7.jpg" alt="video" />
+                        <img src="https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/video7.jpg" alt="video" />
                         <div className="video-content">
                             <div className="title">Green Goo - Live at Dan’s Arena</div>
                             <time className="published" dateTime="2017-03-24T18:18">5:48</time>

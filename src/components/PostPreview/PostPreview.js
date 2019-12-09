@@ -57,6 +57,7 @@ const Description = styled.span`
 
 
 const Preview = props => {
+  console.log(props);
   return (
     <Container>
       <a

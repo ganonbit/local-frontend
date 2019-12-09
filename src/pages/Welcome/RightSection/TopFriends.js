@@ -7,7 +7,7 @@ const TopFriends = () => {
     items.push(
       <li className='inline-items' key={i}>
         <div className='author-thumb'>
-          <img src='img/avatar38-sm.jpg' alt='author' />
+          <img src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avatar38-sm.jpg' alt='author' />
         </div>
         <div className='notification-event'>
           <Link to='' className='h6 notification-friend'>

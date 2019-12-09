@@ -13,72 +13,72 @@ export default function Friends() {
                 <ul className="widget w-faved-page js-zoom-gallery">
                     <li>
                         <a href="#">
-                            <img src="img/avatar38-sm.jpg" alt="author" />
+                            <img src="https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avatar38-sm.jpg" alt="author" />
                         </a>
                     </li>
                     <li>
                         <a href="#">
-                            <img src="img/avatar24-sm.jpg" alt="user" />
+                            <img src="https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avatar24-sm.jpg" alt="user" />
                         </a>
                     </li>
                     <li>
                         <a href="#">
-                            <img src="img/avatar36-sm.jpg" alt="author" />
+                            <img src="https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avatar36-sm.jpg" alt="author" />
                         </a>
                     </li>
                     <li>
                         <a href="#">
-                            <img src="img/avatar35-sm.jpg" alt="user" />
+                            <img src="https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avatar35-sm.jpg" alt="user" />
                         </a>
                     </li>
                     <li>
                         <a href="#">
-                            <img src="img/avatar34-sm.jpg" alt="author" />
+                            <img src="https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avatar34-sm.jpg" alt="author" />
                         </a>
                     </li>
                     <li>
                         <a href="#">
-                            <img src="img/avatar33-sm.jpg" alt="author" />
+                            <img src="https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avatar33-sm.jpg" alt="author" />
                         </a>
                     </li>
                     <li>
                         <a href="#">
-                            <img src="img/avatar32-sm.jpg" alt="user" />
+                            <img src="https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avatar32-sm.jpg" alt="user" />
                         </a>
                     </li>
                     <li>
                         <a href="#">
-                            <img src="img/avatar31-sm.jpg" alt="author" />
+                            <img src="https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avatar31-sm.jpg" alt="author" />
                         </a>
                     </li>
                     <li>
                         <a href="#">
-                            <img src="img/avatar30-sm.jpg" alt="author" />
+                            <img src="https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avatar30-sm.jpg" alt="author" />
                         </a>
                     </li>
                     <li>
                         <a href="#">
-                            <img src="img/avatar29-sm.jpg" alt="user" />
+                            <img src="https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avatar29-sm.jpg" alt="user" />
                         </a>
                     </li>
                     <li>
                         <a href="#">
-                            <img src="img/avatar28-sm.jpg" alt="user" />
+                            <img src="https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avatar28-sm.jpg" alt="user" />
                         </a>
                     </li>
                     <li>
                         <a href="#">
-                            <img src="img/avatar27-sm.jpg" alt="user" />
+                            <img src="https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avatar27-sm.jpg" alt="user" />
                         </a>
                     </li>
                     <li>
                         <a href="#">
-                            <img src="img/avatar26-sm.jpg" alt="user" />
+                            <img src="https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avatar26-sm.jpg" alt="user" />
                         </a>
                     </li>
                     <li>
                         <a href="#">
-                            <img src="img/avatar25-sm.jpg" alt="user" />
+                            <img src="https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avatar25-sm.jpg" alt="user" />
                         </a>
                     </li>
                     <li className="all-users">

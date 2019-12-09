@@ -20,7 +20,7 @@ const FriendRequest = () => {
           <ul className='notification-list friend-requests'>
             <li>
               <div className='author-thumb'>
-                <img src='img/avatar55-sm.jpg' alt='author' />
+                <img src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avatar55-sm.jpg' alt='author' />
               </div>
               <div className='notification-event'>
                 <a href='#1' className='h6 notification-friend'>
@@ -49,7 +49,7 @@ const FriendRequest = () => {
 
             <li>
               <div className='author-thumb'>
-                <img src='img/avatar56-sm.jpg' alt='author' />
+                <img src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avatar56-sm.jpg' alt='author' />
               </div>
               <div className='notification-event'>
                 <a href='#1' className='h6 notification-friend'>
@@ -86,7 +86,7 @@ const FriendRequest = () => {
 
             <li className='accepted'>
               <div className='author-thumb'>
-                <img src='img/avatar57-sm.jpg' alt='author' />
+                <img src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avatar57-sm.jpg' alt='author' />
               </div>
               <div className='notification-event'>
                 You and{' '}
@@ -117,7 +117,7 @@ const FriendRequest = () => {
 
             <li>
               <div className='author-thumb'>
-                <img src='img/avatar58-sm.jpg' alt='author' />
+                <img src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avatar58-sm.jpg' alt='author' />
               </div>
               <div className='notification-event'>
                 <a href='#1' className='h6 notification-friend'>

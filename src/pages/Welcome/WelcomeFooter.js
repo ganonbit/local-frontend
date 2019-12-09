@@ -11,7 +11,7 @@ const WelcomeFooter = () => {
               <span>English (US)</span>
             </div>
             <div className='col-6 text-right'>
-              <img src='img/avocado-primary-logo.png' alt='' />
+              <img src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avocado-primary-logo_y2ribz.png' alt='' />
             </div>
           </div>
         </div>

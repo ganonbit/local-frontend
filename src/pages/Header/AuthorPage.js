@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, generatePath } from 'react-router-dom';
 import Avatar from 'components/Avatar';
 import * as Routes from 'routes';
 
@@ -24,26 +24,30 @@ const AuthorPage = ({ user }) => {
             </div>
             <ul className='account-settings'>
               <li>
-                <Link>
+                <Link
+                  to={generatePath(Routes.USER_PROFILE, {
+                    username: user.username,
+                  })}
+                >
                   <OlympMenu className='olymp-camera-icon' />
                   <span>Edit Profile</span>
                 </Link>
               </li>
               <li>
-                <Link to={Routes.SETTING}>
+                <Link to={Routes.SETTINGS}>
                   <SettingIcon className='olymp-star-icon left-menu-icon' />
 
                   <span>Settings</span>
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link>
                   <RewardIcon className='olymp-logout-icon' />
                   <span>Rewards</span>
                 </Link>
-              </li>
+              </li> */}
               <li>
-                <a href='/login' onClick={() => localStorage.clear()}>
+                <a href='/' onClick={() => localStorage.clear()}>
                   <LogOut className='olymp-logout-icon' />
                   <span>Log Out</span>
                 </a>

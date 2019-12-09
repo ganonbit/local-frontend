@@ -20,7 +20,7 @@ export default function PostContent(props) {
       console.log('There has been a problem with your fetch operation: ', error.message);
     }
   }
-  const [metaFromContentPreview, setMetaFromContentPreview] = useState('');
+  const [metaFromContentPreview, setMetaFromContentPreview] = useState(null);
 
   useEffect(() => {
     async function fetchData() {

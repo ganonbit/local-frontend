@@ -3,7 +3,7 @@ export default class ChatNotifications extends Component {
   render() {
     return (
       <div className='control-icon more has-items'>
-        <img src='img/inbox-img.png' alt='chatt' />
+        <img src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/inbox-img_pvtt1m.png' alt='chatt' />
         <div className='label-avatar bg-purple'>2</div>
 
         <div className='more-dropdown more-with-triangle triangle-top-center'>
@@ -17,7 +17,7 @@ export default class ChatNotifications extends Component {
             <ul className='notification-list chat-message'>
               <li className='message-unread'>
                 <div className='author-thumb'>
-                  <img src='img/avatar59-sm.jpg' alt='author' />
+                  <img src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avatar59-sm.jpg' alt='author' />
                 </div>
                 <div className='notification-event'>
                   <a href='#1' className='h6 notification-friend'>
@@ -52,7 +52,7 @@ export default class ChatNotifications extends Component {
 
               <li>
                 <div className='author-thumb'>
-                  <img src='img/avatar60-sm.jpg' alt='author' />
+                  <img src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avatar60-sm.jpg' alt='author' />
                 </div>
                 <div className='notification-event'>
                   <a href='#1' className='h6 notification-friend'>
@@ -86,7 +86,7 @@ export default class ChatNotifications extends Component {
               </li>
               <li>
                 <div className='author-thumb'>
-                  <img src='img/avatar61-sm.jpg' alt='author' />
+                  <img src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avatar61-sm.jpg' alt='author' />
                 </div>
                 <div className='notification-event'>
                   <a href='#1' className='h6 notification-friend'>
@@ -121,10 +121,10 @@ export default class ChatNotifications extends Component {
 
               <li className='chat-group'>
                 <div className='author-thumb'>
-                  <img src='img/avatar11-sm.jpg' alt='author' />
-                  <img src='img/avatar12-sm.jpg' alt='author' />
-                  <img src='img/avatar13-sm.jpg' alt='author' />
-                  <img src='img/avatar10-sm.jpg' alt='author' />
+                  <img src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avatar11-sm.jpg' alt='author' />
+                  <img src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avatar12-sm.jpg' alt='author' />
+                  <img src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avatar13-sm.jpg' alt='author' />
+                  <img src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avatar10-sm.jpg' alt='author' />
                 </div>
                 <div className='notification-event'>
                   <a href='#1' className='h6 notification-friend'>

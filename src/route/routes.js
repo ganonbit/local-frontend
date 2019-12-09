@@ -7,11 +7,12 @@ const routes = {
   RESET_PASSWORD: '/reset-password',
   VERIFY_ACCOUNT: '/verify',
   USER_PROFILE: '/:username',
-  EXPLORE: '/explore',
+  DISCOVER: '/DISCOVER',
   PEOPLE: '/people',
   NOTIFICATIONS: '/notifications',
   MESSAGES: '/messages/:userId',
   POST: '/post/:id',
   NEW_ID_VALUE: 'new',
+  SETTINGS:  `/settings`
 };
 export default routes;

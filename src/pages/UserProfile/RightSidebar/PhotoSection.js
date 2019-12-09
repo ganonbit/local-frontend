@@ -11,48 +11,48 @@ export default function LastPhotos() {
 
         <ul className='widget w-last-photo js-zoom-gallery'>
           <li>
-            <a href='img/last-photo10-large.jpg'>
-              <img src='img/last-photo10-large.jpg' alt='friends-icons' />
+            <a href='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/last-photo10-large.jpg'>
+              <img src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/last-photo10-large.jpg' alt='friends-icons' />
             </a>
           </li>
           <li>
-            <a href='img/last-phot11-large.jpg'>
-              <img src='img/last-phot11-large.jpg' alt='friends-icons' />
+            <a href='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/last-phot11-large.jpg'>
+              <img src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/last-phot11-large.jpg' alt='friends-icons' />
             </a>
           </li>
           <li>
-            <a href='img/last-phot12-large.jpg'>
-              <img src='img/last-phot12-large.jpg' alt='friends-icons' />
+            <a href='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/last-phot12-large.jpg'>
+              <img src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/last-phot12-large.jpg' alt='friends-icons' />
             </a>
           </li>
           <li>
-            <a href='img/last-phot13-large.jpg'>
-              <img src='img/last-phot13-large.jpg' alt='friends-icons' />
+            <a href='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/last-phot13-large.jpg'>
+              <img src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/last-phot13-large.jpg' alt='friends-icons' />
             </a>
           </li>
           <li>
-            <a href='img/last-phot14-large.jpg'>
-              <img src='img/last-phot14-large.jpg' alt='friends-icons' />
+            <a href='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/last-phot14-large.jpg'>
+              <img src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/last-phot14-large.jpg' alt='friends-icons' />
             </a>
           </li>
           <li>
-            <a href='img/last-phot15-large.jpg'>
-              <img src='img/last-phot15-large.jpg' alt='friends-icons' />
+            <a href='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/last-phot15-large.jpg'>
+              <img src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/last-phot15-large.jpg' alt='friends-icons' />
             </a>
           </li>
           <li>
-            <a href='img/last-phot16-large.jpg'>
-              <img src='img/last-phot16-large.jpg' alt='friends-icons' />
+            <a href='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/last-phot16-large.jpg'>
+              <img src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/last-phot16-large.jpg' alt='friends-icons' />
             </a>
           </li>
           <li>
-            <a href='img/last-phot17-large.jpg'>
-              <img src='img/last-phot17-large.jpg' alt='friends-icons' />
+            <a href='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/last-phot17-large.jpg'>
+              <img src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/last-phot17-large.jpg' alt='friends-icons' />
             </a>
           </li>
           <li>
-            <a href='img/last-phot18-large.jpg'>
-              <img src='img/last-phot18-large.jpg' alt='friends-icons' />
+            <a href='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/last-phot18-large.jpg'>
+              <img src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/last-phot18-large.jpg' alt='friends-icons' />
             </a>
           </li>
         </ul>
