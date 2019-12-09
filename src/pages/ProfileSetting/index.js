@@ -34,7 +34,7 @@ const route = () => {
             render={props => <FriendRequest {...props} />}
           />
           <Route
-            path='/setting'
+            path='/settings'
             render={props => <PersonalInfo {...props} />}
           />
         </Switch>

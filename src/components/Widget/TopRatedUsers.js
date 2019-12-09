@@ -33,7 +33,7 @@ const TopRatedUsers = ({ client }) => {
     } catch (err) {}
   };
   return (
-    <Query query={USER_SUGGESTIONS} variables={variables}>
+    <Query query={USER_SUGGESTIONS} variables={variables} notifyOnNetworkStatusChange>
       {({ data, loading }) => {
         return loading === true ? (
           <h1>loading...!</h1>

@@ -4,7 +4,7 @@ import linkDecorator from '../Common/linkDecorator';
 
 
 import CommentsHeader from './CommentsHeader';
-export default function Comments(props) {
+export default function Comments(props, isAuth) {
   const [numOfComments, setNumOfComments] = useState(2);
   return (
     <>
@@ -16,6 +16,8 @@ export default function Comments(props) {
                   <CommentsHeader
                     author={comment.author}
                     createdAt={comment.createdAt}
+                    commentId={comment.id}
+                    isAuth={isAuth}
                   />
                   <Linkify componentDecorator={linkDecorator}>
                     <p>{comment.comment}</p>

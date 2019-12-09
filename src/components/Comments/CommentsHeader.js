@@ -1,18 +1,54 @@
 import React from 'react';
 import moment from 'moment';
-import { generatePath } from 'react-router-dom';
+import { generatePath, Link } from 'react-router-dom';
+import { withApollo } from 'react-apollo';
+import { useStore } from 'store';
 
 import Avatar from 'components/Avatar';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEllipsisV } from '@fortawesome/free-solid-svg-icons';
+import { GET_FOLLOWED_POSTS } from 'graphql/post';
+import { DELETE_COMMENT } from 'graphql/comment';
+import { GET_AUTH_USER, GET_USER_POSTS } from 'graphql/user';
 
 import * as Routes from 'routes';
 
-export default function CommentsHeader(props) {
-  const { author, createdAt } = props;
+function CommentsHeader(props) {
+  const { author, createdAt, client, imagePublicId, commentId, isAuth } = props;
+  const [{ auth }] = useStore();
+  const owner = !auth.user ? null : (auth.user.id === author.id);
   const rawTime = parseInt(createdAt);
   const commentDate = new Date(rawTime);
+  const deleteComment = async () => {
+    try {
+      await client.mutate({
+        mutation: DELETE_COMMENT,
+        variables: { input: { id: commentId, imagePublicId } },
+        refetchQueries: () => [
+          {
+            query: GET_FOLLOWED_POSTS,
+            variables: {
+              userId: auth.user.id,
+              skip: 0,
+              limit: 15,
+            },
+          },
+          { query: GET_AUTH_USER, options: { fetchPolicy: 'cache-and-network' }, },
+          {
+            query: GET_USER_POSTS,
+            variables: {
+              username: auth.user.username,
+              skip: 0,
+              limit: 15,
+            },
+          },
+        ],
+      });
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   return (
     <>
@@ -35,16 +71,46 @@ export default function CommentsHeader(props) {
           </div>
         </div>
 
-        <a onClick={() => alert('Hey..')} href='#1' className='more'>
-          <FontAwesomeIcon
-            className='olymp-three-dots-icon'
-            size='sm'
-            color='black'
-            icon={faEllipsisV}
-            style={{ height: '10px' }}
-          />
-        </a>
+          <div className='more'>
+          {!owner || !isAuth ? null : (
+            <FontAwesomeIcon
+              className='olymp-three-dots-icon'
+              size='lg'
+              color='black'
+              icon={faEllipsisV}
+              style={{ height: '12px' }}
+            />
+          )}
+          <ul className='more-dropdown'>
+            {commentId && (
+              <li>
+                <Link href onClick={
+                  e => {
+                    e.preventDefault();
+                    // editComment(e);
+                  }
+                }>
+                  Edit Comment
+                </Link>
+              </li>
+            )}
+            {commentId && (
+              <li>
+                <Link href onClick={
+                  e => {
+                    e.preventDefault();
+                    deleteComment(e);
+                  }
+                }>
+                  Delete Comment
+                </Link>
+              </li>
+            )}
+          </ul>
+        </div>
       </div>
     </>
   );
 }
+
+export default withApollo(CommentsHeader);

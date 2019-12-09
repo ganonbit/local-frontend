@@ -15,7 +15,7 @@ export default function Post({ queryOptions, isAuth }) {
 
   const articleClass = 'hentry post';
   return (
-    <Query query={queryOptions.query} variables={queryOptions.variables}>
+    <Query query={queryOptions.query} variables={queryOptions.variables} notifyOnNetworkStatusChange >
       {({ data, loading }) => {
         let postData =
           queryOptions.callback === 'getFollowedPosts'
@@ -30,9 +30,7 @@ export default function Post({ queryOptions, isAuth }) {
                 <article className={articleClass}>
                   <PostHeader
                     author={post.author}
-                    image={post.image}
                     createdAt={post.createdAt}
-                    user={auth.user}
                     postId={post.id}
                     isAuth={isAuth}
                   />
@@ -62,6 +60,7 @@ export default function Post({ queryOptions, isAuth }) {
                     postId={post.id}
                     onCancel={toggle}
                   />
+                  
                 )}
                 {isAuth && <Comments comments={post.comments} />}
               </div>

@@ -1,37 +1,49 @@
 import React from 'react';
-import { withApollo } from 'react-apollo';
 import { generatePath } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import Avatar from 'components/Avatar';
 import moment from 'moment';
+import { useStore } from 'store';
+import { withApollo } from 'react-apollo';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEllipsisV } from '@fortawesome/free-solid-svg-icons';
 import { GET_FOLLOWED_POSTS, DELETE_POST } from 'graphql/post';
-import { GET_AUTH_USER } from 'graphql/user';
+import { GET_AUTH_USER, GET_USER_POSTS } from 'graphql/user';
+
+import {HOME_PAGE_POSTS_LIMIT, PROFILE_PAGE_POSTS_LIMIT } from 'constants/DataLimit';
 
 import * as Routes from 'routes';
 
-const PostHeader = props => {
-  const { author, postId, client, createdAt, user, isAuth } = props;
+const PostHeader = (props) => {
+  const { author, postId, client, createdAt, imagePublicId, isAuth } = props;
+  console.log(props)
+  const [{ auth }] = useStore();
+  const owner = !auth.user ? null : (auth.user.id === author.id);
   const rawTime = parseInt(createdAt);
   const postDate = new Date(rawTime);
   const deletePost = async () => {
     try {
       await client.mutate({
         mutation: DELETE_POST,
-        variables: { input: { id: postId } },
+        variables: { input: { id: postId, imagePublicId } },
         refetchQueries: () => [
           {
             query: GET_FOLLOWED_POSTS,
             variables: {
-              userId: user.id,
+              userId: auth.user.id,
               skip: 0,
+              limit: HOME_PAGE_POSTS_LIMIT,
             },
           },
+          { query: GET_AUTH_USER, options: { fetchPolicy: 'cache-and-network' }, },
           {
-            query: GET_AUTH_USER,
-            options: { fetchPolicy: 'cache-and-network' },
+            query: GET_USER_POSTS,
+            variables: {
+              username: auth.user.username,
+              skip: 0,
+              limit: PROFILE_PAGE_POSTS_LIMIT,
+            },
           },
         ],
       });
@@ -39,6 +51,7 @@ const PostHeader = props => {
       console.log(err);
     }
   };
+  
   return (
     <div className='post__author author vcard inline-items'>
       <Link
@@ -65,7 +78,7 @@ const PostHeader = props => {
       </div>
 
       <div className='more'>
-        {isAuth && (
+        { !isAuth || !owner ? null : (
           <FontAwesomeIcon
             className='olymp-three-dots-icon'
             size='lg'
@@ -77,22 +90,28 @@ const PostHeader = props => {
         <ul className='more-dropdown'>
           {postId && (
             <li>
-              <a href='#2'>Edit Post</a>
+              <Link href onClick={
+                e => {
+                  e.preventDefault();
+                  // editPost(e);
+                }
+              }>
+                Edit Post
+              </Link>
             </li>
           )}
           {postId && (
             <li>
-              <a href='#2' onClick={e => deletePost(e)}>
+              <Link href onClick={
+                 e => {
+                  e.preventDefault();
+                  deletePost(e);
+                }
+              }>
                 Delete Post
-              </a>
+              </Link>
             </li>
           )}
-          <li>
-            <a href='#2'>Turn Off Notifications</a>
-          </li>
-          <li>
-            <a href='#2'>Select as Featured</a>
-          </li>
         </ul>
       </div>
     </div>

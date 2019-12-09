@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import UploadImage from '../Modals/NewsFeed/UploadImage';
 import ChooseImage from '../Modals/NewsFeed/ChooseImage';
-import useModal from '../../hooks/useModel';
-import { useStore } from '../../store/index';
+import useModal from 'hooks/useModel';
+import { useStore } from 'store';
 import PostForm from './PostForm';
 
-import { Mutation } from 'react-apollo';
+import { Mutation, withApollo } from 'react-apollo';
 import { CREATE_POST } from '../../graphql/post';
 
 import { css } from '@emotion/core';
@@ -17,7 +17,7 @@ const override = css`
   left: 40%;
 `;
 
-export const CreatePost = props => {
+const CreatePost = props => {
   const [{ auth }] = useStore();
   let { isShowing, toggle } = useModal();
   const [isOpen, setIsOpen] = useState(false);
@@ -100,3 +100,5 @@ export const CreatePost = props => {
     </Mutation>
   );
 };
+
+export default withApollo(CreatePost);
