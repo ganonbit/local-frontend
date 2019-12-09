@@ -5,8 +5,8 @@ import useModal from 'hooks/useModel';
 import { useStore } from 'store';
 import PostForm from './PostForm';
 
-import { Mutation, withApollo } from 'react-apollo';
-import { CREATE_POST } from '../../graphql/post';
+import { Mutation } from 'react-apollo';
+import { CREATE_POST, GET_FOLLOWED_POSTS } from '../../graphql/post';
 
 import { css } from '@emotion/core';
 import { BeatLoader } from 'react-spinners';
@@ -55,6 +55,12 @@ const CreatePost = props => {
           authorId: auth.user.id,
         },
       }}
+      refetchQueries={() => [
+        {
+          query: GET_FOLLOWED_POSTS,
+          variables: { userId: auth.user.id, skip: 0, limit: 15 },
+        },
+      ]}
     >
       {(createPost, { loading, error: apiError }) => {
         return (
@@ -101,4 +107,4 @@ const CreatePost = props => {
   );
 };
 
-export default withApollo(CreatePost);
+export default CreatePost;
