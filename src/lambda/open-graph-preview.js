@@ -1,10 +1,10 @@
 import ogs from "open-graph-scraper";
-import getUrl from "get-urls";
+import getUrls from "get-urls";
 import urlParser from "url";
 
 export function handler(event, context, callback) {
   const text = event.queryStringParameters.q;
-  const urls = getUrl(text, {requireSchemeOrWww: false});
+  const urls = getUrls(text, {requireSchemeOrWww: false});
 
   // Return if there is no urls in text
   if (!urls.size) {
@@ -30,7 +30,8 @@ export function handler(event, context, callback) {
 
 function getUrlDomain(url) {
   const urlObj = urlParser.parse(url);
-  return urlObj.host;
+  console.log(urlObj);
+  return urlObj.href;
 }
 
 function buildResponseObject(statusCode, result, text) {

@@ -20,7 +20,7 @@ export default function PostContent(props) {
       console.log('There has been a problem with your fetch operation: ', error.message);
     }
   }
-  const [metaFromContentPreview, setMetaFromContentPreview] = useState(null);
+  const [metaFromContentPreview, setMetaFromContentPreview] = useState('');
 
   useEffect(() => {
     async function fetchData() {
@@ -38,7 +38,7 @@ export default function PostContent(props) {
         <p>{rawContent}</p>
       </Linkify>
 
-      {metaFromContentPreview.meta && !image ? <Preview {...metaFromContentPreview.meta} /> : null}
+      {!metaFromContentPreview && !image ? null : <Preview {...metaFromContentPreview.meta} />}
       {!image ? null : 
         <div className='post-img'>
           <img className='postImage' alt='postImage' src={image} />

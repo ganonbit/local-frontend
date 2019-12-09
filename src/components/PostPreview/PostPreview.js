@@ -57,11 +57,11 @@ const Description = styled.span`
 
 
 const Preview = props => {
-  console.log(props);
+  console.log(props)
   return (
     <Container>
       <a
-        href={props.ogUrl ? `https://${props.ogUrl}` : '#'}
+        href={props.ogUrl ? `${props.ogUrl}` : '#'}
         target='_blank'
         rel="noopener noreferrer"
       >
