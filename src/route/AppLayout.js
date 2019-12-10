@@ -1,5 +1,10 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  withRouter,
+} from 'react-router-dom';
 import Home from '../pages/HomeContainer/Home';
 import UserProfile from 'pages/UserProfile';
 import ProfileSetting from 'pages/ProfileSetting';
@@ -9,33 +14,31 @@ import TopHeader from './TopHeader';
 import Discover from 'pages/Discover';
 
 import * as Routes from 'routes';
-import routes from './routes';
 /**
  * All other routes of Entire App
  * can be restructure depends on Complexity
  */
-const AppLayout = ({ refetch }) => {
+const AppLayout = ({ refetch, history }) => {
   return (
-    <Router>
-      <div className='page-has-left-panels page-has-right-panels pr-0'>
-        <Sidebar refetch={refetch} isAuth={true} />
-        <TopHeader refetch={refetch} />
+    <div className='page-has-left-panels page-has-right-panels pr-0'>
+      <Sidebar refetch={refetch} isAuth={true} />
+      <TopHeader refetch={refetch} />
+      {history.location.pathname === '/settings' ? (
+        <div className='header-spacer header-spacer-small'></div>
+      ) : (
         <div className='header-spacer'></div>
-        <Switch>
-          <Route
-            exact
-            path={Routes.HOME}
-            render={props => <Home {...props} />}
-          />
-          <Route path={Routes.DISCOVER} render={props => <Discover />} />
-          <Route path={Routes.SETTINGS} render={() => <ProfileSetting />} />
-          <Route
-            path={Routes.USER_PROFILE}
-            render={props => <UserProfile {...props} />}
-          />
-        </Switch>
-      </div>
-    </Router>
+      )}
+      <Switch>
+        <Route exact path={Routes.DISCOVER} render={props => <Discover />} />
+        <Route exact path={Routes.SETTINGS} render={() => <ProfileSetting />} />
+        <Route
+          exact
+          path={Routes.USER_PROFILE}
+          render={props => <UserProfile {...props} />}
+        />
+        <Route path={Routes.HOME} render={props => <Home {...props} />} />
+      </Switch>
+    </div>
   );
 };
-export default AppLayout;
+export default withRouter(AppLayout);
