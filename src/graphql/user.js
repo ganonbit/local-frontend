@@ -14,6 +14,7 @@ const userPayload = `
   email
   firstName
   lastName
+  password
   image
   imagePublicId
   coverImage
@@ -313,6 +314,13 @@ export const IS_USER_ONLINE_SUBSCRIPTION = gql`
     isUserOnline(authUserId: $authUserId, userId: $userId) {
       userId
       isOnline
+    }
+  }
+`;
+export const EDIT_ACCOUNT = gql`
+  mutation($input: EditAccountInput!) {
+    editAccount(input: $input) {
+      token
     }
   }
 `;
