@@ -6,7 +6,7 @@ import { GET_AUTH_USER } from 'graphql/user';
 import { SET_AUTH_USER } from 'store/auth';
 
 import AppLayout from '../route/AppLayout';
-import { Loading } from '../components/Common/Loading';
+// import { Loading } from '../components/Common/Loading';
 import Auth from '../route/Auth';
 import { useStore } from 'store';
 /**

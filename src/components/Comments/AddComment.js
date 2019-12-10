@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { generatePath } from 'react-router-dom';
 
 import { CREATE_COMMENT } from '../../graphql/comment';
-import { GET_POSTS } from '../../graphql/post';
+import { GET_POSTS, GET_FOLLOWED_POSTS } from '../../graphql/post';
 import { Mutation, withApollo } from 'react-apollo';
 
 import Avatar from '../Avatar';
@@ -37,6 +37,10 @@ function AddComment({ authorId, author, postId, onCancel }) {
         {
           query: GET_POSTS,
           variables: { authUserId: authorId, skip: 0, limit: 15 },
+        },
+        {
+          query: GET_FOLLOWED_POSTS,
+          variables: { userId: authorId, skip: 0, limit: 15 },
         },
       ]}
     >

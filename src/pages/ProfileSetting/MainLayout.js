@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import * as Routes from 'routes';
 const MainLayout = ({ children }) => {
   return (
     <>
@@ -59,7 +60,7 @@ const MainLayout = ({ children }) => {
                     >
                       <ul className='your-profile-menu'>
                         <li>
-                          <Link to='/setting'>Personal Information</Link>
+                          <Link to={Routes.SETTINGS}>Personal Information</Link>
                         </li>
                         <li>
                           <Link to='/settings/account'>Account Settings</Link>

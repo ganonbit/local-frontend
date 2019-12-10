@@ -10,10 +10,13 @@ const Footer = ({ toggle, imagePreview }) => (
         <CameraIcon className='olymp-camera-icon' />
       </Link>
     </OverlayTriggers>
-    <span class='comments-thumbnail ml-5'>
+    {/* <span class='comments-thumbnail ml-5'>
       {imagePreview && <img src={imagePreview} alt='' />}
-    </span>
-    <button className='btn btn-primary btn-md-2'>Post Status</button>
+    </span> */}
+    <button className='btn btn-primary btn-md-2'>
+      Share Your Avocado Love
+    </button>
+    <button className='btn btn-primary btn-md-2'>Preview </button>
   </div>
 );
 export default Footer;

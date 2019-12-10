@@ -1,5 +1,6 @@
 import React from 'react';
 import Mainlayout from './MainLayout';
+import * as Routes from 'routes';
 import {
   PersonalInfo,
   Account,
@@ -34,7 +35,7 @@ const route = () => {
             render={props => <FriendRequest {...props} />}
           />
           <Route
-            path='/settings'
+            path={Routes.SETTINGS}
             render={props => <PersonalInfo {...props} />}
           />
         </Switch>

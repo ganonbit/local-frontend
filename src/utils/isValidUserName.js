@@ -2,7 +2,7 @@ export const isValidUserName = username => {
   const usernameRegex = /^(?!.*\.\.)(?!.*\.$)[^\W][\w.]{0,29}$/;
 
   if (!username) {
-    return 'Name is Required';
+    return 'User Name is Required';
   } else if (username.length > 20) {
     return 'User name must be less than 20 characters';
   } else if (!usernameRegex.test(username)) {

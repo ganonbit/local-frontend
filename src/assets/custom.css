@@ -279,7 +279,8 @@ ul.user-btns li span {
   margin-bottom: 30px;
 }
 .join-us {
-  background: url('https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/join-bg_puf4nx.png') no-repeat;
+  background: url('https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/join-bg_puf4nx.png')
+    no-repeat;
   padding: 73px 50px 40px;
   background-size: cover;
 }
@@ -316,13 +317,15 @@ ul.user-btns li span {
 }
 .profile-banner {
   padding: 14px 0;
-  background: url(https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/profile-bg_tjfpsi.png) center bottom no-repeat;
+  background: url(https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/profile-bg_tjfpsi.png)
+    center bottom no-repeat;
   background-size: cover;
   min-height: 340px;
   margin: -40px -71px 34px 0;
 }
 .img-hoder {
-  background: url(https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/img-frame_adcgt8.png) no-repeat;
+  background: url(https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/img-frame_adcgt8.png)
+    no-repeat;
   background-size: contain;
   width: 189px;
   height: 251px;
@@ -486,7 +489,13 @@ ul.user-btns li span {
   background-color: var(--theme-color);
 }
 .birthday-item.badges .skills-item-meter-active {
-  background: -webkit-gradient(linear, left top, right top, from(var(--theme-color)), to(var(--theme-color)));
+  background: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(var(--theme-color)),
+    to(var(--theme-color))
+  );
   background: linear-gradient(to right, var(--theme-color), var(--theme-color));
 }
 .content-bg-wrap.bg-landing:before {
@@ -777,10 +786,11 @@ ul.sidebar-box {
 }
 
 .bg-account {
-  background: url(https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/profile-bg_tjfpsi.png) center bottom no-repeat;
+  background: url(https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/profile-bg_tjfpsi.png)
+    center bottom no-repeat;
   background-size: cover;
   -webkit-animation: none;
-          animation: none;
+  animation: none;
 }
 
 .profile-settings-open {
@@ -814,9 +824,87 @@ ul.sidebar-box {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   color: #9a9fbf;
+  cursor: pointer;
+}
+.thumbnail-gallery-items ul {
+  flex-wrap: nowrap;
+  overflow-x: auto;
+}
+
+.thumbnail-gallery-items ul li {
+  position: relative;
+  margin-right: 15px;
+  width: 20%;
+  flex: 0 0 20%;
+  margin-bottom: 10px;
+}
+
+.thumbnail-gallery-items ul li img {
+  width: 100%;
+  display: block;
+}
+
+.thumbnail-gallery-items ul li:last-child {
+  margin-right: 0;
+}
+
+.thumbnail-gallery-items ul li button {
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  color: #ffffff;
+  font-size: 20px;
+  line-height: 20px;
+  opacity: 0;
+  transition: all ease 0.5s;
+}
+
+.thumbnail-gallery-items ul li:hover button {
+  opacity: 1;
+}
+
+li.add-more-posts {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: dashed 2px #d4caca;
+  cursor: pointer;
+}
+
+li.add-more-posts span {
+  font-size: 35px;
+  color: #d4caca;
+}
+
+.upload-content ul li button {
+  background: var(--theme-color-light);
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  color: var(--theme-color-white);
+  font-size: 14px;
+  width: 100%;
+  position: relative;
+}
+.upload-content ul li button svg,
+.upload-content ul li button img {
+  margin-right: 10px;
+  fill: var(--theme-color-white);
+}
+.upload-content button.btn-saved {
+  background: var(--theme-color-blue);
+}
+.upload-content ul li button input#multi {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  left: 0;
+  border: 0;
+  opacity: 0;
   cursor: pointer;
 }
 @media (max-width: 1454px) {
@@ -836,11 +924,11 @@ ul.sidebar-box {
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
     -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
   }
 
   .search-bar.w-search {
@@ -938,8 +1026,8 @@ ul.sidebar-box {
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
   }
   .tabs-buttons button {
     margin: 0 5px;
