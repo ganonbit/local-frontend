@@ -11,15 +11,17 @@ import { faEllipsisV } from '@fortawesome/free-solid-svg-icons';
 import { GET_FOLLOWED_POSTS, DELETE_POST } from 'graphql/post';
 import { GET_AUTH_USER, GET_USER_POSTS } from 'graphql/user';
 
-import {HOME_PAGE_POSTS_LIMIT, PROFILE_PAGE_POSTS_LIMIT } from 'constants/DataLimit';
+import {
+  HOME_PAGE_POSTS_LIMIT,
+  PROFILE_PAGE_POSTS_LIMIT,
+} from 'constants/DataLimit';
 
 import * as Routes from 'routes';
 
-const PostHeader = (props) => {
+const PostHeader = props => {
   const { author, postId, client, createdAt, imagePublicId, isAuth } = props;
-  console.log(props)
   const [{ auth }] = useStore();
-  const owner = !auth.user ? null : (auth.user.id === author.id);
+  const owner = !auth.user ? null : auth.user.id === author.id;
   const rawTime = parseInt(createdAt);
   const postDate = new Date(rawTime);
   const deletePost = async () => {
@@ -36,7 +38,10 @@ const PostHeader = (props) => {
               limit: HOME_PAGE_POSTS_LIMIT,
             },
           },
-          { query: GET_AUTH_USER, options: { fetchPolicy: 'cache-and-network' }, },
+          {
+            query: GET_AUTH_USER,
+            options: { fetchPolicy: 'cache-and-network' },
+          },
           {
             query: GET_USER_POSTS,
             variables: {
@@ -51,7 +56,7 @@ const PostHeader = (props) => {
       console.log(err);
     }
   };
-  
+
   return (
     <div className='post__author author vcard inline-items'>
       <Link
@@ -78,7 +83,7 @@ const PostHeader = (props) => {
       </div>
 
       <div className='more'>
-        { !isAuth || !owner ? null : (
+        {!isAuth || !owner ? null : (
           <FontAwesomeIcon
             className='olymp-three-dots-icon'
             size='lg'
@@ -90,24 +95,26 @@ const PostHeader = (props) => {
         <ul className='more-dropdown'>
           {postId && (
             <li>
-              <Link href onClick={
-                e => {
+              <Link
+                href
+                onClick={e => {
                   e.preventDefault();
                   // editPost(e);
-                }
-              }>
+                }}
+              >
                 Edit Post
               </Link>
             </li>
           )}
           {postId && (
             <li>
-              <Link href onClick={
-                 e => {
+              <Link
+                href
+                onClick={e => {
                   e.preventDefault();
                   deletePost(e);
-                }
-              }>
+                }}
+              >
                 Delete Post
               </Link>
             </li>

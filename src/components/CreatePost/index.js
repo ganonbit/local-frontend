@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import UploadImage from '../Modals/NewsFeed/UploadImage';
-import ChooseImage from '../Modals/NewsFeed/ChooseImage';
 import useModal from 'hooks/useModel';
 import { useStore } from 'store';
 import PostForm from './PostForm';
@@ -20,7 +19,7 @@ const override = css`
 const CreatePost = props => {
   const [{ auth }] = useStore();
   let { isShowing, toggle, setIsShowing } = useModal();
-  const [isOpen, setIsOpen] = useState(false);
+  // const [isOpen, setIsOpen] = useState(false);
   const [postContent, setPostContent] = useState({
     status: '',
     image: '',
@@ -28,9 +27,9 @@ const CreatePost = props => {
   });
   const { status, image, imagePreview } = postContent;
 
-  let toggleModel = () => {
-    setIsOpen(!isOpen);
-  };
+  // let toggleModel = () => {
+  //   setIsOpen(!isOpen);
+  // };
 
   let handleStatusChange = e => {
     const { name, value } = e.target;
@@ -45,6 +44,7 @@ const CreatePost = props => {
         image: '',
         imagePreview: '',
       });
+      setIsShowing(false);
     });
   };
 
@@ -54,7 +54,6 @@ const CreatePost = props => {
       image: e.target.files[0],
       imagePreview: URL.createObjectURL(e.target.files[0]),
     });
-    setIsShowing(false);
   };
   return (
     <Mutation
@@ -81,11 +80,18 @@ const CreatePost = props => {
                 <UploadImage
                   isShowing={isShowing}
                   hide={toggle}
-                  toggleModel={toggleModel}
                   handleImageUpload={handleImageUpload}
+                  handleStatusChange={handleStatusChange}
+                  handleSubmitForm={handleSubmitForm}
+                  status={status}
+                  imagePreview={imagePreview}
+                  createPost={createPost}
+                  auth={auth}
+                  override={override}
+                  loading={loading}
                 />
               }
-              {<ChooseImage isShowing={isOpen} hide={toggleModel} />}
+              {/* {<ChooseImage isShowing={isOpen} hide={toggleModel} />} */}
 
               <div className='tab-content' style={{ position: 'relative' }}>
                 <BeatLoader

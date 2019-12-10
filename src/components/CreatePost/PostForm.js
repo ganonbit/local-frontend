@@ -56,7 +56,7 @@ const PostForm = ({
           onChange={e => handleStatusChange(e)}
         />
       </div>
-      <Footer toggle={toggle} imagePreview={imagePreview} />
+      <Footer toggle={toggle} />
     </form>
   );
 };
