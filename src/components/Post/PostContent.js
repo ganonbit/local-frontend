@@ -1,11 +1,17 @@
 import React, { useState, useEffect } from 'react';
+import * as linkify from 'linkifyjs';
+import Linkify from 'linkifyjs/react';
+import hashtag from 'linkifyjs/plugins/hashtag';
+import mention from 'linkifyjs/plugins/mention';
+
 import Preview from '../PostPreview';
-import Linkify from 'react-linkify';
 import linkDecorator from '../Common/linkDecorator';
 
 export default function PostContent(props) {
   const { image, content } = props;
   const rawContent = content;
+  hashtag(linkify);
+  mention(linkify);
 
   const fetchMetaFromContentPreview = async rawContent => {
     try {
@@ -37,8 +43,8 @@ export default function PostContent(props) {
 
   return (
     <div className='postContainer'>
-      <Linkify componentDecorator={linkDecorator}>
-        <p>{rawContent}</p>
+      <Linkify options={linkDecorator}>
+        {rawContent}
       </Linkify>
 
       {!metaFromContentPreview && !image ? null : (
