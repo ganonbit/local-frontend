@@ -1,11 +1,17 @@
 import React, { useState } from 'react';
-import Linkify from 'react-linkify';
+import * as linkify from 'linkifyjs';
+import Linkify from 'linkifyjs/react';
+import hashtag from 'linkifyjs/plugins/hashtag';
+import mention from 'linkifyjs/plugins/mention';
+
 import linkDecorator from '../Common/linkDecorator';
 
 
 import CommentsHeader from './CommentsHeader';
 export default function Comments(props, isAuth) {
   const [numOfComments, setNumOfComments] = useState(2);
+  hashtag(linkify);
+  mention(linkify);
   return (
     <>
       <ul className='comments-list'>
@@ -19,7 +25,7 @@ export default function Comments(props, isAuth) {
                     commentId={comment.id}
                     isAuth={isAuth}
                   />
-                  <Linkify componentDecorator={linkDecorator}>
+                  <Linkify options={linkDecorator}>
                     <p>{comment.comment}</p>
                   </Linkify>
                 </li>
