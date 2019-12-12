@@ -30,14 +30,14 @@ const AuthorPage = ({ user }) => {
                   })}
                 >
                   <OlympMenu className='olymp-camera-icon' />
-                  <span>Edit Profile</span>
+                  <span>Profile</span>
                 </Link>
               </li>
               <li>
                 <Link to={Routes.SETTINGS}>
                   <SettingIcon className='olymp-star-icon left-menu-icon' />
 
-                  <span>Settings</span>
+                  <span>Profile Settings</span>
                 </Link>
               </li>
               {/* <li>
@@ -53,7 +53,7 @@ const AuthorPage = ({ user }) => {
                 </a>
               </li>
             </ul>
-            <form className='form-group with-button custom-status'>
+            {/* <form className='form-group with-button custom-status'>
               <input
                 className='form-control'
                 placeholder=''
@@ -63,7 +63,7 @@ const AuthorPage = ({ user }) => {
               <button className='bg-purple'>
                 <CheckIcon className='olymp-check-icon' />
               </button>
-            </form>
+            </form> */}
             <ul>
               <li>
                 <Link>

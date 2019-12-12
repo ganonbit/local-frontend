@@ -16,7 +16,7 @@ export const VERIFY_ACCOUNT = '/verify';
 
 export const USER_PROFILE = '/:username';
 
-export const DISCOVER = '/DISCOVER';
+export const DISCOVER = '/discover';
 
 export const PEOPLE = '/people';
 

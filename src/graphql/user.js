@@ -15,6 +15,7 @@ const userPayload = `
   firstName
   lastName
   password
+  role
   image
   imagePublicId
   coverImage
@@ -97,6 +98,7 @@ export const GET_AUTH_USER = gql`
           lastName
           username
           image
+          role
         }
         follow {
           id
@@ -157,6 +159,7 @@ export const GET_USERS = gql`
         lastName
         username
         image
+        role
         following {
           id
           user
@@ -190,6 +193,7 @@ export const SEARCH_USERS = gql`
       lastName
       username
       image
+      role
     }
   }
 `;

@@ -1,4 +1,4 @@
-export const HOME_PAGE_POSTS_LIMIT = 6;
+export const HOME_PAGE_POSTS_LIMIT = 20;
 
 export const DISCOVER_PAGE_POSTS_LIMIT = 15;
 
@@ -8,4 +8,4 @@ export const NOTIFICATIONS_PAGE_NOTIFICATION_LIMIT = 50;
 
 export const MESSAGES_PAGE_MESSAGE_LIMIT = 50;
 
-export const PROFILE_PAGE_POSTS_LIMIT = 6;
+export const PROFILE_PAGE_POSTS_LIMIT = 15;

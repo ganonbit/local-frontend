@@ -7,7 +7,7 @@ const routes = {
   RESET_PASSWORD: '/reset-password',
   VERIFY_ACCOUNT: '/verify',
   USER_PROFILE: '/:username',
-  DISCOVER: '/DISCOVER',
+  DISCOVER: '/discover',
   PEOPLE: '/people',
   NOTIFICATIONS: '/notifications',
   MESSAGES: '/messages/:userId',

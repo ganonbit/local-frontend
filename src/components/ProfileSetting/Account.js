@@ -58,7 +58,7 @@ const AccountSetting = () => (
               <div className='description-toggle-content'>
                 <div className='h6'>Friend’s Birthdays</div>
                 <p>
-                  Choose wheather or not receive notifications about your
+                  Choose whether or not receive notifications about your
                   friend’s birthdays on your newsfeed
                 </p>
               </div>

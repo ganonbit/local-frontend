@@ -66,7 +66,7 @@ const MainLayout = ({ children }) => {
                           <Link to='/settings/account'>Account Settings</Link>
                         </li>
                         <li>
-                          <Link to='/settings/changepassword'>
+                          <Link to='/settings/change-password'>
                             Change Password
                           </Link>
                         </li>
@@ -75,17 +75,9 @@ const MainLayout = ({ children }) => {
                   </div>
                 </div>
                 <div className='ui-block-title'>
-                  <Link to='/settings/notification'>Notifications</Link>
+                  <Link to='/settings/notifications'>Notifications</Link>
                   <a href='#1' className='items-round-little bg-primary'>
                     8
-                  </a>
-                </div>
-                <div className='ui-block-title'>
-                  <Link to='/settings/friendrequest' className='h6 title'>
-                    Friend Requests
-                  </Link>
-                  <a href='#1' className='items-round-little bg-blue'>
-                    4
                   </a>
                 </div>
               </div>

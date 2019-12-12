@@ -16,7 +16,6 @@ const Footer = ({ toggle, imagePreview }) => (
     <button className='btn btn-primary btn-md-2'>
       Share Your Avocado Love
     </button>
-    <button className='btn btn-primary btn-md-2'>Preview </button>
   </div>
 );
 export default Footer;
