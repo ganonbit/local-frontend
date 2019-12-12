@@ -28,6 +28,7 @@ export const POST = '/post/:id';
 
 export const SETTINGS = '/settings';
 
+export const REWARDS = '/rewards';
 /**
  * Value that's used in place of id when creating something new.
  */

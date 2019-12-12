@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { generatePath } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import Avatar from 'components/Avatar';
@@ -11,6 +11,8 @@ import { faEllipsisV } from '@fortawesome/free-solid-svg-icons';
 import { GET_FOLLOWED_POSTS, DELETE_POST } from 'graphql/post';
 import { GET_AUTH_USER, GET_USER_POSTS } from 'graphql/user';
 
+import EditPost from 'components/Modals/EditPost';
+
 import {
   HOME_PAGE_POSTS_LIMIT,
   PROFILE_PAGE_POSTS_LIMIT,
@@ -19,7 +21,18 @@ import {
 import * as Routes from 'routes';
 
 const PostHeader = props => {
-  const { author, postId, client, createdAt, imagePublicId, isAuth } = props;
+  const [isShowing, setIsShowing] = useState(false);
+
+  const {
+    author,
+    postId,
+    client,
+    createdAt,
+    imagePublicId,
+    isAuth,
+    image,
+    content,
+  } = props;
   const [{ auth }] = useStore();
   const isSelma =  !auth.user ? null : auth.user.role === "selma";
   const isOwner = !auth.user ? null : auth.user.id === author.id;
@@ -60,6 +73,14 @@ const PostHeader = props => {
 
   return (
     <div className='post__author author vcard inline-items'>
+      <EditPost
+        show={isShowing}
+        onHide={() => setIsShowing(false)}
+        content={content}
+        image={image}
+        auth={auth}
+        postId={postId}
+      />
       <Link
         to={generatePath(Routes.USER_PROFILE, {
           username: author.username,
@@ -99,8 +120,7 @@ const PostHeader = props => {
               <Link
                 href
                 onClick={e => {
-                  e.preventDefault();
-                  // editPost(e);
+                  setIsShowing(true);
                 }}
               >
                 Edit Post

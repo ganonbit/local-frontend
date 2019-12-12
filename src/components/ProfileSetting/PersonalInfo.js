@@ -1,32 +1,44 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Mutation } from 'react-apollo';
+import DatePicker from 'react-datepicker';
+
 import { Field } from 'components/ProfileSetting';
 import { validateFormField } from 'utils';
 import { EDIT_ACCOUNT } from 'graphql/user';
-
 import { useStore } from 'store';
+
+import bootstrap from 'bootstrap';
+import 'react-datepicker/dist/react-datepicker.css';
+const jQuery = require('jquery');
+window.jQuery = jQuery;
+import('bootstrap-select/dist/css/bootstrap-select.min.css');
+require('bootstrap-select');
+
 const PersonalInfo = () => {
   const [{ auth }] = useStore();
+
   const [values, setValues] = useState({
-    id: auth.user.id,
-    username: auth.user.username,
     firstName: auth.user.firstName,
     lastName: auth.user.lastName,
-    password: auth.user.password,
+    username: auth.user.username,
+    location: auth.user.location,
+    gender: auth.user.gender,
+    bio: auth.user.bio,
+    birthday: auth.user.birthday,
   });
+  const [date, setDate] = useState(auth.user.birthday);
   const [error, setError] = useState({
     firstName: '',
     lastName: '',
     username: '',
   });
-  const { id, username, firstName, lastName, password } = values;
+  const { username, firstName, lastName, bio, birthday } = values;
   const handleChange = e => {
     const { name, value } = e.target;
     setValues({ ...values, [name]: value });
     let fieldError = validateFormField(name, value);
     setError({ ...error, ...fieldError });
   };
-
   const validate = () => {
     if (!firstName || !lastName || !username) {
       if (!firstName)
@@ -53,6 +65,25 @@ const PersonalInfo = () => {
       lastName: '',
     });
   };
+  let formatDate = date => {
+    var d = new Date(date),
+      month = '' + (d.getMonth() + 1),
+      day = '' + d.getDate(),
+      year = d.getFullYear();
+
+    if (month.length < 2) month = '0' + month;
+    if (day.length < 2) day = '0' + day;
+
+    return [month, day, year].join('/');
+  };
+  const handleBirthdayChange = birthday => {
+    setValues({
+      ...values,
+      birthday: formatDate(birthday),
+    });
+    setDate(birthday);
+  };
+
   const submitHandler = (e, editAccount) => {
     e.preventDefault();
     const error = validate();
@@ -60,14 +91,21 @@ const PersonalInfo = () => {
       setError(error);
       return false;
     }
-    editAccount().then(async () => {
-      // console.log('successfully changed');
+    editAccount().then(async data => {
       // await refetch();
-      // dispatch({ type: CLEAR_AUTH_USER });
-      // localStorage.removeItem('token');
-      // history.push(Routes.HOME);
     });
   };
+  useEffect(() => {
+    if (typeof birthday === 'string') {
+      setValues({
+        ...values,
+        birthday: formatDate(new Date(parseInt(date))),
+      });
+    }
+    jQuery('.selectpicker').selectpicker();
+
+    return () => {};
+  }, []);
   const disableButton =
     !firstName ||
     !lastName ||
@@ -79,6 +117,7 @@ const PersonalInfo = () => {
     <Mutation
       mutation={EDIT_ACCOUNT}
       variables={{
+        id: auth.user.id,
         input: values,
       }}
     >
@@ -110,12 +149,15 @@ const PersonalInfo = () => {
                     />
                     <div className='form-group date-time-picker label-floating'>
                       <label className='control-label'>Your Birthday</label>
-                      <input name='datetimepicker' value='10/24/1984' />
-                      <span className='input-group-addon'>
-                        <svg className='olymp-month-calendar-icon icon'>
-                          <use xlinkhref='svg-icons/sprites/icons.svg#olymp-month-calendar-icon'></use>
-                        </svg>
-                      </span>
+                      <DatePicker
+                        dateFormat='dd/MM/yyyy'
+                        selected={
+                          typeof date === 'string'
+                            ? new Date(parseInt(date))
+                            : date
+                        }
+                        onChange={handleBirthdayChange}
+                      />
                     </div>
                   </div>
                   <div className='col col-lg-6 col-md-6 col-sm-12 col-12'>
@@ -142,9 +184,15 @@ const PersonalInfo = () => {
                   <div className='col col-lg-6 col-md-4 col-sm-12 col-12'>
                     <div className='form-group label-floating is-select'>
                       <label className='control-label'>Your Country</label>
-                      <select className='selectpicker form-control'>
-                        <option value='US'>United States</option>
-                        <option value='AU'>Australia</option>
+                      <select
+                        className='selectpicker form-control'
+                        onChange={handleChange}
+                        name='location'
+                      >
+                        <option selected value='United States'>
+                          United States
+                        </option>
+                        <option value='Australia'>Australia</option>
                       </select>
                     </div>
                   </div>
@@ -154,8 +202,8 @@ const PersonalInfo = () => {
                         Your State / Province
                       </label>
                       <select className='selectpicker form-control'>
-                        <option value='CA'>California</option>
-                        <option value='TE'>Texas</option>
+                        <option value='California'>California</option>
+                        <option value='Texas'>Texas</option>
                       </select>
                     </div>
                   </div>
@@ -171,9 +219,13 @@ const PersonalInfo = () => {
                   <div className='col col-lg-6 col-md-4 col-sm-12 col-12'>
                     <div className='form-group label-floating is-select'>
                       <label className='control-label'>Your Gender</label>
-                      <select className='selectpicker form-control'>
-                        <option value='MA'>Male</option>
-                        <option value='FE'>Female</option>
+                      <select
+                        name='gender'
+                        className='selectpicker form-control'
+                        onChange={handleChange}
+                      >
+                        <option value='male'>Male</option>
+                        <option value='female'>Female</option>
                       </select>
                     </div>
                   </div>
@@ -182,9 +234,12 @@ const PersonalInfo = () => {
                       <label className='control-label'>
                         Write a little description about you
                       </label>
-                      <textarea className='form-control' placeholder=''>
-                        Hi, I’m James, I’m 36 and I work as a Digital Designer
-                        for the “Daydreams” Agency in Pier 56
+                      <textarea
+                        className='form-control'
+                        onChange={handleChange}
+                        name='bio'
+                      >
+                        {bio}
                       </textarea>
                     </div>
                   </div>
