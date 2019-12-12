@@ -1,9 +1,12 @@
 import React from 'react';
 
-export const linkDecorator = (href, text, key) => (
-    <a href={href} key={key} target="_blank" rel="noopener noreferrer">
-      {text}
-    </a>
-);
+const linkDecorator = {
+  attributes: {
+    rel: 'noopener noreferrer'
+  },
+  target: {
+    url: '_blank'
+  },
+}
 
 export default linkDecorator;
