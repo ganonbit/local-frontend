@@ -94,9 +94,6 @@ const AuthorPage = ({ user }) => {
           {`${user.firstName} ${user.lastName}`}
           <DropDownArrowIcon className='olymp-dropdown-arrow-icon' />
         </div>
-        <span className='author-subtitle author-subTitle-custom'>
-          SPACE COWBOY
-        </span>
       </Link>
     </div>
   );

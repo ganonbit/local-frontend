@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Mutation } from 'react-apollo';
-import moment from 'moment';
 import DatePicker from 'react-datepicker';
 
 import { Field } from 'components/ProfileSetting';
@@ -10,7 +9,6 @@ import { useStore } from 'store';
 
 import bootstrap from 'bootstrap';
 import 'react-datepicker/dist/react-datepicker.css';
-import { string } from 'prop-types';
 const jQuery = require('jquery');
 window.jQuery = jQuery;
 import('bootstrap-select/dist/css/bootstrap-select.min.css');
