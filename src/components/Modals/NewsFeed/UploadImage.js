@@ -38,6 +38,8 @@ const UploadImageModal = ({
       show={isShowing}
       onHide={() => hide()}
       dialogClassName='window-popup update-header-photo'
+      aria-labelledby='contained-modal-title-vcenter'
+      centered
     >
       <Modal.Header closeButton>
         <h6 className='title'>Add Photos</h6>

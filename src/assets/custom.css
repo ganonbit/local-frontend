@@ -907,6 +907,30 @@ li.add-more-posts span {
   opacity: 0;
   cursor: pointer;
 }
+.bootstrap-select button.btn-light {
+  background: #ffffff;
+}
+.bootstrap-select .filter-option-inner-inner {
+  display: inline-block;
+  overflow: hidden;
+  width: 100%;
+  text-align: left;
+  color: #515365;
+  font-weight: normal;
+  padding-top: 5px;
+}
+.bootstrap-select .dropdown-item {
+  padding: 10px 1.5rem;
+}
+.react-datepicker-popper {
+  z-index: 11;
+}
+.react-datepicker__input-container {
+  width: inherit;
+}
+.react-datepicker-wrapper {
+  width: 100%;
+}
 @media (max-width: 1454px) {
   .search-bar.w-search {
     width: 410px;

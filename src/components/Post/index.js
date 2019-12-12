@@ -2,12 +2,11 @@ import React, { useState } from 'react';
 import PostControlButton from '../Common/PostControlButton';
 import PostHeader from './PostHeader';
 import PostFooter from './PostFooter';
-import PostContent from './PostContent';
+// import PostContent from './PostContent';
 import Comments from 'components/Comments/Comments';
 import AddComment from 'components/Comments/AddComment';
 import { useStore } from 'store';
 import { Query } from 'react-apollo';
-
 export default function Post({ queryOptions, isAuth }) {
   const [{ auth }] = useStore();
   const [isCommentOpen, setCommentOpen] = useState(true);
@@ -39,7 +38,7 @@ export default function Post({ queryOptions, isAuth }) {
                     isAuth={isAuth}
                   />
                   {/* {props.newPost ? <NewPost content={props.content} /> : <PostVideo tag={props.tag} body={props.body} />} */}
-                  <PostContent content={post.content} image={post.image} />
+                  {/* <PostContent content={post.content} image={post.image} /> */}
                   <PostFooter
                     toggle={toggle}
                     comments={post.comments}
