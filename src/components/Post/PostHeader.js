@@ -34,7 +34,8 @@ const PostHeader = props => {
     content,
   } = props;
   const [{ auth }] = useStore();
-  const owner = !auth.user ? null : auth.user.id === author.id;
+  const isSelma =  !auth.user ? null : auth.user.role === "selma";
+  const isOwner = !auth.user ? null : auth.user.id === author.id;
   const rawTime = parseInt(createdAt);
   const postDate = new Date(rawTime);
   const deletePost = async () => {
@@ -104,7 +105,7 @@ const PostHeader = props => {
       </div>
 
       <div className='more'>
-        {!isAuth || !owner ? null : (
+        {isAuth && isOwner || isAuth && isSelma ? (
           <FontAwesomeIcon
             className='olymp-three-dots-icon'
             size='lg'
@@ -112,7 +113,7 @@ const PostHeader = props => {
             icon={faEllipsisV}
             style={{ height: '12px' }}
           />
-        )}
+        ) : null}
         <ul className='more-dropdown'>
           {postId && (
             <li>

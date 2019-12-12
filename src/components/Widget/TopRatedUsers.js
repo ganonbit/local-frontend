@@ -81,11 +81,11 @@ const TopRatedUsers = ({ client }) => {
                 ))}
               </ul>
             </div>
-            <div className='ui-block refer-friend'>
+            {/* <div className='ui-block refer-friend'>
               <Link to='' className='btn btn-lg'>
                 Refer a Friend!
               </Link>
-            </div>
+            </div> */}
           </>
         );
       }}

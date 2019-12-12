@@ -1,22 +1,21 @@
 import React from 'react';
-import Mainlayout from './MainLayout';
+import MainLayout from './MainLayout';
 import * as Routes from 'routes';
 import {
   PersonalInfo,
   Account,
   ChangePassword,
   Notification,
-  FriendRequest,
 } from 'components/ProfileSetting';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 const route = () => {
   return (
     <Router>
-      <Mainlayout>
+      <MainLayout>
         <Switch>
           <Route
             exact
-            path='/settings/changepassword'
+            path='/settings/change-password'
             render={props => <ChangePassword {...props} />}
           />
           <Route
@@ -26,20 +25,15 @@ const route = () => {
           />
           <Route
             exact
-            path='/settings/notification'
+            path='/settings/notifications'
             render={props => <Notification {...props} />}
-          />
-          <Route
-            exact
-            path='/settings/friendrequest'
-            render={props => <FriendRequest {...props} />}
           />
           <Route
             path={Routes.SETTINGS}
             render={props => <PersonalInfo {...props} />}
           />
         </Switch>
-      </Mainlayout>
+      </MainLayout>
     </Router>
   );
 };
