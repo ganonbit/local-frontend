@@ -144,3 +144,16 @@ export const DELETE_POST = gql`
     }
   }
 `;
+/**
+ * Edit a post id
+ */
+export const EDIT_POST = gql`
+  mutation($id: ID!, $input: EditPostInput!) {
+    editPost(id: $id, input: $input) {
+      id
+      content
+      image
+      imagePublicId
+    }
+  }
+`;

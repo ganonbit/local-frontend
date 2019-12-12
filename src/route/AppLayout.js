@@ -12,7 +12,7 @@ import ProfileSetting from 'pages/ProfileSetting';
 import { Sidebar } from '../components/Sidebar/index';
 import TopHeader from './TopHeader';
 import Discover from 'pages/Discover';
-
+import Reward from 'pages/Reward';
 import * as Routes from 'routes';
 /**
  * All other routes of Entire App
@@ -25,14 +25,16 @@ const AppLayout = ({ refetch, history }) => {
       <TopHeader refetch={refetch} />
       {history.location.pathname === '/settings' ? (
         <div className='header-spacer header-spacer-small'></div>
+      ) : history.location.pathname === '/rewards' ? (
+        <div className='remove-header-spacer'></div>
       ) : (
         <div className='header-spacer'></div>
       )}
       <Switch>
-        <Route exact path={Routes.DISCOVER} render={props => <Discover />} />
-        <Route exact path={Routes.SETTINGS} render={() => <ProfileSetting />} />
+        <Route path={Routes.DISCOVER} render={props => <Discover />} />
+        <Route path={Routes.SETTINGS} render={() => <ProfileSetting />} />
+        <Route path={Routes.REWARDS} render={props => <Reward {...props} />} />
         <Route
-          exact
           path={Routes.USER_PROFILE}
           render={props => <UserProfile {...props} />}
         />

@@ -9,19 +9,37 @@ import {
  * Records to select from user
  */
 const userPayload = `
-  id
-  username
-  email
-  firstName
-  lastName
-  password
-  image
-  imagePublicId
-  coverImage
-  coverImagePublicId
-  isOnline
-  isVerified
-  createdAt
+id
+firstName
+lastName
+email
+username
+location
+gender
+bio
+birthday
+password
+image
+imagePublicId
+coverImage
+coverImagePublicId
+isOnline
+isVerified
+isBanned
+isGuru
+isPick
+role
+level
+accountPoints
+likePoints
+commentPoints
+sharePoints
+referralPoints
+gamePoints
+totalPoints
+pagesViewed
+createdAt
+updatedAt
 `;
 
 /**
@@ -318,9 +336,9 @@ export const IS_USER_ONLINE_SUBSCRIPTION = gql`
   }
 `;
 export const EDIT_ACCOUNT = gql`
-  mutation($input: EditAccountInput!) {
-    editAccount(input: $input) {
-      token
+  mutation($id: ID!, $input: EditAccountInput!) {
+    editAccount(id: $id, input: $input) {
+      firstName
     }
   }
 `;

@@ -2,17 +2,17 @@ import React, { useState } from 'react';
 import PostControlButton from '../Common/PostControlButton';
 import PostHeader from './PostHeader';
 import PostFooter from './PostFooter';
-import PostContent from './PostContent';
+// import PostContent from './PostContent';
 import Comments from 'components/Comments/Comments';
 import AddComment from 'components/Comments/AddComment';
+
 import { useStore } from 'store';
 import { Query } from 'react-apollo';
-
 export default function Post({ queryOptions, isAuth }) {
   const [{ auth }] = useStore();
+  console.log('-------------------------auth', auth.user);
   const [isCommentOpen, setCommentOpen] = useState(true);
-  const toggle = () => setCommentOpen(!isCommentOpen);
-
+  const toggleComment = () => setCommentOpen(!isCommentOpen);
   const articleClass = 'hentry post';
   return (
     <Query
@@ -37,11 +37,14 @@ export default function Post({ queryOptions, isAuth }) {
                     createdAt={post.createdAt}
                     postId={post.id}
                     isAuth={isAuth}
+                    content={post.content}
+                    image={post.image}
+                    imagePublicId={post.imagePublicId}
                   />
                   {/* {props.newPost ? <NewPost content={props.content} /> : <PostVideo tag={props.tag} body={props.body} />} */}
-                  <PostContent content={post.content} image={post.image} />
+                  {/* <PostContent content={post.content} image={post.image} /> */}
                   <PostFooter
-                    toggle={toggle}
+                    toggle={toggleComment}
                     comments={post.comments}
                     author={post.author}
                     postId={post.id}
@@ -49,7 +52,7 @@ export default function Post({ queryOptions, isAuth }) {
                     isAuth={isAuth}
                   />
                   <PostControlButton
-                    toggle={toggle}
+                    toggle={toggleComment}
                     comments={post.comments}
                     author={post.author}
                     postId={post.id}
@@ -62,7 +65,7 @@ export default function Post({ queryOptions, isAuth }) {
                     authorId={auth.user.id}
                     author={auth.user}
                     postId={post.id}
-                    onCancel={toggle}
+                    onCancel={toggleComment}
                   />
                 )}
                 {isAuth && <Comments comments={post.comments} />}

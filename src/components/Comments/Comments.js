@@ -6,7 +6,6 @@ import mention from 'linkifyjs/plugins/mention';
 
 import linkDecorator from '../Common/linkDecorator';
 
-
 import CommentsHeader from './CommentsHeader';
 export default function Comments(props, isAuth) {
   const [numOfComments, setNumOfComments] = useState(2);
@@ -16,21 +15,24 @@ export default function Comments(props, isAuth) {
     <>
       <ul className='comments-list'>
         {props.comments
-          ? props.comments.slice(0, numOfComments).map((comment, index) => {
-              return (
-                <li key={index} className='comment-item'>
-                  <CommentsHeader
-                    author={comment.author}
-                    createdAt={comment.createdAt}
-                    commentId={comment.id}
-                    isAuth={isAuth}
-                  />
-                  <Linkify options={linkDecorator}>
-                    <p>{comment.comment}</p>
-                  </Linkify>
-                </li>
-              );
-            })
+          ? props.comments
+              .slice(0, numOfComments)
+              .reverse()
+              .map((comment, index) => {
+                return (
+                  <li key={index} className='comment-item'>
+                    <CommentsHeader
+                      author={comment.author}
+                      createdAt={comment.createdAt}
+                      commentId={comment.id}
+                      isAuth={isAuth}
+                    />
+                    <Linkify options={linkDecorator}>
+                      <p>{comment.comment}</p>
+                    </Linkify>
+                  </li>
+                );
+              })
           : null}
         {numOfComments < props.comments.length ? (
           <div
