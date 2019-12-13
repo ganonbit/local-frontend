@@ -5,8 +5,8 @@ import {
   PersonalInfo,
   Account,
   ChangePassword,
-  Notification,
 } from 'components/ProfileSetting';
+import Notifications from './Notifications';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 const route = () => {
   return (
@@ -26,7 +26,7 @@ const route = () => {
           <Route
             exact
             path='/settings/notifications'
-            render={props => <Notification {...props} />}
+            render={props => <Notifications {...props} />}
           />
           <Route
             path={Routes.SETTINGS}

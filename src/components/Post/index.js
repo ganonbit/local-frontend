@@ -10,6 +10,7 @@ import { useStore } from 'store';
 import { Query } from 'react-apollo';
 export default function Post({ queryOptions, isAuth }) {
   const [{ auth }] = useStore();
+  console.log('auth', auth);
   const [isCommentOpen, setCommentOpen] = useState(true);
   const toggleComment = () => setCommentOpen(!isCommentOpen);
   const articleClass = 'hentry post';
@@ -21,9 +22,9 @@ export default function Post({ queryOptions, isAuth }) {
     >
       {({ data, loading }) => {
         let postData =
-          queryOptions.callback === 'getFollowedPosts'
+          queryOptions.callback === 'getFollowedPosts' && data
             ? data.getFollowedPosts
-            : data.getUserPosts;
+            : data && data.getUserPosts;
         return postData === undefined ? (
           <h1></h1>
         ) : (

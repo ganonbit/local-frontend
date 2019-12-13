@@ -15,12 +15,12 @@ const ListItem = ({
     {path ? (
       <NavLink className={linkClass} to={path}>
         <img src={image} alt='img' className='left-menu-icon' />
-        <span className={titleClass}>{title}</span>
+        <span className='collapse-menu-title'>{title}</span>
       </NavLink>
     ) : (
-      <div className={linkClass}>
+      <div className='collapse-menu-wrap'>
         <img src={image} alt='img' className='left-menu-icon' />
-        <span className={titleClass}>{title}</span>
+        <span className='collapse-menu-title'>{title}</span>
       </div>
     )}
   </li>
