@@ -67,7 +67,7 @@ const SidebarContent = ({ onSetSidebarOpen, isAuth }) => {
                 </OverlayTriggers>
               </Link>
             </li>
-            <li>
+            {/* <li>
               <Link to={generatePath(Routes.HOME)}>
                 <OverlayTriggers toolTipText='FAVS' placement='right'>
                   <img
@@ -76,12 +76,12 @@ const SidebarContent = ({ onSetSidebarOpen, isAuth }) => {
                   />
                 </OverlayTriggers>
               </Link>
-            </li>
+            </li> */}
             <li>
               <Link to={generatePath(Routes.REWARDS)}>
-                <OverlayTriggers toolTipText='POST' placement='right'>
+                <OverlayTriggers toolTipText='REWARDS' placement='right'>
                   <img
-                    src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/chat-icon_bb8rk2.png'
+                    src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/star-icon_qbwpz1.png'
                     alt=''
                   />
                 </OverlayTriggers>

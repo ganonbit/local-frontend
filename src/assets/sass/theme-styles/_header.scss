@@ -83,7 +83,6 @@ if the page has a “right panel”, add a class for BODY -- ".page-has-right-pa
 
 .header-spacer {
   display: block;
-  height: 110px;
 }
 
 .header-spacer-small {
@@ -1258,8 +1257,6 @@ if the page has a “right panel”, add a class for BODY -- ".page-has-right-pa
 	background-image: url("https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/landing-users_s9srpx.png");
 	background-position: 0 0;
 	background-repeat: repeat;
-	-webkit-animation: sidedownscroll 30s linear infinite;
-	        animation: sidedownscroll 30s linear infinite;
 	background-size: auto;
 
 	&:before {
@@ -1304,9 +1301,6 @@ if the page has a “right panel”, add a class for BODY -- ".page-has-right-pa
   text-align: center;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  -webkit-animation: slide 50s linear infinite;
-          animation: slide 50s linear infinite;
-  will-change: background-position;
   background-size: auto;
 
   &:before {
