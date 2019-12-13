@@ -25,7 +25,7 @@ const WelcomeHeader = () => {
               <span>|</span>
             </li>
             <li>
-              <Link to='/signUp'>Sign Up</Link>
+              <Link to='/signup'>Sign Up</Link>
             </li>
           </ul>
         </div>

@@ -205,6 +205,8 @@ a.h4.title {
 .post-add-icon:hover span {
   color: var(--theme-color);
 }
+.name-fields {padding-right: 15px;
+  padding-left: 15px;}
 .more-dropdown a:hover {
   color: var(--theme-color);
 }
@@ -498,10 +500,6 @@ ul.user-btns li span {
   );
   background: linear-gradient(to right, var(--theme-color), var(--theme-color));
 }
-.content-bg-wrap.bg-landing:before {
-  background-color: var(--theme-color);
-  opacity: 0.9;
-}
 .checkbox input[type='checkbox']:checked + .checkbox-material .check {
   background: var(--theme-color);
 }
@@ -511,15 +509,23 @@ ul.user-btns li span {
 .bootstrap-select li.selected a {
   background: var(--theme-color);
 }
-.landing-page .content-bg-wrap:before {
-  background-color: var(--theme-color);
-  opacity: 0.9;
-}
 .registration-login-form .nav-link.active {
   fill: var(--theme-color);
 }
 .registration-login-form .remember a {
   color: var(--theme-color);
+}
+.wrapper {
+  position: relative;
+  padding-top: 56.25%;
+  margin: -110px auto 110px;
+}
+.player {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 .btn-green {
   color: var(--theme-color-white);
@@ -552,10 +558,6 @@ a.btn-register {
 }
 .negative {
   color: var(--theme-color);
-}
-.landing-page .content-bg-wrap {
-  -webkit-animation: sidedownscroll 120s linear infinite;
-  animation: sidedownscroll 120s linear infinite;
 }
 .restore-password-popup {
   position: absolute;
@@ -700,7 +702,7 @@ ul.sidebar-box {
   margin-right: 16px;
 }
 .top-header-thumb {
-  min-height: 422px;
+  /* min-height: 422px; */
 }
 .header--standard-landing.headroom--not-top .logo .logo-title {
   color: var(--theme-color-white);

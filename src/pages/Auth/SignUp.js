@@ -107,30 +107,36 @@ const SignUp = ({ refetch, history }) => {
                     role='tabpanel'
                     data-mh='log-tab'
                   >
-                    <div className='title h6'>Register to Avocado Nation</div>
+                    <div className='title h6 login-title'>Register to Avocado Nation</div>
                     <form
                       className='content'
                       onSubmit={e => handleSubmit(e, signup)}
                     >
                       <div className='row'>
-                        <Field
-                          fieldContainerclassName='sm'
-                          placeholder='First Name'
-                          type='text'
-                          value={firstName}
-                          handleChange={handleChange}
-                          name='firstName'
-                          error={error.firstName}
-                        />
-                        <Field
-                          fieldContainerclassName='sm'
-                          placeholder='Last Name'
-                          type='text'
-                          value={lastName}
-                          handleChange={handleChange}
-                          name='lastName'
-                          error={error.lastName}
-                        />
+                      <div className='col col-6 col-xl-6 col-lg-6 col-md-6 col-sm-12'>
+                          <Field
+                            fieldContainerclassName='sm'
+                            className='test'
+                            placeholder='First Name'
+                            type='text'
+                            value={firstName}
+                            handleChange={handleChange}
+                            name='firstName'
+                            error={error.firstName}
+                          />
+                      </div>
+                      <div className='col col-6 col-xl-6 col-lg-6 col-md-6 col-sm-12'>
+                          <Field
+                            fieldContainerclassName='sm'
+                            className='test'
+                            placeholder='Last Name'
+                            type='text'
+                            value={lastName}
+                            handleChange={handleChange}
+                            name='lastName'
+                            error={error.lastName}
+                          />
+                        </div>
                         <div className='col col-12 col-xl-12 col-lg-12 col-md-12 col-sm-12'>
                           <Field
                             fieldContainerclassName='lg'
@@ -160,59 +166,62 @@ const SignUp = ({ refetch, history }) => {
                             name='password'
                             error={error.password}
                           />
-
-                          <div className='form-group date-time-picker label-floating'>
-                            <label className='control-label'>
-                              Your Birthday
-                            </label>
-                            <input name='birthday' defaultValue='10/24/1984' />
-                            <span className='input-group-addon'>
-                              <MonthCalendar
-                                className='olymp-menu-icon'
-                                width={20}
-                                height={20}
-                              />
-                            </span>
                           </div>
-
-                          <div className='form-group label-floating is-select'>
-                            <label className='control-label'>Your Gender</label>
-                            <select
-                              className='select picker form-control'
-                              onChange={handleChange}
-                            >
-                              <option value='male'>Male</option>
-                              <option value='female'>Female</option>
-                              <option value='custom'>Custom</option>
-                            </select>
-                          </div>
-
-                          <div className='remember'>
-                            <div className='checkbox'>
-                              <label>
-                                <input
-                                  name='optionsCheckboxes'
-                                  type='checkbox'
-                                />
-                                <span className='checkbox-material'>
-                                  <span className='check' />
-                                </span>
-                                I accept the{' '}
-                                <a href='#1'>Terms and Conditions</a> of the
-                                website
+                          <div className='col col-6 col-xl-6 col-lg-6 col-md-6 col-sm-12'>
+                            <div className='form-group date-time-picker label-floating'>
+                              <label className='control-label'>
+                                Your Birthday
                               </label>
+                              <input name='birthday' defaultValue='10/24/1984' />
+                              <span className='input-group-addon'>
+                                <MonthCalendar
+                                  className='olymp-menu-icon'
+                                  width={20}
+                                  height={20}
+                                />
+                              </span>
                             </div>
                           </div>
+                          <div className='col col-6 col-xl-6 col-lg-6 col-md-6 col-sm-12'>
+                            <div className='form-group label-floating is-select'>
+                              <label className='control-label'>Your Gender</label>
+                              <select
+                                className='select picker form-control'
+                                onChange={handleChange}
+                              >
+                                <option value='male'>Male</option>
+                                <option value='female'>Female</option>
+                                <option value='custom'>Custom</option>
+                              </select>
+                            </div>
+                          </div>
+                          <div className='col col-12 col-xl-12 col-lg-12 col-md-12 col-sm-12'>
+                            <div className='remember'>
+                              <div className='checkbox'>
+                                <label className="login-text">
+                                  <input
+                                    name='optionsCheckboxes'
+                                    type='checkbox'
+                                  />
+                                  <span className='checkbox-material'>
+                                    <span className='check' />
+                                  </span>
+                                  I accept the{' '}
+                                  <a href='#1'>Terms and Conditions</a> of the
+                                  website
+                                </label>
+                              </div>
+                            </div>
 
-                          <button
-                            className='btn btn-green btn-lg full-width'
-                            type='submit'
-                            disabled={disableButton}
-                          >
-                            Complete Registration!
-                          </button>
+                            <button
+                              className='btn btn-green btn-lg full-width'
+                              type='submit'
+                              disabled={disableButton}
+                            >
+                              Complete Registration!
+                            </button>
+                          </div>
                         </div>
-                      </div>
                     </form>
                   </div>
                 </div>

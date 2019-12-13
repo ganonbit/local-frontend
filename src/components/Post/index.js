@@ -25,7 +25,7 @@ export default function Post({ queryOptions, isAuth }) {
             ? data.getFollowedPosts
             : data.getUserPosts;
         return postData === undefined ? (
-          <h1>loading...!</h1>
+          <h1></h1>
         ) : (
           postData.posts.map(post => {
             return (

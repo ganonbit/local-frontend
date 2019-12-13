@@ -21,22 +21,22 @@ export default class ChatNotifications extends Component {
               <li className='message-unread'>
                 <div className='author-thumb'>
                   <img
-                    src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avatar59-sm.jpg'
+                    src='https://res.cloudinary.com/weare270b/image/upload/v1576219679/static/SelmaProfile-Crop_ltwm5s.png'
                     alt='author'
                   />
                 </div>
                 <div className='notification-event'>
                   <a href='#1' className='h6 notification-friend'>
-                    Diana Jameson
+                    Selma
                   </a>
                   <span className='chat-message-item'>
-                    Hi James! It’s Diana, I just wanted to let you know that we
-                    have to reschedule...
+                    Hi! It’s Selma, I just wanted to let you know that we
+                    have a new feature...
                   </span>
                   <span className='notification-date'>
                     <time
                       className='entry-date updated'
-                      dateTime='2004-07-24T18:18'
+                      dateTime='2019-12-13T18:18'
                     >
                       4 hours ago
                     </time>
@@ -59,23 +59,23 @@ export default class ChatNotifications extends Component {
               <li>
                 <div className='author-thumb'>
                   <img
-                    src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avatar60-sm.jpg'
+                    src='https://res.cloudinary.com/weare270b/image/upload/v1576219679/static/SelmaProfile-Crop_ltwm5s.png'
                     alt='author'
                   />
                 </div>
                 <div className='notification-event'>
                   <a href='#1' className='h6 notification-friend'>
-                    Jake Parker
+                    Selma
                   </a>
                   <span className='chat-message-item'>
-                    Great, I’ll see you tomorrow!.
+                   Thanks for your idea!
                   </span>
                   <span className='notification-date'>
                     <time
                       className='entry-date updated'
                       dateTime='2004-07-24T18:18'
                     >
-                      4 hours ago
+                      14 hours ago
                     </time>
                   </span>
                 </div>
@@ -96,24 +96,23 @@ export default class ChatNotifications extends Component {
               <li>
                 <div className='author-thumb'>
                   <img
-                    src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avatar61-sm.jpg'
+                    src='https://res.cloudinary.com/weare270b/image/upload/v1576219679/static/SelmaProfile-Crop_ltwm5s.png'
                     alt='author'
                   />
                 </div>
                 <div className='notification-event'>
                   <a href='#1' className='h6 notification-friend'>
-                    Elaine Dreyfuss
+                    Selma
                   </a>
                   <span className='chat-message-item'>
-                    We’ll have to check that at the office and see if the client
-                    is on board with...
+                    Welcome to Avocado Nation!
                   </span>
                   <span className='notification-date'>
                     <time
                       className='entry-date updated'
                       dateTime='2004-07-24T18:18'
                     >
-                      Yesterday at 9:56pm
+                      2 days ago
                     </time>
                   </span>
                 </div>

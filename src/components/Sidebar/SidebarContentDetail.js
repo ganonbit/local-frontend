@@ -20,6 +20,12 @@ const SidebarMainContent = ({ onSetSidebarOpen }) => {
         'https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/search-icon_vpzkxv.png',
       path: '/discover',
     },
+    {
+      title: 'Rewards',
+      image:
+        'https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/star-icon_qbwpz1.png',
+      path: '/rewards',
+    },
     // { title: 'Favs', image: 'https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/star-icon_qbwpz1.png', path: '/' },
   ];
   return (

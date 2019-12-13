@@ -40,7 +40,7 @@ const TopRatedUsers = ({ client }) => {
     >
       {({ data, loading }) => {
         return loading === true ? (
-          <h1>loading...!</h1>
+          <h1></h1>
         ) : (
           <>
             <div className='ui-block top-users'>

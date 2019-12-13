@@ -30,7 +30,7 @@ const WelcomeIntro = () => {
                 <span>Join the Nation</span>
                 <h2>Create your own Profile!</h2>
                 <div className='text-center'>
-                  <Link to='/signUp'>Start Now!</Link>
+                  <Link to='/signup'>Start Now!</Link>
                 </div>
               </div>
             </div>

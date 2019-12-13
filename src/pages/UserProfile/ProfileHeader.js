@@ -12,60 +12,18 @@ const ProfileHeader = ({ user }) => {
                   <img src={user.coverImage} alt='nature' />
                 ) : (
                   <img
-                    src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/top-header1.jpg'
+                    src='https://res.cloudinary.com/weare270b/image/upload/v1576214852/static/profile-bg_edozor.png'
                     alt='nature'
                   />
                 )}
               </div>
-              <div className='profile-section'>
-                <div className='row'>
-                  <div className='col col-lg-5 col-md-5 col-sm-12 col-12'>
-                    <ul className='profile-menu'>
-                      <li>
-                        <Link to='/' className='active'>
-                          Timeline
-                        </Link>
-                      </li>
-                      <li>
-                        <Link to='/'>About</Link>
-                      </li>
-                      <li>
-                        <Link to='/'>Friends</Link>
-                      </li>
-                    </ul>
-                  </div>
-                  <div className='col col-lg-5 ml-auto col-md-5 col-sm-12 col-12'>
-                    <ul className='profile-menu'>
-                      <li>
-                        <Link to='/'>Photos</Link>
-                      </li>
-                      <li>
-                        <Link to='/'>Videos</Link>
-                      </li>
-                      <li>
-                        <div className='more'>
-                          {/* <svg className="olymp-three-dots-icon"><use xlink: href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg> */}
-                          <ul className='more-dropdown more-with-triangle'>
-                            <li>
-                              <Link to='/'>Report Profile</Link>
-                            </li>
-                            <li>
-                              <Link to='/'>Block Profile</Link>
-                            </li>
-                          </ul>
-                        </div>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
               <div className='top-header-author'>
                 <Link to='/' className='author-thumb'>
                   {user.image ? (
-                    <img src={user.coverImage} alt='nature' />
+                    <img src={user.image} alt='nature' />
                   ) : (
                     <img
-                      src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/author-main1.jpg'
+                      src='https://res.cloudinary.com/weare270b/image/upload/v1576220262/static/Image_from_iOS_1_bnaxnc.jpg'
                       alt='nature'
                     />
                   )}
@@ -74,7 +32,7 @@ const ProfileHeader = ({ user }) => {
                   <Link to='/' className='h4 author-name'>
                     {`${user.firstName} ${user.lastName}`}
                   </Link>
-                  <div className='country'>San Francisco, CA</div>
+                  <div className='author-location'>{user.username}</div>
                 </div>
               </div>
             </div>

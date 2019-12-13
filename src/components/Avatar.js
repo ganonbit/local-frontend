@@ -21,7 +21,7 @@ const Avatar = ({ size, image }) => (
     {image ? (
       <Image src={image} />
     ) : (
-      <Image src='https://res.cloudinary.com/weare270b/image/upload/v1573196439/user/12fdd9d3-e63a-4608-8e13-191fe69ec3c3.png' />
+      <Image src='https://res.cloudinary.com/weare270b/image/upload/v1576220262/static/Image_from_iOS_1_bnaxnc.jpg' />
     )}
   </Root>
 );

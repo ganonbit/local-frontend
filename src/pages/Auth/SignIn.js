@@ -75,7 +75,7 @@ const SignIn = ({ refetch, history, location }) => {
                     role='tabpanel'
                     data-mh='log-tab'
                   >
-                    <div className='title h6'>Login to your Account</div>
+                    <div className='title h6 login-title'>Login to your Account</div>
                     <form
                       className='content'
                       onSubmit={e => handleSubmit(e, signin)}
@@ -102,7 +102,7 @@ const SignIn = ({ refetch, history, location }) => {
                           />
 
                           <div className='remember'>
-                            <div className='checkbox'>
+                            {/* <div className='checkbox'>
                               <label>
                                 <input
                                   name='optionsCheckboxes'
@@ -110,7 +110,7 @@ const SignIn = ({ refetch, history, location }) => {
                                 />
                                 Remember Me
                               </label>
-                            </div>
+                            </div> */}
                             <a
                               onClick={() => setReset(true)}
                               href='#1'
@@ -161,7 +161,7 @@ const SignIn = ({ refetch, history, location }) => {
                             Login with Twitter
                           </a> */}
 
-                          <p>
+                          <p className="login-text">
                             Don’t you have an account?{' '}
                             <Link to='/' className='btn-register'>
                               Register Now!

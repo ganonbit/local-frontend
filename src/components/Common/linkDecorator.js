@@ -1,4 +1,4 @@
-import React from 'react';
+import * as Routes from 'routes';
 
 const linkDecorator = {
   attributes: {
@@ -7,6 +7,12 @@ const linkDecorator = {
   target: {
     url: '_blank'
   },
+  formatHref: function (href, type) {
+    if (type === 'hashtag') {
+      href = `${Routes.HOME}?hash-tag-search=${href.substring(1)}`;
+    }
+    return href;
+  }
 }
 
 export default linkDecorator;
