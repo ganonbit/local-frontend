@@ -3,7 +3,7 @@ import React from 'react';
 export default function Badges() {
   return (
     <div className='ui-block'>
-      <div class='ui-block-title topics'>
+      <div className='ui-block-title topics'>
         <h6 className='title'>Badges</h6>
       </div>
       <div className='ui-block-content'>

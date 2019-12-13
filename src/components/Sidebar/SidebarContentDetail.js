@@ -36,8 +36,8 @@ const SidebarMainContent = ({ onSetSidebarOpen }) => {
         <ul className='left-menu'>
           {sidebarList.map((val, index) => (
             <ListItem
-              linkClass='js-sidebar-open'
-              titleClass='left-menu-title'
+              linkclassName='js-sidebar-open'
+              titleclassName='left-menu-title'
               title={val.title}
               key={index}
               onSetSidebarOpen={(open, activeSideClass) =>

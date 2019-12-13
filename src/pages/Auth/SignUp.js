@@ -114,7 +114,7 @@ const SignUp = ({ refetch, history }) => {
                     >
                       <div className='row'>
                         <Field
-                          fieldContainerClass='sm'
+                          fieldContainerclassName='sm'
                           placeholder='First Name'
                           type='text'
                           value={firstName}
@@ -123,7 +123,7 @@ const SignUp = ({ refetch, history }) => {
                           error={error.firstName}
                         />
                         <Field
-                          fieldContainerClass='sm'
+                          fieldContainerclassName='sm'
                           placeholder='Last Name'
                           type='text'
                           value={lastName}
@@ -133,7 +133,7 @@ const SignUp = ({ refetch, history }) => {
                         />
                         <div className='col col-12 col-xl-12 col-lg-12 col-md-12 col-sm-12'>
                           <Field
-                            fieldContainerClass='lg'
+                            fieldContainerclassName='lg'
                             placeholder='Username'
                             type='text'
                             value={username}
@@ -142,7 +142,7 @@ const SignUp = ({ refetch, history }) => {
                             error={error.username}
                           />
                           <Field
-                            fieldContainerClass='lg'
+                            fieldContainerclassName='lg'
                             placeholder='Your Email'
                             type='email'
                             value={email}
@@ -152,7 +152,7 @@ const SignUp = ({ refetch, history }) => {
                           />
 
                           <Field
-                            fieldContainerClass='lg'
+                            fieldContainerclassName='lg'
                             placeholder='Your Password'
                             type='password'
                             value={password}

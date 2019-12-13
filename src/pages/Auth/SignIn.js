@@ -5,9 +5,9 @@ import PropTypes from 'prop-types';
 import { SIGN_IN } from 'graphql/user';
 import { MainLayout } from 'pages/Auth';
 
-import { Field, ResetPasswordModal } from '../../components/Auth/index';
-import { validateFormField } from '../../utils/index';
-import { routes } from '../../route/index';
+import { Field, ResetPasswordModal } from 'components/Auth/index';
+import { validateFormField } from 'utils/index';
+import { routes } from 'route/index';
 const SignIn = ({ refetch, history, location }) => {
   const [reset, setReset] = useState(false);
   const [values, setValues] = useState({ emailOrUsername: '', password: '' });
@@ -83,7 +83,7 @@ const SignIn = ({ refetch, history, location }) => {
                       <div className='row'>
                         <div className='col col-12 col-xl-12 col-lg-12 col-md-12 col-sm-12'>
                           <Field
-                            fieldContainerClass='lg'
+                            fieldContainerclassName='lg'
                             placeholder='Your Email'
                             type='text'
                             name='emailOrUsername'
@@ -92,7 +92,7 @@ const SignIn = ({ refetch, history, location }) => {
                             error={error.emailOrUsername}
                           />
                           <Field
-                            fieldContainerClass='lg'
+                            fieldContainerclassName='lg'
                             placeholder='Your Password'
                             type='password'
                             name='password'

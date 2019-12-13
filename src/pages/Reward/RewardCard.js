@@ -1,7 +1,7 @@
 import React from 'react';
 const RewardCard = () => (
-  <div class='col-lg-3'>
-    <div class='point-inner-wrap'>
+  <div className='col-lg-3'>
+    <div className='point-inner-wrap'>
       <h4>20-50 Points</h4>
       <ul>
         <li>

@@ -2,10 +2,10 @@ import React from 'react';
 
 export default function Friends() {
   return (
-    <div class='ui-block top-users'>
+    <div className='ui-block top-users'>
       <div className='ui-block'>
-        <div class='ui-block-title'>
-          <h6 class='title'>Favs</h6>
+        <div className='ui-block-title'>
+          <h6 className='title'>Favs</h6>
         </div>
         <div className='ui-block-content'>
           {/* <!-- W-Faved-Page --> */}

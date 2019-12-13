@@ -37,7 +37,7 @@ const AccountSetting = () => (
               <div className='togglebutton'>
                 <label>
                   <input type='checkbox' checked={true} />
-                  <span class='toggle'></span>
+                  <span className='toggle'></span>
                 </label>
               </div>
             </div>
@@ -52,7 +52,7 @@ const AccountSetting = () => (
               <div className='togglebutton'>
                 <label>
                   <input type='checkbox' checked='' />
-                  <span class='toggle'></span>
+                  <span className='toggle'></span>
                 </label>
               </div>
             </div>
@@ -67,7 +67,7 @@ const AccountSetting = () => (
               <div className='togglebutton'>
                 <label>
                   <input type='checkbox' checked={false} />
-                  <span class='toggle'></span>
+                  <span className='toggle'></span>
                 </label>
               </div>
             </div>
@@ -82,7 +82,7 @@ const AccountSetting = () => (
               <div className='togglebutton'>
                 <label>
                   <input type='checkbox' checked={true} />
-                  <span class='toggle'></span>
+                  <span className='toggle'></span>
                 </label>
               </div>
             </div>
