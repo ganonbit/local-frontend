@@ -6819,7 +6819,7 @@ fieldset[disabled] .checkbox input[type='checkbox'],
 .registration-login-form {
   border: 1px solid #e6ecf5;
   border-radius: 0 5px 5px 0;
-  background-color:rgba(255,255,255,0.5);
+  background-color: #ffffff;
   overflow: hidden;
   position: relative;
   padding-left: 71px;

@@ -107,7 +107,7 @@ const SignUp = ({ refetch, history }) => {
                     role='tabpanel'
                     data-mh='log-tab'
                   >
-                    <div className='title h6 login-title'>Register to Avocado Nation</div>
+                    <div className='title h6'>Register to Avocado Nation</div>
                     <form
                       className='content'
                       onSubmit={e => handleSubmit(e, signup)}
@@ -198,7 +198,7 @@ const SignUp = ({ refetch, history }) => {
                           <div className='col col-12 col-xl-12 col-lg-12 col-md-12 col-sm-12'>
                             <div className='remember'>
                               <div className='checkbox'>
-                                <label className="login-text">
+                                <label>
                                   <input
                                     name='optionsCheckboxes'
                                     type='checkbox'

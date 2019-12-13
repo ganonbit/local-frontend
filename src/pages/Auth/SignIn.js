@@ -75,7 +75,7 @@ const SignIn = ({ refetch, history, location }) => {
                     role='tabpanel'
                     data-mh='log-tab'
                   >
-                    <div className='title h6 login-title'>Login to your Account</div>
+                    <div className='title h'>Login to your Account</div>
                     <form
                       className='content'
                       onSubmit={e => handleSubmit(e, signin)}
@@ -161,7 +161,7 @@ const SignIn = ({ refetch, history, location }) => {
                             Login with Twitter
                           </a> */}
 
-                          <p className="login-text">
+                          <p>
                             Don’t you have an account?{' '}
                             <Link to='/' className='btn-register'>
                               Register Now!
