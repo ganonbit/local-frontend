@@ -1,25 +1,15 @@
 import React from 'react';
 
-import AuthorPage from '../pages/Header/AuthorPage';
-import Notifications from '../pages/Header/Notifications';
-import ChatNotifications from '../pages/Header/ChatNotifications';
 import '../assets/svg-icons/back-to-top.svg';
 import HeaderTitle from '../pages/Header/HeaderTitle';
-import SearchBar from '../pages/Header/SearchBar';
-import { useStore } from 'store';
+import Search from '../components/Search'
+
 const TopHeader = () => {
-  const [{ auth }] = useStore();
   return (
     <header className='header' id='site-header'>
       <HeaderTitle />
       <div className='header-content-wrapper'>
-        <SearchBar />
-        <div className='control-block'>
-          {/* <FriendRequest /> */}
-          <ChatNotifications />
-          <Notifications />
-          <AuthorPage user={auth.user} />
-        </div>
+        <Search />
       </div>
       <div className='nav-right-section'>
         {/* 
