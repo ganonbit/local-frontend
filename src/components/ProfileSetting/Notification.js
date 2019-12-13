@@ -1,296 +1,87 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
+import { generatePath, Link } from 'react-router-dom';
+import { withApollo } from 'react-apollo';
+
+import Avatar from 'components/Avatar';
+
+import { GET_AUTH_USER } from 'graphql/user';
+import { UPDATE_NOTIFICATION_SEEN } from 'graphql/notification';
+
 import { useStore } from 'store';
-const Notification = () => {
+
+import * as Routes from 'routes';
+
+const Notification = ({ notification, client, key }) => {
   const [{ auth }] = useStore();
-  console.log('---------------------Auth', auth);
+
+  useEffect(() => {
+    const updateNotificationSeen = async () => {
+      try {
+        await client.mutate({
+          mutation: UPDATE_NOTIFICATION_SEEN,
+          variables: {
+            input: {
+              userId: auth.user.id,
+            },
+          },
+          refetchQueries: () => [{ query: GET_AUTH_USER }],
+        });
+      } catch (err) {}
+    };
+
+    updateNotificationSeen();
+  }, [auth.user.id, auth.user.newNotifications.length, client]);
+
   return (
-    <>
-      <div className='ui-block-title block-title-bg'>
-        <h6 className='title'>Notifications</h6>
-        <a href='#1' className='more'>
-          <svg className='olymp-three-dots-icon'>
-            <use XlinkHref='svg-icons/sprites/icons.svg#olymp-three-dots-icon'></use>
-          </svg>
-        </a>
+    <li key={key}>
+      <Avatar image={auth.user.image} />
+      <div className='notification-event'>
+        <Link
+          className='h6 notification-friend'
+          to={generatePath(Routes.USER_PROFILE, {
+            username: notification.author.username,
+          })}
+        >
+          {`${notification.author.firstName} ${notification.author.lastName}`}
+        </Link>
+        {notification.follow && <>started following you</>}
+
+        {notification.like && (
+          <>
+            likes your photo
+            <Link
+            // to={generatePath(Routes.POST, {
+            //   id: notification.like.post.id,
+            // })}
+            >
+              <div className='comment-photo1'>
+                <img src={notification.like.post.image} alt='photo1' />
+              </div>
+            </Link>
+          </>
+        )}
+
+        {notification.comment && (
+          <>
+            likes your photo
+            <Link
+              to={generatePath(Routes.POST, {
+                id: notification.comment.post.id,
+              })}
+            >
+              <div className='comment-photo1'>
+                <img src={notification.comment.post.image} alt='photo1' />
+              </div>
+            </Link>
+          </>
+        )}
       </div>
-
-      <ul className='notification-list'>
-        <li>
-          <div className='author-thumb'>
-            <img
-              src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avatar1-sm.jpg'
-              alt='author'
-            />
-          </div>
-          <div className='notification-event'>
-            <a href='#1' className='h6 notification-friend'>
-              Mathilda Brinker
-            </a>{' '}
-            commented on your new{' '}
-            <a href='#1' className='notification-link'>
-              profile status
-            </a>
-            .
-            <span className='notification-date'>
-              <time className='entry-date updated' datetime='2004-07-24T18:18'>
-                4 hours ago
-              </time>
-            </span>
-          </div>
-          <span className='notification-icon'>
-            <svg className='olymp-comments-post-icon'>
-              <use XlinkHref='svg-icons/sprites/icons.svg#olymp-comments-post-icon'></use>
-            </svg>
-          </span>
-
-          <div className='more'>
-            <svg className='olymp-three-dots-icon'>
-              <use XlinkHref='svg-icons/sprites/icons.svg#olymp-three-dots-icon'></use>
-            </svg>
-            <svg className='olymp-little-delete'>
-              <use XlinkHref='svg-icons/sprites/icons.svg#olymp-little-delete'></use>
-            </svg>
-          </div>
-        </li>
-
-        <li className='un-read'>
-          <div className='author-thumb'>
-            <img
-              src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avatar2-sm.jpg'
-              alt='author'
-            />
-          </div>
-          <div className='notification-event'>
-            You and{' '}
-            <a href='#1' className='h6 notification-friend'>
-              Nicholas Grissom
-            </a>{' '}
-            just became friends. Write on{' '}
-            <a href='#1' className='notification-link'>
-              his wall
-            </a>
-            .
-            <span className='notification-date'>
-              <time className='entry-date updated' datetime='2004-07-24T18:18'>
-                9 hours ago
-              </time>
-            </span>
-          </div>
-          <span className='notification-icon'>
-            <svg className='olymp-happy-face-icon'>
-              <use XlinkHref='svg-icons/sprites/icons.svg#olymp-happy-face-icon'></use>
-            </svg>
-          </span>
-
-          <div className='more'>
-            <svg className='olymp-three-dots-icon'>
-              <use XlinkHref='svg-icons/sprites/icons.svg#olymp-three-dots-icon'></use>
-            </svg>
-            <svg className='olymp-little-delete'>
-              <use XlinkHref='svg-icons/sprites/icons.svg#olymp-little-delete'></use>
-            </svg>
-          </div>
-        </li>
-
-        <li className='with-comment-photo1'>
-          <div className='author-thumb'>
-            <img
-              src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avatar3-sm.jpg'
-              alt='author'
-            />
-          </div>
-          <div className='notification-event'>
-            <a href='#1' className='h6 notification-friend'>
-              Sarah Hetfield
-            </a>{' '}
-            commented on your{' '}
-            <a href='#1' className='notification-link'>
-              photo1
-            </a>
-            .
-            <span className='notification-date'>
-              <time className='entry-date updated' datetime='2004-07-24T18:18'>
-                Yesterday at 5:32am
-              </time>
-            </span>
-          </div>
-          <span className='notification-icon'>
-            <svg className='olymp-comments-post-icon'>
-              <use XlinkHref='svg-icons/sprites/icons.svg#olymp-comments-post-icon'></use>
-            </svg>
-          </span>
-
-          <div className='comment-photo1'>
-            <img
-              src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/comment-photo1.jpg'
-              alt='photo1'
-            />
-            <span>
-              “She looks incredible in that outfit! We should see each...”
-            </span>
-          </div>
-          <div className='more'>
-            <svg className='olymp-three-dots-icon'>
-              <use XlinkHref='svg-icons/sprites/icons.svg#olymp-three-dots-icon'></use>
-            </svg>
-            <svg className='olymp-little-delete'>
-              <use XlinkHref='svg-icons/sprites/icons.svg#olymp-little-delete'></use>
-            </svg>
-          </div>
-        </li>
-
-        <li>
-          <div className='author-thumb'>
-            <img
-              src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avatar4-sm.jpg'
-              alt='author'
-            />
-          </div>
-          <div className='notification-event'>
-            <a href='#1' className='h6 notification-friend'>
-              Chris Greyson
-            </a>{' '}
-            liked your{' '}
-            <a href='#1' className='notification-link'>
-              profile status
-            </a>
-            .
-            <span className='notification-date'>
-              <time className='entry-date updated' datetime='2004-07-24T18:18'>
-                March 18th at 8:22pm
-              </time>
-            </span>
-          </div>
-          <span className='notification-icon'>
-            <svg className='olymp-heart-icon'>
-              <use XlinkHref='svg-icons/sprites/icons.svg#olymp-heart-icon'></use>
-            </svg>
-          </span>
-          <div className='more'>
-            <svg className='olymp-three-dots-icon'>
-              <use XlinkHref='svg-icons/sprites/icons.svg#olymp-three-dots-icon'></use>
-            </svg>
-            <svg className='olymp-little-delete'>
-              <use XlinkHref='svg-icons/sprites/icons.svg#olymp-little-delete'></use>
-            </svg>
-          </div>
-        </li>
-
-        <li>
-          <div className='author-thumb'>
-            <img
-              src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avatar5-sm.jpg'
-              alt='author'
-            />
-          </div>
-          <div className='notification-event'>
-            <a href='#1' className='h6 notification-friend'>
-              Green Goo Rock
-            </a>{' '}
-            invited you to attend to his event Goo in{' '}
-            <a href='#1' className='notification-link'>
-              Gotham Bar
-            </a>
-            .
-            <span className='notification-date'>
-              <time className='entry-date updated' datetime='2004-07-24T18:18'>
-                March 5th at 6:43pm
-              </time>
-            </span>
-          </div>
-          <span className='notification-icon'>
-            <svg className='olymp-calendar-icon'>
-              <use XlinkHref='svg-icons/sprites/icons.svg#olymp-calendar-icon'></use>
-            </svg>
-          </span>
-
-          <div className='more'>
-            <svg className='olymp-three-dots-icon'>
-              <use XlinkHref='svg-icons/sprites/icons.svg#olymp-three-dots-icon'></use>
-            </svg>
-            <svg className='olymp-little-delete'>
-              <use XlinkHref='svg-icons/sprites/icons.svg#olymp-little-delete'></use>
-            </svg>
-          </div>
-        </li>
-
-        <li>
-          <div className='author-thumb'>
-            <img
-              src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avatar6-sm.jpg'
-              alt='author'
-            />
-          </div>
-          <div className='notification-event'>
-            <a href='#1' className='h6 notification-friend'>
-              James Summers
-            </a>{' '}
-            commented on your new{' '}
-            <a href='#1' className='notification-link'>
-              profile status
-            </a>
-            .
-            <span className='notification-date'>
-              <time className='entry-date updated' datetime='2004-07-24T18:18'>
-                March 2nd at 8:29pm
-              </time>
-            </span>
-          </div>
-          <span className='notification-icon'>
-            <svg className='olymp-comments-post-icon'>
-              <use XlinkHref='svg-icons/sprites/icons.svg#olymp-comments-post-icon'></use>
-            </svg>
-          </span>
-
-          <div className='more'>
-            <svg className='olymp-three-dots-icon'>
-              <use XlinkHref='svg-icons/sprites/icons.svg#olymp-three-dots-icon'></use>
-            </svg>
-            <svg className='olymp-little-delete'>
-              <use XlinkHref='svg-icons/sprites/icons.svg#olymp-little-delete'></use>
-            </svg>
-          </div>
-        </li>
-
-        <li>
-          <div className='author-thumb'>
-            <img
-              src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avatar7-sm.jpg'
-              alt='author'
-            />
-          </div>
-          <div className='notification-event'>
-            <a href='#1' className='h6 notification-friend'>
-              Marina Valentine
-            </a>{' '}
-            commented on your new{' '}
-            <a href='#1' className='notification-link'>
-              profile status
-            </a>
-            .
-            <span className='notification-date'>
-              <time className='entry-date updated' datetime='2004-07-24T18:18'>
-                March 2nd at 10:07am
-              </time>
-            </span>
-          </div>
-          <span className='notification-icon'>
-            <svg className='olymp-comments-post-icon'>
-              <use XlinkHref='svg-icons/sprites/icons.svg#olymp-comments-post-icon'></use>
-            </svg>
-          </span>
-
-          <div className='more'>
-            <svg className='olymp-three-dots-icon'>
-              <use XlinkHref='svg-icons/sprites/icons.svg#olymp-three-dots-icon'></use>
-            </svg>
-            <svg className='olymp-little-delete'>
-              <use XlinkHref='svg-icons/sprites/icons.svg#olymp-little-delete'></use>
-            </svg>
-          </div>
-        </li>
-      </ul>
-    </>
+    </li>
   );
 };
-export default Notification;
+Notification.propTypes = {
+  client: PropTypes.object.isRequired,
+};
+
+export default withApollo(Notification);

@@ -205,8 +205,10 @@ a.h4.title {
 .post-add-icon:hover span {
   color: var(--theme-color);
 }
-.name-fields {padding-right: 15px;
-  padding-left: 15px;}
+.name-fields {
+  padding-right: 15px;
+  padding-left: 15px;
+}
 .more-dropdown a:hover {
   color: var(--theme-color);
 }
@@ -701,9 +703,9 @@ ul.sidebar-box {
 .left-menu .left-menu-icon {
   margin-right: 16px;
 }
-.top-header-thumb {
-  /* min-height: 422px; */
-}
+/* .top-header-thumb {
+  min-height: 422px;
+} */
 .header--standard-landing.headroom--not-top .logo .logo-title {
   color: var(--theme-color-white);
 }
@@ -935,8 +937,8 @@ li.add-more-posts span {
 }
 /* Rewards CSS Start*/
 .reward-header {
-  padding: 55px 0 35px 0;
-  margin: 51px auto 0px;
+  padding: 106px 0 35px 0;
+  margin: 0px auto;
 }
 .bg-rewards {
   background-image: url(https://res.cloudinary.com/weare270b/image/upload/v1576188975/static/reward-bg_ermlql.png);
@@ -974,6 +976,19 @@ li.add-more-posts span {
 
 .point-wrap {
   padding: 52px 0px 20px;
+  position: relative;
+}
+.point-wrap::before {
+  content: '';
+  background: url(https://res.cloudinary.com/weare270b/image/upload/v1576188973/static/reward-badge_kb5lmj.png)
+    center center no-repeat;
+  background-size: contain;
+  position: absolute;
+  right: -220px;
+  bottom: 0px;
+  width: 840px;
+  z-index: 1;
+  height: 385px;
 }
 .point-wrap ul {
   display: inline-flex;
@@ -1058,6 +1073,31 @@ li.add-more-posts span {
   margin-bottom: 0;
 }
 /* Rewards CSS End*/
+
+.left-menu .collapse-menu-wrap {
+  padding-left: 25px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+.left-menu .collapse-menu-wrap img {
+  width: 26px;
+  height: 35px;
+  object-fit: scale-down;
+}
+.left-menu .collapse-menu-title {
+  font-weight: 700;
+}
+.notifications-empty {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 70px;
+  padding-left: 30px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: chocolate;
+}
 @media (max-width: 1454px) {
   .search-bar.w-search {
     width: 410px;
