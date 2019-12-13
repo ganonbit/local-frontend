@@ -16,34 +16,32 @@ const EditPost = props => {
   let { postId, auth, content, image, onHide, imagePublicId } = props;
 
   const [values, setValues] = useState({
-    postImage: '',
+    postImage: image,
     postContent: content,
-    imagePreview: image,
     error: '',
     id: postId,
-    image: null,
   });
   let { imagePreview, postContent, error, id } = values;
-  let handleUploadImage = e => {
-    const file = e.target.files[0];
+  // let handleUploadImage = e => {
+  //   const file = e.target.files[0];
 
-    if (!file) return;
+  //   if (!file) return;
 
-    if (file.size >= MAX_POST_IMAGE_SIZE) {
-      setValues({
-        ...values,
-        error: `File size should be less then ${MAX_POST_IMAGE_SIZE /
-          1000000}MB`,
-      });
-      return;
-    }
-    setValues({
-      ...values,
-      error: '',
-      image: e.target.files[0],
-      imagePreview: URL.createObjectURL(e.target.files[0]),
-    });
-  };
+  //   if (file.size >= MAX_POST_IMAGE_SIZE) {
+  //     setValues({
+  //       ...values,
+  //       error: `File size should be less then ${MAX_POST_IMAGE_SIZE /
+  //         1000000}MB`,
+  //     });
+  //     return;
+  //   }
+  //   setValues({
+  //     ...values,
+  //     error: '',
+  //     image: e.target.files[0],
+  //     imagePreview: URL.createObjectURL(e.target.files[0]),
+  //   });
+  // };
   let handleStatusChange = e => {
     setValues({
       ...values,
@@ -114,7 +112,7 @@ const EditPost = props => {
                       </div>
                     </form>
 
-                    {imagePreview && (
+                    {/* {imagePreview && (
                       <div className='thumbnail-gallery-items'>
                         <ul className='d-flex p-0 m-3 list-unstyled'>
                           <li>
@@ -127,15 +125,13 @@ const EditPost = props => {
                               x
                             </button>
                           </li>
-                          {/* <li className='add-more-posts'>
-                      <span>+</span>
-                    </li> */}
+                        
                         </ul>
                       </div>
-                    )}
+                    )} */}
                     <div className='upload-content'>
                       <ul className='d-flex p-3 m-0 list-unstyled justify-content-between align-items-center flex-wrap'>
-                        <li>
+                        {/* <li>
                           <button type='button' className='btn px-3 py-2 m-0'>
                             <input
                               type='file'
@@ -156,7 +152,7 @@ const EditPost = props => {
                             </svg>
                             Photo
                           </button>
-                        </li>
+                        </li> */}
                         <li>
                           <button
                             type='button'
