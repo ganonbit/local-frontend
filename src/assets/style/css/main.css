@@ -660,9 +660,19 @@ if the page has a “right panel”, add a class for BODY -- ".page-has-right-pa
 .top-header-author .author-thumb img {
   border-radius: 0;
   display: block;
+  width: 100%;
 }
 .top-header-author .author-name {
   font-weight: 700;
+  color: #fff;
+}
+
+.top-header-author .author-name:hover {
+  color: #ff5e3a;
+}
+
+.top-header-author .author-location {
+  color: #fff;
 }
 
 .profile-section {
@@ -1191,15 +1201,10 @@ if the page has a “right panel”, add a class for BODY -- ".page-has-right-pa
   min-height: 100vh;
 }
 .landing-page .content-bg-wrap {
-  background-image: url('https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/landing-users_s9srpx.png');
+  background: url('https://res.cloudinary.com/weare270b/image/upload/v1576222223/static/avo-bg_brmb0z.jpg'), url('https://res.cloudinary.com/weare270b/image/upload/v1576223053/static/avo-bg-g_ofchgc.jpg');
   background-position: 0 0;
-  background-repeat: repeat;
-  -webkit-animation: sidedownscroll 30s linear infinite;
-  animation: sidedownscroll 30s linear infinite;
-  background-size: auto;
-}
-.landing-page .content-bg-wrap:before {
-  background-color: rgba(255, 94, 58, 0.95);
+  background-repeat: no-repeat, repeat-y;
+  background-size: contain;
 }
 
 @-webkit-keyframes sidedownscroll {
@@ -1237,9 +1242,6 @@ if the page has a “right panel”, add a class for BODY -- ".page-has-right-pa
   text-align: center;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  -webkit-animation: slide 50s linear infinite;
-  animation: slide 50s linear infinite;
-  will-change: background-position;
   background-size: auto;
 }
 .content-bg-wrap:before {
@@ -1715,7 +1717,7 @@ if the page has a “right panel”, add a class for BODY -- ".page-has-right-pa
     color: #888da8;
   }
   .top-header-author .author-name {
-    color: #515365;
+    color: #fff;
   }
   .top-header-author .author-name:hover {
     color: #ff5e3a;
@@ -2603,7 +2605,11 @@ section {
   color: #888da8;
 }
 .mobile-app .top-header-author .author-name {
-  color: #515365;
+  color: #fff;
+}
+
+.mobile-app .top-header-author .author-name:hover {
+  color: #ff5e3a;
 }
 
 .mobile-app .comment-form .form-group {
@@ -5149,6 +5155,9 @@ fieldset[disabled] .checkbox input[type='checkbox'],
   min-height: 1000vh;
   left: 0;
 }
+.fixed-sidebar.open {
+  width: 270px;
+}
 .fixed-sidebar .logo {
   height: 70px;
   background-color: #ff5e3a;
@@ -6316,10 +6325,13 @@ fieldset[disabled] .checkbox input[type='checkbox'],
 }
 
 /*------------- #REGISTRATION-LOGIN-FORM --------------*/
+.login-title, .login-text {
+  color: #fff
+}
 .registration-login-form {
   border: 1px solid #e6ecf5;
   border-radius: 0 5px 5px 0;
-  background-color: #fff;
+  background-color:rgba(255,255,255,0.5);
   overflow: hidden;
   position: relative;
   padding-left: 71px;
@@ -6382,7 +6394,7 @@ fieldset[disabled] .checkbox input[type='checkbox'],
   font-size: 13px;
 }
 .registration-login-form .remember {
-  margin: 35px 0 25px;
+  margin: 0 0 25px;
 }
 
 .remember {

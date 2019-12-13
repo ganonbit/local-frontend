@@ -22,7 +22,7 @@ export default function Profile(props) {
     >
       {({ data, loading }) => {
         return loading ? (
-          <h1>loading...!</h1>
+          <h1></h1>
         ) : (
           <div className='container'>
             <div className='row ' style={{ paddingLeft: 0, paddingRight: 0 }}>

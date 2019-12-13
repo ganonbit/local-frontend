@@ -11,74 +11,74 @@ export default function LastPhotos() {
 
         <ul className='widget w-last-photo js-zoom-gallery'>
           <li>
-            <a href='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/last-photo10-large.jpg'>
+            <a href='/'>
               <img
-                src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/last-photo10-large.jpg'
+                src='http://lorempixel.com/output/food-q-c-600-600-1.jpg'
                 alt='friends-icons'
               />
             </a>
           </li>
           <li>
-            <a href='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/last-phot11-large.jpg'>
+            <a href='/'>
               <img
-                src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/last-phot11-large.jpg'
+                src='http://lorempixel.com/output/food-q-c-600-600-2.jpg'
                 alt='friends-icons'
               />
             </a>
           </li>
           <li>
-            <a href='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/last-phot12-large.jpg'>
+            <a href='/'>
               <img
-                src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/last-phot12-large.jpg'
+                src='http://lorempixel.com/output/food-q-c-600-600-3.jpg'
                 alt='friends-icons'
               />
             </a>
           </li>
 
           <li>
-            <a href='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/last-phot13-large.jpg'>
+            <a href='/'>
               <img
-                src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/last-phot13-large.jpg'
+                src='http://lorempixel.com/output/food-q-c-600-600-4.jpg'
                 alt='friends-icons'
               />
             </a>
           </li>
           <li>
-            <a href='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/last-phot14-large.jpg'>
+            <a href='/'>
               <img
-                src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/last-phot14-large.jpg'
+                src='http://lorempixel.com/output/food-q-c-600-600-5.jpg'
                 alt='friends-icons'
               />
             </a>
           </li>
           <li>
-            <a href='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/last-phot15-large.jpg'>
+            <a href='/'>
               <img
-                src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/last-phot15-large.jpg'
+                src='http://lorempixel.com/output/food-q-c-600-600-6.jpg'
                 alt='friends-icons'
               />
             </a>
           </li>
           <li>
-            <a href='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/last-phot16-large.jpg'>
+            <a href='/'>
               <img
-                src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/last-phot16-large.jpg'
+                src='http://lorempixel.com/output/food-q-c-600-600-7.jpg'
                 alt='friends-icons'
               />
             </a>
           </li>
           <li>
-            <a href='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/last-phot17-large.jpg'>
+            <a href='/'>
               <img
-                src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/last-phot17-large.jpg'
+                src='http://lorempixel.com/output/food-q-c-600-600-8.jpg'
                 alt='friends-icons'
               />
             </a>
           </li>
           <li>
-            <a href='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/last-phot18-large.jpg'>
+            <a href='/'>
               <img
-                src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/last-phot18-large.jpg'
+                src='http://lorempixel.com/output/food-q-c-600-600-9.jpg'
                 alt='friends-icons'
               />
             </a>

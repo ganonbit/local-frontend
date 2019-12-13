@@ -13,7 +13,7 @@ const SidebarNavigation = ({ isAuth }) => {
     setSidebarOpen({ open: open, activeClass: activeSidebarClass });
   };
   return (
-    <div className={sidebarOpen.activeClass} style={{ width: '270px' }}>
+    <div className={sidebarOpen.activeClass}>
       <Sidebar
         sidebar={
           <SidebarContent onSetSidebarOpen={onSetSidebarOpen} isAuth={isAuth} />

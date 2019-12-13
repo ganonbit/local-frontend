@@ -22,18 +22,18 @@ export default class Notifications extends Component {
                 <li>
                   <div className='author-thumb'>
                     <img
-                      src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avatar62-sm.jpg'
+                      src='https://res.cloudinary.com/weare270b/image/upload/v1576220262/static/Image_from_iOS_1_bnaxnc.jpg'
                       alt='author'
                     />
                   </div>
                   <div className='notification-event'>
                     <div>
                       <a href='#1' className='h6 notification-friend'>
-                        Mathilda Brinker
+                        Reese
                       </a>{' '}
                       commented on your new{' '}
                       <a href='#1' className='notification-link'>
-                        profile status
+                        post
                       </a>
                     </div>
                     <span className='notification-date'>
@@ -67,21 +67,16 @@ export default class Notifications extends Component {
                 <li className='un-read'>
                   <div className='author-thumb'>
                     <img
-                      src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avatar63-sm.jpg'
+                      src='https://res.cloudinary.com/weare270b/image/upload/v1576220262/static/Image_from_iOS_1_bnaxnc.jpg'
                       alt='author'
                     />
                   </div>
                   <div className='notification-event'>
                     <div>
-                      You and{' '}
                       <a href='#1' className='h6 notification-friend'>
                         Nicholas Grissom
                       </a>{' '}
-                      just became friends. Write on{' '}
-                      <a href='#1' className='notification-link'>
-                        his wall
-                      </a>
-                      .
+                      just followed you!
                     </div>
                     <span className='notification-date'>
                       <time
@@ -114,7 +109,7 @@ export default class Notifications extends Component {
                 <li className='with-comment-photo'>
                   <div className='author-thumb'>
                     <img
-                      src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avatar64-sm.jpg'
+                      src='https://res.cloudinary.com/weare270b/image/upload/v1576220262/static/Image_from_iOS_1_bnaxnc.jpg'
                       alt='author'
                     />
                   </div>

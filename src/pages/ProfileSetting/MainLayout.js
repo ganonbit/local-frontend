@@ -32,7 +32,7 @@ const MainLayout = ({ children }) => {
               {/* <!-- Your Profile  --> */}
               <div className='your-profile'>
                 <div className='ui-block-title ui-block-title-small'>
-                  <h6 className='title'>Your PROFILE</h6>
+                  <h6 className='title'>Your Profile</h6>
                 </div>
                 <div id='accordion' role='tablist' aria-multiselectable='true'>
                   <div className='card'>
