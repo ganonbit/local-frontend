@@ -3173,9 +3173,8 @@ p {
 .form-group {
   position: relative;
   margin-bottom: 1.4rem;
-  background: #fff;
+  background:var(--theme-color);
 }
-
 .form-group textarea {
   resize: none;
 }
