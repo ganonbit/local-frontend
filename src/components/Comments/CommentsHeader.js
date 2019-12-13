@@ -73,7 +73,7 @@ function CommentsHeader(props) {
         </div>
 
           <div className='more'>
-          { isAuth && isOwner || isAuth && isSelma ? (
+          {!isAuth && !isOwner || !isAuth && !isSelma ? null : (
             <FontAwesomeIcon
               className='olymp-three-dots-icon'
               size='lg'
@@ -81,7 +81,7 @@ function CommentsHeader(props) {
               icon={faEllipsisV}
               style={{ height: '12px' }}
             />
-          ) : null}
+          )}
           <ul className='more-dropdown'>
             {commentId && (
               <li>
