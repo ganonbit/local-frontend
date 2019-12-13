@@ -90,6 +90,7 @@ export const GET_FOLLOWED_POSTS = gql`
         image
         imagePublicId
         createdAt
+        updatedAt
         ${postAuthorPayload}
         ${postCommentsPayload}
         ${postLikesPayload}
@@ -109,6 +110,7 @@ export const GET_POSTS = gql`
         id
         content
         image
+        updatedAt
         ${postAuthorPayload}
         ${postCommentsPayload}
         ${postLikesPayload}
@@ -127,6 +129,7 @@ export const GET_POST = gql`
       content
       image
       createdAt
+      updatedAt
       ${postAuthorPayload}
       ${postCommentsPayload}
       ${postLikesPayload}
