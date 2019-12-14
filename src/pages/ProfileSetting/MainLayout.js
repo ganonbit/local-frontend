@@ -1,7 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useStore } from 'store';
 import * as Routes from 'routes';
 const MainLayout = ({ children }) => {
+  const [{ auth }] = useStore();
   return (
     <>
       <div className='main-header'>
@@ -29,7 +31,6 @@ const MainLayout = ({ children }) => {
           </div>
           <div className='col col-xl-3 order-xl-1 col-lg-3 order-lg-1 col-md-12 order-md-2 col-sm-12 col-12 responsive-display-none'>
             <div className='ui-block'>
-              {/* <!-- Your Profile  --> */}
               <div className='your-profile'>
                 <div className='ui-block-title ui-block-title-small'>
                   <h6 className='title'>Your Profile</h6>
@@ -46,9 +47,6 @@ const MainLayout = ({ children }) => {
                           aria-controls='collapseOne'
                         >
                           Profile Settings
-                          {/* <svg className="olymp-dropdown-arrow-icon">
-                                                <use xlinkhref="svg-icons/sprites/icons.svg#olymp-dropdown-arrow-icon"></use>
-                                            </svg> */}
                         </a>
                       </h6>
                     </div>
@@ -77,7 +75,7 @@ const MainLayout = ({ children }) => {
                 <div className='ui-block-title'>
                   <Link to='/settings/notifications'>Notifications</Link>
                   <a href='#1' className='items-round-little bg-primary'>
-                    8
+                    {auth.user.newNotifications.length}
                   </a>
                 </div>
               </div>
