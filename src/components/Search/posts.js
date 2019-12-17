@@ -14,7 +14,7 @@ class Posts extends React.Component {
       return (
         <div className="card card-body" style={{width: '900px'}}>
           <h2 className='text-primary'>Posts</h2>
-          <div class="list-group overflow-auto" style={{maxHeight: '240px'}}>
+          <div className="list-group overflow-auto" style={{maxHeight: '240px'}}>
             No Posts Match Your Search...
           </div>
         </div>

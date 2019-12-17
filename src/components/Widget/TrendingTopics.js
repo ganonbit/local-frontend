@@ -6,7 +6,7 @@ const TrendingTopics = () => {
     <div className='ui-block'>
       <div className='ui-block-title topics'>
         <h6 className='title'>Trending Topics</h6>
-        <Link to='' className='more'></Link>
+        <Link to='#' className='more'></Link>
       </div>
       <ul className='widget w-friend-pages-added notification-list friend-requests'>
         <li className='inline-items' >

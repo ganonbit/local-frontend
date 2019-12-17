@@ -41,7 +41,7 @@ const AuthorPage = ({ user }) => {
                 </Link>
               </li>
               {/* <li>
-                <Link>
+                <Link to='#'>
                   <RewardIcon className='olymp-logout-icon' />
                   <span>Rewards</span>
                 </Link>
@@ -66,22 +66,22 @@ const AuthorPage = ({ user }) => {
             </form> */}
             <ul>
               <li>
-                <Link>
+                <Link to='#'>
                   <span>Terms and Conditions</span>
                 </Link>
               </li>
               <li>
-                <Link>
+                <Link to='#'>
                   <span>Idea Submission</span>
                 </Link>
               </li>
               <li>
-                <Link>
+                <Link to='#'>
                   <span>Community Guidlines</span>
                 </Link>
               </li>
               <li>
-                <Link>
+                <Link to='#'>
                   <span>FAQs</span>
                 </Link>
               </li>
@@ -89,7 +89,7 @@ const AuthorPage = ({ user }) => {
           </div>
         </div>
       </div>
-      <Link className='author-name fn my-auto'>
+      <Link to='#' className='author-name fn my-auto'>
         <div className='author-title author-title-custom'>
           {`${user.firstName} ${user.lastName}`}
           <DropDownArrowIcon className='olymp-dropdown-arrow-icon' />
