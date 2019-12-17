@@ -19,11 +19,8 @@ const PasswordSetting = () => {
     setValues({ ...values, [name]: value });
   };
   let onSubmitHandler = (e, resetPassword) => {
-    console.log('email', auth.user.email);
-    console.log('token', token);
     e.preventDefault();
     resetPassword().then(async data => {
-      console.log(data);
     });
   };
   return (
@@ -49,7 +46,7 @@ const PasswordSetting = () => {
                   <div className='col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12'>
                     <Field
                       placeholder='Confirm Current Password'
-                      type='text'
+                      type='password'
                       name='password'
                       value={password}
                       handleChange={handleChange}
@@ -59,7 +56,7 @@ const PasswordSetting = () => {
                   <div className='col col-lg-6 col-md-6 col-sm-12 col-12'>
                     <Field
                       placeholder='your New Password'
-                      type='text'
+                      type='password'
                       name='newPassword'
                       value={newPassword}
                       handleChange={handleChange}
@@ -68,7 +65,7 @@ const PasswordSetting = () => {
                   <div className='col col-lg-6 col-md-6 col-sm-12 col-12'>
                     <Field
                       placeholder='Confirm New Password'
-                      type='text'
+                      type='password'
                       name='confirmPassword'
                       value={confirmPassword}
                       handleChange={handleChange}

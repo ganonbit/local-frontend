@@ -1,25 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useStore } from 'store';
+import moment from 'moment';
 
-export default function Intro() {
+let Intro = ({user}) => {
   return (
     <>
       <div className='ui-block'>
         <div className='ui-block-title ui-block-post'>
           <h6 className='title'>About</h6>
-          {/* <a href="#" className="more"><svg className="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg></a> */}
         </div>
         <div className='ui-block-content'>
           {/* <!-- W-Personal-Info --> */}
           <ul className='widget w-personal-info item-block'>
             <li>
-              <span className='text'>
-                I am an avocado expert whose goal is to spread my love of
-                avocados from Mexico!
-              </span>
+              <span className='text'>{user.bio}</span>
             </li>
             <li>
               <span className='title'>Created:</span>
-              <span className='text'>December 5th, 2019</span>
+              <span className='text'>
+                {moment(new Date(parseInt(user.createdAt))).format(
+                  'MMMM Do YYYY'
+                )}
+              </span>
             </li>
             <li>
               <span className='title'>Based in:</span>
@@ -35,7 +37,6 @@ export default function Intro() {
               Twitter
             </a>
           </div> */}
-          
         </div>
       </div>
 
@@ -59,4 +60,5 @@ export default function Intro() {
       </div>
     </>
   );
-}
+};
+export default Intro;
