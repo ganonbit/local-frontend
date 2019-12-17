@@ -27,13 +27,13 @@ export default function Profile(props) {
           <div className='container'>
             <div className='row ' style={{ paddingLeft: 0, paddingRight: 0 }}>
               <ProfileHeader user={data.getUser} />
-              <Left />
+              <Left user={data.getUser} />
               <div className='col col-xl-6 order-xl-2 col-lg-12 order-lg-2 col-md-12 order-md-1 order-sm-1 col-xs-12 order-xs-1 col-12'>
                 <div id='newsfeed-items-grid'>
                   <Post queryOptions={queryOptions} isAuth={true} />
                 </div>
               </div>
-              <Right />
+              <Right user={data.getUser} />
             </div>
           </div>
         );
