@@ -1073,7 +1073,14 @@ li.add-more-posts span {
   margin-bottom: 0;
 }
 /* Rewards CSS End*/
-
+.field-error{
+  position: absolute;
+  top: 0;
+  color: red;
+}
+.registration-login-form .content{
+  position: relative;
+}
 .left-menu .collapse-menu-wrap {
   padding-left: 25px;
   cursor: pointer;

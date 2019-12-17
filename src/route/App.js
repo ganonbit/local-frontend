@@ -12,7 +12,7 @@ import { useStore } from 'store';
 /**
  * Root Component of App
  */
-const App = () => {
+const App = ({location}) => {
   const [{ auth }, dispatch] = useStore();
   return (
     <Query

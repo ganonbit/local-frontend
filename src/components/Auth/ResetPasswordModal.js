@@ -1,99 +1,81 @@
 import React, { useState } from 'react';
+import { Mutation } from 'react-apollo';
+import { REQUEST_PASSWORD_RESET } from 'graphql/user';
 import { Modal } from 'react-bootstrap';
-function ResetPassword(props) {
+
+let ResetPassword = props => {
   const [show, setShow] = useState(props.show);
 
   const handleClose = () => {
     props.handleReset();
     setShow(false);
   };
-  // const handleShow = () => setShow(true);
-  const [tempAPISuccess, setSuccess] = useState(false);
+
+  const [email, setEmail] = useState('');
+
+  const handleChange = e => {
+    setEmail(e.target.value);
+  };
+
+  const handleSubmit = (e, requestPasswordReset) => {
+    e.preventDefault();
+    requestPasswordReset().then(async ({ data }) => {
+      setShow(false);
+    });
+  };
 
   return (
-    <>
-      <Modal show={show} onHide={handleClose}>
-        <Modal.Body>
-          <div role='document'>
-            <div className='modal-content'>
-              <a
-                href='123'
-                className='close icon-close'
-                data-dismiss='modal'
-                aria-label='Close'
-              >
-                <svg
-                  className='olymp-close-icon'
-                  xlinkHref='svg-icons/sprites/icons.svg#olymp-close-icon'
-                />
-              </a>
-
-              <div className='modal-header'>
-                <h6 className='title'>Restore your Password</h6>
-              </div>
-
-              <div className='modal-body'>
-                <form>
-                  <p>
-                    Enter your email and click the send code button. You’ll
-                    receive a code in your email. Please use that code below to
-                    change the old password for a new one.
-                  </p>
-                  <div className='form-group label-floating'>
-                    <label className='control-label'>Your Email</label>
-                    <input
-                      className='form-control'
-                      placeholder=''
-                      type='email'
-                      // value="james-spiegel@yourmail.com"
-                    />
+    <Mutation
+      mutation={REQUEST_PASSWORD_RESET}
+      variables={{
+        input: { email },
+      }}
+    >
+      {(requestPasswordReset, { loading, error: apiError }) => {
+        return (
+          <Modal show={show} onHide={handleClose}>
+            <Modal.Body>
+              <div role='document'>
+                <div className='modal-content'>
+                  <div className='modal-header'>
+                    <h6 className='title'>Restore your Password</h6>
                   </div>
-                  <button
-                    onClick={() => {
-                      setTimeout(() => {
-                        setSuccess(true);
-                      }, 3000);
-                    }}
-                    className='btn btn-green btn-lg full-width'
-                  >
-                    Send me the Code
-                  </button>
-                  {tempAPISuccess ? (
-                    <div>
-                      {' '}
+
+                  <div className='modal-body'>
+                    <form onSubmit={e => handleSubmit(e, requestPasswordReset)}>
+                      <p>
+                        Enter your email and click the send code button. You’ll
+                        receive a code in your email. Please use that code below
+                        to change the old password for a new one.
+                      </p>
                       <div className='form-group label-floating'>
-                        <label className='control-label'>Enter the Code</label>
+                        <label className='control-label'>Your Email</label>
                         <input
                           className='form-control'
-                          placeholder=''
-                          type='text'
-                          value=''
+                          placeholder='james-spiegel@yourmail.com'
+                          type='email'
+                          value={email}
+                          onChange={e => handleChange(e)}
                         />
+                        {apiError && (
+                          <span className='material-input-error'>
+                            {apiError.graphQLErrors[0].message}
+                          </span>
+                        )}
                       </div>
-                      <div className='form-group label-floating'>
-                        <label className='control-label'>
-                          Your New Password
-                        </label>
-                        <input
-                          className='form-control'
-                          placeholder=''
-                          type='password'
-                          value='olympus'
-                        />
-                      </div>
-                      <button className='btn btn-primary btn-lg full-width'>
-                        Change your Password!
-                      </button>{' '}
-                    </div>
-                  ) : null}
-                </form>
+                      <button className='btn btn-green btn-lg full-width'>
+                        Send me the Code
+                      </button>
+                    </form>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-        </Modal.Body>
-      </Modal>
-    </>
+            </Modal.Body>
+          </Modal>
+        );
+      }}
+    </Mutation>
   );
-}
+};
 
 export default ResetPassword;
