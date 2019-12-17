@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link,withRouter } from 'react-router-dom';
 import Headroom from 'react-headroom';
 /**
  * Main Layout for Registration
  */
-const MainLayout = ({ children }) => {
+const MainLayout = ({ children,location }) => {
   const [className, setClassName] = useState(
     'headroom--top headroom--not-bottom'
   );
@@ -50,12 +50,12 @@ const MainLayout = ({ children }) => {
               avocado dish, and collecting the most useful avocado health
               and wellness tips to help you live your best life ever!
               </p>
-
+              {location.pathname==='/signup'&& <p>Already have an account?</p>}
               <Link
-                to={{ pathname: '/signup' }}
+                to={{ pathname: location.pathname==='/login'?'/signup':'/login' }}
                 className='btn btn-md btn-border c-white'
               >
-                Register Now
+               {location.pathname==='/login'?'Register Now':'LOG IN'}
               </Link>
             </div>
           </div>
@@ -65,4 +65,4 @@ const MainLayout = ({ children }) => {
     </div>
   );
 };
-export default MainLayout;
+export default withRouter(MainLayout);

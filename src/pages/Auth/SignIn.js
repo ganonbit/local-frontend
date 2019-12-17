@@ -5,10 +5,10 @@ import PropTypes from 'prop-types';
 import { SIGN_IN } from 'graphql/user';
 import { MainLayout } from 'pages/Auth';
 
-import { Field, ResetPasswordModal } from 'components/Auth/index';
-import { validateFormField } from 'utils/index';
-import { routes } from 'route/index';
-const SignIn = ({ refetch, history, location }) => {
+import { Field, ResetPasswordModal } from 'components/Auth';
+import { validateFormField } from 'utils';
+import * as Routes from 'routes';
+const SignIn = ({ refetch, history }) => {
   const [reset, setReset] = useState(false);
   const [values, setValues] = useState({ emailOrUsername: '', password: '' });
   const [error, setError] = useState({
@@ -50,7 +50,7 @@ const SignIn = ({ refetch, history, location }) => {
     signin().then(async ({ data }) => {
       localStorage.setItem('token', data.signin.token);
       await refetch();
-      history.push('/');
+      history.push(Routes.HOME);
     });
   };
   return (
@@ -80,6 +80,12 @@ const SignIn = ({ refetch, history, location }) => {
                       className='content'
                       onSubmit={e => handleSubmit(e, signin)}
                     >
+                      {apiError && (
+                        <p className='field-error'>
+                          {apiError.graphQLErrors[0].message}
+                        </p>
+                      )}
+
                       <div className='row'>
                         <div className='col col-12 col-xl-12 col-lg-12 col-md-12 col-sm-12'>
                           <Field
@@ -162,8 +168,8 @@ const SignIn = ({ refetch, history, location }) => {
                           </a> */}
 
                           <p>
-                            Don’t you have an account?{' '}
-                            <Link to='/' className='btn-register'>
+                            Don’t you have an account?
+                            <Link to={Routes.SIGN_UP} className='btn-register'>
                               Register Now!
                             </Link>
                             it’s really simple and you can start enjoing all the
