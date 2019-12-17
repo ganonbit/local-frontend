@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Modal } from 'react-bootstrap';
 import { Mutation } from 'react-apollo';
-import { EDIT_POST, GET_FOLLOWED_POSTS } from 'graphql/post';
+import { EDIT_POST, GET_FOLLOWED_POSTS, DELETE_IMAGE } from 'graphql/post';
 
 import { MAX_POST_IMAGE_SIZE } from 'constants/ImageSize';
 import Avatar from '../Avatar';
@@ -16,44 +16,49 @@ const EditPost = props => {
   let { postId, auth, content, image, onHide, imagePublicId } = props;
 
   const [values, setValues] = useState({
-    postImage: image,
     postContent: content,
+    imagePreview: image,
     error: '',
     id: postId,
+    image: '',
   });
-  let { imagePreview, postContent, error, id } = values;
-  // let handleUploadImage = e => {
-  //   const file = e.target.files[0];
 
-  //   if (!file) return;
-
-  //   if (file.size >= MAX_POST_IMAGE_SIZE) {
-  //     setValues({
-  //       ...values,
-  //       error: `File size should be less then ${MAX_POST_IMAGE_SIZE /
-  //         1000000}MB`,
-  //     });
-  //     return;
-  //   }
-  //   setValues({
-  //     ...values,
-  //     error: '',
-  //     image: e.target.files[0],
-  //     imagePreview: URL.createObjectURL(e.target.files[0]),
-  //   });
-  // };
   let handleStatusChange = e => {
-    setValues({
-      ...values,
-      postContent: e.target.value,
-    });
+    const { name, value } = e.target;
+    setValues({ ...values, [name]: value });
   };
+
+  let { imagePreview, postContent, error, id } = values;
+
   let onSubmitHandler = (e, editPost) => {
     e.preventDefault();
     editPost().then(async ({ data }) => {
       onHide();
+      
     });
   };
+
+  let handleUploadImage = e => {
+    const file = e.target.files[0];
+
+    if (!file) return;
+
+    if (file.size >= MAX_POST_IMAGE_SIZE) {
+      setValues({
+        ...values,
+        error: `File size should be less then ${MAX_POST_IMAGE_SIZE /
+          1000000}MB`,
+      });
+      return;
+    }
+    setValues({
+      ...values,
+      error: '',
+      image: e.target.files[0],
+      imagePreview: URL.createObjectURL(e.target.files[0]),
+    });
+  };
+  console.log(values)
   return (
     <Mutation
       mutation={EDIT_POST}
@@ -61,7 +66,7 @@ const EditPost = props => {
         id: id,
         input: {
           content: postContent,
-          image: image,
+          image: values.image,
           imagePublicId: imagePublicId,
         },
       }}
@@ -112,7 +117,7 @@ const EditPost = props => {
                       </div>
                     </form>
 
-                    {/* {imagePreview && (
+                    {imagePreview && (
                       <div className='thumbnail-gallery-items'>
                         <ul className='d-flex p-0 m-3 list-unstyled'>
                           <li>
@@ -128,10 +133,10 @@ const EditPost = props => {
                         
                         </ul>
                       </div>
-                    )} */}
+                    )}
                     <div className='upload-content'>
                       <ul className='d-flex p-3 m-0 list-unstyled justify-content-between align-items-center flex-wrap'>
-                        {/* <li>
+                        <li>
                           <button type='button' className='btn px-3 py-2 m-0'>
                             <input
                               type='file'
@@ -152,7 +157,7 @@ const EditPost = props => {
                             </svg>
                             Photo
                           </button>
-                        </li> */}
+                        </li>
                         <li>
                           <button
                             type='button'

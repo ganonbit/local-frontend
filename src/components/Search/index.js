@@ -33,7 +33,7 @@ export default class Search extends React.Component {
             <CustomSearchBar />
           </div>
           <div className="row d-flex justify-content-center" style={{zIndex: '1', position: 'absolute'}}>
-            <div class="col-md-6 offset-md-3">
+            <div className="col-md-6 offset-md-3">
               <Index indexName="production_avonation_users">
                 <ConnectedUsers hashTagQuery={this.state.hashTagQuery} clearHashTagQuery={this.clearHashTagQuery} />
               </Index>
