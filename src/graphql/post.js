@@ -160,3 +160,15 @@ export const EDIT_POST = gql`
     }
   }
 `;
+/**
+ * Deletes a image
+ */
+export const DELETE_IMAGE = gql`
+  mutation($input: DeleteImageInput!) {
+    deleteImage(input: $input) {
+      id
+      imagePublicId
+      image
+    }
+  }
+`;

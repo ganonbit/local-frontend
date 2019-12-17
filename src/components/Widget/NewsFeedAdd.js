@@ -13,13 +13,13 @@ const NewsFeedAdd = () => (
     <div className='ui-block-menu ui-block-menu-sidebar'>
       <ul className='d-flex'>
         <li>
-          <Link to=''>Privacy</Link>
+          <Link to='#'>Privacy</Link>
         </li>
         <li>
-          <Link to=''>Terms</Link>
+          <Link to='#'>Terms</Link>
         </li>
         <li>
-          <Link to=''>Cookies</Link>
+          <Link to='#'>Cookies</Link>
         </li>
         <li>
           <div className='dropdown'>
@@ -31,13 +31,13 @@ const NewsFeedAdd = () => (
               More
             </button>
             <div className='dropdown-menu'>
-              <Link to='' className='dropdown-item'>
+              <Link to='#' className='dropdown-item'>
                 Link 1
               </Link>
-              <Link to='' className='dropdown-item'>
+              <Link to='#' className='dropdown-item'>
                 Link 2
               </Link>
-              <Link to='' className='dropdown-item'>
+              <Link to='#' className='dropdown-item'>
                 Link 3
               </Link>
             </div>
