@@ -1,29 +1,32 @@
 import React from 'react';
-
-export default function Intro() {
+import moment from 'moment';
+const Intro = ({ user }) => {
+  const rawTime = parseInt(user.createdAt);
+  const createdDate = new Date(rawTime);
+  console.log(createdDate)
   return (
     <>
       <div className='ui-block'>
         <div className='ui-block-title ui-block-post'>
-          <h6 className='title'>About</h6>
+          <h6 className='title'>Info</h6>
           {/* <a href="#" className="more"><svg className="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg></a> */}
         </div>
         <div className='ui-block-content'>
           {/* <!-- W-Personal-Info --> */}
           <ul className='widget w-personal-info item-block'>
             <li>
+              <span className='title'>Bio:</span>
               <span className='text'>
-                I am an avocado expert whose goal is to spread my love of
-                avocados from Mexico!
+                {user.bio}
               </span>
             </li>
             <li>
-              <span className='title'>Created:</span>
-              <span className='text'>December 5th, 2019</span>
+              <span className='title'>Joined:</span>
+              <span className='text'>{moment(createdDate).format("MMMM Do, YYYY")}</span>
             </li>
             <li>
               <span className='title'>Based in:</span>
-              <span className='text'>Dallas, TX</span>
+              <span className='text'>{user.location}</span>
             </li>
           </ul>
           {/* <div className='widget w-socials'>
@@ -60,3 +63,5 @@ export default function Intro() {
     </>
   );
 }
+
+export default Intro;
