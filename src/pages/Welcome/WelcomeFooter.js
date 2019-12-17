@@ -24,28 +24,28 @@ const WelcomeFooter = () => {
           <div className='ui-block-menu border-top pt-2'>
             <ul className='d-flex ftr-menu flex-wrap mb-5'>
               <li>
-                <Link to=''>About</Link>
+                <Link to='#'>About</Link>
               </li>
               <li>
-                <Link to=''>Privacy</Link>
+                <Link to='#'>Privacy</Link>
               </li>
               <li>
-                <Link to=''>Cookies</Link>
+                <Link to='#'>Cookies</Link>
               </li>
               <li>
-                <Link to=''>Terms</Link>
+                <Link to='#'>Terms</Link>
               </li>
               <li>
-                <Link to=''>Account Security</Link>
+                <Link to='#'>Account Security</Link>
               </li>
               <li>
-                <Link to=''>Login Help</Link>
+                <Link to='#'>Login Help</Link>
               </li>
               <li>
-                <Link to=''>Help</Link>
+                <Link to='#'>Help</Link>
               </li>
               <li>
-                <Link to=''>Settings</Link>
+                <Link to='#'>Settings</Link>
               </li>
             </ul>
           </div>

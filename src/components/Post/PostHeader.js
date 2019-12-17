@@ -80,6 +80,7 @@ const PostHeader = props => {
         image={image}
         auth={auth}
         postId={postId}
+        imagePublicId={imagePublicId}
       />
       <Link
         to={generatePath(Routes.USER_PROFILE, {
@@ -103,45 +104,40 @@ const PostHeader = props => {
           </time>
         </div>
       </div>
-
-      <div className='more'>
-        {!isAuth && !isOwner || !isAuth && !isSelma ? null : (
-          <FontAwesomeIcon
-            className='olymp-three-dots-icon'
-            size='lg'
-            color='black'
-            icon={faEllipsisV}
-            style={{ height: '12px' }}
-          />
-        )}
-        <ul className='more-dropdown'>
-          {postId && (
-            <li>
-              <Link
-                href
-                onClick={e => {
-                  setIsShowing(true);
-                }}
-              >
-                Edit Post
-              </Link>
-            </li>
-          )}
-          {postId && (
-            <li>
-              <Link
-                href
-                onClick={e => {
-                  e.preventDefault();
-                  deletePost(e);
-                }}
-              >
-                Delete Post
-              </Link>
-            </li>
-          )}
-        </ul>
-      </div>
+      {isAuth && isOwner || isAuth && isSelma ? (
+        <div className='more'>
+            <FontAwesomeIcon
+              className='olymp-three-dots-icon'
+              size='lg'
+              color='black'
+              icon={faEllipsisV}
+              style={{ height: '12px' }}
+            />
+          <ul className='more-dropdown'>
+              <li>
+                <Link
+                  href
+                  onClick={e => {
+                    setIsShowing(true);
+                  }}
+                >
+                  Edit Post
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href
+                  onClick={e => {
+                    e.preventDefault();
+                    deletePost(e);
+                  }}
+                >
+                  Delete Post
+                </Link>
+              </li>
+          </ul>
+        </div>
+      ) : null}
     </div>
   );
 };

@@ -17,8 +17,8 @@ import * as Routes from 'routes';
 function CommentsHeader(props) {
   const { author, createdAt, client, imagePublicId, commentId, isAuth } = props;
   const [{ auth }] = useStore();
-  const isSelma =  !auth.user ? null : auth.user.role === "selma";
-  const isOwner = !auth.user ? null : auth.user.id === author.id;
+  const isSelma =  !auth.user ? null : (auth.user.role === "selma");
+  const isOwner = !auth.user ? null : (auth.user.id === author.id);
   const rawTime = parseInt(createdAt);
   const commentDate = new Date(rawTime);
   const deleteComment = async () => {
@@ -71,9 +71,8 @@ function CommentsHeader(props) {
             </time>
           </div>
         </div>
-
+        {isAuth && isOwner || isAuth && isSelma ? (
           <div className='more'>
-          {!isAuth && !isOwner || !isAuth && !isSelma ? null : (
             <FontAwesomeIcon
               className='olymp-three-dots-icon'
               size='lg'
@@ -81,34 +80,30 @@ function CommentsHeader(props) {
               icon={faEllipsisV}
               style={{ height: '12px' }}
             />
-          )}
-          <ul className='more-dropdown'>
-            {commentId && (
-              <li>
-                <Link href onClick={
-                  e => {
-                    e.preventDefault();
-                    // editComment(e);
-                  }
-                }>
-                  Edit Comment
-                </Link>
-              </li>
-            )}
-            {commentId && (
-              <li>
-                <Link href onClick={
-                  e => {
-                    e.preventDefault();
-                    deleteComment(e);
-                  }
-                }>
-                  Delete Comment
-                </Link>
-              </li>
-            )}
-          </ul>
-        </div>
+            <ul className='more-dropdown'>
+                <li>
+                  <Link to="#" onClick={
+                    e => {
+                      e.preventDefault();
+                      // editComment(e);
+                    }
+                  }>
+                    Edit Comment
+                  </Link>
+                </li>
+                <li>
+                  <Link to="#" onClick={
+                    e => {
+                      e.preventDefault();
+                      deleteComment(e);
+                    }
+                  }>
+                    Delete Comment
+                  </Link>
+                </li>
+            </ul>
+          </div>
+        ) : null}
       </div>
     </>
   );

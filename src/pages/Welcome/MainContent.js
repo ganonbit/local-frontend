@@ -22,7 +22,7 @@ export default function MainContent() {
           <Link
             id='load-more-button'
             className='btn btn-control btn-more'
-            to=''
+            to='#'
           ></Link>
         </main>
 

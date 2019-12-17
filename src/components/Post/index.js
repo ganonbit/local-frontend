@@ -10,7 +10,6 @@ import { useStore } from 'store';
 import { Query } from 'react-apollo';
 export default function Post({ queryOptions, isAuth }) {
   const [{ auth }] = useStore();
-  console.log('auth', auth);
   const [isCommentOpen, setCommentOpen] = useState(true);
   const toggleComment = () => setCommentOpen(!isCommentOpen);
   const articleClass = 'hentry post';

@@ -5,12 +5,12 @@ const TrendingTopics = () => {
     <div className='ui-block'>
       <div className='ui-block-title topics'>
         <h6 className='title'>Trending Topics</h6>
-        <Link to='' className='more'></Link>
+        <Link to='#' className='more'></Link>
       </div>
       <ul className='widget w-friend-pages-added notification-list friend-requests'>
         <li className='inline-items' >
           <div className='notification-event'>
-            <Link to='' className='h6 notification-friend'>
+            <Link to='#' className='h6 notification-friend'>
               #avocados
             </Link>
             <span className='chat-message-item'>9k Likes</span>
@@ -24,7 +24,7 @@ const TrendingTopics = () => {
         </li>
         <li className='inline-items' >
           <div className='notification-event'>
-            <Link to='' className='h6 notification-friend'>
+            <Link to='#' className='h6 notification-friend'>
               #guacamole
             </Link>
             <span className='chat-message-item'>6k Likes</span>
@@ -38,7 +38,7 @@ const TrendingTopics = () => {
         </li>
         <li className='inline-items' >
           <div className='notification-event'>
-            <Link to='' className='h6 notification-friend'>
+            <Link to='#' className='h6 notification-friend'>
               #avocadotoast
             </Link>
             <span className='chat-message-item'>5k Likes</span>
@@ -52,7 +52,7 @@ const TrendingTopics = () => {
         </li>
         <li className='inline-items' >
           <div className='notification-event'>
-            <Link to='' className='h6 notification-friend'>
+            <Link to='#' className='h6 notification-friend'>
               #avocadorose
             </Link>
             <span className='chat-message-item'>4k Likes</span>
@@ -66,7 +66,7 @@ const TrendingTopics = () => {
         </li>
         <li className='inline-items' >
           <div className='notification-event'>
-            <Link to='' className='h6 notification-friend'>
+            <Link to='#' className='h6 notification-friend'>
               #avonutrition
             </Link>
             <span className='chat-message-item'>2k Likes</span>
@@ -80,7 +80,7 @@ const TrendingTopics = () => {
         </li>
         <li className='inline-items' >
           <div className='notification-event'>
-            <Link to='' className='h6 notification-friend'>
+            <Link to='#' className='h6 notification-friend'>
               #avocadosocks
             </Link>
             <span className='chat-message-item'>1.5k Likes</span>

@@ -14,7 +14,7 @@ to start the server locally you'll either need to request the `.env` file from m
 
 once that is setup run the command `yarn start` or `ntl dev` (to run lambda functions locally and react in one command) to start the front end. \*note: if wanting to run the whole application locally, the api: `https://bitbucket.org/270b/avonation-api/` needs to be up and running first via it's README.
 
-After running the server, you can navigate to `http://localhost:3000`
+After running the server, you can navigate to `http://localhost:8888`
 
 ## Frontend deployment to Netlify
 

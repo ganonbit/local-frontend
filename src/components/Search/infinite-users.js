@@ -7,13 +7,13 @@ class Hits extends React.Component {
     return (
       <div className="card card-body" style={{width: '900px'}}>
         <h2 className='text-primary'>Users</h2>
-        <div class="list-group overflow-auto" style={{maxHeight: '240px'}}>
+        <div className="list-group overflow-auto" style={{maxHeight: '240px'}}>
           {hits.map(hit => (
             <a href={`/${hit.username}`}>
-              <div class="card border list-group-item list-group-item-action">
-                <div class="card-body">
-                  <h5 class="card-title text-capitalize">{hit.firstName} {hit.lastName}</h5>
-                  <h6 class="card-subtitle mb-2 text-muted">@{hit.username}</h6>
+              <div className="card border list-group-item list-group-item-action">
+                <div className="card-body">
+                  <h5 className="card-title text-capitalize">{hit.firstName} {hit.lastName}</h5>
+                  <h6 className="card-subtitle mb-2 text-muted">@{hit.username}</h6>
                 </div>
               </div>
             </a>
