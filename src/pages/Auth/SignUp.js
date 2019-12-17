@@ -108,7 +108,7 @@ const SignUp = ({ refetch, history }) => {
         input: { firstName, lastName, email, password, username },
       }}
     >
-      {signup => {
+      {(signup, { loading, error: apiError }) => {
         return (
           <MainLayout>
             <div className='col col-xl-5 col-lg-6 col-md-12 col-sm-12 col-12'>
@@ -125,6 +125,11 @@ const SignUp = ({ refetch, history }) => {
                       className='content'
                       onSubmit={e => handleSubmit(e, signup)}
                     >
+                      {apiError && (
+                        <p className='field-error'>
+                          {apiError.graphQLErrors[0].message}
+                        </p>
+                      )}
                       <div className='row'>
                         <div className='col col-6 col-xl-6 col-lg-6 col-md-6 col-sm-12'>
                           <Field
@@ -198,7 +203,7 @@ const SignUp = ({ refetch, history }) => {
                             <select
                               className='select picker form-control'
                               onChange={handleChange}
-                              name="gender"
+                              name='gender'
                             >
                               <option value='male'>Male</option>
                               <option value='female'>Female</option>
