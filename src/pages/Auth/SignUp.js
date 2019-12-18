@@ -229,13 +229,13 @@ const SignUp = ({ refetch, history }) => {
                                   <span className='check' />
                                 </span>
                                 I accept the{' '}
-                                <a href='#1'>Terms and Conditions</a> of the
+                                <a href='#1'>Terms and Condition</a> of the
                                 website
                               </label>
                             </div>
                           </div>
                           <ReCAPTCHA
-                              sitekey='6LeidcgUAAAAAMjd5P_Vzq6H363XndWpOPr5tHwi'
+                              sitekey='6LfbdMgUAAAAAFQsMjJz_NTUpbdIl8HpdooV1fCo'
                               onChange={() => handleCaptcha()}
                               size='normal'
                             />
