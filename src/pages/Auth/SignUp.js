@@ -235,7 +235,7 @@ const SignUp = ({ refetch, history }) => {
                             </div>
                           </div>
                           <ReCAPTCHA
-                              sitekey='6LeidcgUAAAAAMjd5P_Vzq6H363XndWpOPr5tHwi'
+                              sitekey='6LfbdMgUAAAAAFQsMjJz_NTUpbdIl8HpdooV1fCo'
                               onChange={() => handleCaptcha()}
                               size='normal'
                             />
