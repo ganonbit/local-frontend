@@ -5,7 +5,8 @@ import { useStore } from 'store';
 import PostForm from './PostForm';
 
 import { Mutation } from 'react-apollo';
-import { CREATE_POST, GET_FOLLOWED_POSTS } from '../../graphql/post';
+import { CREATE_POST, GET_FOLLOWED_POSTS } from 'graphql/post';
+import { GET_USER_POSTS } from 'graphql/user';
 
 import { css } from '@emotion/core';
 import { BeatLoader } from 'react-spinners';
@@ -69,6 +70,15 @@ const CreatePost = props => {
         {
           query: GET_FOLLOWED_POSTS,
           variables: { userId: auth.user.id, skip: 0, limit: 15 },
+        },
+        {
+          query: GET_USER_POSTS,
+          variables: {
+            id: auth.user.id,
+            username: auth.user.username,
+            skip: 0,
+            limit: 15,
+          },
         },
       ]}
     >

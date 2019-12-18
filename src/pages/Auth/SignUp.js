@@ -1,17 +1,20 @@
 import React, { useState } from 'react';
 import { Mutation } from 'react-apollo';
 import { withRouter } from 'react-router-dom';
+import DatePicker from 'react-datepicker';
 
 import { Field } from 'components/Auth';
 import { SIGN_UP } from 'graphql/user';
 import { validateFormField } from 'utils';
-import { MonthCalendar } from 'assets/svg-icons';
+import { formatDate } from 'utils/date';
 import { MainLayout } from 'pages/Auth';
 
 import { useStore } from 'store';
 import { CLEAR_AUTH_USER } from 'store/auth';
 
 import * as Routes from 'routes';
+
+import 'react-datepicker/dist/react-datepicker.css';
 
 const SignUp = ({ refetch, history }) => {
   const [error, setError] = useState({
@@ -27,12 +30,15 @@ const SignUp = ({ refetch, history }) => {
     username: '',
     email: '',
     password: '',
-    dob: '',
-    gender: '',
+    birthday: '',
+    gender: 'male',
   });
+
+  const [date, setDate] = useState(new Date('06/06/1986'));
+
   const [, dispatch] = useStore();
 
-  const { firstName, lastName, username, email, password } = values;
+  const { firstName, lastName, username, email, password, birthday } = values;
 
   const handleChange = e => {
     e.preventDefault();
@@ -61,7 +67,6 @@ const SignUp = ({ refetch, history }) => {
 
   const handleSubmit = (e, signup) => {
     e.preventDefault();
-
     const error = validate();
     if (error) {
       setError(error);
@@ -88,6 +93,14 @@ const SignUp = ({ refetch, history }) => {
     error.email ||
     error.password;
 
+  const handleBirthdayChange = birthday => {
+    setValues({
+      ...values,
+      birthday: formatDate(birthday),
+    });
+    setDate(birthday);
+  };
+
   return (
     <Mutation
       mutation={SIGN_UP}
@@ -95,7 +108,7 @@ const SignUp = ({ refetch, history }) => {
         input: { firstName, lastName, email, password, username },
       }}
     >
-      {signup => {
+      {(signup, { loading, error: apiError }) => {
         return (
           <MainLayout>
             <div className='col col-xl-5 col-lg-6 col-md-12 col-sm-12 col-12'>
@@ -112,8 +125,13 @@ const SignUp = ({ refetch, history }) => {
                       className='content'
                       onSubmit={e => handleSubmit(e, signup)}
                     >
+                      {apiError && (
+                        <p className='field-error'>
+                          {apiError.graphQLErrors[0].message}
+                        </p>
+                      )}
                       <div className='row'>
-                      <div className='col col-6 col-xl-6 col-lg-6 col-md-6 col-sm-12'>
+                        <div className='col col-6 col-xl-6 col-lg-6 col-md-6 col-sm-12'>
                           <Field
                             fieldContainerclassName='sm'
                             className='test'
@@ -124,8 +142,8 @@ const SignUp = ({ refetch, history }) => {
                             name='firstName'
                             error={error.firstName}
                           />
-                      </div>
-                      <div className='col col-6 col-xl-6 col-lg-6 col-md-6 col-sm-12'>
+                        </div>
+                        <div className='col col-6 col-xl-6 col-lg-6 col-md-6 col-sm-12'>
                           <Field
                             fieldContainerclassName='sm'
                             className='test'
@@ -166,62 +184,60 @@ const SignUp = ({ refetch, history }) => {
                             name='password'
                             error={error.password}
                           />
-                          </div>
-                          <div className='col col-6 col-xl-6 col-lg-6 col-md-6 col-sm-12'>
-                            <div className='form-group date-time-picker label-floating'>
-                              <label className='control-label'>
-                                Your Birthday
-                              </label>
-                              <input name='birthday' defaultValue='10/24/1984' />
-                              <span className='input-group-addon'>
-                                <MonthCalendar
-                                  className='olymp-menu-icon'
-                                  width={20}
-                                  height={20}
-                                />
-                              </span>
-                            </div>
-                          </div>
-                          <div className='col col-6 col-xl-6 col-lg-6 col-md-6 col-sm-12'>
-                            <div className='form-group label-floating is-select'>
-                              <label className='control-label'>Your Gender</label>
-                              <select
-                                className='select picker form-control'
-                                onChange={handleChange}
-                              >
-                                <option value='male'>Male</option>
-                                <option value='female'>Female</option>
-                                <option value='custom'>Custom</option>
-                              </select>
-                            </div>
-                          </div>
-                          <div className='col col-12 col-xl-12 col-lg-12 col-md-12 col-sm-12'>
-                            <div className='remember'>
-                              <div className='checkbox'>
-                                <label>
-                                  <input
-                                    name='optionsCheckboxes'
-                                    type='checkbox'
-                                  />
-                                  <span className='checkbox-material'>
-                                    <span className='check' />
-                                  </span>
-                                  I accept the{' '}
-                                  <a href='#1'>Terms and Conditions</a> of the
-                                  website
-                                </label>
-                              </div>
-                            </div>
-
-                            <button
-                              className='btn btn-green btn-lg full-width'
-                              type='submit'
-                              disabled={disableButton}
-                            >
-                              Complete Registration!
-                            </button>
+                        </div>
+                        <div className='col col-6 col-xl-6 col-lg-6 col-md-6 col-sm-12'>
+                          <div className='form-group date-time-picker label-floating'>
+                            <label className='control-label'>
+                              Your Birthday
+                            </label>
+                            <DatePicker
+                              dateFormat='dd/MM/yyyy'
+                              selected={date}
+                              onChange={handleBirthdayChange}
+                            />
                           </div>
                         </div>
+                        <div className='col col-6 col-xl-6 col-lg-6 col-md-6 col-sm-12'>
+                          <div className='form-group label-floating is-select'>
+                            <label className='control-label'>Your Gender</label>
+                            <select
+                              className='select picker form-control'
+                              onChange={handleChange}
+                              name='gender'
+                            >
+                              <option value='male'>Male</option>
+                              <option value='female'>Female</option>
+                              <option value='custom'>Custom</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div className='col col-12 col-xl-12 col-lg-12 col-md-12 col-sm-12'>
+                          <div className='remember'>
+                            <div className='checkbox'>
+                              <label>
+                                <input
+                                  name='optionsCheckboxes'
+                                  type='checkbox'
+                                />
+                                <span className='checkbox-material'>
+                                  <span className='check' />
+                                </span>
+                                I accept the{' '}
+                                <a href='#1'>Terms and Conditions</a> of the
+                                website
+                              </label>
+                            </div>
+                          </div>
+
+                          <button
+                            className='btn btn-green btn-lg full-width'
+                            type='submit'
+                            disabled={disableButton}
+                          >
+                            Complete Registration!
+                          </button>
+                        </div>
+                      </div>
                     </form>
                   </div>
                 </div>

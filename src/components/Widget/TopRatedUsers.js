@@ -5,7 +5,7 @@ import { Query, withApollo } from 'react-apollo';
 import { generatePath, Link } from 'react-router-dom';
 import { HappyFaceIcon } from 'components/icons';
 
-import { USER_SUGGESTIONS } from 'graphql/user';
+import { USER_SUGGESTIONS, GET_TOP_USERS } from 'graphql/user';
 import { CREATE_FOLLOW } from 'graphql/follow';
 
 import * as Routes from 'routes';
@@ -25,7 +25,7 @@ const TopRatedUsers = ({ client }) => {
         variables: { input: { userId: follower.id, followerId: auth.user.id } },
         refetchQueries: () => [
           {
-            query: USER_SUGGESTIONS,
+            query: GET_TOP_USERS,
             variables: variables,
           },
         ],
@@ -34,7 +34,7 @@ const TopRatedUsers = ({ client }) => {
   };
   return (
     <Query
-      query={USER_SUGGESTIONS}
+      query={GET_TOP_USERS}
       variables={variables}
       notifyOnNetworkStatusChange
     >
