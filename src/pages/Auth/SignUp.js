@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Mutation } from 'react-apollo';
 import { withRouter } from 'react-router-dom';
 import DatePicker from 'react-datepicker';
+import ReCAPTCHA from 'react-google-recaptcha';
 
 import { Field } from 'components/Auth';
 import { SIGN_UP } from 'graphql/user';
@@ -32,13 +33,14 @@ const SignUp = ({ refetch, history }) => {
     password: '',
     birthday: '',
     gender: 'male',
+    captcha: false,
   });
 
   const [date, setDate] = useState(new Date('06/06/1986'));
 
   const [, dispatch] = useStore();
 
-  const { firstName, lastName, username, email, password, birthday } = values;
+  const { firstName, lastName, username, email, password, birthday,captcha } = values;
 
   const handleChange = e => {
     e.preventDefault();
@@ -64,7 +66,9 @@ const SignUp = ({ refetch, history }) => {
     }
     return false;
   };
-
+  let handleCaptcha = () => {
+    setValues({ ...values, captcha: true });
+  };
   const handleSubmit = (e, signup) => {
     e.preventDefault();
     const error = validate();
@@ -91,7 +95,9 @@ const SignUp = ({ refetch, history }) => {
     error.lastName ||
     error.username ||
     error.email ||
-    error.password;
+    error.password||
+    !captcha
+
 
   const handleBirthdayChange = birthday => {
     setValues({
@@ -228,7 +234,11 @@ const SignUp = ({ refetch, history }) => {
                               </label>
                             </div>
                           </div>
-
+                          <ReCAPTCHA
+                              sitekey='6LeidcgUAAAAAMjd5P_Vzq6H363XndWpOPr5tHwi'
+                              onChange={() => handleCaptcha()}
+                              size='normal'
+                            />
                           <button
                             className='btn btn-green btn-lg full-width'
                             type='submit'
