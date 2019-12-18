@@ -1,9 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useStore } from 'store';
 import moment from 'moment';
-const Intro = ({ user }) => {
-  const rawTime = parseInt(user.createdAt);
-  const createdDate = new Date(rawTime);
-  console.log(createdDate)
+
+let Intro = ({user}) => {
   return (
     <>
       <div className='ui-block'>
@@ -22,7 +21,8 @@ const Intro = ({ user }) => {
             </li>
             <li>
               <span className='title'>Joined:</span>
-              <span className='text'>{moment(createdDate).format("MMMM Do, YYYY")}</span>
+              <span className='text'>{moment(new Date(parseInt(user.createdAt))).format("MMMM Do, YYYY")}
+                </span>
             </li>
             <li>
               <span className='title'>Based in:</span>
@@ -38,7 +38,6 @@ const Intro = ({ user }) => {
               Twitter
             </a>
           </div> */}
-          
         </div>
       </div>
 

@@ -3,6 +3,7 @@ import { Mutation } from 'react-apollo';
 import DatePicker from 'react-datepicker';
 
 import { Field } from 'components/ProfileSetting';
+import {formatDate} from 'utils/date'
 import { validateFormField } from 'utils';
 import { EDIT_ACCOUNT } from 'graphql/user';
 import { useStore } from 'store';
@@ -79,17 +80,7 @@ const PersonalInfo = () => {
       phone: '',  
     });
   };
-  let formatDate = date => {
-    var d = new Date(date),
-      month = '' + (d.getMonth() + 1),
-      day = '' + d.getDate(),
-      year = d.getFullYear();
 
-    if (month.length < 2) month = '0' + month;
-    if (day.length < 2) day = '0' + day;
-
-    return [month, day, year].join('/');
-  };
   const handleBirthdayChange = birthday => {
     setValues({
       ...values,
