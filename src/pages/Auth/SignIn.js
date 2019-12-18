@@ -10,12 +10,15 @@ import { validateFormField } from 'utils';
 import * as Routes from 'routes';
 const SignIn = ({ refetch, history }) => {
   const [reset, setReset] = useState(false);
-  const [values, setValues] = useState({ emailOrUsername: '', password: '' });
+  const [values, setValues] = useState({
+    emailOrUsername: '',
+    password: '',
+  });
   const [error, setError] = useState({
     emailOrUsername: '',
     password: '',
   });
-  const { emailOrUsername, password } = values;
+  const { emailOrUsername, password, captcha } = values;
 
   const handleChange = e => {
     const { name, value } = e.target;
@@ -40,7 +43,7 @@ const SignIn = ({ refetch, history }) => {
   const handleReset = () => {
     setReset(false);
   };
-
+ 
   const handleSubmit = (e, signin) => {
     e.preventDefault();
     const error = validate();
@@ -117,6 +120,7 @@ const SignIn = ({ refetch, history }) => {
                                 Remember Me
                               </label>
                             </div> */}
+                            
                             <a
                               onClick={() => setReset(true)}
                               href='#1'
@@ -141,32 +145,6 @@ const SignIn = ({ refetch, history }) => {
                           >
                             Login
                           </button>
-
-                          {/* <div className='or'></div>
-
-                          <a
-                            href='#1'
-                            className='btn btn-lg bg-facebook full-width btn-icon-left'
-                          >
-                            <i
-                              // className="fab fa-facebook-f"
-                              className='fas fa-camera'
-                              aria-hidden='true'
-                            ></i>
-                            Login with Facebook
-                          </a>
-
-                          <a
-                            href='#1'
-                            className='btn btn-lg bg-twitter full-width btn-icon-left'
-                          >
-                            <i
-                              className='fab fa-twitter'
-                              aria-hidden='true'
-                            ></i>
-                            Login with Twitter
-                          </a> */}
-
                           <p>
                             Don’t you have an account?
                             <Link to={Routes.SIGN_UP} className='btn-register'>
