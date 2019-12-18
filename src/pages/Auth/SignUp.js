@@ -229,7 +229,7 @@ const SignUp = ({ refetch, history }) => {
                                   <span className='check' />
                                 </span>
                                 I accept the{' '}
-                                <a href='#1'>Terms and Conditions</a> of the
+                                <a href='#1'>Terms and Condition</a> of the
                                 website
                               </label>
                             </div>
