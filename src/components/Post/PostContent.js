@@ -13,33 +13,33 @@ export default function PostContent(props) {
   hashtag(linkify);
   mention(linkify);
 
-  const fetchMetaFromContentPreview = async rawContent => {
-    try {
-      const response = await fetch(
-        `/.netlify/functions/open-graph-preview?q=${rawContent}`
-      );
-      if (!response.ok) {
-        throw new Error('Netlify network response was not ok.');
-      }
-      const metaFromContentPreview = await response.json();
-      return metaFromContentPreview;
-    } catch (error) {
-      console.log(
-        'There has been a problem with your fetch operation: ',
-        error.message
-      );
-    }
-  };
-  const [metaFromContentPreview, setMetaFromContentPreview] = useState('');
+  // const fetchMetaFromContentPreview = async rawContent => {
+  //   try {
+  //     const response = await fetch(
+  //       `/.netlify/functions/open-graph-preview?q=${rawContent}`
+  //     );
+  //     if (!response.ok) {
+  //       throw new Error('Netlify network response was not ok.');
+  //     }
+  //     const metaFromContentPreview = await response.json();
+  //     return metaFromContentPreview;
+  //   } catch (error) {
+  //     console.log(
+  //       'There has been a problem with your fetch operation: ',
+  //       error.message
+  //     );
+  //   }
+  // };
+  // const [metaFromContentPreview, setMetaFromContentPreview] = useState('');
 
-  useEffect(() => {
-    async function fetchData() {
-      const result = await fetchMetaFromContentPreview(rawContent);
-      setMetaFromContentPreview(result);
-    }
+  // useEffect(() => {
+  //   async function fetchData() {
+  //     const result = await fetchMetaFromContentPreview(rawContent);
+  //     setMetaFromContentPreview(result);
+  //   }
 
-    fetchData();
-  }, [rawContent]);
+  //   fetchData();
+  // }, [rawContent]);
 
   return (
     <div className='postContainer'>
@@ -47,9 +47,9 @@ export default function PostContent(props) {
         {rawContent}
       </Linkify>
 
-      {!metaFromContentPreview && !image ? null : (
+      {/* {!metaFromContentPreview && !image ? null : (
         <Preview {...metaFromContentPreview.meta} />
-      )}
+      )} */}
       {!image ? null : (
         <div className='post-img'>
           <img className='postImage' alt='postImage' src={image} />
