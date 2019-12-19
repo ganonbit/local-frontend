@@ -61,9 +61,6 @@ const MainLayout = ({ children }) => {
                           <Link to={Routes.SETTINGS}>Personal Information</Link>
                         </li>
                         <li>
-                          <Link to='/settings/account'>Account Settings</Link>
-                        </li>
-                        <li>
                           <Link to='/settings/change-password'>
                             Change Password
                           </Link>

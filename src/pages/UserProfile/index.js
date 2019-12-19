@@ -33,7 +33,7 @@ export default function Profile(props) {
                   <Post queryOptions={queryOptions} isAuth={true} />
                 </div>
               </div>
-              <Right />
+              <Right user={data.getUser} />
             </div>
           </div>
         );

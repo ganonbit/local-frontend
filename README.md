@@ -12,7 +12,9 @@ install `yarn add netlify-cli` to use ntl dev to run netlify serverless/lambda f
 
 to start the server locally you'll either need to request the `.env` file from me, or have it connect to the staging environment vis your own `.env` file. that allows us to safely use environment variables with passwords/credentials without fear of it getting exposed to clients/hackers as it is only used locally and not pushed to git.
 
-once that is setup run the command `yarn start` or `ntl dev` (to run lambda functions locally and react in one command) to start the front end. \*note: if wanting to run the whole application locally, the api: `https://bitbucket.org/270b/avonation-api/` needs to be up and running first via it's README.
+run `yarn build && yarn build:lambda` to get local build ready for lambda use.
+
+once that is setup run the command `ntl dev` (to run lambda functions locally and react in one command) to start the front end. \*note: if wanting to run the whole application locally, the api: `https://bitbucket.org/270b/avonation-api/` needs to be up and running first via it's README.
 
 After running the server, you can navigate to `http://localhost:8888`
 
