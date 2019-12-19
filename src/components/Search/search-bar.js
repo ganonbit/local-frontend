@@ -9,26 +9,16 @@ const SearchBar = ({ currentRefinement, refine }) => {
   const [{ auth }] = useStore();
   return (
     <>
-      <div className='search-bar w-search notification-list friend-requests'>
-        <div className='form-group with-button'>
-          <input
-            className='form-control js-user-search'
-            placeholder='Search here people or posts...'
-            type="search"
-            aria-label="Search"
-            value={currentRefinement}
-            onChange={event => refine(event.currentTarget.value)}
-          />
-        </div>
-      </div>
-
-      <div className='control-block' style={{height: 'auto'}}>
-        <ChatNotifications />
-        <Notifications />
-        <AuthorPage user={auth.user} />
-      </div>
+      <input
+        className='form-control js-user-search'
+        placeholder='Search here people or posts...'
+        type='search'
+        aria-label='Search'
+        value={currentRefinement}
+        onChange={event => refine(event.currentTarget.value)}
+      />
     </>
-  )
+  );
 };
 
 const CustomSearchBar = connectSearchBox(SearchBar);

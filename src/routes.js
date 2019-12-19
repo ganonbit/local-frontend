@@ -14,7 +14,7 @@ export const RESET_PASSWORD = '/reset-password';
 
 export const VERIFY_ACCOUNT = '/verify';
 
-export const USER_PROFILE = '/:username';
+export const USER_PROFILE = '/profile/:username';
 
 export const DISCOVER = '/discover';
 

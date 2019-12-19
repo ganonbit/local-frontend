@@ -35,8 +35,9 @@ const AppLayout = ({ refetch, history }) => {
         <Route path={Routes.SETTINGS} render={() => <ProfileSetting />} />
         <Route path={Routes.REWARDS} render={props => <Reward {...props} />} />
         <Route
+          exact
           path={Routes.USER_PROFILE}
-          render={props => <UserProfile {...props} />}
+          render={props => <UserProfile refetch={refetch} {...props} />}
         />
         <Route path={Routes.HOME} render={props => <Home {...props} />} />
       </Switch>
