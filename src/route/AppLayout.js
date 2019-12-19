@@ -13,6 +13,7 @@ import { Sidebar } from '../components/Sidebar/index';
 import TopHeader from './TopHeader';
 import Discover from 'pages/Discover';
 import Reward from 'pages/Reward';
+import Badges from 'pages/UserProfile/Badges'
 import * as Routes from 'routes';
 /**
  * All other routes of Entire App
@@ -23,7 +24,7 @@ const AppLayout = ({ refetch, history }) => {
     <div className='page-has-left-panels page-has-right-panels pr-0'>
       <Sidebar refetch={refetch} isAuth={true} />
       <TopHeader refetch={refetch} />
-      {history.location.pathname === '/settings' ? (
+      {history.location.pathname === Routes.SETTINGS||Routes.BADGES ? (
         <div className='header-spacer header-spacer-small'></div>
       ) : history.location.pathname === '/rewards' ? (
         <div className='remove-header-spacer'></div>
@@ -39,6 +40,7 @@ const AppLayout = ({ refetch, history }) => {
           path={Routes.USER_PROFILE}
           render={props => <UserProfile refetch={refetch} {...props} />}
         />
+        <Route path={Routes.BADGES} render={props => <Badges {...props} />} />
         <Route path={Routes.HOME} render={props => <Home {...props} />} />
       </Switch>
     </div>

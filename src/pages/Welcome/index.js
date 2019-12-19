@@ -11,7 +11,7 @@ const Welcome = () => {
     <div className='page-has-left-panels page-has-right-panels pr-0'>
       <WelcomeHeader />
       <Sidebar isAutuh={false} />
-      <div className='header-spacer'></div>
+      <div class="header-spacer"></div>
       <VideoSection />
       <WelcomeIntro />
       <MainContent />

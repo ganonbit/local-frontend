@@ -1,40 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import * as Routes from 'routes'
+
 const WelcomeIntro = () => {
   return (
-    <div className='container'>
-      <div className='row'>
-        <div className='col-lg-9 m-auto'>
-          <div className='row'>
-            <div className='col-lg-8'>
-              <div className='ui-block py-5 px-4 welcome-block'>
-                <h2>Welcome!</h2>
-
-                <p>
-                  Avocado Nation is the first of its kind social media network
-                  to connect you with fellow avocado-lovers!{' '}
-                </p>
-
-                <p>
-                  Join today and get rewarded for your contributions and
-                  engagement with other community members! Get inspiration for
-                  your next meal or party, and learn how others use this
-                  versatile fruit in everyday life - all from fellow avocado
-                  fans, just like you.
-                </p>
-              </div>
-            </div>
-            <div className='col-lg-4'>
-              <div className='ui-block join-us'>
-                <span>Join the Nation</span>
-                <h2>Create your own Profile!</h2>
-                <div className='text-center'>
-                  <Link to='/signup'>Start Now!</Link>
-                </div>
-              </div>
-            </div>
-          </div>
+    <div class='container'>
+      <div class='row'>
+        <div class='col col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12 m-auto pb-4'>
+          <p class='register-now-title'>
+            Check out a sneak peek below for a sliver of what Avocado Nation has
+            to offer. <Link to={Routes.SIGN_UP}>Register now</Link> to unlock
+            the full experience!
+          </p>
         </div>
       </div>
     </div>

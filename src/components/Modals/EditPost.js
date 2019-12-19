@@ -58,7 +58,6 @@ const EditPost = props => {
       imagePreview: URL.createObjectURL(e.target.files[0]),
     });
   };
-  console.log(values)
   return (
     <Mutation
       mutation={EDIT_POST}
