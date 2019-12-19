@@ -19,8 +19,7 @@ function CommentsHeader(props) {
   const [{ auth }] = useStore();
   const isSelma =  !auth.user ? null : (auth.user.role === "selma");
   const isOwner = !auth.user ? null : (auth.user.id === author.id);
-  const rawTime = parseInt(createdAt);
-  const commentDate = new Date(rawTime);
+  const commentDate = new Date(parseInt(createdAt));
   const deleteComment = async () => {
     try {
       await client.mutate({
@@ -67,7 +66,7 @@ function CommentsHeader(props) {
           </a>
           <div className='post__date'>
             <time className='published' dateTime={commentDate}>
-              {moment(commentDate, 'YYYYMMDDHHmms').fromNow()}
+            {moment(commentDate, 'YYYYMMDDHHmms').fromNow()}
             </time>
           </div>
         </div>
