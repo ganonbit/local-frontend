@@ -1,8 +1,6 @@
 import React from 'react';
 import { connectSearchBox } from 'react-instantsearch-dom';
-import AuthorPage from '../../pages/Header/AuthorPage';
-import Notifications from '../../pages/Header/Notifications';
-import ChatNotifications from '../../pages/Header/ChatNotifications';
+
 import { useStore } from 'store';
 
 const SearchBar = ({ currentRefinement, refine }) => {

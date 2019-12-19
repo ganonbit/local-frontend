@@ -14,7 +14,7 @@ class Posts extends React.Component {
           <h2>Posts</h2>
           <div
             className='list-group overflow-auto'
-            style={{ maxHeight: '240px' }}
+            style={{ maxHeight: '240px'}}
           >
             No Posts Match Your Search...
           </div>
