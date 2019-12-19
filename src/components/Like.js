@@ -10,11 +10,12 @@ import { GET_AUTH_USER } from 'graphql/user';
 import { CREATE_LIKE, DELETE_LIKE } from 'graphql/like';
 
 import { useStore } from 'store';
+import { Loading } from './Loading';
 /**
  * Component for rendering Like button
  */
 const Like = ({ postId, user, likes }) => {
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   const [{ auth }] = useStore();
 
@@ -23,11 +24,14 @@ const Like = ({ postId, user, likes }) => {
   );
 
   const handleButtonClick = async mutate => {
-    setLoading(true);
-    const { data } = await mutate();
+    setLoading(false);
+    setTimeout(() => {
+      const { data } = mutate();
+      setLoading(true);
+    }, 2000);
 
     // Create or delete notification for like
-    if (auth.user.id === user.id) return setLoading(false);
+    // if (auth.user.id === user.id) return setLoading(false);
   };
 
   // Detect which mutation to use
@@ -62,7 +66,8 @@ const Like = ({ postId, user, likes }) => {
             disabled={loading}
             icon={faHeart}
             size='2x'
-            onClick={() => handleButtonClick(mutate)}
+            color={hasLiked?'red':''}
+            onClick={() => loading && handleButtonClick(mutate)}
           />
         );
       }}

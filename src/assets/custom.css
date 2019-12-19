@@ -1,5 +1,6 @@
 :root {
   --theme-color-white: #ffffff;
+  --theme-color-black: #000;
   --theme-color: #009440;
   --theme-color-light: #8fc42c;
   --theme-color-secondary: #02a94a;
@@ -1110,6 +1111,39 @@ li.add-more-posts span {
 }
 .top-header .profile-section{
   padding: 0px !important;
+}
+.search-bar .form-group.with-button button.show-more-btn {
+  position: initial;
+  color: #fff;
+  width: 100%;
+  padding: 15px;
+}
+.search-result {
+  /* height: 500px; */
+  overflow-y: auto;
+}
+.search-result .card {
+  border-radius: 0 !important;
+}
+.search-result h2 {
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--theme-color-white);
+  font-size: 15px;
+  padding: 8px 15px;
+  margin: 0;
+  background: var(--theme-color);
+}
+.search-result h5 {
+  font-size: 13px;
+  line-height: 20px;
+  margin-bottom: 5px;
+  color: var(--theme-color-black);
+}
+.search-result h6 {
+  font-size: 12px;
+  line-height: 15px;
+  margin-bottom: 0;
 }
 @media (max-width: 1454px) {
   .search-bar.w-search {
