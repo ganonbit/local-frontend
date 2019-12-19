@@ -705,7 +705,8 @@ ul.sidebar-box {
   margin-right: 16px;
 }
 .top-header-thumb {
-  min-height: 422px;
+  max-height: 500px;
+  overflow: hidden;
 }
 .top-header-thumb img {
   height: 100%;
