@@ -5,7 +5,7 @@ import { Query, withApollo } from 'react-apollo';
 import { generatePath, Link } from 'react-router-dom';
 import { HappyFaceIcon } from 'components/icons';
 
-import { USER_SUGGESTIONS, GET_TOP_USERS } from 'graphql/user';
+import { GET_TOP_USERS } from 'graphql/user';
 import { CREATE_FOLLOW } from 'graphql/follow';
 
 import * as Routes from 'routes';
@@ -48,7 +48,7 @@ const TopRatedUsers = ({ client }) => {
                 <h6 className='title'>Top 20 Users</h6>
               </div>
               <ul className='widget w-friend-pages-added notification-list friend-requests sidebar-box'>
-                {data.suggestPeople.map((user, index) => (
+                {data.getTopUsers.map((user, index) => (
                   <li className='inline-items' key={index}>
                     <div className='author-thumb'>
                       <Avatar image={user.image} />
@@ -62,9 +62,6 @@ const TopRatedUsers = ({ client }) => {
                       >
                         {`${user.firstName} ${user.lastName}`}
                       </Link>
-                      <span className='chat-message-item'>
-                        82 Friends in Common
-                      </span>
                     </div>
                     <span className='notification-icon'>
                       <div
