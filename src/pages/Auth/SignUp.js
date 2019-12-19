@@ -13,6 +13,8 @@ import { MainLayout } from 'pages/Auth';
 import { useStore } from 'store';
 import { CLEAR_AUTH_USER } from 'store/auth';
 
+import {RE_CAPTCHA_SCERET_API} from 'constants/ApiKeys'
+
 import * as Routes from 'routes';
 
 import 'react-datepicker/dist/react-datepicker.css';
@@ -197,7 +199,7 @@ const SignUp = ({ refetch, history }) => {
                               Your Birthday
                             </label>
                             <DatePicker
-                              dateFormat='dd/MM/yyyy'
+                              dateFormat='MM/dd/yyyy'
                               selected={date}
                               onChange={handleBirthdayChange}
                             />
@@ -235,7 +237,7 @@ const SignUp = ({ refetch, history }) => {
                             </div>
                           </div>
                           <ReCAPTCHA
-                              sitekey='6LfbdMgUAAAAAFQsMjJz_NTUpbdIl8HpdooV1fCo'
+                              sitekey={RE_CAPTCHA_SCERET_API}
                               onChange={() => handleCaptcha()}
                               size='normal'
                             />
