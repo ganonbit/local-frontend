@@ -26,7 +26,6 @@ const CreatePost = props => {
     image: '',
     imagePreview: '',
   });
-  console.log(postContent);
   const { status, image, imagePreview } = postContent;
 
   // let toggleModel = () => {

@@ -7,25 +7,26 @@ let Intro = ({user}) => {
     <>
       <div className='ui-block'>
         <div className='ui-block-title ui-block-post'>
-          <h6 className='title'>About</h6>
+          <h6 className='title'>Info</h6>
+          {/* <a href="#" className="more"><svg className="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg></a> */}
         </div>
         <div className='ui-block-content'>
           {/* <!-- W-Personal-Info --> */}
           <ul className='widget w-personal-info item-block'>
             <li>
-              <span className='text'>{user.bio}</span>
-            </li>
-            <li>
-              <span className='title'>Created:</span>
+              <span className='title'>Bio:</span>
               <span className='text'>
-                {moment(new Date(parseInt(user.createdAt))).format(
-                  'MMMM Do YYYY'
-                )}
+                {user.bio}
               </span>
             </li>
             <li>
+              <span className='title'>Joined:</span>
+              <span className='text'>{moment(new Date(parseInt(user.createdAt))).format("MMMM Do, YYYY")}
+                </span>
+            </li>
+            <li>
               <span className='title'>Based in:</span>
-              <span className='text'>Dallas, TX</span>
+              <span className='text'>{user.location}</span>
             </li>
           </ul>
           {/* <div className='widget w-socials'>
@@ -60,5 +61,6 @@ let Intro = ({user}) => {
       </div>
     </>
   );
-};
+}
+
 export default Intro;
