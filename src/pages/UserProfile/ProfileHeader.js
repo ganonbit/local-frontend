@@ -1,6 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-const ProfileHeader = ({ user }) => {
+import UploadProfileImage from './UploadProfileImage';
+const ProfileHeader = ({ user,refetch }) => {
+  const [isShowing, setIsShowing] = useState(false);
+  const [ImagesContent, setImagesContent] = useState({
+    title: '',
+    image: '',
+    isCover: false,
+  });
+  let { title, image, isCover } = ImagesContent;
+  let toggle = (title, isCover, image) => {
+    setImagesContent({
+      ...ImagesContent,
+      title: title,
+      isCover: isCover,
+      image: image,
+    });
+    setIsShowing(true);
+  };
   return (
     <div className='container'>
       <div className='row'>
@@ -33,6 +50,51 @@ const ProfileHeader = ({ user }) => {
                     {`${user.firstName} ${user.lastName}`}
                   </Link>
                   <div className='author-location'>{user.username}</div>
+                </div>
+              </div>
+
+              <div class='profile-section'>
+                {
+                  <UploadProfileImage
+                    show={isShowing}
+                    onHide={() => setIsShowing(false)}
+                    user={user}
+                    isCover={isCover}
+                    image={image}
+                    title={title}
+                    refetch={refetch}
+                  />
+                }
+                <div class='control-block-button'>
+                  <div class='btn btn-control bg-primary more'>
+                    {/* <svg class="olymp-settings-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-settings-icon"></use></svg> */}
+                    <ul class='more-dropdown more-with-triangle triangle-bottom-right'>
+                      <li>
+                        <a
+                          href='#'
+                          data-toggle='modal'
+                          data-target='#update-header-photo'
+                          onClick={() =>
+                            toggle('Edit Profile Image', false, user.image)
+                          }
+                        >
+                          Update Profile Photo
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href='#'
+                          data-toggle='modal'
+                          data-target='#update-header-photo'
+                          onClick={() =>
+                            toggle('Edit cover Image', true, user.coverImage)
+                          }
+                        >
+                          Update Cover Image
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
