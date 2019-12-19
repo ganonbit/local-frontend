@@ -27,7 +27,7 @@ export default function Profile(props) {
           <div className='container'>
             <div className='row ' style={{ paddingLeft: 0, paddingRight: 0 }}>
               <ProfileHeader user={data.getUser} refetch={props.refetch} />
-              <Left user={data.getUser}/>
+              <Left user={data.getUser} />
               <div className='col col-xl-6 order-xl-2 col-lg-12 order-lg-2 col-md-12 order-md-1 order-sm-1 col-xs-12 order-xs-1 col-12'>
                 <div id='newsfeed-items-grid'>
                 {/* until we make logic to make it only to the current logged in users profile we'll leave this off
