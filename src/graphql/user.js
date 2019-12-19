@@ -312,8 +312,8 @@ export const USER_SUGGESTIONS = gql`
  * People suggestions for auth user
  */
 export const GET_TOP_USERS = gql`
-  query($userId: String!, $skip: Int, $limit: Int) {
-    getTopUsers(userId: $userId, skip: $skip, limit: $limit) {
+  query($userId: String! $skip: Int, $limit: Int) {
+    getTopUsers(userId: $userId skip: $skip, limit: $limit) {
       id
       firstName
       lastName
