@@ -6,6 +6,7 @@ import Right from './RightSidebar';
 import Post from 'components/Post';
 import { Query } from 'react-apollo';
 import { GET_USER_POSTS, GET_USER } from 'graphql/user';
+import { useStore } from 'store';
 
 export default function Profile(props) {
   const queryOptions = {
@@ -29,7 +30,9 @@ export default function Profile(props) {
               <Left user={data.getUser} />
               <div className='col col-xl-6 order-xl-2 col-lg-12 order-lg-2 col-md-12 order-md-1 order-sm-1 col-xs-12 order-xs-1 col-12'>
                 <div id='newsfeed-items-grid'>
-                  <CreatePost />
+                {/* until we make logic to make it only to the current logged in users profile we'll leave this off
+                <CreatePost /> */}
+
                   <Post queryOptions={queryOptions} isAuth={true} />
                 </div>
               </div>

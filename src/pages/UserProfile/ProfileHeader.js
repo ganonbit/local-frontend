@@ -26,7 +26,7 @@ const ProfileHeader = ({ user,refetch }) => {
             <div className='top-header'>
               <div className='top-header-thumb'>
                 {user.coverImage ? (
-                  <img src={user.coverImage} alt='nature' />
+                  <img src={user.coverImage} alt='cover' />
                 ) : (
                   <img
                     src='https://res.cloudinary.com/weare270b/image/upload/v1576214852/static/profile-bg_edozor.png'
@@ -37,7 +37,7 @@ const ProfileHeader = ({ user,refetch }) => {
               <div className='top-header-author'>
                 <Link to='/' className='author-thumb'>
                   {user.image ? (
-                    <img src={user.image} alt='nature' />
+                    <img src={user.image} alt='cover' />
                   ) : (
                     <img
                       src='https://res.cloudinary.com/weare270b/image/upload/v1576220262/static/Image_from_iOS_1_bnaxnc.jpg'
