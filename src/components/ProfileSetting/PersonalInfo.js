@@ -8,11 +8,10 @@ import { validateFormField } from 'utils';
 import { EDIT_ACCOUNT } from 'graphql/user';
 import { useStore } from 'store';
 
-import bootstrap from 'bootstrap';
 import 'react-datepicker/dist/react-datepicker.css';
+import 'bootstrap-select/dist/css/bootstrap-select.min.css';
 const jQuery = require('jquery');
 window.jQuery = jQuery;
-import('bootstrap-select/dist/css/bootstrap-select.min.css');
 require('bootstrap-select');
 
 const PersonalInfo = () => {
@@ -38,7 +37,7 @@ const PersonalInfo = () => {
     bio: '',  
     phone: '',  
   });
-  const { username, firstName, lastName, bio, birthday, location, phone, gender } = values;
+  const { username, firstName, lastName, bio, birthday, location, phone } = values;
   const handleChange = e => {
     const { name, value } = e.target;
     setValues({ ...values, [name]: value });
