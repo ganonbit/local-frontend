@@ -13,7 +13,7 @@ import { MainLayout } from 'pages/Auth';
 import { useStore } from 'store';
 import { CLEAR_AUTH_USER } from 'store/auth';
 
-import {RE_CAPTCHA_SCERET_API} from 'constants/ApiKeys'
+import { RE_CAPTCHA_SCERET_API } from 'constants/ApiKeys';
 
 import * as Routes from 'routes';
 
@@ -42,7 +42,15 @@ const SignUp = ({ refetch, history }) => {
 
   const [, dispatch] = useStore();
 
-  const { firstName, lastName, username, email, password, birthday,captcha } = values;
+  const {
+    firstName,
+    lastName,
+    username,
+    email,
+    password,
+    birthday,
+    captcha,
+  } = values;
 
   const handleChange = e => {
     e.preventDefault();
@@ -97,9 +105,8 @@ const SignUp = ({ refetch, history }) => {
     error.lastName ||
     error.username ||
     error.email ||
-    error.password||
-    !captcha
-
+    error.password ||
+    !captcha;
 
   const handleBirthdayChange = birthday => {
     setValues({
@@ -237,10 +244,10 @@ const SignUp = ({ refetch, history }) => {
                             </div>
                           </div>
                           <ReCAPTCHA
-                              sitekey={RE_CAPTCHA_SCERET_API}
-                              onChange={() => handleCaptcha()}
-                              size='normal'
-                            />
+                            sitekey={RE_CAPTCHA_SCERET_API}
+                            onChange={() => handleCaptcha()}
+                            size='normal'
+                          />
                           <button
                             className='btn btn-green btn-lg full-width'
                             type='submit'
