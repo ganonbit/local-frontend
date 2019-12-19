@@ -8,11 +8,10 @@ import { validateFormField } from 'utils';
 import { EDIT_ACCOUNT } from 'graphql/user';
 import { useStore } from 'store';
 
-import bootstrap from 'bootstrap';
 import 'react-datepicker/dist/react-datepicker.css';
+import 'bootstrap-select/dist/css/bootstrap-select.min.css';
 const jQuery = require('jquery');
 window.jQuery = jQuery;
-import('bootstrap-select/dist/css/bootstrap-select.min.css');
 require('bootstrap-select');
 
 const PersonalInfo = () => {
@@ -26,14 +25,19 @@ const PersonalInfo = () => {
     gender: auth.user.gender,
     bio: auth.user.bio,
     birthday: auth.user.birthday,
+    phone: auth.user.phone,
   });
   const [date, setDate] = useState(auth.user.birthday);
   const [error, setError] = useState({
-    firstName: '',
-    lastName: '',
     username: '',
+    firstName: '',
+    lastName: '',  
+    location: '',  
+    gender: '',  
+    bio: '',  
+    phone: '',  
   });
-  const { username, firstName, lastName, bio, birthday } = values;
+  const { username, firstName, lastName, bio, birthday, location, phone } = values;
   const handleChange = e => {
     const { name, value } = e.target;
     setValues({ ...values, [name]: value });
@@ -56,14 +60,23 @@ const PersonalInfo = () => {
     e.preventDefault();
     setValues({
       ...values,
-      username: auth.user.username,
       firstName: auth.user.firstName,
       lastName: auth.user.lastName,
+      username: auth.user.username,
+      location: auth.user.location,
+      gender: auth.user.gender,
+      bio: auth.user.bio,
+      birthday: auth.user.birthday,
+      phone: auth.user.phone,
     });
     setError({
       username: '',
       firstName: '',
-      lastName: '',
+      lastName: '',  
+      location: '',  
+      gender: '',  
+      bio: '',  
+      phone: '',  
     });
   };
 
@@ -138,18 +151,6 @@ const PersonalInfo = () => {
                       handleChange={handleChange}
                       error={error.username}
                     />
-                    <div className='form-group date-time-picker label-floating'>
-                      <label className='control-label'>Your Birthday</label>
-                      <DatePicker
-                        dateFormat='dd/MM/yyyy'
-                        selected={
-                          typeof date === 'string'
-                            ? new Date(parseInt(date))
-                            : date
-                        }
-                        onChange={handleBirthdayChange}
-                      />
-                    </div>
                   </div>
                   <div className='col col-lg-6 col-md-6 col-sm-12 col-12'>
                     <Field
@@ -161,51 +162,13 @@ const PersonalInfo = () => {
                       error={error.lastName}
                     />
                     <Field
-                      placeholder='Your Website'
+                      placeholder='Phone Number'
                       type='text'
-                      name='website'
-                      value='daydreamzagency.com'
+                      name='phone'
+                      value={phone}
+                      handleChange={handleChange}
+                      error={error.phone}
                     />
-                    <Field
-                      placeholder='Yoyr Phone Number'
-                      type='text'
-                      name='phoneNumber'
-                    />
-                  </div>
-                  <div className='col col-lg-6 col-md-4 col-sm-12 col-12'>
-                    <div className='form-group label-floating is-select'>
-                      <label className='control-label'>Your Country</label>
-                      <select
-                        className='selectpicker form-control'
-                        onChange={handleChange}
-                        name='location'
-                      >
-                        <option selected value='United States'>
-                          United States
-                        </option>
-                        <option value='Australia'>Australia</option>
-                      </select>
-                    </div>
-                  </div>
-                  <div className='col col-lg-6 col-md-4 col-sm-12 col-12'>
-                    <div className='form-group label-floating is-select'>
-                      <label className='control-label'>
-                        Your State / Province
-                      </label>
-                      <select className='selectpicker form-control'>
-                        <option value='California'>California</option>
-                        <option value='Texas'>Texas</option>
-                      </select>
-                    </div>
-                  </div>
-                  <div className='col col-lg-6 col-md-4 col-sm-12 col-12'>
-                    <div className='form-group label-floating is-select'>
-                      <label className='control-label'>Your City</label>
-                      <select className='selectpicker form-control'>
-                        <option value='SF'>San Francisco</option>
-                        <option value='NY'>New York</option>
-                      </select>
-                    </div>
                   </div>
                   <div className='col col-lg-6 col-md-4 col-sm-12 col-12'>
                     <div className='form-group label-floating is-select'>
@@ -217,7 +180,34 @@ const PersonalInfo = () => {
                       >
                         <option value='male'>Male</option>
                         <option value='female'>Female</option>
+                        <option value='custom'>Custom (more choices coming soon)</option>
                       </select>
+                    </div>
+                  </div>
+                  <div className='col col-lg-6 col-md-4 col-sm-12 col-12'>
+                    <div className='form-group date-time-picker label-floating'>
+                      <label className='control-label'>Your Birthday</label>
+                      <DatePicker
+                        dateFormat='MM/dd/yyyy'
+                        selected={
+                          typeof date === 'string'
+                            ? new Date(parseInt(date))
+                            : date
+                        }
+                        onChange={handleBirthdayChange}
+                      />
+                    </div>
+                  </div>
+                  <div className='col col-lg-6 col-md-4 col-sm-12 col-12'>
+                    <div className='form-group label-floating is-select'>
+                      <label className='control-label'>Your Location</label>
+                      <textarea
+                        className='form-control'
+                        onChange={handleChange}
+                        name='location'
+                      >
+                        {location}
+                      </textarea>
                     </div>
                   </div>
                   <div className='col col-lg-6 col-md-6 col-sm-12 col-12'>
@@ -234,20 +224,7 @@ const PersonalInfo = () => {
                       </textarea>
                     </div>
                   </div>
-                  <div className='col col-lg-6 col-md-6 col-sm-12 col-12'>
-                    <Field
-                      placeholder='Birth Place'
-                      type='text'
-                      name='birthPlace'
-                    />
-                    <Field
-                      placeholder='Your Occupation'
-                      type='text'
-                      name='occupation'
-                      value='UI/UX Designer'
-                    />
-                  </div>
-                  <div className='col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12'>
+                  {/* <div className='col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12'>
                     <div className='form-group with-icon label-floating'>
                       <label className='control-label'>
                         Your Facebook Account
@@ -276,7 +253,7 @@ const PersonalInfo = () => {
                         aria-hidden='true'
                       ></i>
                     </div>
-                  </div>
+                  </div> */}
                   <div className='col col-lg-6 col-md-6 col-sm-12 col-12'>
                     <button
                       className='btn btn-secondary btn-lg full-width'

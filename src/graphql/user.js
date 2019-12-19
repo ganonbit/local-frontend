@@ -15,6 +15,7 @@ lastName
 email
 username
 location
+phone
 gender
 bio
 birthday
@@ -308,6 +309,21 @@ export const USER_SUGGESTIONS = gql`
 `;
 
 /**
+ * People suggestions for auth user
+ */
+export const GET_TOP_USERS = gql`
+  query($userId: String! $skip: Int, $limit: Int) {
+    getTopUsers(userId: $userId skip: $skip, limit: $limit) {
+      id
+      firstName
+      lastName
+      username
+      image
+    }
+  }
+`;
+
+/**
  * Get users with whom authUser had a conversation
  */
 export const GET_CONVERSATIONS = gql`
@@ -338,10 +354,41 @@ export const IS_USER_ONLINE_SUBSCRIPTION = gql`
     }
   }
 `;
+
+/**
+ * Checks if user is online in real time
+ */
 export const EDIT_ACCOUNT = gql`
   mutation($id: ID!, $input: EditAccountInput!) {
     editAccount(id: $id, input: $input) {
       firstName
+      lastName
+      email
+      username
+      location
+      phone
+      gender
+      bio
+      birthday
+      password
+      image
+      imagePublicId
+      coverImage
+      coverImagePublicId
+      isBanned
+      isGuru
+      isPick
+      role
+      level
+      accountPoints
+      likePoints
+      commentPoints
+      sharePoints
+      referralPoints
+      gamePoints
+      totalPoints
+      pagesViewed
+      updatedAt
     }
   }
 `;
