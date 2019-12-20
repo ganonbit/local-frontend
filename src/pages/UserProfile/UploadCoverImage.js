@@ -4,18 +4,11 @@ import { Mutation } from 'react-apollo';
 import { GET_FOLLOWED_POSTS } from 'graphql/post';
 import { UPLOAD_PHOTO } from 'graphql/user';
 import { MAX_POST_IMAGE_SIZE } from 'constants/ImageSize';
-import { BeatLoader } from 'react-spinners';
-import { css } from '@emotion/core';
-const override = css`
-  position: absolute;
-  top: 50%;
-  left: 40%;
-`;
 const UploadCoverImage = props => {
   let { onHide, user, isCover, coverImage, title, refetch } = props;
   const [values, setValues] = useState({
     imagePreview: coverImage,
-    coverImage: '',
+    image: '',
   });
 
   let { imagePreview } = values;
@@ -42,7 +35,7 @@ const UploadCoverImage = props => {
     }
     setValues({
       ...values,
-      coverImage: e.target.files[0],
+      image: e.target.files[0],
       imagePreview: URL.createObjectURL(e.target.files[0]),
     });
   };
@@ -52,9 +45,9 @@ const UploadCoverImage = props => {
       variables={{
         input: {
           id: user.id,
-          coverImage: values.coverImage,
+          image: values.image,
           isCover: isCover,
-          coverImagePublicId: user.coverImagePublicId,
+          imagePublicId: user.imagePublicId,
         },
       }}
       refetchQueries={() => [
@@ -86,7 +79,7 @@ const UploadCoverImage = props => {
                             className='video-bnr'
                             src={
                               !imagePreview
-                                ? 'https://res.cloudinary.com/weare270b/image/upload/v1576214852/static/profile-bg_edozor.png'
+                                ? 'https://res.cloudinary.com/weare270b/image/upload/v1576220262/static/Image_from_iOS_1_bnaxnc.jpg'
                                 : imagePreview
                             }
                             alt='images'

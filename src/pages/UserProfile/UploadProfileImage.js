@@ -4,13 +4,7 @@ import { Mutation } from 'react-apollo';
 import { GET_FOLLOWED_POSTS } from 'graphql/post';
 import { UPLOAD_PHOTO } from 'graphql/user';
 import { MAX_POST_IMAGE_SIZE } from 'constants/ImageSize';
-import { BeatLoader } from 'react-spinners';
-import { css } from '@emotion/core';
-const override = css`
-  position: absolute;
-  top: 50%;
-  left: 40%;
-`;
+
 const UploadProfileImage = props => {
   let { onHide, user, isCover, image, title, refetch } = props;
   const [values, setValues] = useState({
