@@ -35,7 +35,7 @@ const SignUp = ({ refetch, history }) => {
     password: '',
     birthday: '',
     gender: 'male',
-    captcha: false,
+    // captcha: false,
   });
 
   const [date, setDate] = useState(new Date('06/06/1986'));
@@ -49,7 +49,7 @@ const SignUp = ({ refetch, history }) => {
     email,
     password,
     birthday,
-    captcha,
+    // captcha,
   } = values;
 
   const handleChange = e => {
@@ -106,7 +106,7 @@ const SignUp = ({ refetch, history }) => {
     error.username ||
     error.email ||
     error.password ||
-    !captcha;
+    // !captcha;
 
   const handleBirthdayChange = birthday => {
     setValues({
