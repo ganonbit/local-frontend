@@ -43,7 +43,7 @@ const VideoSection = () => {
                 <h4>press play</h4>
               </div>
               <div class='col-lg-2 col-md-2 col-sm-2 col-3 px-2'>
-                <a href='https://vimeo.com/ondemand/viewfromabluemoon4k/147865858'>
+                <a href='https://www.youtube.com/watch?v=AB0SPGFa480' target="_blank">
                   <img
                     class='mw-100'
                     src='https://res.cloudinary.com/weare270b/image/upload/v1576786460/static/video-play-btn_sxo2c1.png'
