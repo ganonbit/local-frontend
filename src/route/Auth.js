@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import { SignIn, SignUp, VerifyAccount } from 'pages/Auth';
 import Welcome from 'pages/Welcome';
 const Auth = ({ refetch }) => {
@@ -21,6 +21,9 @@ const Auth = ({ refetch }) => {
           exact
           render={() => <SignIn refetch={refetch} />}
         />
+        <Route path="/invite/:id">
+          <Redirect to="/signup" />
+        </Route>
         <Route render={() => <Welcome />} />
       </Switch>
     </Router>

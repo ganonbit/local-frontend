@@ -10,6 +10,7 @@ import {
   LogOut,
   CheckIcon,
   DropDownArrowIcon,
+  EnvelopeIcon
 } from 'components/icons';
 const AuthorPage = ({ user }) => {
   return (
@@ -50,6 +51,13 @@ const AuthorPage = ({ user }) => {
                 <a href='/' onClick={() => localStorage.clear()}>
                   <LogOut className='olymp-logout-icon' />
                   <span>Log Out</span>
+                </a>
+              </li>
+
+              <li>
+                <a href='#' data-toggle="modal" data-target="#referralUrl">
+                  <EnvelopeIcon className='envelope-icon' />
+                  <span>Refer User</span>
                 </a>
               </li>
             </ul>
