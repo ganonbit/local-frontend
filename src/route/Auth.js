@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
-import { SignIn, SignUp, VerifyAccount } from 'pages/Auth';
+import { SignIn, SignUp, VerifyAccount, ResetPassword } from 'pages/Auth';
 import Welcome from 'pages/Welcome';
 const Auth = ({ refetch }) => {
   return (
@@ -15,6 +15,11 @@ const Auth = ({ refetch }) => {
           path='/verify'
           exact
           render={() => <VerifyAccount refetch={refetch} />}
+        />
+         <Route
+          path='/reset-password'
+          exact
+          render={() => <ResetPassword refetch={refetch} />}
         />
         <Route
           path='/login'
