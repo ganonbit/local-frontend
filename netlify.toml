@@ -7,3 +7,10 @@ publish = "build"
   from = "/*"
   to = "/index.html"
   status = 200
+
+[dev]
+command = "yarn start"
+port = 8888 # Port that the dev server will be listening on
+functionsPort = 34567 # port for functions server
+targetPort = 3000 # Port of target app server
+autoLaunch = true
