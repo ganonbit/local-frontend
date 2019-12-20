@@ -5,7 +5,11 @@ import UploadCoverImage from './UploadCoverImage';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCog } from '@fortawesome/free-solid-svg-icons';
 
-const ProfileHeader = ({ user,refetch }) => {
+const ProfileHeader = ({ user, refetch, auth, username }) => {
+  const isSelma =  !auth.user ? null : (auth.user.role === "selma");
+  const isOwner = !auth.user ? null : (auth.user.username === username);
+  console.log(isOwner)
+  console.log(isSelma)
   const [isProfileShowing, setProfileIsShowing] = useState(false);
   const [isCoverShowing, setCoverIsShowing] = useState(false);
   const [ImagesContent, setImagesContent] = useState({
@@ -39,13 +43,7 @@ const ProfileHeader = ({ user,refetch }) => {
         <div className='col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12'>
           <div className='ui-block'>
             <div className='top-header'>
-              <div className='top-header-thumb' data-toggle='modal'
-                          data-target='#update-cover-photo'
-                          onClick={(e) => {
-                            e.preventDefault();
-                            toggleCover('Edit Cover Image', true, user.coverImage)
-                          }
-                          }>
+              <div className='top-header-thumb'>
                 {user.coverImage ? (
                   <img src={user.coverImage} alt='cover' />
                 ) : (
@@ -56,13 +54,7 @@ const ProfileHeader = ({ user,refetch }) => {
                 )}
               </div>
               <div className='top-header-author'>
-                <Link className='author-thumb' data-toggle='modal'
-                          data-target='#update-profile-photo'
-                          onClick={(e) => {
-                            e.preventDefault();
-                            toggleProfile('Edit Profile Image', false, user.image);
-                          }
-                          }>
+                <Link className='author-thumb' onClick={(e) => {e.preventDefault();}}>
                   {user.image ? (
                     <img src={user.image} alt='profile' />
                   ) : (
@@ -81,7 +73,7 @@ const ProfileHeader = ({ user,refetch }) => {
               </div>
 
               <div class='profile-section'>
-                {
+                {isOwner || isSelma ? (
                   <UploadProfileImage
                     show={isProfileShowing}
                     onHide={() => setProfileIsShowing(false)}
@@ -91,8 +83,8 @@ const ProfileHeader = ({ user,refetch }) => {
                     title={title}
                     refetch={refetch}
                   />
-                }
-                {
+                ) : null}
+                {isOwner || isSelma ? (
                   <UploadCoverImage
                   show={isCoverShowing}
                   onHide={() => setCoverIsShowing(false)}
@@ -102,42 +94,43 @@ const ProfileHeader = ({ user,refetch }) => {
                   title={title}
                   refetch={refetch}
                 />
-                }
-                <div class='control-block-button'>
-                  <div class='btn btn-control bg-primary more'>
-                  <FontAwesomeIcon
-              size='xl'
-              color='white'
-              icon={faCog}
-              style={{ fontSize: "25px", height: "25px"  }}
-            />
-                    {/* <svg class="olymp-settings-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-settings-icon"></use></svg> */}
-                    <ul class='more-dropdown more-with-triangle triangle-bottom-right'>
-                      <li>
-                      <Link className='author-thumb' data-toggle='modal'
-                          data-target='#update-header-photo'
-                          onClick={(e) => {
-                            e.preventDefault();
-                            toggleProfile('Edit Profile Photo', false, user.image);
-                          }
-                          }>
-                          Update Profile Photo
-                        </Link>
-                      </li>
-                      <li>
-                      <Link className='author-thumb' data-toggle='modal'
-                          data-target='#update-header-photo'
-                          onClick={(e) => {
-                            e.preventDefault();
-                            toggleCover('Edit Cover Photo', true, user.coverImage);
-                          }
-                          }>
-                          Update Cover Image
-                        </Link>
-                      </li>
-                    </ul>
+                ) : null}
+                {isOwner || isSelma ? (
+                  <div class='control-block-button'>
+                    <div class='btn btn-control bg-primary more'>
+                        <FontAwesomeIcon
+                          size='xl'
+                          color='white'
+                          icon={faCog}
+                          style={{ fontSize: "25px", height: "25px"  }}
+                        />
+                        <ul class='more-dropdown more-with-triangle triangle-bottom-right'>
+                          <li>
+                          <Link className='author-thumb' data-toggle='modal'
+                              data-target='#update-header-photo'
+                              onClick={(e) => {
+                                e.preventDefault();
+                                toggleProfile('Edit Profile Photo', false, user.image);
+                              }
+                              }>
+                              Update Profile Photo
+                            </Link>
+                          </li>
+                          <li>
+                          <Link className='author-thumb' data-toggle='modal'
+                              data-target='#update-header-photo'
+                              onClick={(e) => {
+                                e.preventDefault();
+                                toggleCover('Edit Cover Photo', true, user.coverImage);
+                              }
+                              }>
+                              Update Cover Image
+                            </Link>
+                          </li>
+                        </ul>
+                    </div>
                   </div>
-                </div>
+                ) : null}
               </div>
             </div>
           </div>
