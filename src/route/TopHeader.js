@@ -4,6 +4,8 @@ import '../assets/svg-icons/back-to-top.svg';
 import HeaderTitle from '../pages/Header/HeaderTitle';
 import Search from '../components/Search'
 import { useStore } from 'store';
+import UserReferralModal from '../pages/Header/UserReferralModal';
+
 const TopHeader = () => {
   const [{ auth }] = useStore();
 
@@ -18,6 +20,7 @@ const TopHeader = () => {
                     <Notifications />
                     <AuthorPage /> */}
       </div>
+      <UserReferralModal />
     </header>
   );
 };
