@@ -10,6 +10,7 @@ import linkDecorator from '../Common/linkDecorator';
 export default function PostContent(props) {
   const { image, content } = props;
   const rawContent = content;
+  
   hashtag(linkify);
   mention(linkify);
 
