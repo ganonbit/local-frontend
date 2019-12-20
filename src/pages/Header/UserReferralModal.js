@@ -3,24 +3,13 @@ import { useStore } from 'store';
 
 const UserReferralModal = () => {
   const [{ auth }] = useStore();
-  const [refUrl, setRefUrl] = useState('');
-
-  useEffect(() => {
-    const fetchUserReferralUrl = async () => {
-      const queryUrl = `${process.env.REACT_APP_API_URL}?query={getUser(id:"${auth.user.id}"){id}}`
-      const response = await fetch(
-        queryUrl,
-        {
-          headers: {
-            authorization: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmdWxsTmFtZSI6IlRlc3Rlcm9uaSBUZXN0ZXJzb24iLCJlbWFpbCI6InRlc3Rlcm9uaUBlbWFpbC5jb20iLCJpYXQiOjE1NzI3NjAwMDEsImV4cCI6MTYwNDMxNzYwMX0.FIf8hQi6a_xZ2De1axZR14xosMmUCOe6mGkltUjnEmA'
-          }
-        }
-      );
-      const respJson = await response.json()
-      setRefUrl(`${process.env.REACT_APP_FRONTEND_URL}/invite/${respJson.data.getUser.id}`)
-    };
-    fetchUserReferralUrl()
-  }, []);
+  const frontendUrl = process.env.REACT_APP_FRONTEND_URL
+  let refUrl = 'N/A'
+  if(frontendUrl.slice(-1) === '/' && auth.user.id) {
+    refUrl = `${frontendUrl}invite/${auth.user.id}`
+  } else if (auth.user.id) {
+    refUrl = `${frontendUrl}/invite/${auth.user.id}`
+  }
 
   const copyToClipboard = () => {
     /* Get the text field */
