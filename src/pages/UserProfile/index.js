@@ -1,12 +1,11 @@
 import React from 'react';
 import Left from './LeftSidebar';
 import ProfileHeader from './ProfileHeader';
-import CreatePost from 'components/CreatePost';
+// import CreatePost from 'components/CreatePost';
 import Right from './RightSidebar';
 import Post from 'components/Post';
 import { Query } from 'react-apollo';
 import { GET_USER_POSTS, GET_USER } from 'graphql/user';
-import { useStore } from 'store';
 
 export default function Profile(props) {
   const queryOptions = {
