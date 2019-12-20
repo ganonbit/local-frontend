@@ -10,7 +10,6 @@ import { GET_AUTH_USER } from 'graphql/user';
 import { CREATE_LIKE, DELETE_LIKE } from 'graphql/like';
 
 import { useStore } from 'store';
-import { Loading } from './Loading';
 /**
  * Component for rendering Like button
  */
