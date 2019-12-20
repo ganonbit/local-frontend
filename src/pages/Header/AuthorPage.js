@@ -61,17 +61,6 @@ const AuthorPage = ({ user }) => {
                 </a>
               </li>
             </ul>
-            {/* <form className='form-group with-button custom-status'>
-              <input
-                className='form-control'
-                placeholder=''
-                type='text'
-                defaultValue='Refer a Friend '
-              />
-              <button className='bg-purple'>
-                <CheckIcon className='olymp-check-icon' />
-              </button>
-            </form> */}
             <ul>
               <li>
                 <Link to='#'>
@@ -85,7 +74,7 @@ const AuthorPage = ({ user }) => {
               </li>
               <li>
                 <Link to='#'>
-                  <span>Community Guidlines</span>
+                  <span>Community Guidelines</span>
                 </Link>
               </li>
               <li>
