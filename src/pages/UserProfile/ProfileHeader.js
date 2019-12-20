@@ -68,7 +68,7 @@ const ProfileHeader = ({ user, refetch, auth, username, isOwner, isSelma }) => {
                 </div>
               </div>
 
-              <div class='profile-section'>
+              <div className='profile-section'>
                 {isOwner || isSelma ? (
                   <UploadProfileImage
                     show={isProfileShowing}
@@ -92,15 +92,15 @@ const ProfileHeader = ({ user, refetch, auth, username, isOwner, isSelma }) => {
                 />
                 ) : null}
                 {isOwner || isSelma ? (
-                  <div class='control-block-button'>
-                    <div class='btn btn-control bg-primary more'>
+                  <div className='control-block-button'>
+                    <div className='btn btn-control bg-primary more'>
                         <FontAwesomeIcon
                           size='xl'
                           color='white'
                           icon={faCog}
                           style={{ fontSize: "25px", height: "25px"  }}
                         />
-                        <ul class='more-dropdown more-with-triangle triangle-bottom-right'>
+                        <ul className='more-dropdown more-with-triangle triangle-bottom-right'>
                           <li>
                           <Link className='author-thumb' data-toggle='modal'
                               data-target='#update-header-photo'
