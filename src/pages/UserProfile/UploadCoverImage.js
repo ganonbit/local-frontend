@@ -11,11 +11,11 @@ const override = css`
   top: 50%;
   left: 40%;
 `;
-const UploadProfileImage = props => {
-  let { onHide, user, isCover, image, title, refetch } = props;
+const UploadCoverImage = props => {
+  let { onHide, user, isCover, coverImage, title, refetch } = props;
   const [values, setValues] = useState({
-    imagePreview: image,
-    image: '',
+    imagePreview: coverImage,
+    coverImage: '',
   });
 
   let { imagePreview } = values;
@@ -42,7 +42,7 @@ const UploadProfileImage = props => {
     }
     setValues({
       ...values,
-      image: e.target.files[0],
+      coverImage: e.target.files[0],
       imagePreview: URL.createObjectURL(e.target.files[0]),
     });
   };
@@ -52,9 +52,9 @@ const UploadProfileImage = props => {
       variables={{
         input: {
           id: user.id,
-          image: values.image,
+          coverImage: values.coverImage,
           isCover: isCover,
-          imagePublicId: user.imagePublicId,
+          coverImagePublicId: user.coverImagePublicId,
         },
       }}
       refetchQueries={() => [
@@ -86,7 +86,7 @@ const UploadProfileImage = props => {
                             className='video-bnr'
                             src={
                               !imagePreview
-                                ? 'https://res.cloudinary.com/weare270b/image/upload/v1576220262/static/Image_from_iOS_1_bnaxnc.jpg'
+                                ? 'https://res.cloudinary.com/weare270b/image/upload/v1576214852/static/profile-bg_edozor.png'
                                 : imagePreview
                             }
                             alt='images'
@@ -139,4 +139,4 @@ const UploadProfileImage = props => {
     </Mutation>
   );
 };
-export default UploadProfileImage;
+export default UploadCoverImage;
