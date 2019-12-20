@@ -4,6 +4,8 @@ import RightSection from './RightSection';
 import LeftSection from './LeftSection';
 import Post from 'components/Post';
 import { GET_USER_POSTS } from 'graphql/user';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEllipsisH } from '@fortawesome/free-solid-svg-icons';
 
 export default function MainContent() {
   const queryOptions = {
@@ -23,7 +25,14 @@ export default function MainContent() {
             id='load-more-button'
             className='btn btn-control btn-more'
             to='#'
-          ></Link>
+          >
+            <FontAwesomeIcon
+              className='olymp-three-dots-icon'
+              size='lg'
+              color='white'
+              icon={faEllipsisH}
+            />
+          </Link>
         </main>
 
         <LeftSection />
