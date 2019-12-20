@@ -13,7 +13,6 @@ export default function Profile(props) {
   const isSelma =  !auth.user ? null : (auth.user.role === "selma");
   const isOwner = !auth.user ? null : (auth.user.username === props.match.params.username);
   
-  console.log()
   const queryOptions = {
     query: GET_USER_POSTS,
     variables: { username: props.match.params.username, skip: 0, limit: 15 },
