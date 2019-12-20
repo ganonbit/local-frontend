@@ -238,16 +238,16 @@ const SignUp = ({ refetch, history }) => {
                                   <span className='check' />
                                 </span>
                                 I accept the{' '}
-                                <a href='#1'>Terms and Condition</a> of the
+                                <a href='/toc'>Terms and Condition</a> of the
                                 website
                               </label>
                             </div>
                           </div>
-                          <ReCAPTCHA
+                          {/* <ReCAPTCHA
                             sitekey={RE_CAPTCHA_SCERET_API}
                             onChange={() => handleCaptcha()}
                             size='normal'
-                          />
+                          /> */}
                           <button
                             className='btn btn-green btn-lg full-width'
                             type='submit'
