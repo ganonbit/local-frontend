@@ -16,7 +16,7 @@ to start the server locally you'll either need to request the `.env` file from m
 
 run `yarn build:lambda` to get local build ready for lambda use.
 
-once that is setup run the command `ntl dev` or `netlify dev` to run lambda functions locally and react locally in one command. \*note: if wanting to run the whole application locally, the api: `https://bitbucket.org/270b/avonation-api/` needs to be up and running first via it's [README](https://bitbucket.org/270b/avonation-frontend/src/master/README.md)
+once that is setup run the command `ntl dev` or `netlify dev` to run lambda functions locally and react locally in one command. \*note: if wanting to run the whole application locally, the api: `https://bitbucket.org/270b/avonation-api/` needs to be up and running first via it's [README](https://bitbucket.org/270b/avonation-api/src/master/README.md)
 
 After running the server, you can navigate to `http://localhost:8888`
 
