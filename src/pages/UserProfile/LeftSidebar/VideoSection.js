@@ -33,7 +33,7 @@ export default function LastVideo() {
           </li>
           <li>
             <a
-              href='https://youtube.com/watch?v=excVFQ2TWig'
+              href='https://www.youtube.com/watch?v=AB0SPGFa480'
               className='play-video play-video--small'
             >
               {/* <svg className="olymp-play-icon">
