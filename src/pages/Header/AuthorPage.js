@@ -66,7 +66,7 @@ const AuthorPage = ({ user }) => {
             </form> */}
             <ul>
               <li>
-                <Link to='#'>
+                <Link to={Routes.TERM_AND_CONDITIONS}>
                   <span>Terms and Conditions</span>
                 </Link>
               </li>
@@ -76,12 +76,12 @@ const AuthorPage = ({ user }) => {
                 </Link>
               </li>
               <li>
-                <Link to='#'>
+                <Link to={Routes.COMMUNITY_GUIDLINE}>
                   <span>Community Guidlines</span>
                 </Link>
               </li>
               <li>
-                <Link to='#'>
+                <Link to={Routes.FAQ}>
                   <span>FAQs</span>
                 </Link>
               </li>
