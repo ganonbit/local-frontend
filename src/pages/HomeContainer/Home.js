@@ -3,7 +3,7 @@ import CreatePost from 'components/CreatePost';
 import Post from 'components/Post';
 import {
   TrendingPost,
-  TrendingTopics,
+  // TrendingTopics,
   TopRatedUsers,
   NewsFeedAdd
 } from 'components/Widget';
@@ -32,7 +32,7 @@ const Home = () => {
         </aside>
 
         <aside className='col col-xl-3 order-xl-3 col-lg-6 order-lg-3 col-md-6 col-sm-6 col-12'>
-          <TrendingTopics />
+          {/* <TrendingTopics /> */}
           <TopRatedUsers />
         </aside>
       </div>
