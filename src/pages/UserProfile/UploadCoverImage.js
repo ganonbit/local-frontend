@@ -4,11 +4,10 @@ import { Mutation } from 'react-apollo';
 import { GET_FOLLOWED_POSTS } from 'graphql/post';
 import { UPLOAD_PHOTO } from 'graphql/user';
 import { MAX_POST_IMAGE_SIZE } from 'constants/ImageSize';
-
-const UploadProfileImage = props => {
-  let { onHide, user, isCover, image, title, refetch } = props;
+const UploadCoverImage = props => {
+  let { onHide, user, isCover, coverImage, title, refetch } = props;
   const [values, setValues] = useState({
-    imagePreview: image,
+    imagePreview: coverImage,
     image: '',
   });
 
@@ -133,4 +132,4 @@ const UploadProfileImage = props => {
     </Mutation>
   );
 };
-export default UploadProfileImage;
+export default UploadCoverImage;

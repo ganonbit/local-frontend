@@ -1,22 +1,39 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import UploadProfileImage from './UploadProfileImage';
-const ProfileHeader = ({ user,refetch }) => {
-  const [isShowing, setIsShowing] = useState(false);
+import UploadCoverImage from './UploadCoverImage';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCog } from '@fortawesome/free-solid-svg-icons';
+
+const ProfileHeader = ({ user, refetch, auth, username }) => {
+  const isSelma =  !auth.user ? null : (auth.user.role === "selma");
+  const isOwner = !auth.user ? null : (auth.user.username === username);
+  const [isProfileShowing, setProfileIsShowing] = useState(false);
+  const [isCoverShowing, setCoverIsShowing] = useState(false);
   const [ImagesContent, setImagesContent] = useState({
     title: '',
-    image: '',
+    image: user.image,
     isCover: false,
+    coverImage: user.coverImage
   });
-  let { title, image, isCover } = ImagesContent;
-  let toggle = (title, isCover, image) => {
+  let { title, image, isCover, coverImage } = ImagesContent;
+  let toggleProfile = (title, isCover, image) => {
     setImagesContent({
       ...ImagesContent,
       title: title,
       isCover: isCover,
       image: image,
     });
-    setIsShowing(true);
+    setProfileIsShowing(true);
+  };
+  let toggleCover = (title, isCover, coverImage) => {
+    setImagesContent({
+      ...ImagesContent,
+      title: title,
+      isCover: isCover,
+      coverImage: coverImage,
+    });
+    setCoverIsShowing(true);
   };
   return (
     <div className='container'>
@@ -35,9 +52,9 @@ const ProfileHeader = ({ user,refetch }) => {
                 )}
               </div>
               <div className='top-header-author'>
-                <Link to='/' className='author-thumb'>
+                <Link className='author-thumb' onClick={(e) => {e.preventDefault();}}>
                   {user.image ? (
-                    <img src={user.image} alt='cover' />
+                    <img src={user.image} alt='profile' />
                   ) : (
                     <img
                       src='https://res.cloudinary.com/weare270b/image/upload/v1576220262/static/Image_from_iOS_1_bnaxnc.jpg'
@@ -54,48 +71,64 @@ const ProfileHeader = ({ user,refetch }) => {
               </div>
 
               <div class='profile-section'>
-                {
+                {isOwner || isSelma ? (
                   <UploadProfileImage
-                    show={isShowing}
-                    onHide={() => setIsShowing(false)}
+                    show={isProfileShowing}
+                    onHide={() => setProfileIsShowing(false)}
                     user={user}
                     isCover={isCover}
                     image={image}
                     title={title}
                     refetch={refetch}
                   />
-                }
-                <div class='control-block-button'>
-                  <div class='btn btn-control bg-primary more'>
-                    {/* <svg class="olymp-settings-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-settings-icon"></use></svg> */}
-                    <ul class='more-dropdown more-with-triangle triangle-bottom-right'>
-                      <li>
-                        <a
-                          href='#'
-                          data-toggle='modal'
-                          data-target='#update-header-photo'
-                          onClick={() =>
-                            toggle('Edit Profile Image', false, user.image)
-                          }
-                        >
-                          Update Profile Photo
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href='#'
-                          data-toggle='modal'
-                          data-target='#update-header-photo'
-                          onClick={() =>
-                            toggle('Edit cover Image', true, user.coverImage)
-                          }
-                        >
-                          Update Cover Image
-                        </a>
-                      </li>
-                    </ul>
+                ) : null}
+                {isOwner || isSelma ? (
+                  <UploadCoverImage
+                  show={isCoverShowing}
+                  onHide={() => setCoverIsShowing(false)}
+                  user={user}
+                  isCover={isCover}
+                  coverImage={coverImage}
+                  title={title}
+                  refetch={refetch}
+                />
+                ) : null}
+                {isOwner || isSelma ? (
+                  <div class='control-block-button'>
+                    <div class='btn btn-control bg-primary more'>
+                        <FontAwesomeIcon
+                          size='xl'
+                          color='white'
+                          icon={faCog}
+                          style={{ fontSize: "25px", height: "25px"  }}
+                        />
+                        <ul class='more-dropdown more-with-triangle triangle-bottom-right'>
+                          <li>
+                          <Link className='author-thumb' data-toggle='modal'
+                              data-target='#update-header-photo'
+                              onClick={(e) => {
+                                e.preventDefault();
+                                toggleProfile('Edit Profile Photo', false, user.image);
+                              }
+                              }>
+                              Update Profile Photo
+                            </Link>
+                          </li>
+                          <li>
+                          <Link className='author-thumb' data-toggle='modal'
+                              data-target='#update-header-photo'
+                              onClick={(e) => {
+                                e.preventDefault();
+                                toggleCover('Edit Cover Photo', true, user.coverImage);
+                              }
+                              }>
+                              Update Cover Image
+                            </Link>
+                          </li>
+                        </ul>
+                    </div>
                   </div>
-                </div>
+                ) : null}
               </div>
             </div>
           </div>
