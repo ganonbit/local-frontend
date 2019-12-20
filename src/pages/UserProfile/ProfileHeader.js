@@ -5,9 +5,7 @@ import UploadCoverImage from './UploadCoverImage';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCog } from '@fortawesome/free-solid-svg-icons';
 
-const ProfileHeader = ({ user, refetch, auth, username }) => {
-  const isSelma =  !auth.user ? null : (auth.user.role === "selma");
-  const isOwner = !auth.user ? null : (auth.user.username === username);
+const ProfileHeader = ({ user, refetch, auth, username, isOwner, isSelma }) => {
   const [isProfileShowing, setProfileIsShowing] = useState(false);
   const [isCoverShowing, setCoverIsShowing] = useState(false);
   const [ImagesContent, setImagesContent] = useState({
