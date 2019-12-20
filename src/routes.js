@@ -24,6 +24,8 @@ export const MESSAGES = '/messages/:userId';
 
 export const POST = '/post/:id';
 
+export const INVITE = '/invite/:id';
+
 export const SETTINGS = '/settings';
 
 export const REWARDS = '/rewards';
