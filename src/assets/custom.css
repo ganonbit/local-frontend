@@ -1245,6 +1245,88 @@ main-header-content h1 {
 .birthday-item.badges .author-thumb img {
   max-width: 100%;
 }
+div#accordion .card {
+  margin-bottom: 10px;
+}
+
+/* / FAQS PAGE / */
+.accordion-faqs .card-header {
+  padding:0;
+}
+.accordion-faqs .icons-wrap svg {
+  fill: var(--theme-color-white);
+}
+.accordion-faqs .card-header button {
+  padding: 10px 15px;
+  background: var(--theme-color);
+  color: var(--theme-color-white);
+  font-size: 20px;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin: 0;;
+}
+.accordion-faqs .card-body {
+  padding: 0;
+}
+.accordion-faqs .card-body p {
+  margin-bottom: 0;
+}
+.accordion-faqs .collapse {
+  margin-bottom: 0;
+}
+.accordion-faqs p {
+  padding: 15px;
+
+}
+.chat-field .mCustomScrollbar {
+  overflow-y: auto;
+  height: 450px;
+}
+.chat-field .ui-block-title h6.title {
+  color: #515365;
+}
+.label-floating textarea.form-control {
+  padding-top: 10px;
+}
+.detail-content h4 {
+  font-size: 25px;
+  margin: 20px 0;
+  font-weight: 400;
+}
+.detail-content h6 {
+  font-size: 20px;
+  margin: 10px 0;
+  font-weight: 300;
+  text-decoration: underline;
+}
+.detail-content span {
+  display: block;
+  text-decoration: underline;
+}
+.detail-content p {
+  font-size: 17px;
+  margin: 0 0 20px;
+  font-weight: 400;
+}
+.detail-content p a {
+  color: var(--theme-color);
+  font-weight: 500;
+}
+.detail-content p a:hover {
+  text-decoration: underline;
+}
+.detail-content ul {
+  list-style: disc;
+  padding-left: 30px;
+}
+.detail-content ul li {
+  font-size: 16px;
+  margin: 0 0 10px;
+  font-weight: 400;
+}
 @media (max-width: 1454px) {
   .search-bar.w-search {
     width: 410px;
