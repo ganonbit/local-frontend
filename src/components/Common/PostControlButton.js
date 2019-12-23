@@ -6,17 +6,18 @@ export default function PostControlButton(props) {
   const { author, postId, likes, toggle } = props;
   return (
     <div className='control-block-button post-control-button'>
+       {!props.isAuth ? (
       <a href='#1' className='btn btn-control likes'>
-        {!props.isAuth ? (
           <img
             src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/heart-icon_jd2hne.png'
             alt=''
           />
+          <div className='ripple-container'></div>
+        </a>
         ) : (
           <Like user={author} postId={postId} likes={likes} />
         )}
-        <div className='ripple-container'></div>
-      </a>
+
 
       <a href='#1' className='btn btn-control comments' onClick={toggle}>
         <img
