@@ -1,14 +1,14 @@
 import React from 'react';
 
-const CommunityGuidline = () => (
+const CommunityGuideline = () => (
   <>
     <div class='stunning-header bg-primary-opacity'>
       <div class='header-spacer--standard'></div>
       <div class='stunning-header-content'>
-        <h1 class='stunning-header-title'>AFM COMMUNITY GUIDLINE</h1>
+        <h1 class='stunning-header-title'>AFM COMMUNITY GUIDELINE</h1>
         <ul class='breadcrumbs'>
           <li class='breadcrumbs-item active'>
-            <span>COMMUNITY GUIDLINE</span>
+            <span>COMMUNITY GUIDELINE</span>
           </li>
         </ul>
       </div>
@@ -20,7 +20,7 @@ const CommunityGuidline = () => (
         <div class='row'>
           <div class='col col-xl-10 m-auto col-lg-12 col-md-12 col-sm-12 col-12'>
             <div class='detail-content'>
-              <h4>COMMUNITY GUIDLINE</h4>
+              <h4>COMMUNITY GUIDELINE</h4>
               <p>
                 We may allow service providers and other third parties to use
                 cookies and other tracking technologies to track your browsing
@@ -43,4 +43,4 @@ const CommunityGuidline = () => (
     </section>
   </>
 );
-export default CommunityGuidline;
+export default CommunityGuideline;
