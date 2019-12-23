@@ -3,7 +3,3 @@ command = "yarn build && yarn build:lambda"
 functions = "lambda"
 publish = "build"
 
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200

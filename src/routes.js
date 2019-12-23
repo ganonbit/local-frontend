@@ -38,7 +38,7 @@ export const TERM_AND_CONDITIONS="/terms";
 
 export const PRIVACY_POLICY="/privacy-policy";
 
-export const COMMUNITY_GUIDLINE="/community-guidline";
+export const COMMUNITY_GUIDELINE="/community-guidelines";
 
 /**
  * Value that's used in place of id when creating something new.

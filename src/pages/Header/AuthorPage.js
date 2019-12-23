@@ -67,14 +67,14 @@ const AuthorPage = ({ user }) => {
                   <span>Terms and Conditions</span>
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link to='#'>
                   <span>Idea Submission</span>
                 </Link>
-              </li>
+              </li> */}
               <li>
-                <Link to={Routes.COMMUNITY_GUIDLINE}>
-                  <span>Community Guidlines</span>
+                <Link to={Routes.COMMUNITY_GUIDELINE}>
+                  <span>Community Guidelines</span>
                 </Link>
               </li>
               <li>

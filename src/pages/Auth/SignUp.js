@@ -238,7 +238,7 @@ const SignUp = ({ refetch, history }) => {
                                   <span className='check' />
                                 </span>
                                 I accept the{' '}
-                                <a href='/toc'>Terms and Condition</a> of the
+                                <a href={Routes.TERM_AND_CONDITIONS}>Terms and Condition</a> of the
                                 website
                               </label>
                             </div>

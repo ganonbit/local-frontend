@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import * as Routes from 'routes';
+
 const NewsFeedAdd = () => (
   <>
     <div className='ui-block'>
@@ -15,15 +17,15 @@ const NewsFeedAdd = () => (
     <div className='ui-block-menu ui-block-menu-sidebar'>
       <ul className='d-flex'>
         <li>
-          <Link to='#'>Privacy</Link>
+          <Link to={Routes.PRIVACY_POLICY}>Privacy</Link>
         </li>
         <li>
-          <Link to='#'>Terms</Link>
+          <Link to={Routes.TERM_AND_CONDITIONS}>Terms</Link>
         </li>
         <li>
-          <Link to='#'>Cookies</Link>
+          <Link to={Routes.COMMUNITY_GUIDELINE}>Community Guideline</Link>
         </li>
-        <li>
+        {/* <li>
           <div className='dropdown'>
             <button
               type='button'
@@ -44,7 +46,7 @@ const NewsFeedAdd = () => (
               </Link>
             </div>
           </div>
-        </li>
+        </li> */}
       </ul>
       <h5>Avocado Nation © 2019</h5>
       <img

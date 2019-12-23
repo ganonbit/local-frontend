@@ -16,7 +16,7 @@ import Reward from 'pages/Reward';
 import Badges from 'pages/UserProfile/Badges';
 import Messages from 'pages/Messages';
 import Faqs from 'pages/Faqs';
-import CommunityGuidline from 'pages/CommunityGuidline';
+import CommunityGuideline from 'pages/CommunityGuideline';
 import TermandServices from 'pages/TermandServices';
 import PrivacyPolicy from 'pages/PrivacyPolicy';
 
@@ -41,13 +41,13 @@ const AppLayout = ({ refetch, history }) => {
         <Route path={Routes.DISCOVER} render={props => <Discover />} />
         <Route path={Routes.SETTINGS} render={() => <ProfileSetting />} />
         <Route path={Routes.REWARDS} render={props => <Reward {...props} />} />
-        <Route
+        {/* <Route
           path={Routes.MESSAGES}
           render={props => <Messages {...props} />}
-        />
+        /> */}
         <Route path={Routes.FAQ} render={props => <Faqs {...props} />} />
 
-        <Route path={Routes.COMMUNITY_GUIDLINE} render={props => <CommunityGuidline {...props} />} />
+        <Route path={Routes.COMMUNITY_GUIDELINE} render={props => <CommunityGuideline {...props} />} />
 
         <Route path={Routes.TERM_AND_CONDITIONS} render={props => <TermandServices isAuth={true} {...props} />} />
         <Route path={Routes.PRIVACY_POLICY} render={props => <PrivacyPolicy isAuth={true} {...props} />} />
