@@ -13,7 +13,7 @@ import { Sidebar } from '../components/Sidebar/index';
 import TopHeader from './TopHeader';
 import Discover from 'pages/Discover';
 import Reward from 'pages/Reward';
-import Badges from 'pages/UserProfile/Badges';
+import Badges from 'pages/Badges';
 // import Messages from 'pages/Messages';
 import Faqs from 'pages/Faqs';
 import CommunityGuideline from 'pages/CommunityGuideline';
@@ -57,7 +57,7 @@ const AppLayout = ({ refetch, history }) => {
           path={Routes.USER_PROFILE}
           render={props => <UserProfile refetch={refetch} {...props} />}
         />
-        <Route path={Routes.BADGES} render={props => <Badges {...props} />} />
+        <Route path={Routes.BADGES} render={<Badges />} />
         <Route path={Routes.HOME} render={props => <Home {...props} />} />
       </Switch>
     </div>
