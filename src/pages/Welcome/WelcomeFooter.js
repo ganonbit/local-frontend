@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import * as Routes from 'routes'
 const WelcomeFooter = () => {
   return (
     <div className='container'>
@@ -23,29 +24,13 @@ const WelcomeFooter = () => {
         <div className='col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12 m-auto'>
           <div className='ui-block-menu border-top pt-2'>
             <ul className='d-flex ftr-menu flex-wrap mb-5'>
+              
               <li>
-                <Link to='#'>About</Link>
+                <Link to={Routes.PRIVACY_POLICY}>Privacy</Link>
               </li>
+              
               <li>
-                <Link to='#'>Privacy</Link>
-              </li>
-              <li>
-                <Link to='#'>Cookies</Link>
-              </li>
-              <li>
-                <Link to='#'>Terms</Link>
-              </li>
-              <li>
-                <Link to='#'>Account Security</Link>
-              </li>
-              <li>
-                <Link to='#'>Login Help</Link>
-              </li>
-              <li>
-                <Link to='#'>Help</Link>
-              </li>
-              <li>
-                <Link to='#'>Settings</Link>
+                <Link to={Routes.TERM_AND_CONDITIONS}>Terms</Link>
               </li>
             </ul>
           </div>
