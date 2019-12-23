@@ -14,7 +14,7 @@ import TopHeader from './TopHeader';
 import Discover from 'pages/Discover';
 import Reward from 'pages/Reward';
 import Badges from 'pages/UserProfile/Badges';
-import Messages from 'pages/MessagesNew';
+import Messages from 'pages/Messages';
 import Faqs from 'pages/Faqs';
 import CommunityGuidline from 'pages/CommunityGuidline';
 import TermandServices from 'pages/TermandServices';
