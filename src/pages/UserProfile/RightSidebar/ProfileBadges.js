@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom'
 import * as Routes from 'routes'
-export default function Badges() {
+export default function ProfileBadges() {
   return (
     <div className='ui-block'>
       <div className='ui-block-title topics'>
