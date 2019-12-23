@@ -14494,6 +14494,7 @@ ol ol li {
 
 .w-friend-pages-added .notification-friend {
   font-size: 13px;
+  overflow-wrap: break-word;
 }
 
 .w-friend-pages-added .chat-message-item {
