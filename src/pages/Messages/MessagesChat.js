@@ -1,11 +1,8 @@
 import React, { useEffect, useCallback } from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
 import { useQuery, useApolloClient } from '@apollo/react-hooks';
 
-import { LoadingDots } from 'components/Loading';
 import MessagesChatConversation from './MessagesChatConversation';
-import MessagesChatHeading from './MessagesChatHeading';
 
 import {
   GET_MESSAGES,
@@ -16,14 +13,6 @@ import { GET_USER, GET_CONVERSATIONS, GET_AUTH_USER } from 'graphql/user';
 
 import * as Routes from 'routes';
 
-const Root = styled.div`
-  width: 100%;
-  height: 100%;
-`;
-
-/**
- * Messages chat wrapper
- */
 const MessagesChat = ({ match, authUser }) => {
   const { userId } = match.params;
 
@@ -93,11 +82,7 @@ const MessagesChat = ({ match, authUser }) => {
   }, [userId, updateMessageSeen]);
 
   if (loading || messagesLoading) {
-    return (
-      <Root>
-        <LoadingDots />
-      </Root>
-    );
+    return <h1>Loading</h1>;
   }
 
   let chatUser = null;
@@ -106,9 +91,7 @@ const MessagesChat = ({ match, authUser }) => {
   }
 
   return (
-    <Root>
-      <MessagesChatHeading match={match} chatUser={chatUser} />
-
+    <>
       <MessagesChatConversation
         authUser={authUser}
         messages={messages ? messages.getMessages : []}
@@ -116,7 +99,7 @@ const MessagesChat = ({ match, authUser }) => {
         data={messages}
         match={match}
       />
-    </Root>
+    </>
   );
 };
 
