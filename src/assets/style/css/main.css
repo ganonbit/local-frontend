@@ -23251,3 +23251,7 @@ div#accordion .card {
     font-size: 12px;
   }
 }
+
+.email-verification-modal-visible {
+  display: block;
+}
