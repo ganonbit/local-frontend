@@ -5,7 +5,7 @@ import {
   TrendingPost,
   // TrendingTopics,
   TopRatedUsers,
-  NewsFeedAdd
+  NewsFeedAdd,
 } from 'components/Widget';
 
 import { GET_FOLLOWED_POSTS } from 'graphql/post';

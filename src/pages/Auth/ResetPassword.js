@@ -92,55 +92,59 @@ const ResetPassword = ({ history, location, refetch }) => {
 
                   return (
                     <div>
-                    <div className='registration-login-form'>
-                      <div className='tab-content'>
-                        <div
-                          className='tab-pane active'
-                          id='home'
-                          role='tabpanel'
-                          data-mh='log-tab'
-                        >
-                          <div className='title h6'>Reset Password</div>
+                      <div className='registration-login-form'>
+                        <div className='tab-content'>
+                          <div
+                            className='tab-pane active'
+                            id='home'
+                            role='tabpanel'
+                            data-mh='log-tab'
+                          >
+                            <div className='title h6'>Reset Password</div>
 
-                      <form className='content' onSubmit={e => handleSubmit(e, resetPassword)}>
-                      <div className='row'>
-                        <div className='col col-12 col-xl-12 col-lg-12 col-md-12 col-sm-12'>
-                        <input
-                          type='password'
-                          name='password'
-                          values={password}
-                          onChange={handleChange}
-                          placeholder='Password'
-                          className='form-control'
-                        />
-                        </div>
-                        <br />
-                        <div className='col col-12 col-xl-12 col-lg-12 col-md-12 col-sm-12'>
-                          <input
-                            type='password'
-                            name='confirmPassword'
-                            values={confirmPassword}
-                            onChange={handleChange}
-                            placeholder='Confirm Password'
-                            className='form-control'
-                          />
-                        </div>
-                        </div>
-                        <br />
-                        <div className='row'>
+                            <form
+                              className='content'
+                              onSubmit={e => handleSubmit(e, resetPassword)}
+                            >
+                              <div className='row'>
                                 <div className='col col-12 col-xl-12 col-lg-12 col-md-12 col-sm-12'>
+                                  <input
+                                    type='password'
+                                    name='password'
+                                    values={password}
+                                    onChange={handleChange}
+                                    placeholder='Password'
+                                    className='form-control'
+                                  />
+                                </div>
+                                <br />
+                                <div className='col col-12 col-xl-12 col-lg-12 col-md-12 col-sm-12'>
+                                  <input
+                                    type='password'
+                                    name='confirmPassword'
+                                    values={confirmPassword}
+                                    onChange={handleChange}
+                                    placeholder='Confirm Password'
+                                    className='form-control'
+                                  />
+                                </div>
+                              </div>
+                              <br />
+                              <div className='row'>
+                                <div className='col col-12 col-xl-12 col-lg-12 col-md-12 col-sm-12'>
+                                  {error && (
+                                    <div bottom='sm' top='sm'>
+                                      <span>{error}</span>
+                                    </div>
+                                  )}
 
-                        {error && (
-                          <div bottom='sm' top='sm'>
-                            <span>{error}</span>
+                                  <button className='btn btn-lg btn-primary full-width'>
+                                    Reset Password
+                                  </button>
+                                </div>
+                              </div>
+                            </form>
                           </div>
-                        )}
-
-                        <button className='btn btn-lg btn-primary full-width'>Reset Password</button>
-                        </div>
-                        </div>
-                      </form>
-                      </div>
                         </div>
                       </div>
                     </div>

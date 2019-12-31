@@ -1,5 +1,5 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
 const Container = styled.div`
   max-width: 375px;
@@ -29,7 +29,7 @@ const SiteName = styled.span`
   font-size: 12px;
   text-transform: uppercase;
   color: #616770;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
 `;
 
 const Title = styled.span`
@@ -38,14 +38,14 @@ const Title = styled.span`
   font-weight: bold;
   line-height: normal;
   font-size: 15px;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   color: #1d2129;
   margin-top: 3px;
 `;
 
 const Description = styled.span`
   display: block;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: normal;
   line-height: normal;
@@ -54,14 +54,13 @@ const Description = styled.span`
   margin-top: 3px;
 `;
 
-
 const Preview = props => {
   return (
     <Container>
       <a
         href={props.ogUrl ? `${props.ogUrl}` : '#'}
         target='_blank'
-        rel="noopener noreferrer"
+        rel='noopener noreferrer'
       >
         {props.ogImage && props.ogImage.url ? (
           <ImageWrapper src={props.ogImage.url} />

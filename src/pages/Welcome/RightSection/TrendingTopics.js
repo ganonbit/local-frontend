@@ -8,7 +8,7 @@ const TrendingTopics = () => {
         <Link to='#' className='more'></Link>
       </div>
       <ul className='widget w-friend-pages-added notification-list friend-requests'>
-        <li className='inline-items' >
+        <li className='inline-items'>
           <div className='notification-event'>
             <Link to='#' className='h6 notification-friend'>
               #avocados
@@ -22,7 +22,7 @@ const TrendingTopics = () => {
             data-original-title='ADD TO YOUR FAVS'
           ></span>
         </li>
-        <li className='inline-items' >
+        <li className='inline-items'>
           <div className='notification-event'>
             <Link to='#' className='h6 notification-friend'>
               #guacamole
@@ -36,7 +36,7 @@ const TrendingTopics = () => {
             data-original-title='ADD TO YOUR FAVS'
           ></span>
         </li>
-        <li className='inline-items' >
+        <li className='inline-items'>
           <div className='notification-event'>
             <Link to='#' className='h6 notification-friend'>
               #avocadotoast
@@ -50,7 +50,7 @@ const TrendingTopics = () => {
             data-original-title='ADD TO YOUR FAVS'
           ></span>
         </li>
-        <li className='inline-items' >
+        <li className='inline-items'>
           <div className='notification-event'>
             <Link to='#' className='h6 notification-friend'>
               #avocadorose
@@ -64,7 +64,7 @@ const TrendingTopics = () => {
             data-original-title='ADD TO YOUR FAVS'
           ></span>
         </li>
-        <li className='inline-items' >
+        <li className='inline-items'>
           <div className='notification-event'>
             <Link to='#' className='h6 notification-friend'>
               #avonutrition
@@ -78,7 +78,7 @@ const TrendingTopics = () => {
             data-original-title='ADD TO YOUR FAVS'
           ></span>
         </li>
-        <li className='inline-items' >
+        <li className='inline-items'>
           <div className='notification-event'>
             <Link to='#' className='h6 notification-friend'>
               #avocadosocks

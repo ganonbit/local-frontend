@@ -12,7 +12,7 @@ import { useStore } from 'store';
 /**
  * Root Component of App
  */
-const App = ({location}) => {
+const App = ({ location }) => {
   const [{ auth }, dispatch] = useStore();
   return (
     <Query
@@ -30,7 +30,10 @@ const App = ({location}) => {
             <Router>
               <Switch>
                 {!auth.user ? (
-                  <Route exact render={() => <Auth isAuth={false} refetch={refetch} />} />
+                  <Route
+                    exact
+                    render={() => <Auth isAuth={false} refetch={refetch} />}
+                  />
                 ) : (
                   <Route exact render={() => <AppLayout refetch={refetch} />} />
                 )}

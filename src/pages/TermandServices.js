@@ -1,13 +1,12 @@
 import React from 'react';
 import WelcomeHeader from 'pages/Welcome/WelcomeHeader';
 
-
-const TermandServices = ({isAuth}) => (
+const TermandServices = ({ isAuth }) => (
   <>
-  {!isAuth &&( 
-    <div className='page-has-left-panels page-has-right-panels pr-0'>
-    <WelcomeHeader />
-    </div>
+    {!isAuth && (
+      <div className='page-has-left-panels page-has-right-panels pr-0'>
+        <WelcomeHeader />
+      </div>
     )}
     <div class='stunning-header bg-primary-opacity'>
       <div class='header-spacer--standard'></div>
