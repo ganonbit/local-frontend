@@ -27,7 +27,8 @@ export default function Profile(props) {
       notifyOnNetworkStatusChange
     >
       {({ data, loading }) => {
-        return loading ? (
+        // TODO: Understand why data is null after verifying account and handle appropriately
+        return loading || data == null ? (
           <h1></h1>
         ) : (
           <div className='container'>
