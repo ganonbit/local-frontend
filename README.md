@@ -29,3 +29,8 @@ After running the server, you can navigate to `http://localhost:8888`
 - After every change to the master branch in Bitbucket, Netlify will build and deploy frontend automatically!
 
 ### NOTE: if changing environment var on netlify you MUST redeploy to see changes!
+
+## CSS naming conventions for avonation-frontend
+
+- We're using the BEM standards for all new classes created.
+- Please review the standards [Here](http://getbem.com/) so that we're on the same page.
