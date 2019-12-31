@@ -6,13 +6,13 @@ import * as Routes from 'routes';
 const NewsFeedAdd = () => (
   <>
     <div className='ui-block'>
-    <Link to='/discover'>
-      <img
-        className='health-bnr'
-        src='https://res.cloudinary.com/weare270b/image/upload/v1576838840/static/discover-bnr-img_tyvded.jpg'
-        alt='get inspired! click here to check avocado posts'
-      />
-    </Link>
+      <Link to='/discover'>
+        <img
+          className='health-bnr'
+          src='https://res.cloudinary.com/weare270b/image/upload/v1576838840/static/discover-bnr-img_tyvded.jpg'
+          alt='get inspired! click here to check avocado posts'
+        />
+      </Link>
     </div>
     <div className='ui-block-menu ui-block-menu-sidebar'>
       <ul className='d-flex'>

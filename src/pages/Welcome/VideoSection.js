@@ -1,7 +1,7 @@
 import React from 'react';
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
-import * as Routes from 'routes'
+import * as Routes from 'routes';
 
 const VideoSection = () => {
   return (
@@ -43,7 +43,10 @@ const VideoSection = () => {
                 <h4>press play</h4>
               </div>
               <div className='col-lg-2 col-md-2 col-sm-2 col-3 px-2'>
-                <a href='https://www.youtube.com/watch?v=AB0SPGFa480' target="_blank">
+                <a
+                  href='https://www.youtube.com/watch?v=AB0SPGFa480'
+                  target='_blank'
+                >
                   <img
                     className='mw-100'
                     src='https://res.cloudinary.com/weare270b/image/upload/v1576786460/static/video-play-btn_sxo2c1.png'

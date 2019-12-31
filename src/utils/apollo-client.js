@@ -99,6 +99,6 @@ export const createApolloClient = (apiUrl, websocketApiUrl) => {
 
   return new ApolloClient({
     link: ApolloLink.from([errorLink, authLink, terminatingLink]),
-    cache
+    cache,
   });
 };

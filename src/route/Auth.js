@@ -1,5 +1,10 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Redirect,
+} from 'react-router-dom';
 import { SignIn, SignUp, VerifyAccount, ResetPassword } from 'pages/Auth';
 import Welcome from 'pages/Welcome';
 
@@ -22,7 +27,7 @@ const Auth = ({ refetch }) => {
           exact
           render={() => <VerifyAccount refetch={refetch} />}
         />
-         <Route
+        <Route
           path='/reset-password'
           exact
           render={() => <ResetPassword refetch={refetch} />}
@@ -32,8 +37,8 @@ const Auth = ({ refetch }) => {
           exact
           render={() => <SignIn refetch={refetch} />}
         />
-        <Route path="/invite/:id">
-          <Redirect to="/signup" />
+        <Route path='/invite/:id'>
+          <Redirect to='/signup' />
         </Route>
         <Route
           path={Routes.TERM_AND_CONDITIONS}

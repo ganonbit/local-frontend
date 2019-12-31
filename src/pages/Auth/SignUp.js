@@ -105,8 +105,8 @@ const SignUp = ({ refetch, history }) => {
     error.lastName ||
     error.username ||
     error.email ||
-    error.password
-    // !captcha;
+    error.password;
+  // !captcha;
 
   const handleBirthdayChange = birthday => {
     setValues({
@@ -238,8 +238,10 @@ const SignUp = ({ refetch, history }) => {
                                   <span className='check' />
                                 </span>
                                 I accept the{' '}
-                                <a href={Routes.TERM_AND_CONDITIONS}>Terms and Condition</a> of the
-                                website
+                                <a href={Routes.TERM_AND_CONDITIONS}>
+                                  Terms and Condition
+                                </a>{' '}
+                                of the website
                               </label>
                             </div>
                           </div>

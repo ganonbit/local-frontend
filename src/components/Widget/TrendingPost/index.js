@@ -1,7 +1,7 @@
 import React from 'react';
 import algoliasearch from 'algoliasearch/lite';
 import { InstantSearch } from 'react-instantsearch-dom';
-import TopThreePosts from './top-three-posts'
+import TopThreePosts from './top-three-posts';
 
 const searchClient = algoliasearch(
   '70PRHCFRAW',
@@ -9,7 +9,6 @@ const searchClient = algoliasearch(
 );
 
 export default class TrendingPost extends React.Component {
-
   render() {
     return (
       <InstantSearch

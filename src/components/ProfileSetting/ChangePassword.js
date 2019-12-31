@@ -20,8 +20,7 @@ const PasswordSetting = () => {
   };
   let onSubmitHandler = (e, resetPassword) => {
     e.preventDefault();
-    resetPassword().then(async data => {
-    });
+    resetPassword().then(async data => {});
   };
   return (
     <Mutation
