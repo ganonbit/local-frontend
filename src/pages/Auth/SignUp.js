@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { Mutation } from 'react-apollo';
-import { withRouter } from 'react-router-dom';
+import {
+  withRouter,
+  useLocation
+} from "react-router-dom";
 import DatePicker from 'react-datepicker';
 import ReCAPTCHA from 'react-google-recaptcha';
 
@@ -20,6 +23,9 @@ import * as Routes from 'routes';
 import 'react-datepicker/dist/react-datepicker.css';
 
 const SignUp = ({ refetch, history }) => {
+  let location = useLocation();
+  let invitedById = location.state ? location.state.invitedById : null
+
   const [error, setError] = useState({
     firstName: '',
     lastName: '',
@@ -30,6 +36,7 @@ const SignUp = ({ refetch, history }) => {
   const [values, setValues] = useState({
     firstName: '',
     lastName: '',
+    invitedById: invitedById,
     username: '',
     email: '',
     password: '',
@@ -79,7 +86,8 @@ const SignUp = ({ refetch, history }) => {
   let handleCaptcha = () => {
     setValues({ ...values, captcha: true });
   };
-  const handleSubmit = (e, signup) => {
+
+  const handleSubmit = async (e, signup) => {
     e.preventDefault();
     const error = validate();
     if (error) {
@@ -87,12 +95,30 @@ const SignUp = ({ refetch, history }) => {
       return false;
     }
 
-    signup().then(async () => {
+    try {
+      await signup();
       await refetch();
       dispatch({ type: CLEAR_AUTH_USER });
       localStorage.removeItem('token');
-      history.push(Routes.HOME);
-    });
+
+      setValues({
+        firstName: '',
+        lastName: '',
+        invitedById: invitedById,
+        username: '',
+        email: '',
+        password: '',
+        birthday: '',
+        gender: 'male',
+        captcha: false,
+      })
+
+      let emailVerificationModal = document.getElementById('emailVerification')
+      emailVerificationModal.classList.add('email-verification-modal-visible')
+    } catch (error) {
+      console.log('The following error occurred while handling signup form')
+      console.log(error)
+    }
   };
 
   const disableButton =
@@ -120,7 +146,7 @@ const SignUp = ({ refetch, history }) => {
     <Mutation
       mutation={SIGN_UP}
       variables={{
-        input: { firstName, lastName, email, password, username },
+        input: { firstName, lastName, email, password, username, invitedById },
       }}
     >
       {(signup, { loading, error: apiError }) => {
@@ -156,6 +182,17 @@ const SignUp = ({ refetch, history }) => {
                             handleChange={handleChange}
                             name='firstName'
                             error={error.firstName}
+                          />
+                        </div>
+                        <div className='d-none'>
+                          <Field
+                            fieldContainerclassName='sm'
+                            className='test'
+                            placeholder='Invited By ID'
+                            type='text'
+                            value={invitedById}
+                            name='invitedById'
+                            error={error.invitedById}
                           />
                         </div>
                         <div className='col col-6 col-xl-6 col-lg-6 col-md-6 col-sm-12'>

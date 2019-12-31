@@ -37,9 +37,16 @@ const Auth = ({ refetch }) => {
           exact
           render={() => <SignIn refetch={refetch} />}
         />
-        <Route path='/invite/:id'>
-          <Redirect to='/signup' />
-        </Route>
+        <Route
+          path="/invite/:id"
+          render={props => (
+            <Redirect to={{
+                pathname: '/signup',
+                state: { invitedById: props.match.params.id }
+              }}
+            />
+          )}
+        />
         <Route
           path={Routes.TERM_AND_CONDITIONS}
           render={props => <TermandServices isAuth={false} {...props} />}
