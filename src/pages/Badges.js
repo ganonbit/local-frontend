@@ -28,7 +28,10 @@ const Badges = () => {
             <div className='ui-block'>
               <div className='birthday-item inline-items badges'>
                 <div className='author-thumb'>
-                  <img src='https://res.cloudinary.com/weare270b/image/upload/v1576788606/static/badge1_ngqyt5.png' alt='author' />
+                  <img
+                    src='https://res.cloudinary.com/weare270b/image/upload/v1576788606/static/badge1_ngqyt5.png'
+                    alt='author'
+                  />
                   <div className='label-avatar bg-primary'>2</div>
                 </div>
                 <div className='birthday-author-name'>
@@ -53,7 +56,10 @@ const Badges = () => {
             <div className='ui-block'>
               <div className='birthday-item inline-items badges'>
                 <div className='author-thumb'>
-                  <img src='https://res.cloudinary.com/weare270b/image/upload/v1576788606/static/badge2_kmjarm.png' alt='author' />
+                  <img
+                    src='https://res.cloudinary.com/weare270b/image/upload/v1576788606/static/badge2_kmjarm.png'
+                    alt='author'
+                  />
                 </div>
                 <div className='birthday-author-name'>
                   <a href='1#' className='h6 author-name'>
@@ -66,9 +72,7 @@ const Badges = () => {
                     <span
                       className='skills-item-meter-active'
                       style={{ width: '100%' }}
-                    >
-                    </span> 
-
+                    ></span>
                   </div>
                 </div>
               </div>
@@ -76,7 +80,10 @@ const Badges = () => {
             <div className='ui-block'>
               <div className='birthday-item inline-items badges'>
                 <div className='author-thumb'>
-                  <img src='https://res.cloudinary.com/weare270b/image/upload/v1576788606/static/badge3_gzdubj.png' alt='author' />
+                  <img
+                    src='https://res.cloudinary.com/weare270b/image/upload/v1576788606/static/badge3_gzdubj.png'
+                    alt='author'
+                  />
                   <div className='label-avatar bg-blue'>4</div>
                 </div>
                 <div className='birthday-author-name'>
@@ -100,7 +107,10 @@ const Badges = () => {
             <div className='ui-block'>
               <div className='birthday-item inline-items badges'>
                 <div className='author-thumb'>
-                  <img src='https://res.cloudinary.com/weare270b/image/upload/v1576788607/static/badge4_orr4ba.png' alt='author' />
+                  <img
+                    src='https://res.cloudinary.com/weare270b/image/upload/v1576788607/static/badge4_orr4ba.png'
+                    alt='author'
+                  />
                 </div>
                 <div className='birthday-author-name'>
                   <a href='1#' className='h6 author-name'>
@@ -126,7 +136,10 @@ const Badges = () => {
             <div className='ui-block'>
               <div className='birthday-item inline-items badges'>
                 <div className='author-thumb'>
-                  <img src='https://res.cloudinary.com/weare270b/image/upload/v1576788607/static/badge5_ammdxc.png' alt='author' />
+                  <img
+                    src='https://res.cloudinary.com/weare270b/image/upload/v1576788607/static/badge5_ammdxc.png'
+                    alt='author'
+                  />
                 </div>
                 <div className='birthday-author-name'>
                   <a href='1#' className='h6 author-name'>
@@ -150,7 +163,10 @@ const Badges = () => {
             <div className='ui-block'>
               <div className='birthday-item inline-items badges'>
                 <div className='author-thumb'>
-                  <img src='https://res.cloudinary.com/weare270b/image/upload/v1576788607/static/badge6_xzvi1x.png' alt='author' />
+                  <img
+                    src='https://res.cloudinary.com/weare270b/image/upload/v1576788607/static/badge6_xzvi1x.png'
+                    alt='author'
+                  />
                 </div>
                 <div className='birthday-author-name'>
                   <a href='1#' className='h6 author-name'>
@@ -174,7 +190,10 @@ const Badges = () => {
             <div className='ui-block'>
               <div className='birthday-item inline-items badges'>
                 <div className='author-thumb'>
-                  <img src='https://res.cloudinary.com/weare270b/image/upload/v1576788607/static/badge7_mvxvif.png' alt='author' />
+                  <img
+                    src='https://res.cloudinary.com/weare270b/image/upload/v1576788607/static/badge7_mvxvif.png'
+                    alt='author'
+                  />
                 </div>
                 <div className='birthday-author-name'>
                   <a href='1#' className='h6 author-name'>
@@ -199,7 +218,10 @@ const Badges = () => {
             <div className='ui-block'>
               <div className='birthday-item inline-items badges'>
                 <div className='author-thumb'>
-                  <img src='https://res.cloudinary.com/weare270b/image/upload/v1576788607/static/badge8_ey2a1o.png' alt='author' />
+                  <img
+                    src='https://res.cloudinary.com/weare270b/image/upload/v1576788607/static/badge8_ey2a1o.png'
+                    alt='author'
+                  />
                 </div>
                 <div className='birthday-author-name'>
                   <a href='1#' className='h6 author-name'>
@@ -223,7 +245,10 @@ const Badges = () => {
             <div className='ui-block'>
               <div className='birthday-item inline-items badges'>
                 <div className='author-thumb'>
-                  <img src='https://res.cloudinary.com/weare270b/image/upload/v1576788607/static/badge9_fduvdg.png' alt='author' />
+                  <img
+                    src='https://res.cloudinary.com/weare270b/image/upload/v1576788607/static/badge9_fduvdg.png'
+                    alt='author'
+                  />
                 </div>
                 <div className='birthday-author-name'>
                   <a href='1#' className='h6 author-name'>
@@ -247,7 +272,10 @@ const Badges = () => {
             <div className='ui-block'>
               <div className='birthday-item inline-items badges'>
                 <div className='author-thumb'>
-                  <img src='https://res.cloudinary.com/weare270b/image/upload/v1576788608/static/badge10_zzyfxr.png' alt='author' />
+                  <img
+                    src='https://res.cloudinary.com/weare270b/image/upload/v1576788608/static/badge10_zzyfxr.png'
+                    alt='author'
+                  />
                 </div>
                 <div className='birthday-author-name'>
                   <a href='1#' className='h6 author-name'>
@@ -271,7 +299,10 @@ const Badges = () => {
             <div className='ui-block'>
               <div className='birthday-item inline-items badges'>
                 <div className='author-thumb'>
-                  <img src='https://res.cloudinary.com/weare270b/image/upload/v1576788608/static/badge11_gulkwa.png' alt='author' />
+                  <img
+                    src='https://res.cloudinary.com/weare270b/image/upload/v1576788608/static/badge11_gulkwa.png'
+                    alt='author'
+                  />
                 </div>
                 <div className='birthday-author-name'>
                   <a href='1#' className='h6 author-name'>
@@ -295,7 +326,10 @@ const Badges = () => {
             <div className='ui-block'>
               <div className='birthday-item inline-items badges'>
                 <div className='author-thumb'>
-                  <img src='https://res.cloudinary.com/weare270b/image/upload/v1576788608/static/badge12_slmoxp.png' alt='author' />
+                  <img
+                    src='https://res.cloudinary.com/weare270b/image/upload/v1576788608/static/badge12_slmoxp.png'
+                    alt='author'
+                  />
                 </div>
                 <div className='birthday-author-name'>
                   <a href='1#' className='h6 author-name'>
@@ -319,7 +353,10 @@ const Badges = () => {
             <div className='ui-block'>
               <div className='birthday-item inline-items badges'>
                 <div className='author-thumb'>
-                  <img src='https://res.cloudinary.com/weare270b/image/upload/v1576788606/static/badge13_byzmff.png' alt='author' />
+                  <img
+                    src='https://res.cloudinary.com/weare270b/image/upload/v1576788606/static/badge13_byzmff.png'
+                    alt='author'
+                  />
                   <div className='label-avatar bg-breez'>2</div>
                 </div>
                 <div className='birthday-author-name'>
@@ -344,7 +381,10 @@ const Badges = () => {
             <div className='ui-block'>
               <div className='birthday-item inline-items badges'>
                 <div className='author-thumb'>
-                  <img src='https://res.cloudinary.com/weare270b/image/upload/v1576788606/static/badge14_nptb0m.png' alt='author' />
+                  <img
+                    src='https://res.cloudinary.com/weare270b/image/upload/v1576788606/static/badge14_nptb0m.png'
+                    alt='author'
+                  />
                 </div>
                 <div className='birthday-author-name'>
                   <a href='1#' className='h6 author-name'>
@@ -368,7 +408,10 @@ const Badges = () => {
             <div className='ui-block'>
               <div className='birthday-item inline-items badges'>
                 <div className='author-thumb'>
-                  <img src='https://res.cloudinary.com/weare270b/image/upload/v1576788606/static/badge15_mlnwdu.png' alt='author' />
+                  <img
+                    src='https://res.cloudinary.com/weare270b/image/upload/v1576788606/static/badge15_mlnwdu.png'
+                    alt='author'
+                  />
                 </div>
                 <div className='birthday-author-name'>
                   <a href='1#' className='h6 author-name'>

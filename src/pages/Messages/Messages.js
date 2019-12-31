@@ -24,7 +24,7 @@ const Messages = ({ match }) => {
 
               <div class='row'>
                 <NotificationMessages />
-                <MessagesChat match={match} authUser={auth.user}/>
+                <MessagesChat match={match} authUser={auth.user} />
               </div>
             </div>
           </div>
