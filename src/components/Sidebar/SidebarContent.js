@@ -1,18 +1,23 @@
 import React from 'react';
-import { Link, generatePath,withRouter } from 'react-router-dom';
+import { Link, generatePath, withRouter } from 'react-router-dom';
 import OverlayTriggers from '../Common/ToolTip';
 import { useStore } from 'store';
 import * as Routes from 'routes';
 
-const SidebarContent = ({ onSetSidebarOpen, isAuth ,location}) => {
+const SidebarContent = ({ onSetSidebarOpen, isAuth, location }) => {
   const [{ auth }] = useStore();
   return (
     <div className='fixed-sidebar-left sidebar--small' id='sidebar-left'>
       {isAuth ? (
         <Link
-          to={generatePath(location.pathname.indexOf("/profile")===0?Routes.HOME:Routes.USER_PROFILE, {
-            username: auth.user.username,
-          })}
+          to={generatePath(
+            location.pathname.indexOf('/profile') === 0
+              ? Routes.HOME
+              : Routes.USER_PROFILE,
+            {
+              username: auth.user.username,
+            }
+          )}
           className='logo'
         >
           <div className='img-wrap'>

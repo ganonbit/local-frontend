@@ -1,10 +1,7 @@
 import React from 'react';
 import MainLayout from './MainLayout';
 import * as Routes from 'routes';
-import {
-  PersonalInfo,
-  ChangePassword,
-} from 'components/ProfileSetting';
+import { PersonalInfo, ChangePassword } from 'components/ProfileSetting';
 import Notifications from './Notifications';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 const route = () => {

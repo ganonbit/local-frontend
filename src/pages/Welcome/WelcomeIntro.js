@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import * as Routes from 'routes'
+import * as Routes from 'routes';
 
 const WelcomeIntro = () => {
   return (

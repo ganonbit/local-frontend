@@ -47,10 +47,19 @@ const AppLayout = ({ refetch, history }) => {
         /> */}
         <Route path={Routes.FAQ} render={props => <Faqs {...props} />} />
 
-        <Route path={Routes.COMMUNITY_GUIDELINE} render={props => <CommunityGuideline {...props} />} />
+        <Route
+          path={Routes.COMMUNITY_GUIDELINE}
+          render={props => <CommunityGuideline {...props} />}
+        />
 
-        <Route path={Routes.TERM_AND_CONDITIONS} render={props => <TermandServices isAuth={true} {...props} />} />
-        <Route path={Routes.PRIVACY_POLICY} render={props => <PrivacyPolicy isAuth={true} {...props} />} />
+        <Route
+          path={Routes.TERM_AND_CONDITIONS}
+          render={props => <TermandServices isAuth={true} {...props} />}
+        />
+        <Route
+          path={Routes.PRIVACY_POLICY}
+          render={props => <PrivacyPolicy isAuth={true} {...props} />}
+        />
 
         <Route
           exact

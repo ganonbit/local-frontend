@@ -12,7 +12,7 @@ const ProfileHeader = ({ user, refetch, auth, username, isOwner, isSelma }) => {
     title: '',
     image: user.image,
     isCover: false,
-    coverImage: user.coverImage
+    coverImage: user.coverImage,
   });
   let { title, image, isCover, coverImage } = ImagesContent;
   let toggleProfile = (title, isCover, image) => {
@@ -50,7 +50,12 @@ const ProfileHeader = ({ user, refetch, auth, username, isOwner, isSelma }) => {
                 )}
               </div>
               <div className='top-header-author'>
-                <Link className='author-thumb' onClick={(e) => {e.preventDefault();}}>
+                <Link
+                  className='author-thumb'
+                  onClick={e => {
+                    e.preventDefault();
+                  }}
+                >
                   {user.image ? (
                     <img src={user.image} alt='profile' />
                   ) : (
@@ -82,48 +87,60 @@ const ProfileHeader = ({ user, refetch, auth, username, isOwner, isSelma }) => {
                 ) : null}
                 {isOwner || isSelma ? (
                   <UploadCoverImage
-                  show={isCoverShowing}
-                  onHide={() => setCoverIsShowing(false)}
-                  user={user}
-                  isCover={isCover}
-                  coverImage={coverImage}
-                  title={title}
-                  refetch={refetch}
-                />
+                    show={isCoverShowing}
+                    onHide={() => setCoverIsShowing(false)}
+                    user={user}
+                    isCover={isCover}
+                    coverImage={coverImage}
+                    title={title}
+                    refetch={refetch}
+                  />
                 ) : null}
                 {isOwner || isSelma ? (
                   <div className='control-block-button'>
                     <div className='btn btn-control bg-primary more'>
-                        <FontAwesomeIcon
-                          size='xl'
-                          color='white'
-                          icon={faCog}
-                          style={{ fontSize: "25px", height: "25px"  }}
-                        />
-                        <ul className='more-dropdown more-with-triangle triangle-bottom-right'>
-                          <li>
-                          <Link className='author-thumb' data-toggle='modal'
-                              data-target='#update-header-photo'
-                              onClick={(e) => {
-                                e.preventDefault();
-                                toggleProfile('Edit Profile Photo', false, user.image);
-                              }
-                              }>
-                              Update Profile Photo
-                            </Link>
-                          </li>
-                          <li>
-                          <Link className='author-thumb' data-toggle='modal'
-                              data-target='#update-header-photo'
-                              onClick={(e) => {
-                                e.preventDefault();
-                                toggleCover('Edit Cover Photo', true, user.coverImage);
-                              }
-                              }>
-                              Update Cover Image
-                            </Link>
-                          </li>
-                        </ul>
+                      <FontAwesomeIcon
+                        size='xl'
+                        color='white'
+                        icon={faCog}
+                        style={{ fontSize: '25px', height: '25px' }}
+                      />
+                      <ul className='more-dropdown more-with-triangle triangle-bottom-right'>
+                        <li>
+                          <Link
+                            className='author-thumb'
+                            data-toggle='modal'
+                            data-target='#update-header-photo'
+                            onClick={e => {
+                              e.preventDefault();
+                              toggleProfile(
+                                'Edit Profile Photo',
+                                false,
+                                user.image
+                              );
+                            }}
+                          >
+                            Update Profile Photo
+                          </Link>
+                        </li>
+                        <li>
+                          <Link
+                            className='author-thumb'
+                            data-toggle='modal'
+                            data-target='#update-header-photo'
+                            onClick={e => {
+                              e.preventDefault();
+                              toggleCover(
+                                'Edit Cover Photo',
+                                true,
+                                user.coverImage
+                              );
+                            }}
+                          >
+                            Update Cover Image
+                          </Link>
+                        </li>
+                      </ul>
                     </div>
                   </div>
                 ) : null}

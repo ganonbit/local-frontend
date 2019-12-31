@@ -3,7 +3,7 @@ import { Mutation } from 'react-apollo';
 import DatePicker from 'react-datepicker';
 
 import { Field } from 'components/ProfileSetting';
-import {formatDate} from 'utils/date'
+import { formatDate } from 'utils/date';
 import { validateFormField } from 'utils';
 import { EDIT_ACCOUNT } from 'graphql/user';
 import { useStore } from 'store';
@@ -31,13 +31,21 @@ const PersonalInfo = () => {
   const [error, setError] = useState({
     username: '',
     firstName: '',
-    lastName: '',  
-    location: '',  
-    gender: '',  
-    bio: '',  
-    phone: '',  
+    lastName: '',
+    location: '',
+    gender: '',
+    bio: '',
+    phone: '',
   });
-  const { username, firstName, lastName, bio, birthday, location, phone } = values;
+  const {
+    username,
+    firstName,
+    lastName,
+    bio,
+    birthday,
+    location,
+    phone,
+  } = values;
   const handleChange = e => {
     const { name, value } = e.target;
     setValues({ ...values, [name]: value });
@@ -72,11 +80,11 @@ const PersonalInfo = () => {
     setError({
       username: '',
       firstName: '',
-      lastName: '',  
-      location: '',  
-      gender: '',  
-      bio: '',  
-      phone: '',  
+      lastName: '',
+      location: '',
+      gender: '',
+      bio: '',
+      phone: '',
     });
   };
 
@@ -180,7 +188,9 @@ const PersonalInfo = () => {
                       >
                         <option value='male'>Male</option>
                         <option value='female'>Female</option>
-                        <option value='custom'>Custom (more choices coming soon)</option>
+                        <option value='custom'>
+                          Custom (more choices coming soon)
+                        </option>
                       </select>
                     </div>
                   </div>

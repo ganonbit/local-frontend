@@ -1,10 +1,10 @@
-import ogs from "open-graph-scraper";
-import getUrls from "get-urls";
-import urlParser from "url";
+import ogs from 'open-graph-scraper';
+import getUrls from 'get-urls';
+import urlParser from 'url';
 
 export function handler(event, context, callback) {
   const text = event.queryStringParameters.q;
-  const urls = getUrls(text, {requireSchemeOrWww: false});
+  const urls = getUrls(text, { requireSchemeOrWww: false });
 
   // Return if there is no urls in text
   if (!urls.size) {
@@ -13,8 +13,8 @@ export function handler(event, context, callback) {
       body: JSON.stringify({
         text: text,
         meta: null,
-        error: ["Empty url in text"]
-      })
+        error: ['Empty url in text'],
+      }),
     });
   }
 
@@ -53,11 +53,11 @@ function buildResponseObject(statusCode, result, text) {
   const body = {
     meta: meta,
     text: text,
-    error: statusCode !== 200 ? result.error : null
+    error: statusCode !== 200 ? result.error : null,
   };
 
   return {
     statusCode,
-    body: JSON.stringify(body)
+    body: JSON.stringify(body),
   };
 }

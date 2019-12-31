@@ -25,7 +25,7 @@ export default class Search extends React.Component {
     let params = new URL(document.location).searchParams;
     let hashTag = params.get('hash-tag-search');
     if (hashTag) {
-      this.setState({ hashTagQuery: `#${hashTag}` ,searchClass:'search'});
+      this.setState({ hashTagQuery: `#${hashTag}`, searchClass: 'search' });
     }
   };
 
@@ -37,8 +37,6 @@ export default class Search extends React.Component {
       >
         <div className='container-fluid'>
           <div className='row d-flex justify-content-between'>
-
-
             <div className='search-bar w-search notification-list friend-requests'>
               <div className='form-group with-button'>
                 <CustomSearchBar />
@@ -63,7 +61,6 @@ export default class Search extends React.Component {
               <Notifications /> */}
               <AuthorPage user={this.props.auth.user} />
             </div>
-
           </div>
         </div>
       </InstantSearch>

@@ -2,7 +2,7 @@ import React from 'react';
 
 import '../assets/svg-icons/back-to-top.svg';
 import HeaderTitle from '../pages/Header/HeaderTitle';
-import Search from '../components/Search'
+import Search from '../components/Search';
 import { useStore } from 'store';
 import UserReferralModal from '../pages/Header/UserReferralModal';
 
@@ -13,7 +13,7 @@ const TopHeader = () => {
     <header className='header' id='site-header'>
       <HeaderTitle />
       <div className='header-content-wrapper'>
-        <Search auth={auth}/>
+        <Search auth={auth} />
       </div>
       <div className='nav-right-section'>
         {/* 

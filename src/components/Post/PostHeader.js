@@ -34,8 +34,8 @@ const PostHeader = props => {
     content,
   } = props;
   const [{ auth }] = useStore();
-  const isSelma =  !auth.user ? null : (auth.user.role === "selma");
-  const isOwner = !auth.user ? null : (auth.user.id === author.id);
+  const isSelma = !auth.user ? null : auth.user.role === 'selma';
+  const isOwner = !auth.user ? null : auth.user.id === author.id;
   const rawTime = parseInt(createdAt);
   const postDate = new Date(rawTime);
   const deletePost = async () => {
@@ -104,37 +104,37 @@ const PostHeader = props => {
           </time>
         </div>
       </div>
-      {isAuth && isOwner || isAuth && isSelma ? (
+      {(isAuth && isOwner) || (isAuth && isSelma) ? (
         <div className='more'>
-            <FontAwesomeIcon
-              className='olymp-three-dots-icon'
-              size='lg'
-              color='black'
-              icon={faEllipsisV}
-              style={{ height: '12px' }}
-            />
+          <FontAwesomeIcon
+            className='olymp-three-dots-icon'
+            size='lg'
+            color='black'
+            icon={faEllipsisV}
+            style={{ height: '12px' }}
+          />
           <ul className='more-dropdown'>
-              <li>
-                <Link
-                  href
-                  onClick={e => {
-                    setIsShowing(true);
-                  }}
-                >
-                  Edit Post
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href
-                  onClick={e => {
-                    e.preventDefault();
-                    deletePost(e);
-                  }}
-                >
-                  Delete Post
-                </Link>
-              </li>
+            <li>
+              <Link
+                href
+                onClick={e => {
+                  setIsShowing(true);
+                }}
+              >
+                Edit Post
+              </Link>
+            </li>
+            <li>
+              <Link
+                href
+                onClick={e => {
+                  e.preventDefault();
+                  deletePost(e);
+                }}
+              >
+                Delete Post
+              </Link>
+            </li>
           </ul>
         </div>
       ) : null}

@@ -10,7 +10,7 @@ import {
   LogOut,
   CheckIcon,
   DropDownArrowIcon,
-  EnvelopeIcon
+  EnvelopeIcon,
 } from 'components/icons';
 const AuthorPage = ({ user }) => {
   return (
@@ -55,7 +55,7 @@ const AuthorPage = ({ user }) => {
               </li>
 
               <li>
-                <a href='#' data-toggle="modal" data-target="#referralUrl">
+                <a href='#' data-toggle='modal' data-target='#referralUrl'>
                   <EnvelopeIcon className='envelope-icon' />
                   <span>Refer User</span>
                 </a>

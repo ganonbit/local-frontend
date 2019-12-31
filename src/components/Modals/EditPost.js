@@ -34,7 +34,6 @@ const EditPost = props => {
     e.preventDefault();
     editPost().then(async ({ data }) => {
       onHide();
-      
     });
   };
 
@@ -129,7 +128,6 @@ const EditPost = props => {
                               x
                             </button>
                           </li>
-                        
                         </ul>
                       </div>
                     )}
