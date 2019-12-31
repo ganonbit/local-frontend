@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import Headroom from 'react-headroom';
+import EmailVerificationModal from './EmailVerificationModal';
 /**
  * Main Layout for Registration
  */
@@ -11,6 +12,7 @@ const MainLayout = ({ children, location }) => {
 
   return (
     <div className='landing-page'>
+      <EmailVerificationModal />
       <div className='content-bg-wrap'></div>
       <div className='content-bg-wrap'></div>
       <Headroom
