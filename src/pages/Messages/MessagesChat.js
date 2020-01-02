@@ -98,6 +98,7 @@ const MessagesChat = ({ match, authUser }) => {
         chatUser={chatUser}
         data={messages}
         match={match}
+        isAuth={authUser.id===userId}
       />
     </>
   );

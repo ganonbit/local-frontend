@@ -1,9 +1,29 @@
 import React from 'react';
 import { useStore } from 'store';
-const Notifications = () => {
+import { withApollo } from 'react-apollo';
+import { UPDATE_NOTIFICATION_SEEN } from 'graphql/notification';
+
+const Notifications = ({ client,refetch }) => {
   const [{ auth }] = useStore();
+
+  const updateNotification = async () => {
+    try {
+      await client.mutate({
+        mutation: UPDATE_NOTIFICATION_SEEN,
+        variables: {
+          input: {
+            userId: auth.user.id,
+          },
+        },
+      });
+      refetch()
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   return (
-    <div className='icon-outer'>
+    <div className='icon-outer' onMouseLeave={() => updateNotification()}>
       <div className='control-icon more has-items'>
         <img
           src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/notification-img_cporyu.png'
@@ -155,4 +175,4 @@ const Notifications = () => {
     </div>
   );
 };
-export default Notifications;
+export default withApollo(Notifications);
