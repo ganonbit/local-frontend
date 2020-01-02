@@ -17,6 +17,7 @@ const MessagesChatConversation = ({
   chatUser,
   data,
   match,
+  isAuth,
 }) => {
   const [messageText, setMessageText] = useState('');
 
@@ -73,53 +74,55 @@ const MessagesChatConversation = ({
               {messages.map(message => {
                 const isAuthUserReceiver = authUser.id === message.sender.id;
                 return (
-                  <li userMessage={isAuthUserReceiver} key={message.id}>
-                    <div className='message-wraper d-flex justify-content-between align-items-center'>
-                      {isAuthUserReceiver && (
-                        <div className='author-thumb-outer d-flex align-items-center'>
-                          <Avatar
-                            className='author-thumb'
-                            image={message.sender.image}
-                          />
-                          <a href='1#' class='h6 notification-friend pl-2'>
-                            {message.sender.username}
-                          </a>
-                        </div>
-                      )}
-                      {!isAuthUserReceiver && (
-                        <div className='author-thumb-outer d-flex align-items-center'>
-                          <Avatar
-                            className='author-thumb'
-                            image={message.sender.image}
-                          />
-                          <a href='1#' class='h6 notification-friend pl-2'>
-                            {message.sender.username}
-                          </a>
-                        </div>
-                      )}
+                  !isAuthUserReceiver && (
+                    <li userMessage={isAuthUserReceiver} key={message.id}>
+                      <div className='message-wraper d-flex justify-content-between align-items-center'>
+                        {isAuthUserReceiver && (
+                          <div className='author-thumb-outer d-flex align-items-center'>
+                            <Avatar
+                              className='author-thumb'
+                              image={message.sender.image}
+                            />
+                            <a href='1#' class='h6 notification-friend pl-2'>
+                              {message.sender.username}
+                            </a>
+                          </div>
+                        )}
+                        {!isAuthUserReceiver && (
+                          <div className='author-thumb-outer d-flex align-items-center'>
+                            <Avatar
+                              className='author-thumb'
+                              image={message.sender.image}
+                            />
+                            <a href='1#' class='h6 notification-friend pl-2'>
+                              {message.sender.username}
+                            </a>
+                          </div>
+                        )}
 
-                      <div class='notification-event'>
-                        <span class='notification-date'>
-                          <time class='entry-date updated'>
-                            {moment(
-                              new Date(parseInt(message.createdAt))
-                            ).format('MMMM Do, YYYY')}
-                          </time>
+                        <div class='notification-event'>
+                          <span class='notification-date'>
+                            <time class='entry-date updated'>
+                              {moment(
+                                new Date(parseInt(message.createdAt))
+                              ).format('MMMM Do, YYYY')}
+                            </time>
+                          </span>
+                        </div>
+                      </div>
+                      <div className='message-box float-none d-block'>
+                        <span class='chat-message-item float-none d-block pl-5'>
+                          {message.message}
                         </span>
                       </div>
-                    </div>
-                    <div className='message-box float-none d-block'>
-                      <span class='chat-message-item float-none d-block pl-5'>
-                        {message.message}
-                      </span>
-                    </div>
-                  </li>
+                    </li>
+                  )
                 );
               })}
             </ul>
           </div>
 
-          {match.params.userId !== Routes.NEW_ID_VALUE && chatUser && (
+          {match.params.userId !== Routes.NEW_ID_VALUE && chatUser && isAuth && (
             <form onSubmit={e => sendMessage(e)}>
               <div class='form-group label-floating is-empty'>
                 <textarea
