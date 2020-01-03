@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 
-import PropTypes from 'prop-types';
 import { useMutation } from '@apollo/react-hooks';
 
 import Avatar from 'components/Avatar';
@@ -19,10 +18,19 @@ const MessagesChatConversation = ({
   match,
   isAuth,
 }) => {
+  const ref = useRef();
+
   const [messageText, setMessageText] = useState('');
 
-  const [createMessage] = useMutation(CREATE_MESSAGE);
+  useEffect(() => {
+    if (!ref.current) {
+      ref.current = true;
+    } else {
+      ref.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, [messages]);
 
+  const [createMessage] = useMutation(CREATE_MESSAGE);
   const sendMessage = e => {
     e.preventDefault();
     console.log('created message', messageText);
@@ -72,10 +80,15 @@ const MessagesChatConversation = ({
           <div class='mCustomScrollbar' data-mcs-theme='dark'>
             <ul class='notification-list chat-message chat-message-field'>
               {messages.map(message => {
-                const isAuthUserReceiver = authUser.id === message.sender.id;
+                const isAuthUserReceiver =
+                  '5df7cd1ae8d6ec604b737ae5' === message.sender.id;
                 return (
-                  !isAuthUserReceiver && (
-                    <li userMessage={isAuthUserReceiver} key={message.id}>
+                  isAuthUserReceiver && (
+                    <li
+                      userMessage={isAuthUserReceiver}
+                      key={message.id}
+                      ref={ref}
+                    >
                       <div className='message-wraper d-flex justify-content-between align-items-center'>
                         {isAuthUserReceiver && (
                           <div className='author-thumb-outer d-flex align-items-center'>
