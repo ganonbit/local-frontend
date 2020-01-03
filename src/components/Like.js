@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { Mutation } from 'react-apollo';
+import { Mutation, withApollo } from 'react-apollo';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
@@ -8,12 +8,12 @@ import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import { GET_FOLLOWED_POSTS, GET_POSTS } from 'graphql/post';
 import { GET_AUTH_USER } from 'graphql/user';
 import { CREATE_LIKE, DELETE_LIKE } from 'graphql/like';
-
+import { CREATE_NOTIFICATION } from 'graphql/notification';
 import { useStore } from 'store';
 /**
  * Component for rendering Like button
  */
-const Like = ({ postId, user, likes }) => {
+const Like = ({ postId, user, likes ,client}) => {
   const [loading, setLoading] = useState(true);
 
   const [{ auth }] = useStore();
@@ -21,11 +21,28 @@ const Like = ({ postId, user, likes }) => {
   const hasLiked = likes.find(
     l => l.user === auth.user.id && l.post === postId
   );
-
+  const createNotification = async () => {
+    try {
+      await client.mutate({
+        mutation: CREATE_NOTIFICATION,
+        variables: {
+          input: {
+            userId: user.id,
+            authorId: auth.user.id,
+            postId: postId,
+            notificationType: 'LIKE',
+          },
+        },
+      });
+    } catch (err) {
+      console.log(err);
+    }
+  };
   const handleButtonClick = async mutate => {
     setLoading(false);
     setTimeout(() => {
       const { data } = mutate();
+      createNotification()
       setLoading(true);
     }, 2000);
 
@@ -90,4 +107,4 @@ Like.propTypes = {
   fullWidth: PropTypes.bool,
 };
 
-export default Like;
+export default withApollo(Like);

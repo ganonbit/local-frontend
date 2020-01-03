@@ -4,12 +4,13 @@ import { generatePath } from 'react-router-dom';
 import { CREATE_COMMENT } from '../../graphql/comment';
 import { GET_POSTS, GET_FOLLOWED_POSTS } from '../../graphql/post';
 import { Mutation, withApollo } from 'react-apollo';
+import { CREATE_NOTIFICATION } from 'graphql/notification';
 
 import Avatar from '../Avatar';
 
 import * as Routes from 'routes';
 
-function AddComment({ authorId, author, postId, onCancel }) {
+function AddComment({ authorId, author, postId, onCancel, client, userId }) {
   const [commentContent, setCommentContent] = useState({
     comment: '',
     image: null,
@@ -19,13 +20,31 @@ function AddComment({ authorId, author, postId, onCancel }) {
   });
   const onAddComment = (e, createComment) => {
     e.preventDefault();
-    createComment.then(async ({ data }) => {},
-    setCommentContent({ ...commentContent, comment: '', image: '' }));
+    createComment.then(async ({ data }) => {
+      createNotification();
+    }, setCommentContent({ ...commentContent, comment: '', image: '' }));
   };
   const onCommentChange = e => {
     e.preventDefault();
     const { name, value } = e.target;
     setCommentContent({ ...commentContent, [name]: value });
+  };
+  const createNotification = async () => {
+    try {
+      await client.mutate({
+        mutation: CREATE_NOTIFICATION,
+        variables: {
+          input: {
+            userId: userId,
+            authorId: authorId,
+            postId: postId,
+            notificationType: 'COMMENT',
+          },
+        },
+      });
+    } catch (err) {
+      console.log(err);
+    }
   };
   return (
     <Mutation

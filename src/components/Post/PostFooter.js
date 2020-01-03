@@ -5,11 +5,11 @@ import { faComment, faShare } from '@fortawesome/free-solid-svg-icons';
 import Like from 'components/Like';
 
 const PostFooter = props => {
-  const { author, postId, comments, likes, toggle, isAuth } = props;
+  const { author, postId, comments, likes, toggle, isAuth,userId } = props;
   return (
     <div className='post-additional-info inline-items'>
       <span className='post-add-icon inline-items'>
-        {isAuth && <Like user={author} postId={postId} likes={likes} />}
+        {isAuth && <Like user={author} postId={postId} likes={likes} userId={userId} />}
         <span>{likes.length}</span>
       </span>
 
