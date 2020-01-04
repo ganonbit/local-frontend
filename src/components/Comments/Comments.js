@@ -19,6 +19,7 @@ export default function Comments(props, isAuth) {
               .slice(0, numOfComments)
               .reverse()
               .map((comment, index) => {
+                if (!comment.author) {return null}
                 return (
                   <li key={index} className='comment-item'>
                     <CommentsHeader
