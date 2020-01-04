@@ -1,6 +1,7 @@
 import React from 'react';
 import algoliasearch from 'algoliasearch/lite';
 import { InstantSearch, Index } from 'react-instantsearch-dom';
+import Default, { Desktop, Tablet, Mobile } from '../Wrappers/Queries';
 import CustomSearchBar from './search-bar';
 import ConnectedUsers from './users';
 import ConnectedPosts from './posts';
@@ -58,7 +59,7 @@ export default class Search extends React.Component {
 
             <div className='control-block' style={{ height: 'auto' }}>
               <ChatNotifications />
-              <Notifications refetch={this.props.refetch}/>
+              <Notifications refetch={this.props.refetch} />
               <AuthorPage user={this.props.auth.user} />
             </div>
           </div>
