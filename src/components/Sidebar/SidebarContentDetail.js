@@ -1,7 +1,11 @@
 import React from 'react';
 import ListItem from './ListItem';
 import Default, { Desktop, Tablet, Mobile } from '../Wrappers/Queries';
-import AuthorPage from '../../pages/Header/AuthorPage';
+import {
+  MobileAuthorPage,
+  MobileAuthorSettings,
+} from '../../pages/Header/AuthorPage';
+import LegalLinks from '../Sidebar/MobileLegal';
 import { useStore } from 'store';
 
 const SidebarMainContent = ({ onSetSidebarOpen, isAuth }) => {
@@ -44,14 +48,16 @@ const SidebarMainContent = ({ onSetSidebarOpen, isAuth }) => {
         </div>
       </div>
       <div className='mCustomScrollbar' data-mcs-theme='dark'>
-        <Mobile>
-          <div className='control-block'>
-            <AuthorPage user={auth.user} hideAccountFeatures={true} />
-          </div>
-          <div className='ui-block-title ui-block-title-small'>
-            <h6 className='title'>MAIN SECTIONS</h6>
-          </div>
-        </Mobile>
+        {isAuth ? (
+          <Mobile>
+            <div className='control-block'>
+              <MobileAuthorPage user={auth.user} />
+            </div>
+            <div className='ui-block-title ui-block-title-small'>
+              <h6 className='title'>MAIN SECTIONS</h6>
+            </div>
+          </Mobile>
+        ) : null}
         <ul className='left-menu'>
           {sidebarList.map((val, index) => (
             <ListItem
@@ -68,30 +74,19 @@ const SidebarMainContent = ({ onSetSidebarOpen, isAuth }) => {
             />
           ))}
         </ul>
-        <Mobile>
-          <div className='ui-block-title ui-block-title-small'>
-            <h6 className='title'>YOUR ACCOUNT</h6>
-          </div>
-          <ul className='left-menu'>
-            {sidebarList.map((val, index) => (
-              <ListItem
-                linkclassName='js-sidebar-open'
-                titleclassName='left-menu-title'
-                title={val.title}
-                key={index}
-                onSetSidebarOpen={(open, activeSideClass) =>
-                  onSetSidebarOpen(open, activeSideClass)
-                }
-                sideBarOpenModel={val.title === 'Collapse Menu'}
-                image={val.image}
-                path={val.path}
-              />
-            ))}
-          </ul>
-          <div className='ui-block-title ui-block-title-small'>
-            <h6 className='title'>ABOUT AVOCADO NATION</h6>
-          </div>
-        </Mobile>
+        {isAuth ? (
+          <Mobile>
+            <div className='ui-block-title ui-block-title-small'>
+              <h6 className='title'>YOUR ACCOUNT</h6>
+            </div>
+            <MobileAuthorSettings user={auth.user} />
+
+            <div className='ui-block-title ui-block-title-small'>
+              <h6 className='title'>ABOUT AVOCADO NATION</h6>
+            </div>
+            <LegalLinks />
+          </Mobile>
+        ) : null}
       </div>
     </div>
   );
