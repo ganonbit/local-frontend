@@ -14,7 +14,7 @@ import TopHeader from './TopHeader';
 import Discover from 'pages/Discover';
 import Reward from 'pages/Reward';
 import Badges from 'pages/Badges';
-// import Messages from 'pages/Messages';
+import Messages from 'pages/Messages';
 import Faqs from 'pages/Faqs';
 import CommunityGuideline from 'pages/CommunityGuideline';
 import TermandServices from 'pages/TermandServices';
@@ -41,10 +41,10 @@ const AppLayout = ({ refetch, history }) => {
         <Route path={Routes.DISCOVER} render={props => <Discover />} />
         <Route path={Routes.SETTINGS} render={() => <ProfileSetting />} />
         <Route path={Routes.REWARDS} render={props => <Reward {...props} />} />
-        {/* <Route
+        <Route
           path={Routes.MESSAGES}
           render={props => <Messages {...props} />}
-        /> */}
+        />
         <Route path={Routes.FAQ} render={props => <Faqs {...props} />} />
 
         <Route

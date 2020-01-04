@@ -6,8 +6,8 @@ import CustomSearchBar from './search-bar';
 import ConnectedUsers from './users';
 import ConnectedPosts from './posts';
 
-// import Notifications from '../../pages/Header/Notifications';
-// import ChatNotifications from '../../pages/Header/ChatNotifications';
+import Notifications from '../../pages/Header/Notifications';
+import ChatNotifications from '../../pages/Header/ChatNotifications';
 
 import AuthorPage from '../../pages/Header/AuthorPage';
 
@@ -58,11 +58,9 @@ export default class Search extends React.Component {
             </div>
 
             <div className='control-block' style={{ height: 'auto' }}>
-              <Default>
-                {/* <ChatNotifications />
-              <Notifications /> */}
-                <AuthorPage user={this.props.auth.user} />
-              </Default>
+              <ChatNotifications />
+              <Notifications refetch={this.props.refetch} />
+              <AuthorPage user={this.props.auth.user} />
             </div>
           </div>
         </div>

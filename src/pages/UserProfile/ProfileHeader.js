@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, generatePath } from 'react-router-dom';
 import UploadProfileImage from './UploadProfileImage';
 import UploadCoverImage from './UploadCoverImage';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCog } from '@fortawesome/free-solid-svg-icons';
+import { faCog, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+
+import * as Routes from 'routes';
 
 const ProfileHeader = ({ user, refetch, auth, username, isOwner, isSelma }) => {
   const [isProfileShowing, setProfileIsShowing] = useState(false);
@@ -66,7 +68,7 @@ const ProfileHeader = ({ user, refetch, auth, username, isOwner, isSelma }) => {
                   )}
                 </Link>
                 <div className='author-content'>
-                  <Link to='/' className='h4 author-name'>
+                  <Link to={Routes.HOME} className='h4 author-name'>
                     {`${user.firstName} ${user.lastName}`}
                   </Link>
                   <div className='author-location'>{user.username}</div>
@@ -98,6 +100,22 @@ const ProfileHeader = ({ user, refetch, auth, username, isOwner, isSelma }) => {
                 ) : null}
                 {isOwner || isSelma ? (
                   <div className='control-block-button'>
+                    {isSelma && (
+                      <div className='btn btn-control bg-primary more'>
+                        <Link
+                          to={generatePath(Routes.MESSAGES, {
+                            userId: user.id,
+                          })}
+                        >
+                          <FontAwesomeIcon
+                            size='xl'
+                            color='white'
+                            icon={faEnvelope}
+                            style={{ fontSize: '25px', height: '25px' }}
+                          />
+                        </Link>
+                      </div>
+                    )}
                     <div className='btn btn-control bg-primary more'>
                       <FontAwesomeIcon
                         size='xl'
