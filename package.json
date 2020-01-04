@@ -58,6 +58,7 @@
     "react-instantsearch-dom": "^6.0.0",
     "react-masonry-component": "^6.2.1",
     "react-player": "^1.14.2",
+    "react-responsive": "^8.0.1",
     "react-router-dom": "^5.0.0",
     "react-scripts": "3.0.1",
     "react-scrollmagic": "^2.1.1",
