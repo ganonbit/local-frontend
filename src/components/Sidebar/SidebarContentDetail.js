@@ -1,6 +1,11 @@
 import React from 'react';
 import ListItem from './ListItem';
-const SidebarMainContent = ({ onSetSidebarOpen }) => {
+import Default, { Desktop, Tablet, Mobile } from '../Wrappers/Queries';
+import AuthorPage from '../../pages/Header/AuthorPage';
+import { useStore } from 'store';
+
+const SidebarMainContent = ({ onSetSidebarOpen, isAuth }) => {
+  const [{ auth }] = useStore();
   const sidebarList = [
     {
       title: 'Collapse Menu',
@@ -30,15 +35,23 @@ const SidebarMainContent = ({ onSetSidebarOpen }) => {
   ];
   return (
     <div className='fixed-sidebar-left sidebar--large' id='sidebar-left-1'>
-      <a href='02-ProfilePage.html' className='logo'>
+      <div className='logo'>
         <div className='img-wrap'>
           <img
             src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avocado-img_fwdb02.png'
             alt='Olympus'
           />
         </div>
-      </a>
+      </div>
       <div className='mCustomScrollbar' data-mcs-theme='dark'>
+        <Mobile>
+          <div className='control-block'>
+            <AuthorPage user={auth.user} hideAccountFeatures={true} />
+          </div>
+          <div className='ui-block-title ui-block-title-small'>
+            <h6 className='title'>MAIN SECTIONS</h6>
+          </div>
+        </Mobile>
         <ul className='left-menu'>
           {sidebarList.map((val, index) => (
             <ListItem
@@ -55,6 +68,30 @@ const SidebarMainContent = ({ onSetSidebarOpen }) => {
             />
           ))}
         </ul>
+        <Mobile>
+          <div className='ui-block-title ui-block-title-small'>
+            <h6 className='title'>YOUR ACCOUNT</h6>
+          </div>
+          <ul className='left-menu'>
+            {sidebarList.map((val, index) => (
+              <ListItem
+                linkclassName='js-sidebar-open'
+                titleclassName='left-menu-title'
+                title={val.title}
+                key={index}
+                onSetSidebarOpen={(open, activeSideClass) =>
+                  onSetSidebarOpen(open, activeSideClass)
+                }
+                sideBarOpenModel={val.title === 'Collapse Menu'}
+                image={val.image}
+                path={val.path}
+              />
+            ))}
+          </ul>
+          <div className='ui-block-title ui-block-title-small'>
+            <h6 className='title'>ABOUT AVOCADO NATION</h6>
+          </div>
+        </Mobile>
       </div>
     </div>
   );
