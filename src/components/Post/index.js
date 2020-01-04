@@ -62,6 +62,7 @@ export default function Post({ queryOptions, isAuth }) {
                 {isAuth && isCommentOpen && (
                   <AddComment
                     authorId={auth.user.id}
+                    userId={post.author.id}
                     author={auth.user}
                     postId={post.id}
                     onCancel={toggleComment}

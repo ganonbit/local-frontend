@@ -22,7 +22,6 @@ const MessagesChat = ({ match, authUser }) => {
     variables: { id: userId },
     skip: userId === Routes.NEW_ID_VALUE,
   });
-
   const {
     subscribeToMore,
     data: messages,
@@ -98,6 +97,7 @@ const MessagesChat = ({ match, authUser }) => {
         chatUser={chatUser}
         data={messages}
         match={match}
+        isAuth={authUser.id === '5df7cd1ae8d6ec604b737ae5'}
       />
     </>
   );
