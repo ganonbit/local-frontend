@@ -95,4 +95,71 @@ const AuthorPage = ({ user }) => {
     </div>
   );
 };
+
+// split authorPage content into separate sections for mobile
+export const MobileAuthorPage = ({ user }) => {
+  return (
+    <Link
+      to={generatePath(Routes.USER_PROFILE, {
+        username: user.username,
+      })}
+    >
+      <div className='author-page author vcard inline-items more'>
+        <div className='author-thumb'>
+          <Avatar image={user.image} />
+          <span className='icon-status online'></span>
+        </div>
+        <div className='author-title author-title-custom'>
+          {`${user.firstName} ${user.lastName}`}
+        </div>
+      </div>
+    </Link>
+  );
+};
+
+export const MobileAuthorSettings = ({ user }) => {
+  return (
+    <>
+      <ul className='account-settings'>
+        <li>
+          <Link
+            to={generatePath(Routes.USER_PROFILE, {
+              username: user.username,
+            })}
+          >
+            <OlympMenu className='olymp-camera-icon' />
+            <span>Profile</span>
+          </Link>
+        </li>
+        <li>
+          <Link to={Routes.SETTINGS}>
+            <SettingIcon className='olymp-star-icon left-menu-icon' />
+
+            <span>Profile Settings</span>
+          </Link>
+        </li>
+        {/* <li>
+          <Link to='#'>
+            <RewardIcon className='olymp-logout-icon' />
+            <span>Rewards</span>
+          </Link>
+        </li> */}
+        <li>
+          <a href='/' onClick={() => localStorage.clear()}>
+            <LogOut className='olymp-logout-icon' />
+            <span>Log Out</span>
+          </a>
+        </li>
+
+        <li>
+          <a href='#' data-toggle='modal' data-target='#referralUrl'>
+            <EnvelopeIcon className='envelope-icon' />
+            <span>Refer User</span>
+          </a>
+        </li>
+      </ul>
+    </>
+  );
+};
+
 export default AuthorPage;

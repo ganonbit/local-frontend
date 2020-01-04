@@ -22,7 +22,10 @@ const SidebarNavigation = ({ isAuth }) => {
         docked={true}
         styles={SidebarStyles}
       >
-        <SidebarMainContent onSetSidebarOpen={onSetSidebarOpen} />
+        <SidebarMainContent
+          onSetSidebarOpen={onSetSidebarOpen}
+          isAuth={isAuth}
+        />
       </Sidebar>
     </div>
   );
