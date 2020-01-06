@@ -37,7 +37,7 @@ export default class Search extends React.Component {
         searchClient={searchClient}
       >
         <div className='container-fluid'>
-          <div className='row d-flex justify-content-between'>
+          <div className='d-flex justify-content-between'>
             <div className='search-bar w-search notification-list friend-requests'>
               <div className='form-group with-button'>
                 <CustomSearchBar />
