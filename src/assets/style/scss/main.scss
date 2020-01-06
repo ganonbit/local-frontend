@@ -16189,6 +16189,11 @@ padding: 10px 0;
   height: 8px;
 }
 
+.author-thumb-outer {
+  width: 40px;
+  height: 40px;
+}
+
 .w-action {
   background-image: url('https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/landing-bg.jpg');
   padding: 50px 45px 40px;
@@ -23007,10 +23012,6 @@ div#accordion .card {
   color: #515365;
 }
 
-.label-floating textarea.form-control {
-  padding-top: 10px;
-}
-
 .detail-content h4 {
   font-size: 25px;
   margin: 20px 0;
@@ -23280,4 +23281,12 @@ div#accordion .card {
 
 .email-verification-modal-visible {
   display: block;
+}
+
+// chrome/safari not respecting select button's padding fix
+select{
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding: 5px;
 }
