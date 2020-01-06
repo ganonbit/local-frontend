@@ -16170,6 +16170,8 @@ padding: 10px 0;
 .author-thumb {
   display: inline-block;
   position: relative;
+  width: 40px;
+  height: 40px;
 }
 
 .author-thumb img {
@@ -16187,6 +16189,11 @@ padding: 10px 0;
   border: 1px solid #3f4257;
   width: 8px;
   height: 8px;
+}
+
+.author-thumb-outer {
+  width: 40px;
+  height: 40px;
 }
 
 .w-action {
@@ -22293,7 +22300,7 @@ span.material-input-error {
 }
 
 .post-img {
-  min-height: 250px;
+  min-height: 50px;
 }
 
 .post-img img {
@@ -23007,10 +23014,6 @@ div#accordion .card {
   color: #515365;
 }
 
-.label-floating textarea.form-control {
-  padding-top: 10px;
-}
-
 .detail-content h4 {
   font-size: 25px;
   margin: 20px 0;
@@ -23280,4 +23283,12 @@ div#accordion .card {
 
 .email-verification-modal-visible {
   display: block;
+}
+
+// chrome/safari not respecting select button's padding fix
+select{
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding: 5px;
 }
