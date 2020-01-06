@@ -100,18 +100,21 @@ function AddComment({ authorId, author, postId, onCancel, client, userId }) {
                   </a>
                 </div>
               </div>
+              <div className="add-comment-buttons">
+
+              <button className='btn btn-md-2 btn-primary' type='post'>
+                Post Comment
+              </button>
+
+              <button
+                className='btn btn-md-2 btn-border-think c-grey btn-transparent custom-color'
+                onClick={onCancel}
+              >
+                Cancel
+              </button>
+            </div>
             </div>
 
-            <button className='btn btn-md-2 btn-primary' type='post'>
-              Post Comment
-            </button>
-
-            <button
-              className='btn btn-md-2 btn-border-think c-grey btn-transparent custom-color'
-              onClick={onCancel}
-            >
-              Cancel
-            </button>
           </form>
         );
       }}
