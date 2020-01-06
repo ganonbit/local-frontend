@@ -614,6 +614,20 @@
   width: 100%;
 }
 
+.avatar-wrapper {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .top-header-author .author-name {
   font-weight: 700;
   color: #fff;
@@ -3666,7 +3680,8 @@ button.btn-md {
 }
 
 button.btn-md-2 {
-  padding: 0.8rem 2.1rem;
+  padding: 0.7rem;
+  margin: 0 5px;
   font-size: 0.688rem;
   border-radius: 0.3rem;
 }
@@ -3681,6 +3696,11 @@ button.btn-lg {
 
 .form-inline > * + * {
   margin-left: 16px;
+}
+
+.add-comment-buttons {
+  display: flex !important;
+  padding-left: 5px;
 }
 
 .h1,
@@ -9369,6 +9389,7 @@ padding: 10px 0;
   border-radius: 100%;
   overflow: hidden;
   margin-right: 12px;
+  object-fit: cover;
 }
 
 .post__author .more {
@@ -9799,12 +9820,6 @@ padding: 10px 0;
   min-height: 100px;
 }
 
-.comment-form button {
-  float: right;
-  margin-bottom: 0;
-  margin-top: 15px;
-}
-
 .comment-form button + button {
   margin-right: 15px;
 }
@@ -10026,6 +10041,8 @@ padding: 10px 0;
   top: 25px;
   left: 25px;
   z-index: 1;
+  width: 40px;
+  height: 40px;
 }
 
 .news-feed-form .form-group {
