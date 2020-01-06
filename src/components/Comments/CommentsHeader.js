@@ -64,11 +64,14 @@ function CommentsHeader(props) {
           <Avatar image={author.image} />
         </a>
         <div className='author-date'>
-          <a className='h6 post__author-name fn' href='#1'>
+          <a
+            href={generatePath(Routes.USER_PROFILE, {
+            username: author.username})} 
+            className='comment__author-name fn'>
             {author.firstName} {author.lastName}
           </a>
           <div className='post__date'>
-            <time className='published' dateTime={commentDate}>
+            <time className='comment__published' dateTime={commentDate}>
               {moment(commentDate, 'YYYYMMDDHHmms').fromNow()}
             </time>
           </div>

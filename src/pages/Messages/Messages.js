@@ -19,11 +19,12 @@ const Messages = ({ match }) => {
           <div class='col-12'>
             <div class='ui-block'>
               <div class='ui-block-title block-title-bg'>
-                <h6 class='title'>Chat / Messages</h6>
+                <h6 class='title'>Messages</h6>
               </div>
 
               <div class='row'>
-                <NotificationMessages />
+                {/* turned off until full dms implemented */}
+                {/* <NotificationMessages /> */}
                 <MessagesChat match={match} authUser={auth.user} />
               </div>
             </div>

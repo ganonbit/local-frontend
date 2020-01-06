@@ -3515,7 +3515,7 @@ input {
 }
 
 p {
-  font-size: 0.875rem;
+  font-size: 0.8rem;
 }
 
 .h1,
@@ -4058,7 +4058,6 @@ img {
 
 .btn {
   color: #fff;
-  margin-bottom: 15px;
   position: relative;
 }
 
@@ -4137,12 +4136,12 @@ button:hover {
 
 .btn-control {
   border-radius: 100%;
-  width: 50px;
-  height: 50px;
-  line-height: 54px;
+  line-height: 50px;
   padding: 0;
   fill: #fff;
   font-size: 20px;
+  line-height: 40px;
+
 }
 
 .btn-control:hover {
@@ -4253,6 +4252,11 @@ button:hover {
 .control-block-button .btn-control .olymp-happy-faces-icon {
   height: 22px;
   width: 22px;
+}
+
+.btn.btn-control.bg-primary.more {
+  width: 40px;
+  height: 40px;
 }
 
 .btn-primary:hover {
@@ -9220,12 +9224,8 @@ ol ol li {
 
 .post {
   position: relative;
-  padding: 25px;
+  padding: 10px 20px 0;
   border-bottom: 1px solid #e6ecf5;
-}
-
-.post p {
-  margin: 25px 0;
 }
 
 .post .control-block-button {
@@ -9238,9 +9238,10 @@ ol ol li {
   margin: 0 -25px 25px;
 }
 
-.post .btn {
-  margin-bottom: 25px;
+.post-preview {
+padding: 10px 0;
 }
+
 
 .post h1,
 .post h2,
@@ -9309,6 +9310,14 @@ ol ol li {
   display: block;
 }
 
+.comment__published {
+  font-size: 11px;
+}
+
+.post__published {
+  font-size: 12px;
+}
+
 .more-photos {
   position: relative;
 }
@@ -9351,7 +9360,7 @@ ol ol li {
 }
 
 .post__author {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .post__author img {
@@ -9369,7 +9378,7 @@ ol ol li {
 }
 
 .post-additional-info {
-  padding: 20px 0 0;
+  padding: 0;
   border-top: 1px solid #e6ecf5;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -9413,9 +9422,9 @@ ol ol li {
 
 .post-add-icon svg,
 .post-add-icon img {
-  margin-right: 8px;
-  width: 20px;
-  height: 18px;
+  margin-right: 10px;
+  width: 1.2rem;
+  height: 20px;
 }
 
 .post-add-icon .olymp-speech-balloon-icon {
@@ -9429,12 +9438,16 @@ ol ol li {
 }
 
 .post-add-icon:hover {
-  fill: #ff5e3a;
-  color: #ff5e3a;
+  fill: var(--theme-color-pink);
+  color: var(--theme-color-pink);
 }
 
 .post-add-icon:hover span {
-  color: #ff5e3a;
+  color: var(--theme-color-pink)
+}
+
+.comments-shared span:hover {
+  color: var(--theme-color-green)
 }
 
 .post-add-icon:active,
@@ -9552,6 +9565,8 @@ ol ol li {
   .post__author {
     margin-bottom: 5px;
   }
+
+
 }
 
 @media (max-width: 480px) {
@@ -9583,7 +9598,7 @@ ol ol li {
 }
 
 .comments-list .comment-item {
-  padding: 25px;
+  padding: 10px 10px 0 25px;
   border-bottom: 1px solid #e6ecf5;
   background-color: #fafbfd;
   position: relative;
@@ -9796,7 +9811,7 @@ ol ol li {
 
 @media (max-width: 768px) {
   .comments-list .comment-item {
-    padding: 10px;
+    padding: 0 0 0 5px;
   }
 
   .children {
@@ -12315,6 +12330,7 @@ ol ol li {
   font-size: 11px;
 }
 
+
 .blog-post-v2 .author-date {
   text-align: left;
 }
@@ -14641,7 +14657,11 @@ ol ol li {
 }
 
 .bg-green {
-  background-color: #1ed760;
+  background-color: var(--theme-color);
+}
+
+.bg-red {
+  background-color: var(--theme-color-pink);
 }
 
 .bg-facebook {
@@ -21684,6 +21704,10 @@ a.h4.title {
   font-weight: 400;
 }
 
+.post p {
+  padding: 0;
+}
+
 .post p a {
   color: #4a4d4d;
 }
@@ -21725,7 +21749,7 @@ a.h4.title {
 }
 
 .post-add-icon:hover span {
-  color: var(--theme-color);
+  color: var(--theme-color-pink)
 }
 
 .name-fields {

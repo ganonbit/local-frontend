@@ -30,7 +30,7 @@ const Notifications = ({ client,refetch }) => {
           src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/notification-img_cporyu.png'
           alt='notifi'
         />
-        {auth.user.newNotifications.length && (
+        {!auth.user.newNotifications.length ? null : (
           <div className='label-avatar bg-primary'>
             {auth.user.newNotifications.length}
           </div>
@@ -38,8 +38,8 @@ const Notifications = ({ client,refetch }) => {
         <div className='more-dropdown more-with-triangle triangle-top-center'>
           <div className='ui-block-title ui-block-title-small'>
             <h6 className='title'>Notifications</h6>
-            <a href='#1'>Mark all as read</a>
-            <a href='#1'>Settings</a>
+            {/* <a href='#1'>Mark all as read</a>
+            <a href='#1'>Settings</a> */}
           </div>
 
           <div className='mCustomScrollbar' data-mcs-theme='dark'>
