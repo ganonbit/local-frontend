@@ -11,9 +11,6 @@ import Avatar from '../Avatar';
 import * as Routes from 'routes';
 
 function AddComment({ authorId, author, postId, onCancel, client, userId }) {
-  console.log('-------------------------------------------authorId',authorId)
-  console.log('-------------------------------------------userId',userId)
- 
   let isAuthPost = authorId === userId;
   const [commentContent, setCommentContent] = useState({
     comment: '',
