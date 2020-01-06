@@ -17,7 +17,6 @@ export default function Comments(props, isAuth) {
         {props.comments
           ? props.comments
               .slice(0, numOfComments)
-              .reverse()
               .map((comment, index) => {
                 if (!comment.author) {return null}
                 return (
