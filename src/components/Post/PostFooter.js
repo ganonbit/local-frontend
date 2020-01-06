@@ -15,21 +15,9 @@ const PostFooter = props => {
 
       <div className='comments-shared'>
         <a href='#1' className='post-add-icon inline-items'>
-          <FontAwesomeIcon icon={faComment} onClick={toggle} />
+          <FontAwesomeIcon icon={faComment} style={{ width: '1.2rem' }} onClick={toggle} />
 
           <span>{comments.length}</span>
-        </a>
-
-        <a
-          onClick={() => {
-            alert('share');
-          }}
-          href='#1'
-          className='post-add-icon inline-items'
-        >
-          <FontAwesomeIcon icon={faShare} />
-
-          <span>{props.numShares}</span>
         </a>
       </div>
     </div>
