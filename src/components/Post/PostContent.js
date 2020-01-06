@@ -41,7 +41,6 @@ export default function PostContent(props) {
 
     fetchData();
   }, [rawContent]);
-  console.log(metaFromContentPreview);
   return (
     <div className='postContainer'>
       <Linkify options={linkDecorator}>{rawContent}</Linkify>

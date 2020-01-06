@@ -5,7 +5,6 @@ import linkDecorator from '../Common/linkDecorator';
 
 
 const Preview = props => {
-  console.log(props)
   return (
     <div className="post-preview">
       <a
