@@ -81,7 +81,7 @@ const MessagesChat = ({ match, authUser }) => {
   }, [userId, updateMessageSeen]);
 
   if (loading || messagesLoading) {
-    return <h1>Loading</h1>;
+    return <h1></h1>;
   }
 
   let chatUser = null;

@@ -1,77 +1,26 @@
 import React from 'react';
-import styled from 'styled-components';
+import Linkify from 'linkifyjs/react';
 
-const Container = styled.div`
-  max-width: 375px;
-`;
+import linkDecorator from '../Common/linkDecorator';
 
-const ImageWrapper = styled.div`
-  display: block;
-  width: 100%;
-  height: 0;
-  padding-top: 51.25%;
-  background: url(${props => props.src});
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  border-bottom: 0.5px solid #dedede;
-`;
-
-const Info = styled.div`
-  padding: 15px;
-`;
-
-const SiteName = styled.span`
-  display: block;
-  font-style: normal;
-  font-weight: normal;
-  line-height: normal;
-  font-size: 12px;
-  text-transform: uppercase;
-  color: #616770;
-  font-family: 'Roboto', sans-serif;
-`;
-
-const Title = styled.span`
-  display: block;
-  font-style: normal;
-  font-weight: bold;
-  line-height: normal;
-  font-size: 15px;
-  font-family: 'Roboto', sans-serif;
-  color: #1d2129;
-  margin-top: 3px;
-`;
-
-const Description = styled.span`
-  display: block;
-  font-family: 'Roboto', sans-serif;
-  font-style: normal;
-  font-weight: normal;
-  line-height: normal;
-  font-size: 13px;
-  color: #616770;
-  margin-top: 3px;
-`;
 
 const Preview = props => {
+  console.log(props)
   return (
-    <Container>
+    <div className="post-preview">
       <a
         href={props.ogUrl ? `${props.ogUrl}` : '#'}
         target='_blank'
         rel='noopener noreferrer'
       >
         {props.ogImage && props.ogImage.url ? (
-          <ImageWrapper src={props.ogImage.url} />
+          <img src={props.ogImage.url} />
         ) : null}
       </a>
-      <Info>
-        <SiteName>{props.ogUrl}</SiteName>
-        <Title>{props.ogTitle}</Title>
-        <Description>{props.ogDescription}</Description>
-      </Info>
-    </Container>
+        <div><a href={props.ogUrl ? `${props.ogUrl}` : '#'}>{props.ogUrl}</a></div>
+        <h6>{props.ogTitle}</h6>
+        <p>{props.ogDescription}</p>
+    </div>
   );
 };
 
