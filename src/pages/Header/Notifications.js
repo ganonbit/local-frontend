@@ -38,8 +38,8 @@ const Notifications = ({ client,refetch }) => {
         <div className='more-dropdown more-with-triangle triangle-top-center'>
           <div className='ui-block-title ui-block-title-small'>
             <h6 className='title'>Notifications</h6>
-            {/* <a href='#1'>Mark all as read</a>
-            <a href='#1'>Settings</a> */}
+            {/* <a href>Mark all as read</a>
+            <a href>Settings</a> */}
           </div>
 
           <div className='mCustomScrollbar' data-mcs-theme='dark'>
@@ -53,11 +53,11 @@ const Notifications = ({ client,refetch }) => {
                 </div>
                 <div className='notification-event'>
                   <div>
-                    <a href='#1' className='h6 notification-friend'>
+                    <a href className='h6 notification-friend'>
                       Reese
                     </a>{' '}
                     commented on your new{' '}
-                    <a href='#1' className='notification-link'>
+                    <a href className='notification-link'>
                       post
                     </a>
                   </div>
@@ -98,7 +98,7 @@ const Notifications = ({ client,refetch }) => {
                 </div>
                 <div className='notification-event'>
                   <div>
-                    <a href='#1' className='h6 notification-friend'>
+                    <a href className='h6 notification-friend'>
                       Nicholas Grissom
                     </a>{' '}
                     just followed you!
@@ -140,11 +140,11 @@ const Notifications = ({ client,refetch }) => {
                 </div>
                 <div className='notification-event'>
                   <div>
-                    <a href='#1' className='h6 notification-friend'>
+                    <a href className='h6 notification-friend'>
                       Sarah Hetfield
                     </a>{' '}
                     commented on your{' '}
-                    <a href='#1' className='notification-link'>
+                    <a href className='notification-link'>
                       photo
                     </a>
                     .
@@ -168,7 +168,7 @@ const Notifications = ({ client,refetch }) => {
             </ul>
           </div>
 
-          <a href='#1' className='view-all bg-primary'>
+          <a href className='view-all bg-primary'>
             View All Notifications
           </a>
         </div>

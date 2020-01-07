@@ -69,8 +69,8 @@ const ChatNotifications = () => {
       <div className='more-dropdown more-with-triangle triangle-top-center'>
         <div className='ui-block-title ui-block-title-small'>
           <h6 className='title'>Messages</h6>
-          {/* <a href='#1'>Mark all as read</a>
-          <a href='#1'>Settings</a> */}
+          {/* <a href>Mark all as read</a>
+          <a href>Settings</a> */}
         </div>
 
         <div className='mCustomScrollbar' data-mcs-theme='dark'>

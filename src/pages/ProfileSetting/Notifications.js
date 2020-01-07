@@ -24,7 +24,7 @@ const Notifications = () => {
     <>
       <div className='ui-block-title block-title-bg'>
         <h6 className='title'>Notifications</h6>
-        <a href='#1' className='more'>
+        <a href className='more'>
           <svg className='olymp-three-dots-icon'>
             <use XlinkHref='svg-icons/sprites/icons.svg#olymp-three-dots-icon'></use>
           </svg>

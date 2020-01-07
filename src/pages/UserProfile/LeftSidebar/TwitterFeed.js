@@ -103,10 +103,10 @@ export default function TwitterFeed() {
               alt='avatar'
             />
             <div className='author'>
-              <a href='#1' className='author-name'>
+              <a href className='author-name'>
                 Space Cowboy
               </a>
-              <a href='#1' className='group'>
+              <a href className='group'>
                 @james_spiegelOK
               </a>
             </div>
@@ -114,7 +114,7 @@ export default function TwitterFeed() {
           <p>
             Tomorrow with the agency we will run 5 km for charity. Come and give
             us your support!
-            <a href='#1' className='link-post'>
+            <a href className='link-post'>
               #Daydream5K
             </a>
           </p>
@@ -131,17 +131,17 @@ export default function TwitterFeed() {
               alt='avatar'
             />
             <div className='author'>
-              <a href='#1' className='author-name'>
+              <a href className='author-name'>
                 Space Cowboy
               </a>
-              <a href='#1' className='group'>
+              <a href className='group'>
                 @james_spiegelOK
               </a>
             </div>
           </div>
           <p>
             Check out the new website of “The Bebop Bar”!{' '}
-            <a href='#1' className='link-post'>
+            <a href className='link-post'>
               bytle/thbp53f
             </a>
           </p>
@@ -158,10 +158,10 @@ export default function TwitterFeed() {
               alt='avatar'
             />
             <div className='author'>
-              <a href='#1' className='author-name'>
+              <a href className='author-name'>
                 Space Cowboy
               </a>
-              <a href='#1' className='group'>
+              <a href className='group'>
                 @james_spiegelOK
               </a>
             </div>
@@ -169,7 +169,7 @@ export default function TwitterFeed() {
           <p>
             The Sunday is the annual agency camping trip and I still haven’t got
             a tent
-            <a href='#1' className='link-post'>
+            <a href className='link-post'>
               #TheWild #Indoors
             </a>
           </p>

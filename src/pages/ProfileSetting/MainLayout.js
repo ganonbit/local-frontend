@@ -71,7 +71,7 @@ const MainLayout = ({ children }) => {
                 </div>
                 <div className='ui-block-title'>
                   <Link to='/settings/notifications'>Notifications</Link>
-                  <a href='#1' className='items-round-little bg-primary'>
+                  <a href className='items-round-little bg-primary'>
                     {auth.user.newNotifications.length}
                   </a>
                 </div>

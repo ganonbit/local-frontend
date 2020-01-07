@@ -13,8 +13,8 @@ const FriendRequest = () => {
       <div className='more-dropdown more-with-triangle triangle-top-center'>
         <div className='ui-block-title ui-block-title-small'>
           <h6 className='title'>FRIEND REQUESTS</h6>
-          <a href='#1'>Find Friends</a>
-          <a href='#1'>Settings</a>
+          <a href>Find Friends</a>
+          <a href>Settings</a>
         </div>
         <div className='mCustomScrollbar' data-mcs-theme='dark'>
           <ul className='notification-list friend-requests'>
@@ -26,7 +26,7 @@ const FriendRequest = () => {
                 />
               </div>
               <div className='notification-event'>
-                <a href='#1' className='h6 notification-friend'>
+                <a href className='h6 notification-friend'>
                   Tamara Romanoff
                 </a>
                 <span className='chat-message-item'>
@@ -34,12 +34,12 @@ const FriendRequest = () => {
                 </span>
               </div>
               <span className='notification-icon'>
-                <a href='#1' className='accept-request'>
+                <a href className='accept-request'>
                   <span className='icon-add without-text'>
                     <FontAwesomeIcon icon={faSmile} color='white' size='2x' />
                   </span>
                 </a>
-                <a href='#1' className='accept-request request-del'>
+                <a href className='accept-request request-del'>
                   <span className='icon-minus'>
                     <FontAwesomeIcon icon={faAngry} color='red' size='2x' />
                   </span>
@@ -58,13 +58,13 @@ const FriendRequest = () => {
                 />
               </div>
               <div className='notification-event'>
-                <a href='#1' className='h6 notification-friend'>
+                <a href className='h6 notification-friend'>
                   Tony Stevens
                 </a>
                 <span className='chat-message-item'>4 Friends in Common</span>
               </div>
               <span className='notification-icon'>
-                <a href='#1' className='accept-request'>
+                <a href className='accept-request'>
                   <span className='icon-add without-text'>
                     <svg className='olymp-happy-face-icon'>
                       {/* <use xlink: href="svg-icons/sprites/icons.svg#olymp-happy-face-icon">
@@ -73,7 +73,7 @@ const FriendRequest = () => {
                   </span>
                 </a>
 
-                <a href='#1' className='accept-request request-del'>
+                <a href className='accept-request request-del'>
                   <span className='icon-minus'>
                     <svg className='olymp-happy-face-icon'>
                       {/* <use xlink: href="svg-icons/sprites/icons.svg#olymp-happy-face-icon">
@@ -99,11 +99,11 @@ const FriendRequest = () => {
               </div>
               <div className='notification-event'>
                 You and{' '}
-                <a href='#1' className='h6 notification-friend'>
+                <a href className='h6 notification-friend'>
                   Mary Jane Stark
                 </a>{' '}
                 just became friends. Write on{' '}
-                <a href='#1' className='notification-link'>
+                <a href className='notification-link'>
                   her wall
                 </a>
                 .
@@ -132,13 +132,13 @@ const FriendRequest = () => {
                 />
               </div>
               <div className='notification-event'>
-                <a href='#1' className='h6 notification-friend'>
+                <a href className='h6 notification-friend'>
                   Stagg Clothing
                 </a>
                 <span className='chat-message-item'>9 Friends in Common</span>
               </div>
               <span className='notification-icon'>
-                <a href='#1' className='accept-request'>
+                <a href className='accept-request'>
                   <span className='icon-add without-text'>
                     <svg className='olymp-happy-face-icon'>
                       {/* <use xlink: href="svg-icons/sprites/icons.svg#olymp-happy-face-icon"> */}
@@ -147,7 +147,7 @@ const FriendRequest = () => {
                   </span>
                 </a>
 
-                <a href='#1' className='accept-request request-del'>
+                <a href className='accept-request request-del'>
                   <span className='icon-minus'>
                     <svg className='olymp-happy-face-icon'>
                       {/* <use xlink: href="svg-icons/sprites/icons.svg#olymp-happy-face-icon"> */}
@@ -164,7 +164,7 @@ const FriendRequest = () => {
           </ul>
         </div>
 
-        <a href='#1' className='view-all bg-blue'>
+        <a href className='view-all bg-blue'>
           Check all your Events
         </a>
       </div>
