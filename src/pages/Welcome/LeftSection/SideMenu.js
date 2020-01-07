@@ -16,28 +16,7 @@ const SideMenu = () => {
         <li>
           <Link to={Routes.COMMUNITY_GUIDELINE}>Community Guideline</Link>
         </li>
-        {/* <li>
-          <div className='dropdown'>
-            <button
-              type='button'
-              className='dropdown-toggle'
-              data-toggle='dropdown'
-            >
-              More
-            </button>
-            <div className='dropdown-menu'>
-              <Link to='#' className='dropdown-item'>
-                Link 1
-              </Link>
-              <Link to='#' className='dropdown-item'>
-                Link 2
-              </Link>
-              <Link to='#' className='dropdown-item'>
-                Link 3
-              </Link>
-            </div>
-          </div>
-        </li> */}
+       
       </ul>
       <h5>Avocado Nation © 2019</h5>
       <img

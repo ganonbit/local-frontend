@@ -88,7 +88,7 @@ function CommentsHeader(props) {
             <ul className='more-dropdown'>
               <li>
                 <Link
-                  to='#'
+                  to
                   onClick={e => {
                     e.preventDefault();
                     // editComment(e);
@@ -99,7 +99,7 @@ function CommentsHeader(props) {
               </li>
               <li>
                 <Link
-                  to='#'
+                  to
                   onClick={e => {
                     e.preventDefault();
                     deleteComment(e);

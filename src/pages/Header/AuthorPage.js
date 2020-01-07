@@ -41,12 +41,12 @@ const AuthorPage = ({ user }) => {
                   <span>Profile Settings</span>
                 </Link>
               </li>
-              {/* <li>
-                <Link to='#'>
+              <li>
+                <Link to={Routes.REWARDS}>
                   <RewardIcon className='olymp-logout-icon' />
                   <span>Rewards</span>
                 </Link>
-              </li> */}
+              </li>
               <li>
                 <a href='/' onClick={() => localStorage.clear()}>
                   <LogOut className='olymp-logout-icon' />
@@ -55,7 +55,7 @@ const AuthorPage = ({ user }) => {
               </li>
 
               <li>
-                <a href='#' data-toggle='modal' data-target='#referralUrl'>
+                <a href data-toggle='modal' data-target='#referralUrl'>
                   <EnvelopeIcon className='envelope-icon' />
                   <span>Refer User</span>
                 </a>
@@ -86,7 +86,7 @@ const AuthorPage = ({ user }) => {
           </div>
         </div>
       </div>
-      <Link to='#' className='author-name fn my-auto'>
+      <Link to className='author-name fn my-auto'>
         <div className='author-title author-title-custom'>
           {`${user.firstName} ${user.lastName}`}
           <DropDownArrowIcon className='olymp-dropdown-arrow-icon' />
@@ -138,12 +138,12 @@ export const MobileAuthorSettings = ({ user }) => {
             <span>Profile Settings</span>
           </Link>
         </li>
-        {/* <li>
-          <Link to='#'>
+        <li>
+          <Link to={Routes.REWARDS}>
             <RewardIcon className='olymp-logout-icon' />
             <span>Rewards</span>
           </Link>
-        </li> */}
+        </li>
         <li>
           <a href='/' onClick={() => localStorage.clear()}>
             <LogOut className='olymp-logout-icon' />
@@ -152,7 +152,7 @@ export const MobileAuthorSettings = ({ user }) => {
         </li>
 
         <li>
-          <a href='#' data-toggle='modal' data-target='#referralUrl'>
+          <a href data-toggle='modal' data-target='#referralUrl'>
             <EnvelopeIcon className='envelope-icon' />
             <span>Refer User</span>
           </a>
