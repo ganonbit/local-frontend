@@ -18,14 +18,14 @@ const PersonalInfo = () => {
   const [{ auth }] = useStore();
 
   const [values, setValues] = useState({
-    firstName: auth.user.firstName,
-    lastName: auth.user.lastName,
-    username: auth.user.username,
-    location: auth.user.location,
-    gender: auth.user.gender,
-    bio: auth.user.bio,
+    firstName: !auth.user.firstName ? '' : auth.user.firstName,
+    lastName: !auth.user.lastName ? '' : auth.user.lastName,
+    username: !auth.user.username ? '' : auth.user.username,
+    location: !auth.user.location ? '' : auth.user.location,
+    gender: !auth.user.gender ? 'male' : auth.user.gender,
+    bio: !auth.user.bio ? '' : auth.user.bio,
     birthday: auth.user.birthday,
-    phone: auth.user.phone,
+    phone: !auth.user.phone ? '' : auth.user.phone,
   });
   const [date, setDate] = useState(auth.user.birthday);
   const [error, setError] = useState({
@@ -42,6 +42,7 @@ const PersonalInfo = () => {
     firstName,
     lastName,
     bio,
+    gender,
     birthday,
     location,
     phone,
@@ -125,6 +126,7 @@ const PersonalInfo = () => {
     error.firstName ||
     error.lastName ||
     error.username;
+
   return (
     <Mutation
       mutation={EDIT_ACCOUNT}
@@ -185,6 +187,7 @@ const PersonalInfo = () => {
                         name='gender'
                         className='selectpicker form-control'
                         onChange={handleChange}
+                        value={gender}
                       >
                         <option value='male'>Male</option>
                         <option value='female'>Female</option>
@@ -215,8 +218,8 @@ const PersonalInfo = () => {
                         className='form-control'
                         onChange={handleChange}
                         name='location'
+                        value={location}
                       >
-                        {location}
                       </textarea>
                     </div>
                   </div>
@@ -229,8 +232,8 @@ const PersonalInfo = () => {
                         className='form-control'
                         onChange={handleChange}
                         name='bio'
+                        value={bio}
                       >
-                        {bio}
                       </textarea>
                     </div>
                   </div>
