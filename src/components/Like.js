@@ -83,7 +83,9 @@ const Like = ({ postId, user, likes, client }) => {
             <a
               href
               className={
-                hasLiked ? 'btn btn-control likes-liked' : 'btn btn-control likes'
+                hasLiked
+                  ? 'btn btn-control likes-liked'
+                  : 'btn btn-control likes'
               }
             >
               <FontAwesomeIcon

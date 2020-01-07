@@ -65,17 +65,17 @@ const TopRatedUsers = ({ client }) => {
                       </Link>
                     </div>
                     <OverlayTriggers toolTipText='FOLLOW' placement='top'>
-                    <span className='notification-icon'>
-                      <div
-                        className='accept-request'
-                        onClick={e => handleButtonClick(e, user)}
-                      >
-                        <span className='without-text'>
-                          <HappyFaceIcon />
-                          {/* <FontAwesomeIcon icon={faUserPlus} color='white' /> */}
-                        </span>
-                      </div>
-                    </span>
+                      <span className='notification-icon'>
+                        <div
+                          className='accept-request'
+                          onClick={e => handleButtonClick(e, user)}
+                        >
+                          <span className='without-text'>
+                            <HappyFaceIcon />
+                            {/* <FontAwesomeIcon icon={faUserPlus} color='white' /> */}
+                          </span>
+                        </div>
+                      </span>
                     </OverlayTriggers>
                   </li>
                 ))}
