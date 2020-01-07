@@ -12,10 +12,10 @@ const WelcomeFooter = () => {
               <span>English (US)</span>
             </div>
             <div className='col-6 text-right'>
-            <img
-              src='https://res.cloudinary.com/weare270b/image/upload/v1578333627/static/avocado-primary-logo_color_l9xyvo.png'
-              alt='avocado nation logo'
-            />
+              <img
+                src='https://res.cloudinary.com/weare270b/image/upload/v1578333627/static/avocado-primary-logo_color_l9xyvo.png'
+                alt='avocado nation logo'
+              />
             </div>
           </div>
         </div>

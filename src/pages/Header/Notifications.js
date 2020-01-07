@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { withApollo } from 'react-apollo';
 import { UPDATE_NOTIFICATION_SEEN } from 'graphql/notification';
 
-const Notifications = ({ client,refetch }) => {
+const Notifications = ({ client, refetch }) => {
   const [{ auth }] = useStore();
 
   const updateNotificationSeen = async () => {
@@ -17,7 +17,7 @@ const Notifications = ({ client,refetch }) => {
           },
         },
       });
-      refetch()
+      refetch();
     } catch (err) {
       console.log(err);
     }

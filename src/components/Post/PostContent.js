@@ -47,7 +47,7 @@ export default function PostContent(props) {
 
       {metaFromContentPreview.meta ? (
         <Preview {...metaFromContentPreview.meta} />
-      ) : null }
+      ) : null}
       {!image ? null : (
         <div className='post-img'>
           <img alt='postImage' src={image} />

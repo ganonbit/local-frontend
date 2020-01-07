@@ -1,7 +1,7 @@
 import React from 'react';
 import WelcomeHeader from 'pages/Welcome/WelcomeHeader';
 
-const TermandServices = ({ isAuth }) => (
+const TermsAndServices = ({ isAuth }) => (
   <>
     {!isAuth && (
       <div className='page-has-left-panels page-has-right-panels pr-0'>
@@ -327,4 +327,4 @@ const TermandServices = ({ isAuth }) => (
   </>
 );
 
-export default TermandServices;
+export default TermsAndServices;
