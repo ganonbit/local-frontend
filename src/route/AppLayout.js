@@ -57,16 +57,16 @@ const AppLayout = ({ refetch, history }) => {
           render={props => <TermandServices isAuth={true} {...props} />}
         />
         <Route
+          exact
           path={Routes.PRIVACY_POLICY}
           render={props => <PrivacyPolicy isAuth={true} {...props} />}
         />
-
+        <Route path={Routes.BADGES} render={props => <Badges {...props} />} />
         <Route
           exact
           path={Routes.USER_PROFILE}
           render={props => <UserProfile refetch={refetch} {...props} />}
         />
-        <Route path={Routes.BADGES} render={<Badges />} />
         <Route path={Routes.HOME} render={props => <Home {...props} />} />
       </Switch>
     </div>
