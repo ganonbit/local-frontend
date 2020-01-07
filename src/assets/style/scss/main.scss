@@ -22307,8 +22307,8 @@ span.material-input-error {
 }
 
 .post-img img {
-  width: auto;
-  max-height: 500px;
+  width: 100%;
+  // max-height: 500px; add back when we have popup modal and set width: auto
 
 }
 
