@@ -13,14 +13,7 @@ const SidebarContent = ({ onSetSidebarOpen, isAuth, location }) => {
         <>
           <Default>
             <Link
-              to={generatePath(
-                location.pathname.indexOf('/profile') === 0
-                  ? Routes.HOME
-                  : Routes.USER_PROFILE,
-                {
-                  username: auth.user.username,
-                }
-              )}
+              to={generatePath(Routes.HOME)}
               className='logo'
             >
               <div className='img-wrap'>
