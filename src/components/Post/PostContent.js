@@ -42,15 +42,15 @@ export default function PostContent(props) {
     fetchData();
   }, [rawContent]);
   return (
-    <div className='postContainer'>
+    <div className='post-container'>
       <Linkify options={linkDecorator}>{rawContent}</Linkify>
 
-      {metaFromContentPreview.meta && (
+      {metaFromContentPreview.meta ? (
         <Preview {...metaFromContentPreview.meta} />
-      )}
+      ) : null}
       {!image ? null : (
         <div className='post-img'>
-          <img className='postImage' alt='postImage' src={image} />
+          <img alt='postImage' src={image} />
         </div>
       )}
     </div>

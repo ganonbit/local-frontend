@@ -3690,6 +3690,14 @@ button.btn-lg {
   padding: 1rem 3rem;
 }
 
+button.btn-redeem {
+  font-size: 30px;
+  line-height: 1.3;
+  color: #fff;
+  padding: 19px 31px;
+  margin-left: 20px;
+}
+
 .form-inline .btn {
   margin-bottom: 0;
 }
@@ -22294,12 +22302,14 @@ span.material-input-error {
   color: #fff;
 }
 
-.post-img {
+.post-container {
   min-height: 50px;
 }
 
 .post-img img {
   width: 100%;
+  // max-height: 500px; add back when we have popup modal and set width: auto
+
 }
 
 .upload-box {
@@ -22678,7 +22688,6 @@ li.add-more-posts span {
 
 .point-wrap ul {
   display: inline-flex;
-  border: 1px solid #cbd0d0;
   margin-bottom: 0;
 }
 
@@ -22692,7 +22701,7 @@ li.add-more-posts span {
   padding: 19px 31px;
 }
 
-.point-wrap ul li:last-child {
+.point-wrap ul li:nth-child(n+2) {
   color: #8fc42c;
   background: #fff;
   padding: 19px 37px;
@@ -22956,7 +22965,13 @@ main-header-content h1 {
 }
 
 .birthday-item.badges .author-thumb img {
-  max-width: 100%;
+  width: 100%;
+  height: auto;
+}
+
+.badge-img { 
+  width: 100%;
+  height: auto;
 }
 
 div#accordion .card {
@@ -23084,6 +23099,19 @@ div#accordion .card {
   .welcome-video-banner h6 {
     font-size: 18px;
   }
+
+  .point-wrap::before {
+    content: '';
+    background: url(https://res.cloudinary.com/weare270b/image/upload/v1576188973/static/reward-badge_kb5lmj.png)
+      center center no-repeat;
+    background-size: contain;
+    position: absolute;
+    right: -420px;
+    bottom: 0;
+    width: 100%;
+    z-index: 1;
+    height: 250px;
+  }
 }
 
 @media (max-width: 1366px) {
@@ -23126,6 +23154,26 @@ div#accordion .card {
 @media (max-width: 1080px) {
   .header-content-wrapper {
     display: block;
+  }
+
+  .point-wrap ul {
+    display: grid;
+  }
+
+  button.btn-redeem {
+    margin-left: 0;
+  }
+
+  .point-wrap::before {
+    content: '';
+    background: url(https://res.cloudinary.com/weare270b/image/upload/v1576188973/static/reward-badge_kb5lmj.png) center center no-repeat;
+    background-size: contain;
+    position: relative;
+    width: 500px;
+    z-index: 1;
+    height: 250px;
+    display: inline-flex;
+    left: 0;
   }
 
   .header .page-title {

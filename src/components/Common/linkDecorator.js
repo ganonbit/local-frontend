@@ -9,7 +9,7 @@ const linkDecorator = {
   },
   formatHref: function(href, type) {
     if (type === 'hashtag') {
-      href=`${Routes.HOME}?hash-tag-search=${href.substring(1)}`;
+      href = `${Routes.HOME}?hash-tag-search=${href.substring(1)}`;
     }
     return href;
   },

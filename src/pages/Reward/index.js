@@ -34,11 +34,10 @@ const Reward = ({ user }) => {
               <ul>
                 <li>your points</li>
                 <li>{!auth ? '0' : auth.user.totalPoints}</li>
+                <button className='btn btn-redeem' disabled='disabled'>
+                  REDEEM
+                </button>
               </ul>
-              <span>&nbsp;</span>
-              <button className='btn-lg' disabled='disabled'>
-                REDEEM
-              </button>
             </div>
             <div className='point-system'>
               <h3>points system</h3>

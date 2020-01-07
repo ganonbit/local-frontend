@@ -80,16 +80,20 @@ const ChooseImage = ({ isShowing, hide }) => {
             <a
               href
               className='btn btn-secondary btn-lg btn--half-width'
-              onClick={e => {e.preventDefault(); hide();}}
+              onClick={e => {
+                e.preventDefault();
+                hide();
+              }}
             >
               Cancel
             </a>
-            <a 
+            <a
               href
               onClick={e => {
                 e.preventDefault();
-              }} 
-              className='btn btn-primary btn-lg btn--half-width'>
+              }}
+              className='btn btn-primary btn-lg btn--half-width'
+            >
               Confirm Photo
             </a>
           </div>

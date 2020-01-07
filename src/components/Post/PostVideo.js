@@ -13,7 +13,15 @@ export default function PostVideo(props) {
   return (
     <>
       <p>
-        Hey <a href onClick={e => {e.preventDefault();}}>{props.tag}</a>
+        Hey{' '}
+        <a
+          href
+          onClick={e => {
+            e.preventDefault();
+          }}
+        >
+          {props.tag}
+        </a>
         {props.body}
       </p>
       <div className='post-video'>
@@ -27,12 +35,13 @@ export default function PostVideo(props) {
           </a>
         </div>
         <div className='video-content'>
-          <a 
-            href 
+          <a
+            href
             onClick={e => {
               e.preventDefault();
-            }} 
-            className='h4 title'>
+            }}
+            className='h4 title'
+          >
             {props.title}
           </a>
           <p>{props.video_desc}</p>

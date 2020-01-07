@@ -66,8 +66,10 @@ function CommentsHeader(props) {
         <div className='author-date'>
           <a
             href={generatePath(Routes.USER_PROFILE, {
-            username: author.username})} 
-            className='comment__author-name fn'>
+              username: author.username,
+            })}
+            className='comment__author-name fn'
+          >
             {author.firstName} {author.lastName}
           </a>
           <div className='post__date'>
