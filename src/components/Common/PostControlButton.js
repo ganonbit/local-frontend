@@ -7,7 +7,12 @@ export default function PostControlButton(props) {
   return (
     <div className='control-block-button post-control-button'>
       {!props.isAuth ? (
-        <a href='#1' className='btn btn-control likes'>
+        <a 
+          href 
+          onClick={e => {
+            e.preventDefault();
+          }} 
+          className='btn btn-control likes'>
           <img
             src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/heart-icon_jd2hne.png'
             alt=''
@@ -18,14 +23,22 @@ export default function PostControlButton(props) {
         <Like user={author} postId={postId} likes={likes} />
       )}
 
-      <a href='#1' className='btn btn-control comments' onClick={toggle}>
+      <a  
+          href 
+          className='btn btn-control comments' 
+          onClick={toggle}>
         <img
           src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/comments-icon_ffpa0l.png'
           alt=''
         />
       </a>
 
-      <a href='#1' className='btn btn-control share-link'>
+      <a 
+        href 
+        onClick={e => {
+          e.preventDefault();
+        }} 
+        className='btn btn-control share-link'>
         <img
           src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/share-icon_rkyjac.png'
           alt=''

@@ -126,7 +126,6 @@ const ProfileHeader = ({ user, refetch, auth, username, isOwner, isSelma }) => {
                       <ul className='more-dropdown more-with-triangle triangle-bottom-right'>
                         <li>
                           <Link
-                            className='author-thumb'
                             data-toggle='modal'
                             data-target='#update-header-photo'
                             onClick={e => {
@@ -143,7 +142,6 @@ const ProfileHeader = ({ user, refetch, auth, username, isOwner, isSelma }) => {
                         </li>
                         <li>
                           <Link
-                            className='author-thumb'
                             data-toggle='modal'
                             data-target='#update-header-photo'
                             onClick={e => {

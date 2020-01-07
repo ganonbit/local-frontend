@@ -644,7 +644,7 @@
 .profile-section {
   position: relative;
   padding: 38px 0;
-  z-index: 3;
+  z-index: 10;
 }
 
 .profile-section .control-block-button {
@@ -1808,12 +1808,12 @@
 
   .top-header-author {
     position: relative;
-    bottom: 20px;
+    bottom: 100px;
     color: #888da8;
   }
 
-  .top-header-author .author-name {
-    color: #fff;
+  .top-header-author .author-name, .top-header-author .author-location {
+    color: #333333;
   }
 
   .top-header-author .author-name:hover {
@@ -1960,7 +1960,7 @@
 
   .profile-section {
     padding: 30px 0;
-    z-index: 5;
+    z-index: 10;
   }
 
   .header--standard-landing .header-menu {
@@ -9443,8 +9443,8 @@ padding: 10px 0;
 
 .post-add-icon svg,
 .post-add-icon img {
-  margin-right: 10px;
-  width: 1.2rem;
+  margin-right: 5px;
+  width: 1.6rem;
   height: 20px;
 }
 
@@ -9568,11 +9568,6 @@ padding: 10px 0;
 
   .post__author .more {
     margin-right: -16px;
-  }
-
-  .post-control-button .btn-control svg {
-    width: 14px;
-    height: 14px;
   }
 
   .post-control-button .btn-control {

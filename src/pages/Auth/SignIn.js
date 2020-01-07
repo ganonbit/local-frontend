@@ -123,7 +123,7 @@ const SignIn = ({ refetch, history }) => {
 
                             <a
                               onClick={() => setReset(true)}
-                              href='#1'
+                              href
                               className='forgot'
                               data-toggle='modal'
                               data-target='#restore-password'

@@ -91,7 +91,10 @@ function AddComment({ authorId, author, postId, onCancel, client, userId }) {
                 ></textarea>
                 <div className='add-options-message'>
                   <a
-                    href='#1'
+                    href
+                    onClick={e => {
+                      e.preventDefault();
+                    }}
                     className='options-message'
                     data-toggle='modal'
                     data-target='#update-header-photo'

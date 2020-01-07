@@ -79,7 +79,7 @@ const Like = ({ postId, user, likes ,client}) => {
       {mutate => {
         return (
           <a
-            href='#1'
+            href
             className={
               hasLiked ? 'btn btn-control likes-liked' : 'btn btn-control likes'
             }

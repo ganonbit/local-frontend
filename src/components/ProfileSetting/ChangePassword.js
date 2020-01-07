@@ -81,7 +81,7 @@ const PasswordSetting = () => {
                       </div>
 
                       <a
-                        href='#1'
+                        href
                         className='forgot'
                         data-toggle='modal'
                         data-target='#restore-password'
