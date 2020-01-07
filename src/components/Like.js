@@ -4,6 +4,7 @@ import { Mutation, withApollo } from 'react-apollo';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
+import OverlayTriggers from './Common/ToolTip';
 
 import { GET_FOLLOWED_POSTS, GET_POSTS } from 'graphql/post';
 import { GET_AUTH_USER } from 'graphql/user';
@@ -13,7 +14,7 @@ import { useStore } from 'store';
 /**
  * Component for rendering Like button
  */
-const Like = ({ postId, user, likes ,client}) => {
+const Like = ({ postId, user, likes, client }) => {
   const [loading, setLoading] = useState(true);
 
   const [{ auth }] = useStore();
@@ -42,7 +43,7 @@ const Like = ({ postId, user, likes ,client}) => {
     setLoading(false);
     setTimeout(() => {
       const { data } = mutate();
-      createNotification()
+      createNotification();
       setLoading(true);
     }, 2000);
 
@@ -78,21 +79,25 @@ const Like = ({ postId, user, likes ,client}) => {
     >
       {mutate => {
         return (
-          <a
-            href
-            className={
-              hasLiked ? 'btn btn-control likes-liked' : 'btn btn-control likes'
-            }
-          >
-            <FontAwesomeIcon
-              disabled={loading}
-              icon={faHeart}
-              size='2x'
-              color={hasLiked ? 'red' : 'grey'}
-              onClick={() => loading && handleButtonClick(mutate)}
-            />
-            <div className='ripple-container'></div>
-          </a>
+          <OverlayTriggers toolTipText='LIKE' placement='left'>
+            <a
+              href
+              className={
+                hasLiked
+                  ? 'btn btn-control likes-liked'
+                  : 'btn btn-control likes'
+              }
+            >
+              <FontAwesomeIcon
+                disabled={loading}
+                icon={faHeart}
+                size='2x'
+                color={hasLiked ? 'red' : 'grey'}
+                onClick={() => loading && handleButtonClick(mutate)}
+              />
+              <div className='ripple-container'></div>
+            </a>
+          </OverlayTriggers>
         );
       }}
     </Mutation>

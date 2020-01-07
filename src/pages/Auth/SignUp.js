@@ -1,9 +1,6 @@
 import React, { useState } from 'react';
 import { Mutation } from 'react-apollo';
-import {
-  withRouter,
-  useLocation
-} from "react-router-dom";
+import { withRouter, useLocation } from 'react-router-dom';
 import DatePicker from 'react-datepicker';
 import ReCAPTCHA from 'react-google-recaptcha';
 
@@ -24,7 +21,7 @@ import 'react-datepicker/dist/react-datepicker.css';
 
 const SignUp = ({ refetch, history }) => {
   let location = useLocation();
-  let invitedById = location.state ? location.state.invitedById : null
+  let invitedById = location.state ? location.state.invitedById : null;
 
   const [error, setError] = useState({
     firstName: '',
@@ -111,13 +108,13 @@ const SignUp = ({ refetch, history }) => {
         birthday: '',
         gender: 'male',
         captcha: false,
-      })
+      });
 
-      let emailVerificationModal = document.getElementById('emailVerification')
-      emailVerificationModal.classList.add('email-verification-modal-visible')
+      let emailVerificationModal = document.getElementById('emailVerification');
+      emailVerificationModal.classList.add('email-verification-modal-visible');
     } catch (error) {
-      console.log('The following error occurred while handling signup form')
-      console.log(error)
+      console.log('The following error occurred while handling signup form');
+      console.log(error);
     }
   };
 
@@ -161,7 +158,7 @@ const SignUp = ({ refetch, history }) => {
                     role='tabpanel'
                     data-mh='log-tab'
                   >
-                    <div className='title h6'>Register to Avocado Nation</div>
+                    <div className='title h6'>Join the Community Today!</div>
                     <form
                       className='content'
                       onSubmit={e => handleSubmit(e, signup)}

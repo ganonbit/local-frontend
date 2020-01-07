@@ -21,11 +21,11 @@ const PersonalInfo = () => {
     firstName: auth.user.firstName,
     lastName: auth.user.lastName,
     username: auth.user.username,
-    location: auth.user.location,
-    gender: auth.user.gender,
-    bio: auth.user.bio,
+    location: !auth.user.location ? '' : auth.user.location,
+    gender: !auth.user.gender ? 'male' : auth.user.gender,
+    bio: !auth.user.bio ? '' : auth.user.bio,
     birthday: auth.user.birthday,
-    phone: auth.user.phone,
+    phone: !auth.user.phone ? '' : auth.user.phone,
   });
   const [date, setDate] = useState(auth.user.birthday);
   const [error, setError] = useState({
@@ -42,6 +42,7 @@ const PersonalInfo = () => {
     firstName,
     lastName,
     bio,
+    gender,
     birthday,
     location,
     phone,
@@ -125,6 +126,7 @@ const PersonalInfo = () => {
     error.firstName ||
     error.lastName ||
     error.username;
+
   return (
     <Mutation
       mutation={EDIT_ACCOUNT}
@@ -185,6 +187,7 @@ const PersonalInfo = () => {
                         name='gender'
                         className='selectpicker form-control'
                         onChange={handleChange}
+                        value={gender}
                       >
                         <option value='male'>Male</option>
                         <option value='female'>Female</option>
@@ -215,9 +218,8 @@ const PersonalInfo = () => {
                         className='form-control'
                         onChange={handleChange}
                         name='location'
-                      >
-                        {location}
-                      </textarea>
+                        value={location}
+                      ></textarea>
                     </div>
                   </div>
                   <div className='col col-lg-6 col-md-6 col-sm-12 col-12'>
@@ -229,9 +231,8 @@ const PersonalInfo = () => {
                         className='form-control'
                         onChange={handleChange}
                         name='bio'
-                      >
-                        {bio}
-                      </textarea>
+                        value={bio}
+                      ></textarea>
                     </div>
                   </div>
                   {/* <div className='col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12'>

@@ -45,7 +45,7 @@ const UploadCoverImage = props => {
       image: e.target.files[0],
       imagePreview: URL.createObjectURL(e.target.files[0]),
     });
-    e.target.value=null
+    e.target.value = null;
   };
   const deleteProfileImage = async () => {
     try {
@@ -116,7 +116,7 @@ const UploadCoverImage = props => {
                             className='video-bnr'
                             src={
                               !imagePreview
-                                ? 'https://res.cloudinary.com/weare270b/image/upload/v1576220262/static/Image_from_iOS_1_bnaxnc.jpg'
+                                ? 'https://res.cloudinary.com/weare270b/image/upload/v1576214852/static/profile-bg_edozor.png'
                                 : imagePreview
                             }
                             alt='images'

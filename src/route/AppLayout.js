@@ -17,7 +17,7 @@ import Badges from 'pages/Badges';
 import Messages from 'pages/Messages';
 import Faqs from 'pages/Faqs';
 import CommunityGuideline from 'pages/CommunityGuideline';
-import TermandServices from 'pages/TermandServices';
+import TermsAndServices from 'pages/TermsAndServices';
 import PrivacyPolicy from 'pages/PrivacyPolicy';
 
 import * as Routes from 'routes';
@@ -54,7 +54,7 @@ const AppLayout = ({ refetch, history }) => {
 
         <Route
           path={Routes.TERM_AND_CONDITIONS}
-          render={props => <TermandServices isAuth={true} {...props} />}
+          render={props => <TermsAndServices isAuth={true} {...props} />}
         />
         <Route
           exact

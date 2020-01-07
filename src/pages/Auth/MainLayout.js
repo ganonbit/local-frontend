@@ -47,7 +47,7 @@ const MainLayout = ({ children, location }) => {
             <div className='landing-content'>
               <h1>
                 The <b>FIRST EVER</b> online community for avocado lovers is
-                coming soon
+                here!
               </h1>
               <p>
                 You will be rewarded for doing what you love to do; sharing your

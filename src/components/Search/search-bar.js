@@ -9,7 +9,7 @@ const SearchBar = ({ currentRefinement, refine }) => {
     <>
       <input
         className='form-control js-user-search'
-        placeholder='Search here people or posts...'
+        placeholder='Search here for people or posts...'
         type='search'
         aria-label='Search'
         value={currentRefinement}
