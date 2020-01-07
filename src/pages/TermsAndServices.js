@@ -11,7 +11,7 @@ const TermsAndServices = ({ isAuth }) => (
     <div class='stunning-header bg-primary-opacity'>
       <div class='header-spacer--standard'></div>
       <div class='stunning-header-content'>
-        <h1 class='stunning-header-title'>Avocado Nation Terms of services</h1>
+        <h1 class='stunning-header-title'>Avocado Nation Terms Of Services</h1>
         <ul class='breadcrumbs'>
           <li class='breadcrumbs-item active'>
             <span>TERMS OF SERVICES</span>
@@ -29,8 +29,8 @@ const TermsAndServices = ({ isAuth }) => (
               <h4>Welcome to Avocado Nation!</h4>
               <p>
                 Avocados From Mexico (AFM) maintains the website 
-                <a href='#'>www.theavocadonation.com</a> or{' '}
-                <a href='#'>www.avocadosfrommexico.com/avocado-nation</a>{' '}
+                <a href='/'>www.theavocadonation.com</a> or{' '}
+                <a href='https://www.avocadosfrommexico.com/avocado-nation'>www.avocadosfrommexico.com/avocado-nation</a>{' '}
                 (“Avocado Nation” or the “Platform”) for your avocado
                 information, education, enjoyment and use. By accessing and
                 registering to the Platform, you agree to accept, without
@@ -77,7 +77,7 @@ const TermsAndServices = ({ isAuth }) => (
                 <a href='#'>AFM’s Privacy Policy</a> explains how AFM collects
                 and uses your personal data to determine some of the content you
                 see and to provide the other services described below. You can
-                also go to your <a href='#'>SETTINGS</a> at any time to review
+                also go to your <a href='/settings'>SETTINGS</a> at any time to review
                 the privacy choices you have about how your data may be used.
               </p>
               <h4>Intellectual Property Protection</h4>
@@ -179,7 +179,7 @@ const TermsAndServices = ({ isAuth }) => (
                 license to host, use, distribute, modify, run, copy, publicly
                 perform or display, translate, and create derivative works of
                 your content (consistent with your <a href='#'>privacy</a> and 
-                <a href='#'>application</a> settings).
+                <a href='/settings'>application</a> settings).
               </p>
               <h4>Limits on using AFM intellectual property</h4>
               <p>
