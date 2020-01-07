@@ -18,9 +18,9 @@ const PersonalInfo = () => {
   const [{ auth }] = useStore();
 
   const [values, setValues] = useState({
-    firstName: !auth.user.firstName ? '' : auth.user.firstName,
-    lastName: !auth.user.lastName ? '' : auth.user.lastName,
-    username: !auth.user.username ? '' : auth.user.username,
+    firstName: auth.user.firstName,
+    lastName: auth.user.lastName,
+    username: auth.user.username,
     location: !auth.user.location ? '' : auth.user.location,
     gender: !auth.user.gender ? 'male' : auth.user.gender,
     bio: !auth.user.bio ? '' : auth.user.bio,
