@@ -57,14 +57,14 @@ const EditPost = props => {
       imagePreview: URL.createObjectURL(e.target.files[0]),
     });
   };
-  let onImageDelte=()=>{
+  let onImageDelte = () => {
     setValues({
       ...values,
       error: '',
       image: null,
       imagePreview: '',
     });
-  }
+  };
   return (
     <Mutation
       mutation={EDIT_POST}
@@ -132,7 +132,11 @@ const EditPost = props => {
                               src={imagePreview}
                               alt='images'
                             />
-                            <button type='button' className='btn p-0 m-0' onClick={()=>onImageDelte()}>
+                            <button
+                              type='button'
+                              className='btn p-0 m-0'
+                              onClick={() => onImageDelte()}
+                            >
                               x
                             </button>
                           </li>

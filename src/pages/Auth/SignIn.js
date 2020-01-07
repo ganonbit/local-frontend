@@ -150,8 +150,8 @@ const SignIn = ({ refetch, history }) => {
                             <Link to={Routes.SIGN_UP} className='btn-register'>
                               Register Now!
                             </Link>
-                            &nbsp; It’s really simple and you can start enjoying all the
-                            benefits!
+                            &nbsp; It’s really simple and you can start enjoying
+                            all the benefits!
                           </p>
                         </div>
                       </div>

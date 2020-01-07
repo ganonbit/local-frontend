@@ -17,23 +17,23 @@ const PostFooter = props => {
       </span>
 
       <div className='comments-shared'>
-      <OverlayTriggers toolTipText='COMMENT' placement='left'>
-        <a
-          href
-          onClick={e => {
-            e.preventDefault();
-          }}
-          className='post-add-icon inline-items'
-        >
-          <FontAwesomeIcon
-            icon={faComment}
-            style={{ width: '1.6rem' }}
-            onClick={toggle}
-          />
+        <OverlayTriggers toolTipText='COMMENT' placement='left'>
+          <a
+            href
+            onClick={e => {
+              e.preventDefault();
+            }}
+            className='post-add-icon inline-items'
+          >
+            <FontAwesomeIcon
+              icon={faComment}
+              style={{ width: '1.6rem' }}
+              onClick={toggle}
+            />
 
-          <span>{comments.length}</span>
-        </a>
-      </OverlayTriggers>
+            <span>{comments.length}</span>
+          </a>
+        </OverlayTriggers>
       </div>
     </div>
   );

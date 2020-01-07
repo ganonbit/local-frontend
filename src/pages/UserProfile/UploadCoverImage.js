@@ -45,7 +45,7 @@ const UploadCoverImage = props => {
       image: e.target.files[0],
       imagePreview: URL.createObjectURL(e.target.files[0]),
     });
-    e.target.value=null
+    e.target.value = null;
   };
   const deleteProfileImage = async () => {
     try {
