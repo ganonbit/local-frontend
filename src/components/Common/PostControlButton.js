@@ -1,12 +1,14 @@
 import React from 'react';
 
 import Like from 'components/Like';
+import OverlayTriggers from '../Common/ToolTip';
 
 export default function PostControlButton(props) {
   const { author, postId, likes, toggle } = props;
   return (
     <div className='control-block-button post-control-button'>
       {!props.isAuth ? (
+        <OverlayTriggers toolTipText='LIKE' placement='left'>
         <a
           href
           onClick={e => {
@@ -20,10 +22,11 @@ export default function PostControlButton(props) {
           />
           <div className='ripple-container'></div>
         </a>
+        </OverlayTriggers>
       ) : (
         <Like user={author} postId={postId} likes={likes} />
       )}
-
+      <OverlayTriggers toolTipText='COMMENT' placement='left'>
       <a
         href
         className='btn btn-control comments'
@@ -36,7 +39,9 @@ export default function PostControlButton(props) {
           alt=''
         />
       </a>
+      </OverlayTriggers>
 
+      <OverlayTriggers toolTipText='SHARE' placement='left'>
       <a
         href
         onClick={e => {
@@ -49,6 +54,7 @@ export default function PostControlButton(props) {
           alt=''
         />
       </a>
+      </OverlayTriggers>  
     </div>
   );
 }

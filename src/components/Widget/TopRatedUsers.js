@@ -4,6 +4,7 @@ import Avatar from 'components/Avatar';
 import { Query, withApollo } from 'react-apollo';
 import { generatePath, Link } from 'react-router-dom';
 import { HappyFaceIcon } from 'components/icons';
+import OverlayTriggers from '../Common/ToolTip';
 
 import { GET_TOP_USERS } from 'graphql/user';
 import { CREATE_FOLLOW } from 'graphql/follow';
@@ -63,6 +64,7 @@ const TopRatedUsers = ({ client }) => {
                         {`${user.firstName} ${user.lastName}`}
                       </Link>
                     </div>
+                    <OverlayTriggers toolTipText='FOLLOW' placement='top'>
                     <span className='notification-icon'>
                       <div
                         className='accept-request'
@@ -74,6 +76,7 @@ const TopRatedUsers = ({ client }) => {
                         </span>
                       </div>
                     </span>
+                    </OverlayTriggers>
                   </li>
                 ))}
               </ul>

@@ -158,7 +158,7 @@ const SignUp = ({ refetch, history }) => {
                     role='tabpanel'
                     data-mh='log-tab'
                   >
-                    <div className='title h6'>Register to Avocado Nation</div>
+                    <div className='title h6'>Join the Community Today!</div>
                     <form
                       className='content'
                       onSubmit={e => handleSubmit(e, signup)}

@@ -146,11 +146,11 @@ const SignIn = ({ refetch, history }) => {
                             Login
                           </button>
                           <p>
-                            Don’t you have an account?
+                            Don’t you have an account? &nbsp;
                             <Link to={Routes.SIGN_UP} className='btn-register'>
                               Register Now!
                             </Link>
-                            it’s really simple and you can start enjoing all the
+                            &nbsp; It’s really simple and you can start enjoying all the
                             benefits!
                           </p>
                         </div>
