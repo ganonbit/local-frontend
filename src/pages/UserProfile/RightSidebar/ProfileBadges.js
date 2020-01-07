@@ -16,6 +16,7 @@ export default function ProfileBadges() {
           <li>
             <Link to={Routes.BADGES}>
               <img
+                className="badge-img"
                 src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/badge1_uylxzt.png'
                 alt='author'
               />
@@ -24,6 +25,7 @@ export default function ProfileBadges() {
           <li>
             <Link to={Routes.BADGES}>
               <img
+                className="badge-img"
                 src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/badge4_bbyrgn.png'
                 alt='author'
               />
@@ -32,6 +34,7 @@ export default function ProfileBadges() {
           <li>
             <Link to={Routes.BADGES}>
               <img
+                className="badge-img"
                 src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/badge3_ainxuo.png'
                 alt='author'
               />
@@ -40,6 +43,7 @@ export default function ProfileBadges() {
           <li>
             <Link to={Routes.BADGES}>
               <img
+                className="badge-img"
                 src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/badge6_aposcg.png'
                 alt='author'
               />
@@ -48,6 +52,7 @@ export default function ProfileBadges() {
           <li>
             <Link to={Routes.BADGES}>
               <img
+                className="badge-img"
                 src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/badge11_myr5bu.png'
                 alt='author'
               />
@@ -56,6 +61,7 @@ export default function ProfileBadges() {
           <li>
             <Link to={Routes.BADGES}>
               <img
+                className="badge-img"
                 src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/badge8_mxrrta.png'
                 alt='author'
               />
@@ -64,6 +70,7 @@ export default function ProfileBadges() {
           <li>
             <Link to={Routes.BADGES}>
               <img
+                className="badge-img"
                 src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/badge10_clxxbh.png'
                 alt='author'
               />
@@ -72,6 +79,7 @@ export default function ProfileBadges() {
           <li>
             <Link to={Routes.BADGES}>
               <img
+                className="badge-img"
                 src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/badge13_rgeymj.png'
                 alt='author'
               />
@@ -80,6 +88,7 @@ export default function ProfileBadges() {
           <li>
             <Link to={Routes.BADGES}>
               <img
+                className="badge-img"
                 src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/badge7_wztpe7.png'
                 alt='author'
               />
@@ -88,6 +97,7 @@ export default function ProfileBadges() {
           <li>
             <Link to={Routes.BADGES}>
               <img
+                className="badge-img"
                 src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/badge12_za7acs.png'
                 alt='author'
               />

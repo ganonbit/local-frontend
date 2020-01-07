@@ -22956,7 +22956,13 @@ main-header-content h1 {
 }
 
 .birthday-item.badges .author-thumb img {
-  max-width: 100%;
+  width: 100%;
+  height: auto;
+}
+
+.badge-img { 
+  width: 100%;
+  height: auto;
 }
 
 div#accordion .card {
