@@ -22304,6 +22304,8 @@ span.material-input-error {
 
 .post-img {
   min-height: 50px;
+  max-height: 500px;
+  overflow: scroll;
 }
 
 .post-img img {
