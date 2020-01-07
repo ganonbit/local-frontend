@@ -219,8 +219,7 @@ const PersonalInfo = () => {
                         onChange={handleChange}
                         name='location'
                         value={location}
-                      >
-                      </textarea>
+                      ></textarea>
                     </div>
                   </div>
                   <div className='col col-lg-6 col-md-6 col-sm-12 col-12'>
@@ -233,8 +232,7 @@ const PersonalInfo = () => {
                         onChange={handleChange}
                         name='bio'
                         value={bio}
-                      >
-                      </textarea>
+                      ></textarea>
                     </div>
                   </div>
                   {/* <div className='col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12'>

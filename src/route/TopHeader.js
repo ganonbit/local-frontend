@@ -6,7 +6,7 @@ import Search from '../components/Search';
 import { useStore } from 'store';
 import UserReferralModal from '../pages/Header/UserReferralModal';
 
-const TopHeader = ({refetch}) => {
+const TopHeader = ({ refetch }) => {
   const [{ auth }] = useStore();
 
   return (

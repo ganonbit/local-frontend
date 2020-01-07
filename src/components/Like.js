@@ -13,7 +13,7 @@ import { useStore } from 'store';
 /**
  * Component for rendering Like button
  */
-const Like = ({ postId, user, likes ,client}) => {
+const Like = ({ postId, user, likes, client }) => {
   const [loading, setLoading] = useState(true);
 
   const [{ auth }] = useStore();
@@ -42,7 +42,7 @@ const Like = ({ postId, user, likes ,client}) => {
     setLoading(false);
     setTimeout(() => {
       const { data } = mutate();
-      createNotification()
+      createNotification();
       setLoading(true);
     }, 2000);
 

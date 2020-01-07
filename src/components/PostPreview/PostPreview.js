@@ -3,10 +3,9 @@ import Linkify from 'linkifyjs/react';
 
 import linkDecorator from '../Common/linkDecorator';
 
-
 const Preview = props => {
   return (
-    <div className="post-preview">
+    <div className='post-preview'>
       <a
         href={props.ogUrl ? `${props.ogUrl}` : '#'}
         target='_blank'
@@ -16,9 +15,11 @@ const Preview = props => {
           <img src={props.ogImage.url} />
         ) : null}
       </a>
-        <div><a href={props.ogUrl ? `${props.ogUrl}` : '#'}>{props.ogUrl}</a></div>
-        <h6>{props.ogTitle}</h6>
-        <p>{props.ogDescription}</p>
+      <div>
+        <a href={props.ogUrl ? `${props.ogUrl}` : '#'}>{props.ogUrl}</a>
+      </div>
+      <h6>{props.ogTitle}</h6>
+      <p>{props.ogDescription}</p>
     </div>
   );
 };

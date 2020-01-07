@@ -8,7 +8,7 @@ import {
 import { SignIn, SignUp, VerifyAccount, ResetPassword } from 'pages/Auth';
 import Welcome from 'pages/Welcome';
 
-import TermandServices from 'pages/TermandServices';
+import TermsAndServices from 'pages/TermsAndServices';
 import PrivacyPolicy from 'pages/PrivacyPolicy';
 
 import * as Routes from 'routes';
@@ -38,18 +38,19 @@ const Auth = ({ refetch }) => {
           render={() => <SignIn refetch={refetch} />}
         />
         <Route
-          path="/invite/:id"
+          path='/invite/:id'
           render={props => (
-            <Redirect to={{
+            <Redirect
+              to={{
                 pathname: '/signup',
-                state: { invitedById: props.match.params.id }
+                state: { invitedById: props.match.params.id },
               }}
             />
           )}
         />
         <Route
           path={Routes.TERM_AND_CONDITIONS}
-          render={props => <TermandServices isAuth={false} {...props} />}
+          render={props => <TermsAndServices isAuth={false} {...props} />}
         />
         <Route
           path={Routes.PRIVACY_POLICY}
