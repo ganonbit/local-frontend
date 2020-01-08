@@ -11,6 +11,7 @@ import Avatar from '../Avatar';
 import * as Routes from 'routes';
 
 function AddComment({ authorId, author, postId, onCancel, client, userId }) {
+  const [isError, setError] = useState(true);
   let isAuthPost = authorId === userId;
   const [commentContent, setCommentContent] = useState({
     comment: '',
@@ -21,14 +22,17 @@ function AddComment({ authorId, author, postId, onCancel, client, userId }) {
   });
   const onAddComment = (e, createComment) => {
     e.preventDefault();
-    createComment.then(async ({ data }) => {
-      !isAuthPost && createNotification();
-    }, setCommentContent({ ...commentContent, comment: '', image: '' }));
+    createComment
+      .then(async ({ data }) => {
+        !isAuthPost && createNotification();
+      }, setCommentContent({ ...commentContent, comment: '', image: '' }))
+      .catch(() => setError(true));
   };
   const onCommentChange = e => {
     e.preventDefault();
     const { name, value } = e.target;
     setCommentContent({ ...commentContent, [name]: value });
+    setError(false);
   };
   const createNotification = async () => {
     try {
@@ -81,6 +85,11 @@ function AddComment({ authorId, author, postId, onCancel, client, userId }) {
               </a>
 
               <div className='form-group with-icon-right '>
+                {apiError && isError && (
+                  <span className='text-center d-block text-danger mb-1'>
+                    Comment is required
+                  </span>
+                )}
                 <textarea
                   type='text'
                   className='form-control'

@@ -17,6 +17,8 @@ const UploadImageModal = ({
   auth,
   override,
   loading,
+  apiError,
+  onImageDelete,
 }) => {
   const [error, setError] = useState('');
   let handlePostImageSize = e => {
@@ -31,8 +33,8 @@ const UploadImageModal = ({
       return;
     }
     handleImageUpload(e);
-    setError('');
   };
+
   return (
     <Modal
       show={isShowing}
@@ -89,7 +91,11 @@ const UploadImageModal = ({
                           alt='images'
                         />
 
-                        <button type='button' className='btn p-0 m-0'>
+                        <button
+                          type='button'
+                          className='btn p-0 m-0'
+                          onClick={() => onImageDelete()}
+                        >
                           x
                         </button>
                       </li>
@@ -98,6 +104,11 @@ const UploadImageModal = ({
                       </li> */}
                     </ul>
                   </div>
+                )}
+                {apiError && (
+                  <span className='text-center d-block text-danger mt-1'>
+                    {apiError}
+                  </span>
                 )}
                 <div className='upload-content'>
                   <ul className='d-flex p-3 m-0 list-unstyled justify-content-between align-items-center flex-wrap'>
