@@ -121,7 +121,7 @@ const PrivacyPolicy = ({ isAuth }) => (
                 choose to remove cookies or reject cookies, this could affect
                 certain features or services of our Site. For more information
                 about cookies and web beacons, please visit 
-                <a href='#'>www.avocadosfrommexico.com/privacy/cookies</a> In
+                <a href='https://www.avocadosfrommexico.com/privacy/cookies'>www.avocadosfrommexico.com/privacy/cookies</a> In
                 addition, we use this information to administer the Service and
                 we analyze (and may engage third parties to analyze) this
                 information to improve and enhance the Service by expanding its
@@ -591,7 +591,7 @@ const PrivacyPolicy = ({ isAuth }) => (
                 <br />
                 If you have any questions or concerns at all about our Privacy
                 Policy, please feel free to email us at 
-                <a href='#'>privacy@avocadosfrommexico.com</a>.<br />
+                <a href='mailto:privacy@avocadosfrommexico.com'>privacy@avocadosfrommexico.com</a>.<br />
                 Consumers may also address questions or concerns regarding the
                 Privacy Policy, or requests to access, update, correct, or
                 delete their personal information to AFM via mail:

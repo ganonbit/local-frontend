@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function FavouritePages() {
+export default function Favs() {
   return (
     <div className='ui-block'>
       <div className='ui-block-title'>
