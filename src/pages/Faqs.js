@@ -57,9 +57,10 @@ const Faqs = () => (
                   <Accordion.Collapse eventKey='1'>
                     <Card.Body>
                       <p>
-                        You can find your points status <a href='/rewards'>Link</a>{' '}
-                        here. You can get to this page by going to the dropdown
-                        menu in the top right corner.
+                        You can find your points status{' '}
+                        <a href='/rewards'>Link</a> here. You can get to this
+                        page by going to the dropdown menu in the top right
+                        corner.
                       </p>
                     </Card.Body>
                   </Accordion.Collapse>
@@ -74,9 +75,10 @@ const Faqs = () => (
                   <Accordion.Collapse eventKey='2'>
                     <Card.Body>
                       <p>
-                        You can find your points status <a href='/rewards'>Link</a>{' '}
-                        here. You can get to this page by going to the dropdown
-                        menu in the top right corner.
+                        You can find your points status{' '}
+                        <a href='/rewards'>Link</a> here. You can get to this
+                        page by going to the dropdown menu in the top right
+                        corner.
                       </p>
                     </Card.Body>
                   </Accordion.Collapse>
