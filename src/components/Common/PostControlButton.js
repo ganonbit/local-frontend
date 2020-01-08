@@ -10,7 +10,7 @@ export default function PostControlButton(props) {
       {!props.isAuth ? (
         <OverlayTriggers toolTipText='LIKE' placement='left'>
           <a
-            href="#"
+            href='#'
             onClick={e => {
               e.preventDefault();
             }}
@@ -27,11 +27,7 @@ export default function PostControlButton(props) {
         <Like user={author} postId={postId} likes={likes} />
       )}
       <OverlayTriggers toolTipText='COMMENT' placement='left'>
-        <a
-          href
-          className='btn btn-control comments'
-          onClick={toggle}
-        >
+        <a href className='btn btn-control comments' onClick={toggle}>
           <img
             src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/comments-icon_ffpa0l.png'
             alt=''
@@ -41,7 +37,7 @@ export default function PostControlButton(props) {
 
       <OverlayTriggers toolTipText='SHARE' placement='left'>
         <a
-          href="#"
+          href='#'
           onClick={e => {
             e.preventDefault();
           }}

@@ -40,7 +40,10 @@ const AppLayout = ({ refetch, history }) => {
       )}
       <Switch>
         <Route path={Routes.DISCOVER} render={props => <Discover />} />
-        <Route path={Routes.SETTINGS} render={() => <ProfileSetting refetch={refetch}/>} />
+        <Route
+          path={Routes.SETTINGS}
+          render={() => <ProfileSetting refetch={refetch} />}
+        />
         <Route path={Routes.REWARDS} render={props => <Reward {...props} />} />
         <Route
           path={Routes.MESSAGES}

@@ -30,7 +30,9 @@ const TermsAndServices = ({ isAuth }) => (
               <p>
                 Avocados From Mexico (AFM) maintains the website 
                 <a href='/'>www.theavocadonation.com</a> or{' '}
-                <a href='https://www.avocadosfrommexico.com/avocado-nation'>www.avocadosfrommexico.com/avocado-nation</a>{' '}
+                <a href='https://www.avocadosfrommexico.com/avocado-nation'>
+                  www.avocadosfrommexico.com/avocado-nation
+                </a>{' '}
                 (“Avocado Nation” or the “Platform”) for your avocado
                 information, education, enjoyment and use. By accessing and
                 registering to the Platform, you agree to accept, without
@@ -74,11 +76,12 @@ const TermsAndServices = ({ isAuth }) => (
                 you give us specific permission.
               </p>
               <p>
-                <a href='/privacy-policy'>AFM’s Privacy Policy</a> explains how AFM collects
-                and uses your personal data to determine some of the content you
-                see and to provide the other services described below. You can
-                also go to your <a href='/settings'>SETTINGS</a> at any time to review
-                the privacy choices you have about how your data may be used.
+                <a href='/privacy-policy'>AFM’s Privacy Policy</a> explains how
+                AFM collects and uses your personal data to determine some of
+                the content you see and to provide the other services described
+                below. You can also go to your <a href='/settings'>SETTINGS</a>{' '}
+                at any time to review the privacy choices you have about how
+                your data may be used.
               </p>
               <h4>Intellectual Property Protection</h4>
               <p>
@@ -178,7 +181,8 @@ const TermsAndServices = ({ isAuth }) => (
                 transferable, sub-licensable, royalty-free, and worldwide
                 license to host, use, distribute, modify, run, copy, publicly
                 perform or display, translate, and create derivative works of
-                your content (consistent with your <a href='/privacy-policy'>privacy</a> and 
+                your content (consistent with your 
+                <a href='/privacy-policy'>privacy</a> and 
                 <a href='/settings'>application</a> settings).
               </p>
               <h4>Limits on using AFM intellectual property</h4>
