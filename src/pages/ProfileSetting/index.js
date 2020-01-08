@@ -4,7 +4,7 @@ import * as Routes from 'routes';
 import { PersonalInfo, ChangePassword } from 'components/ProfileSetting';
 import Notifications from './Notifications';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-const route = () => {
+const route = ({refetch}) => {
   return (
     <Router>
       <MainLayout>
@@ -21,7 +21,7 @@ const route = () => {
           />
           <Route
             path={Routes.SETTINGS}
-            render={props => <PersonalInfo {...props} />}
+            render={props => <PersonalInfo {...props} refetch={refetch}/>}
           />
         </Switch>
       </MainLayout>
