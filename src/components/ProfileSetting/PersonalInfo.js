@@ -13,10 +13,9 @@ import 'bootstrap-select/dist/css/bootstrap-select.min.css';
 const jQuery = require('jquery');
 window.jQuery = jQuery;
 require('bootstrap-select');
-
-const PersonalInfo = () => {
+const PersonalInfo = ({ refetch }) => {
   const [{ auth }] = useStore();
-
+  const [successMessage, setSuccessMessage] = useState('');
   const [values, setValues] = useState({
     firstName: auth.user.firstName,
     lastName: auth.user.lastName,
@@ -96,7 +95,6 @@ const PersonalInfo = () => {
     });
     setDate(birthday);
   };
-
   const submitHandler = (e, editAccount) => {
     e.preventDefault();
     const error = validate();
@@ -105,7 +103,8 @@ const PersonalInfo = () => {
       return false;
     }
     editAccount().then(async data => {
-      // await refetch();
+      await refetch();
+      setSuccessMessage('Successfully updated profile information!');
     });
   };
   useEffect(() => {
@@ -142,6 +141,9 @@ const PersonalInfo = () => {
               <h6 className='title'>Personal Information</h6>
             </div>
             <div className='ui-block-content'>
+              <div className='result-message text-center font-weight-bolder mb-4 text-success'>
+                {successMessage}
+              </div>
               <form onSubmit={e => submitHandler(e, editAccount)}>
                 <div className='row'>
                   <div className='col col-lg-6 col-md-6 col-sm-12 col-12'>

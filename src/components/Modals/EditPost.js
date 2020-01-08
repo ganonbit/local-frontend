@@ -14,7 +14,7 @@ const override = css`
 `;
 const EditPost = props => {
   let { postId, auth, content, image, onHide, imagePublicId } = props;
-
+  const [isError, setError] = useState(true);
   const [values, setValues] = useState({
     postContent: content,
     imagePreview: image,
@@ -23,18 +23,22 @@ const EditPost = props => {
     image: '',
   });
 
+  let { imagePreview, postContent, error, id } = values;
+
   let handleStatusChange = e => {
     const { name, value } = e.target;
     setValues({ ...values, [name]: value });
+    setError(false);
   };
-
-  let { imagePreview, postContent, error, id } = values;
 
   let onSubmitHandler = (e, editPost) => {
     e.preventDefault();
-    editPost().then(async ({ data }) => {
-      onHide();
-    });
+    editPost()
+      .then(async ({ data }) => {
+        onHide();
+        setError(false);
+      })
+      .catch(() => setError(true));
   };
 
   let handleUploadImage = e => {
@@ -56,6 +60,8 @@ const EditPost = props => {
       image: e.target.files[0],
       imagePreview: URL.createObjectURL(e.target.files[0]),
     });
+    e.target.value = null;
+    setError(false);
   };
   let onImageDelte = () => {
     setValues({
@@ -116,13 +122,12 @@ const EditPost = props => {
                         </label>
                         <textarea
                           className='form-control'
-                          name='status'
+                          name='postContent'
                           value={postContent}
                           onChange={e => handleStatusChange(e)}
                         />
                       </div>
                     </form>
-
                     {imagePreview && (
                       <div className='thumbnail-gallery-items'>
                         <ul className='d-flex p-0 m-3 list-unstyled'>
@@ -143,6 +148,12 @@ const EditPost = props => {
                         </ul>
                       </div>
                     )}
+                    {isError && apiError && (
+                      <span className='text-center d-block text-danger mt-1'>
+                        {apiError.graphQLErrors[0].message}
+                      </span>
+                    )}
+
                     <div className='upload-content'>
                       <ul className='d-flex p-3 m-0 list-unstyled justify-content-between align-items-center flex-wrap'>
                         <li>
