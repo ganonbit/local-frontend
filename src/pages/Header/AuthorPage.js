@@ -12,6 +12,52 @@ import {
   DropDownArrowIcon,
   EnvelopeIcon,
 } from 'components/icons';
+
+const LegalLinks = () => {
+  const legalRoutes = [
+    {
+      link: Routes.TERM_AND_CONDITIONS,
+      title: 'Terms and Conditions',
+    },
+    // {
+    //   link: '#',
+    //   title: 'Idea Submission',
+    // },
+    {
+      link: Routes.COMMUNITY_GUIDELINE,
+      title: 'Community Guidelines',
+    },
+    {
+      link: Routes.FAQ,
+      title: 'FAQs',
+    },
+  ];
+  return (
+    <ul>
+      <li>
+        <Link to={Routes.TERM_AND_CONDITIONS}>
+          <span>Terms and Conditions</span>
+        </Link>
+      </li>
+      {/* <li>
+      <Link to='#'>
+        <span>Idea Submission</span>
+      </Link>
+    </li> */}
+      <li>
+        <Link to={Routes.COMMUNITY_GUIDELINE}>
+          <span>Community Guidelines</span>
+        </Link>
+      </li>
+      <li>
+        <Link to={Routes.FAQ}>
+          <span>FAQs</span>
+        </Link>
+      </li>
+    </ul>
+  );
+};
+
 const AuthorPage = ({ user }) => {
   return (
     <div className='author-page author vcard inline-items more'>
@@ -61,28 +107,7 @@ const AuthorPage = ({ user }) => {
                 </a>
               </li>
             </ul>
-            <ul>
-              <li>
-                <Link to={Routes.TERM_AND_CONDITIONS}>
-                  <span>Terms and Conditions</span>
-                </Link>
-              </li>
-              {/* <li>
-                <Link to='#'>
-                  <span>Idea Submission</span>
-                </Link>
-              </li> */}
-              <li>
-                <Link to={Routes.COMMUNITY_GUIDELINE}>
-                  <span>Community Guidelines</span>
-                </Link>
-              </li>
-              <li>
-                <Link to={Routes.FAQ}>
-                  <span>FAQs</span>
-                </Link>
-              </li>
-            </ul>
+            <LegalLinks />
           </div>
         </div>
       </div>
