@@ -20,7 +20,7 @@ const override = css`
 const CreatePost = props => {
   const [{ auth }] = useStore();
   let { isShowing, toggle, setIsShowing } = useModal();
-  // const [isOpen, setIsOpen] = useState(false);
+  const [isError, setError] = useState(true);
   const [postContent, setPostContent] = useState({
     status: '',
     image: '',
@@ -28,25 +28,24 @@ const CreatePost = props => {
   });
   const { status, image, imagePreview } = postContent;
 
-  // let toggleModel = () => {
-  //   setIsOpen(!isOpen);
-  // };
-
   let handleStatusChange = e => {
     const { name, value } = e.target;
     setPostContent({ ...postContent, [name]: value });
+    setError(false);
   };
   let handleSubmitForm = (e, createPost) => {
     e.preventDefault();
-    createPost().then(async ({ data }) => {
-      setPostContent({
-        ...postContent,
-        status: '',
-        image: '',
-        imagePreview: '',
-      });
-      setIsShowing(false);
-    });
+    createPost()
+      .then(async ({ data }) => {
+        setPostContent({
+          ...postContent,
+          status: '',
+          image: '',
+          imagePreview: '',
+        });
+        setIsShowing(false);
+      })
+      .catch(() => setError(true));
   };
 
   const handleImageUpload = e => {
@@ -54,6 +53,14 @@ const CreatePost = props => {
       ...postContent,
       image: e.target.files[0],
       imagePreview: URL.createObjectURL(e.target.files[0]),
+    });
+    e.target.value = null;
+  };
+  const onImageDelete = () => {
+    setPostContent({
+      ...postContent,
+      image: '',
+      imagePreview: '',
     });
   };
   return (
@@ -99,10 +106,12 @@ const CreatePost = props => {
                   auth={auth}
                   override={override}
                   loading={loading}
+                  apiError={
+                    isError && apiError && apiError.graphQLErrors[0].message
+                  }
+                  onImageDelete={onImageDelete}
                 />
               }
-              {/* {<ChooseImage isShowing={isOpen} hide={toggleModel} />} */}
-
               <div className='tab-content' style={{ position: 'relative' }}>
                 <BeatLoader
                   css={override}
@@ -124,6 +133,9 @@ const CreatePost = props => {
                     handleSubmitForm={handleSubmitForm}
                     createPost={createPost}
                     imagePreview={imagePreview}
+                    apiError={
+                      isError && apiError && apiError.graphQLErrors[0].message
+                    }
                   />
                 </div>
               </div>
