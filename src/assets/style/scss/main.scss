@@ -3933,7 +3933,7 @@ img {
 }
 
 .ui-block-content {
-  padding: 24px 23px 23px;
+  padding: 10px;
 }
 
 @media (max-width: 1200px) {
@@ -7301,7 +7301,7 @@ fieldset[disabled] .checkbox input[type='checkbox'],
 
 .notification-list .selectize-dropdown-content > *,
 .notification-list li {
-  padding: 25px;
+  padding: 15px 5px;
   border-bottom: 1px solid #e6ecf5;
   display: block;
   position: relative;

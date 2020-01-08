@@ -74,7 +74,7 @@ const TermsAndServices = ({ isAuth }) => (
                 you give us specific permission.
               </p>
               <p>
-                <a href='#'>AFM’s Privacy Policy</a> explains how AFM collects
+                <a href='/privacy-policy'>AFM’s Privacy Policy</a> explains how AFM collects
                 and uses your personal data to determine some of the content you
                 see and to provide the other services described below. You can
                 also go to your <a href='/settings'>SETTINGS</a> at any time to review
@@ -178,7 +178,7 @@ const TermsAndServices = ({ isAuth }) => (
                 transferable, sub-licensable, royalty-free, and worldwide
                 license to host, use, distribute, modify, run, copy, publicly
                 perform or display, translate, and create derivative works of
-                your content (consistent with your <a href='#'>privacy</a> and 
+                your content (consistent with your <a href='/privacy-policy'>privacy</a> and 
                 <a href='/settings'>application</a> settings).
               </p>
               <h4>Limits on using AFM intellectual property</h4>
@@ -225,7 +225,7 @@ const TermsAndServices = ({ isAuth }) => (
                 submitted on the Platform is provided voluntarily by the
                 submitter. For full details regarding AFM’s treatment of
                 personal information, please see AFM’s{' '}
-                <a href='#'>Privacy Policy</a>.
+                <a href='/privacy-policy'>Privacy Policy</a>.
               </p>
               <p>
                 Materials and third-party logos, brands and trade names
