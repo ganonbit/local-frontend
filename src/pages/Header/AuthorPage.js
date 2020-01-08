@@ -35,26 +35,55 @@ const LegalLinks = () => {
 
   return (
     <ul>
-      {legalRoutes.map((key, value) => {})}
+      {legalRoutes.map((val, index) => (
+        <li key={index}>
+          <Link to={val.link}>
+            <span>{val.title}</span>
+          </Link>
+        </li>
+      ))}
+    </ul>
+  );
+};
+
+const AuthorSpecPages = ({ user }) => {
+  return (
+    <ul className='account-settings'>
       <li>
-        <Link to={Routes.TERM_AND_CONDITIONS}>
-          <span>Terms and Conditions</span>
+        <Link
+          to={generatePath(Routes.USER_PROFILE, {
+            username: user.username,
+          })}
+        >
+          <OlympMenu className='olymp-camera-icon' />
+          <span>Profile</span>
         </Link>
       </li>
-      {/* <li>
-      <Link to='#'>
-        <span>Idea Submission</span>
-      </Link>
-    </li> */}
       <li>
-        <Link to={Routes.COMMUNITY_GUIDELINE}>
-          <span>Community Guidelines</span>
+        <Link to={Routes.SETTINGS}>
+          <SettingIcon className='olymp-star-icon left-menu-icon' />
+
+          <span>Profile Settings</span>
         </Link>
       </li>
       <li>
-        <Link to={Routes.FAQ}>
-          <span>FAQs</span>
+        <Link to={Routes.REWARDS}>
+          <RewardIcon className='olymp-logout-icon' />
+          <span>Rewards</span>
         </Link>
+      </li>
+      <li>
+        <a href='/' onClick={() => localStorage.clear()}>
+          <LogOut className='olymp-logout-icon' />
+          <span>Log Out</span>
+        </a>
+      </li>
+
+      <li>
+        <a href='#' data-toggle='modal' data-target='#referralUrl'>
+          <EnvelopeIcon className='envelope-icon' />
+          <span>Refer User</span>
+        </a>
       </li>
     </ul>
   );
@@ -71,44 +100,7 @@ const AuthorPage = ({ user }) => {
             <div className='ui-block-title ui-block-title-small'>
               <h6 className='title'>Your Account</h6>
             </div>
-            <ul className='account-settings'>
-              <li>
-                <Link
-                  to={generatePath(Routes.USER_PROFILE, {
-                    username: user.username,
-                  })}
-                >
-                  <OlympMenu className='olymp-camera-icon' />
-                  <span>Profile</span>
-                </Link>
-              </li>
-              <li>
-                <Link to={Routes.SETTINGS}>
-                  <SettingIcon className='olymp-star-icon left-menu-icon' />
-
-                  <span>Profile Settings</span>
-                </Link>
-              </li>
-              <li>
-                <Link to={Routes.REWARDS}>
-                  <RewardIcon className='olymp-logout-icon' />
-                  <span>Rewards</span>
-                </Link>
-              </li>
-              <li>
-                <a href='/' onClick={() => localStorage.clear()}>
-                  <LogOut className='olymp-logout-icon' />
-                  <span>Log Out</span>
-                </a>
-              </li>
-
-              <li>
-                <a href='#' data-toggle='modal' data-target='#referralUrl'>
-                  <EnvelopeIcon className='envelope-icon' />
-                  <span>Refer User</span>
-                </a>
-              </li>
-            </ul>
+            <AuthorSpecPages user={user} />
             <LegalLinks />
           </div>
         </div>
