@@ -19,6 +19,7 @@ import Faqs from 'pages/Faqs';
 import CommunityGuideline from 'pages/CommunityGuideline';
 import TermsAndServices from 'pages/TermsAndServices';
 import PrivacyPolicy from 'pages/PrivacyPolicy';
+import FeedbackForm from 'pages/Form';
 
 import * as Routes from 'routes';
 /**
@@ -60,6 +61,11 @@ const AppLayout = ({ refetch, history }) => {
           exact
           path={Routes.PRIVACY_POLICY}
           render={props => <PrivacyPolicy isAuth={true} {...props} />}
+        />
+        <Route
+          exact
+          path={Routes.FORM}
+          render={props => <FeedbackForm isAuth={true} {...props} />}
         />
         <Route path={Routes.BADGES} render={props => <Badges {...props} />} />
         <Route

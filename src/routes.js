@@ -40,6 +40,8 @@ export const PRIVACY_POLICY = '/privacy-policy';
 
 export const COMMUNITY_GUIDELINE = '/community-guidelines';
 
+export const FORM = '/contact';
+
 /**
  * Value that's used in place of id when creating something new.
  */
