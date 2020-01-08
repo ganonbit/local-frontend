@@ -32,8 +32,10 @@ const LegalLinks = () => {
       title: 'FAQs',
     },
   ];
+
   return (
     <ul>
+      {legalRoutes.map((key, value) => {})}
       <li>
         <Link to={Routes.TERM_AND_CONDITIONS}>
           <span>Terms and Conditions</span>
