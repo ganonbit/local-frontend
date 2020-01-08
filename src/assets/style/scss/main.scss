@@ -599,19 +599,19 @@
 }
 
 .top-header-author .author-thumb {
-  border-radius: 100%;
-  border: 6px solid #fff;
   margin: 0 auto;
-  overflow: hidden;
-  width: 132px;
-  height: 132px;
+  width: 189px;
+  height: 251px;
   background-color: #fdfbee;
+  mask-image: url(https://res.cloudinary.com/weare270b/image/upload/v1575849605/static/img-frame_adcgt8.png);
 }
 
 .top-header-author .author-thumb img {
   border-radius: 0;
-  display: block;
-  width: 100%;
+  margin: 0 auto;
+  object-fit: cover;
+  min-width: 100%;
+  min-height: 100%;
 }
 
 .avatar-wrapper {
@@ -16180,7 +16180,6 @@ padding: 10px 0;
 .author-thumb img {
   border-radius: 100%;
   overflow: hidden;
-  max-width: unset;
   display: block;
 }
 
