@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, generatePath } from 'react-router-dom';
+import CustomPanel from '../../components/Wrappers';
 import Avatar from 'components/Avatar';
 import * as Routes from 'routes';
 
@@ -78,14 +79,22 @@ const AuthorSpecPages = ({ user }) => {
           <span>Log Out</span>
         </a>
       </li>
-
-      <li>
-        <a href='#' data-toggle='modal' data-target='#referralUrl'>
-          <EnvelopeIcon className='envelope-icon' />
-          <span>Refer User</span>
-        </a>
-      </li>
     </ul>
+  );
+};
+
+const FriendReferral = () => {
+  return (
+    <CustomPanel>
+      <ul className='account-settings'>
+        <li>
+          <a href='#' data-toggle='modal' data-target='#referralUrl'>
+            <EnvelopeIcon className='envelope-icon' />
+            <span>Refer User</span>
+          </a>
+        </li>
+      </ul>
+    </CustomPanel>
   );
 };
 
@@ -101,6 +110,7 @@ const AuthorPage = ({ user }) => {
               <h6 className='title'>Your Account</h6>
             </div>
             <AuthorSpecPages user={user} />
+            <FriendReferral />
             <LegalLinks />
           </div>
         </div>
