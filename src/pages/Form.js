@@ -1,7 +1,7 @@
 import React, { useState }  from 'react';
 import WelcomeHeader from 'pages/Welcome/WelcomeHeader';
 
-import { Form, Button, Col, InputGroup } from 'react-bootstrap';
+import { Form, Button, Col, InputGroup, Dropdown } from 'react-bootstrap';
 
 const FeedbackForm = ({ isAuth }) => {
 
@@ -77,6 +77,22 @@ return (
                     <Form.Control.Feedback type="invalid">
                       Please enter an email.
                     </Form.Control.Feedback>
+                  </InputGroup>
+                </Form.Group>
+                <Form.Group as={Col} md="12" controlId="validationSelection">
+                  <InputGroup>
+                    <Dropdown>
+                      <Dropdown.Toggle className="btn btn-sm" id="dropdown-basic">
+                        Select Feedback Reason &darr;
+                      </Dropdown.Toggle>
+
+                      <Dropdown.Menu>
+                        <Dropdown.Item eventKey="general" href="#/general">General Feedback</Dropdown.Item>
+                        <Dropdown.Item eventKey="idea" href="#/idea">Idea Submission</Dropdown.Item>
+                        <Dropdown.Item eventKey="bug" href="#/bug-or-feature">Bug Report / Feature Request</Dropdown.Item>
+                        <Dropdown.Item eventKey="report" href="#/report-user">Report User</Dropdown.Item>
+                      </Dropdown.Menu>
+                    </Dropdown>
                   </InputGroup>
                 </Form.Group>
                 <Form.Group as={Col} md="12" controlId="validationCustom03">
