@@ -49,13 +49,19 @@ const TopHeader = ({ refetch }) => {
         >
           <ul className='nav nav-tabs mobile-app-tabs' role='tablist'>
             <li className='nav-item'>
-              <ChatNotifications />
+              <div className='nav-link active'>
+                <ChatNotifications />
+              </div>
             </li>
             <li className='nav-item'>
-              <Notifications refetch={refetch} />
+              <div className='nav-link'>
+                <Notifications refetch={refetch} />
+              </div>
             </li>
             <li className='nav-item'>
-              <Search refetch={refetch} auth={auth} />
+              <div className='nav-link'>
+                <Search refetch={refetch} auth={auth} />
+              </div>
             </li>
           </ul>
         </header>
