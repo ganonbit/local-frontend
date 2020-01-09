@@ -18,22 +18,17 @@ const MessagesChatConversation = ({
   match,
   isAuth,
 }) => {
-  const ref = useRef();
-
+  const bottomRef = useRef(null);
   const [messageText, setMessageText] = useState('');
-
   useEffect(() => {
-    if (!ref.current) {
-      ref.current = true;
-    } else {
-      ref.current.scrollIntoView({ behavior: 'smooth' });
+    if (bottomRef.current) {
+      bottomRef.current.scrollIntoView();
     }
-  }, [messages]);
+  }, [bottomRef, data]);
 
   const [createMessage] = useMutation(CREATE_MESSAGE);
   const sendMessage = e => {
     e.preventDefault();
-    console.log('created message', messageText);
     if (!messageText) return;
 
     setMessageText('');
@@ -68,8 +63,10 @@ const MessagesChatConversation = ({
     <>
       <div class='col col-xl-8 col-lg-8 col-md-12 col-sm-12 col-12 padding-l-0'>
         <div class='chat-field'>
-          <div class='ui-block-title'>
-            <h6 class='title'>{`${chatUser.firstName} ${chatUser.lastName}`}</h6>
+          <div class='ui-block-title p-3'>
+            {chatUser && (
+              <h6 className='title'>{`${chatUser.firstName} ${chatUser.lastName}`}</h6>
+            )}
             <a href='1#' class='more'>
               <svg class='olymp-three-dots-icon'>
                 <use xlinkhref='svg-icons/sprites/icons.svg#olymp-three-dots-icon'></use>
@@ -85,9 +82,9 @@ const MessagesChatConversation = ({
                 return (
                   isAuthUserReceiver && (
                     <li
+                      className='px-3 py-2'
                       userMessage={isAuthUserReceiver}
                       key={message.id}
-                      ref={ref}
                     >
                       <div className='message-wraper d-flex justify-content-between align-items-center'>
                         {isAuthUserReceiver && (
@@ -132,6 +129,7 @@ const MessagesChatConversation = ({
                   )
                 );
               })}
+              <div ref={bottomRef} />
             </ul>
           </div>
 
@@ -139,7 +137,7 @@ const MessagesChatConversation = ({
             <form onSubmit={e => sendMessage(e)}>
               <div class='form-group label-floating is-empty'>
                 <textarea
-                  class='form-control'
+                  class='form-control pt-2'
                   placeholder='Type a message'
                   value={messageText}
                   onChange={e => setMessageText(e.target.value)}

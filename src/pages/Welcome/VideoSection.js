@@ -1,9 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 import * as Routes from 'routes';
 
 const VideoSection = () => {
+  function stopVideo() {
+    var src = document.getElementById('video').src;
+    document.getElementById('video').src = '';
+    document.getElementById('video').src = src;
+  }
+
   return (
     <div className='avocado-video-bnr welcome-video-banner mb-5'>
       <div className='container'>
@@ -44,8 +50,9 @@ const VideoSection = () => {
               </div>
               <div className='col-lg-2 col-md-2 col-sm-2 col-3 px-2'>
                 <a
-                  href='https://www.youtube.com/watch?v=AB0SPGFa480'
-                  target='_blank'
+                  href='javascript:void(0);'
+                  data-toggle='modal'
+                  data-target='#myModal'
                 >
                   <img
                     className='mw-100'
@@ -56,6 +63,40 @@ const VideoSection = () => {
               </div>
               <div className='col-lg-5 col-md-5 col-sm-5 col-5'>
                 <h6>TO LEARN MORE ABOUT AVOCADO NATION</h6>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class='modal fade'
+        id='myModal'
+        tabindex='-1'
+        role='dialog'
+        aria-labelledby='exampleModalLabel'
+        aria-hidden='true'
+        hiddenModal={() => console.log('closed')}
+      >
+        <div class='modal-dialog modal-xl' role='document'>
+          <div class='modal-content'>
+            <div class='modal-body p-2 pt-0'>
+              <button
+                onClick={() => stopVideo()}
+                type='button'
+                class='close'
+                data-dismiss='modal'
+                aria-label='Close'
+              >
+                <span aria-hidden='true'>&times;</span>
+              </button>
+              <div class='embed-responsive embed-responsive-16by9'>
+                <iframe
+                  class='embed-responsive-item'
+                  src='https://www.youtube.com/embed/AB0SPGFa480'
+                  id='video'
+                  allowscriptaccess='always'
+                  allow='autoplay'
+                ></iframe>
               </div>
             </div>
           </div>
