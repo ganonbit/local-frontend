@@ -7,7 +7,6 @@ import { useStore } from 'store';
  */
 export const useNotifications = () => {
   const [{ auth }] = useStore();
-
   const client = useApolloClient();
 
   /**

@@ -14,8 +14,8 @@ export default function Comments(props, isAuth) {
   return (
     <>
       <ul className='comments-list'>
-        {props.comments
-          ? props.comments.slice(0, numOfComments).map((comment, index) => {
+        {props.post.comments
+          ? props.post.comments.slice(0, numOfComments).map((comment, index) => {
               if (!comment.author) {
                 return null;
               }
@@ -26,6 +26,7 @@ export default function Comments(props, isAuth) {
                     createdAt={comment.createdAt}
                     commentId={comment.id}
                     isAuth={isAuth}
+                    post={props.post}
                   />
                   <Linkify options={linkDecorator}>
                     <p>{comment.comment}</p>
@@ -34,7 +35,7 @@ export default function Comments(props, isAuth) {
               );
             })
           : null}
-        {numOfComments < props.comments.length ? (
+        {numOfComments < props.post.comments.length ? (
           <div
             href
             className='more-comments more-comments'
