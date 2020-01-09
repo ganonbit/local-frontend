@@ -63,11 +63,10 @@ export default class Search extends React.Component {
         </Default>
         <Mobile>
           <FontAwesomeIcon
-            className='olymp-three-dots-icon'
-            size='lg'
-            color='black'
+            size='2x'
+            color='white'
             icon={state.mobileToggleState ? faTimes : faSearch}
-            style={{ height: '12px' }}
+            style={{ height: '24px', marginTop: '3px' }}
             onClick={this.toggleSearchState}
           />
           {state.mobileToggleState && (

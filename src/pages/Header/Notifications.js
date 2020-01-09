@@ -2,7 +2,11 @@ import React from 'react';
 import { useStore } from 'store';
 import PropTypes from 'prop-types';
 import { withApollo } from 'react-apollo';
+
 import { UPDATE_NOTIFICATION_SEEN } from 'graphql/notification';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBell } from '@fortawesome/free-solid-svg-icons';
 
 const Notifications = ({ client, refetch }) => {
   const [{ auth }] = useStore();
@@ -28,9 +32,11 @@ const Notifications = ({ client, refetch }) => {
       className='control-icon more has-items'
       onMouseLeave={() => updateNotificationSeen()}
     >
-      <img
-        src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/notification-img_cporyu.png'
-        alt='notifi'
+      <FontAwesomeIcon
+        size='2x'
+        color='white'
+        icon={faBell}
+        style={{ height: '24px' }}
       />
       {!auth.user.newNotifications.length ? null : (
         <div className='label-avatar bg-primary'>
