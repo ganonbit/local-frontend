@@ -8,7 +8,7 @@ class Hits extends React.Component {
     }
     return (
       <li>
-        <h5 class='text-capitalize text-success mb-2'>#{count}</h5>
+        <h5 className='text-capitalize text-success mb-2'>#{count}</h5>
         <br />
         <h5 className='text-capitalize'>
           {hit.author && hit.author.firstName}{' '}
@@ -30,7 +30,7 @@ class Hits extends React.Component {
     return (
       <li className='inline-items'>
         <div className='notification-event'>
-          <h5 class='text-capitalize text-success'>#{count}</h5>
+          <h5 className='text-capitalize text-success'>#{count}</h5>
           <h5 className='text-capitalize'>
             {hit.author && hit.author.firstName}{' '}
             {hit.author && hit.author.lastName}
