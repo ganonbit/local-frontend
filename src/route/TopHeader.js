@@ -1,12 +1,11 @@
 import React from 'react';
 import { useMediaQuery } from 'react-responsive';
 
+import { useStore } from 'store';
+
 import '../assets/svg-icons/back-to-top.svg';
 import HeaderTitle from '../pages/Header/HeaderTitle';
-
-import { useStore } from 'store';
 import UserReferralModal from '../pages/Header/UserReferralModal';
-
 import DesktopNav, { MobileNav } from '../pages/Header/Navigation';
 
 const TopHeader = ({ refetch }) => {
@@ -21,7 +20,11 @@ const TopHeader = ({ refetch }) => {
       <HeaderTitle />
       <div className='header-content-wrapper'>
         <DesktopNav refetch={refetch} auth={auth} />
-        <MobileNav refetch={refetch} auth={auth} />
+        <MobileNav refetch={refetch} auth={auth} mobileToggle={false} />
+      </div>
+
+      <div className='tab-content tab-content-responsive'>
+        <MobileNav refetch={refetch} auth={auth} mobileToggle={true} />
       </div>
 
       <UserReferralModal />
