@@ -97,7 +97,7 @@ function CommentsHeader(props) {
             </time>
           </div>
         </div>
-        {(isAuth && isOwner) || (isAuth && isSelma) ? (
+        {isOwner && (
           <div className='more'>
             <FontAwesomeIcon
               className='olymp-three-dots-icon'
@@ -106,6 +106,7 @@ function CommentsHeader(props) {
               icon={faEllipsisV}
               style={{ height: '12px' }}
             />
+          
             <ul className='more-dropdown'>
               <li>
                 <Link
@@ -130,8 +131,9 @@ function CommentsHeader(props) {
                 </Link>
               </li>
             </ul>
+            
           </div>
-        ) : null}
+        )}
       </div>
     </>
   );

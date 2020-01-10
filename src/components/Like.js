@@ -20,31 +20,31 @@ import { useStore } from 'store';
  */
 const Like = ({ postId, user, likes, client, post }) => {
   const notification = useNotifications();
-
   const [loading, setLoading] = useState(true);
 
   const [{ auth }] = useStore();
 
-  let isAuthPost = auth.user.id === post && post.author.id;
-
+  let isAuthPost = post && auth.user.id === post.author.id;
   const hasLiked = likes.find(
     l => l.user === auth.user.id && l.post === postId
   );
 
   const handleButtonClick = async mutate => {
     setLoading(false);
-    setTimeout(() => {
-      const { data } = mutate();
+    mutate().then(data => {
       !isAuthPost &&
-        notification.toggle({
-          user: post.author,
-          postId: post.id,
-          hasDone: hasLiked,
-          notificationType: NotificationType.LIKE,
-          notificationTypeId: null,
-        });
-      setLoading(true);
-    }, 2000);
+        !hasLiked &&
+        notification
+          .create({
+            user: post.author,
+            postId: post.id,
+            notificationType: NotificationType.LIKE,
+            notificationTypeId: data.createLike ? data.createLike.id : null,
+          })
+          .then(() => {
+            setLoading(true);
+          });
+    });
   };
 
   // Detect which mutation to use
