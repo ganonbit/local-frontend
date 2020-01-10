@@ -20,6 +20,7 @@ import CommunityGuideline from 'pages/CommunityGuideline';
 import TermsAndServices from 'pages/TermsAndServices';
 import PrivacyPolicy from 'pages/PrivacyPolicy';
 import FeedbackForm from 'pages/Form';
+import SinglePost from 'pages/SinglePost';
 
 import * as Routes from 'routes';
 /**
@@ -77,6 +78,11 @@ const AppLayout = ({ refetch, history }) => {
           render={props => <UserProfile refetch={refetch} {...props} />}
         />
         <Route path={Routes.HOME} render={props => <Home {...props} />} />
+
+        <Route
+          path={Routes.POST}
+          render={() => <SinglePost refetch={refetch} />}
+        />
       </Switch>
     </div>
   );

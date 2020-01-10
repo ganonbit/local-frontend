@@ -8,24 +8,24 @@ const PrivacyPolicy = ({ isAuth }) => (
         <WelcomeHeader />
       </div>
     )}
-    <div class='stunning-header bg-primary-opacity'>
-      <div class='header-spacer--standard'></div>
-      <div class='stunning-header-content'>
-        <h1 class='stunning-header-title'>AFM Privacy Policy </h1>
-        <ul class='breadcrumbs'>
-          <li class='breadcrumbs-item active'>
+    <div className='stunning-header bg-primary-opacity'>
+      <div className='header-spacer--standard'></div>
+      <div className='stunning-header-content'>
+        <h1 className='stunning-header-title'>AFM Privacy Policy </h1>
+        <ul className='breadcrumbs'>
+          <li className='breadcrumbs-item active'>
             <span>Privacy Policy</span>
           </li>
         </ul>
       </div>
-      <div class='content-bg-wrap stunning-header-bg1'></div>
+      <div className='content-bg-wrap stunning-header-bg1'></div>
     </div>
 
-    <section class='mb60'>
-      <div class='container'>
-        <div class='row'>
-          <div class='col col-xl-10 m-auto col-lg-12 col-md-12 col-sm-12 col-12'>
-            <div class='detail-content'>
+    <section className='mb60'>
+      <div className='container'>
+        <div className='row'>
+          <div className='col col-xl-10 m-auto col-lg-12 col-md-12 col-sm-12 col-12'>
+            <div className='detail-content'>
               <p>
                 Your privacy is important to us, so we’ve developed a Privacy
                 Policy that covers how we collect, use, disclose, transfer, and

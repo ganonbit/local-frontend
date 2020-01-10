@@ -6,7 +6,7 @@ import OverlayTriggers from '../Common/ToolTip';
 import Like from 'components/Like';
 
 const PostFooter = props => {
-  const { author, postId, comments, likes, toggle, isAuth, userId,post } = props;
+  const { author, postId, comments, likes, toggle, isAuth, userId, post } = props;
   return (
     <div className='post-additional-info inline-items'>
       <span className='post-add-icon inline-items'>

@@ -58,6 +58,7 @@ export default function Post({ queryOptions, isAuth }) {
                     postId={post.id}
                     likes={post.likes}
                     isAuth={isAuth}
+                    post={post}
                   />
                 </article>
                 {isAuth && isCommentOpen && (

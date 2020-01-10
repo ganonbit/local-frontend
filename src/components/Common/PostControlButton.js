@@ -4,7 +4,7 @@ import Like from 'components/Like';
 import OverlayTriggers from '../Common/ToolTip';
 
 export default function PostControlButton(props) {
-  const { author, postId, likes, toggle } = props;
+  const { author, postId, likes, toggle, post, userId } = props;
   return (
     <div className='control-block-button post-control-button'>
       {!props.isAuth ? (
@@ -24,7 +24,7 @@ export default function PostControlButton(props) {
           </a>
         </OverlayTriggers>
       ) : (
-        <Like user={author} postId={postId} likes={likes} />
+        <Like user={author} postId={postId} likes={likes} userId={userId} post={post} />
       )}
       <OverlayTriggers toolTipText='COMMENT' placement='left'>
         <a href className='btn btn-control comments' onClick={toggle}>

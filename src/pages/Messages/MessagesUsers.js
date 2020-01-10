@@ -41,8 +41,8 @@ const MessagesUsers = ({ authUser, location, isSelma }) => {
     };
   }, [subscribeToMore]);
   return (
-    <div class='col col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12 padding-r-0'>
-      <ul class='notification-list chat-message'>
+    <div className='col col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12 padding-r-0'>
+      <ul className='notification-list chat-message'>
         {isSelma
           ? data &&
             data.getConversations.map(user => {
@@ -50,10 +50,10 @@ const MessagesUsers = ({ authUser, location, isSelma }) => {
               return (
                 !isSelma && (
                   <li className='d-flex justify-content-start align-items-center px-3 py-2'>
-                    <div class='author-thumb'>
+                    <div className='author-thumb'>
                       <Avatar image={user.image} size={50} />
                     </div>
-                    <div class='notification-event'>
+                    <div className='notification-event'>
                       <Link
                         to={generatePath(Routes.MESSAGES, {
                           userId: user.id,
@@ -72,10 +72,10 @@ const MessagesUsers = ({ authUser, location, isSelma }) => {
               return (
                 !isSelma && (
                   <li className='d-flex justify-content-start align-items-center px-3 py-2'>
-                    <div class='author-thumb'>
+                    <div className='author-thumb'>
                       <Avatar image={user.image} size={50} />
                     </div>
-                    <div class='notification-event'>
+                    <div className='notification-event'>
                       <Link
                         to={generatePath(Routes.MESSAGES, {
                           userId: user.id,
