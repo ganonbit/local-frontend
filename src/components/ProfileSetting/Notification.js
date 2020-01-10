@@ -49,7 +49,7 @@ const Notification = ({ notification, client, key }) => {
 
         {notification.like && (
           <>
-            likes your photo
+            liked your photo
             <Link
             // to={generatePath(Routes.POST, {
             //   id: notification.like.post.id,
@@ -64,7 +64,7 @@ const Notification = ({ notification, client, key }) => {
 
         {notification.comment && (
           <>
-            likes your photo
+            liked your photo
             <Link
               to={generatePath(Routes.POST, {
                 id: notification.comment.post.id,

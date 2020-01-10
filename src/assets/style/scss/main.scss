@@ -4654,6 +4654,7 @@ input,
 
 .label-floating textarea.form-control {
   padding: 1.5rem 1.1rem 0.2rem;
+  min-height: 100px;
 }
 
 .label-floating.with-icon .form-control,
@@ -7478,11 +7479,6 @@ fieldset[disabled] .checkbox input[type='checkbox'],
 
 .chat-field {
   border-left: 1px solid #e6ecf5;
-}
-
-.chat-field .mCustomScrollbar {
-  overflow: hidden;
-  max-height: 450px;
 }
 
 .chat-field .ps > .ps__scrollbar-y-rail,
@@ -12585,6 +12581,9 @@ padding: 10px 0;
 
 .single-post-v3 .video-thumb:hover .overlay {
   opacity: 1;
+}
+.ui-block-chat-wrap {
+  height: calc(100vh - 100px);
 }
 
 @media (max-width: 1024px) {
@@ -23016,7 +23015,7 @@ div#accordion .card {
 
 .chat-field .mCustomScrollbar {
   overflow-y: auto;
-  height: 450px;
+  height: calc(100vh - 415px);
 }
 
 .chat-field .ui-block-title h6.title {
@@ -23066,7 +23065,9 @@ div#accordion .card {
   margin: 0 0 10px;
   font-weight: 400;
 }
-
+.chat-field .ui-block-title {
+  height:53px;
+}
 @media (max-width: 1454px) {
   .search-bar.w-search {
     width: 410px;

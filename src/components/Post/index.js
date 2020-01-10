@@ -49,6 +49,7 @@ export default function Post({ queryOptions, isAuth }) {
                     postId={post.id}
                     likes={post.likes}
                     isAuth={isAuth}
+                    post={post}
                   />
                   <PostControlButton
                     toggle={toggleComment}
@@ -57,6 +58,7 @@ export default function Post({ queryOptions, isAuth }) {
                     postId={post.id}
                     likes={post.likes}
                     isAuth={isAuth}
+                    post={post}
                   />
                 </article>
                 {isAuth && isCommentOpen && (
@@ -66,9 +68,11 @@ export default function Post({ queryOptions, isAuth }) {
                     author={auth.user}
                     postId={post.id}
                     onCancel={toggleComment}
+                    user={post.author}
+                    post={post}
                   />
                 )}
-                {isAuth && <Comments comments={post.comments} />}
+                {isAuth && <Comments  post={post}/>}
               </div>
             );
           })

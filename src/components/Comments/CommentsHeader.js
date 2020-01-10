@@ -12,10 +12,21 @@ import { GET_FOLLOWED_POSTS } from 'graphql/post';
 import { DELETE_COMMENT } from 'graphql/comment';
 import { GET_AUTH_USER, GET_USER_POSTS } from 'graphql/user';
 
+import { useNotifications } from 'hooks/useNotifications';
+
 import * as Routes from 'routes';
 
 function CommentsHeader(props) {
-  const { author, createdAt, client, imagePublicId, commentId, isAuth } = props;
+  const notification = useNotifications();
+  const {
+    author,
+    createdAt,
+    client,
+    imagePublicId,
+    commentId,
+    isAuth,
+    post,
+  } = props;
   const [{ auth }] = useStore();
   const isSelma = !auth.user ? null : auth.user.role === 'selma';
   const isOwner = !auth.user ? null : auth.user.id === author.id;
@@ -48,6 +59,14 @@ function CommentsHeader(props) {
           },
         ],
       });
+      if (auth.user.id !== post.author.id) {
+        const isNotified = post.author.notifications.find(
+          n => n.comment && n.comment.id === commentId
+        );
+        notification.remove({
+          notificationId: isNotified.id,
+        });
+      }
     } catch (err) {
       console.log(err);
     }

@@ -9749,11 +9749,11 @@ a.text-primary:hover {
   color: #ed2b00 !important;
 }
 .text-success {
-  color: #08ddc1 !important;
+  color: #ff5e3a !important;
 }
 a.text-success:focus,
 a.text-success:hover {
-  color: #059381 !important;
+  color: #ff3407 !important;
 }
 .text-danger {
   color: #f92552 !important;
