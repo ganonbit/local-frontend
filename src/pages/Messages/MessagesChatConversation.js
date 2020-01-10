@@ -61,21 +61,21 @@ const MessagesChatConversation = ({
 
   return (
     <>
-      <div class='col col-xl-8 col-lg-8 col-md-12 col-sm-12 col-12 padding-l-0'>
-        <div class='chat-field'>
-          <div class='ui-block-title p-3'>
+      <div className='col col-xl-8 col-lg-8 col-md-12 col-sm-12 col-12 padding-l-0'>
+        <div className='chat-field'>
+          <div className='ui-block-title p-3'>
             {chatUser && (
               <h6 className='title'>{`${chatUser.firstName} ${chatUser.lastName}`}</h6>
             )}
-            <a href='1#' class='more'>
-              <svg class='olymp-three-dots-icon'>
+            <a href='1#' className='more'>
+              <svg className='olymp-three-dots-icon'>
                 <use xlinkhref='svg-icons/sprites/icons.svg#olymp-three-dots-icon'></use>
               </svg>
             </a>
           </div>
 
-          <div class='mCustomScrollbar' data-mcs-theme='dark'>
-            <ul class='notification-list chat-message chat-message-field'>
+          <div className='mCustomScrollbar' data-mcs-theme='dark'>
+            <ul className='notification-list chat-message chat-message-field'>
               {messages.map(message => {
                 const isAuthUserReceiver =
                   '5df7cd1ae8d6ec604b737ae5' === message.sender.id;
@@ -93,7 +93,7 @@ const MessagesChatConversation = ({
                               className='author-thumb'
                               image={message.sender.image}
                             />
-                            <a href='1#' class='h6 notification-friend pl-2'>
+                            <a href='1#' className='h6 notification-friend pl-2'>
                               {message.sender.username}
                             </a>
                           </div>
@@ -104,15 +104,15 @@ const MessagesChatConversation = ({
                               className='author-thumb'
                               image={message.sender.image}
                             />
-                            <a href='1#' class='h6 notification-friend pl-2'>
+                            <a href='1#' className='h6 notification-friend pl-2'>
                               {message.sender.username}
                             </a>
                           </div>
                         )}
 
-                        <div class='notification-event'>
-                          <span class='notification-date'>
-                            <time class='entry-date updated'>
+                        <div className='notification-event'>
+                          <span className='notification-date'>
+                            <time className='entry-date updated'>
                               {moment(
                                 new Date(parseInt(message.createdAt))
                               ).format('MMMM Do, YYYY')}
@@ -121,7 +121,7 @@ const MessagesChatConversation = ({
                         </div>
                       </div>
                       <div className='message-box float-none d-block'>
-                        <span class='chat-message-item float-none d-block pl-5'>
+                        <span className='chat-message-item float-none d-block pl-5'>
                           {message.message}
                         </span>
                       </div>
@@ -135,17 +135,17 @@ const MessagesChatConversation = ({
 
           {match.params.userId !== Routes.NEW_ID_VALUE && chatUser && isAuth && (
             <form onSubmit={e => sendMessage(e)}>
-              <div class='form-group label-floating is-empty'>
+              <div className='form-group label-floating is-empty'>
                 <textarea
-                  class='form-control pt-2'
+                  className='form-control pt-2'
                   placeholder='Type a message'
                   value={messageText}
                   onChange={e => setMessageText(e.target.value)}
                   onKeyDown={onEnterPress}
                 ></textarea>
               </div>
-              <div class='add-options-message'>
-                <button class='btn btn-primary btn-sm' type='submit'>
+              <div className='add-options-message'>
+                <button className='btn btn-primary btn-sm' type='submit'>
                   Post Reply
                 </button>
               </div>

@@ -27,6 +27,7 @@ const Like = ({ postId, user, likes, client, post }) => {
 
   let isAuthPost = auth.user.id === post && post.author.id;
 
+
   const hasLiked = likes.find(
     l => l.user === auth.user.id && l.post === postId
   );

@@ -69,7 +69,7 @@ const VideoSection = () => {
         </div>
       </div>
       <div
-        class='modal fade'
+        className='modal fade'
         id='myModal'
         tabindex='-1'
         role='dialog'
@@ -77,21 +77,21 @@ const VideoSection = () => {
         aria-hidden='true'
         hiddenModal={() => console.log('closed')}
       >
-        <div class='modal-dialog modal-xl' role='document'>
-          <div class='modal-content'>
-            <div class='modal-body p-2 pt-0'>
+        <div className='modal-dialog modal-xl' role='document'>
+          <div className='modal-content'>
+            <div className='modal-body p-2 pt-0'>
               <button
                 onClick={() => stopVideo()}
                 type='button'
-                class='close'
+                className='close'
                 data-dismiss='modal'
                 aria-label='Close'
               >
                 <span aria-hidden='true'>&times;</span>
               </button>
-              <div class='embed-responsive embed-responsive-16by9'>
+              <div className='embed-responsive embed-responsive-16by9'>
                 <iframe
-                  class='embed-responsive-item'
+                  className='embed-responsive-item'
                   src='https://www.youtube.com/embed/AB0SPGFa480'
                   id='video'
                   allowscriptaccess='always'

@@ -21,15 +21,15 @@ const Messages = ({ match }) => {
   });
   return (
     <>
-      <div class='container'>
-        <div class='row'>
-          <div class='col-12'>
-            <div class='ui-block ui-block-chat-wrap'>
-              <div class='ui-block-title block-title-bg'>
-                <h6 class='title'>Messages</h6>
+      <div className='container'>
+        <div className='row'>
+          <div className='col-12'>
+            <div className='ui-block ui-block-chat-wrap'>
+              <div className='ui-block-title block-title-bg'>
+                <h6 className='title'>Messages</h6>
               </div>
 
-              <div class='row'>
+              <div className='row'>
                 {/* turned off until full dms implemented */}
                 <MessagesUsers
                   authUser={auth.user}
