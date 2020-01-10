@@ -34,50 +34,44 @@ const Notification = ({ notification, client, key }) => {
   }, [auth.user.id, auth.user.newNotifications.length, client]);
 
   return (
-    <li key={key}>
-      <Avatar image={auth.user.image} />
-      <div className='notification-event'>
-        <Link
-          className='h6 notification-friend'
-          to={generatePath(Routes.USER_PROFILE, {
-            username: notification.author.username,
-          })}
-        >
-          {`${notification.author.firstName} ${notification.author.lastName}`}
-        </Link>
-        {notification.follow && <>started following you</>}
-
-        {notification.like && (
-          <>
-            likes your photo
+    <>
+      {notification.like && (<li>
+        <div className='d-flex'>
+          <div className='author-thumb mx-2'>
+            <Avatar image={notification.author.image} />
+          </div>
+          <div className='notification-detail mx-2'>
             <Link
-            // to={generatePath(Routes.POST, {
-            //   id: notification.like.post.id,
-            // })}
-            >
-              <div className='comment-photo1'>
-                <img src={notification.like.post.image} alt='photo1' />
-              </div>
-            </Link>
-          </>
-        )}
-
-        {notification.comment && (
-          <>
-            likes your photo
-            <Link
-              to={generatePath(Routes.POST, {
-                id: notification.comment.post.id,
+              to={generatePath(Routes.USER_PROFILE, {
+                username: notification.author.username,
               })}
             >
-              <div className='comment-photo1'>
-                <img src={notification.comment.post.image} alt='photo1' />
-              </div>
+              <h6 className='mb-1'>{`${notification.author.firstName} ${notification.author.lastName}`}</h6>
             </Link>
-          </>
-        )}
-      </div>
-    </li>
+            <p>Like your post</p>
+          </div>
+        </div>
+      </li>
+      )}
+       {notification.comment && (<li key={notification.id}>
+        <div className='d-flex'>
+          <div className='author-thumb mx-2'>
+            <Avatar image={notification.author.image} />
+          </div>
+          <div className='notification-detail mx-2'>
+            <Link
+              to={generatePath(Routes.USER_PROFILE, {
+                username: notification.author.username,
+              })}
+            >
+              <h6 className='mb-1'>{`${notification.author.firstName} ${notification.author.lastName}`}</h6>
+            </Link>
+            <p>Comment on your post</p>
+          </div>
+        </div>
+      </li>
+      )}
+    </>
   );
 };
 Notification.propTypes = {

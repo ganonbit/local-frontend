@@ -14,7 +14,6 @@ import { NOTIFICATIONS_PAGE_NOTIFICATION_LIMIT } from 'constants/DataLimit';
  */
 const Notifications = () => {
   const [{ auth }] = useStore();
-
   const variables = {
     userId: auth.user.id,
     skip: 0,
@@ -44,13 +43,14 @@ const Notifications = () => {
             );
           }
           return (
-            <ul className='notification-list'>
-              {data.map(notification => (
-                <Notification
-                  key={notification.id}
-                  notification={notification}
-                />
-              ))}
+            <ul className='notification-list notification-list-wrap'>
+              {data &&
+                notifications.map(notification => (
+                  <Notification
+                    key={notification.id}
+                    notification={notification}
+                  />
+                ))}
             </ul>
           );
         }}

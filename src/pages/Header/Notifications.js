@@ -27,11 +27,7 @@ const Notifications = ({ client, refetch }) => {
     }
   };
   return (
-    <div
-      className='icon-outer'
-      // onMouseLeave={() => updateNotificationSeen()
-      // }
-    >
+    <div className='icon-outer' onMouseLeave={() => updateNotificationSeen()}>
       <div className='control-icon more has-items'>
         <img
           src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/notification-img_cporyu.png'
@@ -51,6 +47,13 @@ const Notifications = ({ client, refetch }) => {
 
           <div className='mCustomScrollbar' data-mcs-theme='dark'>
             <ul className='notification-list'>
+              {auth.user.newNotifications.length === 0 && (
+                <li>
+                  <div className='notification-event'>
+                    <div>No Notifications</div>
+                  </div>
+                </li>
+              )}
               {auth.user.newNotifications.map(notification => {
                 return notification.comment ? (
                   <li>
