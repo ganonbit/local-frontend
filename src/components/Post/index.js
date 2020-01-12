@@ -13,6 +13,8 @@ export default function Post({ queryOptions, isAuth }) {
   const [isCommentOpen, setCommentOpen] = useState(true);
   const toggleComment = () => setCommentOpen(!isCommentOpen);
   const articleClass = 'hentry post';
+  let postsData = null;
+  let singlePostData = null;
   return (
     <Query
       query={queryOptions.query}
@@ -20,14 +22,22 @@ export default function Post({ queryOptions, isAuth }) {
       notifyOnNetworkStatusChange
     >
       {({ data, loading }) => {
-        let postData =
-          queryOptions.callback === 'getFollowedPosts' && data
-            ? data.getFollowedPosts
-            : data && data.getUserPosts;
-        return postData === undefined ? (
+        if (queryOptions.callback === 'getFollowedPosts') {
+          postsData = data.getFollowedPosts
+          console.log(postsData)
+        }
+        if (queryOptions.callback === 'getUserPosts') {
+          postsData = data.getUserPosts;
+          console.log(postsData)
+        }
+        if (queryOptions.callback === 'getPost') {
+          singlePostData = data.getPost;
+          console.log(singlePostData)
+        }
+        return postsData === undefined ? (
           <h1></h1>
         ) : (
-          postData.posts.map(post => {
+          postsData.posts.map(post => {
             return (
               <div key={post.id} className='ui-block'>
                 <article className={articleClass}>

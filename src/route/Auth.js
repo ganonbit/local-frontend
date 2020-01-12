@@ -10,7 +10,6 @@ import Welcome from 'pages/Welcome';
 
 import TermsAndServices from 'pages/TermsAndServices';
 import PrivacyPolicy from 'pages/PrivacyPolicy';
-import FeedbackForm from 'pages/Form';
 
 import * as Routes from 'routes';
 
@@ -56,10 +55,6 @@ const Auth = ({ refetch }) => {
         <Route
           path={Routes.PRIVACY_POLICY}
           render={props => <PrivacyPolicy isAuth={false} {...props} />}
-        />
-        <Route
-          path={Routes.FORM}
-          render={props => <FeedbackForm isAuth={false} {...props} />}
         />
 
         <Route render={() => <Welcome />} />
