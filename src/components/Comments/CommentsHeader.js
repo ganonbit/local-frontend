@@ -97,7 +97,7 @@ function CommentsHeader(props) {
             </time>
           </div>
         </div>
-        {isOwner && (
+        {(isAuth && isOwner) || (isAuth && isSelma) ? (
           <div className='more'>
             <FontAwesomeIcon
               className='olymp-three-dots-icon'
@@ -108,7 +108,7 @@ function CommentsHeader(props) {
             />
           
             <ul className='more-dropdown'>
-              <li>
+              {/* <li>
                 <Link
                   to
                   onClick={e => {
@@ -118,7 +118,7 @@ function CommentsHeader(props) {
                 >
                   Edit Comment
                 </Link>
-              </li>
+              </li> */}
               <li>
                 <Link
                   to
@@ -133,7 +133,7 @@ function CommentsHeader(props) {
             </ul>
             
           </div>
-        )}
+        ) : null}
       </div>
     </>
   );
