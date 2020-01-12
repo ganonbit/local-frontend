@@ -104,7 +104,7 @@ const PostHeader = props => {
           </time>
         </div>
       </div>
-      {(isAuth && isOwner) || (isAuth && isSelma) ? (
+      {isOwner && (
         <div className='more'>
           <FontAwesomeIcon
             className='olymp-three-dots-icon'
@@ -113,6 +113,7 @@ const PostHeader = props => {
             icon={faEllipsisV}
             style={{ height: '12px' }}
           />
+          
           <ul className='more-dropdown'>
             <li>
               <Link
@@ -137,7 +138,7 @@ const PostHeader = props => {
             </li>
           </ul>
         </div>
-      ) : null}
+      )}
     </div>
   );
 };

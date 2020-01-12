@@ -356,7 +356,7 @@
 }
 
 .control-icon .mCustomScrollbar {
-  overflow: hidden;
+  overflow-y: auto;
   max-height: 300px;
 }
 
@@ -22814,6 +22814,11 @@ li.add-more-posts span {
   font-size: 1rem;
   font-weight: bold;
   color: chocolate;
+}
+
+.notification-list-wrap{
+  overflow-y: auto;
+  height: calc(100vh - 410px);
 }
 
 .top-header .profile-section {
