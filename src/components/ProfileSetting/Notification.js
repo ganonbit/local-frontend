@@ -35,7 +35,7 @@ const Notification = ({ notification, client, key }) => {
 
   return (
     <>
-      {notification.like && (<li>
+      {notification.like && (<li key={notification.id}>
         <div className='d-flex'>
           <div className='author-thumb mx-2'>
             <Avatar image={notification.author.image} />

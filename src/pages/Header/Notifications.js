@@ -27,7 +27,7 @@ const Notifications = ({ client, refetch }) => {
     }
   };
   return (
-    <div className='icon-outer' onMouseLeave={() => updateNotificationSeen()}>
+    <div className='icon-outer'>
       <div className='control-icon more has-items'>
         <img
           src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/notification-img_cporyu.png'
@@ -99,10 +99,11 @@ const Notifications = ({ client, refetch }) => {
               })}
             </ul>
           </div>
-
-          <a href className='view-all bg-primary'>
+          <Link       
+            className='view-all bg-primary'
+            to={generatePath(Routes.NOTIFICATIONS)} >
             View All Notifications
-          </a>
+          </Link>
         </div>
       </div>
     </div>
