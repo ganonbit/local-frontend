@@ -106,8 +106,9 @@ function CommentsHeader(props) {
               icon={faEllipsisV}
               style={{ height: '12px' }}
             />
+          
             <ul className='more-dropdown'>
-              <li>
+              {/* <li>
                 <Link
                   to
                   onClick={e => {
@@ -117,7 +118,7 @@ function CommentsHeader(props) {
                 >
                   Edit Comment
                 </Link>
-              </li>
+              </li> */}
               <li>
                 <Link
                   to
@@ -130,6 +131,7 @@ function CommentsHeader(props) {
                 </Link>
               </li>
             </ul>
+            
           </div>
         ) : null}
       </div>

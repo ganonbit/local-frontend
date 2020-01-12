@@ -113,6 +113,7 @@ const PostHeader = props => {
             icon={faEllipsisV}
             style={{ height: '12px' }}
           />
+          
           <ul className='more-dropdown'>
             <li>
               <Link

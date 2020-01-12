@@ -18,7 +18,7 @@ export const USER_PROFILE = '/:username';
 
 export const DISCOVER = '/discover';
 
-export const NOTIFICATIONS = '/notifications';
+export const NOTIFICATIONS = '/settings/notifications';
 
 export const MESSAGES = '/messages/:userId';
 

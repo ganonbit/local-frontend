@@ -3,10 +3,17 @@ import MainLayout from './MainLayout';
 import * as Routes from 'routes';
 import { PersonalInfo, ChangePassword } from 'components/ProfileSetting';
 import Notifications from './Notifications';
+import UserProfile from 'pages/UserProfile';
+
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 const route = ({ refetch }) => {
   return (
     <Router>
+      <Route
+        exact
+        path={Routes.USER_PROFILE}
+        render={props => <UserProfile refetch={refetch} {...props} />}
+      />
       <MainLayout>
         <Switch>
           <Route
@@ -19,6 +26,7 @@ const route = ({ refetch }) => {
             path='/settings/notifications'
             render={props => <Notifications {...props} />}
           />
+
           <Route
             path={Routes.SETTINGS}
             render={props => <PersonalInfo {...props} refetch={refetch} />}
