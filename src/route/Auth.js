@@ -10,7 +10,7 @@ import Welcome from 'pages/Welcome';
 
 import TermsAndServices from 'pages/TermsAndServices';
 import PrivacyPolicy from 'pages/PrivacyPolicy';
-import FeedbackForm from 'pages/Form';
+import FeedbackForm from 'pages/FeedbackForm';
 
 import * as Routes from 'routes';
 
