@@ -116,6 +116,7 @@ const ProfileHeader = ({ user, refetch, auth, username, isOwner, isSelma }) => {
                         </Link>
                       </div>
                     )}
+                    {isOwner && (
                     <div className='btn btn-control bg-primary more'>
                       <FontAwesomeIcon
                         size='xl'
@@ -158,6 +159,7 @@ const ProfileHeader = ({ user, refetch, auth, username, isOwner, isSelma }) => {
                         </li>
                       </ul>
                     </div>
+                    )}
                   </div>
                 ) : null}
               </div>
