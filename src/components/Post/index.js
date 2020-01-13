@@ -17,7 +17,6 @@ export default function Post({ queryOptions, isAuth }) {
   let postsData = null;
 
   const singlePost = (post) => {
-    console.log('singlepost')
     return (
       <div key={post.id} className='ui-block'>
         <article className={articleClass}>

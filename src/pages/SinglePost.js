@@ -11,9 +11,6 @@ import { GET_POST } from 'graphql/post';
 
 const SinglePost = ( props ) => {  
 
-  console.log('single post: ');
-  console.log(props.match.params.id);
-  
   const queryOptions = {
     query: GET_POST,
     variables: { id: props.match.params.id },

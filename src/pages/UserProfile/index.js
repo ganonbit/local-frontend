@@ -20,7 +20,6 @@ export default function Profile(props) {
     variables: { username: props.match.params.username, skip: 0, limit: 15 },
     callback: 'getUserPosts',
   };
-  console.log(props);
   return (
     <Query
       query={GET_USER}
