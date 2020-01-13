@@ -40,7 +40,7 @@ const AppLayout = ({ refetch, history }) => {
         <div className='header-spacer'></div>
       )}
       <Switch>
-        <Route path={Routes.DISCOVER} render={props => <Discover />} />
+        <Route path={Routes.DISCOVER} render={() => <Discover />} />
         <Route
           path={Routes.SETTINGS}
           render={() => <ProfileSetting refetch={refetch} />}
@@ -48,7 +48,7 @@ const AppLayout = ({ refetch, history }) => {
         <Route path={Routes.REWARDS} render={props => <Reward {...props} />} />
         <Route
           path={Routes.MESSAGES}
-          render={props => <Messages {...props} />}
+          render={props => <Messages refetch={refetch} {...props} />}
         />
         <Route path={Routes.FAQ} render={props => <Faqs {...props} />} />
 
@@ -69,7 +69,7 @@ const AppLayout = ({ refetch, history }) => {
         <Route
           exact
           path={Routes.FORM}
-          render={props => <FeedbackForm isAuth={true} {...props} />}
+          render={props => <FeedbackForm refetch={refetch}  isAuth={true} {...props} />}
         />
         <Route path={Routes.BADGES} render={props => <Badges {...props} />} />
         <Route
@@ -77,12 +77,12 @@ const AppLayout = ({ refetch, history }) => {
           path={Routes.USER_PROFILE}
           render={props => <UserProfile refetch={refetch} {...props} />}
         />
-        <Route path={Routes.HOME} render={props => <Home {...props} />} />
-
         <Route
+          exact
           path={Routes.POST}
-          render={() => <SinglePost refetch={refetch} />}
+          render={props => <SinglePost refetch={refetch} isAuth={true} {...props} />}
         />
+        <Route path={Routes.HOME} render={props => <Home {...props} />} />
       </Switch>
     </div>
   );

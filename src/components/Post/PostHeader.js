@@ -12,6 +12,7 @@ import { GET_FOLLOWED_POSTS, DELETE_POST } from 'graphql/post';
 import { GET_AUTH_USER, GET_USER_POSTS } from 'graphql/user';
 
 import EditPost from 'components/Modals/EditPost';
+import SinglePost from 'pages/SinglePost';
 
 import {
   HOME_PAGE_POSTS_LIMIT,
@@ -71,6 +72,7 @@ const PostHeader = props => {
     }
   };
 
+
   return (
     <div className='post__author author vcard inline-items'>
       <EditPost
@@ -104,7 +106,6 @@ const PostHeader = props => {
           </time>
         </div>
       </div>
-      {(isAuth && isOwner) || (isAuth && isSelma) ? (
         <div className='more'>
           <FontAwesomeIcon
             className='olymp-three-dots-icon'
@@ -115,6 +116,7 @@ const PostHeader = props => {
           />
           
           <ul className='more-dropdown'>
+          {(isAuth && isOwner) || (isAuth && isSelma) ? (
             <li>
               <Link
                 href
@@ -125,6 +127,8 @@ const PostHeader = props => {
                 Edit Post
               </Link>
             </li>
+          ) : null}
+          {(isAuth && isOwner) || (isAuth && isSelma) ? (
             <li>
               <Link
                 href
@@ -136,9 +140,17 @@ const PostHeader = props => {
                 Delete Post
               </Link>
             </li>
+          ) : null}
+            <li>
+              <Link
+                to={generatePath(Routes.POST, {
+                  id: postId
+                })}>
+                Permalink
+              </Link>
+            </li>
           </ul>
         </div>
-      ) : null}
     </div>
   );
 };

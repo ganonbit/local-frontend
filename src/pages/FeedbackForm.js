@@ -126,7 +126,7 @@ const FeedbackForm = ({ isAuth }) => {
           <div className='row'>
             <div className='col col-xl-10 m-auto col-lg-12 col-md-12 col-sm-12 col-12'>
               <div className='detail-content ui-block feedback-form'>
-                <Form noValidate validated={validated} onSubmit={handleSubmit}>
+                <Form noValidate validated={validated} onSubmit={handleSubmit} netlify>
                   <Form.Row>
                     <Form.Group as={Col} md='6' controlId='validationCustom01'>
                       <Form.Label>First name</Form.Label>
