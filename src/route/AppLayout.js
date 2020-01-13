@@ -19,7 +19,7 @@ import Faqs from 'pages/Faqs';
 import CommunityGuideline from 'pages/CommunityGuideline';
 import TermsAndServices from 'pages/TermsAndServices';
 import PrivacyPolicy from 'pages/PrivacyPolicy';
-import FeedbackForm from 'pages/Form';
+import FeedbackForm from 'pages/FeedbackForm';
 import SinglePost from 'pages/SinglePost';
 
 import * as Routes from 'routes';
