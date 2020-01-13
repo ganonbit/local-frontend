@@ -100,16 +100,6 @@ const SidebarContent = ({ onSetSidebarOpen, isAuth, location }) => {
                   </OverlayTriggers>
                 </Link>
               </li>
-              <li>
-                <Link to={generatePath(Routes.FORM)}>
-                  <OverlayTriggers toolTipText='REWARDS' placement='right'>
-                    <img
-                      src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/star-icon_qbwpz1.png'
-                      alt=''
-                    />
-                  </OverlayTriggers>
-                </Link>
-              </li>
             </ul>
           )}
         </div>
