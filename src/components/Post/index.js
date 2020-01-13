@@ -75,25 +75,12 @@ export default function Post({ queryOptions, isAuth }) {
     >
       {({ data, loading }) => {
         if (queryOptions.callback === 'getFollowedPosts') {
-          console.log(data)
-          console.log(data.getFollowedPosts)
           postsData = data.getFollowedPosts
         }
         if (queryOptions.callback === 'getUserPosts') {
-          // console.log(data.getUserPosts)
           postsData = data.getUserPosts;
         }
         if (queryOptions.callback === 'getPost') {
-          // let post = data.getPost; 
-          // console.log('post: ')
-          // console.log(post);
-          // let singlePost = {
-          //   __typename: "PostsPayload",
-          //   count: 1,
-          //   posts: post
-          // };
-          // console.log('singlePost: ')
-          // console.log(singlePost);
           postData = data.getPost;
         }
 
