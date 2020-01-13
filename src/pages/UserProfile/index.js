@@ -17,7 +17,7 @@ export default function Profile(props) {
 
   const queryOptions = {
     query: GET_USER_POSTS,
-    variables: { username: props.match.params.username, skip: 0, limit: 15 },
+    variables: { username: props.match.params.username, skip: 0, limit: 35 },
     callback: 'getUserPosts',
   };
   return (
