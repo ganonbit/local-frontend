@@ -91,7 +91,7 @@ const Notifications = ({ client, refetch }) => {
                         <a href className='h6 notification-friend'>
                           {`${notification.author.firstName} ${notification.author.lastName}`}
                         </a>{' '}
-                        like your post
+                        liked your post
                       </div>
                     </div>
                   </li>
