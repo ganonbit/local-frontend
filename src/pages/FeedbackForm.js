@@ -4,7 +4,7 @@ import WelcomeHeader from 'pages/Welcome/WelcomeHeader';
 import { Form, Button, Col, InputGroup, Dropdown } from 'react-bootstrap';
 
 const FeedbackForm = ({ isAuth }) => {
-  const feedbackEndpoint = `${process.env.REACT_APP_API_URL}`
+  const feedbackEndpoint = `${process.env.REACT_APP_API_URL}`;
   const [validated, setValidated] = useState(false);
   const [values, setValues] = useState({
     firstName: '',
@@ -14,13 +14,7 @@ const FeedbackForm = ({ isAuth }) => {
     feedbackReason: null,
   });
 
-  const {
-    firstName,
-    lastName,
-    email,
-    feedback,
-    feedbackReason,
-  } = values;
+  const { firstName, lastName, email, feedback, feedbackReason } = values;
 
   const handleChange = event => {
     event.preventDefault();
@@ -33,7 +27,7 @@ const FeedbackForm = ({ isAuth }) => {
     setValues({ ...values, ['feedbackReason']: eventKey });
   };
 
-  const submitFeedbackForm = async (feedback) => {
+  const submitFeedbackForm = async feedback => {
     const mutation = `
       mutation {
         submitFeedbackForm(input: {
@@ -53,16 +47,19 @@ const FeedbackForm = ({ isAuth }) => {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'authorization': `${process.env.REACT_APP_API_AUTH_KEY}`
+          authorization: `${process.env.REACT_APP_API_AUTH_KEY}`,
         },
-        body: JSON.stringify({ query: mutation })
-      })
-      const resp = await response.json()
-      console.log(resp.data.submitFeedbackForm.message)
+        body: JSON.stringify({ query: mutation }),
+      });
+      const resp = await response.json();
+      console.log(resp.data.submitFeedbackForm.message);
     } catch (error) {
-      console.log('There was a problem submitting your feedback: ', error.message);
+      console.log(
+        'There was a problem submitting your feedback: ',
+        error.message
+      );
     }
-  }
+  };
 
   const handleSubmit = async event => {
     const form = event.currentTarget;
@@ -76,29 +73,29 @@ const FeedbackForm = ({ isAuth }) => {
         email: email,
         feedback: feedback,
         feedbackReason: feedbackReason,
-      })
+      });
     }
     setValidated(true);
-  }
+  };
 
   const dropdownLabel = () => {
     if (feedbackReason) {
       switch (feedbackReason) {
         case 'general':
-          return 'General Feedback'
+          return 'General Feedback';
         case 'idea':
-          return 'Idea Submission'
+          return 'Idea Submission';
         case 'bug':
-          return 'Bug Report / Feature Request'
+          return 'Bug Report / Feature Request';
         case 'report':
-          return 'Report User'
+          return 'Report User';
         default:
-          return 'Select Feedback Reason'
+          return 'Select Feedback Reason';
       }
     } else {
-      return 'Select Feedback Reason'
+      return 'Select Feedback Reason';
     }
-  }
+  };
 
   return (
     <>
@@ -111,7 +108,9 @@ const FeedbackForm = ({ isAuth }) => {
       <div className='stunning-header bg-primary-opacity'>
         <div className='header-spacer--standard'></div>
         <div className='stunning-header-content'>
-          <h1 className='stunning-header-title'>Avocado Nation Feedback Form</h1>
+          <h1 className='stunning-header-title'>
+            Avocado Nation Feedback Form
+          </h1>
           <ul className='breadcrumbs'>
             <li className='breadcrumbs-item active'>
               <span>CONTACT</span>
@@ -126,7 +125,12 @@ const FeedbackForm = ({ isAuth }) => {
           <div className='row'>
             <div className='col col-xl-10 m-auto col-lg-12 col-md-12 col-sm-12 col-12'>
               <div className='detail-content ui-block feedback-form'>
-                <Form noValidate validated={validated} onSubmit={handleSubmit} netlify>
+                <Form
+                  noValidate
+                  validated={validated}
+                  onSubmit={handleSubmit}
+                  netlify
+                >
                   <Form.Row>
                     <Form.Group as={Col} md='6' controlId='validationCustom01'>
                       <Form.Label>First name</Form.Label>
