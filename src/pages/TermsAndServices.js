@@ -8,29 +8,31 @@ const TermsAndServices = ({ isAuth }) => (
         <WelcomeHeader />
       </div>
     )}
-    <div class='stunning-header bg-primary-opacity'>
-      <div class='header-spacer--standard'></div>
-      <div class='stunning-header-content'>
-        <h1 class='stunning-header-title'>Avocado Nation Terms Of Services</h1>
-        <ul class='breadcrumbs'>
-          <li class='breadcrumbs-item active'>
+    <div className='stunning-header bg-primary-opacity'>
+      <div className='header-spacer--standard'></div>
+      <div className='stunning-header-content'>
+        <h1 className='stunning-header-title'>Avocado Nation Terms Of Services</h1>
+        <ul className='breadcrumbs'>
+          <li className='breadcrumbs-item active'>
             <span>TERMS OF SERVICES</span>
           </li>
         </ul>
       </div>
-      <div class='content-bg-wrap stunning-header-bg1'></div>
+      <div className='content-bg-wrap stunning-header-bg1'></div>
     </div>
 
-    <section class='mb60'>
-      <div class='container'>
-        <div class='row'>
-          <div class='col col-xl-10 m-auto col-lg-12 col-md-12 col-sm-12 col-12'>
-            <div class='detail-content'>
+    <section className='mb60'>
+      <div className='container'>
+        <div className='row'>
+          <div className='col col-xl-10 m-auto col-lg-12 col-md-12 col-sm-12 col-12'>
+            <div className='detail-content'>
               <h4>Welcome to Avocado Nation!</h4>
               <p>
                 Avocados From Mexico (AFM) maintains the website 
                 <a href='/'>www.theavocadonation.com</a> or{' '}
-                <a href='https://www.avocadosfrommexico.com/avocado-nation'>www.avocadosfrommexico.com/avocado-nation</a>{' '}
+                <a href='https://www.avocadosfrommexico.com/avocado-nation'>
+                  www.avocadosfrommexico.com/avocado-nation
+                </a>{' '}
                 (“Avocado Nation” or the “Platform”) for your avocado
                 information, education, enjoyment and use. By accessing and
                 registering to the Platform, you agree to accept, without
@@ -74,11 +76,12 @@ const TermsAndServices = ({ isAuth }) => (
                 you give us specific permission.
               </p>
               <p>
-                <a href='#'>AFM’s Privacy Policy</a> explains how AFM collects
-                and uses your personal data to determine some of the content you
-                see and to provide the other services described below. You can
-                also go to your <a href='/settings'>SETTINGS</a> at any time to review
-                the privacy choices you have about how your data may be used.
+                <a href='/privacy-policy'>AFM’s Privacy Policy</a> explains how
+                AFM collects and uses your personal data to determine some of
+                the content you see and to provide the other services described
+                below. You can also go to your <a href='/settings'>SETTINGS</a>{' '}
+                at any time to review the privacy choices you have about how
+                your data may be used.
               </p>
               <h4>Intellectual Property Protection</h4>
               <p>
@@ -178,7 +181,8 @@ const TermsAndServices = ({ isAuth }) => (
                 transferable, sub-licensable, royalty-free, and worldwide
                 license to host, use, distribute, modify, run, copy, publicly
                 perform or display, translate, and create derivative works of
-                your content (consistent with your <a href='#'>privacy</a> and 
+                your content (consistent with your 
+                <a href='/privacy-policy'>privacy</a> and 
                 <a href='/settings'>application</a> settings).
               </p>
               <h4>Limits on using AFM intellectual property</h4>
@@ -225,7 +229,7 @@ const TermsAndServices = ({ isAuth }) => (
                 submitted on the Platform is provided voluntarily by the
                 submitter. For full details regarding AFM’s treatment of
                 personal information, please see AFM’s{' '}
-                <a href='#'>Privacy Policy</a>.
+                <a href='/privacy-policy'>Privacy Policy</a>.
               </p>
               <p>
                 Materials and third-party logos, brands and trade names

@@ -1,6 +1,6 @@
 import React from 'react';
 import LastPhotos from './PhotoSection';
-import FavouritePages from './FavouritePages';
+import Favs from './Favs';
 import Friends from './Friends';
 import ProfileBadges from './ProfileBadges';
 
@@ -10,7 +10,7 @@ export default function Right() {
       <ProfileBadges />
       {/* <Friends /> */}
       <LastPhotos />
-      {/* <FavouritePages /> */}
+      {/* <Favs /> */}
     </div>
   );
 }

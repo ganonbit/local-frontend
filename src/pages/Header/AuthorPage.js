@@ -109,9 +109,66 @@ const AuthorPage = ({ user }) => {
             <div className='ui-block-title ui-block-title-small'>
               <h6 className='title'>Your Account</h6>
             </div>
-            <AuthorSpecPages user={user} />
-            <FriendReferral />
-            <LegalLinks />
+            <ul className='account-settings'>
+              <li>
+                <Link
+                  to={generatePath(Routes.USER_PROFILE, {
+                    username: user.username,
+                  })}
+                >
+                  <OlympMenu className='olymp-camera-icon' />
+                  <span>Profile</span>
+                </Link>
+              </li>
+              <li>
+                <Link to={Routes.SETTINGS}>
+                  <SettingIcon className='olymp-star-icon left-menu-icon' />
+
+                  <span>Profile Settings</span>
+                </Link>
+              </li>
+              <li>
+                <Link to={Routes.REWARDS}>
+                  <RewardIcon className='olymp-logout-icon' />
+                  <span>Rewards</span>
+                </Link>
+              </li>
+              <li>
+                <a href='/' onClick={() => localStorage.clear()}>
+                  <LogOut className='olymp-logout-icon' />
+                  <span>Log Out</span>
+                </a>
+              </li>
+
+              <li>
+                <a href='#' data-toggle='modal' data-target='#referralUrl'>
+                  <EnvelopeIcon className='envelope-icon' />
+                  <span>Refer User</span>
+                </a>
+              </li>
+            </ul>
+            <ul>
+              <li>
+                <Link to={Routes.TERM_AND_CONDITIONS}>
+                  <span>Terms and Conditions</span>
+                </Link>
+              </li>
+              <li>
+                <Link to={generatePath(Routes.FORM)}>
+                  <span>Idea Submission</span>
+                </Link>
+              </li>
+              <li>
+                <Link to={Routes.COMMUNITY_GUIDELINE}>
+                  <span>Community Guidelines</span>
+                </Link>
+              </li>
+              <li>
+                <Link to={Routes.FAQ}>
+                  <span>FAQs</span>
+                </Link>
+              </li>
+            </ul>
           </div>
         </div>
       </div>

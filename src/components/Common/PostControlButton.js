@@ -4,13 +4,13 @@ import Like from 'components/Like';
 import OverlayTriggers from '../Common/ToolTip';
 
 export default function PostControlButton(props) {
-  const { author, postId, likes, toggle } = props;
+  const { author, postId, likes, toggle, post, userId } = props;
   return (
     <div className='control-block-button post-control-button'>
       {!props.isAuth ? (
         <OverlayTriggers toolTipText='LIKE' placement='left'>
           <a
-            href
+            href='#'
             onClick={e => {
               e.preventDefault();
             }}
@@ -24,16 +24,10 @@ export default function PostControlButton(props) {
           </a>
         </OverlayTriggers>
       ) : (
-        <Like user={author} postId={postId} likes={likes} />
+        <Like user={author} postId={postId} likes={likes} userId={userId} post={post} />
       )}
       <OverlayTriggers toolTipText='COMMENT' placement='left'>
-        <a
-          href
-          className='btn btn-control comments'
-          onClick={e => {
-            toggle && e.preventDefault();
-          }}
-        >
+        <a href className='btn btn-control comments' onClick={toggle}>
           <img
             src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/comments-icon_ffpa0l.png'
             alt=''
@@ -43,7 +37,7 @@ export default function PostControlButton(props) {
 
       <OverlayTriggers toolTipText='SHARE' placement='left'>
         <a
-          href
+          href='#'
           onClick={e => {
             e.preventDefault();
           }}
