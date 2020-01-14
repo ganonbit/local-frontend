@@ -15,25 +15,27 @@ export default function Comments(props, isAuth) {
     <>
       <ul className='comments-list'>
         {props.post.comments
-          ? props.post.comments.slice(0, numOfComments).map((comment, index) => {
-              if (!comment.author) {
-                return null;
-              }
-              return (
-                <li key={index} className='comment-item'>
-                  <CommentsHeader
-                    author={comment.author}
-                    createdAt={comment.createdAt}
-                    commentId={comment.id}
-                    isAuth={isAuth}
-                    post={props.post}
-                  />
-                  <Linkify options={linkDecorator}>
-                    <p>{comment.comment}</p>
-                  </Linkify>
-                </li>
-              );
-            })
+          ? props.post.comments
+              .slice(0, numOfComments)
+              .map((comment, index) => {
+                if (!comment.author) {
+                  return null;
+                }
+                return (
+                  <li key={index} className='comment-item'>
+                    <CommentsHeader
+                      author={comment.author}
+                      createdAt={comment.createdAt}
+                      commentId={comment.id}
+                      isAuth={isAuth}
+                      post={props.post}
+                    />
+                    <Linkify options={linkDecorator}>
+                      <p>{comment.comment}</p>
+                    </Linkify>
+                  </li>
+                );
+              })
           : null}
         {numOfComments < props.post.comments.length ? (
           <div

@@ -93,7 +93,10 @@ const MessagesChatConversation = ({
                               className='author-thumb'
                               image={message.sender.image}
                             />
-                            <a href='1#' className='h6 notification-friend pl-2'>
+                            <a
+                              href='1#'
+                              className='h6 notification-friend pl-2'
+                            >
                               {message.sender.username}
                             </a>
                           </div>
@@ -104,7 +107,10 @@ const MessagesChatConversation = ({
                               className='author-thumb'
                               image={message.sender.image}
                             />
-                            <a href='1#' className='h6 notification-friend pl-2'>
+                            <a
+                              href='1#'
+                              className='h6 notification-friend pl-2'
+                            >
                               {message.sender.username}
                             </a>
                           </div>
