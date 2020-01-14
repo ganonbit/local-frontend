@@ -115,7 +115,6 @@ const Notifications = ({ client, refetch }) => {
             View All Notifications
           </Link>
         </div>
-        )}
       </div>
     </div>
   );
