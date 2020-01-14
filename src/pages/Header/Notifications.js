@@ -3,7 +3,13 @@ import { useStore } from 'store';
 import { generatePath, Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { withApollo } from 'react-apollo';
+import { useMediaQuery } from 'react-responsive';
+
 import { UPDATE_NOTIFICATION_SEEN } from 'graphql/notification';
+import Default, { Mobile } from '../../components/Wrappers/Queries';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBell } from '@fortawesome/free-solid-svg-icons';
 
 import Avatar from 'components/Avatar';
 
@@ -98,10 +104,14 @@ const Notifications = ({ client, refetch }) => {
                 );
               })}
             </ul>
+            <a href='#' className='view-all bg-blue'>
+              Check all your Events
+            </a>
           </div>
-          <Link       
+          <Link
             className='view-all bg-primary'
-            to={generatePath(Routes.NOTIFICATIONS)} >
+            to={generatePath(Routes.NOTIFICATIONS)}
+          >
             View All Notifications
           </Link>
         </div>

@@ -69,7 +69,9 @@ const AppLayout = ({ refetch, history }) => {
         <Route
           exact
           path={Routes.FORM}
-          render={props => <FeedbackForm refetch={refetch}  isAuth={true} {...props} />}
+          render={props => (
+            <FeedbackForm refetch={refetch} isAuth={true} {...props} />
+          )}
         />
         <Route path={Routes.BADGES} render={props => <Badges {...props} />} />
         <Route
@@ -80,7 +82,9 @@ const AppLayout = ({ refetch, history }) => {
         <Route
           exact
           path={Routes.POST}
-          render={props => <SinglePost refetch={refetch} isAuth={true} {...props} />}
+          render={props => (
+            <SinglePost refetch={refetch} isAuth={true} {...props} />
+          )}
         />
         <Route path={Routes.HOME} render={props => <Home {...props} />} />
       </Switch>

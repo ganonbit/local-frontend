@@ -24,7 +24,13 @@ export default function PostControlButton(props) {
           </a>
         </OverlayTriggers>
       ) : (
-        <Like user={author} postId={postId} likes={likes} userId={userId} post={post} />
+        <Like
+          user={author}
+          postId={postId}
+          likes={likes}
+          userId={userId}
+          post={post}
+        />
       )}
       <OverlayTriggers toolTipText='COMMENT' placement='left'>
         <a href className='btn btn-control comments' onClick={toggle}>
