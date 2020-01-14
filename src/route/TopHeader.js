@@ -23,10 +23,6 @@ const TopHeader = ({ refetch }) => {
         <MobileNav refetch={refetch} auth={auth} mobileToggle={false} />
       </div>
 
-      <div className='tab-content tab-content-responsive'>
-        <MobileNav refetch={refetch} auth={auth} mobileToggle={true} />
-      </div>
-
       <UserReferralModal />
     </header>
   );
