@@ -80,14 +80,14 @@ export const MobileNav = ({ refetch, auth, mobileToggle, status }) => {
           </Link>
         </NavItem>
         <NavItem active={false}>
-          <Link to='/'>
+          {/* <Link to='/'>
             <FontAwesomeIcon
               size='2x'
               color='white'
               icon={faSearch}
               style={{ height: '24px', marginTop: '5px' }}
             />
-          </Link>
+          </Link> */}
         </NavItem>
       </ul>
     </Mobile>
