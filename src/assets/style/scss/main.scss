@@ -7432,6 +7432,14 @@ fieldset[disabled] .checkbox input[type='checkbox'],
   margin-bottom: 0;
 }
 
+.notification-text {
+font-size: 0.812rem !important;
+font-weight: 400 !important;
+line-height: 1.5 !important;
+color: #888da8 !important;
+display: inline-block !important;
+}
+
 .chat-message .notification-event {
   max-width: 75%;
   font-size: 12px;

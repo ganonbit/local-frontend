@@ -26,6 +26,7 @@ const Notifications = ({ client, refetch }) => {
       console.log(err);
     }
   };
+  // console.log(notification)
   return (
     <div className='icon-outer'>
       <div className='control-icon more has-items'>
@@ -55,46 +56,59 @@ const Notifications = ({ client, refetch }) => {
                 </li>
               )}
               {auth.user.newNotifications.map(notification => {
-                return notification.comment ? (
-                  <li>
-                    <Link
-                      to={generatePath(Routes.USER_PROFILE, {
-                        username: notification.author.username,
-                      })}
-                    >
-                      <div className='author-thumb'>
-                        <Avatar image={notification.author.image} />
+                console.log(auth)
+                return (
+                  <>
+                    {notification.like && (<li key={notification.id}>
+                      <div className='d-flex'>
+                        <div className='author-thumb mx-2'>
+                          <Avatar image={notification.author.image} />
+                        </div>
+                        <div className='notification-detail mx-2'>
+                          <Link
+                            to={generatePath(Routes.USER_PROFILE, {
+                              username: notification.author.username,
+                            })}
+                          >
+                            <h6 className='mb-1'>{`${notification.author.firstName} ${notification.author.lastName}`}</h6>
+                          </Link>
+                          {' '}
+                          <Link
+                            to={generatePath(Routes.POST, {
+                              id: notification.like.post.id,
+                            })}
+                          >
+                            <p>liked your post</p>
+                          </Link>
+                        </div>
                       </div>
-                    </Link>
-                    <div className='notification-event'>
-                      <div>
-                        <a href className='h6 notification-friend'>
-                          {`${notification.author.firstName} ${notification.author.lastName}`}
-                        </a>{' '}
-                        commented on your post
+                    </li>
+                    )}
+                     {notification.comment && (<li key={notification.id}>
+                      <div className='d-flex'>
+                        <div className='author-thumb mx-2'>
+                          <Avatar image={notification.author.image} />
+                        </div>
+                        <div className='notification-detail mx-2'>
+                          <Link
+                            to={generatePath(Routes.USER_PROFILE, {
+                              username: notification.author.username,
+                            })}
+                          >
+                            <h6 className='mb-1'>{`${notification.author.firstName} ${notification.author.lastName}`}</h6>
+                          </Link>
+                          <Link
+                            to={generatePath(Routes.POST, {
+                              id: notification.comment.post.id,
+                            })}
+                          >
+                            <p>Commented on your post</p>
+                          </Link>
+                        </div>
                       </div>
-                    </div>
-                  </li>
-                ) : (
-                  <li>
-                    <Link
-                      to={generatePath(Routes.USER_PROFILE, {
-                        username: notification.author.username,
-                      })}
-                    >
-                      <div className='author-thumb'>
-                        <Avatar image={notification.author.image} />
-                      </div>
-                    </Link>
-                    <div className='notification-event'>
-                      <div>
-                        <a href className='h6 notification-friend'>
-                          {`${notification.author.firstName} ${notification.author.lastName}`}
-                        </a>{' '}
-                        liked your post
-                      </div>
-                    </div>
-                  </li>
+                    </li>
+                    )}
+                  </>
                 );
               })}
             </ul>
