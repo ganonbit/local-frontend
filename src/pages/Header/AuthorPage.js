@@ -203,6 +203,22 @@ export const MobileAuthorPage = ({ user }) => {
   );
 };
 
+export const AuthorThumbnail = ({ user }) => {
+  return (
+    <Link
+      to={generatePath(Routes.USER_PROFILE, {
+        username: user.username,
+      })}
+    >
+      <div className='author-page author vcard inline-items more'>
+        <div className='author-thumb'>
+          <Avatar image={user.image} />
+        </div>
+      </div>
+    </Link>
+  );
+};
+
 export const MobileAuthorSettings = ({ user }) => {
   return (
     <>
