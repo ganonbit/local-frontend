@@ -29,8 +29,8 @@ export default class Search extends React.Component {
       this.setState({ hashTagQuery: `#${hashTag}`, searchClass: 'search' });
     }
   };
-
   render() {
+    // console.log(this.props)
     return (
       <InstantSearch
         indexName='production_avonation_users'
@@ -59,7 +59,7 @@ export default class Search extends React.Component {
 
             <div className='control-block' style={{ height: 'auto' }}>
               <ChatNotifications />
-              <Notifications refetch={this.props.refetch} />
+              <Notifications refetch={this.props.refetch} {...this.props} />
               <AuthorPage user={this.props.auth.user} />
             </div>
           </div>

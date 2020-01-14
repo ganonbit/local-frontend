@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import PropTypes from 'prop-types';
 import { generatePath, Link } from 'react-router-dom';
 import { withApollo } from 'react-apollo';
 
@@ -73,9 +72,6 @@ const Notification = ({ notification, client, key }) => {
       )}
     </>
   );
-};
-Notification.propTypes = {
-  client: PropTypes.object.isRequired,
 };
 
 export default withApollo(Notification);
