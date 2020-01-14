@@ -15,7 +15,7 @@ import Search from '../../components/Search';
 import Default, { Mobile } from '../../components/Wrappers/Queries';
 import Notifications from './Notifications';
 import ChatNotifications from './ChatNotifications';
-import AuthorPage from './AuthorPage';
+import AuthorPage, { AuthorThumbnail } from './AuthorPage';
 
 import * as Routes from 'routes';
 
@@ -51,7 +51,7 @@ export const MobileNav = ({ refetch, auth, mobileToggle, status }) => {
               size='2x'
               color='white'
               icon={faHome}
-              style={{ height: '24px', marginTop: '5px' }}
+              style={{ height: '24px', marginTop: '4px' }}
             />
           </Link>
         </NavItem>
@@ -65,7 +65,7 @@ export const MobileNav = ({ refetch, auth, mobileToggle, status }) => {
               size='2x'
               color='white'
               icon={faComment}
-              style={{ height: '24px', marginTop: '5px' }}
+              style={{ height: '24px', marginTop: '4px' }}
             />
           </Link>
         </NavItem>
@@ -75,7 +75,7 @@ export const MobileNav = ({ refetch, auth, mobileToggle, status }) => {
               size='2x'
               color='white'
               icon={faBell}
-              style={{ height: '24px', marginTop: '5px' }}
+              style={{ height: '24px', marginTop: '4px' }}
             />
           </Link>
         </NavItem>
@@ -88,6 +88,7 @@ export const MobileNav = ({ refetch, auth, mobileToggle, status }) => {
               style={{ height: '24px', marginTop: '5px' }}
             />
           </Link> */}
+          <AuthorThumbnail user={auth.user} />
         </NavItem>
       </ul>
     </Mobile>
