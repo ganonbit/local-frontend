@@ -16,7 +16,7 @@ export default function Post({ queryOptions, isAuth }) {
   let postData = null;
   let postsData = null;
 
-  const singlePost = (post) => {
+  const singlePost = post => {
     return (
       <div key={post.id} className='ui-block'>
         <article className={articleClass}>
@@ -61,10 +61,10 @@ export default function Post({ queryOptions, isAuth }) {
             post={post}
           />
         )}
-        {isAuth && <Comments  post={post}/>}
+        {isAuth && <Comments post={post} />}
       </div>
-    )
-  }
+    );
+  };
 
   return (
     <Query
@@ -74,7 +74,7 @@ export default function Post({ queryOptions, isAuth }) {
     >
       {({ data, loading }) => {
         if (queryOptions.callback === 'getFollowedPosts') {
-          postsData = data.getFollowedPosts
+          postsData = data.getFollowedPosts;
         }
         if (queryOptions.callback === 'getUserPosts') {
           postsData = data.getUserPosts;
@@ -83,19 +83,15 @@ export default function Post({ queryOptions, isAuth }) {
           postData = data.getPost;
         }
 
-        if (!postsData && !postData) { return null;}
+        if (!postsData && !postData) {
+          return null;
+        }
         if (postsData) {
-          return (
-            postsData.posts.map(post => {
-              return (
-                singlePost(post)
-              )
-            })
-          )
+          return postsData.posts.map(post => {
+            return singlePost(post);
+          });
         } else if (postData) {
-          return (
-            singlePost(postData)
-          )
+          return singlePost(postData);
         }
       }}
     </Query>

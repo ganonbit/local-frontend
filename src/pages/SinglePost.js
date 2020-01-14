@@ -1,16 +1,14 @@
 import React from 'react';
 import Post from 'components/Post';
-import {
-  // TrendingPost,
-  // TrendingTopics,
-  // TopRatedUsers,
-  // NewsFeedAdd,
-} from 'components/Widget';
+import // TrendingPost,
+// TrendingTopics,
+// TopRatedUsers,
+// NewsFeedAdd,
+'components/Widget';
 
 import { GET_POST } from 'graphql/post';
 
-const SinglePost = ( props ) => {  
-
+const SinglePost = props => {
   const queryOptions = {
     query: GET_POST,
     variables: { id: props.match.params.id },

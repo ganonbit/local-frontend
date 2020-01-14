@@ -40,7 +40,7 @@ const Like = ({ postId, user, likes, client, post }) => {
             postId: post.id,
             notificationType: NotificationType.LIKE,
             notificationTypeId: data.createLike ? data.createLike.id : null,
-            })
+          })
           .then(() => {
             setLoading(true);
           });
