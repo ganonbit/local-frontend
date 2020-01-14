@@ -19,6 +19,8 @@ import Faqs from 'pages/Faqs';
 import CommunityGuideline from 'pages/CommunityGuideline';
 import TermsAndServices from 'pages/TermsAndServices';
 import PrivacyPolicy from 'pages/PrivacyPolicy';
+import FeedbackForm from 'pages/FeedbackForm';
+import SinglePost from 'pages/SinglePost';
 
 import * as Routes from 'routes';
 /**
@@ -38,12 +40,15 @@ const AppLayout = ({ refetch, history }) => {
         <div className='header-spacer'></div>
       )}
       <Switch>
-        <Route path={Routes.DISCOVER} render={props => <Discover />} />
-        <Route path={Routes.SETTINGS} render={() => <ProfileSetting refetch={refetch}/>} />
+        <Route path={Routes.DISCOVER} render={() => <Discover />} />
+        <Route
+          path={Routes.SETTINGS}
+          render={() => <ProfileSetting refetch={refetch} />}
+        />
         <Route path={Routes.REWARDS} render={props => <Reward {...props} />} />
         <Route
           path={Routes.MESSAGES}
-          render={props => <Messages {...props} />}
+          render={props => <Messages refetch={refetch} {...props} />}
         />
         <Route path={Routes.FAQ} render={props => <Faqs {...props} />} />
 
@@ -61,11 +66,21 @@ const AppLayout = ({ refetch, history }) => {
           path={Routes.PRIVACY_POLICY}
           render={props => <PrivacyPolicy isAuth={true} {...props} />}
         />
+        <Route
+          exact
+          path={Routes.FORM}
+          render={props => <FeedbackForm refetch={refetch}  isAuth={true} {...props} />}
+        />
         <Route path={Routes.BADGES} render={props => <Badges {...props} />} />
         <Route
           exact
           path={Routes.USER_PROFILE}
           render={props => <UserProfile refetch={refetch} {...props} />}
+        />
+        <Route
+          exact
+          path={Routes.POST}
+          render={props => <SinglePost refetch={refetch} isAuth={true} {...props} />}
         />
         <Route path={Routes.HOME} render={props => <Home {...props} />} />
       </Switch>

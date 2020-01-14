@@ -9,46 +9,42 @@ import OverlayTriggers from './Common/ToolTip';
 import { GET_FOLLOWED_POSTS, GET_POSTS } from 'graphql/post';
 import { GET_AUTH_USER } from 'graphql/user';
 import { CREATE_LIKE, DELETE_LIKE } from 'graphql/like';
-import { CREATE_NOTIFICATION } from 'graphql/notification';
+
+import { NotificationType } from 'constants/NotificationType';
+
+import { useNotifications } from 'hooks/useNotifications';
+
 import { useStore } from 'store';
 /**
  * Component for rendering Like button
  */
-const Like = ({ postId, user, likes, client }) => {
+const Like = ({ postId, user, likes, client, post }) => {
+  const notification = useNotifications();
   const [loading, setLoading] = useState(true);
 
   const [{ auth }] = useStore();
 
+  let isAuthPost = post && auth.user.id === post.author.id;
   const hasLiked = likes.find(
     l => l.user === auth.user.id && l.post === postId
   );
-  const createNotification = async () => {
-    try {
-      await client.mutate({
-        mutation: CREATE_NOTIFICATION,
-        variables: {
-          input: {
-            userId: user.id,
-            authorId: auth.user.id,
-            postId: postId,
-            notificationType: 'LIKE',
-          },
-        },
-      });
-    } catch (err) {
-      console.log(err);
-    }
-  };
+
   const handleButtonClick = async mutate => {
     setLoading(false);
-    setTimeout(() => {
-      const { data } = mutate();
-      createNotification();
-      setLoading(true);
-    }, 2000);
-
-    // Create or delete notification for like
-    // if (auth.user.id === user.id) return setLoading(false);
+    mutate().then(data => {
+      !isAuthPost &&
+        !hasLiked &&
+        notification
+          .create({
+            user: post.author,
+            postId: post.id,
+            notificationType: NotificationType.LIKE,
+            notificationTypeId: data.createLike ? data.createLike.id : null,
+            })
+          .then(() => {
+            setLoading(true);
+          });
+    });
   };
 
   // Detect which mutation to use

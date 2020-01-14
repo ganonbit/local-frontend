@@ -8,24 +8,24 @@ const PrivacyPolicy = ({ isAuth }) => (
         <WelcomeHeader />
       </div>
     )}
-    <div class='stunning-header bg-primary-opacity'>
-      <div class='header-spacer--standard'></div>
-      <div class='stunning-header-content'>
-        <h1 class='stunning-header-title'>AFM Privacy Policy </h1>
-        <ul class='breadcrumbs'>
-          <li class='breadcrumbs-item active'>
+    <div className='stunning-header bg-primary-opacity'>
+      <div className='header-spacer--standard'></div>
+      <div className='stunning-header-content'>
+        <h1 className='stunning-header-title'>AFM Privacy Policy </h1>
+        <ul className='breadcrumbs'>
+          <li className='breadcrumbs-item active'>
             <span>Privacy Policy</span>
           </li>
         </ul>
       </div>
-      <div class='content-bg-wrap stunning-header-bg1'></div>
+      <div className='content-bg-wrap stunning-header-bg1'></div>
     </div>
 
-    <section class='mb60'>
-      <div class='container'>
-        <div class='row'>
-          <div class='col col-xl-10 m-auto col-lg-12 col-md-12 col-sm-12 col-12'>
-            <div class='detail-content'>
+    <section className='mb60'>
+      <div className='container'>
+        <div className='row'>
+          <div className='col col-xl-10 m-auto col-lg-12 col-md-12 col-sm-12 col-12'>
+            <div className='detail-content'>
               <p>
                 Your privacy is important to us, so we’ve developed a Privacy
                 Policy that covers how we collect, use, disclose, transfer, and
@@ -121,9 +121,11 @@ const PrivacyPolicy = ({ isAuth }) => (
                 choose to remove cookies or reject cookies, this could affect
                 certain features or services of our Site. For more information
                 about cookies and web beacons, please visit 
-                <a href='#'>www.avocadosfrommexico.com/privacy/cookies</a> In
-                addition, we use this information to administer the Service and
-                we analyze (and may engage third parties to analyze) this
+                <a href='https://www.avocadosfrommexico.com/privacy/cookies'>
+                  www.avocadosfrommexico.com/privacy/cookies
+                </a>{' '}
+                In addition, we use this information to administer the Service
+                and we analyze (and may engage third parties to analyze) this
                 information to improve and enhance the Service by expanding its
                 features and functionality and tailoring it to our users' needs
                 and preferences.
@@ -591,7 +593,10 @@ const PrivacyPolicy = ({ isAuth }) => (
                 <br />
                 If you have any questions or concerns at all about our Privacy
                 Policy, please feel free to email us at 
-                <a href='#'>privacy@avocadosfrommexico.com</a>.<br />
+                <a href='mailto:privacy@avocadosfrommexico.com'>
+                  privacy@avocadosfrommexico.com
+                </a>
+                .<br />
                 Consumers may also address questions or concerns regarding the
                 Privacy Policy, or requests to access, update, correct, or
                 delete their personal information to AFM via mail:

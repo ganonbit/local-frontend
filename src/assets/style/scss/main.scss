@@ -356,7 +356,7 @@
 }
 
 .control-icon .mCustomScrollbar {
-  overflow: hidden;
+  overflow-y: auto;
   max-height: 300px;
 }
 
@@ -599,19 +599,19 @@
 }
 
 .top-header-author .author-thumb {
-  border-radius: 100%;
-  border: 6px solid #fff;
   margin: 0 auto;
-  overflow: hidden;
-  width: 132px;
-  height: 132px;
+  width: 189px;
+  height: 251px;
   background-color: #fdfbee;
+  mask-image: url(https://res.cloudinary.com/weare270b/image/upload/v1575849605/static/img-frame_adcgt8.png);
 }
 
 .top-header-author .author-thumb img {
   border-radius: 0;
-  display: block;
-  width: 100%;
+  margin: 0 auto;
+  object-fit: cover;
+  min-width: 100%;
+  min-height: 100%;
 }
 
 .avatar-wrapper {
@@ -3933,7 +3933,7 @@ img {
 }
 
 .ui-block-content {
-  padding: 24px 23px 23px;
+  padding: 10px;
 }
 
 @media (max-width: 1200px) {
@@ -4654,6 +4654,7 @@ input,
 
 .label-floating textarea.form-control {
   padding: 1.5rem 1.1rem 0.2rem;
+  min-height: 100px;
 }
 
 .label-floating.with-icon .form-control,
@@ -7301,7 +7302,7 @@ fieldset[disabled] .checkbox input[type='checkbox'],
 
 .notification-list .selectize-dropdown-content > *,
 .notification-list li {
-  padding: 25px;
+  padding: 15px 5px;
   border-bottom: 1px solid #e6ecf5;
   display: block;
   position: relative;
@@ -7478,11 +7479,6 @@ fieldset[disabled] .checkbox input[type='checkbox'],
 
 .chat-field {
   border-left: 1px solid #e6ecf5;
-}
-
-.chat-field .mCustomScrollbar {
-  overflow: hidden;
-  max-height: 450px;
 }
 
 .chat-field .ps > .ps__scrollbar-y-rail,
@@ -12586,6 +12582,9 @@ padding: 10px 0;
 .single-post-v3 .video-thumb:hover .overlay {
   opacity: 1;
 }
+.ui-block-chat-wrap {
+  height: calc(100vh - 100px);
+}
 
 @media (max-width: 1024px) {
   .single-post .post-title {
@@ -16180,7 +16179,6 @@ padding: 10px 0;
 .author-thumb img {
   border-radius: 100%;
   overflow: hidden;
-  max-width: unset;
   display: block;
 }
 
@@ -22818,6 +22816,11 @@ li.add-more-posts span {
   color: chocolate;
 }
 
+.notification-list-wrap{
+  overflow-y: auto;
+  height: calc(100vh - 410px);
+}
+
 .top-header .profile-section {
   padding: 0 !important;
 }
@@ -23017,7 +23020,7 @@ div#accordion .card {
 
 .chat-field .mCustomScrollbar {
   overflow-y: auto;
-  height: 450px;
+  height: calc(100vh - 415px);
 }
 
 .chat-field .ui-block-title h6.title {
@@ -23067,7 +23070,9 @@ div#accordion .card {
   margin: 0 0 10px;
   font-weight: 400;
 }
-
+.chat-field .ui-block-title {
+  height:53px;
+}
 @media (max-width: 1454px) {
   .search-bar.w-search {
     width: 410px;
@@ -23334,4 +23339,10 @@ select{
   -moz-appearance: none;
   appearance: none;
   padding: 5px;
+}
+
+.feedback-form {
+  padding: 60px;
+  max-width: 700px;
+  margin: 0 auto;
 }

@@ -12,10 +12,7 @@ const SidebarContent = ({ onSetSidebarOpen, isAuth, location }) => {
       {isAuth ? (
         <>
           <Default>
-            <Link
-              to={generatePath(Routes.HOME)}
-              className='logo'
-            >
+            <Link to={generatePath(Routes.HOME)} className='logo'>
               <div className='img-wrap'>
                 <img
                   src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avocado-img_fwdb02.png'

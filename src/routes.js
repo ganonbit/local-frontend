@@ -18,7 +18,7 @@ export const USER_PROFILE = '/:username';
 
 export const DISCOVER = '/discover';
 
-export const NOTIFICATIONS = '/notifications';
+export const NOTIFICATIONS = '/settings/notifications';
 
 export const MESSAGES = '/messages/:userId';
 
@@ -39,6 +39,8 @@ export const TERM_AND_CONDITIONS = '/terms';
 export const PRIVACY_POLICY = '/privacy-policy';
 
 export const COMMUNITY_GUIDELINE = '/community-guidelines';
+
+export const FORM = '/contact';
 
 /**
  * Value that's used in place of id when creating something new.

@@ -2,30 +2,30 @@ import React from 'react';
 import { Accordion, Card, Button } from 'react-bootstrap';
 const Faqs = () => (
   <>
-    <div class='stunning-header bg-primary-opacity'>
-      <div class='header-spacer--standard'></div>
+    <div className='stunning-header bg-primary-opacity'>
+      <div className='header-spacer--standard'></div>
 
-      <div class='stunning-header-content'>
-        <h1 class='stunning-header-title'>FAQ Avocado Nation </h1>
-        <ul class='breadcrumbs'>
-          <li class='breadcrumbs-item active'>
+      <div className='stunning-header-content'>
+        <h1 className='stunning-header-title'>FAQ Avocado Nation </h1>
+        <ul className='breadcrumbs'>
+          <li className='breadcrumbs-item active'>
             <span>FAQs</span>
           </li>
         </ul>
       </div>
 
-      <div class='content-bg-wrap stunning-header-bg1'></div>
+      <div className='content-bg-wrap stunning-header-bg1'></div>
     </div>
 
-    <section class='mb60'>
-      <div class='container'>
-        <div class='row'>
-          <div class='col col-xl-8 m-auto col-lg-10 col-md-12 col-sm-12 col-12'>
+    <section className='mb60'>
+      <div className='container'>
+        <div className='row'>
+          <div className='col col-xl-8 m-auto col-lg-10 col-md-12 col-sm-12 col-12'>
             <div
               id='accordion'
               role='tablist'
               aria-multiselectable='true'
-              class='accordion-faqs'
+              className='accordion-faqs'
             >
               <Accordion defaultActiveKey='0'>
                 <Card>
@@ -57,9 +57,10 @@ const Faqs = () => (
                   <Accordion.Collapse eventKey='1'>
                     <Card.Body>
                       <p>
-                        You can find your points status <a href='#'>Link</a>{' '}
-                        here. You can get to this page by going to the dropdown
-                        menu in the top right corner.
+                        You can find your points status{' '}
+                        <a href='/rewards'>Link</a> here. You can get to this
+                        page by going to the dropdown menu in the top right
+                        corner.
                       </p>
                     </Card.Body>
                   </Accordion.Collapse>
@@ -74,9 +75,10 @@ const Faqs = () => (
                   <Accordion.Collapse eventKey='2'>
                     <Card.Body>
                       <p>
-                        You can find your points status <a href='#'>Link</a>{' '}
-                        here. You can get to this page by going to the dropdown
-                        menu in the top right corner.
+                        You can find your points status{' '}
+                        <a href='/rewards'>Link</a> here. You can get to this
+                        page by going to the dropdown menu in the top right
+                        corner.
                       </p>
                     </Card.Body>
                   </Accordion.Collapse>

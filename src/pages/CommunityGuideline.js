@@ -2,24 +2,24 @@ import React from 'react';
 
 const CommunityGuideline = () => (
   <>
-    <div class='stunning-header bg-primary-opacity'>
-      <div class='header-spacer--standard'></div>
-      <div class='stunning-header-content'>
-        <h1 class='stunning-header-title'>AFM COMMUNITY GUIDELINE</h1>
-        <ul class='breadcrumbs'>
-          <li class='breadcrumbs-item active'>
+    <div className='stunning-header bg-primary-opacity'>
+      <div className='header-spacer--standard'></div>
+      <div className='stunning-header-content'>
+        <h1 className='stunning-header-title'>AFM COMMUNITY GUIDELINE</h1>
+        <ul className='breadcrumbs'>
+          <li className='breadcrumbs-item active'>
             <span>COMMUNITY GUIDELINE</span>
           </li>
         </ul>
       </div>
-      <div class='content-bg-wrap stunning-header-bg1'></div>
+      <div className='content-bg-wrap stunning-header-bg1'></div>
     </div>
 
-    <section class='mb60'>
-      <div class='container'>
-        <div class='row'>
-          <div class='col col-xl-10 m-auto col-lg-12 col-md-12 col-sm-12 col-12'>
-            <div class='detail-content'>
+    <section className='mb60'>
+      <div className='container'>
+        <div className='row'>
+          <div className='col col-xl-10 m-auto col-lg-12 col-md-12 col-sm-12 col-12'>
+            <div className='detail-content'>
               <h4>COMMUNITY GUIDELINE</h4>
               <p>
                 We may allow service providers and other third parties to use
