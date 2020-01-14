@@ -45,7 +45,7 @@ export default function PostContent(props) {
     <div className='post-container'>
       <Linkify options={linkDecorator}>{rawContent}</Linkify>
 
-      {metaFromContentPreview.meta ? (
+      {metaFromContentPreview ? (
         <Preview {...metaFromContentPreview.meta} />
       ) : null}
       {!image ? null : (
