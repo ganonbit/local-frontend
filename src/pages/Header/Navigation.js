@@ -43,56 +43,54 @@ const DesktopNav = ({ refetch, auth }) => {
 // REBUILD THE NAVIGATION USING BOOTSTRAP PANES / TABS
 export const MobileNav = ({ refetch, auth, mobileToggle, status }) => {
   return (
-    <>
-      {!mobileToggle && (
-        <ul className='nav nav-tabs mobile-app-tabs' role='tablist'>
-          <NavItem active={true}>
-            <Link to={generatePath(Routes.NOTIFICATIONS)}>
-              <FontAwesomeIcon
-                size='2x'
-                color='white'
-                icon={faHome}
-                style={{ height: '24px', marginTop: '5px' }}
-              />
-            </Link>
-          </NavItem>
-          <NavItem active={false}>
-            <Link
-              to={generatePath(Routes.MESSAGES, {
-                userId: '5df7cd1ae8d6ec604b737ae5',
-              })}
-            >
-              <FontAwesomeIcon
-                size='2x'
-                color='white'
-                icon={faComment}
-                style={{ height: '24px', marginTop: '5px' }}
-              />
-            </Link>
-          </NavItem>
-          <NavItem active={false}>
-            <Link to={generatePath(Routes.NOTIFICATIONS)}>
-              <FontAwesomeIcon
-                size='2x'
-                color='white'
-                icon={faBell}
-                style={{ height: '24px', marginTop: '5px' }}
-              />
-            </Link>
-          </NavItem>
-          <NavItem active={false}>
-            <Link to={generatePath(Routes.NOTIFICATIONS)}>
-              <FontAwesomeIcon
-                size='2x'
-                color='white'
-                icon={faSearch}
-                style={{ height: '24px', marginTop: '5px' }}
-              />
-            </Link>
-          </NavItem>
-        </ul>
-      )}
-    </>
+    <Mobile>
+      <ul className='nav nav-tabs mobile-app-tabs' role='tablist'>
+        <NavItem active={true}>
+          <Link to='/'>
+            <FontAwesomeIcon
+              size='2x'
+              color='white'
+              icon={faHome}
+              style={{ height: '24px', marginTop: '5px' }}
+            />
+          </Link>
+        </NavItem>
+        <NavItem active={false}>
+          <Link
+            to={generatePath(Routes.MESSAGES, {
+              userId: '5df7cd1ae8d6ec604b737ae5',
+            })}
+          >
+            <FontAwesomeIcon
+              size='2x'
+              color='white'
+              icon={faComment}
+              style={{ height: '24px', marginTop: '5px' }}
+            />
+          </Link>
+        </NavItem>
+        <NavItem active={false}>
+          <Link to={generatePath(Routes.NOTIFICATIONS)}>
+            <FontAwesomeIcon
+              size='2x'
+              color='white'
+              icon={faBell}
+              style={{ height: '24px', marginTop: '5px' }}
+            />
+          </Link>
+        </NavItem>
+        <NavItem active={false}>
+          <Link to='/'>
+            <FontAwesomeIcon
+              size='2x'
+              color='white'
+              icon={faSearch}
+              style={{ height: '24px', marginTop: '5px' }}
+            />
+          </Link>
+        </NavItem>
+      </ul>
+    </Mobile>
   );
 };
 
