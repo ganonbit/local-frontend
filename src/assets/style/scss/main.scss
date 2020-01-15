@@ -18882,6 +18882,11 @@ Docs & License: https://fullcalendar.io/
   -ms-overflow-style: none;
 }
 
+.top-trending{
+  overflow-y: auto;
+  height: 394px;
+}
+
 @supports (-ms-overflow-style: none) {
   .ps {
     overflow: auto !important;
