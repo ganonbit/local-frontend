@@ -9647,8 +9647,6 @@ ol ol li {
   .post-additional-info {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-    // -ms-flex-direction: column;
-    // flex-direction: column;
     -webkit-box-align: start;
     -ms-flex-align: start;
     align-items: flex-start;
@@ -9877,18 +9875,15 @@ button.cancel-btn:hover {
   background: var(--theme-color-pink);
   color: var(--theme-color-white) !important;
 }
-// .comment-form textarea:focus {
-//   min-height: 100px;
-// }
+.comment-form textarea:focus {
+  min-height: 100px;
+}
 
 .comment-form button + button {
   margin-right: 15px;
 }
 
 @media (max-width: 768px) {
-  // .comments-list .comment-item {
-  //   padding: 0 0 0 5px;
-  // }
 
   .children {
     margin-right: -10px;
@@ -23431,7 +23426,7 @@ select{
 }
 
 .control-block-button.post-control-button a.btn {
-  box-shadow: 0 0 5px 0px #0000008c;
+  box-shadow: 0 0 3px 0 var(--secondary);
 }
 .top-trending{
   overflow-y: auto;
