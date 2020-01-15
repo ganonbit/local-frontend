@@ -1,12 +1,12 @@
 import React from 'react';
-import {Link,generatePath} from 'react-router-dom'
+import { Link, generatePath } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 
 import { useQuery } from '@apollo/react-hooks';
 import { GET_USER_POSTS } from 'graphql/user';
 
-import * as Routes from 'routes'
+import * as Routes from 'routes';
 
 const LatestPhotos = ({ match }) => {
   const { data } = useQuery(GET_USER_POSTS, {
@@ -21,10 +21,11 @@ const LatestPhotos = ({ match }) => {
         data.getUserPosts.posts[i].image &&
           photos.push(
             <li>
-               <Link
+              <Link
                 to={generatePath(Routes.POST, {
-                  id: data.getUserPosts.posts[i].id
-                })}>
+                  id: data.getUserPosts.posts[i].id,
+                })}
+              >
                 <img
                   src={data.getUserPosts.posts[i].image}
                   alt='friends-icons'

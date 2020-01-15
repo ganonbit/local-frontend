@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
 import { Mutation, withApollo } from 'react-apollo';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -25,26 +24,25 @@ const Like = ({ postId, user, likes, client, post }) => {
   const [{ auth }] = useStore();
 
   let isAuthPost = post && auth.user.id === post.author.id;
+
   const hasLiked = likes.find(
     l => l.user === auth.user.id && l.post === postId
   );
 
   const handleButtonClick = async mutate => {
+    setLoading(true);
+    const { data } = await mutate();
+    if (auth.user.id === user.id) return setLoading(false);
+    !isAuthPost &&
+      !hasLiked &&
+      (await notification.toggle({
+        user,
+        postId,
+        hasDone: hasLiked,
+        notificationType: NotificationType.LIKE,
+        notificationTypeId: data.createLike ? data.createLike.id : null,
+      }));
     setLoading(false);
-    mutate().then(data => {
-      !isAuthPost &&
-        !hasLiked &&
-        notification
-          .create({
-            user: post.author,
-            postId: post.id,
-            notificationType: NotificationType.LIKE,
-            notificationTypeId: data.createLike ? data.createLike.id : null,
-            })
-          .then(() => {
-            setLoading(true);
-          });
-    });
   };
 
   // Detect which mutation to use
@@ -89,7 +87,7 @@ const Like = ({ postId, user, likes, client, post }) => {
                 icon={faHeart}
                 size='2x'
                 color={hasLiked ? 'red' : 'grey'}
-                onClick={() => loading && handleButtonClick(mutate)}
+                onClick={() => handleButtonClick(mutate)}
               />
               <div className='ripple-container'></div>
             </a>
@@ -98,14 +96,6 @@ const Like = ({ postId, user, likes, client, post }) => {
       }}
     </Mutation>
   );
-};
-
-Like.propTypes = {
-  postId: PropTypes.string.isRequired,
-  user: PropTypes.object.isRequired,
-  likes: PropTypes.array,
-  withText: PropTypes.bool,
-  fullWidth: PropTypes.bool,
 };
 
 export default withApollo(Like);

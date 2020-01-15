@@ -1,74 +1,96 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { generatePath, Link } from 'react-router-dom';
 import { withApollo } from 'react-apollo';
 
 import Avatar from 'components/Avatar';
 
-import { GET_AUTH_USER } from 'graphql/user';
-import { UPDATE_NOTIFICATION_SEEN } from 'graphql/notification';
-
-import { useStore } from 'store';
-
 import * as Routes from 'routes';
 
 const Notification = ({ notification, client, key }) => {
-  const [{ auth }] = useStore();
-
-  useEffect(() => {
-    const updateNotificationSeen = async () => {
-      try {
-        await client.mutate({
-          mutation: UPDATE_NOTIFICATION_SEEN,
-          variables: {
-            input: {
-              userId: auth.user.id,
-            },
-          },
-          refetchQueries: () => [{ query: GET_AUTH_USER }],
-        });
-      } catch (err) {}
-    };
-
-    updateNotificationSeen();
-  }, [auth.user.id, auth.user.newNotifications.length, client]);
-
   return (
     <>
-      {notification.like && (<li key={notification.id}>
-        <div className='d-flex'>
-          <div className='author-thumb mx-2'>
-            <Avatar image={notification.author.image} />
+      {notification.like && (
+        <li key={notification.id}>
+          <div className='d-flex'>
+            <div className='author-thumb mx-2'>
+              <Avatar image={notification.author.image} />
+            </div>
+            <div className='notification-detail mx-2'>
+              <Link
+                to={generatePath(Routes.USER_PROFILE, {
+                  username: notification.author.username,
+                })}
+                className='h6 notification-friend'
+              >
+                <h6 className='mb-1'>{`${notification.author.firstName} ${notification.author.lastName}`}</h6>
+              </Link>{' '}
+              <Link
+                to={generatePath(Routes.POST, {
+                  id: notification.like.post.id,
+                })}
+                className='notification-text'
+              >
+                <p>liked your post</p>
+              </Link>
+            </div>
           </div>
-          <div className='notification-detail mx-2'>
-            <Link
-              to={generatePath(Routes.USER_PROFILE, {
-                username: notification.author.username,
-              })}
-            >
-              <h6 className='mb-1'>{`${notification.author.firstName} ${notification.author.lastName}`}</h6>
-            </Link>
-            <p>Liked your post</p>
-          </div>
-        </div>
-      </li>
+        </li>
       )}
-       {notification.comment && (<li key={notification.id}>
-        <div className='d-flex'>
-          <div className='author-thumb mx-2'>
-            <Avatar image={notification.author.image} />
+
+      {notification.comment && (
+        <li key={notification.id}>
+          <div className='d-flex'>
+            <div className='author-thumb mx-2'>
+              <Avatar image={notification.author.image} />
+            </div>
+            <div className='notification-detail mx-2'>
+              <Link
+                to={generatePath(Routes.USER_PROFILE, {
+                  username: notification.author.username,
+                })}
+                className='h6 notification-friend'
+              >
+                <h6 className='mb-1'>{`${notification.author.firstName} ${notification.author.lastName}`}</h6>
+              </Link>{' '}
+              <Link
+                to={generatePath(Routes.POST, {
+                  id: notification.comment.post.id,
+                })}
+                className='notification-text'
+              >
+                <p>Commented on your post</p>
+              </Link>
+            </div>
           </div>
-          <div className='notification-detail mx-2'>
-            <Link
-              to={generatePath(Routes.USER_PROFILE, {
-                username: notification.author.username,
-              })}
-            >
-              <h6 className='mb-1'>{`${notification.author.firstName} ${notification.author.lastName}`}</h6>
-            </Link>
-            <p>Commented on your post</p>
+        </li>
+      )}
+      
+      {notification.follow && (
+        <li key={notification.id}>
+          <div className='d-flex'>
+            <div className='author-thumb mx-2'>
+              <Avatar image={notification.author.image} />
+            </div>
+            <div className='notification-detail mx-2'>
+              <Link
+                to={generatePath(Routes.USER_PROFILE, {
+                  username: notification.author.username,
+                })}
+                className='h6 notification-friend'
+              >
+                <h6 className='mb-1'>{`${notification.author.firstName} ${notification.author.lastName}`}</h6>
+              </Link>{' '}
+              <Link
+                to={generatePath(Routes.USER_PROFILE, {
+                  username: notification.author.username,
+                })}
+                className='notification-text'
+              >
+                <p>is now following you!</p>
+              </Link>
+            </div>
           </div>
-        </div>
-      </li>
+        </li>
       )}
     </>
   );

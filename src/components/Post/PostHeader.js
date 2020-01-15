@@ -72,7 +72,6 @@ const PostHeader = props => {
     }
   };
 
-
   return (
     <div className='post__author author vcard inline-items'>
       <EditPost
@@ -106,16 +105,16 @@ const PostHeader = props => {
           </time>
         </div>
       </div>
-        <div className='more'>
-          <FontAwesomeIcon
-            className='olymp-three-dots-icon'
-            size='lg'
-            color='black'
-            icon={faEllipsisV}
-            style={{ height: '12px' }}
-          />
-          
-          <ul className='more-dropdown'>
+      <div className='more'>
+        <FontAwesomeIcon
+          className='olymp-three-dots-icon'
+          size='lg'
+          color='black'
+          icon={faEllipsisV}
+          style={{ height: '12px' }}
+        />
+
+        <ul className='more-dropdown'>
           {(isAuth && isOwner) || (isAuth && isSelma) ? (
             <li>
               <Link
@@ -141,16 +140,17 @@ const PostHeader = props => {
               </Link>
             </li>
           ) : null}
-            <li>
-              <Link
-                to={generatePath(Routes.POST, {
-                  id: postId
-                })}>
-                Permalink
-              </Link>
-            </li>
-          </ul>
-        </div>
+          <li>
+            <Link
+              to={generatePath(Routes.POST, {
+                id: postId,
+              })}
+            >
+              Permalink
+            </Link>
+          </li>
+        </ul>
+      </div>
     </div>
   );
 };
