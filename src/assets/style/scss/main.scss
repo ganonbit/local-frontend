@@ -7433,11 +7433,9 @@ fieldset[disabled] .checkbox input[type='checkbox'],
 }
 
 .notification-text {
-font-size: 0.812rem !important;
 font-weight: 400 !important;
-line-height: 1.5 !important;
 color: #888da8 !important;
-display: inline-block !important;
+display: inline-flex !important;
 }
 
 .chat-message .notification-event {
@@ -9268,10 +9266,6 @@ ol ol li {
 .post.thumb-full-width .post-thumb {
   border-radius: 0;
   margin: 0 -25px 25px;
-}
-
-.post-preview {
-padding: 10px 0;
 }
 
 
@@ -23203,7 +23197,7 @@ div#accordion .card {
     background: url(https://res.cloudinary.com/weare270b/image/upload/v1576188973/static/reward-badge_kb5lmj.png) center center no-repeat;
     background-size: contain;
     position: relative;
-    width: 500px;
+    width: 100%;
     z-index: 1;
     height: 250px;
     display: inline-flex;

@@ -12,6 +12,9 @@ import { GET_AUTH_USER } from 'graphql/user';
 import { GET_NEW_CONVERSATIONS_SUBSCRIPTION } from 'graphql/messages';
 import moment from 'moment';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faComment } from '@fortawesome/free-solid-svg-icons';
+
 const ChatNotifications = () => {
   const [{ auth }] = useStore();
   const { loading, subscribeToMore, data, refetch } = useQuery(GET_AUTH_USER);
@@ -56,9 +59,11 @@ const ChatNotifications = () => {
 
   return (
     <div className='control-icon more has-items'>
-      <img
-        src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/inbox-img_pvtt1m.png'
-        alt='chatt'
+      <FontAwesomeIcon
+        size='2x'
+        color='white'
+        icon={faComment}
+        style={{ height: '24px', verticalAlign: '0' }}
       />
       {data.getAuthUser.newConversations.length > 0 && (
         <div className='label-avatar bg-purple'>

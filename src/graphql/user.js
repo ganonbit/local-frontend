@@ -1,4 +1,10 @@
 import gql from 'graphql-tag';
+import {
+  postCommentsPayload,
+  postAuthorPayload,
+  postLikesPayload,
+} from './post';
+
 /**
  * Records to select from user
  */
@@ -35,86 +41,6 @@ totalPoints
 pagesViewed
 createdAt
 updatedAt
-posts {
-  id
-  content
-  image
-  imagePublicId
-  createdAt
-  author {
-    id
-    username
-    firstName
-    lastName
-    image
-    following {
-      id
-      user {
-        id
-      }
-    }
-    followers {
-      id
-      user
-    }
-    notifications {
-      id
-      author {
-        id
-        username
-      }
-      follow {
-        id
-      }
-      like {
-        id
-      }
-      comment {
-        id
-      }
-    }
-  }
-  comments {
-    id
-    comment
-    createdAt
-    author {
-      id
-      username
-      firstName
-      lastName
-      image
-    }
-  }
-  likes {
-    id
-    user
-    post
-  }
-}
-comments {
-  id
-  comment
-  createdAt
-  author {
-    id
-    username
-    firstName
-    lastName
-    image
-  }
-}
-likes {
-  id
-  user
-  post
-}
-followers {
-  id
-}
-following {
-  id
-}
 `;
 
 /**
@@ -166,54 +92,9 @@ export const GET_USER_POSTS = gql`
         image
         imagePublicId
         createdAt
-        author {
-          id
-          username
-          firstName
-          lastName
-          image
-          following {
-            id
-            user
-          }
-          followers {
-            id
-            user
-          }
-          notifications {
-            id
-            author {
-              id
-              username
-            }
-            follow {
-              id
-            }
-            like {
-              id
-            }
-            comment {
-              id
-            }
-          }
-        }
-        comments {
-          id
-          comment
-          createdAt
-          author {
-            id
-            username
-            firstName
-            lastName
-            image
-          }
-        }
-        likes {
-          id
-          user
-          post
-        }
+        ${postAuthorPayload}
+        ${postCommentsPayload}
+        ${postLikesPayload}
       }
     }
   }
