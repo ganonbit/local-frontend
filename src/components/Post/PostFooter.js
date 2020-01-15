@@ -1,6 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faComment } from '@fortawesome/free-solid-svg-icons';
+import { faComment, faHeart } from '@fortawesome/free-solid-svg-icons';
 import OverlayTriggers from '../Common/ToolTip';
 
 import Like from 'components/Like';
@@ -19,7 +19,7 @@ const PostFooter = props => {
   return (
     <div className='post-additional-info inline-items'>
       <span className='post-add-icon inline-items'>
-        {isAuth && (
+        {isAuth===true && (
           <Like
             user={author}
             postId={postId}
@@ -28,6 +28,17 @@ const PostFooter = props => {
             post={post}
           />
         )}
+        {isAuth===false && (
+          <FontAwesomeIcon
+          icon={faHeart}
+          size='2x'
+          color={'grey'}
+          onClick={e => {
+            e.preventDefault();
+          }}
+        />
+        )}
+        
         <span>{likes.length}</span>
       </span>
 
