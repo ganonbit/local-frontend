@@ -1,15 +1,11 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useStore } from 'store';
 import { generatePath, Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { withApollo } from 'react-apollo';
-import { useMediaQuery } from 'react-responsive';
 
+import { GET_AUTH_USER } from 'graphql/user';
 import { UPDATE_NOTIFICATION_SEEN } from 'graphql/notification';
-import Default, { Mobile } from '../../components/Wrappers/Queries';
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBell } from '@fortawesome/free-solid-svg-icons';
 
 import Avatar from 'components/Avatar';
 
@@ -17,21 +13,7 @@ import * as Routes from 'routes';
 
 const Notifications = ({ client, refetch }) => {
   const [{ auth }] = useStore();
-  const updateNotificationSeen = async () => {
-    try {
-      await client.mutate({
-        mutation: UPDATE_NOTIFICATION_SEEN,
-        variables: {
-          input: {
-            userId: auth.user.id,
-          },
-        },
-      });
-      refetch();
-    } catch (err) {
-      console.log(err);
-    }
-  };
+
   return (
     <div className='icon-outer'>
       <div className='control-icon more has-items'>
@@ -47,8 +29,6 @@ const Notifications = ({ client, refetch }) => {
         <div className='more-dropdown more-with-triangle triangle-top-center'>
           <div className='ui-block-title ui-block-title-small'>
             <h6 className='title'>Notifications</h6>
-            {/* <a href>Mark all as read</a>
-            <a href>Settings</a> */}
           </div>
 
           <div className='mCustomScrollbar' data-mcs-theme='dark'>
@@ -61,52 +41,113 @@ const Notifications = ({ client, refetch }) => {
                 </li>
               )}
               {auth.user.newNotifications.map(notification => {
-                return notification.comment ? (
-                  <li>
-                    <Link
-                      to={generatePath(Routes.USER_PROFILE, {
-                        username: notification.author.username,
-                      })}
-                    >
-                      <div className='author-thumb'>
-                        <Avatar image={notification.author.image} />
-                      </div>
-                    </Link>
-                    <div className='notification-event'>
-                      <div>
-                        <a href className='h6 notification-friend'>
-                          {`${notification.author.firstName} ${notification.author.lastName}`}
-                        </a>{' '}
-                        commented on your post
-                      </div>
-                    </div>
-                  </li>
-                ) : (
-                  <li>
-                    <Link
-                      to={generatePath(Routes.USER_PROFILE, {
-                        username: notification.author.username,
-                      })}
-                    >
-                      <div className='author-thumb'>
-                        <Avatar image={notification.author.image} />
-                      </div>
-                    </Link>
-                    <div className='notification-event'>
-                      <div>
-                        <a href className='h6 notification-friend'>
-                          {`${notification.author.firstName} ${notification.author.lastName}`}
-                        </a>{' '}
-                        liked your post
-                      </div>
-                    </div>
-                  </li>
+                const updateNotificationSeen = async () => {
+                  try {
+                    await client.mutate({
+                      mutation: UPDATE_NOTIFICATION_SEEN,
+                      variables: {
+                        input: {
+                          userId: auth.user.id,
+                          notificationId: notification.id
+                        },
+                      },
+                      refetchQueries: () => [{ query: GET_AUTH_USER }],
+                    });
+                  } catch (err) {}
+                };
+              
+                return (
+                  <>
+                    {notification.like && (
+                      <li key={notification.id}>
+                        <div className='d-flex'>
+                          <div className='author-thumb mx-2'>
+                            <Avatar image={notification.author.image} />
+                          </div>
+                          <div className='notification-detail mx-2'>
+                            <Link
+                              to={generatePath(Routes.USER_PROFILE, {
+                                username: notification.author.username,
+                              })}
+                              className='h6 notification-friend'
+                            >
+                              <h6 className='mb-1'>{`${notification.author.firstName} ${notification.author.lastName}`}</h6>
+                            </Link>{' '}
+                            <Link
+                              to={generatePath(Routes.POST, {
+                                id: notification.like.post.id,
+                              })}
+                              className='notification-text'
+                              onClick={() => updateNotificationSeen()}
+                            >
+                              <p>liked your post</p>
+                            </Link>
+                          </div>
+                        </div>
+                      </li>
+                    )}
+
+                    {notification.comment && (
+                      <li key={notification.id}>
+                        <div className='d-flex'>
+                          <div className='author-thumb mx-2'>
+                            <Avatar image={notification.author.image} />
+                          </div>
+                          <div className='notification-detail mx-2'>
+                            <Link
+                              to={generatePath(Routes.USER_PROFILE, {
+                                username: notification.author.username,
+                              })}
+                              className='h6 notification-friend'
+                            >
+                              <h6 className='mb-1'>{`${notification.author.firstName} ${notification.author.lastName}`}</h6>
+                            </Link>{' '}
+                            <Link
+                              to={generatePath(Routes.POST, {
+                                id: notification.comment.post.id,
+                              })}
+                              className='notification-text'
+                              onClick={() => updateNotificationSeen()}
+                            >
+                              <p>Commented on your post</p>
+                            </Link>
+                          </div>
+                        </div>
+                      </li>
+                    )}
+                    
+                    {notification.follow && (
+                      <li key={notification.id}>
+                        <div className='d-flex'>
+                          <div className='author-thumb mx-2'>
+                            <Avatar image={notification.author.image} />
+                          </div>
+                          <div className='notification-detail mx-2'>
+                            <Link
+                              to={generatePath(Routes.USER_PROFILE, {
+                                username: notification.author.username,
+                              })}
+                              className='h6 notification-friend'
+                            >
+                              <h6 className='mb-1'>{`${notification.author.firstName} ${notification.author.lastName}`}</h6>
+                            </Link>{' '}
+                            <Link
+                              to={generatePath(Routes.USER_PROFILE, {
+                                username: notification.author.username,
+                              })}
+                              className='notification-text'
+                              onClick={() => updateNotificationSeen()}
+                            >
+                              <p>is now following you!</p>
+                            </Link>
+                          </div>
+                        </div>
+                      </li>
+                    )}
+                  </>
                 );
               })}
             </ul>
-            <a href='#' className='view-all bg-blue'>
-              Check all your Events
-            </a>
           </div>
           <Link
             className='view-all bg-primary'
