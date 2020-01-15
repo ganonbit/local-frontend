@@ -660,6 +660,9 @@
 .admin-bar #site-header {
   top: 46px;
 }
+p.comments-section {
+  padding-left: 40px;
+}
 
 @media screen and (min-width: 783px) {
   .admin-bar #site-header {
@@ -2149,6 +2152,9 @@
   .header--standard-landing.headroom--not-top .header-menu li .nav-link:hover {
     color: #fff;
     fill: #fff;
+  }
+  .control-block-button.post-control-button a.btn {
+    margin: 0 3px;
   }
 }
 
@@ -3685,7 +3691,9 @@ button.btn-md-2 {
   font-size: 0.688rem;
   border-radius: 0.3rem;
 }
-
+.add-comment-buttons button.btn-md-2 {
+  width: 100px;
+}
 button.btn-lg {
   padding: 1rem 3rem;
 }
@@ -3843,6 +3851,39 @@ img {
   .modal-dialog {
     margin: 30px auto;
   }
+  .comment-form .post__author {
+    flex-wrap: wrap;
+    justify-content: start;
+  }
+  .comment-form .form-group {
+    width:92% !important;
+}
+  .add-comment-buttons {
+    padding-left: 0px;
+    width: 100%;
+    justify-content: flex-end;
+    margin-top: 10px;
+}
+}
+@media (max-width: 581px) {
+  .comment-form .form-group {
+    width: 90% !important;
+  } 
+}
+@media (max-width: 481px) {
+  .comment-form .form-group {
+    width: 89% !important;
+  } 
+}
+@media (max-width: 445px) {
+  .comment-form .form-group {
+    width: 87% !important;
+  } 
+}
+@media (max-width: 389px) {
+  .comment-form .form-group {
+    width: 85% !important;
+  } 
 }
 
 @media (max-width: 360px) {
@@ -3854,6 +3895,12 @@ img {
   .form-group.label-placeholder label.control-label {
     font-size: 12px;
   }
+  .comment-form .form-group {
+    width: 83% !important;
+  }
+  .add-comment-buttons button.btn-md-2 {
+    width: 94px;
+  } 
 }
 
 .ui-block {
@@ -7759,11 +7806,14 @@ display: inline-flex !important;
   }
 
   .add-options-message button {
-    float: none;
+    // float: none;
     margin-left: 0;
     display: block;
     margin-top: 10px;
   }
+  .add-options-message .btn-primary {
+    height: 35px !important;
+}
 
   .add-options-message button + button {
     margin-right: 0;
@@ -9573,11 +9623,13 @@ ol ol li {
   }
 
   .post__author .more {
-    margin-right: -16px;
+    margin-right: -10px;
   }
 
   .post-control-button .btn-control {
-    line-height: 32px;
+    line-height: 25px;
+    width: 25px;
+    height: 25px;
   }
 
   .post-control-button .btn-control.has-i {
@@ -9595,11 +9647,13 @@ ol ol li {
   .post-additional-info {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
     -webkit-box-align: start;
     -ms-flex-align: start;
     align-items: flex-start;
+    justify-content: space-between;
+    -webkit-justify-content: space-between;
+    -ms-justify-content: space-between;
+    -moz-justify-content: space-between;
   }
 
   .post-additional-info > * {
@@ -9811,12 +9865,16 @@ ol ol li {
 }
 
 .comment-form textarea {
-  min-height: 60px;
-  height: 60px;
+  min-height: 45px;
+  height: 45px;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
+  padding: 10px 15px;
 }
-
+button.cancel-btn:hover {
+  background: var(--theme-color-pink);
+  color: var(--theme-color-white) !important;
+}
 .comment-form textarea:focus {
   min-height: 100px;
 }
@@ -9826,16 +9884,13 @@ ol ol li {
 }
 
 @media (max-width: 768px) {
-  .comments-list .comment-item {
-    padding: 0 0 0 5px;
-  }
 
   .children {
     margin-right: -10px;
   }
 
   .comments-list .comment-item .post__author .more {
-    margin-right: 0;
+    margin-right: 10px;
   }
 
   .comments-list.style-3 .post__author-thumb img {
@@ -18882,11 +18937,6 @@ Docs & License: https://fullcalendar.io/
   -ms-overflow-style: none;
 }
 
-.top-trending{
-  overflow-y: auto;
-  height: 394px;
-}
-
 @supports (-ms-overflow-style: none) {
   .ps {
     overflow: auto !important;
@@ -23373,4 +23423,12 @@ select{
   padding: 60px;
   max-width: 700px;
   margin: 0 auto;
+}
+
+.control-block-button.post-control-button a.btn {
+  box-shadow: 0 0 3px 0 var(--secondary);
+}
+.top-trending{
+  overflow-y: auto;
+  height: 394px;
 }

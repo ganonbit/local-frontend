@@ -90,7 +90,7 @@ function AddComment({ authorId, author, post, onCancel, userId }) {
                 <textarea
                   type='text'
                   className='form-control'
-                  placeholder=''
+                  placeholder='Write a comment'
                   name='comment'
                   value={commentContent.comment}
                   onChange={e => onCommentChange(e)}
@@ -115,7 +115,7 @@ function AddComment({ authorId, author, post, onCancel, userId }) {
                 </button>
 
                 <button
-                  className='btn btn-md-2 btn-border-think c-grey btn-transparent custom-color'
+                  className='btn btn-md-2 btn-border-think c-grey btn-transparent custom-color cancel-btn mr-0'
                   onClick={onCancel}
                 >
                   Cancel
