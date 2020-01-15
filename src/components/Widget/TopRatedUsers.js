@@ -86,7 +86,7 @@ const TopRatedUsers = ({ client }) => {
                 to
                 data-toggle='modal'
                 data-target='#referralUrl'
-                className='btn btn-lg'
+                className='btn px-2 py-3'
               >
                 Refer a Friend!
               </Link>
