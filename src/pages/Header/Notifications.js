@@ -14,20 +14,6 @@ import * as Routes from 'routes';
 const Notifications = ({ client, refetch }) => {
   const [{ auth }] = useStore();
 
-  const updateNotificationSeen = async () => {
-    try {
-      await client.mutate({
-        mutation: UPDATE_NOTIFICATION_SEEN,
-        variables: {
-          input: {
-            userId: auth.user.id,
-          },
-        },
-        refetchQueries: () => [{ query: GET_AUTH_USER }],
-      });
-    } catch (err) {}
-  };
-
   return (
     <div className='icon-outer'>
       <div className='control-icon more has-items'>
@@ -57,6 +43,21 @@ const Notifications = ({ client, refetch }) => {
                 </li>
               )}
               {auth.user.newNotifications.map(notification => {
+                const updateNotificationSeen = async () => {
+                  try {
+                    await client.mutate({
+                      mutation: UPDATE_NOTIFICATION_SEEN,
+                      variables: {
+                        input: {
+                          userId: auth.user.id,
+                          notificationId: notification.id
+                        },
+                      },
+                      refetchQueries: () => [{ query: GET_AUTH_USER }],
+                    });
+                  } catch (err) {}
+                };
+              
                 return (
                   <>
                     {notification.like && (
