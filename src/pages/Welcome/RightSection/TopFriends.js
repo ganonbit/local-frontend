@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { HappyFaceIcon } from 'components/icons';
 
 const TopFriends = () => {
   const items = [];
@@ -8,7 +9,7 @@ const TopFriends = () => {
       <li className='inline-items' key={i}>
         <div className='author-thumb'>
           <img
-            src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avatar38-sm.jpg'
+            src='https://res.cloudinary.com/weare270b/image/upload/v1578579972/user/51abdbc5-b280-414e-99f9-23680491eedc.png'
             alt='author'
           />
         </div>
@@ -16,12 +17,18 @@ const TopFriends = () => {
           <Link to='#' className='h6 notification-friend'>
             Selma Avocado
           </Link>
-          <span className='chat-message-item'>82 Friends in Common</span>
         </div>
         <span className='notification-icon'>
-          <Link to='#' className='accept-request'>
-            <span className='icon-add without-text'></span>
-          </Link>
+          <div
+            className='accept-request'
+            onClick={e => {
+              e.preventDefault();
+            }}
+          >
+            <span className='without-text'>
+              <HappyFaceIcon />
+            </span>
+          </div>
         </span>
       </li>
     );
