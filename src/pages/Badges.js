@@ -29,34 +29,6 @@ const Badges = () => {
               <div className='birthday-item inline-items badges'>
                 <div className='author-thumb'>
                   <img
-                    src='https://res.cloudinary.com/weare270b/image/upload/v1576788606/static/badge1_ngqyt5.png'
-                    alt='author'
-                  />
-                  <div className='label-avatar bg-primary'>2</div>
-                </div>
-                <div className='birthday-author-name'>
-                  <a href='1#' className='h6 author-name'>
-                    Avocado Badge
-                  </a>
-                  <div className='birthday-date'>
-                    Badge of badges- user must receive at least 10 badges to
-                    attain this badge
-                  </div>
-                </div>
-                <div className='skills-item'>
-                  <div className='skills-item-meter'>
-                    <span
-                      className='skills-item-meter-active'
-                      style={{ width: '76%' }}
-                    ></span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className='ui-block'>
-              <div className='birthday-item inline-items badges'>
-                <div className='author-thumb'>
-                  <img
                     src='https://res.cloudinary.com/weare270b/image/upload/v1576788606/static/badge2_kmjarm.png'
                     alt='author'
                   />
@@ -77,7 +49,7 @@ const Badges = () => {
                 </div>
               </div>
             </div>
-            <div className='ui-block'>
+            {/* <div className='ui-block'>
               <div className='birthday-item inline-items badges'>
                 <div className='author-thumb'>
                   <img
@@ -97,13 +69,13 @@ const Badges = () => {
                 <div className='skills-item'>
                   <div className='skills-item-meter'>
                     <span
-                      className='skills-item-meter-active'
+                      className='skills-item-meter-inactive'
                       style={{ width: ' 52%' }}
                     ></span>
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
             <div className='ui-block'>
               <div className='birthday-item inline-items badges'>
                 <div className='author-thumb'>
@@ -126,7 +98,7 @@ const Badges = () => {
                 <div className='skills-item'>
                   <div className='skills-item-meter'>
                     <span
-                      className='skills-item-meter-active'
+                      className='skills-item-meter-inactive'
                       style={{ width: ' 100%' }}
                     ></span>
                   </div>
@@ -153,13 +125,42 @@ const Badges = () => {
                 <div className='skills-item'>
                   <div className='skills-item-meter'>
                     <span
-                      className='skills-item-meter-active'
+                      className='skills-item-meter-inactive'
                       style={{ width: ' 70%' }}
                     ></span>
                   </div>
                 </div>
               </div>
             </div>
+            <div className='ui-block'>
+              <div className='birthday-item inline-items badges'>
+                <div className='author-thumb'>
+                  <img
+                    src='https://res.cloudinary.com/weare270b/image/upload/v1576788606/static/badge1_ngqyt5.png'
+                    alt='author'
+                  />
+                  <div className='label-avatar bg-primary'>2</div>
+                </div>
+                <div className='birthday-author-name'>
+                  <a href='1#' className='h6 author-name'>
+                    Avocado Badge
+                  </a>
+                  <div className='birthday-date'>
+                    Badge of badges- user must receive at least 10 badges to
+                    attain this badge
+                  </div>
+                </div>
+                <div className='skills-item'>
+                  <div className='skills-item-meter'>
+                    <span
+                      className='skills-item-meter-inactive'
+                      style={{ width: '76%' }}
+                    ></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             <div className='ui-block'>
               <div className='birthday-item inline-items badges'>
                 <div className='author-thumb'>
@@ -180,7 +181,7 @@ const Badges = () => {
                 <div className='skills-item'>
                   <div className='skills-item-meter'>
                     <span
-                      className='skills-item-meter-active'
+                      className='skills-item-meter-inactive'
                       style={{ width: ' 23%' }}
                     ></span>
                   </div>
@@ -208,7 +209,7 @@ const Badges = () => {
                 <div className='skills-item'>
                   <div className='skills-item-meter'>
                     <span
-                      className='skills-item-meter-active'
+                      className='skills-item-meter-inactive'
                       style={{ width: ' 100%' }}
                     ></span>
                   </div>
@@ -235,14 +236,14 @@ const Badges = () => {
                 <div className='skills-item'>
                   <div className='skills-item-meter'>
                     <span
-                      className='skills-item-meter-active'
+                      className='skills-item-meter-inactive'
                       style={{ width: ' 100%' }}
                     ></span>
                   </div>
                 </div>
               </div>
             </div>
-            <div className='ui-block'>
+            {/* <div className='ui-block'>
               <div className='birthday-item inline-items badges'>
                 <div className='author-thumb'>
                   <img
@@ -262,13 +263,13 @@ const Badges = () => {
                 <div className='skills-item'>
                   <div className='skills-item-meter'>
                     <span
-                      className='skills-item-meter-active'
+                      className='skills-item-meter-inactive'
                       style={{ width: '69%' }}
                     ></span>
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
             <div className='ui-block'>
               <div className='birthday-item inline-items badges'>
                 <div className='author-thumb'>
@@ -289,14 +290,14 @@ const Badges = () => {
                 <div className='skills-item'>
                   <div className='skills-item-meter'>
                     <span
-                      className='skills-item-meter-active'
+                      className='skills-item-meter-inactive'
                       style={{ width: ' 33%' }}
                     ></span>
                   </div>
                 </div>
               </div>
             </div>
-            <div className='ui-block'>
+            {/* <div className='ui-block'>
               <div className='birthday-item inline-items badges'>
                 <div className='author-thumb'>
                   <img
@@ -316,13 +317,13 @@ const Badges = () => {
                 <div className='skills-item'>
                   <div className='skills-item-meter'>
                     <span
-                      className='skills-item-meter-active'
+                      className='skills-item-meter-inactive'
                       style={{ width: ' 100%' }}
                     ></span>
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
             <div className='ui-block'>
               <div className='birthday-item inline-items badges'>
                 <div className='author-thumb'>
@@ -343,7 +344,7 @@ const Badges = () => {
                 <div className='skills-item'>
                   <div className='skills-item-meter'>
                     <span
-                      className='skills-item-meter-active'
+                      className='skills-item-meter-inactive'
                       style={{ width: ' 65%' }}
                     ></span>
                   </div>
@@ -371,14 +372,14 @@ const Badges = () => {
                 <div className='skills-item'>
                   <div className='skills-item-meter'>
                     <span
-                      className='skills-item-meter-active'
+                      className='skills-item-meter-inactive'
                       style={{ width: ' 100%' }}
                     ></span>
                   </div>
                 </div>
               </div>
             </div>
-            <div className='ui-block'>
+            {/* <div className='ui-block'>
               <div className='birthday-item inline-items badges'>
                 <div className='author-thumb'>
                   <img
@@ -398,13 +399,13 @@ const Badges = () => {
                 <div className='skills-item'>
                   <div className='skills-item-meter'>
                     <span
-                      className='skills-item-meter-active'
+                      className='skills-item-meter-inactive'
                       style={{ width: ' 80%' }}
                     ></span>
                   </div>
                 </div>
               </div>
-            </div>
+            </div>*/}
             <div className='ui-block'>
               <div className='birthday-item inline-items badges'>
                 <div className='author-thumb'>
@@ -425,7 +426,7 @@ const Badges = () => {
                 <div className='skills-item'>
                   <div className='skills-item-meter'>
                     <span
-                      className='skills-item-meter-active'
+                      className='skills-item-meter-inactive'
                       style={{ width: '100%' }}
                     ></span>
                   </div>

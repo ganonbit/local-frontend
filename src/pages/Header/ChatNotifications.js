@@ -63,7 +63,7 @@ const ChatNotifications = () => {
         size='2x'
         color='white'
         icon={faComment}
-        style={{ height: '24px' }}
+        style={{ height: '24px', verticalAlign: '0' }}
       />
       {data.getAuthUser.newConversations.length > 0 && (
         <div className='label-avatar bg-purple'>
