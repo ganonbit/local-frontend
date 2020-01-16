@@ -6,6 +6,8 @@ import PostContent from './PostContent';
 import Comments from 'components/Comments/Comments';
 import AddComment from 'components/Comments/AddComment';
 
+import InfiniteScroll from 'components/InfiniteScroll';
+
 import { useStore } from 'store';
 import { Query } from 'react-apollo';
 export default function Post({ queryOptions, isAuth }) {
@@ -72,7 +74,18 @@ export default function Post({ queryOptions, isAuth }) {
       variables={queryOptions.variables}
       notifyOnNetworkStatusChange
     >
-      {({ data, loading }) => {
+      {({ data, loading, fetchMore, networkStatus }) => {
+        if (loading && networkStatus === 1) {
+          return (
+            <div className='d-flex justify-content-center my-2'>
+              <img
+                className='flex'
+                src='https://res.cloudinary.com/weare270b/image/upload/v1579191490/static/loader_eyctc7.gif'
+                alt='laoding .....'
+              />
+            </div>
+          );
+        }
         if (queryOptions.callback === 'getFollowedPosts') {
           postsData = data.getFollowedPosts;
         }
@@ -87,9 +100,39 @@ export default function Post({ queryOptions, isAuth }) {
           return null;
         }
         if (postsData) {
-          return postsData.posts.map(post => {
-            return singlePost(post);
-          });
+          return (
+            <InfiniteScroll
+              data={postsData.posts}
+              dataKey={`${queryOptions.callback}.posts`}
+              count={parseInt(postsData.count)}
+              variables={queryOptions.variables}
+              fetchMore={fetchMore}
+            >
+              {data => {
+                const showNextLoading =
+                  loading &&
+                  networkStatus === 3 &&
+                  parseInt(postsData.count) !== data.length;
+
+                return (
+                  <>
+                    {data.map(post => {
+                      return singlePost(post);
+                    })}
+                    {showNextLoading && (
+                      <div className='d-flex justify-content-center my-2'>
+                        <img
+                          className='flex'
+                          src='https://res.cloudinary.com/weare270b/image/upload/v1579191490/static/loader_eyctc7.gif'
+                          alt='laoding .....'
+                        />
+                      </div>
+                    )}
+                  </>
+                );
+              }}
+            </InfiniteScroll>
+          );
         } else if (postData) {
           return singlePost(postData);
         }
