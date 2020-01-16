@@ -65,7 +65,7 @@ InfiniteScroll.propTypes = {
   count: PropTypes.number.isRequired,
   fetchMore: PropTypes.func.isRequired,
   variables: PropTypes.object.isRequired,
-  //   children: PropTypes.func.isRequired,
+  children: PropTypes.func.isRequired,
 };
 
 export default InfiniteScroll;
