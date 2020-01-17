@@ -20,7 +20,7 @@ const EditPost = props => {
     imagePreview: image,
     error: '',
     id: postId,
-    image: '',
+    image: null,
   });
 
   let { imagePreview, postContent, error, id } = values;
