@@ -12,7 +12,6 @@ import { GET_FOLLOWED_POSTS, DELETE_POST } from 'graphql/post';
 import { GET_AUTH_USER, GET_USER_POSTS } from 'graphql/user';
 
 import EditPost from 'components/Modals/EditPost';
-import SinglePost from 'pages/SinglePost';
 
 import {
   HOME_PAGE_POSTS_LIMIT,
