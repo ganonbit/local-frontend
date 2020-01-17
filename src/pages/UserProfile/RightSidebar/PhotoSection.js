@@ -10,7 +10,7 @@ import * as Routes from 'routes';
 
 const LatestPhotos = ({ match }) => {
   const { data } = useQuery(GET_USER_POSTS, {
-    variables: { username: match.params.username, skip: 0, limit: 15 },
+    variables: { username: match.params.username, skip: 0 },
   });
 
   let photos = [];
