@@ -14,28 +14,31 @@ const override = css`
 `;
 const EditPost = props => {
   let { postId, auth, content, image, onHide, imagePublicId } = props;
-
+  const [isError, setError] = useState(true);
   const [values, setValues] = useState({
     postContent: content,
     imagePreview: image,
     error: '',
     id: postId,
-    image: '',
+    image: null,
   });
+
+  let { imagePreview, postContent, error, id } = values;
 
   let handleStatusChange = e => {
     const { name, value } = e.target;
     setValues({ ...values, [name]: value });
+    setError(false);
   };
-
-  let { imagePreview, postContent, error, id } = values;
 
   let onSubmitHandler = (e, editPost) => {
     e.preventDefault();
-    editPost().then(async ({ data }) => {
-      onHide();
-      
-    });
+    editPost()
+      .then(async ({ data }) => {
+        onHide();
+        setError(false);
+      })
+      .catch(() => setError(true));
   };
 
   let handleUploadImage = e => {
@@ -56,6 +59,16 @@ const EditPost = props => {
       error: '',
       image: e.target.files[0],
       imagePreview: URL.createObjectURL(e.target.files[0]),
+    });
+    e.target.value = null;
+    setError(false);
+  };
+  let onImageDelte = () => {
+    setValues({
+      ...values,
+      error: '',
+      image: null,
+      imagePreview: '',
     });
   };
   return (
@@ -109,13 +122,12 @@ const EditPost = props => {
                         </label>
                         <textarea
                           className='form-control'
-                          name='status'
+                          name='postContent'
                           value={postContent}
                           onChange={e => handleStatusChange(e)}
                         />
                       </div>
                     </form>
-
                     {imagePreview && (
                       <div className='thumbnail-gallery-items'>
                         <ul className='d-flex p-0 m-3 list-unstyled'>
@@ -125,14 +137,23 @@ const EditPost = props => {
                               src={imagePreview}
                               alt='images'
                             />
-                            <button type='button' className='btn p-0 m-0'>
+                            <button
+                              type='button'
+                              className='btn p-0 m-0'
+                              onClick={() => onImageDelte()}
+                            >
                               x
                             </button>
                           </li>
-                        
                         </ul>
                       </div>
                     )}
+                    {isError && apiError && (
+                      <span className='text-center d-block text-danger mt-1'>
+                        {apiError.graphQLErrors[0].message}
+                      </span>
+                    )}
+
                     <div className='upload-content'>
                       <ul className='d-flex p-3 m-0 list-unstyled justify-content-between align-items-center flex-wrap'>
                         <li>

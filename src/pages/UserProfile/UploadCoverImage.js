@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Modal } from 'react-bootstrap';
-import { Mutation } from 'react-apollo';
+import { Mutation, withApollo } from 'react-apollo';
 import { GET_FOLLOWED_POSTS } from 'graphql/post';
-import { UPLOAD_PHOTO } from 'graphql/user';
+import { UPLOAD_PHOTO, EDIT_ACCOUNT } from 'graphql/user';
 import { MAX_POST_IMAGE_SIZE } from 'constants/ImageSize';
 const UploadCoverImage = props => {
-  let { onHide, user, isCover, coverImage, title, refetch } = props;
+  let { onHide, user, isCover, coverImage, title, refetch, client } = props;
   const [values, setValues] = useState({
     imagePreview: coverImage,
     image: '',
@@ -14,10 +14,17 @@ const UploadCoverImage = props => {
   let { imagePreview } = values;
   let onSubmitHandler = (e, uploadUserPhoto) => {
     e.preventDefault();
-    uploadUserPhoto().then(async ({ data }) => {
-      refetch();
-      onHide();
-    });
+    if (values.image)
+      uploadUserPhoto().then(async ({ data }) => {
+        await refetch();
+        onHide();
+      });
+    else {
+      deleteProfileImage().then(data => {
+        refetch();
+        onHide();
+      });
+    }
   };
 
   let handleUploadImage = e => {
@@ -37,6 +44,36 @@ const UploadCoverImage = props => {
       ...values,
       image: e.target.files[0],
       imagePreview: URL.createObjectURL(e.target.files[0]),
+    });
+    e.target.value = null;
+  };
+  const deleteProfileImage = async () => {
+    try {
+      await client.mutate({
+        mutation: EDIT_ACCOUNT,
+        variables: {
+          id: user.id,
+          input: {
+            coverImage: '',
+            coverImagePublicId: '',
+          },
+        },
+        refetchQueries: () => [
+          {
+            query: GET_FOLLOWED_POSTS,
+            variables: { userId: user.id, skip: 0, limit: 15 },
+          },
+        ],
+      });
+    } catch (err) {
+      console.log(err);
+    }
+  };
+  let onDeletePhotoHandler = () => {
+    setValues({
+      ...values,
+      imagePreview: '',
+      // image: '',
     });
   };
   return (
@@ -79,11 +116,20 @@ const UploadCoverImage = props => {
                             className='video-bnr'
                             src={
                               !imagePreview
-                                ? 'https://res.cloudinary.com/weare270b/image/upload/v1576220262/static/Image_from_iOS_1_bnaxnc.jpg'
+                                ? 'https://res.cloudinary.com/weare270b/image/upload/v1576214852/static/profile-bg_edozor.png'
                                 : imagePreview
                             }
                             alt='images'
                           />
+                          <button
+                            type='button'
+                            className='btn p-0 m-0'
+                            onClick={() => {
+                              onDeletePhotoHandler();
+                            }}
+                          >
+                            x
+                          </button>
                         </li>
                       </ul>
                     </div>
@@ -132,4 +178,4 @@ const UploadCoverImage = props => {
     </Mutation>
   );
 };
-export default UploadCoverImage;
+export default withApollo(UploadCoverImage);

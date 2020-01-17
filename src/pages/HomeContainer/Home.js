@@ -3,8 +3,9 @@ import CreatePost from 'components/CreatePost';
 import Post from 'components/Post';
 import {
   TrendingPost,
-  TrendingTopics,
-  TopRatedUsers
+  // TrendingTopics,
+  TopRatedUsers,
+  NewsFeedAdd,
 } from 'components/Widget';
 
 import { GET_FOLLOWED_POSTS } from 'graphql/post';
@@ -27,11 +28,11 @@ const Home = () => {
         <aside className='col col-xl-3 order-xl-1 col-lg-6 order-lg-2 col-md-6 col-sm-6 col-12'>
           <TrendingPost />
           {/* <AvocadoGame /> */}
-          {/* <NewsFeedAdd /> */}
+          <NewsFeedAdd />
         </aside>
 
         <aside className='col col-xl-3 order-xl-3 col-lg-6 order-lg-3 col-md-6 col-sm-6 col-12'>
-          <TrendingTopics />
+          {/* <TrendingTopics /> */}
           <TopRatedUsers />
         </aside>
       </div>

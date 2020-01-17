@@ -4,6 +4,7 @@ import Avatar from 'components/Avatar';
 import { Query, withApollo } from 'react-apollo';
 import { generatePath, Link } from 'react-router-dom';
 import { HappyFaceIcon } from 'components/icons';
+import OverlayTriggers from '../Common/ToolTip';
 
 import { GET_TOP_USERS } from 'graphql/user';
 import { CREATE_FOLLOW } from 'graphql/follow';
@@ -63,26 +64,33 @@ const TopRatedUsers = ({ client }) => {
                         {`${user.firstName} ${user.lastName}`}
                       </Link>
                     </div>
-                    <span className='notification-icon'>
-                      <div
-                        className='accept-request'
-                        onClick={e => handleButtonClick(e, user)}
-                      >
-                        <span className='without-text'>
-                          <HappyFaceIcon />
-                          {/* <FontAwesomeIcon icon={faUserPlus} color='white' /> */}
-                        </span>
-                      </div>
-                    </span>
+                    <OverlayTriggers toolTipText='FOLLOW' placement='top'>
+                      <span className='notification-icon'>
+                        <div
+                          className='accept-request'
+                          onClick={e => handleButtonClick(e, user)}
+                        >
+                          <span className='without-text'>
+                            <HappyFaceIcon />
+                            {/* <FontAwesomeIcon icon={faUserPlus} color='white' /> */}
+                          </span>
+                        </div>
+                      </span>
+                    </OverlayTriggers>
                   </li>
                 ))}
               </ul>
             </div>
-            {/* <div className='ui-block refer-friend'>
-              <Link to='#' className='btn btn-lg'>
+            <div className='ui-block refer-friend'>
+              <Link
+                to
+                data-toggle='modal'
+                data-target='#referralUrl'
+                className='btn px-2 py-3'
+              >
                 Refer a Friend!
               </Link>
-            </div> */}
+            </div>
           </>
         );
       }}

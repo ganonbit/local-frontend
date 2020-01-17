@@ -20,8 +20,7 @@ const PasswordSetting = () => {
   };
   let onSubmitHandler = (e, resetPassword) => {
     e.preventDefault();
-    resetPassword().then(async data => {
-    });
+    resetPassword().then(async data => {});
   };
   return (
     <Mutation
@@ -82,7 +81,7 @@ const PasswordSetting = () => {
                       </div>
 
                       <a
-                        href='#1'
+                        href
                         className='forgot'
                         data-toggle='modal'
                         data-target='#restore-password'

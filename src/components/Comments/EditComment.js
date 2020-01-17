@@ -67,7 +67,7 @@ function EditComment({ authorId, comment, author, postId, onCancel }) {
                 ></textarea>
                 <div className='add-options-message'>
                   <a
-                    href='#1'
+                    href
                     className='options-message'
                     data-toggle='modal'
                     data-target='#update-header-photo'

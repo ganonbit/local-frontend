@@ -12,13 +12,24 @@ import { GET_FOLLOWED_POSTS } from 'graphql/post';
 import { DELETE_COMMENT } from 'graphql/comment';
 import { GET_AUTH_USER, GET_USER_POSTS } from 'graphql/user';
 
+import { useNotifications } from 'hooks/useNotifications';
+
 import * as Routes from 'routes';
 
 function CommentsHeader(props) {
-  const { author, createdAt, client, imagePublicId, commentId, isAuth } = props;
+  const notification = useNotifications();
+  const {
+    author,
+    createdAt,
+    client,
+    imagePublicId,
+    commentId,
+    isAuth,
+    post,
+  } = props;
   const [{ auth }] = useStore();
-  const isSelma =  !auth.user ? null : (auth.user.role === "selma");
-  const isOwner = !auth.user ? null : (auth.user.id === author.id);
+  const isSelma = !auth.user ? null : auth.user.role === 'selma';
+  const isOwner = !auth.user ? null : auth.user.id === author.id;
   const commentDate = new Date(parseInt(createdAt));
   const deleteComment = async () => {
     try {
@@ -34,7 +45,10 @@ function CommentsHeader(props) {
               limit: 15,
             },
           },
-          { query: GET_AUTH_USER, options: { fetchPolicy: 'cache-and-network' }, },
+          {
+            query: GET_AUTH_USER,
+            options: { fetchPolicy: 'cache-and-network' },
+          },
           {
             query: GET_USER_POSTS,
             variables: {
@@ -45,6 +59,14 @@ function CommentsHeader(props) {
           },
         ],
       });
+      if (auth.user.id !== post.author.id) {
+        const isNotified = post.author.notifications.find(
+          n => n.comment && n.comment.id === commentId
+        );
+        notification.remove({
+          notificationId: isNotified.id,
+        });
+      }
     } catch (err) {
       console.log(err);
     }
@@ -61,16 +83,21 @@ function CommentsHeader(props) {
           <Avatar image={author.image} />
         </a>
         <div className='author-date'>
-          <a className='h6 post__author-name fn' href='#1'>
+          <a
+            href={generatePath(Routes.USER_PROFILE, {
+              username: author.username,
+            })}
+            className='comment__author-name fn'
+          >
             {author.firstName} {author.lastName}
           </a>
           <div className='post__date'>
-            <time className='published' dateTime={commentDate}>
-            {moment(commentDate, 'YYYYMMDDHHmms').fromNow()}
+            <time className='comment__published' dateTime={commentDate}>
+              {moment(commentDate, 'YYYYMMDDHHmms').fromNow()}
             </time>
           </div>
         </div>
-        {isAuth && isOwner || isAuth && isSelma ? (
+        {(isAuth && isOwner) || (isAuth && isSelma) ? (
           <div className='more'>
             <FontAwesomeIcon
               className='olymp-three-dots-icon'
@@ -79,27 +106,30 @@ function CommentsHeader(props) {
               icon={faEllipsisV}
               style={{ height: '12px' }}
             />
+
             <ul className='more-dropdown'>
-                <li>
-                  <Link to="#" onClick={
-                    e => {
-                      e.preventDefault();
-                      // editComment(e);
-                    }
-                  }>
-                    Edit Comment
-                  </Link>
-                </li>
-                <li>
-                  <Link to="#" onClick={
-                    e => {
-                      e.preventDefault();
-                      deleteComment(e);
-                    }
-                  }>
-                    Delete Comment
-                  </Link>
-                </li>
+              {/* <li>
+                <Link
+                  to
+                  onClick={e => {
+                    e.preventDefault();
+                    // editComment(e);
+                  }}
+                >
+                  Edit Comment
+                </Link>
+              </li> */}
+              <li>
+                <Link
+                  to
+                  onClick={e => {
+                    e.preventDefault();
+                    deleteComment(e);
+                  }}
+                >
+                  Delete Comment
+                </Link>
+              </li>
             </ul>
           </div>
         ) : null}

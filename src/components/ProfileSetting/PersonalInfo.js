@@ -3,7 +3,7 @@ import { Mutation } from 'react-apollo';
 import DatePicker from 'react-datepicker';
 
 import { Field } from 'components/ProfileSetting';
-import {formatDate} from 'utils/date'
+import { formatDate } from 'utils/date';
 import { validateFormField } from 'utils';
 import { EDIT_ACCOUNT } from 'graphql/user';
 import { useStore } from 'store';
@@ -13,31 +13,39 @@ import 'bootstrap-select/dist/css/bootstrap-select.min.css';
 const jQuery = require('jquery');
 window.jQuery = jQuery;
 require('bootstrap-select');
-
-const PersonalInfo = () => {
+const PersonalInfo = ({ refetch }) => {
   const [{ auth }] = useStore();
-
+  const [successMessage, setSuccessMessage] = useState('');
   const [values, setValues] = useState({
     firstName: auth.user.firstName,
     lastName: auth.user.lastName,
     username: auth.user.username,
-    location: auth.user.location,
-    gender: auth.user.gender,
-    bio: auth.user.bio,
+    location: !auth.user.location ? '' : auth.user.location,
+    gender: !auth.user.gender ? 'male' : auth.user.gender,
+    bio: !auth.user.bio ? '' : auth.user.bio,
     birthday: auth.user.birthday,
-    phone: auth.user.phone,
+    phone: !auth.user.phone ? '' : auth.user.phone,
   });
   const [date, setDate] = useState(auth.user.birthday);
   const [error, setError] = useState({
     username: '',
     firstName: '',
-    lastName: '',  
-    location: '',  
-    gender: '',  
-    bio: '',  
-    phone: '',  
+    lastName: '',
+    location: '',
+    gender: '',
+    bio: '',
+    phone: '',
   });
-  const { username, firstName, lastName, bio, birthday, location, phone } = values;
+  const {
+    username,
+    firstName,
+    lastName,
+    bio,
+    gender,
+    birthday,
+    location,
+    phone,
+  } = values;
   const handleChange = e => {
     const { name, value } = e.target;
     setValues({ ...values, [name]: value });
@@ -72,11 +80,11 @@ const PersonalInfo = () => {
     setError({
       username: '',
       firstName: '',
-      lastName: '',  
-      location: '',  
-      gender: '',  
-      bio: '',  
-      phone: '',  
+      lastName: '',
+      location: '',
+      gender: '',
+      bio: '',
+      phone: '',
     });
   };
 
@@ -87,7 +95,6 @@ const PersonalInfo = () => {
     });
     setDate(birthday);
   };
-
   const submitHandler = (e, editAccount) => {
     e.preventDefault();
     const error = validate();
@@ -96,7 +103,8 @@ const PersonalInfo = () => {
       return false;
     }
     editAccount().then(async data => {
-      // await refetch();
+      await refetch();
+      setSuccessMessage('Successfully updated profile information!');
     });
   };
   useEffect(() => {
@@ -117,6 +125,7 @@ const PersonalInfo = () => {
     error.firstName ||
     error.lastName ||
     error.username;
+
   return (
     <Mutation
       mutation={EDIT_ACCOUNT}
@@ -132,6 +141,9 @@ const PersonalInfo = () => {
               <h6 className='title'>Personal Information</h6>
             </div>
             <div className='ui-block-content'>
+              <div className='result-message text-center font-weight-bolder mb-4 text-success'>
+                {successMessage}
+              </div>
               <form onSubmit={e => submitHandler(e, editAccount)}>
                 <div className='row'>
                   <div className='col col-lg-6 col-md-6 col-sm-12 col-12'>
@@ -177,10 +189,13 @@ const PersonalInfo = () => {
                         name='gender'
                         className='selectpicker form-control'
                         onChange={handleChange}
+                        value={gender}
                       >
                         <option value='male'>Male</option>
                         <option value='female'>Female</option>
-                        <option value='custom'>Custom (more choices coming soon)</option>
+                        <option value='custom'>
+                          Custom (more choices coming soon)
+                        </option>
                       </select>
                     </div>
                   </div>
@@ -205,9 +220,8 @@ const PersonalInfo = () => {
                         className='form-control'
                         onChange={handleChange}
                         name='location'
-                      >
-                        {location}
-                      </textarea>
+                        value={location}
+                      ></textarea>
                     </div>
                   </div>
                   <div className='col col-lg-6 col-md-6 col-sm-12 col-12'>
@@ -219,9 +233,8 @@ const PersonalInfo = () => {
                         className='form-control'
                         onChange={handleChange}
                         name='bio'
-                      >
-                        {bio}
-                      </textarea>
+                        value={bio}
+                      ></textarea>
                     </div>
                   </div>
                   {/* <div className='col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12'>

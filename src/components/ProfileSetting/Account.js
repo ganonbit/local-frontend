@@ -1,4 +1,4 @@
-import React,{useEffect} from 'react';
+import React, { useEffect } from 'react';
 import bootstrap from 'bootstrap';
 const jQuery = require('jquery');
 window.jQuery = jQuery;

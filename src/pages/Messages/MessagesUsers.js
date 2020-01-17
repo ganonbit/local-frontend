@@ -1,165 +1,38 @@
 import React, { useEffect } from 'react';
+import { withRouter, Link, generatePath } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
-import { NavLink, generatePath, withRouter } from 'react-router-dom';
 import { useQuery } from '@apollo/react-hooks';
 
 import { GET_CONVERSATIONS } from 'graphql/user';
 import { GET_NEW_CONVERSATIONS_SUBSCRIPTION } from 'graphql/messages';
 
-import Search from 'components/Search';
-import { PencilIcon } from 'components/icons';
-import { LoadingDots } from 'components/Loading';
 import Avatar from 'components/Avatar';
 
 import * as Routes from 'routes';
 
-const Root = styled.div`
-  width: 80px;
-  height: 100%;
-  border-right: 1px solid ${p => p.theme.colors.grey[300]};
-  padding: 0 ${p => p.theme.spacing.xxs};
-
-  @media (min-width: ${p => p.theme.screen.lg}) {
-    width: 330px;
-  }
-`;
-
-const HeadingContainer = styled.div`
-  border-bottom: 1px solid ${p => p.theme.colors.grey[300]};
-  height: 60px;
-  padding: 0 ${p => p.theme.spacing.xs};
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-
-  @media (min-width: ${p => p.theme.screen.lg}) {
-    justify-content: space-between;
-  }
-`;
-
-const Heading = styled.h3`
-  display: none;
-  color: ${p => p.theme.colors.text.primary};
-  margin: 0;
-
-  @media (min-width: ${p => p.theme.screen.lg}) {
-    display: block;
-  }
-`;
-
-const NewMessage = styled(NavLink)`
-  width: 40px;
-  height: 40px;
-  background-color: ${p => p.theme.colors.grey[200]};
-  border-radius: 50%;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-`;
-
-const SearchContainer = styled.div`
-  display: none;
-  border-bottom: 1px solid ${p => p.theme.colors.grey[300]};
-
-  @media (min-width: ${p => p.theme.screen.lg}) {
-    display: block;
-  }
-`;
-
-const UserContainer = styled.div`
-  margin-top: ${p => p.theme.spacing.sm};
-`;
-
-const User = styled(NavLink)`
-  width: 100%;
-  padding: ${p => p.theme.spacing.xxs} ${p => p.theme.spacing.xxs};
-  margin-bottom: ${p => p.theme.spacing.xxs};
-  border-radius: ${p => p.theme.radius.md};
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  text-decoration: none;
-  color: ${p => p.theme.colors.text.primary};
-
-  @media (max-width: ${p => p.theme.screen.lg}) {
-    ${p =>
-      !p.seen &&
-      `
-        background-color: ${p.theme.colors.primary.light};
-      `};
-  }
-
-  &.selected {
-    background-color: ${p => p.theme.colors.grey[100]};
-  }
-`;
-
-const Info = styled.div`
-  width: 100%;
-  display: none;
-  padding: 0 ${p => p.theme.spacing.xs};
-
-  @media (min-width: ${p => p.theme.screen.lg}) {
-    display: block;
-  }
-`;
-
-const NameUnSeen = styled.div`
-  width: 100%;
-  font-size: ${p => p.theme.font.size.sm};
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-`;
-
-const Name = styled.div`
-  text-overflow: ellipsis;
-  width: 100%;
-`;
-
-const UnSeen = styled.div`
-  width: 8px;
-  height: 8px;
-  background-color: ${p => p.theme.colors.primary.light};
-  border-radius: 50%;
-`;
-
-const LastMessage = styled.div`
-  margin-top: ${p => p.theme.spacing.xxs};
-  font-size: ${p => p.theme.font.size.xxs};
-  color: ${p => p.theme.colors.grey[500]};
-  text-overflow: ellipsis;
-`;
-
-/**
- * Component that renders users, with whom auth user had a chat
- */
-const MessagesUsers = ({ location, authUser }) => {
+const MessagesUsers = ({ authUser, location, isSelma }) => {
   const { subscribeToMore, data, loading } = useQuery(GET_CONVERSATIONS, {
     variables: { authUserId: authUser.id },
   });
-
   useEffect(() => {
     const unsubscribe = subscribeToMore({
       document: GET_NEW_CONVERSATIONS_SUBSCRIPTION,
       updateQuery: (prev, { subscriptionData }) => {
-        const { data } = subscriptionData;
-        if (!data) return prev;
-        if (prev.getConversations.some(u => u.id === data.newConversation.id)) {
+        if (!subscriptionData.data) return prev;
+
+        const { newConversation } = subscriptionData.data;
+        const oldConversations = prev.getConversations;
+
+        if (oldConversations.some(u => u.id === newConversation.id)) {
           return prev;
         }
 
-        // Merge users
-        const newUser = subscriptionData.data.newConversation;
-        delete newUser['receiverId'];
-        const mergedUsers = [newUser, ...prev.getConversations];
+        // Merge conversations
+        const conversations = newConversation;
+        delete conversations['receiverId'];
+        const mergedConversations = [newConversation, ...oldConversations];
 
-        return { getConversations: mergedUsers };
+        return { getConversations: mergedConversations };
       },
     });
 
@@ -167,69 +40,57 @@ const MessagesUsers = ({ location, authUser }) => {
       unsubscribe();
     };
   }, [subscribeToMore]);
-
   return (
-    <Root>
-      <HeadingContainer>
-        <Heading>Chats</Heading>
-
-        <NewMessage
-          exact
-          activeClassName='selected'
-          to={generatePath(Routes.MESSAGES, {
-            userId: Routes.NEW_ID_VALUE,
-          })}
-        >
-          <PencilIcon />
-        </NewMessage>
-      </HeadingContainer>
-
-      <SearchContainer>
-        <Search
-          location={location}
-          backgroundColor='white'
-          forMessage
-          placeholder='Search message'
-        />
-      </SearchContainer>
-
-      {loading && <LoadingDots top='xl' />}
-
-      {!loading && (
-        <UserContainer>
-          {data.getConversations.map(user => {
-            const unseen = !user.lastMessageSender && !user.seen;
-
-            return (
-              <User
-                key={user.id}
-                activeClassName='selected'
-                to={`/messages/${user.id}`}
-                seen={unseen ? 0 : 1}
-              >
-                <span>
-                  <Avatar image={user.image} size={50} />
-                </span>
-
-                <Info>
-                  <NameUnSeen>
-                    <Name>
-                      {user.firstName} {user.firstName}
-                    </Name>
-
-                    {unseen && <UnSeen />}
-                  </NameUnSeen>
-
-                  <LastMessage>
-                    {user.lastMessageSender && 'You:'} {user.lastMessage}
-                  </LastMessage>
-                </Info>
-              </User>
-            );
-          })}
-        </UserContainer>
-      )}
-    </Root>
+    <div className='col col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12 pr-lg-0'>
+      <ul className='notification-list chat-message'>
+        {isSelma
+          ? data &&
+            data.getConversations.map(user => {
+              const isSelma = user.id === '5df7cd1ae8d6ec604b737ae5';
+              return (
+                !isSelma && (
+                  <li className='d-flex justify-content-start align-items-center px-3 py-2'>
+                    <div className='author-thumb'>
+                      <Avatar image={user.image} size={50} />
+                    </div>
+                    <div className='notification-event'>
+                      <Link
+                        to={generatePath(Routes.MESSAGES, {
+                          userId: user.id,
+                        })}
+                        className='h6 notification-friend'
+                      >
+                        {`${user.firstName} ${user.lastName}`}
+                      </Link>
+                    </div>
+                  </li>
+                )
+              );
+            })
+          : data &&
+            data.getConversations.map(user => {
+              return (
+                !isSelma && (
+                  <li className='d-flex justify-content-start align-items-center px-3 py-2'>
+                    <div className='author-thumb'>
+                      <Avatar image={user.image} size={50} />
+                    </div>
+                    <div className='notification-event'>
+                      <Link
+                        to={generatePath(Routes.MESSAGES, {
+                          userId: user.id,
+                        })}
+                        className='h6 notification-friend'
+                      >
+                        {`${user.firstName} ${user.lastName}`}
+                      </Link>
+                    </div>
+                  </li>
+                )
+              );
+            })}
+      </ul>
+    </div>
   );
 };
 

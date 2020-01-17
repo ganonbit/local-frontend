@@ -1,136 +1,34 @@
 import React, { useState, useRef, useEffect } from 'react';
-import styled from 'styled-components';
-import PropTypes from 'prop-types';
+
 import { useMutation } from '@apollo/react-hooks';
 
-import { Button, Textarea } from 'components/Form';
-import { SendIcon } from 'components/icons';
 import Avatar from 'components/Avatar';
-import { Spacing } from 'components/Layout';
 
 import { CREATE_MESSAGE } from 'graphql/messages';
 import { GET_CONVERSATIONS } from 'graphql/user';
 
-import { currentDate } from 'utils/date';
-
 import * as Routes from 'routes';
+import moment from 'moment';
 
-const Root = styled.div`
-  padding: 0 ${p => p.theme.spacing.sm};
-  overflow-y: auto;
-  height: 100vh;
-  margin-top: -120px;
-  padding-top: 120px;
-  display: flex;
-  flex-direction: column;
-
-  ::-webkit-scrollbar {
-    width: 8px;
-  }
-
-  ::-webkit-scrollbar-thumb {
-    background-color: ${p => p.theme.colors.grey[500]};
-    border-radius: ${p => p.theme.radius.lg};
-    visibility: hidden;
-
-    &:hover {
-      background-color: ${p => p.theme.colors.grey[600]};
-    }
-  }
-
-  &:hover {
-    ::-webkit-scrollbar-thumb {
-      visibility: visible;
-    }
-  }
-`;
-
-const Conversation = styled.div`
-  flex: 1;
-`;
-
-const MessageDate = styled.span`
-  position: absolute;
-  bottom: -${p => p.theme.spacing.sm};
-  left: ${p => !p.userMessage && p.theme.spacing.lg};
-  right: -${p => p.userMessage && 0};
-  display: none;
-  font-size: ${p => p.theme.font.size.tiny};
-  color: ${p => p.theme.colors.text.secondary};
-`;
-
-const MessageWrapper = styled.div`
-  display: flex;
-  position: relative;
-  justify-content: ${p => p.userMessage && 'flex-end'};
-  margin: ${p => p.theme.spacing.md} 0;
-
-  &:hover ${MessageDate} {
-    display: block;
-  }
-`;
-
-const Message = styled.div`
-  display: flex;
-  flex-direction: row;
-  position: relative;
-  max-width: 300px;
-  line-height: 21px;
-  font-size: ${p => p.theme.font.size.xs};
-  padding: ${p => p.theme.spacing.xxs} ${p => p.theme.spacing.xs};
-  border-radius: ${p => p.theme.radius.lg};
-  color: ${p => p.userMessage && p.theme.colors.white};
-  background-color: ${p =>
-    p.userMessage ? p.theme.colors.primary.light : p.theme.colors.grey[200]};
-`;
-
-const Form = styled.form`
-  background-color: ${p => p.theme.colors.white};
-  position: sticky;
-  bottom: 0;
-  width: 100%;
-  display: flex;
-  padding: ${p => p.theme.spacing.xxs};
-  padding-left: ${p => p.theme.spacing.sm};
-  padding-right: ${p => p.theme.spacing.md};
-`;
-
-const StyledTextarea = styled(Textarea)`
-  height: 38px;
-  border-radius: ${p => p.theme.radius.lg};
-  background-color: ${p => p.theme.colors.grey[200]};
-`;
-
-const SendButton = styled(Button)`
-  margin-left: ${p => p.theme.spacing.sm};
-  align-self: center;
-`;
-
-/**
- * Component that renders messages conversations UI
- */
 const MessagesChatConversation = ({
   messages,
   authUser,
   chatUser,
   data,
   match,
+  isAuth,
 }) => {
   const bottomRef = useRef(null);
-
   const [messageText, setMessageText] = useState('');
-
-  const [createMessage] = useMutation(CREATE_MESSAGE);
-
   useEffect(() => {
     if (bottomRef.current) {
       bottomRef.current.scrollIntoView();
     }
   }, [bottomRef, data]);
 
+  const [createMessage] = useMutation(CREATE_MESSAGE);
   const sendMessage = e => {
     e.preventDefault();
-
     if (!messageText) return;
 
     setMessageText('');
@@ -162,56 +60,106 @@ const MessagesChatConversation = ({
   };
 
   return (
-    <Root>
-      <Conversation>
-        {messages.map(message => {
-          const isAuthUserReceiver = authUser.id === message.sender.id;
+    <>
+      <div className='col col-xl-8 col-lg-8 col-md-12 col-sm-12 col-12 pl-lg-0'>
+        <div className='chat-field'>
+          <div className='ui-block-title block-title-bg p-3'>
+            {chatUser && (
+              <h6 className='title'>{`${chatUser.firstName} ${chatUser.lastName}`}</h6>
+            )}
+            <a href='1#' className='more'>
+              <svg className='olymp-three-dots-icon'>
+                <use xlinkhref='svg-icons/sprites/icons.svg#olymp-three-dots-icon'></use>
+              </svg>
+            </a>
+          </div>
 
-          return (
-            <MessageWrapper userMessage={isAuthUserReceiver} key={message.id}>
-              {!isAuthUserReceiver && (
-                <Spacing right='xs'>
-                  <Avatar image={message.sender.image} />
-                </Spacing>
-              )}
+          <div className='mCustomScrollbar' data-mcs-theme='dark'>
+            <ul className='notification-list chat-message chat-message-field'>
+              {messages.map(message => {
+                const isAuthUserReceiver =
+                  '5df7cd1ae8d6ec604b737ae5' === message.sender.id;
+                return (
+                  isAuthUserReceiver && (
+                    <li
+                      className='px-3 py-2'
+                      userMessage={isAuthUserReceiver}
+                      key={message.id}
+                    >
+                      <div className='message-wraper d-flex justify-content-between align-items-center'>
+                        {isAuthUserReceiver && (
+                          <div className='author-thumb-outer d-flex align-items-center'>
+                            <Avatar
+                              className='author-thumb'
+                              image={message.sender.image}
+                            />
+                            <a
+                              href='1#'
+                              className='h6 notification-friend pl-2'
+                            >
+                              {message.sender.username}
+                            </a>
+                          </div>
+                        )}
+                        {!isAuthUserReceiver && (
+                          <div className='author-thumb-outer d-flex align-items-center'>
+                            <Avatar
+                              className='author-thumb'
+                              image={message.sender.image}
+                            />
+                            <a
+                              href='1#'
+                              className='h6 notification-friend pl-2'
+                            >
+                              {message.sender.username}
+                            </a>
+                          </div>
+                        )}
 
-              <Message userMessage={isAuthUserReceiver}>
-                {message.message}
-              </Message>
+                        <div className='notification-event'>
+                          <span className='notification-date'>
+                            <time className='entry-date updated'>
+                              {moment(
+                                new Date(parseInt(message.createdAt))
+                              ).format('MMMM Do, YYYY')}
+                            </time>
+                          </span>
+                        </div>
+                      </div>
+                      <div className='message-box float-none d-block'>
+                        <span className='chat-message-item float-none d-block pl-5'>
+                          {message.message}
+                        </span>
+                      </div>
+                    </li>
+                  )
+                );
+              })}
+              <div ref={bottomRef} />
+            </ul>
+          </div>
 
-              <MessageDate userMessage={isAuthUserReceiver}>
-                {currentDate(message.createdAt)}
-              </MessageDate>
-            </MessageWrapper>
-          );
-        })}
-        <div ref={bottomRef} />
-      </Conversation>
-
-      {match.params.userId !== Routes.NEW_ID_VALUE && chatUser && (
-        <Form onSubmit={sendMessage}>
-          <StyledTextarea
-            placeholder='Type a message'
-            value={messageText}
-            onChange={e => setMessageText(e.target.value)}
-            onKeyDown={onEnterPress}
-          />
-
-          <SendButton type='submit' ghost>
-            <SendIcon width='28' color='grey[300]' />
-          </SendButton>
-        </Form>
-      )}
-    </Root>
+          {match.params.userId !== Routes.NEW_ID_VALUE && chatUser && isAuth && (
+            <form onSubmit={e => sendMessage(e)}>
+              <div className='form-group label-floating is-empty'>
+                <textarea
+                  className='form-control pt-2'
+                  placeholder='Type a message'
+                  value={messageText}
+                  onChange={e => setMessageText(e.target.value)}
+                  onKeyDown={onEnterPress}
+                ></textarea>
+              </div>
+              <div className='add-options-message'>
+                <button className='btn btn-primary btn-sm' type='submit'>
+                  Post Reply
+                </button>
+              </div>
+            </form>
+          )}
+        </div>
+      </div>
+    </>
   );
 };
-
-MessagesChatConversation.propTypes = {
-  messages: PropTypes.array.isRequired,
-  authUser: PropTypes.object.isRequired,
-  chatUser: PropTypes.object,
-  data: PropTypes.any,
-  match: PropTypes.object.isRequired,
-};
-
 export default MessagesChatConversation;
