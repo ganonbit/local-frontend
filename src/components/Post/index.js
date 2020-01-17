@@ -1,7 +1,7 @@
 import React from 'react';
 
 import InfiniteScroll from 'components/InfiniteScroll';
-import SinglePost from './SinglePost'
+import SinglePost from './SinglePost';
 
 import { Query } from 'react-apollo';
 
@@ -39,7 +39,7 @@ const Post = ({ queryOptions, isAuth }) => {
         if (!postsData && !postData) {
           return null;
         }
-        if (postsData) {
+        if (postsData && isAuth) {
           return (
             <InfiniteScroll
               data={postsData.posts}
@@ -57,7 +57,7 @@ const Post = ({ queryOptions, isAuth }) => {
                 return (
                   <>
                     {data.map(post => {
-                      return SinglePost(post, isAuth);
+                      return <SinglePost post={post} isAuth={isAuth} />;
                     })}
                     {showNextLoading && (
                       <div className='d-flex justify-content-center my-2'>
@@ -74,7 +74,11 @@ const Post = ({ queryOptions, isAuth }) => {
             </InfiniteScroll>
           );
         } else if (postData) {
-          return SinglePost(postData, isAuth);
+          return <SinglePost post={postData} isAuth={isAuth} />;
+        } else if (postsData && !isAuth) {
+          return postsData.posts.map(post => (
+            <SinglePost post={post} isAuth={isAuth} />
+          ));
         }
       }}
     </Query>
