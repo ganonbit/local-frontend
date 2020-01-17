@@ -48,14 +48,14 @@ const Notifications = ({ client, refetch }) => {
                       variables: {
                         input: {
                           userId: auth.user.id,
-                          notificationId: notification.id
+                          notificationId: notification.id,
                         },
                       },
                       refetchQueries: () => [{ query: GET_AUTH_USER }],
                     });
                   } catch (err) {}
                 };
-              
+
                 return (
                   <>
                     {notification.like && (
@@ -115,7 +115,7 @@ const Notifications = ({ client, refetch }) => {
                         </div>
                       </li>
                     )}
-                    
+
                     {notification.follow && (
                       <li key={notification.id}>
                         <div className='d-flex'>
@@ -161,7 +161,7 @@ const Notifications = ({ client, refetch }) => {
   );
 };
 
-Notification.propTypes = {
+Notifications.propTypes = {
   client: PropTypes.object.isRequired,
 };
 
