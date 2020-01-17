@@ -99,9 +99,6 @@ const UploadImageModal = ({
                           x
                         </button>
                       </li>
-                      {/* <li className='add-more-posts'>
-                        <span>+</span>
-                      </li> */}
                     </ul>
                   </div>
                 )}

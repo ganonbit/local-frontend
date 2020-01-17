@@ -44,11 +44,11 @@ const ProfileHeader = ({ user, refetch, auth, username, isOwner, isSelma }) => {
               {user.coverImage ? (
                 <img src={user.coverImage} alt='cover' />
               ) : (
-                  <img
-                    src='https://res.cloudinary.com/weare270b/image/upload/v1576214852/static/profile-bg_edozor.png'
-                    alt='nature'
-                  />
-                )}
+                <img
+                  src='https://res.cloudinary.com/weare270b/image/upload/v1576214852/static/profile-bg_edozor.png'
+                  alt='nature'
+                />
+              )}
             </div>
             <div className='top-header-author'>
               <Link
@@ -60,11 +60,11 @@ const ProfileHeader = ({ user, refetch, auth, username, isOwner, isSelma }) => {
                 {user.image ? (
                   <img src={user.image} alt='profile' />
                 ) : (
-                    <img
-                      src='https://res.cloudinary.com/weare270b/image/upload/v1576220262/static/Image_from_iOS_1_bnaxnc.jpg'
-                      alt='nature'
-                    />
-                  )}
+                  <img
+                    src='https://res.cloudinary.com/weare270b/image/upload/v1576220262/static/Image_from_iOS_1_bnaxnc.jpg'
+                    alt='nature'
+                  />
+                )}
               </Link>
               <div className='author-content'>
                 <Link to={Routes.HOME} className='h4 author-name'>
@@ -137,7 +137,7 @@ const ProfileHeader = ({ user, refetch, auth, username, isOwner, isSelma }) => {
                           }}
                         >
                           Update Profile Photo
-                          </Link>
+                        </Link>
                       </li>
                       <li>
                         <Link
@@ -153,7 +153,7 @@ const ProfileHeader = ({ user, refetch, auth, username, isOwner, isSelma }) => {
                           }}
                         >
                           Update Cover Image
-                          </Link>
+                        </Link>
                       </li>
                     </ul>
                   </div>
