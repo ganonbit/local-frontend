@@ -47,7 +47,10 @@ function AddComment({ authorId, author, post, onCancel, userId }) {
     setCommentContent({ ...commentContent, [name]: value });
     setError(false);
   };
-
+  const onCancelHandler = e => {
+    e.preventDefault();
+    setCommentContent({ ...commentContent, comment: '' });
+  };
   return (
     <Mutation
       mutation={CREATE_COMMENT}
@@ -116,7 +119,7 @@ function AddComment({ authorId, author, post, onCancel, userId }) {
 
                 <button
                   className='btn btn-md-2 btn-border-think c-grey btn-transparent custom-color cancel-btn mr-0'
-                  onClick={onCancel}
+                  onClick={onCancelHandler}
                 >
                   Cancel
                 </button>
