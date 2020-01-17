@@ -49,7 +49,7 @@ export default function PostContent(props) {
         <Preview {...metaFromContentPreview.meta} />
       ) : null}
       {!image ? null : (
-        <div className='post-img'>
+        <div className='post-img mt-3'>
           <img alt='postImage' src={image} />
         </div>
       )}

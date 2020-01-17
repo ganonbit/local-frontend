@@ -61,9 +61,9 @@ const MessagesChatConversation = ({
 
   return (
     <>
-      <div className='col col-xl-8 col-lg-8 col-md-12 col-sm-12 col-12 padding-l-0'>
+      <div className='col col-xl-8 col-lg-8 col-md-12 col-sm-12 col-12 pl-lg-0'>
         <div className='chat-field'>
-          <div className='ui-block-title p-3'>
+          <div className='ui-block-title block-title-bg p-3'>
             {chatUser && (
               <h6 className='title'>{`${chatUser.firstName} ${chatUser.lastName}`}</h6>
             )}
