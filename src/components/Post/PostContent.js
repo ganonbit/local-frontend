@@ -10,7 +10,7 @@ import linkDecorator from '../Common/linkDecorator';
 export default function PostContent(props) {
   const { image, content } = props;
   const rawContent = content;
-  
+
   hashtag(linkify);
   mention(linkify);
 
@@ -41,19 +41,16 @@ export default function PostContent(props) {
 
     fetchData();
   }, [rawContent]);
-
   return (
-    <div className='postContainer'>
-      <Linkify options={linkDecorator}>
-        {rawContent}
-      </Linkify>
+    <div className='post-container'>
+      <Linkify options={linkDecorator}>{rawContent}</Linkify>
 
-      {!metaFromContentPreview && !image ? null : (
+      {metaFromContentPreview ? (
         <Preview {...metaFromContentPreview.meta} />
-      )}
+      ) : null}
       {!image ? null : (
-        <div className='post-img'>
-          <img className='postImage' alt='postImage' src={image} />
+        <div className='post-img mt-3'>
+          <img alt='postImage' src={image} />
         </div>
       )}
     </div>

@@ -1,2 +1,4 @@
-public/js/jQuery/jquery-3.4.1.js
-src/assets/sass/plugins/*.min.css
+build/
+public/
+lambda/
+node_modules/

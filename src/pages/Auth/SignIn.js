@@ -43,7 +43,7 @@ const SignIn = ({ refetch, history }) => {
   const handleReset = () => {
     setReset(false);
   };
- 
+
   const handleSubmit = (e, signin) => {
     e.preventDefault();
     const error = validate();
@@ -120,10 +120,10 @@ const SignIn = ({ refetch, history }) => {
                                 Remember Me
                               </label>
                             </div> */}
-                            
+
                             <a
                               onClick={() => setReset(true)}
-                              href='#1'
+                              href
                               className='forgot'
                               data-toggle='modal'
                               data-target='#restore-password'
@@ -146,12 +146,12 @@ const SignIn = ({ refetch, history }) => {
                             Login
                           </button>
                           <p>
-                            Don’t you have an account?
+                            Don’t you have an account? &nbsp;
                             <Link to={Routes.SIGN_UP} className='btn-register'>
                               Register Now!
                             </Link>
-                            it’s really simple and you can start enjoing all the
-                            benefits!
+                            &nbsp; It’s really simple and you can start enjoying
+                            all the benefits!
                           </p>
                         </div>
                       </div>

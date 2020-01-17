@@ -1,205 +1,126 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link, generatePath } from 'react-router-dom';
 
 import * as Routes from 'routes';
+import Avatar from 'components/Avatar';
 
 import { useStore } from 'store';
+
+import { useQuery } from '@apollo/react-hooks';
+
+import { GET_AUTH_USER } from 'graphql/user';
+import { GET_NEW_CONVERSATIONS_SUBSCRIPTION } from 'graphql/messages';
+import moment from 'moment';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faComment } from '@fortawesome/free-solid-svg-icons';
+
 const ChatNotifications = () => {
   const [{ auth }] = useStore();
+  const { loading, subscribeToMore, data, refetch } = useQuery(GET_AUTH_USER);
+
+  useEffect(() => {
+    const unsubscribe = subscribeToMore({
+      document: GET_NEW_CONVERSATIONS_SUBSCRIPTION,
+      updateQuery: (prev, { subscriptionData }) => {
+        if (!subscriptionData.data) return prev;
+        const oldConversations = prev.getAuthUser.newConversations;
+        const { newConversation } = subscriptionData.data;
+
+        // Don't show message notification in Header if user already is on messages page
+        if (window.location.href.split('/')[3] === 'messages') {
+          return prev;
+        }
+
+        // If authUser already has unseen message from that user,
+        // remove old message, so we can show the new one
+        const index = oldConversations.findIndex(
+          u => u.id === newConversation.id
+        );
+        if (index > -1) {
+          oldConversations.splice(index, 1);
+        }
+
+        // Merge conversations
+        const mergeConversations = [newConversation, ...oldConversations];
+
+        // Attach new conversation to authUser
+        const authUser = prev.getAuthUser;
+        authUser.newConversations = mergeConversations;
+
+        return { getAuthUser: authUser };
+      },
+    });
+
+    return () => {
+      unsubscribe();
+    };
+  }, [subscribeToMore]);
+
   return (
     <div className='control-icon more has-items'>
-      <img
-        src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/inbox-img_pvtt1m.png'
-        alt='chatt'
+      <FontAwesomeIcon
+        size='2x'
+        color='white'
+        icon={faComment}
+        style={{ height: '24px', verticalAlign: '0' }}
       />
-      <div className='label-avatar bg-purple'>2</div>
+      {data.getAuthUser.newConversations.length > 0 && (
+        <div className='label-avatar bg-purple'>
+          {data.getAuthUser.newConversations.length}
+        </div>
+      )}
 
       <div className='more-dropdown more-with-triangle triangle-top-center'>
         <div className='ui-block-title ui-block-title-small'>
-          <h6 className='title'>Chat / Messages</h6>
-          <a href='#1'>Mark all as read</a>
-          <a href='#1'>Settings</a>
+          <h6 className='title'>Messages</h6>
+          {/* <a href>Mark all as read</a>
+          <a href>Settings</a> */}
         </div>
 
         <div className='mCustomScrollbar' data-mcs-theme='dark'>
           <ul className='notification-list chat-message'>
-            <li className='message-unread'>
-              <div className='author-thumb'>
-                <img
-                  src='https://res.cloudinary.com/weare270b/image/upload/v1576219679/static/SelmaProfile-Crop_ltwm5s.png'
-                  alt='author'
-                />
-              </div>
-              <div className='notification-event'>
-                <Link
-                  to={generatePath(Routes.MESSAGES, {
-                    userId: '5df7cd1ae8d6ec604b737ae5',
-                  })}
-                >
-                  Selma
-                </Link>
-                <span className='chat-message-item'>
-                  Hi! It’s Selma, I just wanted to let you know that we have a
-                  new feature...
-                </span>
-                <span className='notification-date'>
-                  <time
-                    className='entry-date updated'
-                    dateTime='2019-12-13T18:18'
-                  >
-                    4 hours ago
-                  </time>
-                </span>
-              </div>
-              <span className='notification-icon'>
-                <svg
-                  className='olymp-chat---messages-icon'
-                  xlinkHref='svg-icons/sprites/icons.svg#olymp-chat---messages-icon'
-                />
-              </span>
-              <div className='more'>
-                <svg
-                  className='olymp-three-dots-icon'
-                  xlinkHref='svg-icons/sprites/icons.svg#olymp-three-dots-icon'
-                />
-              </div>
-            </li>
+            {data.getAuthUser.newConversations.map(message => {
+              const rawTime = parseInt(message.lastMessageCreatedAt);
+              const postDate = new Date(rawTime);
 
-            <li>
-              <div className='author-thumb'>
-                <img
-                  src='https://res.cloudinary.com/weare270b/image/upload/v1576219679/static/SelmaProfile-Crop_ltwm5s.png'
-                  alt='author'
-                />
-              </div>
-              <div className='notification-event'>
-                <Link
-                  to={generatePath(Routes.MESSAGES, {
-                    userId: '5df7cd1ae8d6ec604b737ae5',
-                  })}
-                >
-                  Selma
-                </Link>
-                <span className='chat-message-item'>Thanks for your idea!</span>
-                <span className='notification-date'>
-                  <time
-                    className='entry-date updated'
-                    dateTime='2004-07-24T18:18'
-                  >
-                    14 hours ago
-                  </time>
-                </span>
-              </div>
-              <span className='notification-icon'>
-                <svg
-                  className='olymp-chat---messages-icon'
-                  xlinkHref='svg-icons/sprites/icons.svg#olymp-chat---messages-icon'
-                />
-              </span>
+              return (
+                <li className='message-unread'>
+                  <div className='author-thumb'>
+                    <Avatar image={message.image} />
+                  </div>
 
-              <div className='more'>
-                <svg
-                  className='olymp-three-dots-icon'
-                  xlinkHref='svg-icons/sprites/icons.svg#olymp-three-dots-icon'
-                />
-              </div>
-            </li>
-            <li>
-              <div className='author-thumb'>
-                <img
-                  src='https://res.cloudinary.com/weare270b/image/upload/v1576219679/static/SelmaProfile-Crop_ltwm5s.png'
-                  alt='author'
-                />
-              </div>
-              <div className='notification-event'>
-                <Link
-                  to={generatePath(Routes.MESSAGES, {
-                    userId: '5df7cd1ae8d6ec604b737ae5',
-                  })}
-                >
-                  Selma
-                </Link>
-                <span className='chat-message-item'>
-                  Welcome to Avocado Nation!
-                </span>
-                <span className='notification-date'>
-                  <time
-                    className='entry-date updated'
-                    dateTime='2004-07-24T18:18'
-                  >
-                    2 days ago
-                  </time>
-                </span>
-              </div>
-              <span className='notification-icon'>
-                <svg
-                  className='olymp-chat---messages-icon'
-                  xlinkHref='svg-icons/sprites/icons.svg#olymp-chat---messages-icon'
-                />
-              </span>
-              <div className='more'>
-                <svg
-                  className='olymp-three-dots-icon'
-                  xlinkHref='svg-icons/sprites/icons.svg#olymp-three-dots-icon'
-                />
-              </div>
-            </li>
-
-            <li className='chat-group'>
-              <div className='author-thumb'>
-                <img
-                  src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avatar11-sm.jpg'
-                  alt='author'
-                />
-                <img
-                  src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avatar12-sm.jpg'
-                  alt='author'
-                />
-                <img
-                  src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avatar13-sm.jpg'
-                  alt='author'
-                />
-                <img
-                  src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avatar10-sm.jpg'
-                  alt='author'
-                />
-              </div>
-              <div className='notification-event'>
-                <a href='#1' className='h6 notification-friend'>
-                  You, Faye, Ed &amp; Jet +3
-                </a>
-                <span className='last-message-author'>Ed:</span>
-                <span className='chat-message-item'>
-                  Yeah! Seems fine by me!
-                </span>
-                <span className='notification-date'>
-                  <time
-                    className='entry-date updated'
-                    dateTime='2004-07-24T18:18'
-                  >
-                    March 16th at 10:23am
-                  </time>
-                </span>
-              </div>
-              <span className='notification-icon'>
-                <svg
-                  className='olymp-chat---messages-icon'
-                  xlinkHref='svg-icons/sprites/icons.svg#olymp-chat---messages-icon'
-                />
-              </span>
-              <div className='more'>
-                <svg
-                  className='olymp-three-dots-icon'
-                  xlinkHref='svg-icons/sprites/icons.svg#olymp-three-dots-icon'
-                />
-              </div>
-            </li>
+                  <div className='notification-event'>
+                    <Link
+                      to={generatePath(Routes.MESSAGES, {
+                        userId: '5df7cd1ae8d6ec604b737ae5',
+                      })}
+                    >
+                      {`${message.firstName} ${message.lastName}`}
+                    </Link>
+                    <span className='chat-message-item'>
+                      {message.lastMessage}
+                    </span>
+                    <span className='notification-date'>
+                      <time className='entry-date updated' dateTime={postDate}>
+                        {moment(postDate, 'YYYYMMDDHHmms').fromNow()}
+                      </time>
+                    </span>
+                  </div>
+                </li>
+              );
+            })}
           </ul>
         </div>
 
-        <a href='#1' className='view-all bg-purple'>
+        <Link
+          to={generatePath(Routes.MESSAGES, {
+            userId: '5df7cd1ae8d6ec604b737ae5',
+          })}
+          className='view-all bg-purple'
+        >
           View All Messages
-        </a>
+        </Link>
       </div>
     </div>
   );

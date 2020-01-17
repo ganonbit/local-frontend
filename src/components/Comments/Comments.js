@@ -14,11 +14,13 @@ export default function Comments(props, isAuth) {
   return (
     <>
       <ul className='comments-list'>
-        {props.comments
-          ? props.comments
+        {props.post.comments
+          ? props.post.comments
               .slice(0, numOfComments)
-              .reverse()
               .map((comment, index) => {
+                if (!comment.author) {
+                  return null;
+                }
                 return (
                   <li key={index} className='comment-item'>
                     <CommentsHeader
@@ -26,17 +28,18 @@ export default function Comments(props, isAuth) {
                       createdAt={comment.createdAt}
                       commentId={comment.id}
                       isAuth={isAuth}
+                      post={props.post}
                     />
                     <Linkify options={linkDecorator}>
-                      <p>{comment.comment}</p>
+                      <p className="comments-section">{comment.comment}</p>
                     </Linkify>
                   </li>
                 );
               })
           : null}
-        {numOfComments < props.comments.length ? (
+        {numOfComments < props.post.comments.length ? (
           <div
-            href='#1'
+            href
             className='more-comments more-comments'
             onClick={() => {
               setNumOfComments(numOfComments + 2);

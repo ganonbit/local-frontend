@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import * as Routes from 'routes'
+import * as Routes from 'routes';
 const WelcomeFooter = () => {
   return (
     <div className='container'>
@@ -13,8 +13,8 @@ const WelcomeFooter = () => {
             </div>
             <div className='col-6 text-right'>
               <img
-                src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avocado-primary-logo_y2ribz.png'
-                alt=''
+                src='https://res.cloudinary.com/weare270b/image/upload/v1578333627/static/avocado-primary-logo_color_l9xyvo.png'
+                alt='avocado nation logo'
               />
             </div>
           </div>
@@ -24,11 +24,10 @@ const WelcomeFooter = () => {
         <div className='col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12 m-auto'>
           <div className='ui-block-menu border-top pt-2'>
             <ul className='d-flex ftr-menu flex-wrap mb-5'>
-              
               <li>
                 <Link to={Routes.PRIVACY_POLICY}>Privacy</Link>
               </li>
-              
+
               <li>
                 <Link to={Routes.TERM_AND_CONDITIONS}>Terms</Link>
               </li>

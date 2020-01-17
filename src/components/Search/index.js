@@ -1,14 +1,13 @@
 import React from 'react';
 import algoliasearch from 'algoliasearch/lite';
 import { InstantSearch, Index } from 'react-instantsearch-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch, faTimes } from '@fortawesome/free-solid-svg-icons';
+
+import Default, { Desktop, Tablet, Mobile } from '../Wrappers/Queries';
 import CustomSearchBar from './search-bar';
 import ConnectedUsers from './users';
 import ConnectedPosts from './posts';
-
-import Notifications from '../../pages/Header/Notifications';
-import ChatNotifications from '../../pages/Header/ChatNotifications';
-
-import AuthorPage from '../../pages/Header/AuthorPage';
 
 const searchClient = algoliasearch(
   '70PRHCFRAW',
@@ -18,27 +17,30 @@ const searchClient = algoliasearch(
 export default class Search extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { hashTagQuery: null };
+    this.state = { hashTagQuery: null, mobileToggleState: false };
   }
 
   componentDidMount = () => {
     let params = new URL(document.location).searchParams;
     let hashTag = params.get('hash-tag-search');
     if (hashTag) {
-      this.setState({ hashTagQuery: `#${hashTag}` ,searchClass:'search'});
+      this.setState({ hashTagQuery: `#${hashTag}`, searchClass: 'search' });
     }
   };
 
+  toggleSearchState = () => {
+    this.setState({ mobileToggleState: !this.state.mobileToggleState });
+  };
+
   render() {
+    const state = this.state;
     return (
-      <InstantSearch
-        indexName='production_avonation_users'
-        searchClient={searchClient}
-      >
-        <div className='container-fluid'>
-          <div className='row d-flex justify-content-between'>
-
-
+      <>
+        <Default>
+          <InstantSearch
+            indexName='production_avonation_users'
+            searchClient={searchClient}
+          >
             <div className='search-bar w-search notification-list friend-requests'>
               <div className='form-group with-button'>
                 <CustomSearchBar />
@@ -46,7 +48,7 @@ export default class Search extends React.Component {
                 <div className='search-result'>
                   <Index indexName='production_avonation_users'>
                     <ConnectedUsers
-                      hashTagQuery={this.state.hashTagQuery}
+                      hashTagQuery={state.hashTagQuery}
                       clearHashTagQuery={this.clearHashTagQuery}
                     />
                   </Index>
@@ -57,16 +59,43 @@ export default class Search extends React.Component {
                 </div>
               </div>
             </div>
+          </InstantSearch>
+        </Default>
+        <Mobile>
+          <FontAwesomeIcon
+            size='2x'
+            color='white'
+            icon={state.mobileToggleState ? faTimes : faSearch}
+            style={{ height: '24px', marginTop: '3px' }}
+            onClick={this.toggleSearchState}
+          />
+          {state.mobileToggleState && (
+            <InstantSearch
+              indexName='production_avonation_users'
+              searchClient={searchClient}
+            >
+              <div className='search-bar w-search notification-list friend-requests'>
+                <div className='form-group with-button'>
+                  <CustomSearchBar />
 
-            <div className='control-block' style={{ height: 'auto' }}>
-              <ChatNotifications />
-              <Notifications />
-              <AuthorPage user={this.props.auth.user} />
-            </div>
+                  <div className='search-result'>
+                    <Index indexName='production_avonation_users'>
+                      <ConnectedUsers
+                        hashTagQuery={state.hashTagQuery}
+                        clearHashTagQuery={this.clearHashTagQuery}
+                      />
+                    </Index>
 
-          </div>
-        </div>
-      </InstantSearch>
+                    <Index indexName='production_avonation_posts'>
+                      <ConnectedPosts />
+                    </Index>
+                  </div>
+                </div>
+              </div>
+            </InstantSearch>
+          )}
+        </Mobile>
+      </>
     );
   }
 

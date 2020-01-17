@@ -12,6 +12,7 @@ import { GET_FOLLOWED_POSTS, DELETE_POST } from 'graphql/post';
 import { GET_AUTH_USER, GET_USER_POSTS } from 'graphql/user';
 
 import EditPost from 'components/Modals/EditPost';
+import SinglePost from 'pages/SinglePost';
 
 import {
   HOME_PAGE_POSTS_LIMIT,
@@ -34,8 +35,8 @@ const PostHeader = props => {
     content,
   } = props;
   const [{ auth }] = useStore();
-  const isSelma =  !auth.user ? null : (auth.user.role === "selma");
-  const isOwner = !auth.user ? null : (auth.user.id === author.id);
+  const isSelma = !auth.user ? null : auth.user.role === 'selma';
+  const isOwner = !auth.user ? null : auth.user.id === author.id;
   const rawTime = parseInt(createdAt);
   const postDate = new Date(rawTime);
   const deletePost = async () => {
@@ -104,40 +105,52 @@ const PostHeader = props => {
           </time>
         </div>
       </div>
-      {isAuth && isOwner || isAuth && isSelma ? (
-        <div className='more'>
-            <FontAwesomeIcon
-              className='olymp-three-dots-icon'
-              size='lg'
-              color='black'
-              icon={faEllipsisV}
-              style={{ height: '12px' }}
-            />
-          <ul className='more-dropdown'>
-              <li>
-                <Link
-                  href
-                  onClick={e => {
-                    setIsShowing(true);
-                  }}
-                >
-                  Edit Post
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href
-                  onClick={e => {
-                    e.preventDefault();
-                    deletePost(e);
-                  }}
-                >
-                  Delete Post
-                </Link>
-              </li>
-          </ul>
-        </div>
-      ) : null}
+      <div className='more'>
+        <FontAwesomeIcon
+          className='olymp-three-dots-icon'
+          size='lg'
+          color='black'
+          icon={faEllipsisV}
+          style={{ height: '12px' }}
+        />
+
+        <ul className='more-dropdown'>
+          {(isAuth && isOwner) || (isAuth && isSelma) ? (
+            <li>
+              <Link
+                href
+                onClick={e => {
+                  setIsShowing(true);
+                }}
+              >
+                Edit Post
+              </Link>
+            </li>
+          ) : null}
+          {(isAuth && isOwner) || (isAuth && isSelma) ? (
+            <li>
+              <Link
+                href
+                onClick={e => {
+                  e.preventDefault();
+                  deletePost(e);
+                }}
+              >
+                Delete Post
+              </Link>
+            </li>
+          ) : null}
+          <li>
+            <Link
+              to={generatePath(Routes.POST, {
+                id: postId,
+              })}
+            >
+              Permalink
+            </Link>
+          </li>
+        </ul>
+      </div>
     </div>
   );
 };

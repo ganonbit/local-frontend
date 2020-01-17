@@ -14,7 +14,6 @@ import { NOTIFICATIONS_PAGE_NOTIFICATION_LIMIT } from 'constants/DataLimit';
  */
 const Notifications = () => {
   const [{ auth }] = useStore();
-
   const variables = {
     userId: auth.user.id,
     skip: 0,
@@ -24,7 +23,7 @@ const Notifications = () => {
     <>
       <div className='ui-block-title block-title-bg'>
         <h6 className='title'>Notifications</h6>
-        <a href='#1' className='more'>
+        <a href className='more'>
           <svg className='olymp-three-dots-icon'>
             <use XlinkHref='svg-icons/sprites/icons.svg#olymp-three-dots-icon'></use>
           </svg>
@@ -44,13 +43,14 @@ const Notifications = () => {
             );
           }
           return (
-            <ul className='notification-list'>
-              {data.map(notification => (
-                <Notification
-                  key={notification.id}
-                  notification={notification}
-                />
-              ))}
+            <ul className='notification-list notification-list-wrap'>
+              {data &&
+                notifications.map(notification => (
+                  <Notification
+                    key={notification.id}
+                    notification={notification}
+                  />
+                ))}
             </ul>
           );
         }}

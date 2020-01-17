@@ -15,6 +15,7 @@ const PostForm = ({
   handleSubmitForm,
   createPost,
   imagePreview,
+  apiError,
 }) => {
   const [{ auth }] = useStore();
   const [activeClass, setActiveClass] = useState('is-empty');
@@ -55,6 +56,11 @@ const PostForm = ({
           value={status}
           onChange={e => handleStatusChange(e)}
         />
+        {apiError && (
+          <span className='text-center d-block text-danger mt-1'>
+            {apiError}
+          </span>
+        )}
       </div>
       <Footer toggle={toggle} />
     </form>

@@ -1,14 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 import { Query, Mutation } from 'react-apollo';
-
-import { Spacing } from 'components/Layout';
-import { H1, Error } from 'components/Text';
-import { Loading } from 'components/Loading';
-import { InputText, Button } from 'components/Form';
-import Head from 'components/Head';
 
 import { VERIFY_TOKEN, RESET_PASSWORD } from 'graphql/user';
 
@@ -80,15 +73,12 @@ const ResetPassword = ({ history, location, refetch }) => {
   const token = url.get('token');
 
   return (
-    <Root>
-      <Head title='Reset Password' />
-
-      <Container>
+    <div className='col col-xl-5 col-lg-6 col-md-12 col-sm-12 col-12'>
+      <div>
         <Query query={VERIFY_TOKEN} variables={{ email, token }}>
           {({ loading, error: apiError }) => {
-            if (loading) return <Loading top='lg' />;
             if (apiError)
-              return <H1>This token is either invalid or expired!</H1>;
+              return <h1>This token is either invalid or expired!</h1>;
 
             return (
               <Mutation
@@ -98,57 +88,75 @@ const ResetPassword = ({ history, location, refetch }) => {
                 }}
               >
                 {(resetPassword, { loading, error: apiError }) => {
-                  if (apiError) return <H1>{apiError}</H1>;
+                  if (apiError) return <h1>{apiError}</h1>;
 
                   return (
-                    <>
-                      <Spacing bottom='md'>
-                        <H1>Password Reset</H1>
-                      </Spacing>
+                    <div>
+                      <div className='registration-login-form'>
+                        <div className='tab-content'>
+                          <div
+                            className='tab-pane active'
+                            id='home'
+                            role='tabpanel'
+                            data-mh='log-tab'
+                          >
+                            <div className='title h6'>Reset Password</div>
 
-                      <form onSubmit={e => handleSubmit(e, resetPassword)}>
-                        <InputText
-                          type='password'
-                          name='password'
-                          values={password}
-                          onChange={handleChange}
-                          placeholder='Password'
-                        />
+                            <form
+                              className='content'
+                              onSubmit={e => handleSubmit(e, resetPassword)}
+                            >
+                              <div className='row'>
+                                <div className='col col-12 col-xl-12 col-lg-12 col-md-12 col-sm-12'>
+                                  <input
+                                    type='password'
+                                    name='password'
+                                    values={password}
+                                    onChange={handleChange}
+                                    placeholder='Password'
+                                    className='form-control'
+                                  />
+                                </div>
+                                <br />
+                                <div className='col col-12 col-xl-12 col-lg-12 col-md-12 col-sm-12'>
+                                  <input
+                                    type='password'
+                                    name='confirmPassword'
+                                    values={confirmPassword}
+                                    onChange={handleChange}
+                                    placeholder='Confirm Password'
+                                    className='form-control'
+                                  />
+                                </div>
+                              </div>
+                              <br />
+                              <div className='row'>
+                                <div className='col col-12 col-xl-12 col-lg-12 col-md-12 col-sm-12'>
+                                  {error && (
+                                    <div bottom='sm' top='sm'>
+                                      <span>{error}</span>
+                                    </div>
+                                  )}
 
-                        <Spacing top='xs' bottom='sm'>
-                          <InputText
-                            type='password'
-                            name='confirmPassword'
-                            values={confirmPassword}
-                            onChange={handleChange}
-                            placeholder='Confirm Password'
-                          />
-                        </Spacing>
-
-                        {error && (
-                          <Spacing bottom='sm' top='sm'>
-                            <Error>{error}</Error>
-                          </Spacing>
-                        )}
-
-                        <Button disabled={loading}>Reset Password</Button>
-                      </form>
-                    </>
+                                  <button className='btn btn-lg btn-primary full-width'>
+                                    Reset Password
+                                  </button>
+                                </div>
+                              </div>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   );
                 }}
               </Mutation>
             );
           }}
         </Query>
-      </Container>
-    </Root>
+      </div>
+    </div>
   );
-};
-
-ResetPassword.propTypes = {
-  location: PropTypes.object.isRequired,
-  history: PropTypes.object.isRequired,
-  refetch: PropTypes.func.isRequired,
 };
 
 export default withRouter(ResetPassword);

@@ -2,33 +2,65 @@ import React, { useState } from 'react';
 import { Modal } from 'react-bootstrap';
 import { Mutation } from 'react-apollo';
 import { GET_FOLLOWED_POSTS } from 'graphql/post';
-import { UPLOAD_PHOTO } from 'graphql/user';
+import { UPLOAD_PHOTO, EDIT_ACCOUNT } from 'graphql/user';
+import { withApollo } from 'react-apollo';
 import { MAX_POST_IMAGE_SIZE } from 'constants/ImageSize';
 
 const UploadProfileImage = props => {
-  let { onHide, user, isCover, image, title, refetch } = props;
+  let { onHide, user, isCover, image, title, refetch, client } = props;
   const [values, setValues] = useState({
     imagePreview: image,
     image: '',
   });
 
+  const deleteProfileImage = async () => {
+    try {
+      await client.mutate({
+        mutation: EDIT_ACCOUNT,
+        variables: {
+          id: user.id,
+          input: {
+            image: '',
+            imagePublicId: '',
+          },
+        },
+
+        refetchQueries: () => [
+          {
+            query: GET_FOLLOWED_POSTS,
+            variables: { userId: user.id, skip: 0, limit: 15 },
+          },
+        ],
+      });
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   let { imagePreview } = values;
   let onSubmitHandler = (e, uploadUserPhoto) => {
     e.preventDefault();
-    uploadUserPhoto().then(async ({ data }) => {
-      refetch();
-      onHide();
-    });
+    if (values.image)
+      uploadUserPhoto().then(async ({ data }) => {
+        refetch();
+        onHide();
+      });
+    else {
+      deleteProfileImage().then(async data => {
+        await refetch();
+        onHide();
+      });
+    }
   };
 
   let handleUploadImage = e => {
     const file = e.target.files[0];
-
     if (!file) return;
 
     if (file.size >= MAX_POST_IMAGE_SIZE) {
       setValues({
         ...values,
+
         error: `File size should be less then ${MAX_POST_IMAGE_SIZE /
           1000000}MB`,
       });
@@ -38,6 +70,14 @@ const UploadProfileImage = props => {
       ...values,
       image: e.target.files[0],
       imagePreview: URL.createObjectURL(e.target.files[0]),
+    });
+    e.target.value = null;
+  };
+  let onDeletePhotoHandler = () => {
+    setValues({
+      ...values,
+      imagePreview: '',
+      image: '',
     });
   };
   return (
@@ -85,6 +125,15 @@ const UploadProfileImage = props => {
                             }
                             alt='images'
                           />
+                          <button
+                            type='button'
+                            className='btn p-0 m-0'
+                            onClick={() => {
+                              onDeletePhotoHandler();
+                            }}
+                          >
+                            x
+                          </button>
                         </li>
                       </ul>
                     </div>
@@ -133,4 +182,4 @@ const UploadProfileImage = props => {
     </Mutation>
   );
 };
-export default UploadProfileImage;
+export default withApollo(UploadProfileImage);

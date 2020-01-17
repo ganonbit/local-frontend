@@ -1,43 +1,55 @@
-import React from 'react';
+import React, { useEffect, useCallback } from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
+import { useQuery } from '@apollo/react-hooks';
 
-import { useStore } from 'store';
-
-import { HEADER_HEIGHT } from 'constants/Layout';
+import { GET_CONVERSATIONS } from 'graphql/user';
 
 import MessagesUsers from './MessagesUsers';
 import MessagesChat from './MessagesChat';
 
-const Root = styled.div`
-  background-color: ${p => p.theme.colors.white};
-  position: relative;
-  margin-top: -${HEADER_HEIGHT}px;
-  padding-top: ${HEADER_HEIGHT}px;
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  flex-direction: row;
-
-  @media (min-width: ${p => p.theme.screen.md}) {
-    margin-left: ${p => p.theme.spacing.lg};
-    border-left: 1px solid ${p => p.theme.colors.grey[300]};
-    border-right: 1px solid ${p => p.theme.colors.grey[300]};
-  }
-`;
+import { useStore } from 'store';
 
 /**
  * Messages page
  */
 const Messages = ({ match }) => {
   const [{ auth }] = useStore();
+  const isSelma = !auth.user ? null : auth.user.role === 'selma';
 
+  const { subscribeToMore, data, loading } = useQuery(GET_CONVERSATIONS, {
+    variables: { authUserId: auth.user.id },
+  });
   return (
-    <Root>
-      <MessagesUsers authUser={auth.user} match={match} />
+    <>
+      <div className='container'>
+        <div className='row'>
+          <div className='col-12'>
+            <div className='ui-block ui-block-chat-wrap'>
+              <div className='ui-block-title'>
+                <h6 className='title'>Messages</h6>
+              </div>
 
-      <MessagesChat match={match} authUser={auth.user} />
-    </Root>
+              <div className='row'>
+                {/* turned off until full dms implemented */}
+                <MessagesUsers
+                  authUser={auth.user}
+                  match={match}
+                  isSelma={isSelma}
+                  subscribeToMore={subscribeToMore}
+                  data={data}
+                />
+                <MessagesChat
+                  match={match}
+                  authUser={auth.user}
+                  isSelma={isSelma}
+                  firstUserMessages={data && data.getConversations[0]}
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
   );
 };
 

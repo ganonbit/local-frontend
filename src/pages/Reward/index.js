@@ -1,7 +1,7 @@
 import React from 'react';
 import { useStore } from 'store';
 
-const Reward = ({user}) => {
+const Reward = ({ user }) => {
   const [{ auth }] = useStore();
   return (
     <>
@@ -33,18 +33,17 @@ const Reward = ({user}) => {
             <div className='point-wrap'>
               <ul>
                 <li>your points</li>
-                <li>{!auth ? "0" : auth.user.totalPoints}</li>
+                <li>{!auth ? '0' : auth.user.totalPoints}</li>
+                <button className='btn btn-redeem' disabled='disabled'>
+                  REDEEM
+                </button>
               </ul>
-              <span>&nbsp;</span>
-              <button className='btn-lg' disabled="disabled">
-                REDEEM
-              </button>
             </div>
             <div className='point-system'>
               <h3>points system</h3>
               <p>
-                Here is a breakdown of which actions acquire points and how
-                much each action is worth.
+                Here is a breakdown of which actions acquire points and how much
+                each action is worth.
               </p>
               <div className='row point-row'>
                 <div className='col-lg-12'>
@@ -64,27 +63,29 @@ const Reward = ({user}) => {
                         <h6>5</h6>
                       </li>
                       <li>
-                        <span>Submit an idea to Selma in the form  </span>
+                        <span>Submit an idea to Selma in the form </span>
                         <h6>5</h6>
                       </li>
                       {/* <li>
                         <span>Visit the site 3 or more times per week</span>
                         <h6>5</h6>
                       </li> */}
-                    <li>
+                      <li>
                         <span>Register your account</span>
                         <h6>10</h6>
                       </li>
-                    <li>
-                      <span>Create a post</span>
-                      <h6>10</h6>
-                    </li>
+                      <li>
+                        <span>Create a post</span>
+                        <h6>10</h6>
+                      </li>
                       {/* <li>
                         <span>Share on social media</span>
                         <h6>15</h6>
                       </li> */}
                       <li>
-                        <span>Your friend creates an account from your referral link</span>
+                        <span>
+                          Your friend creates an account from your referral link
+                        </span>
                         <h6>40</h6>
                       </li>
                       <li>

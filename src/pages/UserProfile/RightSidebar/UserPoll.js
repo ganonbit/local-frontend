@@ -44,7 +44,7 @@ export default function Poll() {
 
               <ul className='friends-harmonic'>
                 <li>
-                  <a href='#1'>
+                  <a href>
                     <img
                       src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/friend-harmonic1.jpg'
                       alt='friend'
@@ -52,7 +52,7 @@ export default function Poll() {
                   </a>
                 </li>
                 <li>
-                  <a href='#1'>
+                  <a href>
                     <img
                       src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/friend-harmonic2.jpg'
                       alt='friend'
@@ -60,7 +60,7 @@ export default function Poll() {
                   </a>
                 </li>
                 <li>
-                  <a href='#1'>
+                  <a href>
                     <img
                       src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/friend-harmonic3.jpg'
                       alt='friend'
@@ -68,7 +68,7 @@ export default function Poll() {
                   </a>
                 </li>
                 <li>
-                  <a href='#1'>
+                  <a href>
                     <img
                       src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/friend-harmonic4.jpg'
                       alt='friend'
@@ -76,7 +76,7 @@ export default function Poll() {
                   </a>
                 </li>
                 <li>
-                  <a href='#1'>
+                  <a href>
                     <img
                       src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/friend-harmonic5.jpg'
                       alt='friend'
@@ -84,7 +84,7 @@ export default function Poll() {
                   </a>
                 </li>
                 <li>
-                  <a href='#1'>
+                  <a href>
                     <img
                       src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/friend-harmonic6.jpg'
                       alt='friend'
@@ -92,7 +92,7 @@ export default function Poll() {
                   </a>
                 </li>
                 <li>
-                  <a href='#1'>
+                  <a href>
                     <img
                       src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/friend-harmonic7.jpg'
                       alt='friend'
@@ -100,7 +100,7 @@ export default function Poll() {
                   </a>
                 </li>
                 <li>
-                  <a href='#1'>
+                  <a href>
                     <img
                       src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/friend-harmonic8.jpg'
                       alt='friend'
@@ -108,7 +108,7 @@ export default function Poll() {
                   </a>
                 </li>
                 <li>
-                  <a href='#1'>
+                  <a href>
                     <img
                       src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/friend-harmonic9.jpg'
                       alt='friend'
@@ -116,7 +116,7 @@ export default function Poll() {
                   </a>
                 </li>
                 <li>
-                  <a href='#1' className='all-users'>
+                  <a href className='all-users'>
                     +3
                   </a>
                 </li>
@@ -153,7 +153,7 @@ export default function Poll() {
 
               <ul className='friends-harmonic'>
                 <li>
-                  <a href='#1'>
+                  <a href>
                     <img
                       src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/friend-harmonic7.jpg'
                       alt='friend'
@@ -161,7 +161,7 @@ export default function Poll() {
                   </a>
                 </li>
                 <li>
-                  <a href='#1'>
+                  <a href>
                     <img
                       src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/friend-harmonic8.jpg'
                       alt='friend'
@@ -169,7 +169,7 @@ export default function Poll() {
                   </a>
                 </li>
                 <li>
-                  <a href='#1'>
+                  <a href>
                     <img
                       src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/friend-harmonic9.jpg'
                       alt='friend'
@@ -177,7 +177,7 @@ export default function Poll() {
                   </a>
                 </li>
                 <li>
-                  <a href='#1'>
+                  <a href>
                     <img
                       src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/friend-harmonic10.jpg'
                       alt='friend'
@@ -185,7 +185,7 @@ export default function Poll() {
                   </a>
                 </li>
                 <li>
-                  <a href='#1'>
+                  <a href>
                     <img
                       src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/friend-harmonic11.jpg'
                       alt='friend'
@@ -193,7 +193,7 @@ export default function Poll() {
                   </a>
                 </li>
                 <li>
-                  <a href='#1'>
+                  <a href>
                     <img
                       src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/friend-harmonic12.jpg'
                       alt='friend'
@@ -201,7 +201,7 @@ export default function Poll() {
                   </a>
                 </li>
                 <li>
-                  <a href='#1'>
+                  <a href>
                     <img
                       src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/friend-harmonic13.jpg'
                       alt='friend'
@@ -242,7 +242,7 @@ export default function Poll() {
 
               <ul className='friends-harmonic'>
                 <li>
-                  <a href='#1'>
+                  <a href>
                     <img
                       src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/friend-harmonic14.jpg'
                       alt='friend'
@@ -250,7 +250,7 @@ export default function Poll() {
                   </a>
                 </li>
                 <li>
-                  <a href='#1'>
+                  <a href>
                     <img
                       src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/friend-harmonic15.jpg'
                       alt='friend'
@@ -264,7 +264,7 @@ export default function Poll() {
 
         {/* <!-- .. end W-Pool --> */}
         <a
-          href='#1'
+          href
           className='btn btn-md-2 btn-border-think custom-color c-grey full-width'
         >
           Vote Now!
