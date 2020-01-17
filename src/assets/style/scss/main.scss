@@ -3716,7 +3716,7 @@ button.btn-md-2 {
   border-radius: 0.3rem;
 }
 .add-comment-buttons button.btn-md-2 {
-  width: 100px;
+  width: 101px;
 }
 button.btn-lg {
   padding: 1rem 3rem;
@@ -3932,6 +3932,7 @@ img {
   border-radius: 5px;
   border: 1px solid #e6ecf5;
   margin-bottom: 15px;
+  min-height: 252px;
 }
 
 .ui-block .ui-block-title:last-child {
@@ -5621,12 +5622,13 @@ fieldset[disabled] .checkbox input[type='checkbox'],
   position: fixed;
   z-index: 22;
   width: 70px;
-  min-height: 1000vh;
+  height: 100vh;
   left: 0;
 }
 
 .fixed-sidebar.open {
   width: 270px;
+  height: 100%;
 }
 
 .fixed-sidebar .logo {
@@ -5772,7 +5774,7 @@ fieldset[disabled] .checkbox input[type='checkbox'],
 }
 
 .fixed-sidebar-left.sidebar--small .left-menu a {
-  padding: 14px 0 14px 25px;
+  padding: 14px 0 14px 22px;
   display: block;
 }
 
@@ -6198,6 +6200,13 @@ fieldset[disabled] .checkbox input[type='checkbox'],
 
   .fixed-sidebar .mCustomScrollbar {
     max-height: calc(100vh - 70px);
+  }
+  .fixed-sidebar {
+    height: auto;
+  }
+  
+  .fixed-sidebar.open {
+    height: 100%;
   }
 }
 
@@ -7441,7 +7450,7 @@ fieldset[disabled] .checkbox input[type='checkbox'],
   padding: 0 15px;
 }
 
-.notification-list .author-thumb {
+.notification-list .author-thumb  {
   height: 40px;
   width: 40px;
 }
@@ -7559,6 +7568,7 @@ display: inline-flex !important;
 .chat-field {
   border-left: 1px solid #e6ecf5;
 }
+
 
 .chat-field .ps > .ps__scrollbar-y-rail,
 .chat-field .ps:hover > .ps__scrollbar-y-rail {
@@ -17157,8 +17167,8 @@ select.selectpicker {
 
 .dropdown-toggle::after {
   border-top-color: #888da8;
-  right: 20px;
-  top: -2px;
+  right: 0px;
+  top: 3px;
   position: relative;
 }
 
@@ -22604,7 +22614,7 @@ ul.sidebar-box {
 }
 
 .js-sidebar-open {
-  padding: 16px 0 16px 25px;
+  padding: 16px 0 16px 22px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -23097,13 +23107,14 @@ div#accordion .card {
   padding: 10px 15px;
   background: var(--theme-color);
   color: var(--theme-color-white);
-  font-size: 20px;
-  font-weight: 600;
+  font-size: 17px;
+  font-weight: 500;
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
   margin: 0;
+  text-align: left;
 }
 
 .accordion-faqs .card-body {
@@ -23124,11 +23135,27 @@ div#accordion .card {
 
 .chat-field .mCustomScrollbar {
   overflow-y: auto;
-  height: calc(100vh - 415px);
+  height: calc(100vh - 211px);
+
+}
+.chat-field .mCustomScrollbar::-moz-scrollbar {
+  display: none;
+}
+.chat-field .mCustomScrollbar::-ms-scrollbar {
+  display: none;
+}
+.chat-field .mCustomScrollbar::-webkit-scrollbar {
+  display: none;
 }
 
 .chat-field .ui-block-title h6.title {
   color: #515365;
+}
+.ui-block-chat-wrap .ui-block-title h6.title {
+  color: #515365;
+}
+.ui-block-chat-wrap .chat-field .ui-block-title h6.title {
+  color: var(--theme-color-white);
 }
 
 .detail-content h4 {
@@ -23361,6 +23388,9 @@ div#accordion .card {
   .top-header-thumb {
     max-height: 250px;
 }
+.chat-field .mCustomScrollbar {
+    height: calc(100vh - 261px);
+  }
 }
 
 @media (max-width: 991px) {

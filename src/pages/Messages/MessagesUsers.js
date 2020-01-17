@@ -41,7 +41,7 @@ const MessagesUsers = ({ authUser, location, isSelma }) => {
     };
   }, [subscribeToMore]);
   return (
-    <div className='col col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12 padding-r-0'>
+    <div className='col col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12 pr-lg-0'>
       <ul className='notification-list chat-message'>
         {isSelma
           ? data &&
