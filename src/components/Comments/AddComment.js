@@ -120,7 +120,7 @@ function AddComment({ authorId, author, post, onCancel, userId }) {
                 </button>
                 <button
                   className='btn btn-md-2 btn-border-think c-grey btn-transparent custom-color cancel-btn mr-0'
-                  onClick={onCancel}
+                  onClick={onCancelHandler}
                 >
                   Cancel
                 </button>
