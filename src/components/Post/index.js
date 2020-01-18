@@ -52,6 +52,7 @@ export default function Post({ queryOptions, isAuth }) {
             post={post}
           />
         </article>
+        {isAuth && <Comments post={post} />}
         {isAuth && isCommentOpen && (
           <AddComment
             authorId={auth.user.id}
@@ -63,7 +64,6 @@ export default function Post({ queryOptions, isAuth }) {
             post={post}
           />
         )}
-        {isAuth && <Comments post={post} />}
       </div>
     );
   };
@@ -81,7 +81,7 @@ export default function Post({ queryOptions, isAuth }) {
               <img
                 className='flex'
                 src='https://res.cloudinary.com/weare270b/image/upload/v1579191490/static/loader_eyctc7.gif'
-                alt='laoding .....'
+                alt='loading .....'
               />
             </div>
           );
@@ -124,7 +124,7 @@ export default function Post({ queryOptions, isAuth }) {
                         <img
                           className='flex'
                           src='https://res.cloudinary.com/weare270b/image/upload/v1579191490/static/loader_eyctc7.gif'
-                          alt='laoding .....'
+                          alt='loading .....'
                         />
                       </div>
                     )}
