@@ -1,5 +1,9 @@
 import * as React from 'react';
+import { generatePath } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { connectHits } from 'react-instantsearch-core';
+
+import * as Routes from 'routes';
 
 class Hits extends React.Component {
   renderPostWithImage = (hit, count) => {
@@ -10,14 +14,24 @@ class Hits extends React.Component {
       <li>
         <h5 className='text-capitalize text-success mb-2'>#{count}</h5>
         <br />
-        <h5 className='text-capitalize'>
-          {hit.author && hit.author.firstName}{' '}
-          {hit.author && hit.author.lastName}
-        </h5>
-        <img className='video-bnr my-3' src={hit.image} alt='video' />
-        <span className='chat-message-item'>
-          {hit.numOfLikes} Likes {hit.numOfComments} Comments
+        <Link
+            to={generatePath(Routes.USER_PROFILE, {
+              username: hit.author.username,
+            })} >
+          <h5 className='text-capitalize'>
+            {hit.author && hit.author.firstName}{' '}
+            {hit.author && hit.author.lastName}
+          </h5>
+        </Link>
+        <Link
+          to={generatePath(Routes.POST, {
+            id: hit.objectID,
+          })} >
+          <img className='video-bnr my-3' src={hit.image} alt='video' />
+          <span className='chat-message-item'>
+            {hit.numOfLikes} Likes {hit.numOfComments} Comments
         </span>
+        </Link>
         <div className='overlay'></div>
       </li>
     );
@@ -31,16 +45,26 @@ class Hits extends React.Component {
       <li className='inline-items'>
         <div className='notification-event'>
           <h5 className='text-capitalize text-success'>#{count}</h5>
-          <h5 className='text-capitalize'>
-            {hit.author && hit.author.firstName}{' '}
-            {hit.author && hit.author.lastName}
-          </h5>
-          <span className='notification-friend text-dark my-3'>
-            {hit.content}
-          </span>
-          <span className='chat-message-item'>
-            {hit.numOfLikes} Likes {hit.numOfComments} Comments
-          </span>
+          <Link
+            to={generatePath(Routes.USER_PROFILE, {
+              username: hit.author.username,
+            })} >
+            <h5 className='text-capitalize'>
+              {hit.author && hit.author.firstName}{' '}
+              {hit.author && hit.author.lastName}
+            </h5>
+          </Link>
+          <Link
+            to={generatePath(Routes.POST, {
+              id: hit.objectID,
+            })} >
+            <span className='notification-friend text-dark my-3'>
+              {hit.content}
+            </span>
+            <span className='chat-message-item'>
+              {hit.numOfLikes} Likes {hit.numOfComments} Comments
+            </span>
+          </Link>
         </div>
       </li>
     );

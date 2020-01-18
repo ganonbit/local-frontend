@@ -4,7 +4,7 @@ import { faComment, faHeart } from '@fortawesome/free-solid-svg-icons';
 import OverlayTriggers from '../Common/ToolTip';
 
 import Like from 'components/Like';
-
+import CommentList from 'components/Comments/CommentList';
 const PostFooter = props => {
   const {
     author,
@@ -19,7 +19,7 @@ const PostFooter = props => {
   return (
     <div className='post-additional-info inline-items'>
       <span className='post-add-icon inline-items'>
-        {isAuth===true && (
+        {isAuth === true && (
           <Like
             user={author}
             postId={postId}
@@ -28,17 +28,17 @@ const PostFooter = props => {
             post={post}
           />
         )}
-        {isAuth===false && (
+        {isAuth === false && (
           <FontAwesomeIcon
-          icon={faHeart}
-          size='2x'
-          color={'grey'}
-          onClick={e => {
-            e.preventDefault();
-          }}
-        />
+            icon={faHeart}
+            size='2x'
+            color={'grey'}
+            onClick={e => {
+              e.preventDefault();
+            }}
+          />
         )}
-        
+
         <span>{likes.length}</span>
       </span>
 
@@ -51,13 +51,12 @@ const PostFooter = props => {
             }}
             className='post-add-icon inline-items'
           >
+            <CommentList comments={comments} />
             <FontAwesomeIcon
               icon={faComment}
               style={{ width: '1.6rem' }}
               onClick={toggle}
             />
-
-            <span>{comments.length}</span>
           </a>
         </OverlayTriggers>
       </div>
