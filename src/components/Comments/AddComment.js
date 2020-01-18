@@ -112,11 +112,12 @@ function AddComment({ authorId, author, post, onCancel, userId }) {
                   </a>
                 </div>
               </div>
-              <div className='add-comment-buttons'>
+            </div>
+            {commentContent.comment.length > 0 && (
+              <div className='add-comment-buttons text-right'>
                 <button className='btn btn-md-2 btn-primary' type='post'>
                   Post Comment
                 </button>
-
                 <button
                   className='btn btn-md-2 btn-border-think c-grey btn-transparent custom-color cancel-btn mr-0'
                   onClick={onCancelHandler}
@@ -124,7 +125,7 @@ function AddComment({ authorId, author, post, onCancel, userId }) {
                   Cancel
                 </button>
               </div>
-            </div>
+            )}
           </form>
         );
       }}
