@@ -1,11 +1,6 @@
 import { isValidUserName, isValidEmail } from './index';
 export const validateFormField = (name, value) => {
   switch (name) {
-    case 'emailOrUsername':
-      if (!isValidEmail(value) && !(isValidUserName(value).length === 0))
-        return { emailOrUsername: 'Email or Username is not valid' };
-      else return { emailOrUsername: '' };
-
     case 'password':
       if (value.length < 5) return { password: 'Password min 6 characters' };
       else return { password: '' };

@@ -71,11 +71,10 @@ const VideoSection = () => {
       <div
         className='modal fade'
         id='myModal'
-        tabindex='-1'
+        tabIndex='-1'
         role='dialog'
         aria-labelledby='exampleModalLabel'
         aria-hidden='true'
-        hiddenModal={() => console.log('closed')}
       >
         <div className='modal-dialog modal-xl' role='document'>
           <div className='modal-content'>
