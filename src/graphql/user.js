@@ -44,11 +44,11 @@ updatedAt
 `;
 
 /**
- * Gets specific user by username
+ * Gets specific user by email
  */
 export const GET_USER = gql`
-  query($username: String, $id: ID) {
-    getUser(username: $username, id: $id) {
+  query($email: String, $id: ID) {
+    getUser(email: $email, id: $id) {
       ${userPayload}
       posts {
         id

@@ -11,14 +11,14 @@ import * as Routes from 'routes';
 const SignIn = ({ refetch, history }) => {
   const [reset, setReset] = useState(false);
   const [values, setValues] = useState({
-    emailOrUsername: '',
+    email: '',
     password: '',
   });
   const [error, setError] = useState({
-    emailOrUsername: '',
+    email: '',
     password: '',
   });
-  const { emailOrUsername, password, captcha } = values;
+  const { email, password, captcha } = values;
 
   const handleChange = e => {
     const { name, value } = e.target;
@@ -28,11 +28,11 @@ const SignIn = ({ refetch, history }) => {
   };
 
   const validate = () => {
-    if (!emailOrUsername || !password) {
-      if (!emailOrUsername)
+    if (!email || !password) {
+      if (!email)
         setError({
           ...error,
-          emailOrUsername: 'all field are required',
+          email: 'all field are required',
         });
       else if (!password)
         setError({ ...error, password: 'all field are required' });
@@ -46,10 +46,10 @@ const SignIn = ({ refetch, history }) => {
 
   const handleSubmit = (e, signin) => {
     e.preventDefault();
-    const error = validate();
-    if (error) {
-      return false;
-    }
+    // const error = validate();
+    // if (error) {
+    //   return false;
+    // }
     signin().then(async ({ data }) => {
       localStorage.setItem('token', data.signin.token);
       await refetch();
@@ -60,7 +60,7 @@ const SignIn = ({ refetch, history }) => {
     <Mutation
       mutation={SIGN_IN}
       variables={{
-        input: { emailOrUsername, password },
+        input: { email, password },
       }}
     >
       {(signin, { loading, error: apiError }) => {
@@ -85,7 +85,7 @@ const SignIn = ({ refetch, history }) => {
                     >
                       {apiError && (
                         <p className='field-error'>
-                          {apiError.graphQLErrors[0].message}
+                          {apiError}
                         </p>
                       )}
 
@@ -95,10 +95,10 @@ const SignIn = ({ refetch, history }) => {
                             fieldContainerclassName='lg'
                             placeholder='Your Email'
                             type='text'
-                            name='emailOrUsername'
-                            value={emailOrUsername}
+                            name='email'
+                            value={email}
                             handleChange={handleChange}
-                            error={error.emailOrUsername}
+                            error={error.email}
                           />
                           <Field
                             fieldContainerclassName='lg'
@@ -122,8 +122,11 @@ const SignIn = ({ refetch, history }) => {
                             </div> */}
 
                             <a
-                              onClick={() => setReset(true)}
-                              href
+                              onClick={(e) => (
+                                setReset(true),
+                                e.preventDefault())
+                              }
+                              href='#'
                               className='forgot'
                               data-toggle='modal'
                               data-target='#restore-password'
@@ -137,9 +140,9 @@ const SignIn = ({ refetch, history }) => {
                             value='Login'
                             className='btn btn-lg btn-primary full-width'
                             disabled={
-                              !emailOrUsername ||
+                              !email ||
                               !password ||
-                              error.emailOrUsername ||
+                              error.email ||
                               error.password
                             }
                           >

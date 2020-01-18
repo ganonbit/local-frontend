@@ -6,8 +6,8 @@ import SinglePost from './SinglePost';
 import { Query } from 'react-apollo';
 
 const Post = ({ queryOptions, isAuth }) => {
-  let postData = null;
-  let postsData = null;
+  let postData;
+  let postsData;
   return (
     <Query
       query={queryOptions.query}
@@ -21,7 +21,7 @@ const Post = ({ queryOptions, isAuth }) => {
               <img
                 className='flex'
                 src='https://res.cloudinary.com/weare270b/image/upload/v1579191490/static/loader_eyctc7.gif'
-                alt='laoding .....'
+                alt='loading.....'
               />
             </div>
           );
@@ -37,7 +37,7 @@ const Post = ({ queryOptions, isAuth }) => {
         }
 
         if (!postsData && !postData) {
-          return null;
+          return <h1></h1>;
         }
         if (postsData && isAuth) {
           return (

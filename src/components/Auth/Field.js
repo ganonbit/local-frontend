@@ -39,7 +39,6 @@ const Field = props => {
       >
         <label className='control-label'>{placeholder}</label>
         <input
-          defaultValue=''
           autoComplete='off'
           className='form-control'
           placeholder=''
@@ -61,7 +60,6 @@ const Field = props => {
     >
       <label className='control-label'>{placeholder}</label>
       <input
-        defaultValue={value}
         autoComplete='off'
         className='form-control'
         placeholder=''

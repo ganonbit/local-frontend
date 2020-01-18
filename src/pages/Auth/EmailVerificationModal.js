@@ -9,7 +9,7 @@ const hideModal = () => {
 
 const EmailVerificationModal = () => {
   return (
-    <div className='modal' id='emailVerification' tabindex='-1' role='dialog'>
+    <div className='modal' id='emailVerification' tabIndex='-1' role='dialog'>
       <div className='modal-dialog' role='document'>
         <div className='modal-content'>
           <div className='modal-header'>

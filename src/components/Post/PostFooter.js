@@ -45,7 +45,7 @@ const PostFooter = props => {
       <div className='comments-shared'>
         <OverlayTriggers toolTipText='COMMENT' placement='left'>
           <a
-            href
+            href="#"
             onClick={e => {
               e.preventDefault();
             }}
