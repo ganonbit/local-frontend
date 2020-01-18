@@ -2,3 +2,4 @@
 command = "yarn build && yarn build:lambda"
 functions = "lambda"
 publish = "build"
+

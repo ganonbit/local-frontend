@@ -10,7 +10,7 @@ export default function PostControlButton(props) {
       {!props.isAuth ? (
         <OverlayTriggers toolTipText='LIKE' placement='left'>
           <a
-            href='#'
+            href='#1'
             onClick={e => {
               e.preventDefault();
             }}

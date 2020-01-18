@@ -25,7 +25,7 @@ const Messages = ({ match }) => {
         <div className='row'>
           <div className='col-12'>
             <div className='ui-block ui-block-chat-wrap'>
-              <div className='ui-block-title block-title-bg'>
+              <div className='ui-block-title'>
                 <h6 className='title'>Messages</h6>
               </div>
 
