@@ -15,7 +15,7 @@ const Post = ({ queryOptions, isAuth }) => {
       notifyOnNetworkStatusChange
     >
       {({ data, loading, fetchMore, networkStatus }) => {
-        if (loading && networkStatus === 1) {
+        if (!data || (loading && networkStatus === 1)) {
           return (
             <div className='d-flex justify-content-center my-2'>
               <img
