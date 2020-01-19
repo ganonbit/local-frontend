@@ -21,7 +21,7 @@ const Post = ({ queryOptions, isAuth }) => {
               <img
                 className='flex'
                 src='https://res.cloudinary.com/weare270b/image/upload/v1579191490/static/loader_eyctc7.gif'
-                alt='loading.....'
+                alt='loading...'
               />
             </div>
           );
@@ -64,7 +64,7 @@ const Post = ({ queryOptions, isAuth }) => {
                         <img
                           className='flex'
                           src='https://res.cloudinary.com/weare270b/image/upload/v1579191490/static/loader_eyctc7.gif'
-                          alt='laoding .....'
+                          alt='loading .....'
                         />
                       </div>
                     )}

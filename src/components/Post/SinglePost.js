@@ -8,7 +8,7 @@ import AddComment from 'components/Comments/AddComment';
 
 import { useStore } from 'store';
 
-const SinglePost = ({post, isAuth}) => {
+const SinglePost = ({ post, isAuth }) => {
   const [{ auth }] = useStore();
   const [isCommentOpen, setCommentOpen] = useState(true);
   const toggleComment = () => setCommentOpen(!isCommentOpen);

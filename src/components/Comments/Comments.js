@@ -40,7 +40,7 @@ export default function Comments(props, isAuth) {
         {numOfComments < props.post.comments.length ? (
           <div
             href
-            className='more-comments more-comments'
+            className='more-comments'
             onClick={() => {
               setNumOfComments(numOfComments + 2);
             }}
