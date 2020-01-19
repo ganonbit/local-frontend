@@ -1,6 +1,6 @@
 import React from 'react';
 import ListItem from './ListItem';
-import Default, { Desktop, Tablet, Mobile } from '../Wrappers/Queries';
+import Default, { Desktop, Mobile } from '../Wrappers/Queries';
 import {
   MobileAuthorPage,
   MobileAuthorSettings,

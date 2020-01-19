@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, generatePath, withRouter } from 'react-router-dom';
-import Default, { Desktop, Tablet, Mobile } from '../Wrappers/Queries';
+import Default, { Desktop, Mobile } from '../Wrappers/Queries';
 import OverlayTriggers from '../Common/ToolTip';
 import { useStore } from 'store';
 import * as Routes from 'routes';
