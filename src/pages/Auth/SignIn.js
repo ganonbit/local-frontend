@@ -87,7 +87,7 @@ const SignIn = ({ refetch, history }) => {
                     >
                       {apiError && (
                         <p className='field-error'>
-                          {apiError.graphQLErrors[0]}
+                          {apiError.graphQLErrors[0].message}
                         </p>
                       )}
 
