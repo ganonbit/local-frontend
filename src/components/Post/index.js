@@ -6,8 +6,8 @@ import SinglePost from './SinglePost';
 import { Query } from 'react-apollo';
 
 const Post = ({ queryOptions, isAuth }) => {
-  let postData = null;
-  let postsData = null;
+  let postData;
+  let postsData;
   return (
     <Query
       query={queryOptions.query}
@@ -15,13 +15,13 @@ const Post = ({ queryOptions, isAuth }) => {
       notifyOnNetworkStatusChange
     >
       {({ data, loading, fetchMore, networkStatus }) => {
-        if (loading && networkStatus === 1) {
+        if (!data || (loading && networkStatus === 1)) {
           return (
             <div className='d-flex justify-content-center my-2'>
               <img
                 className='flex'
                 src='https://res.cloudinary.com/weare270b/image/upload/v1579191490/static/loader_eyctc7.gif'
-                alt='loading .....'
+                alt='loading...'
               />
             </div>
           );
@@ -37,7 +37,7 @@ const Post = ({ queryOptions, isAuth }) => {
         }
 
         if (!postsData && !postData) {
-          return null;
+          return <h1></h1>;
         }
         if (postsData && isAuth) {
           return (

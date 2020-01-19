@@ -1,7 +1,7 @@
 import React from 'react';
 import LastPhotos from './PhotoSection';
-import Favs from './Favs';
-import Friends from './Friends';
+// import Favs from './Favs';
+// import Friends from './Friends';
 import ProfileBadges from './ProfileBadges';
 
 export default function Right() {
