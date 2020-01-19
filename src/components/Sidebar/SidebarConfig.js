@@ -1,4 +1,7 @@
 const Sidebar = {
+    root: {
+        overflow: 'unset'
+    },
     sidebar: {
       transition: 'transform .3s ease-out',
       WebkitTransition: '-webkit-transform .3s ease-out',
