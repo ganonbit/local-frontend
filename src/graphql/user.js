@@ -47,8 +47,8 @@ updatedAt
  * Gets specific user by email
  */
 export const GET_USER = gql`
-  query($email: String, $id: ID) {
-    getUser(email: $email, id: $id) {
+  query($username: String, $id: ID) {
+    getUser(username: $username, id: $id) {
       ${userPayload}
       posts {
         id
