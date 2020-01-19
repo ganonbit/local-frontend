@@ -10,6 +10,7 @@ import { validateFormField } from 'utils';
 import * as Routes from 'routes';
 const SignIn = ({ refetch, history }) => {
   const [reset, setReset] = useState(false);
+  
   const [values, setValues] = useState({
     email: '',
     password: '',
@@ -32,10 +33,10 @@ const SignIn = ({ refetch, history }) => {
       if (!email)
         setError({
           ...error,
-          email: 'all field are required',
+          email: 'email is required',
         });
       else if (!password)
-        setError({ ...error, password: 'all field are required' });
+        setError({ ...error, password: 'password is required' });
       else return true;
     }
     return false;
@@ -46,10 +47,12 @@ const SignIn = ({ refetch, history }) => {
 
   const handleSubmit = (e, signin) => {
     e.preventDefault();
-    // const error = validate();
-    // if (error) {
-    //   return false;
-    // }
+    const error = validate();
+    if (error) {
+      console.log(error)
+      return false;
+
+    }
     signin().then(async ({ data }) => {
       localStorage.setItem('token', data.signin.token);
       await refetch();
@@ -85,7 +88,7 @@ const SignIn = ({ refetch, history }) => {
                     >
                       {apiError && (
                         <p className='field-error'>
-                          {apiError}
+                          {apiError.graphQLErrors[0]}
                         </p>
                       )}
 
