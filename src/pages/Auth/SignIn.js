@@ -44,7 +44,6 @@ const SignIn = ({ refetch, history }) => {
   const handleReset = () => {
     setReset(false);
   };
-
   const handleSubmit = (e, signin) => {
     e.preventDefault();
     const error = validate();
