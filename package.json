@@ -57,7 +57,7 @@
     "start:lambda": "netlify-lambda serve src/lambda",
     "build": "react-scripts build",
     "build:lambda": "netlify-lambda build src/lambda",
-    "postbuild":"npx postcss *.css --use autoprefixer -d build/",
+    "postbuild":"postcss *.{css,sass} --use autoprefixer -d build/",
     "scss": "node-sass src/assets/sass/main.scss -o src/assets/style/css/",
     "scss:watch": "node-sass -w src/assets/sass/main.scss -o src/assets/css/",
     "test": "react-scripts test",
