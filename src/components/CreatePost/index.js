@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import UploadImage from '../Modals/NewsFeed/UploadImage';
+import UploadImage from '../Modals/UploadImage';
 import useModal from 'hooks/useModel';
 import { useStore } from 'store';
 import PostForm from './PostForm';
