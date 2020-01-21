@@ -6,7 +6,6 @@ import OverlayTriggers from '../Common/ToolTip';
 import Like from 'components/Like';
 
 const PostFooter = props => {
- 
   const {
     author,
     postId,
@@ -32,7 +31,6 @@ const PostFooter = props => {
       }
     }
   }
-
 
   return (
     <div className='post-additional-info inline-items'>
@@ -61,7 +59,11 @@ const PostFooter = props => {
       </span>
 
       <div className='comments-shared'>
-        <OverlayTriggers isPostToolTip={true} toolTipText={commentlist} placement='auto'>
+        <OverlayTriggers
+          isPostToolTip={true}
+          toolTipText={commentlist}
+          placement='auto'
+        >
           <a
             href='#1'
             onClick={e => {
@@ -69,7 +71,7 @@ const PostFooter = props => {
             }}
             className='post-add-icon inline-items'
           >
-            <span>{comments&& comments.length}</span>
+            <span>{comments && comments.length}</span>
             <FontAwesomeIcon
               icon={faComment}
               style={{ width: '1.6rem' }}
