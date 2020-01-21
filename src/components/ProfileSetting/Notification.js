@@ -6,7 +6,12 @@ import Avatar from 'components/Avatar';
 
 import * as Routes from 'routes';
 
-const Notification = ({ notification, client, key }) => {
+const Notification = ({
+  notification,
+  client,
+  key,
+  updateNotificationSeen,
+}) => {
   return (
     <>
       {notification.like && (
@@ -29,6 +34,7 @@ const Notification = ({ notification, client, key }) => {
                   id: notification.like.post.id,
                 })}
                 className='notification-text'
+                onClick={() => updateNotificationSeen(notification.id)}
               >
                 <p>liked your post</p>
               </Link>
@@ -57,6 +63,7 @@ const Notification = ({ notification, client, key }) => {
                   id: notification.comment.post.id,
                 })}
                 className='notification-text'
+                onClick={() => updateNotificationSeen(notification.id)}
               >
                 <p>Commented on your post</p>
               </Link>
@@ -64,7 +71,7 @@ const Notification = ({ notification, client, key }) => {
           </div>
         </li>
       )}
-      
+
       {notification.follow && (
         <li key={notification.id}>
           <div className='d-flex'>
@@ -85,6 +92,7 @@ const Notification = ({ notification, client, key }) => {
                   username: notification.author.username,
                 })}
                 className='notification-text'
+                onClick={() => updateNotificationSeen(notification.id)}
               >
                 <p>is now following you!</p>
               </Link>
