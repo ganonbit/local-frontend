@@ -188,7 +188,7 @@ const PersonalInfo = ({ refetch }) => {
                       <select
                         name='gender'
                         className='selectpicker form-control'
-                        onChange={handleChange}
+                        onBlur={handleChange}
                         value={gender}
                       >
                         <option value='male'>Male</option>

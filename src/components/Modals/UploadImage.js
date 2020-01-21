@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Modal, ModalBody } from 'react-bootstrap';
 import { MAX_POST_IMAGE_SIZE } from 'constants/ImageSize';
-import Avatar from '../../Avatar';
+import Avatar from '../Avatar';
 import { BeatLoader } from 'react-spinners';
 
 const UploadImageModal = ({

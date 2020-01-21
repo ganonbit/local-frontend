@@ -13,7 +13,7 @@ const UserReferralModal = () => {
 
   const copyToClipboard = () => {
     /* Get the text field */
-    var copyText = document.getElementById('referralUrlValue');
+    let copyText = document.getElementById('referralUrlValue');
 
     /* Select the text field */
     copyText.select();
