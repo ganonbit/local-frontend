@@ -2,11 +2,7 @@ import React from 'react';
 
 import { generatePath, Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faHome,
-  faComment,
-  faBell,
-} from '@fortawesome/free-solid-svg-icons';
+import { faHome, faComment, faBell } from '@fortawesome/free-solid-svg-icons';
 
 import Search from '../../components/Search';
 import Default, { Mobile } from '../../components/Wrappers/Queries';

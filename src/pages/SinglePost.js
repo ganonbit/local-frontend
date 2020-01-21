@@ -1,10 +1,11 @@
 import React from 'react';
 import Post from 'components/Post';
-import {TrendingPost,
-// TrendingTopics,
-TopRatedUsers,
-NewsFeedAdd,}
-from 'components/Widget';
+import {
+  TrendingPost,
+  // TrendingTopics,
+  TopRatedUsers,
+  NewsFeedAdd,
+} from 'components/Widget';
 
 import { GET_POST } from 'graphql/post';
 

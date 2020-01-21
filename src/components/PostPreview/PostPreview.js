@@ -9,7 +9,7 @@ const Preview = props => {
         rel='noopener noreferrer'
       >
         {props.ogImage && props.ogImage.url ? (
-          <img src={props.ogImage.url} alt="Open Graph Website Preview" />
+          <img src={props.ogImage.url} alt='Open Graph Website Preview' />
         ) : null}
       </a>
       <div>
