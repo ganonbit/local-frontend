@@ -5587,6 +5587,57 @@ fieldset[disabled] .checkbox input[type='checkbox'],
 .error-box .title {
   margin-bottom: 13px;
 }
+.popover  {
+  background-color: #009440;
+}
+.popover  ul {
+  margin-bottom: 0;
+}
+.popover  ul li {
+  color: #ffffff;
+  text-transform: capitalize;
+  margin-bottom: 5px;
+}
+.popover  ul li:last-child {
+  margin-bottom: 0;
+}
+.popover-inner {
+  background-color: var(--theme-color);
+  border: none !important;
+  position: relative;
+}
+.bs-popover-auto[x-placement^="bottom"] .arrow::before, .bs-popover-bottom .arrow::before{
+	border-bottom-color: #009440 !important;
+}
+
+.bs-popover-auto[x-placement^="bottom"] .arrow::after, .bs-popover-bottom .arrow::after{
+	border-bottom-color: #009440 !important;
+}
+
+.bs-popover-auto[x-placement^="top"] .arrow::after, .bs-popover-top .arrow::after{
+	border-top-color: #009440 !important;
+}
+
+.bs-popover-auto[x-placement^="top"] .arrow::before, .bs-popover-top .arrow::before{
+	border-top-color:#009440 !important;
+}
+
+.bs-popover-auto[x-placement^="left"] .arrow::before, .bs-popover-left .arrow::before{
+	border-left-color: #009440 !important;
+}
+
+.bs-popover-auto[x-placement^="left"] .arrow::after, .bs-popover-left .arrow::after{
+	border-left-color: #009440 !important;
+}
+
+.bs-popover-auto[x-placement^="right"] .arrow::before, .bs-popover-right .arrow::before{
+	border-right-color: #009440 !important;
+}
+
+.bs-popover-auto[x-placement^="right"] .arrow::after, .bs-popover-right .arrow::after {
+	border-right-color: #009440 !important;
+}
+
 
 @media (max-width: 1199px) {
   .form-group.has-error:after {

@@ -128,8 +128,8 @@ const SignUp = ({ refetch, history }) => {
     error.lastName ||
     error.username ||
     error.email ||
-    error.password;
-  // !captcha;
+    error.password ||
+    !captcha;
 
   const handleBirthdayChange = birthday => {
     setValues({
@@ -279,11 +279,11 @@ const SignUp = ({ refetch, history }) => {
                               </label>
                             </div>
                           </div>
-                          {/* <ReCAPTCHA
+                          <ReCAPTCHA
                             sitekey={RE_CAPTCHA_SCERET_API}
                             onChange={() => handleCaptcha()}
                             size='normal'
-                          /> */}
+                          />
                           <button
                             className='btn btn-green btn-lg full-width'
                             type='submit'
