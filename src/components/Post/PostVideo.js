@@ -2,11 +2,12 @@ import React from 'react';
 import { PlayIcon } from 'assets/svg-icons';
 
 PostVideo.defaultProps = {
-  title: 'Iron Maid - ChillGroves',
+  title: 'Avocado Nation',
   video_desc:
     'Lorem ipsum dolor sit amet, consectetur ipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...',
-  link: 'http://www.youtube.com',
+  link: 'http://www.theavocadonation.com',
   tag: '',
+  body: ''
 };
 
 export default function PostVideo(props) {
