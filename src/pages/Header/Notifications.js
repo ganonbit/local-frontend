@@ -13,7 +13,20 @@ import * as Routes from 'routes';
 
 const Notifications = ({ client, refetch }) => {
   const [{ auth }] = useStore();
-
+  const updateNotificationSeen = async notificationId => {
+    try {
+      await client.mutate({
+        mutation: UPDATE_NOTIFICATION_SEEN,
+        variables: {
+          input: {
+            userId: auth.user.id,
+            notificationId: notificationId,
+          },
+        },
+        refetchQueries: () => [{ query: GET_AUTH_USER }],
+      });
+    } catch (err) {}
+  };
   return (
     <div className='icon-outer'>
       <div className='control-icon more has-items'>
@@ -41,21 +54,6 @@ const Notifications = ({ client, refetch }) => {
                 </li>
               )}
               {auth.user.newNotifications.map(notification => {
-                const updateNotificationSeen = async () => {
-                  try {
-                    await client.mutate({
-                      mutation: UPDATE_NOTIFICATION_SEEN,
-                      variables: {
-                        input: {
-                          userId: auth.user.id,
-                          notificationId: notification.id,
-                        },
-                      },
-                      refetchQueries: () => [{ query: GET_AUTH_USER }],
-                    });
-                  } catch (err) {}
-                };
-
                 return (
                   <>
                     {notification.like && (
@@ -72,13 +70,15 @@ const Notifications = ({ client, refetch }) => {
                               className='h6 notification-friend'
                             >
                               <h6 className='mb-1'>{`${notification.author.firstName} ${notification.author.lastName}`}</h6>
-                            </Link>{' '}
+                            </Link>
                             <Link
                               to={generatePath(Routes.POST, {
                                 id: notification.like.post.id,
                               })}
                               className='notification-text'
-                              onClick={() => updateNotificationSeen()}
+                              onClick={() =>
+                                updateNotificationSeen(notification.id)
+                              }
                             >
                               <p>liked your post</p>
                             </Link>
@@ -107,7 +107,9 @@ const Notifications = ({ client, refetch }) => {
                                 id: notification.comment.post.id,
                               })}
                               className='notification-text'
-                              onClick={() => updateNotificationSeen()}
+                              onClick={() =>
+                                updateNotificationSeen(notification.id)
+                              }
                             >
                               <p>Commented on your post</p>
                             </Link>
