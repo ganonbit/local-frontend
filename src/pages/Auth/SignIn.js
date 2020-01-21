@@ -10,7 +10,7 @@ import { validateFormField } from 'utils';
 import * as Routes from 'routes';
 const SignIn = ({ refetch, history }) => {
   const [reset, setReset] = useState(false);
-  
+
   const [values, setValues] = useState({
     email: '',
     password: '',
@@ -48,9 +48,8 @@ const SignIn = ({ refetch, history }) => {
     e.preventDefault();
     const error = validate();
     if (error) {
-      console.log(error)
+      console.log(error);
       return false;
-
     }
     signin().then(async ({ data }) => {
       localStorage.setItem('token', data.signin.token);
@@ -124,10 +123,9 @@ const SignIn = ({ refetch, history }) => {
                             </div> */}
 
                             <a
-                              onClick={(e) => (
-                                setReset(true),
-                                e.preventDefault())
-                              }
+                              onClick={e => (
+                                setReset(true), e.preventDefault()
+                              )}
                               href='#'
                               className='forgot'
                               data-toggle='modal'

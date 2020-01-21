@@ -15,9 +15,10 @@ class Hits extends React.Component {
         <h5 className='text-capitalize text-success mb-2'>#{count}</h5>
         <br />
         <Link
-            to={generatePath(Routes.USER_PROFILE, {
-              username: hit.author.username,
-            })} >
+          to={generatePath(Routes.USER_PROFILE, {
+            username: hit.author.username,
+          })}
+        >
           <h5 className='text-capitalize'>
             {hit.author && hit.author.firstName}{' '}
             {hit.author && hit.author.lastName}
@@ -26,11 +27,12 @@ class Hits extends React.Component {
         <Link
           to={generatePath(Routes.POST, {
             id: hit.objectID,
-          })} >
+          })}
+        >
           <img className='video-bnr my-3' src={hit.image} alt='video' />
           <span className='chat-message-item'>
             {hit.numOfLikes} Likes {hit.numOfComments} Comments
-        </span>
+          </span>
         </Link>
         <div className='overlay'></div>
       </li>
@@ -48,7 +50,8 @@ class Hits extends React.Component {
           <Link
             to={generatePath(Routes.USER_PROFILE, {
               username: hit.author.username,
-            })} >
+            })}
+          >
             <h5 className='text-capitalize'>
               {hit.author && hit.author.firstName}{' '}
               {hit.author && hit.author.lastName}
@@ -57,7 +60,8 @@ class Hits extends React.Component {
           <Link
             to={generatePath(Routes.POST, {
               id: hit.objectID,
-            })} >
+            })}
+          >
             <span className='notification-friend text-dark my-3'>
               {hit.content}
             </span>

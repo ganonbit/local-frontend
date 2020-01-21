@@ -42,8 +42,7 @@ const OverlayTriggers = ({
           ToolTip(toolTipText)
         ) : (
           <Popover>
-            <Popover.Content
-            >
+            <Popover.Content>
               <ul>{toolTipTextList}</ul>
             </Popover.Content>
           </Popover>
@@ -56,4 +55,3 @@ const OverlayTriggers = ({
 };
 
 export default OverlayTriggers;
-
