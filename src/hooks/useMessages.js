@@ -1,4 +1,4 @@
-import { useApolloClient } from 'react-apollo-hooks';
+import { useApolloClient } from '@apollo/react-hooks';
 import { CREATE_MESSAGE, DELETE_MESSAGE } from 'graphql/message';
 import { useStore } from 'store';
 
