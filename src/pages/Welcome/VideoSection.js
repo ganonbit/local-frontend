@@ -1,11 +1,11 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
 import * as Routes from 'routes';
 
 const VideoSection = () => {
   function stopVideo() {
-    var src = document.getElementById('video').src;
+    let src = document.getElementById('video').src;
     document.getElementById('video').src = '';
     document.getElementById('video').src = src;
   }
