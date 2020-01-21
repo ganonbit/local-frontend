@@ -1,7 +1,7 @@
 export const hashtagRegex = inputText => {
-  var regex = /(?:^|\s)(?:#)([a-zA-Z\d]+)/gm;
-  var matches = [];
-  var match;
+  let regex = /(?:^|\s)(?:#)([a-zA-Z\d]+)/gm;
+  let matches = [];
+  let match;
 
   while ((match = regex.exec(inputText))) {
     matches.push(`#${match[1]}`);

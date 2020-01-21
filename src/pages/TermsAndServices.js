@@ -78,10 +78,10 @@ const TermsAndServices = ({ isAuth }) => (
                 you give us specific permission.
               </p>
               <p>
-                <a href='/privacy-policy'>AFM’s Privacy Policy</a> explains how
+                <a href='/privacy-policy'>AFM&apos;s Privacy Policy</a> explains how
                 AFM collects and uses your personal data to determine some of
                 the content you see and to provide the other services described
-                below. You can also go to your <a href='/settings'>SETTINGS</a>{' '}
+                below. You can also go to your <a href='/settings'>SETTINGS</a>{' '}
                 at any time to review the privacy choices you have about how
                 your data may be used.
               </p>
@@ -150,7 +150,7 @@ const TermsAndServices = ({ isAuth }) => (
                   is intimidating, or is intended to exclude or silence others.
                 </li>
                 <li>
-                  infringes or violates someone else's rights, including
+                  infringes or violates someone else&apos;s rights, including
                   intellectual property rights.
                 </li>
                 <li>
@@ -166,7 +166,7 @@ const TermsAndServices = ({ isAuth }) => (
               </p>
               <p>
                 You may not access or collect data from the Platform using
-                automated means (without AFM’s prior permission) or attempt to
+                automated means (without AFM&apos;s prior permission) or attempt to
                 access data you do not have permission to access.
               </p>
               <p>
@@ -190,15 +190,15 @@ const TermsAndServices = ({ isAuth }) => (
               <h4>Limits on using AFM intellectual property</h4>
               <p>
                 You may not use AFM content that is protected by copyright,
-                trademark of other intellectual property laws without AFM’s
-                prior written permission. You may not, without AFM’s written
+                trademark of other intellectual property laws without AFM&apos;s
+                prior written permission. You may not, without AFM&apos;s written
                 permission (or permission under an open source license), modify,
                 create derivative works of, decompile, or otherwise attempt to
                 extract source code.
               </p>
               <p>
                 Material from the Platform may not be altered. Modification or
-                use of the materials for any other purpose may violate AFM’s
+                use of the materials for any other purpose may violate AFM&apos;s
                 intellectual property rights. If you download content from the
                 Platform, no title nor intellectual property rights are
                 transferred to you, but remain with AFM, which owns full and
@@ -219,7 +219,7 @@ const TermsAndServices = ({ isAuth }) => (
               <h4>Submissions</h4>
               <p>
                 Any remark, suggestion, idea, graphic, or other information
-                communicated to AFM through the Platform ("Submission") shall
+                communicated to AFM through the Platform (&quot;Submission&quot;) shall
                 forever be the property of AFM. AFM may subsequently use the
                 Submission for its business (including without limitation,
                 product or advertising ideas) and will not incur any liability
@@ -229,13 +229,13 @@ const TermsAndServices = ({ isAuth }) => (
                 Submission for any commercial or other purpose whatsoever
                 without compensation to you. Identifiable personal information
                 submitted on the Platform is provided voluntarily by the
-                submitter. For full details regarding AFM’s treatment of
-                personal information, please see AFM’s{' '}
+                submitter. For full details regarding AFM&apos;s treatment of
+                personal information, please see AFM&apos;s{' '}
                 <a href='/privacy-policy'>Privacy Policy</a>.
               </p>
               <p>
                 Materials and third-party logos, brands and trade names
-                displayed by AFM on the Platform are either AFM’s property, or
+                displayed by AFM on the Platform are either AFM&apos;s property, or
                 property that AFM has permission to use. The use of these
                 materials by you or any other person is prohibited unless
                 specifically permitted by these Terms of Service, or in the case
@@ -294,13 +294,13 @@ const TermsAndServices = ({ isAuth }) => (
               <p>
                 AFM reserves the right to suspend or permanently disable access
                 to your account if you have materially or repeatedly breached
-                these Terms of Service, including AFM’s Community Standards; if
+                these Terms of Service, including AFM&apos;s Community Standards; if
                 you have infringed the intellectual property rights of third
                 parties; or if AFM is required by law to do so.
               </p>
               <h4>Limits on liability </h4>
               <p>
-                Avocado Nation is provided "as is," and AFM makes no guarantees
+                Avocado Nation is provided &quot;as is,&quot; and AFM makes no guarantees
                 that it will always be safe, secure, or error-free; or that it
                 will function without disruptions, delays, or imperfections. To
                 the extent permitted by law, AFM also DISCLAIMS ALL WARRANTIES,

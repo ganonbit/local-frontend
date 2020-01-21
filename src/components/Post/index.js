@@ -37,7 +37,7 @@ const Post = ({ queryOptions, isAuth }) => {
         }
 
         if (!postsData && !postData) {
-          return <h1></h1>;
+          return <></>;
         }
         if (postsData && isAuth) {
           return (

@@ -229,8 +229,7 @@ const Badges = () => {
                     Good Neighbor
                   </a>
                   <div className='birthday-date'>
-                    User that has given a combination of 1,000 likes, comments,
-                    shares 
+                    User that has given a combination of 1,000 likes, comments, shares 
                   </div>
                 </div>
                 <div className='skills-item'>

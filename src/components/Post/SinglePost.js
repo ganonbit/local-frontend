@@ -26,7 +26,6 @@ const SinglePost = ({ post, isAuth }) => {
           image={post.image}
           imagePublicId={post.imagePublicId}
         />
-        {/* {props.newPost ? <NewPost content={props.content} /> : <PostVideo tag={props.tag} body={props.body} />} */}
         <PostContent content={post.content} image={post.image} />
         <PostFooter
           toggle={toggleComment}

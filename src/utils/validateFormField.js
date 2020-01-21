@@ -18,6 +18,7 @@ export const validateFormField = (name, value) => {
       else return { lastName: '' };
 
     case 'username':
+      // eslint-disable-next-line no-case-declarations
       let usernameError = isValidUserName(value);
       if (usernameError.length > 1) return { username: usernameError };
       else return { username: '' };

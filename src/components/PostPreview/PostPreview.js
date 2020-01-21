@@ -1,7 +1,4 @@
 import React from 'react';
-import Linkify from 'linkifyjs/react';
-
-import linkDecorator from '../Common/linkDecorator';
 
 const Preview = props => {
   return (
@@ -12,7 +9,7 @@ const Preview = props => {
         rel='noopener noreferrer'
       >
         {props.ogImage && props.ogImage.url ? (
-          <img src={props.ogImage.url} />
+          <img src={props.ogImage.url} alt="Open Graph Website Preview" />
         ) : null}
       </a>
       <div>

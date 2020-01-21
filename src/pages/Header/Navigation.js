@@ -1,14 +1,11 @@
-import React, { useState, prevState, setState } from 'react';
-import { useMediaQuery } from 'react-responsive';
+import React from 'react';
 
-// import { Tabb } from 'react-bootstrap';
 import { generatePath, Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faHome,
   faComment,
   faBell,
-  faSearch,
 } from '@fortawesome/free-solid-svg-icons';
 
 import Search from '../../components/Search';

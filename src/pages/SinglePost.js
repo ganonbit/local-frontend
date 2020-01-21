@@ -1,10 +1,10 @@
 import React from 'react';
 import Post from 'components/Post';
-import // TrendingPost,
+import {TrendingPost,
 // TrendingTopics,
-// TopRatedUsers,
-// NewsFeedAdd,
-'components/Widget';
+TopRatedUsers,
+NewsFeedAdd,}
+from 'components/Widget';
 
 import { GET_POST } from 'graphql/post';
 
@@ -22,14 +22,13 @@ const SinglePost = props => {
           <div></div>
         </main>
         <aside className='col col-xl-3 order-xl-1 col-lg-6 order-lg-2 col-md-6 col-sm-6 col-12'>
-          {/* <TrendingPost /> */}
-          {/* <AvocadoGame /> */}
-          {/* <NewsFeedAdd /> */}
+          <TrendingPost />
+          <NewsFeedAdd />
         </aside>
 
         <aside className='col col-xl-3 order-xl-3 col-lg-6 order-lg-3 col-md-6 col-sm-6 col-12'>
           {/* <TrendingTopics /> */}
-          {/* <TopRatedUsers /> */}
+          <TopRatedUsers />
         </aside>
       </div>
     </div>
