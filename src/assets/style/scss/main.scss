@@ -22392,8 +22392,8 @@ li.add-more-posts span {
   background: var(--theme-color-light);
   display: -webkit-box;
   display: flex;
-  -webkit-box-pack: start;
-          justify-content: start;
+  -webkit-box-pack: flex-start;
+          justify-content: flex-start;
   -webkit-box-align: center;
           align-items: center;
   color: var(--theme-color-white);
