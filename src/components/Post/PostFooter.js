@@ -4,8 +4,9 @@ import { faComment, faHeart } from '@fortawesome/free-solid-svg-icons';
 import OverlayTriggers from '../Common/ToolTip';
 
 import Like from 'components/Like';
-import CommentList from 'components/Comments/CommentList';
+
 const PostFooter = props => {
+ 
   const {
     author,
     postId,
@@ -16,6 +17,23 @@ const PostFooter = props => {
     userId,
     post,
   } = props;
+
+  const commentlist = [];
+  if (comments.length > 0) {
+    const map = new Map();
+    for (const comment of comments) {
+      if (!map.has(comment.author.id)) {
+        map.set(comment.author.id, true);
+        commentlist.push({
+          id: comment.id,
+          author: `${comment.author.firstName} ${comment.author.lastName}`,
+          comment: comment.comment,
+        });
+      }
+    }
+  }
+
+
   return (
     <div className='post-additional-info inline-items'>
       <span className='post-add-icon inline-items'>
@@ -43,15 +61,15 @@ const PostFooter = props => {
       </span>
 
       <div className='comments-shared'>
-        <OverlayTriggers toolTipText='COMMENT' placement='left'>
+        <OverlayTriggers isPostToolTip={true} toolTipText={commentlist} placement='auto'>
           <a
-            href="#"
+            href='#1'
             onClick={e => {
               e.preventDefault();
             }}
             className='post-add-icon inline-items'
           >
-            <CommentList comments={comments} />
+            <span>{comments&& comments.length}</span>
             <FontAwesomeIcon
               icon={faComment}
               style={{ width: '1.6rem' }}
