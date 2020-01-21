@@ -28,7 +28,7 @@ const ResetPassword = ({ history, location, refetch }) => {
       setError('Password min 6 characters');
       return;
     } else if (password !== confirmPassword) {
-      setError('Passwords don\'t match.');
+      setError("Passwords don't match.");
       return;
     }
 
