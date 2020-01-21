@@ -31,7 +31,7 @@ export default function Comments(props, isAuth) {
                       post={props.post}
                     />
                     <Linkify options={linkDecorator}>
-                      <p className="comments-section">{comment.comment}</p>
+                      <p className='comments-section'>{comment.comment}</p>
                     </Linkify>
                   </li>
                 );
