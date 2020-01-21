@@ -4,7 +4,7 @@ import { InstantSearch, Index } from 'react-instantsearch-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faTimes } from '@fortawesome/free-solid-svg-icons';
 
-import Default, { Desktop, Tablet, Mobile } from '../Wrappers/Queries';
+import Default, { Desktop, Mobile } from '../Wrappers/Queries';
 import CustomSearchBar from './search-bar';
 import ConnectedUsers from './users';
 import ConnectedPosts from './posts';

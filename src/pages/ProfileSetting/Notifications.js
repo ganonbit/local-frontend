@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { Query } from 'react-apollo';
 import { withApollo } from 'react-apollo';
 import PropTypes from 'prop-types';

@@ -27,7 +27,7 @@ class Hits extends React.Component {
           ))}
           {hasMore && (
             <button
-              className='btn btn-primary btn-small'
+              className='btn btn-primary btn-small show-more-btn'
               onClick={refineNext}
               disabled={!hasMore}
             >

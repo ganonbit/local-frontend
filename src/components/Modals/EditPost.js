@@ -6,12 +6,7 @@ import { EDIT_POST, GET_FOLLOWED_POSTS, DELETE_IMAGE } from 'graphql/post';
 import { MAX_POST_IMAGE_SIZE } from 'constants/ImageSize';
 import Avatar from '../Avatar';
 import { BeatLoader } from 'react-spinners';
-import { css } from '@emotion/core';
-const override = css`
-  position: absolute;
-  top: 50%;
-  left: 40%;
-`;
+
 const EditPost = props => {
   let { postId, auth, content, image, onHide, imagePublicId } = props;
   const [isError, setError] = useState(true);
@@ -111,7 +106,6 @@ const EditPost = props => {
                       </div>
                       <div className='form-group label-floating is-empty w-100 ml-3 mb-0'>
                         <BeatLoader
-                          css={override}
                           sizeUnit={'px'}
                           size={20}
                           color={'#123abc'}
