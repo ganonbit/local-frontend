@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link, generatePath } from 'react-router-dom';
-import CustomPanel from '../../components/Wrappers';
 import Avatar from 'components/Avatar';
 import * as Routes from 'routes';
 
@@ -9,7 +8,6 @@ import {
   RewardIcon,
   SettingIcon,
   LogOut,
-  CheckIcon,
   DropDownArrowIcon,
   EnvelopeIcon,
 } from 'components/icons';
@@ -20,10 +18,10 @@ const LegalLinks = () => {
       link: Routes.TERM_AND_CONDITIONS,
       title: 'Terms and Conditions',
     },
-    // {
-    //   link: '#',
-    //   title: 'Idea Submission',
-    // },
+    {
+      link: Routes.FORM,
+      title: 'Idea Submission',
+    },
     {
       link: Routes.COMMUNITY_GUIDELINE,
       title: 'Community Guidelines',
@@ -85,7 +83,7 @@ const AuthorSpecPages = ({ user }) => {
 
 const FriendReferral = () => {
   return (
-    <CustomPanel>
+    <div className='custom-panel'>
       <ul className='account-settings'>
         <li>
           <a href='#' data-toggle='modal' data-target='#referralUrl'>
@@ -94,7 +92,7 @@ const FriendReferral = () => {
           </a>
         </li>
       </ul>
-    </CustomPanel>
+    </div>
   );
 };
 

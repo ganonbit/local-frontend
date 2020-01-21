@@ -93,11 +93,11 @@ const PrivacyPolicy = ({ isAuth }) => (
               <h6>Information automatically collected:</h6>
               <p>
                 Our site is primarily directed to our customers and prospective
-                customers (our "Consumers"). We collect personal data via the
-                Sites that can be used to identify or contact a unique person
-                ("PII"). We generally will only collect PII via the Site when
-                you provide it directly to us (we refer to this information as
-                "Log Data").
+                customers (our &quot;Consumers&quot;). We collect personal data
+                via the Sites that can be used to identify or contact a unique
+                person (&quot;PII&quot;). We generally will only collect PII via
+                the Site when you provide it directly to us (we refer to this
+                information as &quot;Log Data&quot;).
               </p>
               <p>
                 You may provide PII such as an email address or a telephone
@@ -109,26 +109,26 @@ const PrivacyPolicy = ({ isAuth }) => (
                 Site.
               </p>
               <p>
-                We automatically collect information using "cookies" and Web
-                beacons. HTTP Cookies are a small piece of data sent from a
-                website and stored on the user's computer by the user's web
-                browser that may be used on our Sites or in our emails. Among
-                other things, cookies help us improve our Site, our marketing
-                activities, and your experience. We use cookies to see which
-                areas and features are popular and to count visits to our Sites.
-                Once you enter to our websites, you can choose to set your
-                browser to remove cookies and / or to reject cookies. If you
-                choose to remove cookies or reject cookies, this could affect
-                certain features or services of our Site. For more information
-                about cookies and web beacons, please visit 
+                We automatically collect information using &quot;cookies&quot;
+                and Web beacons. HTTP Cookies are a small piece of data sent
+                from a website and stored on the user&apos;s computer by the
+                user&apos;s web browser that may be used on our Sites or in our
+                emails. Among other things, cookies help us improve our Site,
+                our marketing activities, and your experience. We use cookies to
+                see which areas and features are popular and to count visits to
+                our Sites. Once you enter to our websites, you can choose to set
+                your browser to remove cookies and / or to reject cookies. If
+                you choose to remove cookies or reject cookies, this could
+                affect certain features or services of our Site. For more
+                information about cookies and web beacons, please visit 
                 <a href='https://www.avocadosfrommexico.com/privacy/cookies'>
                   www.avocadosfrommexico.com/privacy/cookies
                 </a>{' '}
                 In addition, we use this information to administer the Service
                 and we analyze (and may engage third parties to analyze) this
                 information to improve and enhance the Service by expanding its
-                features and functionality and tailoring it to our users' needs
-                and preferences.
+                features and functionality and tailoring it to our users&apos;
+                needs and preferences.
               </p>
               <h6>Sensitive personal information:</h6>
               <p>
@@ -418,8 +418,8 @@ const PrivacyPolicy = ({ isAuth }) => (
               </ul>
               <p>
                 Our privacy policy does not cover any third-party websites
-                services. To learn about those third parties' privacy practices,
-                please visit their privacy policies.
+                services. To learn about those third parties&apos; privacy
+                practices, please visit their privacy policies.
               </p>
               <p>
                 We do not sell PII collected via the Sites or collected pursuant
@@ -503,9 +503,9 @@ const PrivacyPolicy = ({ isAuth }) => (
                 Mexico will confirm receipt within ten (10) days of any request
                 to access or delete your information and will respond within
                 forty-five (45) days. In some of our communications, we use
-                tracking means, such as a "click-through URL" linked to content
-                on the Site. We track this data to help us measure the
-                effectiveness of our customer communications.
+                tracking means, such as a &quot;click-through URL&quot; linked
+                to content on the Site. We track this data to help us measure
+                the effectiveness of our customer communications.
               </p>
               <h6>Choosing not to share your personal information:</h6>
               <p>
@@ -615,12 +615,12 @@ const PrivacyPolicy = ({ isAuth }) => (
               <h6>Additional Information for the European Union</h6>
               <span>Personal Information</span>
               <p>
-                References to "personal information" in this Privacy Policy are
-                equivalent to "personal data" governed by European data
-                protection legislation. Avocados From Mexico is the processor of
-                your personal information for purposes of European data
-                protection legislation. Our Data Protection Officer can be
-                reached at{' '}
+                References to &quot;personal information&quot; in this Privacy
+                Policy are equivalent to &quot;personal data&quot; governed by
+                European data protection legislation. Avocados From Mexico is
+                the processor of your personal information for purposes of
+                European data protection legislation. Our Data Protection
+                Officer can be reached at{' '}
                 <a href='mailto:privacy@avocadosfrommexico.com'>
                   privacy@avocadosfrommexico.com
                 </a>
@@ -668,12 +668,12 @@ const PrivacyPolicy = ({ isAuth }) => (
               </ul>
               <p>
                 Avocados From Mexico retains Customer data for so long as you
-                remain as a Customer and will delete Customer's information
-                within 12 months of either party's termination of applicable
-                Customer agreement upon written request. We retain User level
-                data on the Platform as directed by our Customers and for a
-                reasonable time thereafter for audit purposes and as otherwise
-                required by law.
+                remain as a Customer and will delete Customer&apos;s information
+                within 12 months of either party&apos;s termination of
+                applicable Customer agreement upon written request. We retain
+                User level data on the Platform as directed by our Customers and
+                for a reasonable time thereafter for audit purposes and as
+                otherwise required by law.
               </p>
               <h6>Rights of European Union Customers</h6>
               <p>
@@ -741,13 +741,13 @@ const PrivacyPolicy = ({ isAuth }) => (
                   <b>Restrict</b>. Restrict the processing of your personal
                   information. You have the right to request that we suspend the
                   processing of your personal data in the following situations:
-                  (a) When the data's accuracy wants to be established by you;
-                  (b) where our use of the data is unlawful but you do not want
-                  us to erase it; (c) where you need us to hold the data even if
-                  we no longer require it as you need it to establish, exercise
-                  or defend legal claims; or (d) you have objected to our use of
-                  your data but we need to verify whether we have overriding
-                  legitimate grounds to use it.
+                  (a) When the data&apos;s accuracy wants to be established by
+                  you; (b) where our use of the data is unlawful but you do not
+                  want us to erase it; (c) where you need us to hold the data
+                  even if we no longer require it as you need it to establish,
+                  exercise or defend legal claims; or (d) you have objected to
+                  our use of your data but we need to verify whether we have
+                  overriding legitimate grounds to use it.
                 </li>
                 <li>
                   <b>Object</b>. Object to our reliance on our legitimate

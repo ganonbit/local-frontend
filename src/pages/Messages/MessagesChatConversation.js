@@ -69,7 +69,7 @@ const MessagesChatConversation = ({
             )}
             <a href='1#' className='more'>
               <svg className='olymp-three-dots-icon'>
-                <use xlinkhref='svg-icons/sprites/icons.svg#olymp-three-dots-icon'></use>
+                <use XlinkHref='svg-icons/sprites/icons.svg#olymp-three-dots-icon'></use>
               </svg>
             </a>
           </div>

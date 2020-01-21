@@ -251,7 +251,7 @@ const SignUp = ({ refetch, history }) => {
                             <label className='control-label'>Your Gender</label>
                             <select
                               className='select picker form-control'
-                              onChange={handleChange}
+                              onBlur={handleChange}
                               name='gender'
                             >
                               <option value='male'>Male</option>
