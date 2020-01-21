@@ -7743,7 +7743,6 @@ display: inline-flex !important;
   }
 
   .add-options-message button {
-    // float: none;
     margin-left: 0;
     display: block;
     margin-top: 10px;
@@ -22130,7 +22129,6 @@ span.material-input-error {
 
 .post-img img {
   width: 100%;
-  // max-height: 500px; add back when we have popup modal and set width: auto
 
 }
 
@@ -23232,7 +23230,6 @@ div#accordion .card {
   display: block;
 }
 
-// chrome/safari not respecting select button's padding fix
 select{
   -webkit-appearance: none;
   -moz-appearance: none;
