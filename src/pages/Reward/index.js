@@ -60,10 +60,10 @@ const Reward = ({ user }) => {
                       </li> */}
                       <li>
                         <span>Comment on someone’s post</span>
-                        <h6>5</h6>
+                        <h6>1</h6>
                       </li>
                       <li>
-                        <span>Submit an idea to Selma in the form </span>
+                        <span>Submit an idea to Selma in the form</span>
                         <h6>5</h6>
                       </li>
                       {/* <li>
@@ -76,7 +76,7 @@ const Reward = ({ user }) => {
                       </li>
                       <li>
                         <span>Create a post</span>
-                        <h6>10</h6>
+                        <h6>5</h6>
                       </li>
                       {/* <li>
                         <span>Share on social media</span>

@@ -1,32 +1,10 @@
 import React, { useState } from 'react';
-import styled from 'styled-components';
 import { withRouter } from 'react-router-dom';
 import { Query, Mutation } from 'react-apollo';
 
 import { VERIFY_TOKEN, RESET_PASSWORD } from 'graphql/user';
 
 import * as Routes from 'routes';
-
-const Root = styled.div`
-  padding: 0 ${p => p.theme.spacing.sm};
-`;
-
-const Container = styled.div`
-  width: 100%;
-  margin: 0 auto;
-  background-color: ${p => p.theme.colors.white};
-  padding: ${p => p.theme.spacing.md};
-  border-radius: ${p => p.theme.radius.sm};
-  margin-top: 80px;
-
-  @media (min-width: ${p => p.theme.screen.sm}) {
-    width: 450px;
-  }
-
-  @media (min-width: ${p => p.theme.screen.md}) {
-    margin-top: auto;
-  }
-`;
 
 /**
  * Reset password page
@@ -50,7 +28,7 @@ const ResetPassword = ({ history, location, refetch }) => {
       setError('Password min 6 characters');
       return;
     } else if (password !== confirmPassword) {
-      setError("Passwords don't match.");
+      setError('Passwords don\'t match.');
       return;
     }
 
