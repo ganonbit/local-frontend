@@ -57,9 +57,10 @@
     "start:lambda": "netlify-lambda serve src/lambda",
     "build": "react-scripts build",
     "build:lambda": "netlify-lambda build src/lambda",
+    "postbuild": "npx postcss build/static/css/*.css --use autoprefixer -d build/static/css/",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "format": "prettier --write \"./**/*.{js,json,md,css,sass}\" && npx postcss src/assets/style/scss/main.scss --use autoprefixer -d src/assets/style/scss/"
+    "format": "prettier --write \"./**/*.{js,json,md,css,sass}\""
   },
   "eslintConfig": {
     "extends": "react-app"
