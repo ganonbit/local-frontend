@@ -8,14 +8,7 @@ import { Mutation } from 'react-apollo';
 import { CREATE_POST, GET_FOLLOWED_POSTS } from 'graphql/post';
 import { GET_USER_POSTS } from 'graphql/user';
 
-import { css } from '@emotion/core';
 import { BeatLoader } from 'react-spinners';
-
-const override = css`
-  position: absolute;
-  top: 50%;
-  left: 40%;
-`;
 
 const CreatePost = props => {
   const [{ auth }] = useStore();
@@ -104,7 +97,6 @@ const CreatePost = props => {
                   imagePreview={imagePreview}
                   createPost={createPost}
                   auth={auth}
-                  override={override}
                   loading={loading}
                   apiError={
                     isError && apiError && apiError.graphQLErrors[0].message
@@ -114,7 +106,6 @@ const CreatePost = props => {
               }
               <div className='tab-content' style={{ position: 'relative' }}>
                 <BeatLoader
-                  css={override}
                   sizeUnit={'px'}
                   size={20}
                   color={'#123abc'}
