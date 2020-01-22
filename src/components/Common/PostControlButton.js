@@ -4,10 +4,10 @@ import Like from 'components/Like';
 import OverlayTriggers from '../Common/ToolTip';
 
 export default function PostControlButton(props) {
-  const { author, postId, likes, toggle, post, userId } = props;
+  const { author, postId, likes, toggle, post, userId, isAuth } = props;
   return (
     <div className='control-block-button post-control-button'>
-      {!props.isAuth ? (
+      {!isAuth ? (
         <OverlayTriggers toolTipText='LIKE' placement='left'>
           <a
             href='#1'
