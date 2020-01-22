@@ -1,4 +1,5 @@
 import * as React from 'react';
+import {Link} from 'react-router-dom'
 import { connectInfiniteHits } from 'react-instantsearch-core';
 
 class Hits extends React.Component {
@@ -11,12 +12,12 @@ class Hits extends React.Component {
           className='list-group overflow-auto'
           style={{ maxHeight: '240px' }}
         >
-          {hits.map(hit => (
-            <a href={`/${hit.author && hit.author.username}`}>
+          {hits.map((hit,index) => (
+            <Link to={`/${hit.author && hit.author.username}`} key={index}>
               <div className='card border-bottom list-group-item list-group-item-action'>
                 <div className='card-body p-0'>
                   <h5 className='card-title text-capitalize'>
-                    {hit.author && hit.author.firstName}{' '}
+                    {hit.author && hit.author.firstName}
                     {hit.author && hit.author.lastName}
                   </h5>
                   <h6 className='card-subtitle mb-2 text-muted'>
@@ -25,7 +26,7 @@ class Hits extends React.Component {
                   <p className='card-text text-dark'>{hit.content}</p>
                 </div>
               </div>
-            </a>
+            </Link>
           ))}
           {hasMore && (
             <button

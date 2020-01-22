@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { generatePath } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 import { EDIT_COMMENT } from '../../graphql/comment';
 import { GET_POSTS } from '../../graphql/post';
@@ -10,6 +11,17 @@ import Avatar from '../Avatar';
 import * as Routes from 'routes';
 
 function EditComment({ authorId, comment, author, postId, onCancel }) {
+  // console.log('------------start--------')
+  // console.log('-----------------', typeof authorId )
+  // console.log('-----------------', typeof comment )
+  // console.log('-----------------', typeof  author)
+  // console.log('-----------------', typeof  postId)
+  // console.log('-----------------', typeof  onCancel)
+  // console.log('-----------------', typeof isAuth)
+  // console.log('-----------------', typeof  post)
+
+  // console.log('------------end---------')
+
   const [commentContent, setCommentContent] = useState({
     comment: comment.comment,
     image: comment.image,
@@ -94,5 +106,13 @@ function EditComment({ authorId, comment, author, postId, onCancel }) {
     </Mutation>
   );
 }
+
+EditComment.propTypes = {
+  authorId: PropTypes.string.isRequired,
+  comment: PropTypes.string.isRequired,
+  author: PropTypes.object.isRequired,
+  postId: PropTypes.string.isRequired,
+  onCancel: PropTypes.func.isRequired,
+};
 
 export default withApollo(EditComment);
