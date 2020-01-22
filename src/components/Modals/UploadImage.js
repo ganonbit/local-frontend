@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import { Modal, ModalBody } from 'react-bootstrap';
+
 import { MAX_POST_IMAGE_SIZE } from 'constants/ImageSize';
 import Avatar from '../Avatar';
 import { BeatLoader } from 'react-spinners';
@@ -7,7 +9,6 @@ import { BeatLoader } from 'react-spinners';
 const UploadImageModal = ({
   isShowing,
   hide,
-  // toggleModel,
   handleImageUpload,
   status,
   handleStatusChange,
@@ -69,7 +70,7 @@ const UploadImageModal = ({
                       color={'#123abc'}
                       loading={loading}
                     />
-                    <label className='control-label'>
+                    <label className='control-label' htmlFor='share post'>
                       Share what you are thinking here...
                     </label>
                     <textarea
@@ -104,7 +105,8 @@ const UploadImageModal = ({
                 )}
                 {apiError && (
                   <span className='text-center d-block text-danger mt-1'>
-                    {apiError}
+                    {apiError && apiError}
+                    {error && <span> error </span>}
                   </span>
                 )}
                 <div className='upload-content'>
@@ -150,4 +152,20 @@ const UploadImageModal = ({
     </Modal>
   );
 };
+UploadImageModal.propTypes = {
+  isShowing: PropTypes.bool.isRequired,
+  hide: PropTypes.func.isRequired,
+  handleImageUpload: PropTypes.func.isRequired,
+  status: PropTypes.string.isRequired,
+  handleStatusChange: PropTypes.func.isRequired,
+  imagePreview: PropTypes.string.isRequired,
+  handleSubmitForm: PropTypes.func.isRequired,
+  createPost: PropTypes.func.isRequired,
+  auth: PropTypes.object.isRequired,
+  override: PropTypes.any,
+  loading: PropTypes.any,
+  apiError: PropTypes.any,
+  onImageDelete: PropTypes.func.isRequired,
+};
+
 export default UploadImageModal;

@@ -46,7 +46,7 @@ const SinglePost = ({ post, isAuth }) => {
           post={post}
         />
       </article>
-      {isAuth && isCommentOpen && <Comments post={post} />}
+      {isAuth && isCommentOpen && <Comments post={post} isAuth={isAuth}/>}
       {isAuth && (
         <AddComment
           authorId={auth.user.id}

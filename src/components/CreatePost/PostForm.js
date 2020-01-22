@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { generatePath } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 import Footer from './PostFooter';
 import Avatar from '../Avatar';
@@ -14,7 +15,6 @@ const PostForm = ({
   toggle,
   handleSubmitForm,
   createPost,
-  imagePreview,
   apiError,
 }) => {
   const [{ auth }] = useStore();
@@ -47,7 +47,7 @@ const PostForm = ({
         onFocus={() => handleFocus('focus')}
         onBlur={() => handleFocus('blur')}
       >
-        <label className='control-label'>
+        <label className='control-label' htmlFor='share'>
           Share what you are thinking here...
         </label>
         <textarea
@@ -66,4 +66,14 @@ const PostForm = ({
     </form>
   );
 };
+
+PostForm.propTypes = {
+  status: PropTypes.string.isRequired,
+  handleStatusChange: PropTypes.func.isRequired,
+  toggle: PropTypes.func.isRequired,
+  handleSubmitForm: PropTypes.func.isRequired,
+  createPost: PropTypes.func.isRequired,
+  apiError: PropTypes.any,
+};
+
 export default PostForm;

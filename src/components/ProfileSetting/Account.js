@@ -19,7 +19,9 @@ const AccountSetting = () => {
           <div className='row'>
             <div className='col col-lg-6 col-md-6 col-sm-12 col-12'>
               <div className='form-group label-floating is-select'>
-                <label className='control-label'>Who Can Friend You?</label>
+                <label className='control-label' htmlFor='privacy'>
+                  Who Can Friend You?
+                </label>
                 <select className='selectpicker form-control'>
                   <option value='EO'>Everyone</option>
                   <option value='NO'>No One</option>
@@ -28,7 +30,9 @@ const AccountSetting = () => {
             </div>
             <div className='col col-lg-6 col-md-6 col-sm-12 col-12'>
               <div className='form-group label-floating is-select'>
-                <label className='control-label'>Who Can View Your Posts</label>
+                <label className='control-label' htmlFor='post privacy'>
+                  Who Can View Your Posts
+                </label>
                 <select className='selectpicker form-control'>
                   <option value='US'>Friends Only</option>
                   <option value='EO'>Everyone</option>

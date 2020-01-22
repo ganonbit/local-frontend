@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Tooltip } from 'react-bootstrap';
 import { OverlayTrigger, Popover } from 'react-bootstrap';
 
@@ -52,6 +53,13 @@ const OverlayTriggers = ({
       {children}
     </OverlayTrigger>
   );
+};
+
+OverlayTriggers.propTypes = {
+  placement: PropTypes.string.isRequired,
+  isPostToolTip: PropTypes.bool.isRequired,
+  toolTipText: PropTypes.any.isRequired,
+  children: PropTypes.object.isRequired,
 };
 
 export default OverlayTriggers;
