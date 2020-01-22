@@ -1,5 +1,6 @@
 import React from 'react';
 import theme from 'theme';
+import PropTypes from 'prop-types';
 
 /**
  * Close (X) icon
@@ -21,4 +22,9 @@ export const DropDownArrowIcon = ({ width, color }) => {
       <path d='M41.888 0.104l-17.952 19.064-17.952-19.064-5.984 6.352 23.936 25.44 23.936-25.44z' />
     </svg>
   );
+};
+
+DropDownArrowIcon.propTypes = {
+  width: PropTypes.any,
+  color: PropTypes.any
 };

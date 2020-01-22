@@ -1,5 +1,6 @@
 import React from 'react';
 import theme from 'theme';
+import PropTypes from 'prop-types';
 
 /**
  * Envelope open (message) icon
@@ -22,4 +23,9 @@ export const EnvelopeOpenIcon = ({ width, color }) => {
       <path d='M186.1 118.3h140.5v19.8H186.1zM186.1 181.8h140.5v19.8H186.1zM186.1 245.3h140.5v19.8H186.1z' />
     </svg>
   );
+};
+
+EnvelopeOpenIcon.propTypes = {
+  width: PropTypes.any,
+  color: PropTypes.any
 };

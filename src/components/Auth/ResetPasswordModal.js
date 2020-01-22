@@ -1,14 +1,17 @@
 import React, { useState } from 'react';
-import { Mutation } from 'react-apollo';
-import { REQUEST_PASSWORD_RESET } from 'graphql/user';
+import PropTypes from 'prop-types';
+
 import { Modal } from 'react-bootstrap';
 
-let ResetPassword = props => {
-  const [show, setShow] = useState(props.show);
+import { Mutation } from 'react-apollo';
+import { REQUEST_PASSWORD_RESET } from 'graphql/user';
+
+let ResetPassword = ({ show, handleReset }) => {
+  const [isOpen, setisOpen] = useState(show);
 
   const handleClose = () => {
-    props.handleReset();
-    setShow(false);
+    handleReset();
+    setisOpen(false);
   };
 
   const [email, setEmail] = useState('');
@@ -20,7 +23,7 @@ let ResetPassword = props => {
   const handleSubmit = (e, requestPasswordReset) => {
     e.preventDefault();
     requestPasswordReset().then(async ({ data }) => {
-      setShow(false);
+      setisOpen(false);
     });
   };
 
@@ -33,7 +36,7 @@ let ResetPassword = props => {
     >
       {(requestPasswordReset, { loading, error: apiError }) => {
         return (
-          <Modal show={show} onHide={handleClose}>
+          <Modal show={isOpen} onHide={handleClose}>
             <Modal.Body>
               <div role='document'>
                 <div className='modal-content'>
@@ -49,7 +52,9 @@ let ResetPassword = props => {
                         to change the old password for a new one.
                       </p>
                       <div className='form-group label-floating'>
-                        <label className='control-label'>Your Email</label>
+                        <label className='control-label' htmlFor='email'>
+                          Your Email
+                        </label>
                         <input
                           className='form-control'
                           placeholder='james-spiegel@yourmail.com'
@@ -76,6 +81,11 @@ let ResetPassword = props => {
       }}
     </Mutation>
   );
+};
+
+ResetPassword.propTypes = {
+  show: PropTypes.bool.isRequired,
+  handleReset: PropTypes.func.isRequired,
 };
 
 export default ResetPassword;

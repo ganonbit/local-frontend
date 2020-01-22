@@ -184,7 +184,7 @@ const PersonalInfo = ({ refetch }) => {
                   </div>
                   <div className='col col-lg-6 col-md-4 col-sm-12 col-12'>
                     <div className='form-group label-floating is-select'>
-                      <label className='control-label'>Your Gender</label>
+                      <label className='control-label' htmlFor="gender">Your Gender</label>
                       <select
                         name='gender'
                         className='selectpicker form-control'
@@ -201,7 +201,7 @@ const PersonalInfo = ({ refetch }) => {
                   </div>
                   <div className='col col-lg-6 col-md-4 col-sm-12 col-12'>
                     <div className='form-group date-time-picker label-floating'>
-                      <label className='control-label'>Your Birthday</label>
+                      <label className='control-label' htmlFor="birthday">Your Birthday</label>
                       <DatePicker
                         dateFormat='MM/dd/yyyy'
                         selected={
@@ -215,7 +215,7 @@ const PersonalInfo = ({ refetch }) => {
                   </div>
                   <div className='col col-lg-6 col-md-4 col-sm-12 col-12'>
                     <div className='form-group label-floating is-select'>
-                      <label className='control-label'>Your Location</label>
+                      <label className='control-label' htmlFor="location">Your Location</label>
                       <textarea
                         className='form-control'
                         onChange={handleChange}
@@ -226,7 +226,7 @@ const PersonalInfo = ({ refetch }) => {
                   </div>
                   <div className='col col-lg-6 col-md-6 col-sm-12 col-12'>
                     <div className='form-group label-floating'>
-                      <label className='control-label'>
+                      <label className='control-label' htmlFor="description">
                         Write a little description about you
                       </label>
                       <textarea
@@ -237,36 +237,6 @@ const PersonalInfo = ({ refetch }) => {
                       ></textarea>
                     </div>
                   </div>
-                  {/* <div className='col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12'>
-                    <div className='form-group with-icon label-floating'>
-                      <label className='control-label'>
-                        Your Facebook Account
-                      </label>
-                      <input
-                        className='form-control'
-                        type='text'
-                        value='www.facebook.com/james-spiegel95321'
-                      />
-                      <i
-                        className='fab fa-facebook-f c-facebook'
-                        aria-hidden='true'
-                      ></i>
-                    </div>
-                    <div className='form-group with-icon label-floating'>
-                      <label className='control-label'>
-                        Your Twitter Account
-                      </label>
-                      <input
-                        className='form-control'
-                        type='text'
-                        value='www.twitter.com/james_spiegelOK'
-                      />
-                      <i
-                        className='fab fa-twitter c-twitter'
-                        aria-hidden='true'
-                      ></i>
-                    </div>
-                  </div> */}
                   <div className='col col-lg-6 col-md-6 col-sm-12 col-12'>
                     <button
                       className='btn btn-secondary btn-lg full-width'
