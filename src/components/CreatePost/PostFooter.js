@@ -1,12 +1,23 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
+
 import { CameraIcon } from '../icons/index';
 import OverlayTriggers from '../Common/ToolTip';
 
-const Footer = ({ toggle, imagePreview }) => (
+const Footer = ({ toggle }) => (
   <div className='add-options-message'>
-    <OverlayTriggers toolTipText='ADD PHOTO'>
-      <div className='options-message' onClick={() => toggle()}>
+    <OverlayTriggers
+      toolTipText='ADD PHOTO'
+      isPostToolTip={false}
+      placement='top'
+    >
+      <div
+        className='options-message'
+        onClick={() => toggle()}
+        onKeyDown={() => toggle()}
+        tabIndex='0'
+        role='button'
+      >
         <CameraIcon className='olymp-camera-icon' />
       </div>
     </OverlayTriggers>
@@ -15,4 +26,9 @@ const Footer = ({ toggle, imagePreview }) => (
     </button>
   </div>
 );
+
+Footer.propTypes = {
+  toggle: PropTypes.func.isRequired,
+};
+
 export default Footer;

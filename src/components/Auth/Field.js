@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
 const Field = props => {
   const {
     fieldContainerClass,
@@ -13,7 +14,6 @@ const Field = props => {
   const [isFocused, setIsFocused] = React.useState(false);
 
   let handleOnFocus = event => {
-    // if (!value)
     setIsFocused(true);
   };
 
@@ -71,6 +71,16 @@ const Field = props => {
       {error && <span className='material-input-error'>{error}</span>}
     </div>
   );
+};
+
+Field.propTypes = {
+  fieldContainerClass: PropTypes.string.isRequired,
+  placeholder: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
+  handleChange: PropTypes.func.isRequired,
+  value: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  error: PropTypes.string.isRequired,
 };
 
 export default Field;
