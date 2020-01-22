@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import moment from 'moment';
 import { generatePath, Link } from 'react-router-dom';
 import { withApollo } from 'react-apollo';
@@ -27,6 +28,7 @@ function CommentsHeader(props) {
     isAuth,
     post,
   } = props;
+
   const [{ auth }] = useStore();
   const isSelma = !auth.user ? null : auth.user.role === 'selma';
   const isOwner = !auth.user ? null : auth.user.id === author.id;
@@ -68,7 +70,7 @@ function CommentsHeader(props) {
         });
       }
     } catch (err) {
-      console.log(err);
+      throw err;
     }
   };
 
@@ -137,5 +139,15 @@ function CommentsHeader(props) {
     </>
   );
 }
+
+CommentsHeader.propTypes = {
+  author: PropTypes.object.isRequired,
+  createdAt: PropTypes.string.isRequired,
+  client: PropTypes.object.isRequired,
+  imagePublicId: PropTypes.any,
+  commentId: PropTypes.string.isRequired,
+  isAuth: PropTypes.bool.isRequired,
+  post: PropTypes.object.isRequired,
+};
 
 export default withApollo(CommentsHeader);

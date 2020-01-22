@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+
 import { Modal } from 'react-bootstrap';
 import { Mutation } from 'react-apollo';
-import { EDIT_POST, GET_FOLLOWED_POSTS, DELETE_IMAGE } from 'graphql/post';
+import { EDIT_POST, GET_FOLLOWED_POSTS } from 'graphql/post';
 
 import { MAX_POST_IMAGE_SIZE } from 'constants/ImageSize';
 import Avatar from '../Avatar';
@@ -9,6 +11,7 @@ import { BeatLoader } from 'react-spinners';
 
 const EditPost = props => {
   let { postId, auth, content, image, onHide, imagePublicId } = props;
+
   const [isError, setError] = useState(true);
   const [values, setValues] = useState({
     postContent: content,
@@ -111,7 +114,7 @@ const EditPost = props => {
                           color={'#123abc'}
                           loading={loading}
                         />
-                        <label className='control-label'>
+                        <label className='control-label' htmlFor='share'>
                           Share what you are thinking here...
                         </label>
                         <textarea
@@ -193,4 +196,14 @@ const EditPost = props => {
     </Mutation>
   );
 };
+
+EditPost.propTypes = {
+  postId: PropTypes.string.isRequired,
+  auth: PropTypes.object.isRequired,
+  content: PropTypes.string.isRequired,
+  image: PropTypes.any,
+  onHide: PropTypes.func.isRequired,
+  imagePublicId: PropTypes.any,
+};
+
 export default EditPost;

@@ -64,7 +64,7 @@ const TopRatedUsers = ({ client }) => {
                         {`${user.firstName} ${user.lastName}`}
                       </Link>
                     </div>
-                    <OverlayTriggers toolTipText='FOLLOW' placement='top'>
+                    <OverlayTriggers toolTipText='FOLLOW' placement='top' isPostToolTip={false}>
                       <span className='notification-icon'>
                         <div
                           className='accept-request'
