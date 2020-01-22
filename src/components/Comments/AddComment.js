@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { generatePath } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 import { CREATE_COMMENT } from '../../graphql/comment';
 import { GET_POSTS, GET_FOLLOWED_POSTS } from '../../graphql/post';
@@ -132,5 +133,13 @@ function AddComment({ authorId, author, post, onCancel, userId }) {
     </Mutation>
   );
 }
+
+AddComment.propTypes = {
+  authorId: PropTypes.string.isRequired,
+  author: PropTypes.object.isRequired,
+  post: PropTypes.object.isRequired,
+  onCancel: PropTypes.func.isRequired,
+  userId: PropTypes.string.isRequired,
+};
 
 export default withApollo(AddComment);

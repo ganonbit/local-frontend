@@ -73,7 +73,7 @@ const Like = ({ postId, user, likes, client, post }) => {
     >
       {mutate => {
         return (
-          <OverlayTriggers toolTipText='LIKE' placement='left'>
+          <OverlayTriggers toolTipText='LIKE' placement='left' isPostToolTip={false}>
             <a
               href
               className={

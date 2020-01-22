@@ -1,5 +1,6 @@
 import React from 'react';
 import theme from 'theme';
+import PropTypes from 'prop-types';
 
 /**
  * Close (X) icon
@@ -22,4 +23,9 @@ export const CameraIcon = ({ width, color }) => {
       <path d='M256,189.5c-47.1,0-85.5,38.4-85.5,85.5s38.4,85.5,85.5,85.5s85.5-38.4,85.5-85.5S303.1,189.5,256,189.5z M256,344.5   c-38.4,0-69.5-31.1-69.5-69.5s31.1-69.5,69.5-69.5s69.5,31.1,69.5,69.5S294.4,344.5,256,344.5z' />
     </svg>
   );
+};
+
+CameraIcon.propTypes = {
+  width: PropTypes.any,
+  color: PropTypes.any
 };
