@@ -17,22 +17,20 @@ import { useStore } from 'store';
 /**
  * Component for rendering Like button
  */
-const Like = ({ postId, user, likes, client, post }) => {
+const Like = ({ postId, user, likes, post }) => {
   const notification = useNotifications();
   const [loading, setLoading] = useState(true);
-
   const [{ auth }] = useStore();
-
-  let isAuthPost = post && auth.user.id === post.author.id;
-
   const hasLiked = likes.find(
     l => l.user === auth.user.id && l.post === postId
   );
+  let isAuthUser = auth.user.id === user.id;
+  let isAuthPost = post && auth.user.id === post.author.id;
 
   const handleButtonClick = async mutate => {
     setLoading(true);
     const { data } = await mutate();
-    if (auth.user.id === user.id) return setLoading(false);
+    if (isAuthUser) return setLoading(false);
     !isAuthPost &&
       !hasLiked &&
       (await notification.toggle({
