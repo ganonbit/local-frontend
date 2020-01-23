@@ -41,7 +41,7 @@ const PasswordSetting = () => {
             <div className='ui-block-content'>
               <form onSubmit={e => onSubmitHandler(e, resetPassword)}>
                 <div className='row'>
-                  <div className='col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12'>
+                  <div className='col-12'>
                     <Field
                       placeholder='Confirm Current Password'
                       type='password'
@@ -90,7 +90,7 @@ const PasswordSetting = () => {
                     </div>
                   </div>
 
-                  <div className='col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12'>
+                  <div className='col-12'>
                     <button className='btn btn-primary btn-lg full-width'>
                       Change Password Now!
                     </button>
