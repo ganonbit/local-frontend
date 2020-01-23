@@ -23262,3 +23262,12 @@ select{
   border-bottom: 1px solid #e6ecf5;
   border-top: 1px solid #e6ecf5;
 }
+
+.btn.btn-control.btn-more.load-more-btn {
+  width: 50px;
+  height: 50px;
+  margin: 0px auto 20px;
+}
+.btn.btn-control.btn-more.load-more-btn svg {
+  height: 25px;
+}
