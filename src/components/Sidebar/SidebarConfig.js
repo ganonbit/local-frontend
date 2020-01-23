@@ -16,6 +16,7 @@ const Sidebar = {
   overlay: {
     zIndex: 1,
     opacity: 0,
+    position: 'unset',
     visibility: 'hidden',
     transition: 'opacity .3s ease-out, visibility .3s ease-out',
     backgroundColor: 'rgba(0,0,0,.3)',
