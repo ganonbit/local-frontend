@@ -24,7 +24,7 @@ const Badges = () => {
 
       <div className='container'>
         <div className='row'>
-          <div className='col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12'>
+          <div className='col-12'>
             <div className='ui-block'>
               <div className='birthday-item inline-items badges'>
                 <div className='author-thumb'>

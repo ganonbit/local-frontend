@@ -29,7 +29,7 @@ const Reward = ({ user }) => {
 
       <div className='container'>
         <div className='row'>
-          <div className='col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12'>
+          <div className='col-12'>
             <div className='point-wrap'>
               <ul>
                 <li>your points</li>

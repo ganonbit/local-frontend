@@ -34,7 +34,7 @@ const AppLayout = ({ refetch, history }) => {
       <TopHeader refetch={refetch} />
       {history.location.pathname === Routes.SETTINGS || Routes.BADGES ? (
         <div className='header-spacer header-spacer-small'></div>
-      ) : history.location.pathname === '/rewards' ? (
+      ) : history.location.pathname === Routes.REWARDS ? (
         <div className='remove-header-spacer'></div>
       ) : (
         <div className='header-spacer'></div>
