@@ -1,6 +1,6 @@
 import React from 'react';
 import ListItem from './ListItem';
-import Default, { Desktop, Mobile } from '../Wrappers/Queries';
+import { Mobile } from '../Wrappers/Queries';
 import {
   MobileAuthorPage,
   MobileAuthorSettings,
@@ -68,7 +68,6 @@ const SidebarMainContent = ({ onSetSidebarOpen, isAuth }) => {
               onSetSidebarOpen={(open, activeSideClass) =>
                 onSetSidebarOpen(open, activeSideClass)
               }
-              sideBarOpenModel={val.title === 'Collapse Menu'}
               image={val.image}
               path={val.path}
             />
