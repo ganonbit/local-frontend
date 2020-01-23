@@ -49,7 +49,7 @@ const SidebarContent = ({ onSetSidebarOpen, isAuth, location }) => {
             <ul className='left-menu'>
               <li>
                 <div className='js-sidebar-open'>
-                  <OverlayTriggers toolTipText='OPEN MENU' placement='right' isPostToolTip={false}>
+                  <OverlayTriggers toolTipText='OPEN MENU' placement='right'>
                     <img
                       src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/menu-img_powmte.png'
                       alt='OPEN MENU'
@@ -62,7 +62,7 @@ const SidebarContent = ({ onSetSidebarOpen, isAuth, location }) => {
               </li>
               <li>
                 <Link to={generatePath(Routes.HOME)}>
-                  <OverlayTriggers toolTipText='HOME PAGE' placement='right' isPostToolTip={false}>
+                  <OverlayTriggers toolTipText='HOME PAGE' placement='right'>
                     <img
                       src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avocado-icon_rwvve0.png'
                       alt=''
@@ -72,7 +72,7 @@ const SidebarContent = ({ onSetSidebarOpen, isAuth, location }) => {
               </li>
               <li>
                 <Link to={generatePath(Routes.DISCOVER)}>
-                  <OverlayTriggers toolTipText='DISCOVER' placement='right' isPostToolTip={false}>
+                  <OverlayTriggers toolTipText='DISCOVER' placement='right'>
                     <img
                       src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/search-icon_vpzkxv.png'
                       alt=''
@@ -92,7 +92,7 @@ const SidebarContent = ({ onSetSidebarOpen, isAuth, location }) => {
             </li> */}
               <li>
                 <Link to={generatePath(Routes.REWARDS)}>
-                  <OverlayTriggers toolTipText='REWARDS' placement='right' isPostToolTip={false}>
+                  <OverlayTriggers toolTipText='REWARDS' placement='right'>
                     <img
                       src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/star-icon_qbwpz1.png'
                       alt=''
