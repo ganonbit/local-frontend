@@ -124,7 +124,7 @@ const FeedbackForm = ({ isAuth }) => {
         <div className='container'>
           <div className='row'>
             <div className='col col-xl-10 m-auto col-lg-12 col-md-12 col-sm-12 col-12'>
-              <div className='detail-content ui-block feedback-form'>
+              <div className='detail-content bg-white p-4 p-sm-5 ui-block feedback-form'>
                 <Form
                   noValidate
                   validated={validated}

@@ -19,7 +19,7 @@ const CommunityGuideline = () => (
       <div className='container'>
         <div className='row'>
           <div className='col col-xl-10 m-auto col-lg-12 col-md-12 col-sm-12 col-12'>
-            <div className='detail-content'>
+            <div className='detail-content bg-white p-4 p-sm-5'>
               <h4>COMMUNITY GUIDELINE</h4>
               <p>
                 We may allow service providers and other third parties to use
