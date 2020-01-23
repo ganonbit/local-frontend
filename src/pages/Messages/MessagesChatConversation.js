@@ -82,7 +82,7 @@ const MessagesChatConversation = ({
                 return (
                   isAuthUserReceiver && (
                     <li
-                      className='px-3 py-2'
+                      className='px-3 py-2 border-bottom'
                       userMessage={isAuthUserReceiver}
                       key={message.id}
                     >

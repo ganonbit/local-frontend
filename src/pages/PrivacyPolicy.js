@@ -25,7 +25,7 @@ const PrivacyPolicy = ({ isAuth }) => (
       <div className='container'>
         <div className='row'>
           <div className='col col-xl-10 m-auto col-lg-12 col-md-12 col-sm-12 col-12'>
-            <div className='detail-content'>
+            <div className='detail-content bg-white p-4 p-sm-5'>
               <p>
                 Your privacy is important to us, so we’ve developed a Privacy
                 Policy that covers how we collect, use, disclose, transfer, and
