@@ -16,7 +16,7 @@ const Notification = ({
     <>
       {notification.like && (
         <li key={notification.id}>
-          <div className='d-flex'>
+          <div className='d-flex align-items-center'>
             <div className='author-thumb mx-2'>
               <Avatar image={notification.author.image} />
             </div>
@@ -45,7 +45,7 @@ const Notification = ({
 
       {notification.comment && (
         <li key={notification.id}>
-          <div className='d-flex'>
+          <div className='d-flex align-items-center'>
             <div className='author-thumb mx-2'>
               <Avatar image={notification.author.image} />
             </div>
@@ -74,7 +74,7 @@ const Notification = ({
 
       {notification.follow && (
         <li key={notification.id}>
-          <div className='d-flex'>
+          <div className='d-flex align-items-center'>
             <div className='author-thumb mx-2'>
               <Avatar image={notification.author.image} />
             </div>

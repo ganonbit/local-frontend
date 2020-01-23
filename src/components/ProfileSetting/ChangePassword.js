@@ -13,7 +13,6 @@ const PasswordSetting = () => {
     token: localStorage.getItem('token'),
   });
   const { password, newPassword, confirmPassword, token } = values;
-
   const handleChange = e => {
     const { name, value } = e.target;
     setValues({ ...values, [name]: value });
