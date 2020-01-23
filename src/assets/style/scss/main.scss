@@ -22925,6 +22925,10 @@ div#accordion .card {
   color: var(--theme-color-white);
 }
 
+.detail-content {
+  word-wrap: break-word;
+}
+
 .detail-content h4 {
   font-size: 25px;
   margin: 20px 0;
