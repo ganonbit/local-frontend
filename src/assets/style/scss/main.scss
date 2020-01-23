@@ -1674,13 +1674,13 @@ p.comments-section {
 
 @media (max-width: 1800px) {
   .point-wrap::before {
-    right: -130px !important;
-    width: 670px !important;
+    right: -130px;
+    width: 670px;
   }
 }
 @media (max-width: 1600px) {
   .point-wrap::before {
-    right: -30px !important;
+    right: -30px;
   }
 }
 
@@ -7738,8 +7738,8 @@ display: inline-flex !important;
     padding: 25px 10px;
   }
   .point-wrap::before {
-    right: -25px !important;
-    width: 520px !important;
+    right: -25px;
+    width: 520px;
   }
 }
 
@@ -7748,17 +7748,17 @@ display: inline-flex !important;
     padding: 15px;
   }
   .point-wrap::before {
-    right: -42px !important;
-    width: 446px !important;
+    right: -42px;
+    width: 446px;
   }
   .point-wrap ul li {
-    font-size: 25px !important;
-    padding: 15px 25px !important;
+    font-size: 25px;
+    padding: 15px 25px;
   }
   button.btn-redeem {
-    font-size: 25px !important;
-    padding: 15px 25px !important;
-    margin-left: 15px !important;
+    font-size: 25px;
+    padding: 15px 25px;
+    margin-left: 15px;
   }
 }
 
@@ -23143,18 +23143,14 @@ div#accordion .card {
 .chat-field .mCustomScrollbar {
     height: calc(100vh - 261px);
   }
-  .point-wrap::before {
-    right: -75px !important;
-    width: 354px !important;
-}
   .point-wrap ul li {
-    font-size: 20px !important;
-    padding: 10px 20px !important;
+    font-size: 20px;
+    padding: 10px 20px;
   }
   button.btn-redeem {
-    font-size: 20px !important;
-    padding: 10px 20px !important;
-    margin-left: 10px !important;
+    font-size: 20px;
+    padding: 10px 20px;
+    margin-left: 10px;
   }
 }
 
@@ -23189,23 +23185,26 @@ div#accordion .card {
 }
 @media (max-width: 799px) {
   .reward-header {
-    padding: 70px 0 !important;
+    padding: 70px 0;
   }
   .rewards-content h1 {
-    font-size: 35px !important;
-    margin-bottom: 20px !important;
+    font-size: 35px;
+    margin-bottom: 20px;
   }
   .point-wrap ul {
-    display: flex !important;
-    justify-content: center;
-    align-items: center;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+            align-items: center;
     flex-wrap: wrap;
   }
   .point-wrap::before {
-    right: 0 !important;
-    width: 90% !important;
-    margin: 0 auto !important;
-    left: 0 !important;
+    right: 0;
+    width: 90%;
+    margin: 0 auto;
+    left: 0;
   }
   .point-wrap::before {
     display: block;
