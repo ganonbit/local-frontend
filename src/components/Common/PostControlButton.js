@@ -2,13 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Like from 'components/Like';
+import Default from '../Wrappers/Queries';
 import OverlayTriggers from '../Common/ToolTip';
 
 function PostControlButton({ author, postId, likes, toggle, post, isAuth }) {
   return (
     <div className='control-block-button post-control-button'>
       {!isAuth ? (
-        <OverlayTriggers toolTipText='LIKE' placement='left' isPostToolTip={false}>
           <a
             href='#1'
             onClick={e => {
@@ -22,20 +22,17 @@ function PostControlButton({ author, postId, likes, toggle, post, isAuth }) {
             />
             <div className='ripple-container'></div>
           </a>
-        </OverlayTriggers>
       ) : (
         <Like user={author} postId={postId} likes={likes} post={post} />
       )}
-      <OverlayTriggers toolTipText='COMMENT' placement='left' isPostToolTip={false}>
         <a href className='btn btn-control comments' onClick={toggle}>
           <img
             src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/comments-icon_ffpa0l.png'
             alt=''
           />
         </a>
-      </OverlayTriggers>
 
-      <OverlayTriggers toolTipText='SHARE' placement='left' isPostToolTip={false}>
+      <OverlayTriggers toolTipText='SHARE' placement='left'>
         <a href className='btn btn-control share-link'>
           <img
             src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/share-icon_rkyjac.png'
