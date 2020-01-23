@@ -292,6 +292,7 @@
 .control-icon .notification-list .notification-friend {
   padding: 0;
   font-size: 14px;
+  margin-right: 5px;
 }
 
 .control-icon .notification-list .notification-link {
@@ -1666,6 +1667,21 @@ p.comments-section {
 
 .has-standard-header .fixed-sidebar-right {
   bottom: 0;
+}
+.dropdown .dropdown-item .dropdown-menu a.dropdown-item {
+  white-space: inherit;
+}
+
+@media (max-width: 1800px) {
+  .point-wrap::before {
+    right: -130px !important;
+    width: 670px !important;
+  }
+}
+@media (max-width: 1600px) {
+  .point-wrap::before {
+    right: -30px !important;
+  }
 }
 
 @media (max-width: 1350px) {
@@ -7426,7 +7442,9 @@ color: #888da8 !important;
 display: -webkit-inline-box !important;
 display: inline-flex !important;
 }
-
+.notification-text p {
+  margin-bottom:0;
+}
 .chat-message .notification-event {
   max-width: 75%;
   font-size: 12px;
@@ -7719,11 +7737,28 @@ display: inline-flex !important;
   .birthday-item {
     padding: 25px 10px;
   }
+  .point-wrap::before {
+    right: -25px !important;
+    width: 520px !important;
+  }
 }
 
 @media (max-width: 1200px) {
   .birthday-item {
     padding: 15px;
+  }
+  .point-wrap::before {
+    right: -42px !important;
+    width: 446px !important;
+  }
+  .point-wrap ul li {
+    font-size: 25px !important;
+    padding: 15px 25px !important;
+  }
+  button.btn-redeem {
+    font-size: 25px !important;
+    padding: 15px 25px !important;
+    margin-left: 15px !important;
   }
 }
 
@@ -9377,7 +9412,7 @@ ol ol li {
 }
 
 .post-additional-info {
-  padding: 0 10px;
+  padding: 0;
   border-top: 1px solid #e6ecf5;
   display: -webkit-box;
   display: flex;
@@ -13512,6 +13547,12 @@ button.cancel-btn:hover {
 
   .accordion-faqs .collapse {
     margin-bottom: 20px;
+  }
+  .point-wrap ul li {
+    font-size: 18px !important;
+  }
+  button.btn-redeem {
+    font-size: 18px !important;
   }
 }
 
@@ -22861,7 +22902,7 @@ div#accordion .card {
 
 .chat-field .mCustomScrollbar {
   overflow-y: auto;
-  height: calc(100vh - 211px);
+  height: calc(100vh - 216px);
 
 }
 .chat-field .mCustomScrollbar::-moz-scrollbar {
@@ -23049,25 +23090,8 @@ div#accordion .card {
     display: block;
   }
 
-  .point-wrap ul {
-    display: grid;
-  }
-
   button.btn-redeem {
     margin-left: 0;
-  }
-
-  .point-wrap::before {
-    content: '';
-    background: url(https://res.cloudinary.com/weare270b/image/upload/v1576188973/static/reward-badge_kb5lmj.png) center center no-repeat;
-    background-size: contain;
-    position: relative;
-    width: 100%;
-    z-index: 1;
-    height: 250px;
-    display: -webkit-inline-box;
-    display: inline-flex;
-    left: 0;
   }
 
   .header .page-title {
@@ -23115,6 +23139,19 @@ div#accordion .card {
 .chat-field .mCustomScrollbar {
     height: calc(100vh - 261px);
   }
+  .point-wrap::before {
+    right: -75px !important;
+    width: 354px !important;
+}
+  .point-wrap ul li {
+    font-size: 20px !important;
+    padding: 10px 20px !important;
+  }
+  button.btn-redeem {
+    font-size: 20px !important;
+    padding: 10px 20px !important;
+    margin-left: 10px !important;
+  }
 }
 
 @media (max-width: 991px) {
@@ -23146,7 +23183,36 @@ div#accordion .card {
     width: 100%;
   }
 }
-
+@media (max-width: 799px) {
+  .reward-header {
+    padding: 70px 0 !important;
+  }
+  .rewards-content h1 {
+    font-size: 35px !important;
+    margin-bottom: 20px !important;
+  }
+  .point-wrap ul {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .point-wrap::before {
+    right: 0 !important;
+    width: 90% !important;
+    margin: 0 auto !important;
+    left: 0 !important;
+  }
+  .point-wrap::before {
+    display: block;
+    position: initial;
+  }
+  .point-wrap {
+    margin-top: -40px;
+    z-index: 11;
+    padding-top: 0;
+  }
+}
 @media (max-width: 640px) {
   .notification-list .selectize-dropdown-content > *,
   .notification-list li {
@@ -23160,6 +23226,9 @@ div#accordion .card {
 
   .welcome-video-banner h6 {
     font-size: 16px;
+  }
+  .point-system h3 {
+    font-size: 35px;
   }
 }
 
@@ -23213,6 +23282,14 @@ div#accordion .card {
     font-size: 12px;
     line-height: 18px;
   }
+  .point-wrap ul li {
+    width: 100%;
+    text-align: center;
+  }
+  button.btn-redeem {
+    margin: 10px 0 0 !important;
+    width: 100%;
+  }
 }
 
 @media (max-width: 369px) {
@@ -23223,6 +23300,9 @@ div#accordion .card {
 
   .cat-list__item a {
     font-size: 12px;
+  }
+  .point-wrap::before {
+    height: 150px;
   }
 }
 
@@ -23262,7 +23342,6 @@ select{
   border-bottom: 1px solid #e6ecf5;
   border-top: 1px solid #e6ecf5;
 }
-
 .btn.btn-control.btn-more.load-more-btn {
   width: 50px;
   height: 50px;
