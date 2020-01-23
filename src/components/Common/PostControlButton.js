@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Like from 'components/Like';
-import Default from '../Wrappers/Queries';
 import OverlayTriggers from '../Common/ToolTip';
 
 function PostControlButton({ author, postId, likes, toggle, post, isAuth }) {
