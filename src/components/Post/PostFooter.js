@@ -45,14 +45,16 @@ const PostFooter = props => {
           />
         )}
         {isAuth === false && (
-          <FontAwesomeIcon
-            icon={faHeart}
-            size='2x'
-            color={'grey'}
-            onClick={e => {
-              e.preventDefault();
-            }}
-          />
+          <span className='btn btn-control'>
+            <FontAwesomeIcon
+              icon={faHeart}
+              size='2x'
+              color={'grey'}
+              onClick={e => {
+                e.preventDefault();
+              }}
+            />
+          </span>
         )}
 
         <span>{likes.length}</span>
@@ -71,12 +73,12 @@ const PostFooter = props => {
             }}
             className='post-add-icon inline-items'
           >
-            <span>{comments && comments.length}</span>
             <FontAwesomeIcon
               icon={faComment}
               style={{ width: '1.6rem' }}
               onClick={toggle}
             />
+            <span>{comments && comments.length}</span>
           </a>
         </OverlayTriggers>
       </div>

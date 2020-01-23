@@ -7,8 +7,7 @@ import SinglePost from './SinglePost';
 import { Query } from 'react-apollo';
 
 const Post = ({ queryOptions, isAuth }) => {
-  let postData;
-  let postsData;
+  let postData, postsData;
   return (
     <Query
       query={queryOptions.query}
