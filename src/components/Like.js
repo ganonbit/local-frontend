@@ -3,7 +3,6 @@ import { Mutation, withApollo } from 'react-apollo';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
-import OverlayTriggers from './Common/ToolTip';
 
 import { GET_FOLLOWED_POSTS, GET_POSTS } from 'graphql/post';
 import { GET_AUTH_USER } from 'graphql/user';
@@ -71,7 +70,6 @@ const Like = ({ postId, user, likes, post }) => {
     >
       {mutate => {
         return (
-          <OverlayTriggers toolTipText='LIKE' placement='left' isPostToolTip={false}>
             <a
               href
               className={
@@ -89,7 +87,6 @@ const Like = ({ postId, user, likes, post }) => {
               />
               <div className='ripple-container'></div>
             </a>
-          </OverlayTriggers>
         );
       }}
     </Mutation>
