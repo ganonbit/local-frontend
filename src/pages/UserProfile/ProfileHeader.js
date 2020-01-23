@@ -36,8 +36,7 @@ const ProfileHeader = ({ user, refetch, auth, username, isOwner, isSelma }) => {
     setCoverIsShowing(true);
   };
   return (
-    <div className='row'>
-      <div className='col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12'>
+      <div className='col-12'>
         <div className='ui-block'>
           <div className='top-header'>
             <div className='top-header-thumb'>
@@ -163,7 +162,6 @@ const ProfileHeader = ({ user, refetch, auth, username, isOwner, isSelma }) => {
           </div>
         </div>
       </div>
-    </div>
   );
 };
 export default ProfileHeader;
