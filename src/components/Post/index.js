@@ -1,13 +1,13 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-import InfiniteScroll from 'components/InfiniteScroll';
+import LoadMorePosts from 'components/Post/LoadMorePosts';
 import SinglePost from './SinglePost';
 
 import { Query } from 'react-apollo';
 
 const Post = ({ queryOptions, isAuth }) => {
-  let postData;
-  let postsData;
+  let postData, postsData;
   return (
     <Query
       query={queryOptions.query}
@@ -41,48 +41,47 @@ const Post = ({ queryOptions, isAuth }) => {
         }
         if (postsData && isAuth) {
           return (
-            <InfiniteScroll
+            <LoadMorePosts
               data={postsData.posts}
-              dataKey={`${queryOptions.callback}.posts`}
+              isAuth={isAuth}
               count={parseInt(postsData.count)}
-              variables={queryOptions.variables}
-              fetchMore={fetchMore}
-            >
-              {data => {
-                const showNextLoading =
-                  loading &&
-                  networkStatus === 3 &&
-                  parseInt(postsData.count) !== data.length;
-
-                return (
-                  <>
-                    {data.map(post => {
-                      return <SinglePost post={post} isAuth={isAuth} />;
-                    })}
-                    {showNextLoading && (
-                      <div className='d-flex justify-content-center my-2'>
-                        <img
-                          className='flex'
-                          src='https://res.cloudinary.com/weare270b/image/upload/v1579191490/static/loader_eyctc7.gif'
-                          alt='loading .....'
-                        />
-                      </div>
-                    )}
-                  </>
-                );
+              loading={loading}
+              networkStatus={networkStatus}
+              onLoadMore={() => {
+                fetchMore({
+                  variables: queryOptions.variables,
+                  updateQuery: (prev, { fetchMoreResult }) => {
+                    if (!fetchMoreResult) return prev;
+                    return {
+                      ...fetchMoreResult,
+                      [queryOptions.callback]: {
+                        ...fetchMoreResult[queryOptions.callback],
+                        posts: [
+                          ...prev[queryOptions.callback].posts,
+                          ...fetchMoreResult[queryOptions.callback].posts,
+                        ],
+                      },
+                    };
+                  },
+                });
               }}
-            </InfiniteScroll>
+            />
           );
         } else if (postData) {
           return <SinglePost post={postData} isAuth={isAuth} />;
         } else if (postsData && !isAuth) {
-          return postsData.posts.map(post => (
-            <SinglePost post={post} isAuth={isAuth} />
+          return postsData.posts.map((post, index) => (
+            <SinglePost key={index} post={post} isAuth={isAuth} />
           ));
         }
       }}
     </Query>
   );
+};
+
+Post.propTypes = {
+  queryOptions: PropTypes.object.isRequired,
+  isAuth: PropTypes.bool.isRequired,
 };
 
 export default Post;

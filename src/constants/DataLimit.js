@@ -1,4 +1,4 @@
-export const HOME_PAGE_POSTS_LIMIT = 20;
+export const HOME_PAGE_POSTS_LIMIT = 15;
 
 export const DISCOVER_PAGE_POSTS_LIMIT = 15;
 

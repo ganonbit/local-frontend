@@ -9,13 +9,16 @@ import {
 } from 'components/Widget';
 
 import { GET_FOLLOWED_POSTS } from 'graphql/post';
+
+import { HOME_PAGE_POSTS_LIMIT } from 'constants/DataLimit';
+
 import { useStore } from 'store';
 
 const Home = () => {
   const [{ auth }] = useStore();
   const queryOptions = {
     query: GET_FOLLOWED_POSTS,
-    variables: { userId: auth.user.id, skip: 0, limit: 15 },
+    variables: { userId: auth.user.id, skip: 0, limit: HOME_PAGE_POSTS_LIMIT },
     callback: 'getFollowedPosts',
   };
   return (
