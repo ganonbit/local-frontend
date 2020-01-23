@@ -1,7 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faComment, faHeart } from '@fortawesome/free-solid-svg-icons';
-import OverlayTriggers from '../Common/ToolTip';
 
 import Like from 'components/Like';
 
@@ -61,11 +60,6 @@ const PostFooter = props => {
       </span>
 
       <div className='comments-shared'>
-        <OverlayTriggers
-          isPostToolTip={true}
-          toolTipText={commentlist}
-          placement='auto'
-        >
           <a
             href='#1'
             onClick={e => {
@@ -80,7 +74,6 @@ const PostFooter = props => {
             />
             <span>{comments && comments.length}</span>
           </a>
-        </OverlayTriggers>
       </div>
     </div>
   );

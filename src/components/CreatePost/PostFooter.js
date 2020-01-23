@@ -8,8 +8,7 @@ const Footer = ({ toggle }) => (
   <div className='add-options-message'>
     <OverlayTriggers
       toolTipText='ADD PHOTO'
-      isPostToolTip={false}
-      placement='top'
+      placement='bottom'
     >
       <div
         className='options-message'
