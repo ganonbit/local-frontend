@@ -70,23 +70,21 @@ const Like = ({ postId, user, likes, post }) => {
     >
       {mutate => {
         return (
-            <a
-              href
-              className={
-                hasLiked
-                  ? 'btn btn-control likes-liked'
-                  : 'btn btn-control likes'
-              }
-            >
-              <FontAwesomeIcon
-                disabled={loading}
-                icon={faHeart}
-                size='2x'
-                color={hasLiked ? 'red' : 'grey'}
-                onClick={() => handleButtonClick(mutate)}
-              />
-              <div className='ripple-container'></div>
-            </a>
+          <a
+            href
+            className={
+              hasLiked ? 'btn btn-control likes-liked' : 'btn btn-control likes'
+            }
+          >
+            <FontAwesomeIcon
+              disabled={loading}
+              icon={faHeart}
+              size='2x'
+              color={hasLiked ? 'red' : 'grey'}
+              onClick={() => handleButtonClick(mutate)}
+            />
+            <div className='ripple-container'></div>
+          </a>
         );
       }}
     </Mutation>

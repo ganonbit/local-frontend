@@ -17418,6 +17418,18 @@ select.selectpicker {
   color: #fff;
 }
 
+button.following-bt {
+  background-color: #dad3d3 !important;
+  border-color: #dad3d3 !important;
+  box-shadow: 0 0 0 0.2rem #cbc0c0bd;
+}
+
+button.following-bt:active, button.following-bt:focus {
+  background-color: #dad3d3 !important;
+  border-color: #dad3d3 !important;
+  box-shadow: 0 0 0 0.2rem #cbc0c0bd;
+}
+
 @media (min-width: 564px) {
   .daterangepicker {
     width: auto;

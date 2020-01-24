@@ -156,9 +156,12 @@ export const GET_AUTH_USER = gql`
       following {
         id
         user
+        follower
       }
       followers {
         id
+        user
+        follower
       }
     }
   }
