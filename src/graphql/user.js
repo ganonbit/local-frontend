@@ -55,9 +55,13 @@ export const GET_USER = gql`
       }
       following {
         id
+        user
+        follower
       }
       followers {
         id
+        user
+        follower
       }
       notifications {
         id
@@ -67,6 +71,7 @@ export const GET_USER = gql`
         }
         follow {
           id
+          user
         }
         like {
           id

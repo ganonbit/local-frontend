@@ -31,7 +31,10 @@ const ProfileHeader = ({ user, refetch, auth, isOwner, isSelma }) => {
   let { title, image, isCover, coverImage } = ImagesContent;
 
   const notification = useNotifications();
-  const hasfollow = auth.user.followers.find(l => l.follower === user.id);
+  const hasFollow = user.followers.find(l => l.followers === auth.user.id);
+  console.log(hasFollow);
+  console.log(user.followers);
+  console.log(auth.user.followers);
 
   useEffect(() => {
     setActiveFollow(true);
@@ -42,7 +45,7 @@ const ProfileHeader = ({ user, refetch, auth, isOwner, isSelma }) => {
     const { data } = await mutate();
     await notification.toggle({
       user,
-      hasDone: hasfollow,
+      hasDone: hasFollow,
       notificationType: NotificationType.FOLLOW,
       notificationTypeId: data.createFollow ? data.createFollow.id : null,
     });
@@ -66,15 +69,15 @@ const ProfileHeader = ({ user, refetch, auth, isOwner, isSelma }) => {
     });
     setCoverIsShowing(true);
   };
-  const operation = hasfollow ? 'delete' : 'create';
+  const operation = hasFollow ? 'delete' : 'create';
   const options = {
     create: {
       mutation: CREATE_FOLLOW,
-      variables: { userId: auth.user.id, followerId: user.id },
+      variables: { userId: user.id, followerId: auth.user.id },
     },
     delete: {
       mutation: DELETE_FOLLOW,
-      variables: { id: hasfollow ? hasfollow.id : null },
+      variables: { id: hasFollow ? hasFollow.id : null },
     },
   };
 
@@ -129,13 +132,13 @@ const ProfileHeader = ({ user, refetch, auth, isOwner, isSelma }) => {
                     <div className='author-location'>{user.username}</div>
                     {!isOwner && (
                       <button
-                        className={`${hasfollow &&
-                          'following-bt'} btn btn-primary my-2 px-4`}
+                        className={`${hasFollow ?
+                          'following-bt ' : ''}btn btn-primary`}
                         onClick={
                           activeFollow ? () => handleButtonClick(mutate) : null
                         }
                       >
-                        {hasfollow ? 'UnFollow' : 'Follow +'}
+                        {hasFollow ? 'Following' : 'Follow +'}
                       </button>
                     )}
                   </div>
