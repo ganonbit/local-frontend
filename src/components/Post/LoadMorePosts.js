@@ -19,7 +19,6 @@ const LoadMorePosts = ({
       {data.map((post, index) => {
         return <SinglePost key={index} post={post} isAuth={isAuth} />;
       })}
-      ;
       {showNextLoading && (
         <div className='d-flex justify-content-center my-2'>
           <img
