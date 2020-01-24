@@ -9,18 +9,7 @@ import { Mutation, withApollo } from 'react-apollo';
 import Avatar from '../Avatar';
 
 import * as Routes from 'routes';
-
 function EditComment({ authorId, comment, author, postId, onCancel }) {
-  // console.log('------------start--------')
-  // console.log('-----------------', typeof authorId )
-  // console.log('-----------------', typeof comment )
-  // console.log('-----------------', typeof  author)
-  // console.log('-----------------', typeof  postId)
-  // console.log('-----------------', typeof  onCancel)
-  // console.log('-----------------', typeof isAuth)
-  // console.log('-----------------', typeof  post)
-
-  // console.log('------------end---------')
 
   const [commentContent, setCommentContent] = useState({
     comment: comment.comment,
