@@ -130,7 +130,7 @@ const ProfileHeader = ({ user, refetch, auth, isOwner, isSelma }) => {
                     {!isOwner && (
                       <button
                         className={`${
-                          hasFollow ? 'following-bt ' : ''
+                          hasFollow ? 'following-btn ' : ''
                         }btn btn-primary`}
                         onClick={
                           activeFollow ? () => handleButtonClick(mutate) : null
