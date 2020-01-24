@@ -19,6 +19,7 @@ import { NotificationType } from 'constants/NotificationType';
 import * as Routes from 'routes';
 
 const ProfileHeader = ({ user, refetch, auth, isOwner, isSelma }) => {
+  
   const [activeFollow, setActiveFollow] = useState(true);
   const [isProfileShowing, setProfileIsShowing] = useState(false);
   const [isCoverShowing, setCoverIsShowing] = useState(false);
@@ -31,14 +32,10 @@ const ProfileHeader = ({ user, refetch, auth, isOwner, isSelma }) => {
   let { title, image, isCover, coverImage } = ImagesContent;
 
   const notification = useNotifications();
-  const hasFollow = user.followers.find(l => l.followers === auth.user.id);
-  console.log(hasFollow);
-  console.log(user.followers);
-  console.log(auth.user.followers);
-
+  const hasFollow = user.followers.find(l => l.follower === auth.user.id);
   useEffect(() => {
     setActiveFollow(true);
-  }, [auth.user.followers]);
+  }, [auth.user.following]);
 
   const handleButtonClick = async mutate => {
     setActiveFollow(false);
@@ -132,8 +129,9 @@ const ProfileHeader = ({ user, refetch, auth, isOwner, isSelma }) => {
                     <div className='author-location'>{user.username}</div>
                     {!isOwner && (
                       <button
-                        className={`${hasFollow ?
-                          'following-bt ' : ''}btn btn-primary`}
+                        className={`${
+                          hasFollow ? 'following-bt ' : ''
+                        }btn btn-primary`}
                         onClick={
                           activeFollow ? () => handleButtonClick(mutate) : null
                         }
