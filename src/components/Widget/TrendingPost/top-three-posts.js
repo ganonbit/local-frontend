@@ -34,7 +34,6 @@ class Hits extends React.Component {
             {hit.numOfLikes} Likes {hit.numOfComments} Comments
           </span>
         </Link>
-        <div className='overlay'></div>
       </li>
     );
   };
