@@ -18,12 +18,17 @@ const SharePost = ({ postId, post, postSharer, sharedPostId }) => {
   }
 
   const handleButtonClick = async (event, mutate) => {
-    console.log('HANDLING THE BUTTON CLICK')
-    console.log('HANDLING THE BUTTON CLICK')
     event.preventDefault();
-    const { data } = await mutate();
-    console.log('data')
-    console.log(data)
+    try {
+      const { data } = await mutate();
+      if (data) {
+        // TODO: Add better notice when someone shares a post
+        alert('You shared a post!')
+      }
+    } catch (err) {
+      alert('Sorry an error occurred while trying to share a post. Please try again later.')
+      console.log(`Error:\n ${err}`)
+    }
   };
 
   // Detect which mutation to use
