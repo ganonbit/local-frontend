@@ -3,7 +3,7 @@ import { generatePath } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import { CREATE_COMMENT } from '../../graphql/comment';
-import { GET_POSTS, GET_FOLLOWED_POSTS } from '../../graphql/post';
+import { GET_POST } from '../../graphql/post';
 import { Mutation, withApollo } from 'react-apollo';
 
 import { useNotifications } from 'hooks/useNotifications';
@@ -60,13 +60,9 @@ function AddComment({ authorId, author, post, onCancel, userId }) {
       }}
       refetchQueries={() => [
         {
-          query: GET_POSTS,
-          variables: { authUserId: authorId, skip: 0, limit: 15 },
-        },
-        {
-          query: GET_FOLLOWED_POSTS,
-          variables: { userId: authorId, skip: 0, limit: 15 },
-        },
+          query: GET_POST,
+          variables: { id: post.id },
+        }
       ]}
     >
       {(createComment, { loading, error: apiError }) => {

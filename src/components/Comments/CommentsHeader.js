@@ -9,9 +9,8 @@ import Avatar from 'components/Avatar';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEllipsisV } from '@fortawesome/free-solid-svg-icons';
-import { GET_FOLLOWED_POSTS } from 'graphql/post';
+import { GET_POST } from 'graphql/post';
 import { DELETE_COMMENT } from 'graphql/comment';
-import { GET_AUTH_USER, GET_USER_POSTS } from 'graphql/user';
 
 import { useNotifications } from 'hooks/useNotifications';
 
@@ -40,23 +39,9 @@ function CommentsHeader(props) {
         variables: { input: { id: commentId, imagePublicId } },
         refetchQueries: () => [
           {
-            query: GET_FOLLOWED_POSTS,
+            query: GET_POST,
             variables: {
-              userId: auth.user.id,
-              skip: 0,
-              limit: 15,
-            },
-          },
-          {
-            query: GET_AUTH_USER,
-            options: { fetchPolicy: 'cache-and-network' },
-          },
-          {
-            query: GET_USER_POSTS,
-            variables: {
-              username: auth.user.username,
-              skip: 0,
-              limit: 15,
+              id: post.id,
             },
           },
         ],

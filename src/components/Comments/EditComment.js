@@ -3,7 +3,7 @@ import { generatePath } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import { EDIT_COMMENT } from '../../graphql/comment';
-import { GET_POSTS } from '../../graphql/post';
+import { GET_POST } from '../../graphql/post';
 import { Mutation, withApollo } from 'react-apollo';
 
 import Avatar from '../Avatar';
@@ -36,8 +36,8 @@ function EditComment({ authorId, comment, author, postId, onCancel }) {
       }}
       refetchQueries={() => [
         {
-          query: GET_POSTS,
-          variables: { authUserId: authorId, skip: 0, limit: 15 },
+          query: GET_POST,
+          variables: { id: postId },
         },
       ]}
     >
