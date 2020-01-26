@@ -1,10 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
 import Like from 'components/Like';
-import OverlayTriggers from '../Common/ToolTip';
+import SharePost from 'components/SharePost';
 
-function PostControlButton({ author, postId, likes, toggle, post, isAuth }) {
+function PostControlButton({ author, postId, likes, toggle, post, isAuth, userId, postSharer, sharedPostId }) {
   return (
     <div className='control-block-button post-control-button'>
       {!isAuth ? (
@@ -31,14 +30,12 @@ function PostControlButton({ author, postId, likes, toggle, post, isAuth }) {
           />
         </a>
 
-      <OverlayTriggers toolTipText='SHARE' placement='left'>
-        <a href className='btn btn-control share-link'>
-          <img
-            src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/share-icon_rkyjac.png'
-            alt=''
-          />
-        </a>
-      </OverlayTriggers>
+      <SharePost
+        postId={postId}
+        post={post}
+        postSharer={postSharer}
+        sharedPostId={sharedPostId}
+      />
     </div>
   );
 }

@@ -100,6 +100,28 @@ export const GET_USER_POSTS = gql`
         ${postAuthorPayload}
         ${postCommentsPayload}
         ${postLikesPayload}
+
+        post {
+          id
+          content
+          image
+          imagePublicId
+          createdAt
+          author {
+            id
+            firstName
+            lastName
+            username
+          }
+          ${postLikesPayload}
+          ${postCommentsPayload}
+        }
+        user {
+          id
+          firstName
+          lastName
+          username
+        }
       }
     }
   }
