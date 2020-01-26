@@ -34,7 +34,6 @@ class Hits extends React.Component {
             {hit.numOfLikes} Likes {hit.numOfComments} Comments
           </span>
         </Link>
-        <div className='overlay'></div>
       </li>
     );
   };
@@ -84,11 +83,11 @@ class Hits extends React.Component {
         <div className='ui-block-content'>
           <ul className='widget w-friend-pages-added notification-list friend-requests'>
             {hits.slice(0, 3).map((hit, count) => (
-              <a href={`/${hit.author && hit.author.username}`}>
+              <>
                 {hit.image
                   ? this.renderPostWithImage(hit, count + 1)
                   : this.renderPostWithoutImage(hit, count + 1)}
-              </a>
+              </>
             ))}
           </ul>
         </div>
