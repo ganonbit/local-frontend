@@ -13,9 +13,40 @@ const SinglePost = ({ post, isAuth }) => {
   const [isCommentOpen, setCommentOpen] = useState(true);
   const toggleComment = () => setCommentOpen(!isCommentOpen);
   const articleClass = 'hentry post';
+  let sharedPost = false
+
+
+  if (!post) {return null;}
+  if (post.post) { sharedPost = true }
+
+  if (!sharedPost) {
+    return (
+      renderPost(sharedPost, post, isAuth, auth, isCommentOpen, toggleComment, articleClass)
+    );
+  } else if (sharedPost) {
+    return (
+      renderPost(sharedPost, post, isAuth, auth, isCommentOpen, toggleComment, articleClass)
+    );
+  } else {
+    return null;
+  }
+};
+
+const renderPost = (isSharedPost, post, isAuth, auth, isCommentOpen, toggleComment, articleClass) => {
+  let postSharer = null
+  let sharedPostId = null
+  if (isSharedPost) {
+    sharedPostId = post.id
+    postSharer = post.user
+    post = post.post
+  }
 
   return (
     <div key={post.id} className='ui-block'>
+      {
+        isSharedPost &&
+          renderSharedPostText(auth.user, postSharer)
+      }
       <article className={articleClass}>
         <PostHeader
           author={post.author}
@@ -44,6 +75,8 @@ const SinglePost = ({ post, isAuth }) => {
           likes={post.likes}
           isAuth={isAuth}
           post={post}
+          postSharer={postSharer}
+          sharedPostId={sharedPostId}
         />
       </article>
       {isAuth && isCommentOpen && <Comments post={post} isAuth={isAuth}/>}
@@ -59,6 +92,16 @@ const SinglePost = ({ post, isAuth }) => {
         />
       )}
     </div>
-  );
-};
+  )
+}
+
+const renderSharedPostText = (user, postSharer) => {
+  const sharerDisplayName = (user.id === postSharer.id) ? 'You' : postSharer.username
+  return (
+    <span class="ml-3 font-weight-light font-italic">
+      {`${sharerDisplayName} Shared`}
+    </span>
+  )
+}
+
 export default SinglePost;
