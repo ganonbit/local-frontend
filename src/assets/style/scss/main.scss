@@ -1807,25 +1807,6 @@ p.comments-section {
     max-width: 200px;
   }
 
-  .top-header-author {
-    position: initial;
-    color: #888da8;
-    -webkit-transform: initial;
-            transform: initial;
-    z-index: 4;
-    margin: auto;
-    margin-top: -80px;
-    padding-bottom: 40px;
-  }
-
-  .top-header-author .author-name, .top-header-author .author-location {
-    color: #333333;
-  }
-
-  .top-header-author .author-name:hover {
-    color: #ff5e3a;
-  }
-
   .profile-section .control-block-button {
     right: auto;
     top: -30px;
@@ -1846,24 +1827,24 @@ p.comments-section {
     width: auto;
   }
   .top-header-author .author-thumb {
-    width: 112px !important;
-    height: 150px !important;
+    width: 112px;
+    height: 150px;
 }
 .control-block-button .btn-control {
-  margin-right: 10px !important;
+  margin-right: 10px;
 }
 .btn.btn-control.bg-primary.more {
   width: 30px !important;
   height: 30px !important;
-  line-height: 24px;
+  line-height: 28px !important;
 }
 .btn.btn-control.bg-primary.more a {
-  line-height: 15px !important;
+  line-height: 20px !important;
 }
 .btn.btn-control.bg-primary.more svg {
-  font-size: 15px !important;
-  height: 15px !important;
-  line-height: 15px !important;
+  font-size: 20px !important;
+  height: 20px !important;
+  line-height: 20px !important;
 }
 .top-header-thumb {
   max-height: 150px;
@@ -4255,6 +4236,10 @@ button:hover {
 
 .control-block-button {
   position: absolute;
+}
+
+.settings-block-btn {
+  margin-top: 10px;
 }
 
 .control-block-button .btn-control {
@@ -17439,7 +17424,7 @@ button.following-btn:active, button.following-btn:focus {
   padding: 0.2rem 0.6rem;
   margin-top: 3px;
   font-size: 13px;
-  margin-top: 5px;
+  margin-top: 10px;
 }
 
 @media (min-width: 564px) {

@@ -139,34 +139,8 @@ const ProfileHeader = ({ user, refetch, auth, isOwner, isSelma }) => {
                         {hasFollow ? 'Following' : 'Follow +'}
                       </button>
                     )}
-                  </div>
-                </div>
-
-                <div className='profile-section'>
-                  {isOwner || isSelma ? (
-                    <UploadProfileImage
-                      show={isProfileShowing}
-                      onHide={() => setProfileIsShowing(false)}
-                      user={user}
-                      isCover={isCover}
-                      image={image}
-                      title={title}
-                      refetch={refetch}
-                    />
-                  ) : null}
-                  {isOwner || isSelma ? (
-                    <UploadCoverImage
-                      show={isCoverShowing}
-                      onHide={() => setCoverIsShowing(false)}
-                      user={user}
-                      isCover={isCover}
-                      coverImage={coverImage}
-                      title={title}
-                      refetch={refetch}
-                    />
-                  ) : null}
-                  {isOwner || isSelma ? (
-                    <div className='control-block-button'>
+                    {isOwner || isSelma ? (
+                    <div className='settings-block-btn'>
                       {isSelma && (
                         <div className='btn btn-control bg-primary more'>
                           <Link
@@ -226,6 +200,32 @@ const ProfileHeader = ({ user, refetch, auth, isOwner, isSelma }) => {
                         </ul>
                       </div>
                     </div>
+                  ) : null}
+                  </div>
+                </div>
+
+                <div className='profile-section'>
+                  {isOwner || isSelma ? (
+                    <UploadProfileImage
+                      show={isProfileShowing}
+                      onHide={() => setProfileIsShowing(false)}
+                      user={user}
+                      isCover={isCover}
+                      image={image}
+                      title={title}
+                      refetch={refetch}
+                    />
+                  ) : null}
+                  {isOwner || isSelma ? (
+                    <UploadCoverImage
+                      show={isCoverShowing}
+                      onHide={() => setCoverIsShowing(false)}
+                      user={user}
+                      isCover={isCover}
+                      coverImage={coverImage}
+                      title={title}
+                      refetch={refetch}
+                    />
                   ) : null}
                 </div>
               </div>
