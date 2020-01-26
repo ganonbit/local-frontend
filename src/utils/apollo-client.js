@@ -61,6 +61,7 @@ const handleErrors = () => {
  * @param {string} apiUrl, GraphQL api url
  * @param {string} websocketApiUrl, GraphQL WebSocket api url
  */
+
 export const createApolloClient = (apiUrl, websocketApiUrl) => {
   const cache = new InMemoryCache();
   const errorLink = handleErrors();
