@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { Modal } from 'react-bootstrap';
 import { Mutation } from 'react-apollo';
-import { GET_FOLLOWED_POSTS } from 'graphql/post';
-import { UPLOAD_PHOTO, EDIT_ACCOUNT } from 'graphql/user';
+import { UPLOAD_PHOTO, EDIT_ACCOUNT, GET_USER_POSTS } from 'graphql/user';
 import { withApollo } from 'react-apollo';
 import { MAX_POST_IMAGE_SIZE } from 'constants/ImageSize';
 
@@ -27,7 +26,7 @@ const UploadProfileImage = props => {
 
         refetchQueries: () => [
           {
-            query: GET_FOLLOWED_POSTS,
+            query: GET_USER_POSTS,
             variables: { userId: user.id, skip: 0, limit: 15 },
           },
         ],
@@ -93,7 +92,7 @@ const UploadProfileImage = props => {
       }}
       refetchQueries={() => [
         {
-          query: GET_FOLLOWED_POSTS,
+          query: GET_USER_POSTS,
           variables: { userId: user.id, skip: 0, limit: 15 },
         },
       ]}

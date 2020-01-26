@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Modal } from 'react-bootstrap';
 import { Mutation, withApollo } from 'react-apollo';
-import { GET_FOLLOWED_POSTS } from 'graphql/post';
-import { UPLOAD_PHOTO, EDIT_ACCOUNT } from 'graphql/user';
+import { UPLOAD_PHOTO, EDIT_ACCOUNT, GET_USER_POSTS} from 'graphql/user';
 import { MAX_POST_IMAGE_SIZE } from 'constants/ImageSize';
 const UploadCoverImage = props => {
   let { onHide, user, isCover, coverImage, title, refetch, client } = props;
@@ -60,7 +59,7 @@ const UploadCoverImage = props => {
         },
         refetchQueries: () => [
           {
-            query: GET_FOLLOWED_POSTS,
+            query: GET_USER_POSTS,
             variables: { userId: user.id, skip: 0, limit: 15 },
           },
         ],
@@ -89,7 +88,7 @@ const UploadCoverImage = props => {
       }}
       refetchQueries={() => [
         {
-          query: GET_FOLLOWED_POSTS,
+          query: GET_USER_POSTS,
           variables: { userId: user.id, skip: 0, limit: 15 },
         },
       ]}

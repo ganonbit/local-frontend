@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import { Modal } from 'react-bootstrap';
 import { Mutation } from 'react-apollo';
-import { EDIT_POST, GET_FOLLOWED_POSTS } from 'graphql/post';
+import { EDIT_POST, GET_POST } from 'graphql/post';
 
 import { MAX_POST_IMAGE_SIZE } from 'constants/ImageSize';
 import Avatar from '../Avatar';
@@ -82,8 +82,8 @@ const EditPost = props => {
       }}
       refetchQueries={() => [
         {
-          query: GET_FOLLOWED_POSTS,
-          variables: { userId: auth.user.id, skip: 0, limit: 15 },
+          query: GET_POST,
+          variables: { id: postId },
         },
       ]}
     >
