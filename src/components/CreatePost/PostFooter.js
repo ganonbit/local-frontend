@@ -6,10 +6,7 @@ import OverlayTriggers from '../Common/ToolTip';
 
 const Footer = ({ toggle }) => (
   <div className='add-options-message'>
-    <OverlayTriggers
-      toolTipText='ADD PHOTO'
-      placement='bottom'
-    >
+    <OverlayTriggers toolTipText='ADD PHOTO' placement='bottom'>
       <div
         className='options-message'
         onClick={() => toggle()}

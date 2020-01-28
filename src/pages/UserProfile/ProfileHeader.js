@@ -19,7 +19,6 @@ import { NotificationType } from 'constants/NotificationType';
 import * as Routes from 'routes';
 
 const ProfileHeader = ({ user, refetch, auth, isOwner, isSelma }) => {
-  
   const [activeFollow, setActiveFollow] = useState(true);
   const [isProfileShowing, setProfileIsShowing] = useState(false);
   const [isCoverShowing, setCoverIsShowing] = useState(false);
@@ -40,13 +39,13 @@ const ProfileHeader = ({ user, refetch, auth, isOwner, isSelma }) => {
   const handleButtonClick = async mutate => {
     setActiveFollow(false);
     const { data } = await mutate();
-      !hasFollow &&
-      await notification.toggle({
+    !hasFollow &&
+      (await notification.toggle({
         user,
         hasDone: hasFollow,
         notificationType: NotificationType.FOLLOW,
         notificationTypeId: data.createFollow ? data.createFollow.id : null,
-      });
+      }));
   };
 
   let toggleProfile = (title, isCover, image) => {
@@ -141,67 +140,67 @@ const ProfileHeader = ({ user, refetch, auth, isOwner, isSelma }) => {
                       </button>
                     )}
                     {isOwner || isSelma ? (
-                    <div className='settings-block-btn'>
-                      {isSelma && (
+                      <div className='settings-block-btn'>
+                        {isSelma && (
+                          <div className='btn btn-control bg-primary more'>
+                            <Link
+                              to={generatePath(Routes.MESSAGES, {
+                                userId: user.id,
+                              })}
+                            >
+                              <FontAwesomeIcon
+                                size='xl'
+                                color='white'
+                                icon={faEnvelope}
+                                style={{ fontSize: '25px', height: '25px' }}
+                              />
+                            </Link>
+                          </div>
+                        )}
                         <div className='btn btn-control bg-primary more'>
-                          <Link
-                            to={generatePath(Routes.MESSAGES, {
-                              userId: user.id,
-                            })}
-                          >
-                            <FontAwesomeIcon
-                              size='xl'
-                              color='white'
-                              icon={faEnvelope}
-                              style={{ fontSize: '25px', height: '25px' }}
-                            />
-                          </Link>
+                          <FontAwesomeIcon
+                            size='xl'
+                            color='white'
+                            icon={faCog}
+                            style={{ fontSize: '25px', height: '25px' }}
+                          />
+                          <ul className='more-dropdown more-with-triangle triangle-bottom-right'>
+                            <li>
+                              <Link
+                                data-toggle='modal'
+                                data-target='#update-header-photo'
+                                onClick={e => {
+                                  e.preventDefault();
+                                  toggleProfile(
+                                    'Edit Profile Photo',
+                                    false,
+                                    user.image
+                                  );
+                                }}
+                              >
+                                Update Profile Photo
+                              </Link>
+                            </li>
+                            <li>
+                              <Link
+                                data-toggle='modal'
+                                data-target='#update-header-photo'
+                                onClick={e => {
+                                  e.preventDefault();
+                                  toggleCover(
+                                    'Edit Cover Photo',
+                                    true,
+                                    user.coverImage
+                                  );
+                                }}
+                              >
+                                Update Cover Image
+                              </Link>
+                            </li>
+                          </ul>
                         </div>
-                      )}
-                      <div className='btn btn-control bg-primary more'>
-                        <FontAwesomeIcon
-                          size='xl'
-                          color='white'
-                          icon={faCog}
-                          style={{ fontSize: '25px', height: '25px' }}
-                        />
-                        <ul className='more-dropdown more-with-triangle triangle-bottom-right'>
-                          <li>
-                            <Link
-                              data-toggle='modal'
-                              data-target='#update-header-photo'
-                              onClick={e => {
-                                e.preventDefault();
-                                toggleProfile(
-                                  'Edit Profile Photo',
-                                  false,
-                                  user.image
-                                );
-                              }}
-                            >
-                              Update Profile Photo
-                            </Link>
-                          </li>
-                          <li>
-                            <Link
-                              data-toggle='modal'
-                              data-target='#update-header-photo'
-                              onClick={e => {
-                                e.preventDefault();
-                                toggleCover(
-                                  'Edit Cover Photo',
-                                  true,
-                                  user.coverImage
-                                );
-                              }}
-                            >
-                              Update Cover Image
-                            </Link>
-                          </li>
-                        </ul>
                       </div>
-                    </div>
-                  ) : null}
+                    ) : null}
                   </div>
                 </div>
 

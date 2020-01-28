@@ -9,8 +9,10 @@ import { useStore } from 'store';
  */
 const SharePost = ({ postId, post, postSharer, sharedPostId }) => {
   const [{ auth }] = useStore();
-  if (!auth.user) { return null; }
-  
+  if (!auth.user) {
+    return null;
+  }
+
   let hasShared = false;
   if (postSharer && sharedPostId && auth.user.id === postSharer.id) {
     postId = sharedPostId;
@@ -26,7 +28,9 @@ const SharePost = ({ postId, post, postSharer, sharedPostId }) => {
         alert('You shared a post!');
       }
     } catch (err) {
-      alert('Sorry an error occurred while trying to share a post. Please try again later.');
+      alert(
+        'Sorry an error occurred while trying to share a post. Please try again later.'
+      );
       console.log(`Error:\n ${err}`);
     }
   };
@@ -53,10 +57,11 @@ const SharePost = ({ postId, post, postSharer, sharedPostId }) => {
         return (
           <OverlayTriggers
             toolTipText={hasShared ? 'UNSHARE' : 'SHARE'}
-            placement='left'>
+            placement='left'
+          >
             <a
               href='#'
-              onClick={(e) => handleButtonClick(e, mutate)}
+              onClick={e => handleButtonClick(e, mutate)}
               className='btn btn-control share-link'
             >
               <img

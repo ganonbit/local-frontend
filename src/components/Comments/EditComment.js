@@ -10,7 +10,6 @@ import Avatar from '../Avatar';
 
 import * as Routes from 'routes';
 function EditComment({ authorId, comment, author, postId, onCancel }) {
-
   const [commentContent, setCommentContent] = useState({
     comment: comment.comment,
     image: comment.image,

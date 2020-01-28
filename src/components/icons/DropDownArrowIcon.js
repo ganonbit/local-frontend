@@ -26,5 +26,5 @@ export const DropDownArrowIcon = ({ width, color }) => {
 
 DropDownArrowIcon.propTypes = {
   width: PropTypes.any,
-  color: PropTypes.any
+  color: PropTypes.any,
 };
