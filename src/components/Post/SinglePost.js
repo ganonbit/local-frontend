@@ -13,11 +13,11 @@ const SinglePost = ({ post, isAuth }) => {
   const [isCommentOpen, setCommentOpen] = useState(true);
   const toggleComment = () => setCommentOpen(!isCommentOpen);
   const articleClass = 'hentry post';
-  let sharedPost = false
+  let sharedPost = false;
 
 
   if (!post) {return null;}
-  if (post.post) { sharedPost = true }
+  if (post.post) { sharedPost = true; }
 
   if (!sharedPost) {
     return (
@@ -33,12 +33,11 @@ const SinglePost = ({ post, isAuth }) => {
 };
 
 const renderPost = (isSharedPost, post, isAuth, auth, isCommentOpen, toggleComment, articleClass) => {
-  let postSharer = null
-  let sharedPostId = null
+  let postSharer, sharedPostId = null;
   if (isSharedPost) {
-    sharedPostId = post.id
-    postSharer = post.user
-    post = post.post
+    sharedPostId = post.id;
+    postSharer = post.user;
+    post = post.post;
   }
 
   return (
@@ -92,16 +91,16 @@ const renderPost = (isSharedPost, post, isAuth, auth, isCommentOpen, toggleComme
         />
       )}
     </div>
-  )
-}
+  );
+};
 
 const renderSharedPostText = (user, postSharer) => {
   const sharerDisplayName = (user.id === postSharer.id) ? 'You' : postSharer.username
   return (
-    <span class="ml-3 font-weight-light font-italic">
+    <span className="ml-3 font-weight-light font-italic">
       {`${sharerDisplayName} Shared`}
     </span>
-  )
-}
+  );
+};
 
 export default SinglePost;
