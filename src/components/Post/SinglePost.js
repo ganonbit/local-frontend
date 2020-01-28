@@ -110,16 +110,13 @@ const renderSharedPostText = (user, postSharer) => {
         e.preventDefault();
       }} />
       <span className="ml-2 font-weight-light font-italic">
-        <a
-            className='author-thumb'
-            href={generatePath(Routes.USER_PROFILE, {
+        <a href={generatePath(Routes.USER_PROFILE, {
               username: postSharer.username,
-            })}
-          >
+            })} >
             {sharerDisplayName}
-          </a>
-          {' '}
-          shared
+        </a>
+        {' '}
+        shared
       </span>
     </div>
   );
