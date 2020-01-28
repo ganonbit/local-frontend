@@ -15,7 +15,7 @@ import { useStore } from 'store';
 /**
  * Component for rendering Like button
  */
-const Like = ({ postId, user, likes, post }) => {
+const Like = ({ postId, user, likes, post, colored }) => {
   const notification = useNotifications();
   const [loading, setLoading] = useState(true);
   const [{ auth }] = useStore();
@@ -59,7 +59,7 @@ const Like = ({ postId, user, likes, post }) => {
       (await notification.toggle({
         user,
         postId,
-        hasDone: userLikedPost,
+        hasDone: isPostLiked,
         notificationType: NotificationType.LIKE,
         notificationTypeId: data.createLike ? data.createLike.id : null,
       }));
@@ -99,7 +99,7 @@ const Like = ({ postId, user, likes, post }) => {
               disabled={loading}
               icon={faHeart}
               size='2x'
-              color={isPostLiked ? 'red' : 'grey'}
+              color={!colored ? isPostLiked ? 'white' : 'grey' : isPostLiked ? colored : 'grey'}
               onClick={() => {
                 toggleLike();
                 handleButtonClick(mutate);
