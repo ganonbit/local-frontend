@@ -666,10 +666,6 @@ p.comments-section {
   border-bottom: 1px solid #e6ecf5;
 }
 
-.shared-post span {
-  vertical-align: super;
-}
-
 @media screen and (min-width: 783px) {
   .admin-bar #site-header {
     top: 32px;
@@ -14763,7 +14759,7 @@ a.h4.title {
 }
 
 .post-control-button .btn.likes-liked {
-  background: var(--theme-color-white);
+  background: var(--theme-color-pink);
 }
 
 .post-control-button .btn.ratings {
