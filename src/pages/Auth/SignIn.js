@@ -112,16 +112,6 @@ const SignIn = ({ refetch, history }) => {
                           />
 
                           <div className='remember'>
-                            {/* <div className='checkbox'>
-                              <label>
-                                <input
-                                  name='optionsCheckboxes'
-                                  type='checkbox'
-                                />
-                                Remember Me
-                              </label>
-                            </div> */}
-
                             <a
                               onClick={e => (
                                 setReset(true), e.preventDefault()
@@ -148,7 +138,7 @@ const SignIn = ({ refetch, history }) => {
                           >
                             Login
                           </button>
-                          <p>
+                          <p className='mt-2'>
                             Don’t you have an account? &nbsp;
                             <Link to={Routes.SIGN_UP} className='btn-register'>
                               Register Now!

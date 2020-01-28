@@ -283,6 +283,7 @@ const SignUp = ({ refetch, history }) => {
                             sitekey={RE_CAPTCHA_SCERET_API}
                             onChange={() => handleCaptcha()}
                             size='normal'
+                            className='mb-2 captcha-block'
                           />
                           <button
                             className='btn btn-green btn-lg full-width'
