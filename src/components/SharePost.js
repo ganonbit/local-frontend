@@ -23,9 +23,13 @@ const SharePost = ({ postId, post, postSharer, sharedPostId }) => {
     event.preventDefault();
     try {
       const { data } = await mutate();
-      if (data) {
+      if (data && hasShared === false) {
         // TODO: Add better notice when someone shares a post
-        alert('You shared a post!');
+        alert('Successfully shared post!');
+      }
+      if (data && hasShared === true) {
+        // TODO: Add better notice when someone un-shares a post
+        alert('Successfully un-shared post');
       }
     } catch (err) {
       alert(
