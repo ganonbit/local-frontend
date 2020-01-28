@@ -19,25 +19,49 @@ const SinglePost = ({ post, isAuth }) => {
   const articleClass = 'hentry post';
   let sharedPost = false;
 
-
-  if (!post) {return null;}
-  if (post.post) { sharedPost = true; }
+  if (!post) {
+    return null;
+  }
+  if (post.post) {
+    sharedPost = true;
+  }
 
   if (!sharedPost) {
-    return (
-      renderPost(sharedPost, post, isAuth, auth, isCommentOpen, toggleComment, articleClass)
+    return renderPost(
+      sharedPost,
+      post,
+      isAuth,
+      auth,
+      isCommentOpen,
+      toggleComment,
+      articleClass
     );
   } else if (sharedPost) {
-    return (
-      renderPost(sharedPost, post, isAuth, auth, isCommentOpen, toggleComment, articleClass)
+    return renderPost(
+      sharedPost,
+      post,
+      isAuth,
+      auth,
+      isCommentOpen,
+      toggleComment,
+      articleClass
     );
   } else {
     return null;
   }
 };
 
-const renderPost = (isSharedPost, post, isAuth, auth, isCommentOpen, toggleComment, articleClass) => {
-  let postSharer, sharedPostId = null;
+const renderPost = (
+  isSharedPost,
+  post,
+  isAuth,
+  auth,
+  isCommentOpen,
+  toggleComment,
+  articleClass
+) => {
+  let postSharer,
+    sharedPostId = null;
   if (isSharedPost) {
     sharedPostId = post.id;
     postSharer = post.user;
@@ -46,10 +70,7 @@ const renderPost = (isSharedPost, post, isAuth, auth, isCommentOpen, toggleComme
 
   return (
     <div key={post.id} className='ui-block'>
-      {
-        isSharedPost &&
-          renderSharedPostText(auth.user, postSharer)
-      }
+      {isSharedPost && renderSharedPostText(auth.user, postSharer)}
       <article className={articleClass}>
         <PostHeader
           author={post.author}
@@ -82,7 +103,7 @@ const renderPost = (isSharedPost, post, isAuth, auth, isCommentOpen, toggleComme
           sharedPostId={sharedPostId}
         />
       </article>
-      {isAuth && isCommentOpen && <Comments post={post} isAuth={isAuth}/>}
+      {isAuth && isCommentOpen && <Comments post={post} isAuth={isAuth} />}
       {isAuth && (
         <AddComment
           authorId={auth.user.id}
@@ -99,23 +120,26 @@ const renderPost = (isSharedPost, post, isAuth, auth, isCommentOpen, toggleComme
 };
 
 const renderSharedPostText = (user, postSharer) => {
-  const sharerDisplayName = (user.id === postSharer.id) ? 'You' : postSharer.username;
+  const sharerDisplayName =
+    user.id === postSharer.id ? 'You' : postSharer.username;
   return (
-    <div className="shared-post">
+    <div className='shared-post'>
       <FontAwesomeIcon
-      icon={faRetweet}
-      size='2x'
-      color={'green'}
-      onClick={e => {
-        e.preventDefault();
-      }} />
-      <span className="ml-2 font-weight-light font-italic">
-        <a href={generatePath(Routes.USER_PROFILE, {
-              username: postSharer.username,
-            })} >
-            {sharerDisplayName}
-        </a>
-        {' '}
+        icon={faRetweet}
+        size='2x'
+        color={'green'}
+        onClick={e => {
+          e.preventDefault();
+        }}
+      />
+      <span className='ml-2 font-weight-light font-italic'>
+        <a
+          href={generatePath(Routes.USER_PROFILE, {
+            username: postSharer.username,
+          })}
+        >
+          {sharerDisplayName}
+        </a>{' '}
         shared
       </span>
     </div>

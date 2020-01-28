@@ -26,5 +26,5 @@ export const RewardIcon = ({ width, color }) => {
 
 RewardIcon.propTypes = {
   width: PropTypes.any,
-  color: PropTypes.any
+  color: PropTypes.any,
 };

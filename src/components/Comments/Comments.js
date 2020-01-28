@@ -61,4 +61,3 @@ Comments.propTypes = {
 };
 
 export default Comments;
-

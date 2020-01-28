@@ -26,5 +26,5 @@ export const LogOut = ({ width, color }) => {
 
 LogOut.propTypes = {
   width: PropTypes.any,
-  color: PropTypes.any
+  color: PropTypes.any,
 };

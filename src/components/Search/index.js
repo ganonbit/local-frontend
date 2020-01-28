@@ -24,7 +24,7 @@ export default class Search extends React.Component {
     let params = new URL(document.location).searchParams;
     let hashTag = params.get('hash-tag-search');
     if (hashTag) {
-      this.setState({ hashTagQuery: `#${hashTag}`,});
+      this.setState({ hashTagQuery: `#${hashTag}` });
     }
   };
 

@@ -27,5 +27,5 @@ export const PencilIcon = ({ width, color }) => {
 
 PencilIcon.propTypes = {
   width: PropTypes.any,
-  color: PropTypes.any
+  color: PropTypes.any,
 };
