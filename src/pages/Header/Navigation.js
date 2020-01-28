@@ -12,9 +12,9 @@ import AuthorPage, { AuthorThumbnail } from './AuthorPage';
 
 import * as Routes from 'routes';
 
-const NavItem = ({ children, active }) => {
+const NavItem = ({ children, active, searchlist }) => {
   return (
-    <li className='nav-item'>
+    <li className={`nav-item ${searchlist&&searchlist}`}>
       <div className={active ? 'nav-link active' : 'nav-link'}>{children}</div>
     </li>
   );
@@ -34,7 +34,7 @@ const DesktopNav = ({ refetch, auth }) => {
 };
 
 // REBUILD THE NAVIGATION USING BOOTSTRAP PANES / TABS
-export const MobileNav = ({ refetch, auth, mobileToggle, status }) => {
+export const MobileNav = ({ refetch, auth, mobileToggle, status,isMobile }) => {
   return (
     <Mobile>
       <ul className='nav nav-tabs mobile-app-tabs' role='tablist'>
@@ -72,15 +72,11 @@ export const MobileNav = ({ refetch, auth, mobileToggle, status }) => {
             />
           </Link>
         </NavItem>
+        <NavItem active={false} searchlist="search-list" >
+           <Search refetch={refetch} auth={auth} mobileToggle={isMobile} />
+        </NavItem>
+         {/* <Search refetch={refetch} auth={auth} mobileToggle={isMobile} /> */}
         <NavItem active={false}>
-          {/* <Link to='/'>
-            <FontAwesomeIcon
-              size='2x'
-              color='white'
-              icon={faSearch}
-              style={{ height: '24px', marginTop: '5px' }}
-            />
-          </Link> */}
           <AuthorThumbnail user={auth.user} />
         </NavItem>
       </ul>
