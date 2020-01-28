@@ -33,12 +33,45 @@ function PostControlButton({
       ) : (
         <Like user={author} postId={postId} likes={likes} post={post} />
       )}
-      <a href className='btn btn-control comments' onClick={toggle}>
-        <img
-          src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/comments-icon_ffpa0l.png'
-          alt=''
-        />
-      </a>
+      {!isAuth ? (
+        <a
+          href='#1'
+          onClick={e => {
+            e.preventDefault();
+          }}
+          className='btn btn-control likes'
+        >
+          <img
+            src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/comments-icon_ffpa0l.png'
+            alt=''
+          />
+          <div className='ripple-container'></div>
+        </a>
+      ) : 
+      (
+        <a href className='btn btn-control comments' onClick={toggle}>
+          <img
+            src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/comments-icon_ffpa0l.png'
+            alt=''
+          />
+        </a>
+      )}
+
+      {!isAuth ? (
+        <a
+          href='#1'
+          onClick={e => {
+            e.preventDefault();
+          }}
+          className='btn btn-control likes'
+        >
+          <img
+            src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/share-icon_rkyjac.png'
+            alt=''
+          />
+          <div className='ripple-container'></div>
+        </a>
+      ) : (
 
       <SharePost
         postId={postId}
@@ -46,6 +79,7 @@ function PostControlButton({
         postSharer={postSharer}
         sharedPostId={sharedPostId}
       />
+      )}
     </div>
   );
 }
