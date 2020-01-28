@@ -32,7 +32,7 @@ const ProfileHeader = ({ user, refetch, auth, isOwner, isSelma }) => {
   let { title, image, isCover, coverImage } = ImagesContent;
 
   const notification = useNotifications();
-  const hasFollow = user.followers.find(l => l.follower === auth.user.id);
+  const hasFollow = user.followers.find(f => f.follower === auth.user.id);
   useEffect(() => {
     setActiveFollow(true);
   }, [auth.user.following]);
@@ -40,12 +40,13 @@ const ProfileHeader = ({ user, refetch, auth, isOwner, isSelma }) => {
   const handleButtonClick = async mutate => {
     setActiveFollow(false);
     const { data } = await mutate();
-    await notification.toggle({
-      user,
-      hasDone: hasFollow,
-      notificationType: NotificationType.FOLLOW,
-      notificationTypeId: data.createFollow ? data.createFollow.id : null,
-    });
+      !hasFollow &&
+      await notification.toggle({
+        user,
+        hasDone: hasFollow,
+        notificationType: NotificationType.FOLLOW,
+        notificationTypeId: data.createFollow ? data.createFollow.id : null,
+      });
   };
 
   let toggleProfile = (title, isCover, image) => {
