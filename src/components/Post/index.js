@@ -40,7 +40,7 @@ const Post = ({ queryOptions, isAuth }) => {
           return <></>;
         }
         if (postsData && isAuth) {
-          postsData.posts = postsData.posts.sort(compare)
+          postsData.posts = postsData.posts.sort(compare);
 
           return (
             <LoadMorePosts
@@ -81,7 +81,7 @@ const Post = ({ queryOptions, isAuth }) => {
   );
 };
 
-const compare = (a,b) => {
+const compare = (a, b) => {
   let comparison = 0;
 
   if (a.createdAt > b.createdAt) {
@@ -91,12 +91,11 @@ const compare = (a,b) => {
   }
 
   return comparison * -1;
-}
+};
 
 Post.propTypes = {
   queryOptions: PropTypes.object.isRequired,
   isAuth: PropTypes.bool.isRequired,
 };
-
 
 export default Post;

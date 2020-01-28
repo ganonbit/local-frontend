@@ -3,32 +3,75 @@ import PropTypes from 'prop-types';
 import Like from 'components/Like';
 import SharePost from 'components/SharePost';
 
-function PostControlButton({ author, postId, likes, toggle, post, isAuth, userId, postSharer, sharedPostId }) {
+function PostControlButton({
+  author,
+  postId,
+  likes,
+  toggle,
+  post,
+  isAuth,
+  userId,
+  postSharer,
+  sharedPostId,
+}) {
   return (
     <div className='control-block-button post-control-button'>
       {!isAuth ? (
-          <a
-            href='#1'
-            onClick={e => {
-              e.preventDefault();
-            }}
-            className='btn btn-control likes'
-          >
-            <img
-              src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/heart-icon_jd2hne.png'
-              alt=''
-            />
-            <div className='ripple-container'></div>
-          </a>
+        <a
+          href='#1'
+          onClick={e => {
+            e.preventDefault();
+          }}
+          className='btn btn-control likes'
+        >
+          <img
+            src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/heart-icon_jd2hne.png'
+            alt=''
+          />
+          <div className='ripple-container'></div>
+        </a>
       ) : (
         <Like user={author} postId={postId} likes={likes} post={post} />
       )}
+      {!isAuth ? (
+        <a
+          href='#1'
+          onClick={e => {
+            e.preventDefault();
+          }}
+          className='btn btn-control likes'
+        >
+          <img
+            src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/comments-icon_ffpa0l.png'
+            alt=''
+          />
+          <div className='ripple-container'></div>
+        </a>
+      ) : 
+      (
         <a href className='btn btn-control comments' onClick={toggle}>
           <img
             src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/comments-icon_ffpa0l.png'
             alt=''
           />
         </a>
+      )}
+
+      {!isAuth ? (
+        <a
+          href='#1'
+          onClick={e => {
+            e.preventDefault();
+          }}
+          className='btn btn-control likes'
+        >
+          <img
+            src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/share-icon_rkyjac.png'
+            alt=''
+          />
+          <div className='ripple-container'></div>
+        </a>
+      ) : (
 
       <SharePost
         postId={postId}
@@ -36,6 +79,7 @@ function PostControlButton({ author, postId, likes, toggle, post, isAuth, userId
         postSharer={postSharer}
         sharedPostId={sharedPostId}
       />
+      )}
     </div>
   );
 }

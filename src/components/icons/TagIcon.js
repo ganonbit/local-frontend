@@ -27,5 +27,5 @@ export const TagIcon = ({ width, color }) => {
 
 TagIcon.propTypes = {
   width: PropTypes.any,
-  color: PropTypes.any
+  color: PropTypes.any,
 };

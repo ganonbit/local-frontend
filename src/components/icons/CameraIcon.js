@@ -27,5 +27,5 @@ export const CameraIcon = ({ width, color }) => {
 
 CameraIcon.propTypes = {
   width: PropTypes.any,
-  color: PropTypes.any
+  color: PropTypes.any,
 };

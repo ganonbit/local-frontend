@@ -33,4 +33,3 @@ export { CheckIcon } from './CheckIcon';
 export { DropDownArrowIcon } from './DropDownArrowIcon';
 export { HappyFaceIcon } from './HappyFaceIcon';
 export { LoadMoreButton } from './LoadMoreButton';
-

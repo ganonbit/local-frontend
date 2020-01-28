@@ -138,7 +138,9 @@ const Notifications = ({ client, refetch }) => {
                                 username: notification.author.username,
                               })}
                               className='notification-text'
-                              onClick={() => updateNotificationSeen()}
+                              onClick={() =>
+                                updateNotificationSeen(notification.id)
+                              }
                             >
                               <p>is now following you!</p>
                             </Link>

@@ -26,5 +26,5 @@ export const HappyFaceIcon = ({ width, color }) => {
 
 HappyFaceIcon.propTypes = {
   width: PropTypes.any,
-  color: PropTypes.any
+  color: PropTypes.any,
 };

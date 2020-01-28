@@ -60,20 +60,20 @@ const PostFooter = props => {
       </span>
 
       <div className='comments-shared'>
-          <a
-            href='#1'
-            onClick={e => {
-              e.preventDefault();
-            }}
-            className='post-add-icon inline-items'
-          >
-            <FontAwesomeIcon
-              icon={faComment}
-              style={{ width: '1.6rem' }}
-              onClick={toggle}
-            />
-            <span>{comments && comments.length}</span>
-          </a>
+        <a
+          href='#1'
+          onClick={e => {
+            e.preventDefault();
+          }}
+          className='post-add-icon inline-items'
+        >
+          <FontAwesomeIcon
+            icon={faComment}
+            style={{ width: '1.6rem' }}
+            onClick={toggle}
+          />
+          <span>{comments && comments.length}</span>
+        </a>
       </div>
     </div>
   );

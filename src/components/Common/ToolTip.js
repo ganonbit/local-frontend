@@ -5,18 +5,13 @@ import { OverlayTrigger, Popover } from 'react-bootstrap';
 
 const ToolTip = props => <Tooltip>{props}</Tooltip>;
 
-const OverlayTriggers = ({
-  placement,
-  toolTipText,
-  children,
-}) => {
+const OverlayTriggers = ({ placement, toolTipText, children }) => {
   return (
     <OverlayTrigger
       trigger='hover'
       placement={placement}
       delay={{ show: 0, hide: 1 }}
-      overlay={ToolTip(toolTipText)
-      }
+      overlay={ToolTip(toolTipText)}
     >
       {children}
     </OverlayTrigger>

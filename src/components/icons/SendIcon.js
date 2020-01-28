@@ -26,5 +26,5 @@ export const SendIcon = ({ width, color }) => {
 
 SendIcon.propTypes = {
   width: PropTypes.any,
-  color: PropTypes.any
+  color: PropTypes.any,
 };

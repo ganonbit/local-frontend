@@ -26,5 +26,5 @@ export const CheckIcon = ({ width, color }) => {
 
 CheckIcon.propTypes = {
   width: PropTypes.any,
-  color: PropTypes.any
+  color: PropTypes.any,
 };

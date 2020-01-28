@@ -1,52 +1,76 @@
 import React, { useState } from 'react';
+import { generatePath } from 'react-router-dom';
 import PostControlButton from '../Common/PostControlButton';
 import PostHeader from './PostHeader';
 import PostFooter from './PostFooter';
 import PostContent from './PostContent';
 import Comments from 'components/Comments/Comments';
 import AddComment from 'components/Comments/AddComment';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faRetweet } from '@fortawesome/free-solid-svg-icons';
 
 import { useStore } from 'store';
+import * as Routes from 'routes';
 
 const SinglePost = ({ post, isAuth }) => {
   const [{ auth }] = useStore();
   const [isCommentOpen, setCommentOpen] = useState(true);
   const toggleComment = () => setCommentOpen(!isCommentOpen);
   const articleClass = 'hentry post';
-  let sharedPost = false
+  let sharedPost = false;
 
-
-  if (!post) {return null;}
-  if (post.post) { sharedPost = true }
+  if (!post) {
+    return null;
+  }
+  if (post.post) {
+    sharedPost = true;
+  }
 
   if (!sharedPost) {
-    return (
-      renderPost(sharedPost, post, isAuth, auth, isCommentOpen, toggleComment, articleClass)
+    return renderPost(
+      sharedPost,
+      post,
+      isAuth,
+      auth,
+      isCommentOpen,
+      toggleComment,
+      articleClass
     );
   } else if (sharedPost) {
-    return (
-      renderPost(sharedPost, post, isAuth, auth, isCommentOpen, toggleComment, articleClass)
+    return renderPost(
+      sharedPost,
+      post,
+      isAuth,
+      auth,
+      isCommentOpen,
+      toggleComment,
+      articleClass
     );
   } else {
     return null;
   }
 };
 
-const renderPost = (isSharedPost, post, isAuth, auth, isCommentOpen, toggleComment, articleClass) => {
-  let postSharer = null
-  let sharedPostId = null
+const renderPost = (
+  isSharedPost,
+  post,
+  isAuth,
+  auth,
+  isCommentOpen,
+  toggleComment,
+  articleClass
+) => {
+  let postSharer,
+    sharedPostId = null;
   if (isSharedPost) {
-    sharedPostId = post.id
-    postSharer = post.user
-    post = post.post
+    sharedPostId = post.id;
+    postSharer = post.user;
+    post = post.post;
   }
 
   return (
     <div key={post.id} className='ui-block'>
-      {
-        isSharedPost &&
-          renderSharedPostText(auth.user, postSharer)
-      }
+      {isSharedPost && renderSharedPostText(auth.user, postSharer)}
       <article className={articleClass}>
         <PostHeader
           author={post.author}
@@ -79,7 +103,7 @@ const renderPost = (isSharedPost, post, isAuth, auth, isCommentOpen, toggleComme
           sharedPostId={sharedPostId}
         />
       </article>
-      {isAuth && isCommentOpen && <Comments post={post} isAuth={isAuth}/>}
+      {isAuth && isCommentOpen && <Comments post={post} isAuth={isAuth} />}
       {isAuth && (
         <AddComment
           authorId={auth.user.id}
@@ -92,16 +116,34 @@ const renderPost = (isSharedPost, post, isAuth, auth, isCommentOpen, toggleComme
         />
       )}
     </div>
-  )
-}
+  );
+};
 
 const renderSharedPostText = (user, postSharer) => {
-  const sharerDisplayName = (user.id === postSharer.id) ? 'You' : postSharer.username
+  const sharerDisplayName =
+    user.id === postSharer.id ? 'You' : postSharer.username;
   return (
-    <span class="ml-3 font-weight-light font-italic">
-      {`${sharerDisplayName} Shared`}
-    </span>
-  )
-}
+    <div className='shared-post'>
+      <FontAwesomeIcon
+        icon={faRetweet}
+        size='2x'
+        color={'green'}
+        onClick={e => {
+          e.preventDefault();
+        }}
+      />
+      <span className='ml-2 font-weight-light font-italic'>
+        <a
+          href={generatePath(Routes.USER_PROFILE, {
+            username: postSharer.username,
+          })}
+        >
+          {sharerDisplayName}
+        </a>{' '}
+        shared
+      </span>
+    </div>
+  );
+};
 
 export default SinglePost;
