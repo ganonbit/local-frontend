@@ -62,7 +62,7 @@ function AddComment({ authorId, author, post, onCancel, userId }) {
         {
           query: GET_POST,
           variables: { id: post.id },
-        }
+        },
       ]}
     >
       {(createComment, { loading, error: apiError }) => {

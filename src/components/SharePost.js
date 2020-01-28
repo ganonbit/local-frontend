@@ -9,25 +9,33 @@ import { useStore } from 'store';
  */
 const SharePost = ({ postId, post, postSharer, sharedPostId }) => {
   const [{ auth }] = useStore();
-  if (!auth.user) { return null; }
-  
-  let hasShared = false
+  if (!auth.user) {
+    return null;
+  }
+
+  let hasShared = false;
   if (postSharer && sharedPostId && auth.user.id === postSharer.id) {
-    postId = sharedPostId
-    hasShared = true
+    postId = sharedPostId;
+    hasShared = true;
   }
 
   const handleButtonClick = async (event, mutate) => {
     event.preventDefault();
     try {
       const { data } = await mutate();
-      if (data) {
+      if (data && hasShared === false) {
         // TODO: Add better notice when someone shares a post
-        alert('You shared a post!')
+        alert('Successfully shared post!');
+      }
+      if (data && hasShared === true) {
+        // TODO: Add better notice when someone un-shares a post
+        alert('Successfully un-shared post');
       }
     } catch (err) {
-      alert('Sorry an error occurred while trying to share a post. Please try again later.')
-      console.log(`Error:\n ${err}`)
+      alert(
+        'Sorry an error occurred while trying to share a post. Please try again later.'
+      );
+      console.log(`Error:\n ${err}`);
     }
   };
 
@@ -53,10 +61,11 @@ const SharePost = ({ postId, post, postSharer, sharedPostId }) => {
         return (
           <OverlayTriggers
             toolTipText={hasShared ? 'UNSHARE' : 'SHARE'}
-            placement='left'>
+            placement='left'
+          >
             <a
               href='#'
-              onClick={(e) => handleButtonClick(e, mutate)}
+              onClick={e => handleButtonClick(e, mutate)}
               className='btn btn-control share-link'
             >
               <img

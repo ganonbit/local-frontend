@@ -27,5 +27,5 @@ export const EnvelopeOpenIcon = ({ width, color }) => {
 
 EnvelopeOpenIcon.propTypes = {
   width: PropTypes.any,
-  color: PropTypes.any
+  color: PropTypes.any,
 };

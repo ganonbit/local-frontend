@@ -24,12 +24,12 @@ const Like = ({ postId, user, likes, post }) => {
   let isAuthUser = currentUser === user.id;
   let isAuthPost = post && auth.user.id === post.author.id;
   let isPostLiked = true;
-  
+
   const firstArrEntry = function(array, n) {
     if (array == null) {
       return void 0;
     }
-    if (n == null)  {
+    if (n == null) {
       return array[0];
     }
     if (n < 0) {
@@ -38,17 +38,17 @@ const Like = ({ postId, user, likes, post }) => {
     return array.slice(0, n);
   };
 
-  const userLikedPostsArr = likes.filter(userHasLiked => userHasLiked.user === currentUser);
+  const userLikedPostsArr = likes.filter(
+    userHasLiked => userHasLiked.user === currentUser
+  );
 
   const userLikedPost = firstArrEntry(userLikedPostsArr);
-
 
   if (userLikedPostsArr.length === 0) {
     isPostLiked = false;
   }
 
-  const toggleLike = () => isPostLiked = !isPostLiked;
-
+  const toggleLike = () => (isPostLiked = !isPostLiked);
 
   const handleButtonClick = async mutate => {
     setLoading(true);
@@ -83,16 +83,16 @@ const Like = ({ postId, user, likes, post }) => {
     <Mutation
       mutation={options[operation].mutation}
       variables={{ input: { ...options[operation].variables } }}
-      refetchQueries={() => [
-        { query: GET_POST, variables: { id: postId } },
-      ]}
+      refetchQueries={() => [{ query: GET_POST, variables: { id: postId } }]}
     >
       {mutate => {
         return (
           <a
             href
             className={
-              isPostLiked ? 'btn btn-control likes-liked' : 'btn btn-control likes'
+              isPostLiked
+                ? 'btn btn-control likes-liked'
+                : 'btn btn-control likes'
             }
           >
             <FontAwesomeIcon

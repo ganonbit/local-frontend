@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom';
 import { connectInfiniteHits } from 'react-instantsearch-core';
 
 class Hits extends React.Component {
@@ -12,7 +12,7 @@ class Hits extends React.Component {
           className='list-group overflow-auto'
           style={{ maxHeight: '240px' }}
         >
-          {hits.map((hit,index) => (
+          {hits.map((hit, index) => (
             <Link to={`/${hit.author && hit.author.username}`} key={index}>
               <div className='card border-bottom list-group-item list-group-item-action'>
                 <div className='card-body p-0'>

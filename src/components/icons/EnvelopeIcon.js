@@ -26,5 +26,5 @@ export const EnvelopeIcon = ({ width, color }) => {
 
 EnvelopeIcon.propTypes = {
   width: PropTypes.any,
-  color: PropTypes.any
+  color: PropTypes.any,
 };
