@@ -126,7 +126,7 @@ const renderSharedPostText = (user, postSharer) => {
     <div className='shared-post'>
       <FontAwesomeIcon
         icon={faRetweet}
-        size='2x'
+        size='lg'
         color={'green'}
         onClick={e => {
           e.preventDefault();
