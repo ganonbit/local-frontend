@@ -1,12 +1,16 @@
 import React, { useState } from 'react';
+import { generatePath } from 'react-router-dom';
 import PostControlButton from '../Common/PostControlButton';
 import PostHeader from './PostHeader';
 import PostFooter from './PostFooter';
 import PostContent from './PostContent';
 import Comments from 'components/Comments/Comments';
 import AddComment from 'components/Comments/AddComment';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faRetweet } from '@fortawesome/free-solid-svg-icons';
 
 import { useStore } from 'store';
+import * as Routes from 'routes';
 
 const SinglePost = ({ post, isAuth }) => {
   const [{ auth }] = useStore();
@@ -95,11 +99,29 @@ const renderPost = (isSharedPost, post, isAuth, auth, isCommentOpen, toggleComme
 };
 
 const renderSharedPostText = (user, postSharer) => {
-  const sharerDisplayName = (user.id === postSharer.id) ? 'You' : postSharer.username
+  const sharerDisplayName = (user.id === postSharer.id) ? 'You' : postSharer.username;
   return (
-    <span className="ml-3 font-weight-light font-italic">
-      {`${sharerDisplayName} Shared`}
-    </span>
+    <div className="shared-post">
+      <FontAwesomeIcon
+      icon={faRetweet}
+      size='2x'
+      color={'green'}
+      onClick={e => {
+        e.preventDefault();
+      }} />
+      <span className="ml-2 font-weight-light font-italic">
+        <a
+            className='author-thumb'
+            href={generatePath(Routes.USER_PROFILE, {
+              username: postSharer.username,
+            })}
+          >
+            {sharerDisplayName}
+          </a>
+          {' '}
+          shared
+      </span>
+    </div>
   );
 };
 

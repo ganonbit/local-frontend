@@ -11,10 +11,10 @@ const SharePost = ({ postId, post, postSharer, sharedPostId }) => {
   const [{ auth }] = useStore();
   if (!auth.user) { return null; }
   
-  let hasShared = false
+  let hasShared = false;
   if (postSharer && sharedPostId && auth.user.id === postSharer.id) {
-    postId = sharedPostId
-    hasShared = true
+    postId = sharedPostId;
+    hasShared = true;
   }
 
   const handleButtonClick = async (event, mutate) => {
@@ -23,11 +23,11 @@ const SharePost = ({ postId, post, postSharer, sharedPostId }) => {
       const { data } = await mutate();
       if (data) {
         // TODO: Add better notice when someone shares a post
-        alert('You shared a post!')
+        alert('You shared a post!');
       }
     } catch (err) {
-      alert('Sorry an error occurred while trying to share a post. Please try again later.')
-      console.log(`Error:\n ${err}`)
+      alert('Sorry an error occurred while trying to share a post. Please try again later.');
+      console.log(`Error:\n ${err}`);
     }
   };
 
