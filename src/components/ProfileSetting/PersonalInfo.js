@@ -182,9 +182,11 @@ const PersonalInfo = ({ refetch }) => {
                       error={error.phone}
                     />
                   </div>
-                  <div className='col col-lg-6 col-md-4 col-sm-12 col-12'>
+                  <div className='col col-lg-6 col-md-6 col-sm-12 col-12'>
                     <div className='form-group label-floating is-select'>
-                      <label className='control-label' htmlFor="gender">Your Gender</label>
+                      <label className='control-label' htmlFor='gender'>
+                        Your Gender
+                      </label>
                       <select
                         name='gender'
                         className='selectpicker form-control'
@@ -199,9 +201,11 @@ const PersonalInfo = ({ refetch }) => {
                       </select>
                     </div>
                   </div>
-                  <div className='col col-lg-6 col-md-4 col-sm-12 col-12'>
+                  <div className='col col-lg-6 col-md-6 col-sm-12 col-12'>
                     <div className='form-group date-time-picker label-floating'>
-                      <label className='control-label' htmlFor="birthday">Your Birthday</label>
+                      <label className='control-label' htmlFor='birthday'>
+                        Your Birthday
+                      </label>
                       <DatePicker
                         dateFormat='MM/dd/yyyy'
                         selected={
@@ -213,9 +217,11 @@ const PersonalInfo = ({ refetch }) => {
                       />
                     </div>
                   </div>
-                  <div className='col col-lg-6 col-md-4 col-sm-12 col-12'>
+                  <div className='col col-lg-6 col-md-6 col-sm-12 col-12'>
                     <div className='form-group label-floating is-select'>
-                      <label className='control-label' htmlFor="location">Your Location</label>
+                      <label className='control-label' htmlFor='location'>
+                        Your Location
+                      </label>
                       <textarea
                         className='form-control'
                         onChange={handleChange}
@@ -226,7 +232,7 @@ const PersonalInfo = ({ refetch }) => {
                   </div>
                   <div className='col col-lg-6 col-md-6 col-sm-12 col-12'>
                     <div className='form-group label-floating'>
-                      <label className='control-label' htmlFor="description">
+                      <label className='control-label' htmlFor='description'>
                         Write a little description about you
                       </label>
                       <textarea
@@ -237,7 +243,7 @@ const PersonalInfo = ({ refetch }) => {
                       ></textarea>
                     </div>
                   </div>
-                  <div className='col col-lg-6 col-md-6 col-sm-12 col-12'>
+                  <div className='col col-lg-6 col-md-6 col-sm-12 col-12 mb-2'>
                     <button
                       className='btn btn-secondary btn-lg full-width'
                       onClick={e => restoreFields(e)}
@@ -245,7 +251,7 @@ const PersonalInfo = ({ refetch }) => {
                       Restore all Attributes
                     </button>
                   </div>
-                  <div className='col col-lg-6 col-md-6 col-sm-12 col-12'>
+                  <div className='col col-lg-6 col-md-6 col-sm-12 col-12 mb-2'>
                     <button
                       className='btn btn-primary btn-lg full-width'
                       disabled={disableButton}

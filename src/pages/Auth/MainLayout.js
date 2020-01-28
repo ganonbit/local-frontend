@@ -13,8 +13,6 @@ const MainLayout = ({ children, location }) => {
   return (
     <div className='landing-page'>
       <EmailVerificationModal />
-      <div className='content-bg-wrap'></div>
-      <div className='content-bg-wrap'></div>
       <Headroom
         disableInlineStyles
         className={`header--standard header--standard-landing animated ${className}`}
@@ -38,40 +36,40 @@ const MainLayout = ({ children, location }) => {
           </div>
         </div>
       </Headroom>
-
-      <div className='header-spacer--standard'></div>
-
-      <div className='container'>
-        <div className='row display-flex'>
-          <div className='col col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12'>
-            <div className='landing-content'>
-              <h1>
-                The <b>FIRST EVER</b> online community for avocado lovers is
-                here!
-              </h1>
-              <p>
-                You will be rewarded for doing what you love to do; sharing your
-                favorite avocado shots, indulging in a scrumptious avocado dish,
-                and collecting the most useful avocado health and wellness tips
-                to help you live your best life ever!
-              </p>
-              {location.pathname === '/signup' && (
-                <p>Already have an account?</p>
-              )}
-              <Link
-                to={{
-                  pathname:
-                    location.pathname === '/login' ? '/signup' : '/login',
-                }}
-                className='btn btn-md btn-border c-white'
-              >
-                {location.pathname === '/login' ? 'Register Now' : 'LOG IN'}
-              </Link>
+      <div className='content-bg-wrap'>
+        <div className='container'>
+          <div className='row align-items-center'>
+            <div className='col col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12'>
+              <div className='landing-content'>
+                <h1>
+                  The <b>FIRST EVER</b> online community for avocado lovers is
+                  here!
+                </h1>
+                <p>
+                  You will be rewarded for doing what you love to do; sharing
+                  your favorite avocado shots, indulging in a scrumptious
+                  avocado dish, and collecting the most useful avocado health
+                  and wellness tips to help you live your best life ever!
+                </p>
+                {location.pathname === '/signup' && (
+                  <p>Already have an account?</p>
+                )}
+                <Link
+                  to={{
+                    pathname:
+                      location.pathname === '/login' ? '/signup' : '/login',
+                  }}
+                  className='btn px-4 py-2 btn-border c-white'
+                >
+                  {location.pathname === '/login' ? 'Register Now' : 'LOG IN'}
+                </Link>
+              </div>
             </div>
+            {children}
           </div>
-          {children}
         </div>
       </div>
+      <div className='user-ftr'></div>
     </div>
   );
 };

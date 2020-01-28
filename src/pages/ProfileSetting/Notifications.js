@@ -56,7 +56,18 @@ const Notifications = ({ client }) => {
         notifyOnNetworkStatusChange
       >
         {({ data, loading, fetchMore, networkStatus }) => {
-          if (loading && networkStatus === 1) return <>Loading ....</>;
+          if (loading && networkStatus === 1)
+            return (
+              <>
+                <div className='d-flex justify-content-center my-2'>
+                  <img
+                    className='flex'
+                    src='https://res.cloudinary.com/weare270b/image/upload/v1579191490/static/loader_eyctc7.gif'
+                    alt='loading...'
+                  />
+                </div>
+              </>
+            );
           const { notifications, count } = data.getUserNotifications;
           if (!notifications.length) {
             return (
