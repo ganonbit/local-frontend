@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { useStore } from 'store';
 import { generatePath, Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
@@ -11,7 +11,7 @@ import Avatar from 'components/Avatar';
 
 import * as Routes from 'routes';
 
-const Notifications = ({ client, refetch }) => {
+const Notifications = ({ client }) => {
   const [{ auth }] = useStore();
   const updateNotificationSeen = async notificationId => {
     try {
@@ -25,8 +25,19 @@ const Notifications = ({ client, refetch }) => {
         },
         refetchQueries: () => [{ query: GET_AUTH_USER }],
       });
-    } catch (err) {}
+    } catch (err) {
+      throw err;
+    }
   };
+
+  auth.user.newNotifications.map(notification => {
+    !notification.like &&
+      !notification.comment &&
+      !notification.follow &&
+      updateNotificationSeen(notification.id);
+    return;
+  });
+
   return (
     <div className='icon-outer'>
       <div className='control-icon more has-items'>
