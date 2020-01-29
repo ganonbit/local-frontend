@@ -62,7 +62,7 @@ const SidebarContent = ({ onSetSidebarOpen, isAuth, location }) => {
               </li>
               <li>
                 <Link to={generatePath(Routes.HOME)}>
-                  <OverlayTriggers toolTipText='HOME PAGE' placement='right'>
+                  <OverlayTriggers toolTipText='NEWSFEED' placement='right'>
                     <img
                       src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avocado-icon_rwvve0.png'
                       alt=''

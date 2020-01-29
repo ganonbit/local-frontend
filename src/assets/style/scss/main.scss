@@ -6251,7 +6251,6 @@ fieldset[disabled] .checkbox input[type='checkbox'],
 .notification-list .notification-icon {
   color: #d7d9e5;
   fill: #d7d9e5;
-  float: right;
   margin-top: 10px;
 }
 
@@ -22537,6 +22536,56 @@ button.following-btn:focus {
   }
   .form-group.with-button input {
     padding-right: 15px;
+  }
+  .fixed-sidebar-left.sidebar--small {
+    width: 60px;
+    height: 60px;
+  }
+  .fixed-sidebar .logo {
+    height: 60px;
+  }
+  .page-has-left-panels .header {
+    padding-left: 60px;
+  }
+  .mobile-app-tabs {
+    height: 60px;
+  }
+  .mobile-app-tabs .nav-item {
+    height: 60px;
+  }
+  .header {
+    height: 60px;
+  }
+  .svg-inline--fa.fa-w-18, .svg-inline--fa.fa-w-16, .svg-inline--fa.fa-w-14, .svg-inline--fa.fa-w-11 {
+    width: .8em;
+  }
+  .author-thumb {
+    width: 30px;
+    height: 30px;
+  }
+  .author-page {
+    margin-left: 0;
+  }
+  .search-bar {
+    height: 60px;
+  }
+  .search-bar.w-search {
+    max-width: 100%;
+    width: 100%;
+    left: auto;
+    right: 0px;
+  }
+  .search-bar.w-search {
+    top: 60px;
+  }
+  .search-bar .form-group {
+    height: 60px;
+  }
+  .search-bar.w-search {
+    min-height: 60px;
+  }
+  .header-spacer-small {
+    height: 60px;
   }
 }
 @media (max-width: 460px) {
