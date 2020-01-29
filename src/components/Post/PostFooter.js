@@ -16,6 +16,8 @@ const PostFooter = props => {
     post,
   } = props;
 
+  let red = 'var(--theme-color-pink)';
+
   const commentlist = [];
   if (comments.length > 0) {
     const map = new Map();
@@ -41,6 +43,7 @@ const PostFooter = props => {
             likes={likes}
             userId={userId}
             post={post}
+            colored={red}
           />
         )}
         {isAuth === false && (

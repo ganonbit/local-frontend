@@ -100,52 +100,54 @@ const PostHeader = props => {
           </time>
         </div>
       </div>
-      <div className='more'>
-        <FontAwesomeIcon
-          className='olymp-three-dots-icon'
-          size='lg'
-          color='black'
-          icon={faEllipsisV}
-          style={{ height: '12px' }}
-        />
+      {isAuth ? (
+        <div className='more'>
+          <FontAwesomeIcon
+            className='olymp-three-dots-icon'
+            size='lg'
+            color='black'
+            icon={faEllipsisV}
+            style={{ height: '12px' }}
+          />
 
-        <ul className='more-dropdown'>
-          {(isAuth && isOwner) || (isAuth && isSelma) ? (
+          <ul className='more-dropdown'>
+            {(isAuth && isOwner) || (isAuth && isSelma) ? (
+              <li>
+                <Link
+                  href
+                  onClick={e => {
+                    setIsShowing(true);
+                  }}
+                >
+                  Edit Post
+                </Link>
+              </li>
+            ) : null}
+            {(isAuth && isOwner) || (isAuth && isSelma) ? (
+              <li>
+                <Link
+                  href
+                  onClick={e => {
+                    e.preventDefault();
+                    deletePost(e);
+                  }}
+                >
+                  Delete Post
+                </Link>
+              </li>
+            ) : null}
             <li>
               <Link
-                href
-                onClick={e => {
-                  setIsShowing(true);
-                }}
+                to={generatePath(Routes.POST, {
+                  id: postId,
+                })}
               >
-                Edit Post
+                Permalink
               </Link>
             </li>
-          ) : null}
-          {(isAuth && isOwner) || (isAuth && isSelma) ? (
-            <li>
-              <Link
-                href
-                onClick={e => {
-                  e.preventDefault();
-                  deletePost(e);
-                }}
-              >
-                Delete Post
-              </Link>
-            </li>
-          ) : null}
-          <li>
-            <Link
-              to={generatePath(Routes.POST, {
-                id: postId,
-              })}
-            >
-              Permalink
-            </Link>
-          </li>
-        </ul>
-      </div>
+          </ul>
+        </div>
+      ) : null }
     </div>
   );
 };

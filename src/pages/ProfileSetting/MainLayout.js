@@ -60,18 +60,18 @@ const MainLayout = ({ children }) => {
                         <li>
                           <Link to={Routes.SETTINGS}>Personal Information</Link>
                         </li>
-                        <li>
+                        {/* <li>
                           <Link to='/settings/change-password'>
                             Change Password
                           </Link>
-                        </li>
+                        </li> */}
                       </ul>
                     </div>
                   </div>
                 </div>
                 <div className='ui-block-title'>
                   <Link to={Routes.NOTIFICATIONS}>Notifications</Link>
-                  <a href className='items-round-little bg-primary'>
+                  <a href className='items-round-little'>
                     {auth.user.newNotifications.length}
                   </a>
                 </div>
