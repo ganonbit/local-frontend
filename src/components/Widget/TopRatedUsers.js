@@ -50,7 +50,10 @@ const TopRatedUsers = ({ client }) => {
               </div>
               <ul className='widget w-friend-pages-added notification-list friend-requests sidebar-box'>
                 {data.getTopUsers.map((user, index) => (
-                  <li className='inline-items' key={index}>
+                  <li
+                    className='d-flex justify-content-start align-items-center px-3 py-2'
+                    key={index}
+                  >
                     <div className='author-thumb'>
                       <Avatar image={user.image} />
                     </div>
@@ -65,7 +68,7 @@ const TopRatedUsers = ({ client }) => {
                       </Link>
                     </div>
                     <OverlayTriggers toolTipText='FOLLOW' placement='left'>
-                      <span className='notification-icon'>
+                      <span className='notification-icon ml-auto'>
                         <div
                           className='accept-request'
                           onClick={e => handleButtonClick(e, user)}
