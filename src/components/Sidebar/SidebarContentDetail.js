@@ -18,7 +18,7 @@ const SidebarMainContent = ({ onSetSidebarOpen, isAuth }) => {
       path: null,
     },
     {
-      title: 'Home page',
+      title: 'Newsfeed',
       image:
         'https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avocado-icon_rwvve0.png',
       path: '/',
