@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Mutation } from 'react-apollo';
 import DatePicker from 'react-datepicker';
+import moment from 'moment';
 
 import { Field } from 'components/ProfileSetting';
 import { formatDate } from 'utils/date';
@@ -210,7 +211,12 @@ const PersonalInfo = ({ refetch }) => {
                         dateFormat='MM/dd/yyyy'
                         selected={
                           typeof date === 'string'
-                            ? new Date(parseInt(date))
+                            ? new Date(
+                                moment
+                                  .utc(new Date(parseInt(date)))
+                                  .format('MM/DD/YYYY')
+                                  .toString()
+                              )
                             : date
                         }
                         onChange={handleBirthdayChange}
