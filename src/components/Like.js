@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { Mutation, withApollo } from 'react-apollo';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHeart } from '@fortawesome/free-solid-svg-icons';
+import { HeartLike } from '../assets/svg-icons';
 
 import { GET_POST } from 'graphql/post';
 import { CREATE_LIKE, DELETE_LIKE } from 'graphql/like';
@@ -95,17 +94,15 @@ const Like = ({ postId, user, likes, post, colored }) => {
                 : 'btn btn-control likes'
             }
           >
-            <FontAwesomeIcon
+            <HeartLike
               disabled={loading}
-              icon={faHeart}
-              size='2x'
               color={!colored ? isPostLiked ? 'white' : 'grey' : isPostLiked ? colored : 'grey'}
+              style={{fill: !colored ? isPostLiked ? 'white' : 'grey' : isPostLiked ? colored : 'grey' }}
               onClick={() => {
                 toggleLike();
                 handleButtonClick(mutate);
               }}
             />
-            <div className='ripple-container'></div>
           </a>
         );
       }}
