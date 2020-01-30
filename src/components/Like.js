@@ -103,7 +103,6 @@ const Like = ({ postId, user, likes, post, colored }) => {
                 handleButtonClick(mutate);
               }}
             />
-            <div className='ripple-container'></div>
           </a>
         );
       }}
