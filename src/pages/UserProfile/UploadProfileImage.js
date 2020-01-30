@@ -1,17 +1,21 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import { Modal } from 'react-bootstrap';
 import { Mutation } from 'react-apollo';
+
 import { UPLOAD_PHOTO, EDIT_ACCOUNT, GET_USER_POSTS } from 'graphql/user';
 import { withApollo } from 'react-apollo';
 import { MAX_POST_IMAGE_SIZE } from 'constants/ImageSize';
 
 const UploadProfileImage = props => {
   let { onHide, user, isCover, image, title, refetch, client } = props;
+
   const [values, setValues] = useState({
     imagePreview: image,
     image: '',
+    error: '',
   });
-
+  let { error } = values;
   const deleteProfileImage = async () => {
     try {
       await client.mutate({
@@ -32,13 +36,14 @@ const UploadProfileImage = props => {
         ],
       });
     } catch (err) {
-      console.log(err);
+      //console.log(err);
     }
   };
 
   let { imagePreview } = values;
   let onSubmitHandler = (e, uploadUserPhoto) => {
     e.preventDefault();
+    if (error) return;
     if (values.image)
       uploadUserPhoto().then(async ({ data }) => {
         refetch();
@@ -56,10 +61,18 @@ const UploadProfileImage = props => {
     const file = e.target.files[0];
     if (!file) return;
 
+    if (!file.type.match('image.*')) {
+      setValues({
+        ...values,
+        error: 'Please upload valid file extension (jpg, jpeg, bmp, gif, png)',
+        imagePreview: URL.createObjectURL(e.target.files[0]),
+      });
+      return;
+    }
+
     if (file.size >= MAX_POST_IMAGE_SIZE) {
       setValues({
         ...values,
-
         error: `File size should be less then ${MAX_POST_IMAGE_SIZE /
           1000000}MB`,
       });
@@ -69,6 +82,7 @@ const UploadProfileImage = props => {
       ...values,
       image: e.target.files[0],
       imagePreview: URL.createObjectURL(e.target.files[0]),
+      error: '',
     });
     e.target.value = null;
   };
@@ -136,6 +150,11 @@ const UploadProfileImage = props => {
                         </li>
                       </ul>
                     </div>
+                    {error && (
+                      <span className='text-center d-block text-danger mt-1'>
+                        {error}
+                      </span>
+                    )}
                     <div className='upload-content'>
                       <ul className='d-flex p-3 m-0 list-unstyled justify-content-between align-items-center flex-wrap'>
                         <li>
@@ -181,4 +200,15 @@ const UploadProfileImage = props => {
     </Mutation>
   );
 };
+
+UploadProfileImage.propTypes = {
+  onHide: PropTypes.func.isRequired,
+  user: PropTypes.object.isRequired,
+  isCover: PropTypes.bool.isRequired,
+  image: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  refetch: PropTypes.func.isRequired,
+  client: PropTypes.object.isRequired,
+};
+
 export default withApollo(UploadProfileImage);

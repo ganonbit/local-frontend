@@ -26,12 +26,15 @@ function CommentsHeader(props) {
     commentId,
     isAuth,
     post,
+    editCommentHandler,
+    index,
   } = props;
 
   const [{ auth }] = useStore();
   const isSelma = !auth.user ? null : auth.user.role === 'selma';
   const isOwner = !auth.user ? null : auth.user.id === author.id;
   const commentDate = new Date(parseInt(createdAt));
+
   const deleteComment = async () => {
     try {
       await client.mutate({
@@ -95,22 +98,20 @@ function CommentsHeader(props) {
             />
 
             <ul className='more-dropdown'>
-              {/* <li>
-                <Link
-                  to
-                  onClick={e => {
-                    e.preventDefault();
-                    // editComment(e);
-                  }}
-                >
-                  Edit Comment
-                </Link>
-              </li> */}
               <li>
                 <Link
                   to
                   onClick={e => {
-                    e.preventDefault();
+                    editCommentHandler(index);
+                  }}
+                >
+                  Edit Comment
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to
+                  onClick={e => {
                     deleteComment(e);
                   }}
                 >
@@ -133,6 +134,8 @@ CommentsHeader.propTypes = {
   commentId: PropTypes.string.isRequired,
   isAuth: PropTypes.bool.isRequired,
   post: PropTypes.object.isRequired,
+  editCommentHandler: PropTypes.func.isRequired,
+  index: PropTypes.number.isRequired,
 };
 
 export default withApollo(CommentsHeader);
