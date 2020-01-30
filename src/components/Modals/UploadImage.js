@@ -27,12 +27,18 @@ const UploadImageModal = ({
 
     if (!file) return;
 
+    if (!file.type.match('image.*')) {
+      setError('Please upload valid file extension (jpg, jpeg, bmp, gif, png)');
+      return;
+    }
+
     if (file.size >= MAX_POST_IMAGE_SIZE) {
       setError(
         `File size should be less then ${MAX_POST_IMAGE_SIZE / 1000000}MB`
       );
       return;
     }
+    setError('');
     handleImageUpload(e);
   };
 
@@ -106,7 +112,11 @@ const UploadImageModal = ({
                 {apiError && (
                   <span className='text-center d-block text-danger mt-1'>
                     {apiError && apiError}
-                    {error && <span> error </span>}
+                  </span>
+                )}
+                {error && (
+                  <span className='text-center d-block text-danger mt-1'>
+                    {error}
                   </span>
                 )}
                 <div className='upload-content'>
