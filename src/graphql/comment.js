@@ -21,3 +21,15 @@ export const DELETE_COMMENT = gql`
     }
   }
 `;
+
+/**
+ * Edit a comment
+ */
+export const EDIT_COMMENT = gql`
+  mutation($id: ID!, $input: EditCommentInput!) {
+    editComment(id: $id, input: $input) {
+      id
+      comment
+    }
+  }
+`;
