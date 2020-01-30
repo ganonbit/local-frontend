@@ -1,25 +1,32 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+
 import { Modal } from 'react-bootstrap';
 import { Mutation, withApollo } from 'react-apollo';
 import { UPLOAD_PHOTO, EDIT_ACCOUNT, GET_USER_POSTS } from 'graphql/user';
 import { MAX_POST_IMAGE_SIZE } from 'constants/ImageSize';
 const UploadCoverImage = props => {
   let { onHide, user, isCover, coverImage, title, refetch, client } = props;
+
   const [values, setValues] = useState({
     imagePreview: coverImage,
     image: '',
+    error: '',
   });
+
+  const { error } = values;
 
   let { imagePreview } = values;
   let onSubmitHandler = (e, uploadUserPhoto) => {
     e.preventDefault();
+    if (error) return;
     if (values.image)
       uploadUserPhoto().then(async ({ data }) => {
         await refetch();
         onHide();
       });
     else {
-      deleteProfileImage().then(data => {
+      deleteCoverImage().then(data => {
         refetch();
         onHide();
       });
@@ -30,6 +37,15 @@ const UploadCoverImage = props => {
     const file = e.target.files[0];
 
     if (!file) return;
+
+    if (!file.type.match('image.*')) {
+      setValues({
+        ...values,
+        error: 'Please upload valid file extension (jpg, jpeg, bmp, gif, png)',
+        imagePreview: URL.createObjectURL(e.target.files[0]),
+      });
+      return;
+    }
 
     if (file.size >= MAX_POST_IMAGE_SIZE) {
       setValues({
@@ -43,10 +59,11 @@ const UploadCoverImage = props => {
       ...values,
       image: e.target.files[0],
       imagePreview: URL.createObjectURL(e.target.files[0]),
+      error: '',
     });
     e.target.value = null;
   };
-  const deleteProfileImage = async () => {
+  const deleteCoverImage = async () => {
     try {
       await client.mutate({
         mutation: EDIT_ACCOUNT,
@@ -65,14 +82,14 @@ const UploadCoverImage = props => {
         ],
       });
     } catch (err) {
-      console.log(err);
+      //console.log(err);
     }
   };
   let onDeletePhotoHandler = () => {
     setValues({
       ...values,
       imagePreview: '',
-      // image: '',
+      image: '',
     });
   };
   return (
@@ -132,6 +149,11 @@ const UploadCoverImage = props => {
                         </li>
                       </ul>
                     </div>
+                    {error && (
+                      <span className='text-center d-block text-danger mt-1'>
+                        {error}
+                      </span>
+                    )}
                     <div className='upload-content'>
                       <ul className='d-flex p-3 m-0 list-unstyled justify-content-between align-items-center flex-wrap'>
                         <li>
@@ -177,4 +199,15 @@ const UploadCoverImage = props => {
     </Mutation>
   );
 };
+
+UploadCoverImage.propTypes = {
+  onHide: PropTypes.func.isRequired,
+  user: PropTypes.object.isRequired,
+  isCover: PropTypes.bool.isRequired,
+  coverImage: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  refetch: PropTypes.func.isRequired,
+  client: PropTypes.object.isRequired,
+};
+
 export default withApollo(UploadCoverImage);
