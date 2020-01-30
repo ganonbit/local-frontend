@@ -31,6 +31,7 @@ const EditPost = props => {
 
   let onSubmitHandler = (e, editPost) => {
     e.preventDefault();
+    if (error) return;
     editPost()
       .then(async ({ data }) => {
         onHide();
@@ -43,6 +44,15 @@ const EditPost = props => {
     const file = e.target.files[0];
 
     if (!file) return;
+
+    if (!file.type.match('image.*')) {
+      setValues({
+        ...values,
+        error: 'Please upload valid file extension (jpg, jpeg, bmp, gif, png)',
+        imagePreview: URL.createObjectURL(e.target.files[0]),
+      });
+      return;
+    }
 
     if (file.size >= MAX_POST_IMAGE_SIZE) {
       setValues({
@@ -150,7 +160,11 @@ const EditPost = props => {
                         {apiError.graphQLErrors[0].message}
                       </span>
                     )}
-
+                    {isError && (
+                      <span className='text-center d-block text-danger mt-1'>
+                        {error}
+                      </span>
+                    )}
                     <div className='upload-content'>
                       <ul className='d-flex p-3 m-0 list-unstyled justify-content-between align-items-center flex-wrap'>
                         <li>
