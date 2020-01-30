@@ -10,11 +10,24 @@ import mention from 'linkifyjs/plugins/mention';
 import linkDecorator from '../Common/linkDecorator';
 
 import CommentsHeader from './CommentsHeader';
+import EditComment from './EditComment';
 function Comments({ post, isAuth }) {
   const [numOfComments, setNumOfComments] = useState(2);
+
+  const [isOpenEdit, setIsOpenEdit] = useState(false);
+  const [isIndex, setIndex] = useState(0);
+
   hashtag(linkify);
   mention(linkify);
 
+  let editCommentHandler = index => {
+    setIsOpenEdit(true);
+    setIndex(index);
+  };
+
+  let onClose = () => {
+    setIsOpenEdit(isOpenEdit => !isOpenEdit);
+  };
   return (
     <>
       <ul className='comments-list'>
@@ -31,10 +44,21 @@ function Comments({ post, isAuth }) {
                     commentId={comment.id}
                     isAuth={isAuth}
                     post={post}
+                    index={index}
+                    editCommentHandler={editCommentHandler}
                   />
-                  <Linkify options={linkDecorator}>
-                    <p className='comments-section'>{comment.comment}</p>
-                  </Linkify>
+                  {!isOpenEdit && (
+                    <Linkify options={linkDecorator}>
+                      <p className='comments-section'>{comment.comment}</p>
+                    </Linkify>
+                  )}
+                  {isOpenEdit && isIndex === index && (
+                    <EditComment
+                      comment={comment}
+                      onClose={onClose}
+                      postId={post.id}
+                    />
+                  )}
                 </li>
               );
             })
