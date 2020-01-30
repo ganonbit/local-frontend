@@ -1,11 +1,12 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import { Link } from 'react-router-dom';
 
 import * as Routes from 'routes';
 import moment from 'moment';
 
-let Intro = ({ user }) => {
+let ProfileInfo = ({ user }) => {
   return (
     <>
       <div className='ui-block'>
@@ -14,10 +15,12 @@ let Intro = ({ user }) => {
         </div>
         <div className='ui-block-content'>
           <ul className='widget w-personal-info item-block'>
-            <li>
-              <span className='title'>Bio:</span>
-              <span className='text'>{user.bio}</span>
-            </li>
+            {user.bio && (
+              <li>
+                <span className='title'>Bio:</span>
+                <span className='text'>{user.bio}</span>
+              </li>
+            )}
             <li>
               <span className='title'>Joined:</span>
               <span className='text'>
@@ -26,10 +29,12 @@ let Intro = ({ user }) => {
                 )}
               </span>
             </li>
-            <li>
-              <span className='title'>Based in:</span>
-              <span className='text'>{user.location}</span>
-            </li>
+            {user.location && (
+              <li>
+                <span className='title'>Based in:</span>
+                <span className='text'>{user.location}</span>
+              </li>
+            )}
           </ul>
         </div>
       </div>
@@ -53,4 +58,8 @@ let Intro = ({ user }) => {
   );
 };
 
-export default Intro;
+ProfileInfo.propTypes = {
+  user: PropTypes.object.isRequired,
+};
+
+export default ProfileInfo;
