@@ -47,7 +47,7 @@ function Comments({ post, isAuth }) {
                     index={index}
                     editCommentHandler={editCommentHandler}
                   />
-                  {!isOpenEdit && (
+                  {!(isOpenEdit && isIndex === index) && (
                     <Linkify options={linkDecorator}>
                       <p className='comments-section'>{comment.comment}</p>
                     </Linkify>
