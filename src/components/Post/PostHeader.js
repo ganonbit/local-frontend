@@ -69,15 +69,17 @@ const PostHeader = props => {
 
   return (
     <div className='post__author author vcard inline-items'>
-      <EditPost
-        show={isShowing}
-        onHide={() => setIsShowing(false)}
-        content={content}
-        image={image}
-        auth={auth}
-        postId={postId}
-        imagePublicId={imagePublicId}
-      />
+      {isShowing && (
+        <EditPost
+          show={isShowing}
+          onHide={() => setIsShowing(false)}
+          content={content}
+          image={image}
+          auth={auth}
+          postId={postId}
+          imagePublicId={imagePublicId}
+        />
+      )}
       <Link
         to={generatePath(Routes.USER_PROFILE, {
           username: author.username,
@@ -147,7 +149,7 @@ const PostHeader = props => {
             </li>
           </ul>
         </div>
-      ) : null }
+      ) : null}
     </div>
   );
 };
