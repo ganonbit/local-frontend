@@ -3,7 +3,7 @@ import { Accordion, Card, Button } from 'react-bootstrap';
 const Faqs = () => (
   <>
     <div className='stunning-header bg-primary-opacity'>
-      <div className='header-spacer--standard'></div>
+      {/* <div className='header-spacer--standard'></div> */}
 
       <div className='stunning-header-content'>
         <h1 className='stunning-header-title'>FAQ Avocado Nation </h1>

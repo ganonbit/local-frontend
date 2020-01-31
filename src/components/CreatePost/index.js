@@ -108,7 +108,7 @@ const CreatePost = props => {
                 <BeatLoader
                   sizeUnit={'px'}
                   size={20}
-                  color={'#123abc'}
+                  color={'#009440'}
                   loading={loading}
                 />
                 <div
