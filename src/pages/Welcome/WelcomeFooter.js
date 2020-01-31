@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import * as Routes from 'routes';
+const copyYear = new Date().getFullYear();
 const WelcomeFooter = () => {
   return (
     <div className='container'>
@@ -8,7 +9,7 @@ const WelcomeFooter = () => {
         <div className='col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12 m-auto'>
           <div className='row'>
             <div className='col-6'>
-              <h5 className='mb-1'>Avocado Nation © 2019</h5>
+              <h5 className='mb-1'>Avocado Nation © {copyYear}</h5>
               <span>English (US)</span>
             </div>
             <div className='col-6 text-right'>

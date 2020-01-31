@@ -106,7 +106,7 @@ const FeedbackForm = ({ isAuth }) => {
       )}
 
       <div className='stunning-header bg-primary-opacity'>
-        <div className='header-spacer--standard'></div>
+        {/* <div className='header-spacer--standard'></div> */}
         <div className='stunning-header-content'>
           <h1 className='stunning-header-title'>
             Avocado Nation Feedback Form

@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 
 import * as Routes from 'routes';
 
+const copyYear = new Date().getFullYear();
+
 const NewsFeedAdd = () => (
   <>
     <div className='ui-block'>
@@ -26,7 +28,7 @@ const NewsFeedAdd = () => (
           <Link to={Routes.COMMUNITY_GUIDELINE}>Community Guideline</Link>
         </li>
       </ul>
-      <h5>Avocado Nation © 2019</h5>
+      <h5>Avocado Nation © {copyYear}</h5>
       <img
         src='https://res.cloudinary.com/weare270b/image/upload/v1578333627/static/avocado-primary-logo_color_l9xyvo.png'
         alt='avocado nation logo'
