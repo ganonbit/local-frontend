@@ -1,7 +1,6 @@
 import React from 'react';
-import { Link, generatePath } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { withRouter } from 'react-router-dom';
+import { Link, generatePath, withRouter } from 'react-router-dom';
 
 import { useQuery } from '@apollo/react-hooks';
 import { GET_USER_POSTS } from 'graphql/user';
@@ -41,14 +40,18 @@ const LatestPhotos = ({ match }) => {
     }
   }
   return (
-    <div className='ui-block'>
-      <div className='ui-block-title ui-block-photos'>
-        <h6 className='title'>Latest Photos</h6>
-      </div>
-      <div className='ui-block-content'>
-        <ul className='widget w-last-photo js-zoom-gallery'>{photos}</ul>
-      </div>
-    </div>
+    <React.Fragment>
+      {photos.length > 0 && (
+        <div className='ui-block'>
+          <div className='ui-block-title ui-block-photos'>
+            <h6 className='title'>Latest Photos</h6>
+          </div>
+          <div className='ui-block-content'>
+            <ul className='widget w-last-photo js-zoom-gallery'>{photos}</ul>
+          </div>
+        </div>
+      )}
+    </React.Fragment>
   );
 };
 
