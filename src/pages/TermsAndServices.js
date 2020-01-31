@@ -9,7 +9,7 @@ const TermsAndServices = ({ isAuth }) => (
       </div>
     )}
     <div className='stunning-header bg-primary-opacity'>
-      <div className='header-spacer--standard'></div>
+      {/* <div className='header-spacer--standard'></div> */}
       <div className='stunning-header-content'>
         <h1 className='stunning-header-title'>
           Avocado Nation Terms Of Services

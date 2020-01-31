@@ -3,7 +3,7 @@ import React from 'react';
 const CommunityGuideline = () => (
   <>
     <div className='stunning-header bg-primary-opacity'>
-      <div className='header-spacer--standard'></div>
+      {/* <div className='header-spacer--standard'></div> */}
       <div className='stunning-header-content'>
         <h1 className='stunning-header-title'>AFM COMMUNITY GUIDELINE</h1>
         <ul className='breadcrumbs'>
