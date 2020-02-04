@@ -13,6 +13,7 @@ function PostControlButton({
   userId,
   postSharer,
   sharedPostId,
+  showAuthModal,
 }) {
   return (
     <div className='control-block-button post-control-button'>
@@ -21,6 +22,7 @@ function PostControlButton({
           href='#1'
           onClick={e => {
             e.preventDefault();
+            showAuthModal();
           }}
           className='btn btn-control likes'
         >
@@ -38,6 +40,7 @@ function PostControlButton({
           href='#1'
           onClick={e => {
             e.preventDefault();
+            showAuthModal();
           }}
           className='btn btn-control likes'
         >
@@ -47,8 +50,7 @@ function PostControlButton({
           />
           <div className='ripple-container'></div>
         </a>
-      ) : 
-      (
+      ) : (
         <a href className='btn btn-control comments' onClick={toggle}>
           <img
             src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/comments-icon_ffpa0l.png'
@@ -62,6 +64,7 @@ function PostControlButton({
           href='#1'
           onClick={e => {
             e.preventDefault();
+            showAuthModal();
           }}
           className='btn btn-control likes'
         >
@@ -72,13 +75,12 @@ function PostControlButton({
           <div className='ripple-container'></div>
         </a>
       ) : (
-
-      <SharePost
-        postId={postId}
-        post={post}
-        postSharer={postSharer}
-        sharedPostId={sharedPostId}
-      />
+        <SharePost
+          postId={postId}
+          post={post}
+          postSharer={postSharer}
+          sharedPostId={sharedPostId}
+        />
       )}
     </div>
   );
@@ -91,6 +93,7 @@ PostControlButton.propTypes = {
   likes: PropTypes.object.isRequired,
   toggle: PropTypes.func.isRequired,
   post: PropTypes.object.isRequired,
+  showAuthModal: PropTypes.func.isRequired,
 };
 
 export default PostControlButton;

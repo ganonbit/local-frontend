@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import * as Routes from 'routes';
+
 const WelcomeHeader = () => {
   return (
     <header
@@ -19,7 +21,7 @@ const WelcomeHeader = () => {
         <div className='control-block mr-0'>
           <ul className='d-flex align-items-center m-0 user-btns'>
             <li>
-              <Link to='/login'>Log In</Link>
+              <Link to={Routes.SIGN_IN}>Log In</Link>
             </li>
             <li>
               <span>|</span>
