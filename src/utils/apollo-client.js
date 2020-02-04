@@ -83,9 +83,7 @@ export const createApolloClient = (apiUrl, websocketApiUrl) => {
     console.error('Error restoring Apollo cache', error);
   }
 
-  const GRAPHQL_ENDPOINT = 'ws://localhost:4000/graphql';
-
-  const client = new SubscriptionClient(GRAPHQL_ENDPOINT, {
+  const client = new SubscriptionClient(process.env.REACT_APP_WEBSOCKET_API_URL, {
     uri: websocketApiUrl,
     options: {
       reconnect: true,
@@ -98,7 +96,7 @@ export const createApolloClient = (apiUrl, websocketApiUrl) => {
 
   const authLink = createAuthLink();
   const httpLink = new BatchHttpLink({
-    uri: GRAPHQL_ENDPOINT
+    uri: process.env.REACT_APP_WEBSOCKET_API_URL
   });
   const uploadLink = createUploadLink({ uri: apiUrl }); // Upload link also creates an HTTP link
 
