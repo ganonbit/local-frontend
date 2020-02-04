@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import { generatePath } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import Avatar from 'components/Avatar';
@@ -32,7 +33,9 @@ const PostHeader = props => {
     isAuth,
     image,
     content,
+    showAuthModal,
   } = props;
+
   const [{ auth }] = useStore();
   const isSelma = !auth.user ? null : auth.user.role === 'selma';
   const isOwner = !auth.user ? null : auth.user.id === author.id;
@@ -80,28 +83,55 @@ const PostHeader = props => {
           imagePublicId={imagePublicId}
         />
       )}
-      <Link
-        to={generatePath(Routes.USER_PROFILE, {
-          username: author.username,
-        })}
-      >
-        <Avatar image={author.image} />
-      </Link>
-      <div className='author-date'>
+      {isAuth ? (
         <Link
-          className='h6 post__author-name fn'
           to={generatePath(Routes.USER_PROFILE, {
             username: author.username,
           })}
         >
-          {author.firstName} {author.lastName}
+          <Avatar image={author.image} />
         </Link>
+      ) : (
+        <div
+          className='img-auth-wrap'
+          onClick={() => showAuthModal()}
+          onKeyDown={() => showAuthModal()}
+          tabIndex='0'
+          role='button'
+        >
+          <Avatar image={author.image} />
+        </div>
+      )}
+
+      <div className='author-date'>
+        {isAuth ? (
+          <Link
+            className='h6 post__author-name fn'
+            to={generatePath(Routes.USER_PROFILE, {
+              username: author.username,
+            })}
+          >
+            {author.firstName} {author.lastName}
+          </Link>
+        ) : (
+          <>
+            <b
+              onClick={() => showAuthModal()}
+              onKeyDown={() => showAuthModal()}
+              tabIndex='0'
+              role='button'
+            >
+              {author.firstName} {author.lastName}
+            </b>
+          </>
+        )}
         <div className='post__date'>
           <time className='published' dateTime={postDate}>
             {moment(postDate, 'YYYYMMDDHHmms').fromNow()}
           </time>
         </div>
       </div>
+
       {isAuth ? (
         <div className='more'>
           <FontAwesomeIcon
@@ -152,6 +182,18 @@ const PostHeader = props => {
       ) : null}
     </div>
   );
+};
+
+PostHeader.propTypes = {
+  author: PropTypes.object.isRequired,
+  postId: PropTypes.string.isRequired,
+  client: PropTypes.object.isRequired,
+  createdAt: PropTypes.string.isRequired,
+  imagePublicId: PropTypes.any,
+  isAuth: PropTypes.bool.isRequired,
+  image: PropTypes.any,
+  content: PropTypes.string.isRequired,
+  showAuthModal: PropTypes.func.isRequired,
 };
 
 export default withApollo(PostHeader);
