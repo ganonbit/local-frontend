@@ -96,8 +96,24 @@ const Like = ({ postId, user, likes, post, colored }) => {
           >
             <HeartLike
               disabled={loading}
-              color={!colored ? isPostLiked ? 'white' : 'grey' : isPostLiked ? colored : 'grey'}
-              style={{fill: !colored ? isPostLiked ? 'white' : 'grey' : isPostLiked ? colored : 'grey' }}
+              color={
+                !colored
+                  ? isPostLiked
+                    ? 'white'
+                    : 'grey'
+                  : isPostLiked
+                  ? colored
+                  : 'grey'
+              }
+              style={{
+                fill: !colored
+                  ? isPostLiked
+                    ? 'white'
+                    : 'grey'
+                  : isPostLiked
+                  ? colored
+                  : 'grey',
+              }}
               onClick={() => {
                 toggleLike();
                 handleButtonClick(mutate);

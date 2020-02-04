@@ -14,7 +14,7 @@ import * as Routes from 'routes';
 
 const NavItem = ({ children, active, searchlist }) => {
   return (
-    <li className={`nav-item ${searchlist&&searchlist}`}>
+    <li className={`nav-item ${searchlist && searchlist}`}>
       <div className={active ? 'nav-link active' : 'nav-link'}>{children}</div>
     </li>
   );
@@ -34,7 +34,13 @@ const DesktopNav = ({ refetch, auth }) => {
 };
 
 // REBUILD THE NAVIGATION USING BOOTSTRAP PANES / TABS
-export const MobileNav = ({ refetch, auth, mobileToggle, status,isMobile }) => {
+export const MobileNav = ({
+  refetch,
+  auth,
+  mobileToggle,
+  status,
+  isMobile,
+}) => {
   return (
     <Mobile>
       <ul className='nav nav-tabs mobile-app-tabs' role='tablist'>
@@ -72,10 +78,10 @@ export const MobileNav = ({ refetch, auth, mobileToggle, status,isMobile }) => {
             />
           </Link>
         </NavItem>
-        <NavItem active={false} searchlist="search-list" >
-           <Search refetch={refetch} auth={auth} mobileToggle={isMobile} />
+        <NavItem active={false} searchlist='search-list'>
+          <Search refetch={refetch} auth={auth} mobileToggle={isMobile} />
         </NavItem>
-         {/* <Search refetch={refetch} auth={auth} mobileToggle={isMobile} /> */}
+        {/* <Search refetch={refetch} auth={auth} mobileToggle={isMobile} /> */}
         <NavItem active={false}>
           <AuthorThumbnail user={auth.user} />
         </NavItem>

@@ -101,7 +101,7 @@ const ProfileHeader = ({ user, refetch, auth, isOwner, isSelma }) => {
                     <img src={user.coverImage} alt='cover' />
                   ) : (
                     <img
-                      src='https://res.cloudinary.com/weare270b/image/upload/v1580838904/static/profile-bg_edozor-min_at2lpf.jpg'
+                      src='https://res.cloudinary.com/weare270b/image/upload/v1580838904/static/q_auto/profile-bg_edozor-min_at2lpf.jpg'
                       alt='nature'
                     />
                   )}
@@ -117,7 +117,7 @@ const ProfileHeader = ({ user, refetch, auth, isOwner, isSelma }) => {
                       <img src={user.image} alt='profile' />
                     ) : (
                       <img
-                        src='https://res.cloudinary.com/weare270b/image/upload/v1576220262/static/Image_from_iOS_1_bnaxnc.jpg'
+                        src='https://res.cloudinary.com/weare270b/image/upload/v1576220262/static/q_auto/Image_from_iOS_1_bnaxnc.jpg'
                         alt='nature'
                       />
                     )}

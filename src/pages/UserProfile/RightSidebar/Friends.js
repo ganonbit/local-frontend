@@ -14,7 +14,7 @@ export default function Friends() {
             <li>
               <a href='#'>
                 <img
-                  src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avatar38-sm.jpg'
+                  src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/q_auto/avatar38-sm.jpg'
                   alt='author'
                 />
               </a>
@@ -22,7 +22,7 @@ export default function Friends() {
             <li>
               <a href='#'>
                 <img
-                  src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avatar24-sm.jpg'
+                  src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/q_auto/avatar24-sm.jpg'
                   alt='user'
                 />
               </a>
@@ -30,7 +30,7 @@ export default function Friends() {
             <li>
               <a href='#'>
                 <img
-                  src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avatar36-sm.jpg'
+                  src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/q_auto/avatar36-sm.jpg'
                   alt='author'
                 />
               </a>
@@ -38,7 +38,7 @@ export default function Friends() {
             <li>
               <a href='#'>
                 <img
-                  src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avatar35-sm.jpg'
+                  src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/q_auto/avatar35-sm.jpg'
                   alt='user'
                 />
               </a>
@@ -46,7 +46,7 @@ export default function Friends() {
             <li>
               <a href='#'>
                 <img
-                  src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avatar34-sm.jpg'
+                  src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/q_auto/avatar34-sm.jpg'
                   alt='author'
                 />
               </a>
@@ -54,7 +54,7 @@ export default function Friends() {
             <li>
               <a href='#'>
                 <img
-                  src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avatar33-sm.jpg'
+                  src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/q_auto/avatar33-sm.jpg'
                   alt='author'
                 />
               </a>
@@ -62,7 +62,7 @@ export default function Friends() {
             <li>
               <a href='#'>
                 <img
-                  src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avatar32-sm.jpg'
+                  src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/q_auto/avatar32-sm.jpg'
                   alt='user'
                 />
               </a>
@@ -70,7 +70,7 @@ export default function Friends() {
             <li>
               <a href='#'>
                 <img
-                  src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avatar31-sm.jpg'
+                  src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/q_auto/avatar31-sm.jpg'
                   alt='author'
                 />
               </a>
@@ -78,7 +78,7 @@ export default function Friends() {
             <li>
               <a href='#'>
                 <img
-                  src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avatar30-sm.jpg'
+                  src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/q_auto/avatar30-sm.jpg'
                   alt='author'
                 />
               </a>
@@ -86,7 +86,7 @@ export default function Friends() {
             <li>
               <a href='#'>
                 <img
-                  src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avatar29-sm.jpg'
+                  src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/q_auto/avatar29-sm.jpg'
                   alt='user'
                 />
               </a>
@@ -94,7 +94,7 @@ export default function Friends() {
             <li>
               <a href='#'>
                 <img
-                  src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avatar28-sm.jpg'
+                  src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/q_auto/avatar28-sm.jpg'
                   alt='user'
                 />
               </a>
@@ -102,7 +102,7 @@ export default function Friends() {
             <li>
               <a href='#'>
                 <img
-                  src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avatar27-sm.jpg'
+                  src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/q_auto/avatar27-sm.jpg'
                   alt='user'
                 />
               </a>
@@ -110,7 +110,7 @@ export default function Friends() {
             <li>
               <a href='#'>
                 <img
-                  src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avatar26-sm.jpg'
+                  src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/q_auto/avatar26-sm.jpg'
                   alt='user'
                 />
               </a>
@@ -118,7 +118,7 @@ export default function Friends() {
             <li>
               <a href='#'>
                 <img
-                  src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avatar25-sm.jpg'
+                  src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/q_auto/avatar25-sm.jpg'
                   alt='user'
                 />
               </a>
@@ -126,7 +126,7 @@ export default function Friends() {
             <li>
               <a href='#'>
                 <img
-                  src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avatar25-sm.jpg'
+                  src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/q_auto/avatar25-sm.jpg'
                   alt='user'
                 />
               </a>
@@ -134,7 +134,7 @@ export default function Friends() {
             <li>
               <a href='#'>
                 <img
-                  src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avatar25-sm.jpg'
+                  src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/q_auto/avatar25-sm.jpg'
                   alt='user'
                 />
               </a>
@@ -142,7 +142,7 @@ export default function Friends() {
             <li>
               <a href='#'>
                 <img
-                  src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avatar25-sm.jpg'
+                  src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/q_auto/avatar25-sm.jpg'
                   alt='user'
                 />
               </a>
