@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import Headroom from 'react-headroom';
 import EmailVerificationModal from './EmailVerificationModal';
+
+import * as Routes from 'routes';
+
 /**
  * Main Layout for Registration
  */
@@ -25,7 +28,7 @@ const MainLayout = ({ children, location }) => {
       >
         <div className='container'>
           <div className='header--standard-wrap'>
-            <Link to='/login' className='logo'>
+            <Link to={Routes.SIGN_IN} className='logo'>
               <div className='img-wrap'>
                 <img
                   src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/avocado-logo_i9pyxb.png'
@@ -57,11 +60,15 @@ const MainLayout = ({ children, location }) => {
                 <Link
                   to={{
                     pathname:
-                      location.pathname === '/login' ? '/signup' : '/login',
+                      location.pathname === Routes.SIGN_IN
+                        ? '/signup'
+                        : Routes.SIGN_IN,
                   }}
                   className='btn px-4 py-2 btn-border c-white'
                 >
-                  {location.pathname === '/login' ? 'Register Now' : 'LOG IN'}
+                  {location.pathname === Routes.SIGN_IN
+                    ? 'Register Now'
+                    : Routes.SIGN_IN}
                 </Link>
               </div>
             </div>

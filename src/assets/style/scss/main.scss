@@ -19852,10 +19852,32 @@ button.following-btn:focus {
 .label-floating.with-icon label.control-label, .label-placeholder.with-icon label.control-label {
   left: 70px !important;
 }
-
-
-
-////////////////////////////////////////////////////////////
+.author-date b {
+  color: #000;
+}
+.modal-header-title {
+  background: #009440;
+  border-radius: 0;
+}
+.modal-header-title h3 {
+  color: #ffffff;
+  font-size: 20px;
+}
+.user-btn {
+  line-height: 42px;
+  padding: 0 25px !important;
+  font-weight: 700;
+  background: #8fc42c;
+  border: #8fc42c;
+  color: #ffffff;
+}
+.user-btn:focus {
+  box-shadow: 0 0 0 0.2rem rgba(143, 196, 44, 0.62);
+}
+.modal-content {
+  border: none;
+}
+// Responsiveness Start Here
 
 @media (min-width: 1199px) {
   .sticky-block {

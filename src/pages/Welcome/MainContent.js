@@ -1,14 +1,20 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 import RightSection from './RightSection';
 import LeftSection from './LeftSection';
 import Post from 'components/Post';
 import { GET_USER_POSTS } from 'graphql/user';
+import { GET_POST } from 'graphql/post';
 
-export default function MainContent() {
+function MainContent({ match }) {
+  let isPublicPost = match.params.id;
+
   const queryOptions = {
-    query: GET_USER_POSTS,
-    variables: { username: 'selma', skip: 0, limit: 5 },
-    callback: 'getUserPosts',
+    query: isPublicPost ? GET_POST : GET_USER_POSTS,
+    variables: isPublicPost
+      ? { id: isPublicPost }
+      : { username: 'selma', skip: 0, limit: 5 },
+    callback: isPublicPost ? 'getPost' : 'getUserPosts',
   };
   return (
     <div className='container'>
@@ -18,10 +24,11 @@ export default function MainContent() {
             <Post queryOptions={queryOptions} isAuth={false} />
           </div>
         </main>
-
         <LeftSection />
         <RightSection />
       </div>
     </div>
   );
 }
+
+export default withRouter(MainContent);
