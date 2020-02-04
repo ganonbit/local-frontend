@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-
 import { Modal } from 'react-bootstrap';
 import { Mutation, withApollo } from 'react-apollo';
+import imageCompression from 'browser-image-compression';
+
 import { UPLOAD_PHOTO, EDIT_ACCOUNT, GET_USER_POSTS } from 'graphql/user';
 import { MAX_POST_IMAGE_SIZE } from 'constants/ImageSize';
 const UploadCoverImage = props => {
@@ -33,12 +34,12 @@ const UploadCoverImage = props => {
     }
   };
 
-  let handleUploadImage = e => {
-    const file = e.target.files[0];
+  let handleUploadImage = async e => {
+    const imageFile = e.target.files[0];
 
-    if (!file) return;
+    if (!imageFile) return;
 
-    if (!file.type.match('image.*')) {
+    if (!imageFile.type.match('image.*')) {
       setValues({
         ...values,
         error: 'Please upload valid file extension (jpg, jpeg, bmp, gif, png)',
@@ -47,7 +48,7 @@ const UploadCoverImage = props => {
       return;
     }
 
-    if (file.size >= MAX_POST_IMAGE_SIZE) {
+    if (imageFile.size >= MAX_POST_IMAGE_SIZE) {
       setValues({
         ...values,
         error: `File size should be less then ${MAX_POST_IMAGE_SIZE /
@@ -55,13 +56,27 @@ const UploadCoverImage = props => {
       });
       return;
     }
-    setValues({
-      ...values,
-      image: e.target.files[0],
-      imagePreview: URL.createObjectURL(e.target.files[0]),
-      error: '',
-    });
-    e.target.value = null;
+    let imageCompressionOptions = {
+      maxSizeMB: 10,
+      maxWidthOrHeight: 1300,
+      useWebWorker: true
+    };
+
+    try {
+      const compressedFile = await imageCompression(imageFile, imageCompressionOptions);
+      console.log('compressedFile instanceof Blob', compressedFile instanceof Blob); // true
+      console.log(`compressedFile size ${compressedFile.size / 1024 / 1024} MB`); // smaller than maxSizeMB
+   
+      await setValues({
+        ...values,
+        image: compressedFile,
+        imagePreview: URL.createObjectURL(compressedFile),
+        error: '',
+      });
+      e.target.value = null;
+    } catch (error) {
+      console.log(error);
+    }
   };
   const deleteCoverImage = async () => {
     try {

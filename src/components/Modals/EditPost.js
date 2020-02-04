@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import imageCompression from 'browser-image-compression';
 
 import { Modal } from 'react-bootstrap';
 import { Mutation } from 'react-apollo';
-import { EDIT_POST, GET_POST } from 'graphql/post';
-
-import { MAX_POST_IMAGE_SIZE } from 'constants/ImageSize';
-import Avatar from '../Avatar';
 import { BeatLoader } from 'react-spinners';
+
+import { EDIT_POST, GET_POST } from 'graphql/post';
+import { MAX_POST_IMAGE_SIZE } from 'constants/ImageSize';
+
+import Avatar from '../Avatar';
 
 const EditPost = props => {
   let { postId, auth, content, image, onHide, imagePublicId } = props;
@@ -40,12 +42,12 @@ const EditPost = props => {
       .catch(() => setError(true));
   };
 
-  let handleUploadImage = e => {
-    const file = e.target.files[0];
+  let handleUploadImage = async e => {
+    const imageFile = e.target.files[0];
 
-    if (!file) return;
+    if (!imageFile) return;
 
-    if (!file.type.match('image.*')) {
+    if (!imageFile.type.match('image.*')) {
       setValues({
         ...values,
         error: 'Please upload valid file extension (jpg, jpeg, bmp, gif, png)',
@@ -54,7 +56,7 @@ const EditPost = props => {
       return;
     }
 
-    if (file.size >= MAX_POST_IMAGE_SIZE) {
+    if (imageFile.size >= MAX_POST_IMAGE_SIZE) {
       setValues({
         ...values,
         error: `File size should be less then ${MAX_POST_IMAGE_SIZE /
@@ -62,14 +64,28 @@ const EditPost = props => {
       });
       return;
     }
-    setValues({
-      ...values,
-      error: '',
-      image: e.target.files[0],
-      imagePreview: URL.createObjectURL(e.target.files[0]),
-    });
-    e.target.value = null;
-    setError(false);
+    let imageCompressionOptions = {
+      maxSizeMB: 10,
+      maxWidthOrHeight: 1300,
+      useWebWorker: true
+    };
+
+    try {
+      const compressedFile = await imageCompression(imageFile, imageCompressionOptions);
+      console.log('compressedFile instanceof Blob', compressedFile instanceof Blob); // true
+      console.log(`compressedFile size ${compressedFile.size / 1024 / 1024} MB`); // smaller than maxSizeMB
+   
+      await setValues({
+        ...values,
+        image: compressedFile,
+        imagePreview: URL.createObjectURL(compressedFile),
+        error: '',
+      });
+      e.target.value = null;
+      setError(false);
+    } catch (error) {
+      console.log(error);
+    }
   };
   let onImageDelte = () => {
     setValues({
