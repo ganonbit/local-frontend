@@ -3,10 +3,12 @@ import UploadImage from '../Modals/UploadImage';
 import useModal from 'hooks/useModel';
 import { useStore } from 'store';
 import PostForm from './PostForm';
+import imageCompression from 'browser-image-compression';
 
 import { Mutation } from 'react-apollo';
 import { CREATE_POST, GET_FOLLOWED_POSTS } from 'graphql/post';
 import { GET_USER_POSTS } from 'graphql/user';
+import { MAX_POST_IMAGE_SIZE } from 'constants/ImageSize';
 
 import { BeatLoader } from 'react-spinners';
 
@@ -41,13 +43,50 @@ const CreatePost = props => {
       .catch(() => setError(true));
   };
 
-  const handleImageUpload = e => {
-    setPostContent({
-      ...postContent,
-      image: e.target.files[0],
-      imagePreview: URL.createObjectURL(e.target.files[0]),
-    });
-    e.target.value = null;
+  const handleImageUpload = async e => {
+    const imageFile = e.target.files[0];
+
+    if (!imageFile) return;
+
+    if (!imageFile.type.match('image.*')) {
+      setPostContent({
+        ...postContent,
+        error: 'Please upload valid file extension (jpg, jpeg, bmp, gif, png)',
+        imagePreview: URL.createObjectURL(e.target.files[0]),
+      });
+      return;
+    }
+
+    if (imageFile.size >= MAX_POST_IMAGE_SIZE) {
+      setPostContent({
+        ...postContent,
+        error: `File size should be less then ${MAX_POST_IMAGE_SIZE /
+          1000000}MB`,
+      });
+      return;
+    }
+    let imageCompressionOptions = {
+      maxSizeMB: 10,
+      maxWidthOrHeight: 650,
+      useWebWorker: true
+    };
+
+    try {
+      const compressedFile = await imageCompression(imageFile, imageCompressionOptions);
+      console.log('compressedFile instanceof Blob', compressedFile instanceof Blob); // true
+      console.log(`compressedFile size ${compressedFile.size / 1024 / 1024} MB`); // smaller than maxSizeMB
+   
+      await setPostContent({
+        ...postContent,
+        image: compressedFile,
+        imagePreview: URL.createObjectURL(compressedFile),
+        error: '',
+      });
+      e.target.value = null;
+      setError(false);
+    } catch (error) {
+      console.log(error);
+    }
   };
   const onImageDelete = () => {
     setPostContent({

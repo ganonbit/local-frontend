@@ -82,7 +82,7 @@ const UploadProfileImage = props => {
 
     let imageCompressionOptions = {
       maxSizeMB: 10,
-      maxWidthOrHeight: 1920,
+      maxWidthOrHeight: 500,
       useWebWorker: true
     };
 
