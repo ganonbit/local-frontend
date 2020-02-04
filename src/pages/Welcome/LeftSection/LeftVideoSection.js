@@ -12,7 +12,7 @@ const LeftVideoSection = () => {
           <li>
             <img
               className='video-bnr'
-              src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/q_auto/avocado-mexico_sepsqy.png'
+              src='https://res.cloudinary.com/weare270b/image/upload/q_auto/v1575849612/static/avocado-mexico_sepsqy.png'
               alt='video'
             />
             <div className='overlay'></div>
@@ -20,7 +20,7 @@ const LeftVideoSection = () => {
           <li>
             <img
               className='video-bnr'
-              src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/q_auto/avocado-mexico2_bexejr.png'
+              src='https://res.cloudinary.com/weare270b/image/upload/q_auto/v1575849612/static/avocado-mexico2_bexejr.png'
               alt='video'
             />
             <div className='overlay'></div>
@@ -28,7 +28,7 @@ const LeftVideoSection = () => {
           <li>
             <img
               className='video-bnr'
-              src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/q_auto/video-bnr_z8anqe.png'
+              src='https://res.cloudinary.com/weare270b/image/upload/q_auto/v1575849612/static/video-bnr_z8anqe.png'
               alt='video'
             />
           </li>

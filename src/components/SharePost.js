@@ -69,7 +69,7 @@ const SharePost = ({ postId, post, postSharer, sharedPostId }) => {
               className='btn btn-control share-link'
             >
               <img
-                src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/q_auto/share-icon_rkyjac.png'
+                src='https://res.cloudinary.com/weare270b/image/upload/q_auto/v1575849612/static/share-icon_rkyjac.png'
                 alt=''
               />
             </a>

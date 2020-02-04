@@ -17,7 +17,7 @@ export default function ProfileBadges() {
             <Link to={Routes.BADGES}>
               <img
                 className='badge-img'
-                src='https://res.cloudinary.com/weare270b/image/upload/v1576788606/static/q_auto/badge2_kmjarm.png'
+                src='https://res.cloudinary.com/weare270b/image/upload/q_auto/v1576788606/static/badge2_kmjarm.png'
                 alt='author'
               />
             </Link>

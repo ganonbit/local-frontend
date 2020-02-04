@@ -133,7 +133,7 @@ const UploadProfileImage = props => {
                             className='video-bnr'
                             src={
                               !imagePreview
-                                ? 'https://res.cloudinary.com/weare270b/image/upload/v1576220262/static/q_auto/Image_from_iOS_1_bnaxnc.jpg'
+                                ? 'https://res.cloudinary.com/weare270b/image/upload/q_auto/v1576220262/static/Image_from_iOS_1_bnaxnc.jpg'
                                 : imagePreview
                             }
                             alt='images'

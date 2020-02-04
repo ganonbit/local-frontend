@@ -8,7 +8,7 @@ const Avatar = ({ size, image }) => (
       <img
         alt='avatar'
         className='avatar-img'
-        src='https://res.cloudinary.com/weare270b/image/upload/v1576220262/static/q_auto/Image_from_iOS_1_bnaxnc.jpg'
+        src='https://res.cloudinary.com/weare270b/image/upload/q_auto/v1576220262/static/Image_from_iOS_1_bnaxnc.jpg'
       />
     )}
   </div>

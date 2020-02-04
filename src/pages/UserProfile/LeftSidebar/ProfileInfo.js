@@ -52,7 +52,7 @@ let ProfileInfo = ({ user }) => {
         </ul>
         <h5>Avocado Nation © {copyYear}</h5>
         <img
-          src='https://res.cloudinary.com/weare270b/image/upload/v1578333627/static/q_auto/avocado-primary-logo_color_l9xyvo.png'
+          src='https://res.cloudinary.com/weare270b/image/upload/q_auto/v1578333627/static/avocado-primary-logo_color_l9xyvo.png'
           alt='avocado nation logo'
         />
       </div>
