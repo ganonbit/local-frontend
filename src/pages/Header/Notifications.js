@@ -42,7 +42,7 @@ const Notifications = ({ client }) => {
     <div className='icon-outer'>
       <div className='control-icon more has-items'>
         <img
-          src='https://res.cloudinary.com/weare270b/image/upload/q_auto/v1575849612/static/notification-img_cporyu.png'
+          src='https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1575849612/static/notification-img_cporyu.png'
           alt='notifi'
         />
         {!auth.user.newNotifications.length ? null : (

@@ -31,7 +31,7 @@ const MainLayout = ({ children, location }) => {
             <Link to={Routes.SIGN_IN} className='logo'>
               <div className='img-wrap'>
                 <img
-                  src='https://res.cloudinary.com/weare270b/image/upload/q_auto/v1575849612/static/avocado-logo_i9pyxb.png'
+                  src='https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1575849612/static/avocado-logo_i9pyxb.png'
                   alt='Avocado'
                 />
               </div>
