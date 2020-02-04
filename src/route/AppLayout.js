@@ -1,10 +1,7 @@
 import React from 'react';
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
-  withRouter,
-} from 'react-router-dom';
+import { Route, Switch, withRouter } from 'react-router-dom';
+import PropTypes from 'prop-types';
+
 import Home from '../pages/HomeContainer/Home';
 import UserProfile from 'pages/UserProfile';
 import ProfileSetting from 'pages/ProfileSetting';
@@ -90,5 +87,9 @@ const AppLayout = ({ refetch, history }) => {
       </Switch>
     </div>
   );
+};
+AppLayout.propTypes = {
+  refetch: PropTypes.func.isRequired,
+  history: PropTypes.object.isRequired,
 };
 export default withRouter(AppLayout);

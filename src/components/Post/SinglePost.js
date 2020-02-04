@@ -12,8 +12,21 @@ import { faRetweet } from '@fortawesome/free-solid-svg-icons';
 import { useStore } from 'store';
 import * as Routes from 'routes';
 
+import AuthConfirmation from 'components/Modals/AuthConfirmation';
+
 const SinglePost = ({ post, isAuth }) => {
   const [{ auth }] = useStore();
+
+  const [show, setShow] = useState(false);
+
+  let onHide = () => {
+    setShow(false);
+  };
+
+  let showAuthModal = () => {
+    setShow(true);
+  };
+
   const [isCommentOpen, setCommentOpen] = useState(true);
   const toggleComment = () => setCommentOpen(!isCommentOpen);
   const articleClass = 'hentry post';
@@ -25,7 +38,6 @@ const SinglePost = ({ post, isAuth }) => {
   if (post.post) {
     sharedPost = true;
   }
-
   if (!sharedPost) {
     return renderPost(
       sharedPost,
@@ -34,7 +46,10 @@ const SinglePost = ({ post, isAuth }) => {
       auth,
       isCommentOpen,
       toggleComment,
-      articleClass
+      articleClass,
+      show,
+      onHide,
+      showAuthModal
     );
   } else if (sharedPost) {
     return renderPost(
@@ -58,7 +73,10 @@ const renderPost = (
   auth,
   isCommentOpen,
   toggleComment,
-  articleClass
+  articleClass,
+  show,
+  onHide,
+  showAuthModal
 ) => {
   let postSharer,
     sharedPostId = null;
@@ -70,6 +88,7 @@ const renderPost = (
 
   return (
     <div key={post.id} className='ui-block'>
+      <AuthConfirmation show={show} onHide={onHide} />
       {isSharedPost && renderSharedPostText(auth.user, postSharer)}
       <article className={articleClass}>
         <PostHeader
@@ -80,6 +99,7 @@ const renderPost = (
           content={post.content}
           image={post.image}
           imagePublicId={post.imagePublicId}
+          showAuthModal={showAuthModal}
         />
         <PostContent content={post.content} image={post.image} />
         <PostFooter
@@ -90,6 +110,7 @@ const renderPost = (
           likes={post.likes}
           isAuth={isAuth}
           post={post}
+          showAuthModal={showAuthModal}
         />
         <PostControlButton
           toggle={toggleComment}
@@ -101,6 +122,7 @@ const renderPost = (
           post={post}
           postSharer={postSharer}
           sharedPostId={sharedPostId}
+          showAuthModal={showAuthModal}
         />
       </article>
       {isAuth && isCommentOpen && <Comments post={post} isAuth={isAuth} />}

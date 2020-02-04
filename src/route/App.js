@@ -1,6 +1,6 @@
 import React from 'react';
 import { Query } from 'react-apollo';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Switch } from 'react-router-dom';
 
 import { GET_AUTH_USER } from 'graphql/user';
 import { SET_AUTH_USER } from 'store/auth';
@@ -30,12 +30,9 @@ const App = ({ location }) => {
             <Router>
               <Switch>
                 {!auth.user ? (
-                  <Route
-                    exact
-                    render={() => <Auth isAuth={false} refetch={refetch} />}
-                  />
+                  <Auth isAuth={false} refetch={refetch} />
                 ) : (
-                  <Route exact render={() => <AppLayout refetch={refetch} />} />
+                  <AppLayout refetch={refetch} />
                 )}
               </Switch>
             </Router>
