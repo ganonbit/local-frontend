@@ -132,7 +132,7 @@ const UploadCoverImage = props => {
                             className='video-bnr'
                             src={
                               !imagePreview
-                                ? 'https://res.cloudinary.com/weare270b/image/upload/v1576214852/static/profile-bg_edozor.png'
+                                ? 'https://res.cloudinary.com/weare270b/image/upload/v1580838904/static/profile-bg_edozor-min_at2lpf.jpg'
                                 : imagePreview
                             }
                             alt='images'
