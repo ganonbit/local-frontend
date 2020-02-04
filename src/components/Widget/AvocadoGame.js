@@ -6,7 +6,7 @@ const AvocadoGame = () => {
       <div className='widget w-action'>
         <div className='ui-block-title'>
           <img
-            src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/q_auto/star-icon2_es9h9w.png'
+            src='https://res.cloudinary.com/weare270b/image/upload/q_auto/v1575849612/static/star-icon2_es9h9w.png'
             alt=''
           />
           <Link
@@ -18,7 +18,7 @@ const AvocadoGame = () => {
           ></Link>
         </div>
         <img
-          src='https://res.cloudinary.com/weare270b/image/upload/v1575849612/static/q_auto/game-remote_zxpou0.png'
+          src='https://res.cloudinary.com/weare270b/image/upload/q_auto/v1575849612/static/game-remote_zxpou0.png'
           alt='Olympus'
         />
         <div className='content'>

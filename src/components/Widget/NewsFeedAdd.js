@@ -11,7 +11,7 @@ const NewsFeedAdd = () => (
       <Link to='/discover'>
         <img
           className='health-bnr'
-          src='https://res.cloudinary.com/weare270b/image/upload/v1576838840/static/q_auto/discover-bnr-img_tyvded.jpg'
+          src='https://res.cloudinary.com/weare270b/image/upload/q_auto/v1576838840/static/discover-bnr-img_tyvded.jpg'
           alt='get inspired! click here to check avocado posts'
         />
       </Link>
@@ -30,7 +30,7 @@ const NewsFeedAdd = () => (
       </ul>
       <h5>Avocado Nation © {copyYear}</h5>
       <img
-        src='https://res.cloudinary.com/weare270b/image/upload/v1578333627/static/q_auto/avocado-primary-logo_color_l9xyvo.png'
+        src='https://res.cloudinary.com/weare270b/image/upload/q_auto/v1578333627/static/avocado-primary-logo_color_l9xyvo.png'
         alt='avocado nation logo'
       />
     </div>

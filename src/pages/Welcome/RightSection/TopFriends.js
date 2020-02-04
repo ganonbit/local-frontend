@@ -9,7 +9,7 @@ const TopFriends = () => {
       <li className='inline-items' key={i}>
         <div className='author-thumb'>
           <img
-            src='https://res.cloudinary.com/weare270b/image/upload/v1578579972/user/51abdbc5-b280-414e-99f9-23680491eedc.png'
+            src='https://res.cloudinary.com/weare270b/image/upload/q_auto/v1578579972/user/51abdbc5-b280-414e-99f9-23680491eedc.png'
             alt='author'
           />
         </div>

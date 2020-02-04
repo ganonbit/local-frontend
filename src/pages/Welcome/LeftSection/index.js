@@ -11,7 +11,7 @@ export default function LeftSection() {
         <Link to='/discover'>
           <img
             className='health-bnr'
-            src='https://res.cloudinary.com/weare270b/image/upload/v1576838840/static/q_auto/discover-bnr-img_tyvded.jpg'
+            src='https://res.cloudinary.com/weare270b/image/upload/q_auto/v1576838840/static/discover-bnr-img_tyvded.jpg'
             alt='get inspired! click here to check avocado posts'
           />
         </Link>
