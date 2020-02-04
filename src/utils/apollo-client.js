@@ -9,6 +9,7 @@ import { getMainDefinition } from 'apollo-utilities';
 import { WebSocketLink } from 'apollo-link-ws';
 import { SubscriptionClient } from 'subscriptions-transport-ws';
 import { withClientState } from 'apollo-link-state';
+import { persistCache } from 'apollo-cache-persist';
 
 /**
  * Creates a Apollo Link, that adds authentication token to request
@@ -72,6 +73,15 @@ const handleErrors = () => {
 export const createApolloClient = (apiUrl, websocketApiUrl) => {
   const cache = new InMemoryCache();
   const errorLink = handleErrors();
+
+  try {
+    persistCache({
+      cache: cache,
+      storage: window.localStorage
+    });
+  } catch (error) {
+    console.error('Error restoring Apollo cache', error);
+  }
 
   const GRAPHQL_ENDPOINT = 'ws://localhost:4000/graphql';
 
