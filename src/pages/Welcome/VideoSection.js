@@ -56,7 +56,7 @@ const VideoSection = () => {
                 >
                   <img
                     className='mw-100'
-                    src='https://res.cloudinary.com/weare270b/image/upload/v1580838540/static/video-play-btn_sxo2c1-min_urt5rb.png'
+                    src='https://res.cloudinary.com/weare270b/image/upload/v1580838540/static/q_auto/video-play-btn_sxo2c1-min_urt5rb.png'
                     alt=''
                   />
                 </a>
