@@ -34,7 +34,7 @@ const PostFooter = props => {
   }
 
   return (
-    <div className='post-additional-info inline-items'>
+    <div className='post-additional-info inline-items border-top'>
       <span className='post-add-icon inline-items'>
         {isAuth === true && (
           <Like
