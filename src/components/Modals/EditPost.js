@@ -51,7 +51,7 @@ const EditPost = props => {
       setValues({
         ...values,
         error: 'Please upload valid file extension (jpg, jpeg, bmp, gif, png)',
-        imagePreview: URL.createObjectURL(e.target.files[0]),
+        imagePreview: URL.createObjectURL(imageFile),
       });
       return;
     }
