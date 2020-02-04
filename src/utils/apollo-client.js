@@ -9,6 +9,7 @@ import { getMainDefinition } from 'apollo-utilities';
 import { WebSocketLink } from 'apollo-link-ws';
 import { SubscriptionClient } from 'subscriptions-transport-ws';
 import { withClientState } from 'apollo-link-state';
+import { persistCache } from 'apollo-cache-persist';
 
 /**
  * Creates a Apollo Link, that adds authentication token to request
@@ -73,9 +74,16 @@ export const createApolloClient = (apiUrl, websocketApiUrl) => {
   const cache = new InMemoryCache();
   const errorLink = handleErrors();
 
-  const GRAPHQL_ENDPOINT = 'ws://localhost:4000/graphql';
+  try {
+    persistCache({
+      cache: cache,
+      storage: window.localStorage
+    });
+  } catch (error) {
+    console.error('Error restoring Apollo cache', error);
+  }
 
-  const client = new SubscriptionClient(GRAPHQL_ENDPOINT, {
+  const client = new SubscriptionClient(process.env.REACT_APP_WEBSOCKET_API_URL, {
     uri: websocketApiUrl,
     options: {
       reconnect: true,
@@ -88,7 +96,7 @@ export const createApolloClient = (apiUrl, websocketApiUrl) => {
 
   const authLink = createAuthLink();
   const httpLink = new BatchHttpLink({
-    uri: GRAPHQL_ENDPOINT
+    uri: process.env.REACT_APP_WEBSOCKET_API_URL
   });
   const uploadLink = createUploadLink({ uri: apiUrl }); // Upload link also creates an HTTP link
 
