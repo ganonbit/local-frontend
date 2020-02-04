@@ -23,7 +23,7 @@ const LoadMorePosts = ({
         <div className='d-flex justify-content-center my-2'>
           <img
             className='flex'
-            src='https://res.cloudinary.com/weare270b/image/upload/q_auto/v1579191490/static/loader_eyctc7.gif'
+            src='https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1579191490/static/loader_eyctc7.gif'
             alt='loading .....'
           />
         </div>

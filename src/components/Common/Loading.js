@@ -3,7 +3,7 @@ export const Loading = () => (
   <div id='hellopreloader'>
     <div className='preloader'>
       <img
-        src='https://res.cloudinary.com/weare270b/image/upload/q_auto/v1575849612/static/avocado_loader_n5rjeh.gif'
+        src='https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1575849612/static/avocado_loader_n5rjeh.gif'
         alt=''
       />
       <div className='text'>Loading ...</div>

@@ -11,7 +11,7 @@ export default function Favs() {
         <li className='inline-items'>
           <div className='author-thumb'>
             <img
-              src='https://res.cloudinary.com/weare270b/image/upload/q_auto/v1575849612/static/avatar41-sm.jpg'
+              src='https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1575849612/static/avatar41-sm.jpg'
               alt='author'
             />
           </div>
@@ -39,7 +39,7 @@ export default function Favs() {
         <li className='inline-items'>
           <div className='author-thumb'>
             <img
-              src='https://res.cloudinary.com/weare270b/image/upload/q_auto/v1575849612/static/avatar42-sm.jpg'
+              src='https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1575849612/static/avatar42-sm.jpg'
               alt='author'
             />
           </div>
@@ -67,7 +67,7 @@ export default function Favs() {
         <li className='inline-items'>
           <div className='author-thumb'>
             <img
-              src='https://res.cloudinary.com/weare270b/image/upload/q_auto/v1575849612/static/avatar43-sm.jpg'
+              src='https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1575849612/static/avatar43-sm.jpg'
               alt='author'
             />
           </div>
@@ -95,7 +95,7 @@ export default function Favs() {
         <li className='inline-items'>
           <div className='author-thumb'>
             <img
-              src='https://res.cloudinary.com/weare270b/image/upload/q_auto/v1575849612/static/avatar44-sm.jpg'
+              src='https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1575849612/static/avatar44-sm.jpg'
               alt='author'
             />
           </div>
@@ -123,7 +123,7 @@ export default function Favs() {
         <li className='inline-items'>
           <div className='author-thumb'>
             <img
-              src='https://res.cloudinary.com/weare270b/image/upload/q_auto/v1575849612/static/avatar45-sm.jpg'
+              src='https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1575849612/static/avatar45-sm.jpg'
               alt='author'
             />
           </div>
@@ -151,7 +151,7 @@ export default function Favs() {
         <li className='inline-items'>
           <div className='author-thumb'>
             <img
-              src='https://res.cloudinary.com/weare270b/image/upload/q_auto/v1575849612/static/avatar46-sm.jpg'
+              src='https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1575849612/static/avatar46-sm.jpg'
               alt='author'
             />
           </div>
