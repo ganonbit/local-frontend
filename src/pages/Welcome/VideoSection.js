@@ -93,8 +93,11 @@ const VideoSection = () => {
                   className='embed-responsive-item'
                   src='https://www.youtube.com/embed/AB0SPGFa480'
                   id='video'
+                  title='welcome video'
                   allowscriptaccess='always'
-                  allow='autoplay'
+                  allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture'
+                  allowfullscreen
+                  loading='lazy'
                 ></iframe>
               </div>
             </div>

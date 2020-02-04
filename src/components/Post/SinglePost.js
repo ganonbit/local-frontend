@@ -88,7 +88,7 @@ const renderPost = (
 
   return (
     <div key={post.id} className='ui-block'>
-      <AuthConfirmation show={show} onHide={onHide} />;
+      <AuthConfirmation show={show} onHide={onHide} />
       {isSharedPost && renderSharedPostText(auth.user, postSharer)}
       <article className={articleClass}>
         <PostHeader
