@@ -14,6 +14,7 @@ const PostFooter = props => {
     isAuth,
     userId,
     post,
+    showAuthModal,
   } = props;
 
   let red = 'var(--theme-color-pink)';
@@ -54,6 +55,7 @@ const PostFooter = props => {
               color={'grey'}
               onClick={e => {
                 e.preventDefault();
+                showAuthModal();
               }}
             />
           </span>
@@ -67,6 +69,7 @@ const PostFooter = props => {
           href='#1'
           onClick={e => {
             e.preventDefault();
+            isAuth === false && showAuthModal();
           }}
           className='post-add-icon inline-items'
         >

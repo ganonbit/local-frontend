@@ -54,7 +54,9 @@ const SignIn = ({ refetch, history }) => {
     signin().then(async ({ data }) => {
       localStorage.setItem('token', data.signin.token);
       await refetch();
-      history.push(Routes.HOME);
+      history.location.state
+        ? history.push(history.location.state.publicPostUri)
+        : history.push(Routes.HOME);
     });
   };
   return (
@@ -112,17 +114,15 @@ const SignIn = ({ refetch, history }) => {
                           />
 
                           <div className='remember'>
-                            <a
-                              onClick={e => (
-                                setReset(true), e.preventDefault()
-                              )}
-                              href='#'
+                            <span
+                              onClick={e => setReset(true)}
+                              onKeyDown={e => setReset(true)}
+                              tabIndex='0'
+                              role='button'
                               className='forgot'
-                              data-toggle='modal'
-                              data-target='#restore-password'
                             >
                               Forgot my Password
-                            </a>
+                            </span>
                           </div>
 
                           <button
