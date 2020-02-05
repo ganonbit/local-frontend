@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Modal } from 'react-bootstrap';
 import { Mutation } from 'react-apollo';
-import imageCompression from 'browser-image-compression';
 
 import { UPLOAD_PHOTO, EDIT_ACCOUNT, GET_USER_POSTS } from 'graphql/user';
 import { withApollo } from 'react-apollo';
@@ -59,20 +58,19 @@ const UploadProfileImage = props => {
   };
 
   let handleUploadImage = e => {
-    const imageFile = e.target.files[0];
-    console.log(imageFile);
-    if (!imageFile) return;
+    const file = e.target.files[0];
+    if (!file) return;
 
-    if (!imageFile.type.match('image.*')) {
+    if (!file.type.match('image.*')) {
       setValues({
         ...values,
         error: 'Please upload valid file extension (jpg, jpeg, bmp, gif, png)',
-        imagePreview: URL.createObjectURL(imageFile),
+        imagePreview: URL.createObjectURL(e.target.files[0]),
       });
       return;
     }
 
-    if (imageFile.size >= MAX_POST_IMAGE_SIZE) {
+    if (file.size >= MAX_POST_IMAGE_SIZE) {
       setValues({
         ...values,
         error: `File size should be less then ${MAX_POST_IMAGE_SIZE /
@@ -80,27 +78,13 @@ const UploadProfileImage = props => {
       });
       return;
     }
-
-    let imageCompressionOptions = {
-      maxSizeMB: 10,
-      maxWidthOrHeight: 500,
-      useWebWorker: true
-    };
-
-    try {
-      const compressedFile = imageCompression(imageFile, imageCompressionOptions); 
-      console.log(compressedFile);
-      setValues({
-        ...values,
-        image: compressedFile,
-        imagePreview: URL.createObjectURL(compressedFile),
-        error: '',
-      });
-      console.log(setValues);
-    } 
-    catch (error) {
-      console.log(error);
-    }
+    setValues({
+      ...values,
+      image: e.target.files[0],
+      imagePreview: URL.createObjectURL(e.target.files[0]),
+      error: '',
+    });
+    e.target.value = null;
   };
   let onDeletePhotoHandler = () => {
     setValues({
@@ -149,7 +133,7 @@ const UploadProfileImage = props => {
                             className='video-bnr'
                             src={
                               !imagePreview
-                                ? 'https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1576220262/static/Image_from_iOS_1_bnaxnc.jpg'
+                                ? 'https://res.cloudinary.com/weare270b/image/upload/v1576220262/static/Image_from_iOS_1_bnaxnc.jpg'
                                 : imagePreview
                             }
                             alt='images'

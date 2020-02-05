@@ -16,24 +16,24 @@ const CreatePost = props => {
   const [{ auth }] = useStore();
   let { isShowing, toggle, setIsShowing } = useModal();
   const [isError, setError] = useState(true);
-  const [postContent, setPostContent] = useState({
+  const [values, setValues] = useState({
     status: '',
     image: '',
     imagePreview: '',
   });
-  const { status, image, imagePreview } = postContent;
+  const { status, image, imagePreview } = values;
 
   let handleStatusChange = e => {
     const { name, value } = e.target;
-    setPostContent({ ...postContent, [name]: value });
+    setValues({ ...values, [name]: value });
     setError(false);
   };
   let handleSubmitForm = (e, createPost) => {
     e.preventDefault();
     createPost()
       .then(async ({ data }) => {
-        setPostContent({
-          ...postContent,
+        setValues({
+          ...values,
           status: '',
           image: '',
           imagePreview: '',
@@ -45,12 +45,12 @@ const CreatePost = props => {
 
   const handleImageUpload = async e => {
     const imageFile = e.target.files[0];
-
+    console.log(imageFile);
     if (!imageFile) return;
 
     if (!imageFile.type.match('image.*')) {
-      setPostContent({
-        ...postContent,
+      setValues({
+        ...values,
         error: 'Please upload valid file extension (jpg, jpeg, bmp, gif, png)',
         imagePreview: URL.createObjectURL(imageFile),
       });
@@ -58,35 +58,35 @@ const CreatePost = props => {
     }
 
     if (imageFile.size >= MAX_POST_IMAGE_SIZE) {
-      setPostContent({
-        ...postContent,
+      setValues({
+        ...values,
         error: `File size should be less then ${MAX_POST_IMAGE_SIZE /
           1000000}MB`,
       });
       return;
     }
+
     let imageCompressionOptions = {
       maxSizeMB: 10,
-      maxWidthOrHeight: 650,
+      maxWidthOrHeight: 500,
       useWebWorker: false
     };
 
-    try {
-      const compressedFile = await imageCompression(imageFile, imageCompressionOptions);
-      await setPostContent({
-        ...postContent,
-        image: compressedFile,
-        imagePreview: URL.createObjectURL(compressedFile),
-        error: '',
-      });
-    } catch (error) {
-      console.log(error);
-    }
+    const compressedFile = await imageCompression(imageFile, imageCompressionOptions); 
+    console.log(compressedFile);
+    console.log('compressedFile instanceof Blob', compressedFile instanceof Blob); // true
+    console.log(`compressedFile size ${compressedFile.size / 1024 / 1024} MB`); // smaller than maxSizeMB
+    await setValues({
+      ...values,
+      image: compressedFile,
+      imagePreview: URL.createObjectURL(compressedFile),
+      error: '',
+    });
     await setError(false);
   };
   const onImageDelete = () => {
-    setPostContent({
-      ...postContent,
+    setValues({
+      ...values,
       image: '',
       imagePreview: '',
     });
