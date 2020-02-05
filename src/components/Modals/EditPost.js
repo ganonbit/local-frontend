@@ -71,18 +71,14 @@ const EditPost = props => {
     };
 
     try {
-      const compressedFile = await imageCompression(imageFile, imageCompressionOptions);
-      console.log('compressedFile instanceof Blob', compressedFile instanceof Blob); // true
-      console.log(`compressedFile size ${compressedFile.size / 1024 / 1024} MB`); // smaller than maxSizeMB
-   
+      const compressedFile = await imageCompression(imageFile, imageCompressionOptions); 
       await setValues({
         ...values,
         image: compressedFile,
         imagePreview: URL.createObjectURL(compressedFile),
         error: '',
       });
-      e.target.value = null;
-      setError(false);
+      await setError(false);
     } catch (error) {
       console.log(error);
     }
