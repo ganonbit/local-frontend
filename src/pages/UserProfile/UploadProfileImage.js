@@ -60,6 +60,7 @@ const UploadProfileImage = props => {
 
   let handleUploadImage = e => {
     const imageFile = e.target.files[0];
+    console.log(imageFile);
     if (!imageFile) return;
 
     if (!imageFile.type.match('image.*')) {
@@ -83,17 +84,19 @@ const UploadProfileImage = props => {
     let imageCompressionOptions = {
       maxSizeMB: 10,
       maxWidthOrHeight: 500,
-      useWebWorker: false
+      useWebWorker: true
     };
 
     try {
       const compressedFile = imageCompression(imageFile, imageCompressionOptions); 
+      console.log(compressedFile);
       setValues({
         ...values,
         image: compressedFile,
         imagePreview: URL.createObjectURL(compressedFile),
         error: '',
       });
+      console.log(setValues);
     } 
     catch (error) {
       console.log(error);
