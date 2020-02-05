@@ -44,7 +44,6 @@ const EditPost = props => {
 
   let handleUploadImage = async e => {
     const imageFile = e.target.files[0];
-    console.log(imageFile);
     if (!imageFile) return;
 
     if (!imageFile.type.match('image.*')) {
@@ -72,9 +71,6 @@ const EditPost = props => {
     };
 
     const compressedFile = await imageCompression(imageFile, imageCompressionOptions); 
-    console.log(compressedFile);
-    console.log('compressedFile instanceof Blob', compressedFile instanceof Blob); // true
-    console.log(`compressedFile size ${compressedFile.size / 1024 / 1024} MB`); // smaller than maxSizeMB
     await setValues({
       ...values,
       image: compressedFile,
