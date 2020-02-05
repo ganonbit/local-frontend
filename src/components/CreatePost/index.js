@@ -68,7 +68,7 @@ const CreatePost = props => {
     let imageCompressionOptions = {
       maxSizeMB: 10,
       maxWidthOrHeight: 650,
-      useWebWorker: true
+      useWebWorker: false
     };
 
     try {
