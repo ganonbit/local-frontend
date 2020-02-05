@@ -22,7 +22,6 @@ const UploadCoverImage = props => {
 
   let handleUploadImage = async e => {
     const imageFile = e.target.files[0];
-    console.log(imageFile);
     if (!imageFile) return;
 
     if (!imageFile.type.match('image.*')) {
@@ -50,9 +49,6 @@ const UploadCoverImage = props => {
     };
 
     const compressedFile = await imageCompression(imageFile, imageCompressionOptions); 
-    console.log(compressedFile);
-    console.log('compressedFile instanceof Blob', compressedFile instanceof Blob); // true
-    console.log(`compressedFile size ${compressedFile.size / 1024 / 1024} MB`); // smaller than maxSizeMB
     await setValues({
       ...values,
       image: compressedFile,
@@ -89,18 +85,16 @@ const UploadCoverImage = props => {
       image: '',
     });
   };
-  let onSubmitHandler = async (e, uploadUserPhoto) => {
-    console.log(values);
+  let onSubmitHandler = (e, uploadUserPhoto) => {
     e.preventDefault();
     if (error) return;
-    console.log(values.image);
     if (values.image)
-      await UploadCoverImage().then(async ({ data }) => {
+      UploadCoverImage().then(async ({ data }) => {
         await refetch();
         onHide();
       });
     else {
-      await deleteCoverImage().then(async data => {
+      deleteCoverImage().then(async data => {
         await refetch();
         onHide();
       });

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Modal } from 'react-bootstrap';
 import { Mutation } from 'react-apollo';
+import imageCompression from 'browser-image-compression';
 
 import { UPLOAD_PHOTO, EDIT_ACCOUNT, GET_USER_POSTS } from 'graphql/user';
 import { withApollo } from 'react-apollo';
@@ -57,20 +58,20 @@ const UploadProfileImage = props => {
     }
   };
 
-  let handleUploadImage = e => {
-    const file = e.target.files[0];
-    if (!file) return;
+  let handleUploadImage = async e => {
+    const imageFile = e.target.files[0];
+    if (!imageFile) return;
 
-    if (!file.type.match('image.*')) {
+    if (!imageFile.type.match('image.*')) {
       setValues({
         ...values,
         error: 'Please upload valid file extension (jpg, jpeg, bmp, gif, png)',
-        imagePreview: URL.createObjectURL(e.target.files[0]),
+        imagePreview: URL.createObjectURL(imageFile),
       });
       return;
     }
 
-    if (file.size >= MAX_POST_IMAGE_SIZE) {
+    if (imageFile.size >= MAX_POST_IMAGE_SIZE) {
       setValues({
         ...values,
         error: `File size should be less then ${MAX_POST_IMAGE_SIZE /
@@ -78,13 +79,20 @@ const UploadProfileImage = props => {
       });
       return;
     }
-    setValues({
+
+    let imageCompressionOptions = {
+      maxSizeMB: 10,
+      maxWidthOrHeight: 500,
+      useWebWorker: true
+    };
+
+    const compressedFile = await imageCompression(imageFile, imageCompressionOptions); 
+    await setValues({
       ...values,
-      image: e.target.files[0],
-      imagePreview: URL.createObjectURL(e.target.files[0]),
+      image: compressedFile,
+      imagePreview: URL.createObjectURL(compressedFile),
       error: '',
     });
-    e.target.value = null;
   };
   let onDeletePhotoHandler = () => {
     setValues({
