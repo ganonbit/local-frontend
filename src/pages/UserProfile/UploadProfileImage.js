@@ -83,12 +83,12 @@ const UploadProfileImage = props => {
     let imageCompressionOptions = {
       maxSizeMB: 10,
       maxWidthOrHeight: 500,
-      useWebWorker: true
+      useWebWorker: false
     };
 
     try {
       const compressedFile = await imageCompression(imageFile, imageCompressionOptions); 
-      await setValues({
+      setValues({
         ...values,
         image: compressedFile,
         imagePreview: URL.createObjectURL(compressedFile),
