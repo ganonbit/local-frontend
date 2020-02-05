@@ -58,7 +58,7 @@ const UploadProfileImage = props => {
     }
   };
 
-  let handleUploadImage = async e => {
+  let handleUploadImage = e => {
     const imageFile = e.target.files[0];
     if (!imageFile) return;
 
@@ -87,7 +87,7 @@ const UploadProfileImage = props => {
     };
 
     try {
-      const compressedFile = await imageCompression(imageFile, imageCompressionOptions); 
+      const compressedFile = imageCompression(imageFile, imageCompressionOptions); 
       setValues({
         ...values,
         image: compressedFile,
