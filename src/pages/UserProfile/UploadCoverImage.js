@@ -6,6 +6,7 @@ import imageCompression from 'browser-image-compression';
 
 import { UPLOAD_PHOTO, EDIT_ACCOUNT, GET_USER_POSTS } from 'graphql/user';
 import { MAX_POST_IMAGE_SIZE } from 'constants/ImageSize';
+
 const UploadCoverImage = props => {
   let { onHide, user, isCover, coverImage, title, refetch, client } = props;
 
@@ -18,25 +19,10 @@ const UploadCoverImage = props => {
   const { error } = values;
 
   let { imagePreview } = values;
-  let onSubmitHandler = (e, uploadUserPhoto) => {
-    e.preventDefault();
-    if (error) return;
-    if (values.image)
-      uploadUserPhoto().then(async ({ data }) => {
-        await refetch();
-        onHide();
-      });
-    else {
-      deleteCoverImage().then(data => {
-        refetch();
-        onHide();
-      });
-    }
-  };
 
   let handleUploadImage = async e => {
     const imageFile = e.target.files[0];
-
+    console.log(imageFile);
     if (!imageFile) return;
 
     if (!imageFile.type.match('image.*')) {
@@ -56,23 +42,23 @@ const UploadCoverImage = props => {
       });
       return;
     }
+
     let imageCompressionOptions = {
       maxSizeMB: 10,
-      maxWidthOrHeight: 1300,
-      useWebWorker: false
+      maxWidthOrHeight: 500,
+      useWebWorker: true
     };
 
-    try {
-      const compressedFile = await imageCompression(imageFile, imageCompressionOptions); 
-      await setValues({
-        ...values,
-        image: compressedFile,
-        imagePreview: URL.createObjectURL(compressedFile),
-        error: '',
-      });
-    } catch (error) {
-      console.log(error);
-    }
+    const compressedFile = await imageCompression(imageFile, imageCompressionOptions); 
+    console.log(compressedFile);
+    console.log('compressedFile instanceof Blob', compressedFile instanceof Blob); // true
+    console.log(`compressedFile size ${compressedFile.size / 1024 / 1024} MB`); // smaller than maxSizeMB
+    await setValues({
+      ...values,
+      image: compressedFile,
+      imagePreview: URL.createObjectURL(compressedFile),
+      error: '',
+    });
   };
   const deleteCoverImage = async () => {
     try {
@@ -102,6 +88,23 @@ const UploadCoverImage = props => {
       imagePreview: '',
       image: '',
     });
+  };
+  let onSubmitHandler = async (e, uploadUserPhoto) => {
+    console.log(values);
+    e.preventDefault();
+    if (error) return;
+    console.log(values.image);
+    if (values.image)
+      await UploadCoverImage().then(async ({ data }) => {
+        await refetch();
+        onHide();
+      });
+    else {
+      await deleteCoverImage().then(async data => {
+        await refetch();
+        onHide();
+      });
+    }
   };
   return (
     <Mutation
