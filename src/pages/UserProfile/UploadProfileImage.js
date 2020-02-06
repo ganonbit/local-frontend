@@ -27,14 +27,7 @@ const UploadProfileImage = props => {
             image: '',
             imagePublicId: '',
           },
-        },
-
-        refetchQueries: () => [
-          {
-            query: GET_USER_POSTS,
-            variables: { userId: user.id, skip: 0, limit: 15 },
-          },
-        ],
+        }
       });
     } catch (err) {
       //console.log(err);
@@ -112,12 +105,6 @@ const UploadProfileImage = props => {
           imagePublicId: user.imagePublicId,
         },
       }}
-      refetchQueries={() => [
-        {
-          query: GET_USER_POSTS,
-          variables: { userId: user.id, skip: 0, limit: 15 },
-        },
-      ]}
     >
       {(uploadUserPhoto, { loading, error: apiError }) => {
         return (
