@@ -6,7 +6,7 @@ import PostForm from './PostForm';
 import imageCompression from 'browser-image-compression';
 
 import { Mutation } from 'react-apollo';
-import { CREATE_POST, GET_FOLLOWED_POSTS } from 'graphql/post';
+import { GET_POSTS, CREATE_POST, GET_FOLLOWED_POSTS } from 'graphql/post';
 import { GET_USER_POSTS } from 'graphql/user';
 import { MAX_POST_IMAGE_SIZE } from 'constants/ImageSize';
 
@@ -111,6 +111,7 @@ const CreatePost = props => {
             limit: 15,
           },
         },
+        { query: GET_POSTS, variables: { authUserId: auth.user.id } }
       ]}
     >
       {(createPost, { loading, error: apiError }) => {
