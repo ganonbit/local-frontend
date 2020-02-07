@@ -14,11 +14,10 @@ const Reward = ({ user }) => {
                 <div className='rewards-content'>
                   <h1>rewards</h1>
                   <p>
-                    You will be rewarded for doing what you love to do; sharing
-                    your favorite avocado shots, indulging in a scrumptious
-                    avocado dish, and collecting the most useful avocado health
-                    and wellness tips so you can live your best life ever! Learn
-                    more about our rewards system.
+                    Get rewarded for doing what you already do best!
+                  </p>
+                  <p>
+                    Check out the list below on how to earn points towards rewards. Chances are you’re already on your way, so keep it up and you can redeem them soon.
                   </p>
                 </div>
               </div>
@@ -48,49 +47,38 @@ const Reward = ({ user }) => {
               <div className='row point-row'>
                 <div className='col-lg-12'>
                   <div className='point-inner-wrap'>
-                    {/* <h4>0-9 POINTS</h4> */}
                     <ul>
                       <li>
-                        <span>Like a post</span>
-                        <h6>1</h6>
-                      </li>
-                      {/* <li>
-                        <span>Rank in Top Posts and/or Top Users two weeks in a row</span>
-                        <h6>10</h6>
-                      </li> */}
-                      <li>
-                        <span>Comment on someone’s post</span>
-                        <h6>1</h6>
+                        <span>Earning the Avocado Badge</span>
+                        <h6>500</h6>
                       </li>
                       <li>
-                        <span>Submit an idea to Selma in the form</span>
-                        <h6>5</h6>
-                      </li>
-                      {/* <li>
-                        <span>Visit the site 3 or more times per week</span>
-                        <h6>5</h6>
-                      </li> */}
-                      <li>
-                        <span>Register your account</span>
-                        <h6>10</h6>
-                      </li>
-                      <li>
-                        <span>Create a post</span>
-                        <h6>5</h6>
-                      </li>
-                      {/* <li>
-                        <span>Share on social media</span>
-                        <h6>15</h6>
-                      </li> */}
-                      <li>
-                        <span>
-                          Your friend creates an account from your referral link
-                        </span>
-                        <h6>40</h6>
-                      </li>
-                      <li>
-                        <span>Selma implements your idea</span>
+                        <span>Referring a friend that becomes a verified member</span>
                         <h6>50</h6>
+                      </li>
+                      <li>
+                        <span>Posting an avocado dish photo</span>
+                        <h6>50</h6>
+                      </li>
+                      <li>
+                        <span>Sharing content from Avocado Nation to your FB, TW, IG or PN.</span>
+                        <h6>50</h6>
+                      </li>
+                      <li>
+                        <span>Posting a recipe</span>
+                        <h6>25</h6>
+                      </li>
+                      <li>
+                        <span>Logging in to your Avocado Nation Profile every week in a month</span>
+                        <h6>100</h6>
+                      </li>
+                      <li>
+                        <span>~ DOES THIS STAY? ~ Submitting an idea to Selma Avocado (moderator)</span>
+                        <h6>25</h6>
+                      </li>
+                      <li>
+                        <span>Watching a video</span>
+                        <h6>10</h6>
                       </li>
                     </ul>
                   </div>

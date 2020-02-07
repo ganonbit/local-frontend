@@ -50,9 +50,9 @@ export default function PostContent(props) {
         {rawContent}
       </Linkify>
 
-      {metaFromContentPreview.meta ? (
+      {/* {metaFromContentPreview.meta ? (
         <Preview {...metaFromContentPreview.meta} />
-      ) : null}
+      ) : null} */}
       {!image ? null : (
         <div className='post-img mt-3'>
           <img alt='postImage' src={image} />

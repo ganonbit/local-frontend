@@ -17,17 +17,13 @@ const VideoSection = () => {
           <div className='col col-xl-6 col-lg-8 col-md-12 col-sm-12 col-12 m-auto'>
             <div className='row'>
               <div className='col-xl-6 col-lg-6 col-md-6 mb-4'>
-                <h2>Welcome!</h2>
+                <h2>Welcome to Avocado Nation,</h2>
+                <p> a one of a kind social network with rewards for avocado fans.</p>
                 <p>
-                  Avocado Nation is the first of its kind social media network
-                  to connect you with fellow avocado-lovers!
+                We’ve hand selected some of the best avocado content out there to inspire your next lunch, dinner party or appetizer and we want to see your avocado masterpieces too!
                 </p>
                 <p>
-                  Join today and get rewarded for your contributions and
-                  engagement with other community members! Get inspiration for
-                  your next meal or party, and learn how others use this
-                  versatile fruit in everyday life - all from fellow avocado
-                  fans, just like you.
+                So join today and start earning points for the pics you’re already taking and the guac you’re already sharing.
                 </p>
               </div>
               <div className='col-xl-6 col-lg-6 col-md-6 mb-4 text-center'>
@@ -62,7 +58,7 @@ const VideoSection = () => {
                 </a>
               </div>
               <div className='col-lg-5 col-md-5 col-sm-5 col-5'>
-                <h6>TO LEARN MORE ABOUT AVOCADO NATION</h6>
+                <h6>TO LEARN MORE</h6>
               </div>
             </div>
           </div>

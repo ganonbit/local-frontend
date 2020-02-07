@@ -8,23 +8,38 @@ const Badges = () => {
           <div className='row'>
             <div className='col col-lg-7 col-md-8 col-sm-12 col-12 m-auto'>
               <div className='main-header-content'>
-                <h1>Collect your Badges!</h1>
+                <h1>Collect Badges!</h1>
                 <p>
-                  Show Off Your Avo Flair Collect all these badges to show how
-                  truly obsessed you are with avocados. Here, you'll find how to
-                  unlock these and show them off on your profile for your
-                  friends to see. How many can you collect?
+                Collect the below badges and up your avocado bragging rights. The list below will tell you how to unlock each badge. Once earned, they’ll appear on your profile.
                 </p>
+                <p>How many can you collect? Game on.</p>
               </div>
             </div>
           </div>
         </div>
-        {/* <img className='img-bottom' src='img/badges-bottom.png' alt='friends' /> */}
       </div>
 
       <div className='container'>
         <div className='row'>
           <div className='col-12'>
+          <div className='ui-block'>
+              <div className='birthday-item inline-items badges'>
+                <div className='author-thumb'>
+                  <img
+                    src='https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1576788606/static/badge1_ngqyt5.png'
+                    alt='author'
+                  />
+                </div>
+                <div className='birthday-author-name'>
+                  <a href='1#' className='h6 author-name'>
+                    Avocado Badge
+                  </a>
+                  <div className='birthday-date'>
+                    A true avocado lover that has dominated Avocado Nation and has several badges to prove it.
+                  </div>
+                </div>
+              </div>
+            </div>
             <div className='ui-block'>
               <div className='birthday-item inline-items badges'>
                 <div className='author-thumb'>
@@ -37,45 +52,28 @@ const Badges = () => {
                   <a href='1#' className='h6 author-name'>
                     Trailblazer
                   </a>
-                  <div className='birthday-date'>First 500 sign</div>
-                </div>
-                <div className='skills-item'>
-                  <div className='skills-item-meter'>
-                    <span
-                      className='skills-item-meter-active'
-                      style={{ width: '100%' }}
-                    ></span>
-                  </div>
+                  <div className='birthday-date'>You&apos;re ahead of the curve. An early member, in the club before everyone even knows about it.</div>
                 </div>
               </div>
             </div>
-            {/* <div className='ui-block'>
+            <div className='ui-block'>
               <div className='birthday-item inline-items badges'>
                 <div className='author-thumb'>
                   <img
                     src='https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1576788606/static/badge3_gzdubj.png'
                     alt='author'
                   />
-                  <div className='label-avatar bg-blue'>4</div>
                 </div>
                 <div className='birthday-author-name'>
                   <a href='1#' className='h6 author-name'>
                     Explorer
                   </a>
                   <div className='birthday-date'>
-                    User has visited all sections of the platform
-                  </div>
-                </div>
-                <div className='skills-item'>
-                  <div className='skills-item-meter'>
-                    <span
-                      className='skills-item-meter-inactive'
-                      style={{ width: ' 52%' }}
-                    ></span>
+                  For those that browse beyond the horizon and check out the different areas Avocado Nation offers.
                   </div>
                 </div>
               </div>
-            </div> */}
+            </div>
             <div className='ui-block'>
               <div className='birthday-item inline-items badges'>
                 <div className='author-thumb'>
@@ -89,18 +87,7 @@ const Badges = () => {
                     Avo Guru
                   </a>
                   <div className='birthday-date'>
-                    Users that are most advising others with avocado tips and
-                    recommendations; users that are proven avocado experts in
-                    terms of how much they spread their knowledge with other
-                    users - 100 posts with accurate information
-                  </div>
-                </div>
-                <div className='skills-item'>
-                  <div className='skills-item-meter'>
-                    <span
-                      className='skills-item-meter-inactive'
-                      style={{ width: ' 100%' }}
-                    ></span>
+                  Your wisdom is unmatched. Your avocado tips and comments and contributions here are for the history books. You&apos;re walking a green path of enlightenment.
                   </div>
                 </div>
               </div>
@@ -118,44 +105,7 @@ const Badges = () => {
                     Ambassador
                   </a>
                   <div className='birthday-date'>
-                    Friend Referrals and signups – you refer your friends and if
-                    5 amount sign up from your referral you receive.
-                  </div>
-                </div>
-                <div className='skills-item'>
-                  <div className='skills-item-meter'>
-                    <span
-                      className='skills-item-meter-inactive'
-                      style={{ width: ' 70%' }}
-                    ></span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className='ui-block'>
-              <div className='birthday-item inline-items badges'>
-                <div className='author-thumb'>
-                  <img
-                    src='https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1576788606/static/badge1_ngqyt5.png'
-                    alt='author'
-                  />
-                  <div className='label-avatar bg-primary'>2</div>
-                </div>
-                <div className='birthday-author-name'>
-                  <a href='1#' className='h6 author-name'>
-                    Avocado Badge
-                  </a>
-                  <div className='birthday-date'>
-                    Badge of badges- user must receive at least 10 badges to
-                    attain this badge
-                  </div>
-                </div>
-                <div className='skills-item'>
-                  <div className='skills-item-meter'>
-                    <span
-                      className='skills-item-meter-inactive'
-                      style={{ width: '76%' }}
-                    ></span>
+                  Our people say you know people. Keep bringing them! The several referrals you&apos;ve made are much appreciated.
                   </div>
                 </div>
               </div>
@@ -174,16 +124,7 @@ const Badges = () => {
                     Shining Star
                   </a>
                   <div className='birthday-date'>
-                    Accumulate 1,000 combined likes & comments on content from
-                    others
-                  </div>
-                </div>
-                <div className='skills-item'>
-                  <div className='skills-item-meter'>
-                    <span
-                      className='skills-item-meter-inactive'
-                      style={{ width: ' 23%' }}
-                    ></span>
+                   People really dig your content. You keep getting all the likes, all the applauds. Keep it up!
                   </div>
                 </div>
               </div>
@@ -201,17 +142,7 @@ const Badges = () => {
                     Selma’s Pick
                   </a>
                   <div className='birthday-date'>
-                    Content gets selected by Selma and highlighted by AFM for a
-                    weeks time. Badge will be rotated amongst selected content
-                    on a weekly basis. - Selmas discretion
-                  </div>
-                </div>
-                <div className='skills-item'>
-                  <div className='skills-item-meter'>
-                    <span
-                      className='skills-item-meter-inactive'
-                      style={{ width: ' 100%' }}
-                    ></span>
+                  Congrats, Selma&apos;s a tough critic, but clearly your content is made of the right stuff.
                   </div>
                 </div>
               </div>
@@ -229,47 +160,11 @@ const Badges = () => {
                     Good Neighbor
                   </a>
                   <div className='birthday-date'>
-                    User that has given a combination of 1,000 likes, comments,
-                    shares 
-                  </div>
-                </div>
-                <div className='skills-item'>
-                  <div className='skills-item-meter'>
-                    <span
-                      className='skills-item-meter-inactive'
-                      style={{ width: ' 100%' }}
-                    ></span>
+                  You comment, you like, you post. You&apos;ve done it a hundred times and you know what? You shine.
                   </div>
                 </div>
               </div>
             </div>
-            {/* <div className='ui-block'>
-              <div className='birthday-item inline-items badges'>
-                <div className='author-thumb'>
-                  <img
-                    src='https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1576788607/static/badge9_fduvdg.png'
-                    alt='author'
-                  />
-                </div>
-                <div className='birthday-author-name'>
-                  <a href='1#' className='h6 author-name'>
-                    Avo Gamer
-                  </a>
-                  <div className='birthday-date'>
-                    Plays on a weekly basis our rotating games must play 20
-                    games to attain
-                  </div>
-                </div>
-                <div className='skills-item'>
-                  <div className='skills-item-meter'>
-                    <span
-                      className='skills-item-meter-inactive'
-                      style={{ width: '69%' }}
-                    ></span>
-                  </div>
-                </div>
-              </div>
-            </div> */}
             <div className='ui-block'>
               <div className='birthday-item inline-items badges'>
                 <div className='author-thumb'>
@@ -283,21 +178,12 @@ const Badges = () => {
                     Avo Fit
                   </a>
                   <div className='birthday-date'>
-                    Users sharing large amounts of content health and wellness
-                    related (sports, fitness, nutrition, weightloss) 100+ posts
-                  </div>
-                </div>
-                <div className='skills-item'>
-                  <div className='skills-item-meter'>
-                    <span
-                      className='skills-item-meter-inactive'
-                      style={{ width: ' 33%' }}
-                    ></span>
+                  You keep it healthy and you&apos;re into wellness and we appreciate your contributions. Stay Avo Fit!
                   </div>
                 </div>
               </div>
             </div>
-            {/* <div className='ui-block'>
+            <div className='ui-block'>
               <div className='birthday-item inline-items badges'>
                 <div className='author-thumb'>
                   <img
@@ -310,20 +196,11 @@ const Badges = () => {
                     Social Butterfly
                   </a>
                   <div className='birthday-date'>
-                    User sharing large amounts of content to other social
-                    platforms- User shares 50+ pieces of content
-                  </div>
-                </div>
-                <div className='skills-item'>
-                  <div className='skills-item-meter'>
-                    <span
-                      className='skills-item-meter-inactive'
-                      style={{ width: ' 100%' }}
-                    ></span>
+                  You&apos;re on all the social networks and we appreciate you sharing this avocado love. Keep sharing what you like to your other accounts!
                   </div>
                 </div>
               </div>
-            </div> */}
+            </div>
             <div className='ui-block'>
               <div className='birthday-item inline-items badges'>
                 <div className='author-thumb'>
@@ -337,16 +214,7 @@ const Badges = () => {
                     Top Fan
                   </a>
                   <div className='birthday-date'>
-                    One of the top 10 users to like/comment in Avocado Nation -
-                    rotated every month
-                  </div>
-                </div>
-                <div className='skills-item'>
-                  <div className='skills-item-meter'>
-                    <span
-                      className='skills-item-meter-inactive'
-                      style={{ width: ' 65%' }}
-                    ></span>
+                    Your activity on Avocado Nation has you ahead of the pack this month. Congrats and keep up the pace!
                   </div>
                 </div>
               </div>
@@ -358,54 +226,17 @@ const Badges = () => {
                     src='https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1576788606/static/badge13_byzmff.png'
                     alt='author'
                   />
-                  <div className='label-avatar bg-breez'>2</div>
                 </div>
                 <div className='birthday-author-name'>
                   <a href='1#' className='h6 author-name'>
                     Conversation Starter
                   </a>
                   <div className='birthday-date'>
-                    User to create 10 threads that receive at least 5 posts/
-                    interactions
-                  </div>
-                </div>
-                <div className='skills-item'>
-                  <div className='skills-item-meter'>
-                    <span
-                      className='skills-item-meter-inactive'
-                      style={{ width: ' 100%' }}
-                    ></span>
+                  You&apos;re a conversation starter. You keep starting threads and engagine others and we like it.
                   </div>
                 </div>
               </div>
             </div>
-            {/* <div className='ui-block'>
-              <div className='birthday-item inline-items badges'>
-                <div className='author-thumb'>
-                  <img
-                    src='https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1576788606/static/badge14_nptb0m.png'
-                    alt='author'
-                  />
-                </div>
-                <div className='birthday-author-name'>
-                  <a href='1#' className='h6 author-name'>
-                    Super Foodie
-                  </a>
-                  <div className='birthday-date'>
-                    User that shares large amounts of recipes on the platform -
-                    must share 25 recipes to receive badge
-                  </div>
-                </div>
-                <div className='skills-item'>
-                  <div className='skills-item-meter'>
-                    <span
-                      className='skills-item-meter-inactive'
-                      style={{ width: ' 80%' }}
-                    ></span>
-                  </div>
-                </div>
-              </div>
-            </div>*/}
             <div className='ui-block'>
               <div className='birthday-item inline-items badges'>
                 <div className='author-thumb'>
@@ -419,16 +250,7 @@ const Badges = () => {
                     Photobomber
                   </a>
                   <div className='birthday-date'>
-                    User that shares large amounts of avocado pictures - must
-                    share 25 to receive badge
-                  </div>
-                </div>
-                <div className='skills-item'>
-                  <div className='skills-item-meter'>
-                    <span
-                      className='skills-item-meter-inactive'
-                      style={{ width: '100%' }}
-                    ></span>
+                  Are you a photographer? To us you are. We love guac- avocado-toast-salad photos. Keep 'em coming.
                   </div>
                 </div>
               </div>
@@ -436,7 +258,8 @@ const Badges = () => {
           </div>
         </div>
       </div>
-    </>
+      </>
   );
 };
+
 export default Badges;

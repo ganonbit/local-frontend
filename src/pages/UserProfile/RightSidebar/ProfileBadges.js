@@ -14,7 +14,7 @@ export default function ProfileBadges() {
 
         <ul className='widget w-badges'>
           <li>
-            <Link to={Routes.BADGES}>
+            <Link to={Routes.FAQ}>
               <img
                 className='badge-img'
                 src='https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1576788606/static/badge2_kmjarm.png'
