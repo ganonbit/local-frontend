@@ -9,7 +9,7 @@ import { withApollo } from 'react-apollo';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEllipsisV } from '@fortawesome/free-solid-svg-icons';
-import { GET_FOLLOWED_POSTS, DELETE_POST } from 'graphql/post';
+import { GET_POSTS, GET_FOLLOWED_POSTS, DELETE_POST } from 'graphql/post';
 import { GET_USER_POSTS } from 'graphql/user';
 
 import EditPost from 'components/Modals/EditPost';
@@ -63,6 +63,7 @@ const PostHeader = props => {
               limit: PROFILE_PAGE_POSTS_LIMIT,
             },
           },
+          { query: GET_POSTS, variables: { authUserId: auth.user.id } },
         ],
       });
     } catch (err) {

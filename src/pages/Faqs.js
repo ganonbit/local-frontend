@@ -6,12 +6,7 @@ const Faqs = () => (
       {/* <div className='header-spacer--standard'></div> */}
 
       <div className='stunning-header-content'>
-        <h1 className='stunning-header-title'>FAQ Avocado Nation </h1>
-        <ul className='breadcrumbs'>
-          <li className='breadcrumbs-item active'>
-            <span>FAQs</span>
-          </li>
-        </ul>
+        <h1 className='stunning-header-title'>Frequently Asked Questions</h1>
       </div>
 
       <div className='content-bg-wrap stunning-header-bg1'></div>
@@ -69,16 +64,16 @@ const Faqs = () => (
                 <Card>
                   <Card.Header>
                     <Accordion.Toggle as={Button} variant='link' eventKey='2'>
-                      What do badges mean?
+                      What are badges and how do you get them?
                     </Accordion.Toggle>
                   </Card.Header>
                   <Accordion.Collapse eventKey='2'>
                     <Card.Body>
                       <p>
-                        You can find your points status{' '}
-                        <a href='/rewards'>Link</a> here. You can get to this
-                        page by going to the dropdown menu in the top right
-                        corner.
+                        Badges are the Avocado Nation way of saying thank you
+                        and congrats for certain accomplishments as a member.
+                        The more you participate the more you’ll earn. You can
+                        see the full list <a href='/badges'>here</a>.
                       </p>
                     </Card.Body>
                   </Accordion.Collapse>
@@ -122,11 +117,29 @@ const Faqs = () => (
                 <Card>
                   <Card.Header>
                     <Accordion.Toggle as={Button} variant='link' eventKey='5'>
+                      Who is Selma Avocado?
+                    </Accordion.Toggle>
+                  </Card.Header>
+                  <Accordion.Collapse eventKey='5'>
+                    <Card.Body>
+                      <p>
+                        Selma Avocado is an animated expert and super fan of
+                        avocados and she helps run the Avocado Nation. She’ll
+                        deliver some key tips and content to the site to enhance
+                        your experience.
+                      </p>
+                    </Card.Body>
+                  </Accordion.Collapse>
+                </Card>
+
+                <Card>
+                  <Card.Header>
+                    <Accordion.Toggle as={Button} variant='link' eventKey='5'>
                       Someone posted something that doesn’t fall in line with
                       the Community Guidelines. How can I report that?
                     </Accordion.Toggle>
                   </Card.Header>
-                  <Accordion.Collapse eventKey='5'>
+                  <Accordion.Collapse eventKey='6'>
                     <Card.Body>
                       <p>
                         Oh no! We want to build a community helps share the
@@ -146,7 +159,7 @@ const Faqs = () => (
                       points for it?
                     </Accordion.Toggle>
                   </Card.Header>
-                  <Accordion.Collapse eventKey='6'>
+                  <Accordion.Collapse eventKey='7'>
                     <Card.Body>
                       <p>
                         Click on the REFER A FRIEND box on the right column of
@@ -163,10 +176,11 @@ const Faqs = () => (
                 <Card>
                   <Card.Header>
                     <Accordion.Toggle as={Button} variant='link' eventKey='7'>
-                      I have a great idea! How can I tell you about it?
+                      ~ DOES THIS STAY WITH IDEAS OUT? ~ I have a great idea!
+                      How can I tell you about it?
                     </Accordion.Toggle>
                   </Card.Header>
-                  <Accordion.Collapse eventKey='7'>
+                  <Accordion.Collapse eventKey='8'>
                     <Card.Body>
                       <p>
                         I would love to hear your ideas! Go to the dropdown menu

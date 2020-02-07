@@ -5,12 +5,7 @@ const CommunityGuideline = () => (
     <div className='stunning-header bg-primary-opacity'>
       {/* <div className='header-spacer--standard'></div> */}
       <div className='stunning-header-content'>
-        <h1 className='stunning-header-title'>AFM COMMUNITY GUIDELINE</h1>
-        <ul className='breadcrumbs'>
-          <li className='breadcrumbs-item active'>
-            <span>COMMUNITY GUIDELINE</span>
-          </li>
-        </ul>
+        <h1 className='stunning-header-title'>Avocado Nation</h1>
       </div>
       <div className='content-bg-wrap stunning-header-bg1'></div>
     </div>
@@ -20,7 +15,7 @@ const CommunityGuideline = () => (
         <div className='row'>
           <div className='col col-xl-10 m-auto col-lg-12 col-md-12 col-sm-12 col-12'>
             <div className='detail-content bg-white p-4 p-sm-5'>
-              <h4>COMMUNITY GUIDELINE</h4>
+              <h4>- COMMUNITY GUIDELINES -</h4>
               <p>
                 We may allow service providers and other third parties to use
                 cookies and other tracking technologies to track your browsing

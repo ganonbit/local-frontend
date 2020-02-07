@@ -139,12 +139,11 @@ const SignIn = ({ refetch, history }) => {
                             Login
                           </button>
                           <p className='mt-2'>
-                            Don’t you have an account? &nbsp;
+                            Don’t you have an account?{' '}
                             <Link to={Routes.SIGN_UP} className='btn-register'>
-                              Register Now!
-                            </Link>
-                            &nbsp; It’s really simple and you can start enjoying
-                            all the benefits!
+                              Register now
+                            </Link>{' '}
+                            to start earning points you can redeem for rewards!
                           </p>
                         </div>
                       </div>

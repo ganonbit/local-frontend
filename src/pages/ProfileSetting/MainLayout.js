@@ -12,11 +12,10 @@ const MainLayout = ({ children }) => {
           <div className='row'>
             <div className='col col-lg-8 m-auto col-md-8 col-sm-12 col-12'>
               <div className='main-header-content'>
-                <h1>Your Avo Dashboard</h1>
+                <h1>Welcome to your account dashboard!</h1>
                 <p>
-                  Welcome to your account dashboard! Here, you will find
-                  everything that will help you customize your Avocado Nation
-                  profile.
+                  Here, you will find everything you need to help customize your
+                  Avocado Nation profile.
                 </p>
               </div>
             </div>

@@ -28,13 +28,6 @@ const UploadProfileImage = props => {
             imagePublicId: '',
           },
         },
-
-        refetchQueries: () => [
-          {
-            query: GET_USER_POSTS,
-            variables: { userId: user.id, skip: 0, limit: 15 },
-          },
-        ],
       });
     } catch (err) {
       //console.log(err);
@@ -83,10 +76,13 @@ const UploadProfileImage = props => {
     let imageCompressionOptions = {
       maxSizeMB: 10,
       maxWidthOrHeight: 500,
-      useWebWorker: true
+      useWebWorker: true,
     };
 
-    const compressedFile = await imageCompression(imageFile, imageCompressionOptions); 
+    const compressedFile = await imageCompression(
+      imageFile,
+      imageCompressionOptions
+    );
     await setValues({
       ...values,
       image: compressedFile,
@@ -112,12 +108,6 @@ const UploadProfileImage = props => {
           imagePublicId: user.imagePublicId,
         },
       }}
-      refetchQueries={() => [
-        {
-          query: GET_USER_POSTS,
-          variables: { userId: user.id, skip: 0, limit: 15 },
-        },
-      ]}
     >
       {(uploadUserPhoto, { loading, error: apiError }) => {
         return (
