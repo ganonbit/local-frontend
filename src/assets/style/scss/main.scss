@@ -19877,6 +19877,16 @@ button.following-btn:focus {
 .modal-content {
   border: none;
 }
+.more.more-share {
+  display: inline-block;
+}
+button.react-share__ShareButton.network__share-button {
+  display: flex;
+  align-items: center;
+}
+ul.more-dropdown li a span {
+  padding-left: 5px;
+}
 // Responsiveness Start Here
 
 @media (min-width: 1199px) {

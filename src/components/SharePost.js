@@ -1,6 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Mutation, withApollo } from 'react-apollo';
-import OverlayTriggers from './Common/ToolTip';
+import { Link } from 'react-router-dom';
+
+import {
+  FacebookShareButton,
+  TwitterShareButton,
+  FacebookIcon,
+  TwitterIcon,
+} from 'react-share';
+
+// import OverlayTriggers from './Common/ToolTip';
 import { CREATE_SHARED_POST, DELETE_SHARED_POST } from 'graphql/shared-post';
 
 import { useStore } from 'store';
@@ -18,6 +27,8 @@ const SharePost = ({ postId, post, postSharer, sharedPostId }) => {
     postId = sharedPostId;
     hasShared = true;
   }
+
+  let url = `https://beta.theavocadonation.com/post/${postId}`;
 
   const handleButtonClick = async (event, mutate) => {
     event.preventDefault();
@@ -39,6 +50,24 @@ const SharePost = ({ postId, post, postSharer, sharedPostId }) => {
     }
   };
 
+  let fbSharedButton = (
+    <FacebookShareButton
+      className='network__share-button'
+      url={url}
+      quote={post.content}
+      resetButtonStyle={true}
+    >
+      <FacebookIcon size={25} round={true} />
+      <span>Share</span>
+    </FacebookShareButton>
+  );
+
+  let twitterShareButton = (
+    <TwitterShareButton className='network__share-button' url={url}>
+      <TwitterIcon size={25} round={true} /> <span>Share</span>
+    </TwitterShareButton>
+  );
+
   // Detect which mutation to use
   const operation = hasShared ? 'delete' : 'create';
   const options = {
@@ -59,12 +88,9 @@ const SharePost = ({ postId, post, postSharer, sharedPostId }) => {
     >
       {mutate => {
         return (
-          <OverlayTriggers
-            toolTipText={hasShared ? 'UNSHARE' : 'SHARE'}
-            placement='left'
-          >
+          <div className='more more-share'>
             <a
-              href='#'
+              href='#1'
               onClick={e => handleButtonClick(e, mutate)}
               className='btn btn-control share-link'
             >
@@ -73,7 +99,34 @@ const SharePost = ({ postId, post, postSharer, sharedPostId }) => {
                 alt=''
               />
             </a>
-          </OverlayTriggers>
+
+            <ul className='more-dropdown'>
+              <li>
+                <Link href onClick={e => handleButtonClick(e, mutate)}>
+                  <img
+                    src='https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1575849612/static/avocado-icon_rwvve0.png'
+                    alt=''
+                  />
+                  <span>Avocado Share</span>
+                </Link>
+              </li>
+              <li>
+                <Link href onClick={e => {}}>
+                  {fbSharedButton}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href
+                  onClick={e => {
+                    e.preventDefault();
+                  }}
+                >
+                  {twitterShareButton}
+                </Link>
+              </li>
+            </ul>
+          </div>
         );
       }}
     </Mutation>

@@ -43,34 +43,36 @@ const MainLayout = ({ children, location }) => {
         <div className='container'>
           <div className='row align-items-center'>
             <div className='col col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12'>
-              <div className='landing-content'>
-                <h1>
-                  The <b>FIRST EVER</b> online community for avocado lovers is
-                  here!
-                </h1>
-                <p>
-                  You will be rewarded for doing what you love to do; sharing
-                  your favorite avocado shots, indulging in a scrumptious
-                  avocado dish, and collecting the most useful avocado health
-                  and wellness tips to help you live your best life ever!
-                </p>
-                {location.pathname === '/signup' && (
+              {location.pathname === Routes.SIGN_UP && (
+                <div className='landing-content'>
+                  <h1>
+                    The first ever online community that rewards avocado fans!
+                  </h1>
+                  <p>
+                    You’re one step closer to some delicious content. Be sure to
+                    keep earning points and get your rewards.
+                  </p>
+
                   <p>Already have an account?</p>
-                )}
-                <Link
-                  to={{
-                    pathname:
-                      location.pathname === Routes.SIGN_IN
-                        ? '/signup'
-                        : Routes.SIGN_IN,
-                  }}
-                  className='btn px-4 py-2 btn-border c-white'
-                >
-                  {location.pathname === Routes.SIGN_IN
-                    ? 'Register Now'
-                    : Routes.SIGN_IN}
-                </Link>
-              </div>
+                  <Link
+                    to={{
+                      pathname: Routes.SIGN_IN,
+                    }}
+                    className='btn px-4 py-2 btn-border c-white'
+                  >
+                    Log In
+                  </Link>
+                </div>
+              )}
+              {location.pathname === Routes.SIGN_IN && (
+                <div className='landing-content'>
+                  <h1>
+                    Welcome back to the online community that rewards avocado
+                    fans!
+                  </h1>
+                  <p>Get back to that delicious content.</p>
+                </div>
+              )}
             </div>
             {children}
           </div>
