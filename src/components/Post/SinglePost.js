@@ -32,13 +32,19 @@ const SinglePost = ({ post, isAuth }) => {
   const articleClass = 'hentry post';
   let sharedPost = false;
 
+  if (post.post === null && post.author === null) {
+    // TODO: this is a hotfix until we resolve sharing issue. 
+    // right now if you share a post and the original post is deleted,
+    // then it hangs because post is missing post.author
+    return null;
+  }
+
   if (!post) {
     return null;
   }
   if (post.post) {
     sharedPost = true;
   }
-  if (!post.post) return null;
   if (!sharedPost) {
     return renderPost(
       sharedPost,
@@ -60,7 +66,10 @@ const SinglePost = ({ post, isAuth }) => {
       auth,
       isCommentOpen,
       toggleComment,
-      articleClass
+      articleClass,
+      show,
+      onHide,
+      showAuthModal
     );
   } else {
     return null;
@@ -85,7 +94,11 @@ const renderPost = (
     sharedPostId = post.id;
     postSharer = post.user;
     post = post.post;
+    if(post.author === null) {
+      post.author = auth.user;
+    }
   }
+
 
   return (
     <div key={post.id} className='ui-block'>
