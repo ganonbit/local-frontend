@@ -28,6 +28,7 @@
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.18.0",
     "eslint-plugin-react-hooks": "^2.3.0",
+    "formik": "^2.1.4",
     "get-urls": "^9.2.0",
     "graphql": "^14.2.0",
     "graphql-tag": "^2.10.1",
@@ -57,7 +58,8 @@
     "react-sidebar": "^3.0.2",
     "react-spinners": "^0.6.1",
     "styled-components": "^4.2.0",
-    "subscriptions-transport-ws": "^0.9.16"
+    "subscriptions-transport-ws": "^0.9.16",
+    "yup": "^0.28.1"
   },
   "scripts": {
     "start": "react-scripts start",
