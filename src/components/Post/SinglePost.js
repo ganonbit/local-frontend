@@ -38,6 +38,7 @@ const SinglePost = ({ post, isAuth }) => {
   if (post.post) {
     sharedPost = true;
   }
+  if (!post.post) return null;
   if (!sharedPost) {
     return renderPost(
       sharedPost,
