@@ -74,13 +74,13 @@ const Field = props => {
 };
 
 Field.propTypes = {
-  fieldContainerClass: PropTypes.string.isRequired,
-  placeholder: PropTypes.string.isRequired,
-  type: PropTypes.string.isRequired,
-  handleChange: PropTypes.func.isRequired,
-  value: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-  error: PropTypes.string.isRequired,
+  // fieldContainerClass: PropTypes.string.isRequired,
+  // placeholder: PropTypes.string.isRequired,
+  // type: PropTypes.string.isRequired,
+  // handleChange: PropTypes.func.isRequired,
+  // value: PropTypes.string.isRequired,
+  // name: PropTypes.string.isRequired,
+  // error: PropTypes.string.isRequired,
 };
 
 export default Field;
