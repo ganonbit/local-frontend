@@ -32,7 +32,12 @@ const Faqs = () => (
                   <Accordion.Collapse eventKey='0'>
                     <Card.Body>
                       <p>
-                      Avocado Nation is THE online community for avocado lovers just like yourself! Here, sharing your avo-love is rewarded! The more you discover, explore, share, and interact with content on the site, the more points and badges you get. When you hit 1,000 points, you can exchange those points for prizes!
+                        Avocado Nation is THE online community for avocado
+                        lovers just like yourself! Here, sharing your avo-love
+                        is rewarded! The more you discover, explore, share, and
+                        interact with content on the site, the more points and
+                        badges you get. When you hit 1,000 points, you can
+                        exchange those points for prizes!
                       </p>
                     </Card.Body>
                   </Accordion.Collapse>
@@ -59,13 +64,16 @@ const Faqs = () => (
                 <Card>
                   <Card.Header>
                     <Accordion.Toggle as={Button} variant='link' eventKey='2'>
-                    What are badges and how do you get them?
+                      What are badges and how do you get them?
                     </Accordion.Toggle>
                   </Card.Header>
                   <Accordion.Collapse eventKey='2'>
                     <Card.Body>
                       <p>
-                      Badges are the Avocado Nation way of saying thank you and congrats for certain accomplishments as a member. The more you participate the more you’ll earn. You can see the full list <a href='/badges'>here</a>.
+                        Badges are the Avocado Nation way of saying thank you
+                        and congrats for certain accomplishments as a member.
+                        The more you participate the more you’ll earn. You can
+                        see the full list <a href='/badges'>here</a>.
                       </p>
                     </Card.Body>
                   </Accordion.Collapse>
@@ -115,7 +123,10 @@ const Faqs = () => (
                   <Accordion.Collapse eventKey='5'>
                     <Card.Body>
                       <p>
-                      Selma Avocado is an animated expert and super fan of avocados and she helps run the Avocado Nation. She’ll deliver some key tips and content to the site to enhance your experience.
+                        Selma Avocado is an animated expert and super fan of
+                        avocados and she helps run the Avocado Nation. She’ll
+                        deliver some key tips and content to the site to enhance
+                        your experience.
                       </p>
                     </Card.Body>
                   </Accordion.Collapse>
@@ -165,8 +176,8 @@ const Faqs = () => (
                 <Card>
                   <Card.Header>
                     <Accordion.Toggle as={Button} variant='link' eventKey='7'>
-                      ~ DOES THIS STAY WITH IDEAS OUT? ~
-                      I have a great idea! How can I tell you about it?
+                      ~ DOES THIS STAY WITH IDEAS OUT? ~ I have a great idea!
+                      How can I tell you about it?
                     </Accordion.Toggle>
                   </Card.Header>
                   <Accordion.Collapse eventKey='8'>

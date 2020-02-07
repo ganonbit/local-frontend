@@ -68,10 +68,13 @@ const CreatePost = props => {
     let imageCompressionOptions = {
       maxSizeMB: 10,
       maxWidthOrHeight: 500,
-      useWebWorker: false
+      useWebWorker: false,
     };
 
-    const compressedFile = await imageCompression(imageFile, imageCompressionOptions); 
+    const compressedFile = await imageCompression(
+      imageFile,
+      imageCompressionOptions
+    );
     await setValues({
       ...values,
       image: compressedFile,
@@ -111,7 +114,7 @@ const CreatePost = props => {
             limit: 15,
           },
         },
-        { query: GET_POSTS, variables: { authUserId: auth.user.id } }
+        { query: GET_POSTS, variables: { authUserId: auth.user.id } },
       ]}
     >
       {(createPost, { loading, error: apiError }) => {

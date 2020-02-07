@@ -10,7 +10,9 @@ const Badges = () => {
               <div className='main-header-content'>
                 <h1>Collect Badges!</h1>
                 <p>
-                Collect the below badges and up your avocado bragging rights. The list below will tell you how to unlock each badge. Once earned, they’ll appear on your profile.
+                  Collect the below badges and up your avocado bragging rights.
+                  The list below will tell you how to unlock each badge. Once
+                  earned, they’ll appear on your profile.
                 </p>
                 <p>How many can you collect? Game on.</p>
               </div>
@@ -22,7 +24,7 @@ const Badges = () => {
       <div className='container'>
         <div className='row'>
           <div className='col-12'>
-          <div className='ui-block'>
+            <div className='ui-block'>
               <div className='birthday-item inline-items badges'>
                 <div className='author-thumb'>
                   <img
@@ -35,7 +37,8 @@ const Badges = () => {
                     Avocado Badge
                   </a>
                   <div className='birthday-date'>
-                    A true avocado lover that has dominated Avocado Nation and has several badges to prove it.
+                    A true avocado lover that has dominated Avocado Nation and
+                    has several badges to prove it.
                   </div>
                 </div>
               </div>
@@ -52,7 +55,10 @@ const Badges = () => {
                   <a href='1#' className='h6 author-name'>
                     Trailblazer
                   </a>
-                  <div className='birthday-date'>You&apos;re ahead of the curve. An early member, in the club before everyone even knows about it.</div>
+                  <div className='birthday-date'>
+                    You&apos;re ahead of the curve. An early member, in the club
+                    before everyone even knows about it.
+                  </div>
                 </div>
               </div>
             </div>
@@ -69,7 +75,8 @@ const Badges = () => {
                     Explorer
                   </a>
                   <div className='birthday-date'>
-                  For those that browse beyond the horizon and check out the different areas Avocado Nation offers.
+                    For those that browse beyond the horizon and check out the
+                    different areas Avocado Nation offers.
                   </div>
                 </div>
               </div>
@@ -87,7 +94,9 @@ const Badges = () => {
                     Avo Guru
                   </a>
                   <div className='birthday-date'>
-                  Your wisdom is unmatched. Your avocado tips and comments and contributions here are for the history books. You&apos;re walking a green path of enlightenment.
+                    Your wisdom is unmatched. Your avocado tips and comments and
+                    contributions here are for the history books. You&apos;re
+                    walking a green path of enlightenment.
                   </div>
                 </div>
               </div>
@@ -105,7 +114,8 @@ const Badges = () => {
                     Ambassador
                   </a>
                   <div className='birthday-date'>
-                  Our people say you know people. Keep bringing them! The several referrals you&apos;ve made are much appreciated.
+                    Our people say you know people. Keep bringing them! The
+                    several referrals you&apos;ve made are much appreciated.
                   </div>
                 </div>
               </div>
@@ -124,7 +134,8 @@ const Badges = () => {
                     Shining Star
                   </a>
                   <div className='birthday-date'>
-                   People really dig your content. You keep getting all the likes, all the applauds. Keep it up!
+                    People really dig your content. You keep getting all the
+                    likes, all the applauds. Keep it up!
                   </div>
                 </div>
               </div>
@@ -142,7 +153,8 @@ const Badges = () => {
                     Selma’s Pick
                   </a>
                   <div className='birthday-date'>
-                  Congrats, Selma&apos;s a tough critic, but clearly your content is made of the right stuff.
+                    Congrats, Selma&apos;s a tough critic, but clearly your
+                    content is made of the right stuff.
                   </div>
                 </div>
               </div>
@@ -160,7 +172,8 @@ const Badges = () => {
                     Good Neighbor
                   </a>
                   <div className='birthday-date'>
-                  You comment, you like, you post. You&apos;ve done it a hundred times and you know what? You shine.
+                    You comment, you like, you post. You&apos;ve done it a
+                    hundred times and you know what? You shine.
                   </div>
                 </div>
               </div>
@@ -178,7 +191,8 @@ const Badges = () => {
                     Avo Fit
                   </a>
                   <div className='birthday-date'>
-                  You keep it healthy and you&apos;re into wellness and we appreciate your contributions. Stay Avo Fit!
+                    You keep it healthy and you&apos;re into wellness and we
+                    appreciate your contributions. Stay Avo Fit!
                   </div>
                 </div>
               </div>
@@ -196,7 +210,9 @@ const Badges = () => {
                     Social Butterfly
                   </a>
                   <div className='birthday-date'>
-                  You&apos;re on all the social networks and we appreciate you sharing this avocado love. Keep sharing what you like to your other accounts!
+                    You&apos;re on all the social networks and we appreciate you
+                    sharing this avocado love. Keep sharing what you like to
+                    your other accounts!
                   </div>
                 </div>
               </div>
@@ -214,7 +230,8 @@ const Badges = () => {
                     Top Fan
                   </a>
                   <div className='birthday-date'>
-                    Your activity on Avocado Nation has you ahead of the pack this month. Congrats and keep up the pace!
+                    Your activity on Avocado Nation has you ahead of the pack
+                    this month. Congrats and keep up the pace!
                   </div>
                 </div>
               </div>
@@ -232,7 +249,8 @@ const Badges = () => {
                     Conversation Starter
                   </a>
                   <div className='birthday-date'>
-                  You&apos;re a conversation starter. You keep starting threads and engagine others and we like it.
+                    You&apos;re a conversation starter. You keep starting
+                    threads and engagine others and we like it.
                   </div>
                 </div>
               </div>
@@ -250,7 +268,8 @@ const Badges = () => {
                     Photobomber
                   </a>
                   <div className='birthday-date'>
-                  Are you a photographer? To us you are. We love guac- avocado-toast-salad photos. Keep 'em coming.
+                    Are you a photographer? To us you are. We love guac-
+                    avocado-toast-salad photos. Keep 'em coming.
                   </div>
                 </div>
               </div>
@@ -258,7 +277,7 @@ const Badges = () => {
           </div>
         </div>
       </div>
-      </>
+    </>
   );
 };
 

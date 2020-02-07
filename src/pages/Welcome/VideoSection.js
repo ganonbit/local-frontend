@@ -18,12 +18,18 @@ const VideoSection = () => {
             <div className='row'>
               <div className='col-xl-6 col-lg-6 col-md-6 mb-4'>
                 <h2>Welcome to Avocado Nation,</h2>
-                <p> a one of a kind social network with rewards for avocado fans.</p>
                 <p>
-                We’ve hand selected some of the best avocado content out there to inspire your next lunch, dinner party or appetizer and we want to see your avocado masterpieces too!
+                  {' '}
+                  a one of a kind social network with rewards for avocado fans.
                 </p>
                 <p>
-                So join today and start earning points for the pics you’re already taking and the guac you’re already sharing.
+                  We’ve hand selected some of the best avocado content out there
+                  to inspire your next lunch, dinner party or appetizer and we
+                  want to see your avocado masterpieces too!
+                </p>
+                <p>
+                  So join today and start earning points for the pics you’re
+                  already taking and the guac you’re already sharing.
                 </p>
               </div>
               <div className='col-xl-6 col-lg-6 col-md-6 mb-4 text-center'>

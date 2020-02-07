@@ -14,7 +14,8 @@ const MainLayout = ({ children }) => {
               <div className='main-header-content'>
                 <h1>Welcome to your account dashboard!</h1>
                 <p>
-                Here, you will find everything you need to help customize your Avocado Nation profile.
+                  Here, you will find everything you need to help customize your
+                  Avocado Nation profile.
                 </p>
               </div>
             </div>

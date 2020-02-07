@@ -142,8 +142,8 @@ const SignIn = ({ refetch, history }) => {
                             Don’t you have an account?{' '}
                             <Link to={Routes.SIGN_UP} className='btn-register'>
                               Register now
-                            </Link>
-                            {' '}to start earning points you can redeem for rewards!
+                            </Link>{' '}
+                            to start earning points you can redeem for rewards!
                           </p>
                         </div>
                       </div>

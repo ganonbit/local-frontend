@@ -11,9 +11,7 @@ const TermsAndServices = ({ isAuth }) => (
     <div className='stunning-header bg-primary-opacity'>
       {/* <div className='header-spacer--standard'></div> */}
       <div className='stunning-header-content'>
-        <h1 className='stunning-header-title'>
-          Terms of Service
-        </h1>
+        <h1 className='stunning-header-title'>Terms of Service</h1>
       </div>
       <div className='content-bg-wrap stunning-header-bg1'></div>
     </div>

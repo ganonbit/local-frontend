@@ -63,7 +63,7 @@ const PostHeader = props => {
               limit: PROFILE_PAGE_POSTS_LIMIT,
             },
           },
-          { query: GET_POSTS, variables: { authUserId: auth.user.id } }
+          { query: GET_POSTS, variables: { authUserId: auth.user.id } },
         ],
       });
     } catch (err) {
