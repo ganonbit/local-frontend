@@ -27,7 +27,7 @@ const UploadProfileImage = props => {
             image: '',
             imagePublicId: '',
           },
-        }
+        },
       });
     } catch (err) {
       //console.log(err);
@@ -76,10 +76,13 @@ const UploadProfileImage = props => {
     let imageCompressionOptions = {
       maxSizeMB: 10,
       maxWidthOrHeight: 500,
-      useWebWorker: true
+      useWebWorker: true,
     };
 
-    const compressedFile = await imageCompression(imageFile, imageCompressionOptions); 
+    const compressedFile = await imageCompression(
+      imageFile,
+      imageCompressionOptions
+    );
     await setValues({
       ...values,
       image: compressedFile,
