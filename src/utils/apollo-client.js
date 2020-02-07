@@ -2,26 +2,18 @@ import { ApolloClient } from 'apollo-client';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 import { onError } from 'apollo-link-error';
 import { ApolloLink, Observable, split } from 'apollo-link';
-import { createPersistedQueryLink } from 'apollo-link-persisted-queries';
-import { BatchHttpLink } from 'apollo-link-batch-http';
 import { createUploadLink } from 'apollo-upload-client';
 import { getMainDefinition } from 'apollo-utilities';
 import { WebSocketLink } from 'apollo-link-ws';
-import { SubscriptionClient } from 'subscriptions-transport-ws';
-import { withClientState } from 'apollo-link-state';
 import { persistCache } from 'apollo-cache-persist';
 
 /**
  * Creates a Apollo Link, that adds authentication token to request
  */
 const createAuthLink = () => {
-  const request = async operation => {
+  const request = operation => {
     const token = localStorage.getItem('token');
     operation.setContext({
-      http: {
-        includeExtensions: true,
-        includeQuery: false,
-      },
       headers: {
         authorization: token,
       },
@@ -56,10 +48,10 @@ const createAuthLink = () => {
 const handleErrors = () => {
   return onError(({ graphQLErrors, networkError }) => {
     if (graphQLErrors) {
-      console.error({ graphQLErrors });
+      console.log('graphQLErrors', graphQLErrors);
     }
     if (networkError) {
-      console.error({ networkError });
+      console.log('networkError', networkError);
     }
   });
 };
@@ -73,7 +65,6 @@ const handleErrors = () => {
 
 export const createApolloClient = (apiUrl, websocketApiUrl) => {
   const cache = new InMemoryCache();
-  const errorLink = handleErrors();
 
   try {
     persistCache({
@@ -84,33 +75,22 @@ export const createApolloClient = (apiUrl, websocketApiUrl) => {
     console.error('Error restoring Apollo cache', error);
   }
 
-  const client = new SubscriptionClient(
-    process.env.REACT_APP_WEBSOCKET_API_URL,
-    {
-      uri: websocketApiUrl,
-      options: {
-        reconnect: true,
-        timeout: 60000,
-        connectionParams: {
-          authorization: authToken,
-        },
-      },
-    }
-  );
-
+  const errorLink = handleErrors();
   const authLink = createAuthLink();
-  const httpLink = new BatchHttpLink({
-    uri: process.env.REACT_APP_WEBSOCKET_API_URL,
-  });
   const uploadLink = createUploadLink({ uri: apiUrl }); // Upload link also creates an HTTP link
 
   // Create WebSocket link
   const authToken = localStorage.getItem('token');
-  const wsLink = process.browser
-    ? new WebSocketLink(client)
-    : () => {
-        console.log('SSR');
-      };
+  const wsLink = new WebSocketLink({
+    uri: websocketApiUrl,
+    options: {
+      timeout: 60000,
+      reconnect: true,
+      connectionParams: {
+        authorization: authToken,
+      },
+    },
+  });
 
   // Temporary fix for early websocket closure resulting in websocket connections not being instantiated
   // https://github.com/apollographql/subscriptions-transport-ws/issues/377
@@ -123,39 +103,14 @@ export const createApolloClient = (apiUrl, websocketApiUrl) => {
   const terminatingLink = split(
     ({ query }) => {
       const { kind, operation } = getMainDefinition(query);
-      return (
-        kind === 'OperationDefinition' &&
-        operation === 'subscription' &&
-        process.browser
-      );
+      return kind === 'OperationDefinition' && operation === 'subscription';
     },
     wsLink,
-    uploadLink,
-    httpLink
+    uploadLink
   );
 
-  const link = ApolloLink.from([
-    errorLink,
-    authLink,
-    withClientState({
-      defaults: {
-        isConnected: true,
-      },
-      resolvers: {
-        Mutation: {
-          updateNetworkStatus: (_, { isConnected }, { cache }) => {
-            cache.writeData({ data: { isConnected } });
-            return null;
-          },
-        },
-      },
-      cache,
-    }),
-    createPersistedQueryLink().concat(terminatingLink),
-  ]);
-
   return new ApolloClient({
-    link: link,
-    cache: cache,
+    link: ApolloLink.from([errorLink, authLink, terminatingLink]),
+    cache,
   });
 };
