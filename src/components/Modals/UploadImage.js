@@ -22,25 +22,6 @@ const UploadImageModal = ({
   onImageDelete,
 }) => {
   const [error, setError] = useState('');
-  let handlePostImageSize = e => {
-    const file = e.target.files[0];
-
-    if (!file) return;
-
-    if (!file.type.match('image.*')) {
-      setError('Please upload valid file extension (jpg, jpeg, bmp, gif, png)');
-      return;
-    }
-
-    if (file.size >= MAX_POST_IMAGE_SIZE) {
-      setError(
-        `File size should be less then ${MAX_POST_IMAGE_SIZE / 1000000}MB`
-      );
-      return;
-    }
-    setError('');
-    handleImageUpload(e);
-  };
 
   return (
     <Modal
@@ -127,7 +108,7 @@ const UploadImageModal = ({
                           type='file'
                           name='image'
                           id='multi'
-                          onChange={e => handlePostImageSize(e)}
+                          onChange={e => handleImageUpload(e)}
                         />
                         <svg
                           height='24'

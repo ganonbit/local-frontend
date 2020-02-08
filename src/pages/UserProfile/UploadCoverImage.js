@@ -44,7 +44,7 @@ const UploadCoverImage = props => {
 
     let imageCompressionOptions = {
       maxSizeMB: 10,
-      maxWidthOrHeight: 500,
+      maxWidthOrHeight: 1270,
       useWebWorker: true,
     };
 
