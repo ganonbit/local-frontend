@@ -66,7 +66,7 @@ const EditPost = props => {
 
     let imageCompressionOptions = {
       maxSizeMB: 10,
-      maxWidthOrHeight: 500,
+      maxWidthOrHeight: 1024,
       useWebWorker: true,
     };
 
