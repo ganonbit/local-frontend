@@ -46,14 +46,36 @@ const createAuthLink = () => {
  * Helper functions that handles error cases
  */
 const handleErrors = () => {
-  return onError(({ graphQLErrors, networkError }) => {
+  return onError(({ graphQLErrors, networkError, operation, forward }) => {
     if (graphQLErrors) {
-      console.log('graphQLErrors', graphQLErrors);
+      for (let err of graphQLErrors) {
+        switch (err.extensions.code) {
+          case 'UNAUTHENTICATED':
+            // error code is set to UNAUTHENTICATED
+            // when AuthenticationError thrown in resolver
+
+            // modify the operation context with a new token
+            const newToken = localStorage.getItem('token');
+            const oldHeaders = operation.getContext().headers;
+            operation.setContext({
+              headers: {
+                ...oldHeaders,
+                authorization: newToken,
+              },
+            });
+            // retry the request, returning the new observable
+            return forward(operation);
+        }
+      }
     }
     if (networkError) {
-      console.log('networkError', networkError);
+      console.log(`[Network error]: ${networkError}`);
+      // if you would also like to retry automatically on
+      // network errors, we recommend that you use
+      // apollo-link-retry
     }
-  });
+  }
+);
 };
 
 /**
