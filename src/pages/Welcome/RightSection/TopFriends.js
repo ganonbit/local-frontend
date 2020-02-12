@@ -6,7 +6,7 @@ const TopFriends = () => {
   const items = [];
   for (let i = 0; i < 3; i++) {
     items.push(
-      <li className='inline-items' key={i}>
+      <li className='d-flex justify-content-start align-items-center px-3 py-2' key={i}>
         <div className='author-thumb'>
           <img
             src='https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1578579972/user/51abdbc5-b280-414e-99f9-23680491eedc.png'
