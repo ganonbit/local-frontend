@@ -52,7 +52,7 @@ const TrendingTopics = () => {
         {trendingHashtags &&
           trendingHashtags.map(hashtag => {
             return (
-              <li className='inline-items'>
+              <li className='d-flex justify-content-start align-items-center px-3 py-2'>
                 <div className='notification-event'>
                   <Linkify options={linkDecorator}>
                     <b> {hashtag.tag}</b>
