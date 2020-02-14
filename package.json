@@ -49,6 +49,7 @@
     "react-dom": "^16.8.5",
     "react-google-recaptcha": "^2.0.1",
     "react-headroom": "^3.0.0",
+    "react-input-trigger": "^1.1.2",
     "react-instantsearch-core": "^6.1.0",
     "react-instantsearch-dom": "^6.0.0",
     "react-responsive": "^8.0.1",

@@ -4,6 +4,7 @@ import { connectInfiniteHits } from 'react-instantsearch-core';
 class Hits extends React.Component {
   render() {
     const { hasMore, hits, refineNext } = this.props;
+    console.log('_______________________hits', hits);
     return (
       <div className='card card-body p-2'>
         <h2>Users</h2>
