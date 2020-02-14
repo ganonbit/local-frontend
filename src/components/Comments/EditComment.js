@@ -5,6 +5,8 @@ import { EDIT_COMMENT } from 'graphql/comment';
 import { GET_POST } from 'graphql/post';
 import { Mutation, withApollo } from 'react-apollo';
 
+import CustomTextArea from './CustomTextAreaWrapper';
+
 let EditComment = ({ comment, onClose, postId }) => {
   const [commentContent, setCommentContent] = useState({
     comment: comment.comment,
@@ -25,10 +27,8 @@ let EditComment = ({ comment, onClose, postId }) => {
     onClose();
     setError('');
   };
-  const onCommentChange = e => {
-    e.preventDefault();
-    const { name, value } = e.target;
-    setCommentContent({ ...commentContent, [name]: value });
+  const onCommentChange = value => {
+    setCommentContent({ ...commentContent, comment: value });
     setError('');
   };
   return (
@@ -53,18 +53,14 @@ let EditComment = ({ comment, onClose, postId }) => {
           >
             <div className='post__author author vcard inline-items'>
               <div className='form-group with-icon-right '>
-                <textarea
-                  type='text'
-                  className='form-control'
-                  placeholder=''
-                  name='comment'
-                  value={commentContent.comment}
-                  onChange={e => onCommentChange(e)}
-                ></textarea>
+                <CustomTextArea
+                  onCommentChange={value => onCommentChange(value)}
+                  initialValue={commentContent.comment}
+                />
                 <span className='d-block text-danger mt-1'> {error}</span>
               </div>
             </div>
-            <div className='add-comment-buttons text-right'>
+            <div className='add-comment-buttons text-right d-flex justify-content-end align-center'>
               <button className='btn btn-md-2 btn-primary' type='post'>
                 Post Comment
               </button>

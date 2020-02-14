@@ -50,7 +50,7 @@ export default function PostContent(props) {
         {rawContent}
       </Linkify>
 
-      {metaFromContentPreview.meta ? (
+      {metaFromContentPreview ? (
         <Preview {...metaFromContentPreview.meta} />
       ) : null}
       {!image ? null : (
