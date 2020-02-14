@@ -58,10 +58,10 @@ const Reward = ({ user }) => {
                         </span>
                         <h6>50</h6>
                       </li>
-                      <li>
+                      {/* <li>
                         <span>Posting an avocado dish photo</span>
                         <h6>50</h6>
-                      </li>
+                      </li> */}
                       <li>
                         <span>
                           Sharing content from Avocado Nation to your FB, TW, IG
@@ -69,10 +69,10 @@ const Reward = ({ user }) => {
                         </span>
                         <h6>50</h6>
                       </li>
-                      <li>
+                      {/* <li>
                         <span>Posting a recipe</span>
                         <h6>25</h6>
-                      </li>
+                      </li> */}
                       <li>
                         <span>
                           Logging in to your Avocado Nation Profile every week
@@ -80,17 +80,17 @@ const Reward = ({ user }) => {
                         </span>
                         <h6>100</h6>
                       </li>
-                      <li>
+                      {/* <li>
                         <span>
-                          ~ DOES THIS STAY? ~ Submitting an idea to Selma
-                          Avocado (moderator)
+                          Submitting an idea to Selma
+                          Avocado
                         </span>
                         <h6>25</h6>
                       </li>
                       <li>
                         <span>Watching a video</span>
                         <h6>10</h6>
-                      </li>
+                      </li> */}
                     </ul>
                   </div>
                 </div>

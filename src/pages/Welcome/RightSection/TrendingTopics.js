@@ -8,7 +8,7 @@ const TrendingTopics = () => {
         <Link to='#' className='more'></Link>
       </div>
       <ul className='widget w-friend-pages-added notification-list friend-requests'>
-        <li className='inline-items'>
+        <li className='d-flex justify-content-start align-items-center px-3 py-2'>
           <div className='notification-event'>
             <Link to='#' className='h6 notification-friend'>
               #avocados

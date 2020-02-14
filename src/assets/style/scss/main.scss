@@ -763,11 +763,6 @@ p.comments-section {
 .header--standard .ps:hover > .ps__scrollbar-y-rail {
   display: none;
 }
-.header--standard.header--standard-landing {
-  width: 100%;
-  left: auto;
-  top: 0;
-}
 .header--standard.header--standard-full-width {
   width: 100%;
   left: auto;
@@ -6274,6 +6269,7 @@ fieldset[disabled] .checkbox input[type='checkbox'],
 
 .friend-requests .notification-icon {
   margin-top: 0;
+  margin-left:auto;
 }
 
 .friend-requests .notification-friend {
@@ -18481,7 +18477,7 @@ ul.w-last-photo li a:hover::before {
   background-color: transparent;
 }
 
-.w-friend-pages-added .author-thumb {
+.w-friend-pages-added .author-thumb img {
   height: 34px;
   width: 34px;
 }
@@ -18726,7 +18722,6 @@ ul.w-last-photo li a:hover::before {
   margin-bottom: 20px;
   border-radius: 5px;
   overflow: hidden;
-  display: inline-block;
 }
 
 .w-last-video li img {
