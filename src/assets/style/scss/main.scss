@@ -497,8 +497,8 @@
   width: 169px;
   height: 228px;
   background-color: #fdfbee;
-  -webkit-mask-image: url(https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1575849605/static/img-frame_adcgt8.png);
-  mask-image: url(https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1575849605/static/img-frame_adcgt8.png);
+  -webkit-mask-image: url('https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1575849605/static/img-frame_adcgt8.png');
+  mask-image: url('https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1575849605/static/img-frame_adcgt8.png');
   -webkit-mask-size: 100%;
   mask-size: 100%;
   -webkit-mask-repeat: no-repeat;
@@ -510,7 +510,7 @@
   border-radius: 0;
   margin: 0 auto;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   min-width: 100%;
   min-height: 100%;
 }
@@ -525,7 +525,7 @@
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .top-header-author .author-name {
   font-weight: 700;
@@ -638,7 +638,8 @@ p.comments-section {
   -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
   transition: -webkit-transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
   transition: transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
-  transition: transform 0.5s cubic-bezier(0.55, 0, 0.1, 1), -webkit-transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
+  transition: transform 0.5s cubic-bezier(0.55, 0, 0.1, 1),
+    -webkit-transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
   transition: transform 0.5s cubic-bezier(0.55, 0, 0.1, 1),
     -webkit-transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
   transition: transform 0.5s cubic-bezier(0.55, 0, 0.1, 1),
@@ -799,7 +800,7 @@ p.comments-section {
 }
 .header--standard-dark .dropdown-menu {
   background-color: #3f4257;
-  border-color: #4a4d66;  
+  border-color: #4a4d66;
 }
 .open-responsive-menu {
   margin-left: auto;
@@ -2178,7 +2179,7 @@ section {
 }
 
 .mobile-app-tabs svg {
-   fill: var(--theme-color-white);
+  fill: var(--theme-color-white);
   color: var(--theme-color-white);
   height: 20px;
   width: 24px;
@@ -2532,7 +2533,8 @@ input {
     -webkit-box-shadow ease-in-out 0.15s;
   -webkit-transition: border-color ease-in-out 0.15s,
     box-shadow ease-in-out 0.15s;
-  -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  -webkit-transition: border-color ease-in-out 0.15s,
+    box-shadow ease-in-out 0.15s;
   transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
 }
 
@@ -2714,9 +2716,32 @@ button.btn-redeem {
 
 .add-comment-buttons {
   margin-top: 10px;
-  float: right;
+  // float: right;
 }
-
+.user-suggestion {
+  height: 157px;
+  overflow-y: auto;
+  position: absolute;
+  min-width: 150px;
+  z-index: 99;
+  border-radius: 3px;
+  background: white;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 1px 4px;
+  padding: 5px 0;
+}
+.user-suggestion div {
+  cursor: pointer;
+  padding: 5px 10px;
+  font-size: 16px;
+  color: #444444;
+}
+.user-suggestion div:hover {
+  color: #ffffff;
+  background: var(--theme-color);
+}
+.user-suggestion::-webkit-scrollbar {
+  display: none;
+}
 .h1,
 .h2,
 .h3,
@@ -4393,7 +4418,8 @@ fieldset[disabled] .checkbox input[type='checkbox'],
   -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
   transition: -webkit-transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
   transition: transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
-  transition: transform 0.5s cubic-bezier(0.55, 0, 0.1, 1), -webkit-transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
+  transition: transform 0.5s cubic-bezier(0.55, 0, 0.1, 1),
+    -webkit-transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
   transition: transform 0.5s cubic-bezier(0.55, 0, 0.1, 1),
     -webkit-transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
   transition: transform 0.5s cubic-bezier(0.55, 0, 0.1, 1),
@@ -4420,7 +4446,8 @@ fieldset[disabled] .checkbox input[type='checkbox'],
   -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
   transition: -webkit-transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
   transition: transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
-  transition: transform 0.5s cubic-bezier(0.55, 0, 0.1, 1), -webkit-transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
+  transition: transform 0.5s cubic-bezier(0.55, 0, 0.1, 1),
+    -webkit-transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
   transition: transform 0.5s cubic-bezier(0.55, 0, 0.1, 1),
     -webkit-transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
   transition: transform 0.5s cubic-bezier(0.55, 0, 0.1, 1),
@@ -4462,7 +4489,8 @@ fieldset[disabled] .checkbox input[type='checkbox'],
   -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
   transition: -webkit-transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
   transition: transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
-  transition: transform 0.5s cubic-bezier(0.55, 0, 0.1, 1), -webkit-transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
+  transition: transform 0.5s cubic-bezier(0.55, 0, 0.1, 1),
+    -webkit-transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
   transition: transform 0.5s cubic-bezier(0.55, 0, 0.1, 1),
     -webkit-transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
   transition: transform 0.5s cubic-bezier(0.55, 0, 0.1, 1),
@@ -4527,7 +4555,8 @@ fieldset[disabled] .checkbox input[type='checkbox'],
   -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
   transition: -webkit-transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
   transition: transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
-  transition: transform 0.5s cubic-bezier(0.55, 0, 0.1, 1), -webkit-transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
+  transition: transform 0.5s cubic-bezier(0.55, 0, 0.1, 1),
+    -webkit-transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
   transition: transform 0.5s cubic-bezier(0.55, 0, 0.1, 1),
     -webkit-transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
   transition: transform 0.5s cubic-bezier(0.55, 0, 0.1, 1),
@@ -6302,7 +6331,13 @@ fieldset[disabled] .checkbox input[type='checkbox'],
   margin-top: 18px;
 }
 .birthday-item.badges .skills-item-meter-active {
-  background: -webkit-gradient(linear, left top, right top, from(#ff613a), to(#ff9432));
+  background: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(#ff613a),
+    to(#ff9432)
+  );
   background: linear-gradient(to right, #ff613a, #ff9432);
 }
 
@@ -7682,7 +7717,7 @@ ol ol li {
   overflow: hidden;
   margin-right: 12px;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .post__author .more {
@@ -8006,7 +8041,7 @@ ol ol li {
 
 .comment-form {
   padding: 25px;
-  overflow: hidden;
+  // overflow: hidden;
 }
 
 .comment-form .add-options-message {
@@ -12211,7 +12246,8 @@ button.cancel-btn:hover {
   -webkit-transition: -webkit-transform 150ms cubic-bezier(0.4, 0, 1, 1);
   transition: -webkit-transform 150ms cubic-bezier(0.4, 0, 1, 1);
   transition: transform 150ms cubic-bezier(0.4, 0, 1, 1);
-  transition: transform 150ms cubic-bezier(0.4, 0, 1, 1), -webkit-transform 150ms cubic-bezier(0.4, 0, 1, 1);
+  transition: transform 150ms cubic-bezier(0.4, 0, 1, 1),
+    -webkit-transform 150ms cubic-bezier(0.4, 0, 1, 1);
   transition: transform 150ms cubic-bezier(0.4, 0, 1, 1),
     -webkit-transform 150ms cubic-bezier(0.4, 0, 1, 1);
   transition: transform 150ms cubic-bezier(0.4, 0, 1, 1),
@@ -12723,7 +12759,13 @@ button.cancel-btn:hover {
   background: #333;
   background: url('https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1575849612/static/background_eihfvr.png');
   background: rgba(0, 0, 0, 0.9);
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(50, 50, 50, 0.9)), to(rgba(0, 0, 0, 0.9)));
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(rgba(50, 50, 50, 0.9)),
+    to(rgba(0, 0, 0, 0.9))
+  );
   background: linear-gradient(rgba(50, 50, 50, 0.9), rgba(0, 0, 0, 0.9));
 }
 
@@ -12837,7 +12879,13 @@ button.cancel-btn:hover {
   margin: 5px;
   background: #333;
   background: rgba(50, 50, 50, 0.8);
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(30, 30, 30, 0.8)), to(rgba(60, 60, 60, 0.8)));
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(rgba(30, 30, 30, 0.8)),
+    to(rgba(60, 60, 60, 0.8))
+  );
   background: linear-gradient(rgba(30, 30, 30, 0.8), rgba(60, 60, 60, 0.8));
 }
 
@@ -12884,7 +12932,13 @@ button.cancel-btn:hover {
 }
 
 .mejs-controls .mejs-time-rail .mejs-time-current {
-  background: -webkit-gradient(linear, left top, left bottom, from(#20d862), to(#5bf692));
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#20d862),
+    to(#5bf692)
+  );
   background: linear-gradient(#20d862, #5bf692);
   width: 0;
 }
@@ -13084,7 +13138,13 @@ button.cancel-btn:hover {
   border-radius: 5px;
   background: #fff;
   background: rgba(255, 255, 255, 0.8);
-  background: -webkit-gradient(linear, left top, left bottom, from(#20d862), to(#5bf692));
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#20d862),
+    to(#5bf692)
+  );
   background: linear-gradient(#20d862, #5bf692);
 }
 
@@ -13166,7 +13226,13 @@ button.cancel-btn:hover {
   float: left;
   background: #222;
   background: rgba(0, 0, 0, 0.7);
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(50, 50, 50, 0.7)), to(rgba(0, 0, 0, 0.7)));
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(rgba(50, 50, 50, 0.7)),
+    to(rgba(0, 0, 0, 0.7))
+  );
   background: linear-gradient(rgba(50, 50, 50, 0.7), rgba(0, 0, 0, 0.7));
   filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, startColorstr=#323232, endColorstr=#000000);
   overflow: hidden;
@@ -13190,7 +13256,13 @@ button.cancel-btn:hover {
 .mejs-chapters .mejs-chapter .mejs-chapter-block:hover {
   background: #666;
   background: rgba(102, 102, 102, 0.7);
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(102, 102, 102, 0.7)), to(rgba(50, 50, 50, 0.6)));
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(rgba(102, 102, 102, 0.7)),
+    to(rgba(50, 50, 50, 0.6))
+  );
   background: linear-gradient(rgba(102, 102, 102, 0.7), rgba(50, 50, 50, 0.6));
   filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, startColorstr=#666666, endColorstr=#323232);
 }
@@ -13749,7 +13821,8 @@ div.mejs-speed-button {
 .swiper-container-3d .swiper-slide-shadow-left {
   background-image: -webkit-gradient(
     linear,
-    right top, left top,
+    right top,
+    left top,
     from(rgba(0, 0, 0, 0.5)),
     to(rgba(0, 0, 0, 0))
   );
@@ -13763,7 +13836,8 @@ div.mejs-speed-button {
 .swiper-container-3d .swiper-slide-shadow-right {
   background-image: -webkit-gradient(
     linear,
-    left top, right top,
+    left top,
+    right top,
     from(rgba(0, 0, 0, 0.5)),
     to(rgba(0, 0, 0, 0))
   );
@@ -13777,7 +13851,8 @@ div.mejs-speed-button {
 .swiper-container-3d .swiper-slide-shadow-top {
   background-image: -webkit-gradient(
     linear,
-    left bottom, left top,
+    left bottom,
+    left top,
     from(rgba(0, 0, 0, 0.5)),
     to(rgba(0, 0, 0, 0))
   );
@@ -13791,7 +13866,8 @@ div.mejs-speed-button {
 .swiper-container-3d .swiper-slide-shadow-bottom {
   background-image: -webkit-gradient(
     linear,
-    left top, left bottom,
+    left top,
+    left bottom,
     from(rgba(0, 0, 0, 0.5)),
     to(rgba(0, 0, 0, 0))
   );
@@ -14326,7 +14402,7 @@ svg {
 }
 
 .w-action {
-  background-image: url(https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1575849612/static/w-action-bg.png);
+  background-image: url('https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1575849612/static/w-action-bg.png');
   background-size: cover;
   padding: 18px 25px 27px;
 }
@@ -14582,7 +14658,7 @@ ul.user-btns li span {
 }
 
 .join-us {
-  background: url(https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1580838540/static/join-bg_ddunic-min_joifb7.png)
+  background: url('https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1580838540/static/join-bg_ddunic-min_joifb7.png')
     no-repeat;
   padding: 73px 50px 40px;
   background-size: cover;
@@ -14625,7 +14701,7 @@ ul.user-btns li span {
 
 .profile-banner {
   padding: 14px 0;
-  background: url(https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1580838904/static/profile-bg_edozor-min_at2lpf.jpg)
+  background: url('https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1580838904/static/profile-bg_edozor-min_at2lpf.jpg')
     center bottom no-repeat;
   background-size: cover;
   min-height: 340px;
@@ -14633,7 +14709,7 @@ ul.user-btns li span {
 }
 
 .img-hoder {
-  background: url(https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1575849612/static/img-frame_adcgt8.png)
+  background: url('https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1575849612/static/img-frame_adcgt8.png')
     no-repeat;
   background-size: contain;
   width: 189px;
@@ -14806,7 +14882,13 @@ ul.user-btns li span {
 }
 
 .birthday-item.badges .skills-item-meter-active {
-  background: -webkit-gradient(linear, left top, right top, from(var(--theme-color)), to(var(--theme-color)));
+  background: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(var(--theme-color)),
+    to(var(--theme-color))
+  );
   background: linear-gradient(to right, var(--theme-color), var(--theme-color));
   opacity: 1;
 }
@@ -15051,7 +15133,7 @@ ul.sidebar-box {
   position: absolute;
   height: 100%;
   width: 100%;
-  top:0;
+  top: 0;
 }
 
 .w-list a:hover {
@@ -15084,7 +15166,7 @@ ul.sidebar-box {
 }
 
 .bg-account {
-  background: url(https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1580838904/static/profile-bg_edozor-min_at2lpf.jpg)
+  background: url('https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1580838904/static/profile-bg_edozor-min_at2lpf.jpg')
     center bottom no-repeat;
   background-size: cover;
   -webkit-animation: none;
@@ -15101,7 +15183,7 @@ ul.sidebar-box {
 }
 
 .bg-badges {
-  background: url(https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1580838904/static/badges-img_rerpz0-min_zptpea.jpg)
+  background: url('https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1580838904/static/badges-img_rerpz0-min_zptpea.jpg')
     no-repeat;
   background-size: cover;
   -webkit-animation: none;
@@ -15257,7 +15339,7 @@ li.add-more-posts span {
 }
 
 .bg-rewards {
-  background-image: url(https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1580838904/static/reward-bg_ermlql-min_yw5fo3.jpg);
+  background-image: url('https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1580838904/static/reward-bg_ermlql-min_yw5fo3.jpg');
 }
 
 .reward-header:before {
@@ -15301,7 +15383,7 @@ li.add-more-posts span {
 
 .point-wrap::before {
   content: '';
-  background: url(https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1580838540/static/reward-badge_kb5lmj-min_qt1dsn.png)
+  background: url('https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1580838540/static/reward-badge_kb5lmj-min_qt1dsn.png')
     center center no-repeat;
   background-size: contain;
   position: absolute;
@@ -15433,7 +15515,7 @@ li.add-more-posts span {
   width: 26px;
   height: 35px;
   -o-object-fit: scale-down;
-     object-fit: scale-down;
+  object-fit: scale-down;
 }
 
 .left-menu .collapse-menu-title {
@@ -15503,7 +15585,7 @@ li.add-more-posts span {
 
 .welcome-video-banner {
   padding: 33px 0;
-  background: url(https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1580838904/static/welcome-banner-img_zvgt5q-min_m0yhgt.jpg)
+  background: url('https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1580838904/static/welcome-banner-img_zvgt5q-min_m0yhgt.jpg')
     center no-repeat;
   min-height: 467px;
   background-size: cover;
@@ -18132,7 +18214,7 @@ img.mfp-img {
   border-radius: 3px;
   display: block;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   height: 100px;
 }
 
@@ -18896,7 +18978,7 @@ ul.w-last-photo li a:hover::before {
   padding: 25px;
   color: #fff;
   position: relative;
-  background: url(https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1575849612/static/bg-birthdays.jpg)
+  background: url('https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1575849612/static/bg-birthdays.jpg')
     no-repeat;
   background-size: cover;
   border-radius: 5px;
@@ -19844,7 +19926,8 @@ button.following-btn:focus {
 .notification-list li:last-child {
   border-bottom: 0;
 }
-.label-floating.with-icon label.control-label, .label-placeholder.with-icon label.control-label {
+.label-floating.with-icon label.control-label,
+.label-placeholder.with-icon label.control-label {
   left: 70px !important;
 }
 .author-date b {
@@ -20081,7 +20164,7 @@ ul.more-dropdown li a span {
   }
   .point-wrap::before {
     content: '';
-    background: url(https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1580838540/static/reward-badge_kb5lmj-min_qt1dsn.png)
+    background: url('https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1580838540/static/reward-badge_kb5lmj-min_qt1dsn.png')
       center center no-repeat;
     background-size: contain;
     position: absolute;
@@ -21479,7 +21562,6 @@ ul.more-dropdown li a span {
 }
 
 @media (max-width: 801px) {
-
   .top-header {
     min-height: 250px;
   }
@@ -21488,9 +21570,9 @@ ul.more-dropdown li a span {
     bottom: -30px;
   }
 
-  .top-header-author .author-name, 
+  .top-header-author .author-name,
   .top-header-author .author-location {
-    color: var(--theme-color-black); 
+    color: var(--theme-color-black);
   }
 
   .author-content button.btn {
@@ -21718,8 +21800,7 @@ ul.more-dropdown li a span {
   .search-bar.w-search {
     max-width: 76%;
     width: 76%;
-}
-
+  }
 }
 @media (max-width: 600px) {
   .card-header a {
@@ -22245,8 +22326,11 @@ ul.more-dropdown li a span {
   .header {
     height: 60px;
   }
-  .svg-inline--fa.fa-w-18, .svg-inline--fa.fa-w-16, .svg-inline--fa.fa-w-14, .svg-inline--fa.fa-w-11 {
-    width: .8em;
+  .svg-inline--fa.fa-w-18,
+  .svg-inline--fa.fa-w-16,
+  .svg-inline--fa.fa-w-14,
+  .svg-inline--fa.fa-w-11 {
+    width: 0.8em;
   }
   .author-thumb {
     width: 30px;

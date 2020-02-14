@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { generatePath } from 'react-router-dom';
 import PropTypes from 'prop-types';
+
+import CustomTextArea from './CustomTextAreaWrapper';
 
 import { CREATE_COMMENT } from '../../graphql/comment';
 import { GET_POST } from '../../graphql/post';
@@ -26,7 +28,6 @@ function AddComment({ authorId, author, post, onCancel, userId }) {
     author: authorId,
     postId: post.id,
   });
-
   const onAddComment = (e, createComment) => {
     e.preventDefault();
     createComment
@@ -42,10 +43,8 @@ function AddComment({ authorId, author, post, onCancel, userId }) {
       .catch(() => setError(true));
   };
 
-  const onCommentChange = e => {
-    e.preventDefault();
-    const { name, value } = e.target;
-    setCommentContent({ ...commentContent, [name]: value });
+  const onCommentChange = comment => {
+    setCommentContent({ ...commentContent, comment: comment });
     setError(false);
   };
   const onCancelHandler = e => {
@@ -87,14 +86,10 @@ function AddComment({ authorId, author, post, onCancel, userId }) {
                     Comment is required
                   </span>
                 )}
-                <textarea
-                  type='text'
-                  className='form-control'
-                  placeholder='Write a comment'
-                  name='comment'
-                  value={commentContent.comment}
-                  onChange={e => onCommentChange(e)}
-                ></textarea>
+                <CustomTextArea
+                  onCommentChange={e => onCommentChange(e)}
+                  initialValue={commentContent.comment}
+                />
                 <div className='add-options-message'>
                   <a
                     href
@@ -104,14 +99,12 @@ function AddComment({ authorId, author, post, onCancel, userId }) {
                     className='options-message'
                     data-toggle='modal'
                     data-target='#update-header-photo'
-                  >
-                    {' '}
-                  </a>
+                  ></a>
                 </div>
               </div>
             </div>
             {commentContent.comment.length > 0 && (
-              <div className='add-comment-buttons text-right'>
+              <div className='add-comment-buttons text-right d-flex justify-content-end align-center'>
                 <button className='btn btn-md-2 btn-primary' type='post'>
                   Post Comment
                 </button>
