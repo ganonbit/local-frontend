@@ -32,7 +32,6 @@ export default function PostContent(props) {
     }
   };
   const [metaFromContentPreview, setMetaFromContentPreview] = useState('');
-
   useEffect(() => {
     async function fetchData() {
       const result = await fetchMetaFromContentPreview(rawContent);
@@ -50,7 +49,7 @@ export default function PostContent(props) {
         {rawContent}
       </Linkify>
 
-      {metaFromContentPreview ? (
+      {metaFromContentPreview.meta ? (
         <Preview {...metaFromContentPreview.meta} />
       ) : null}
       {!image ? null : (
