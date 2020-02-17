@@ -2719,7 +2719,7 @@ button.btn-redeem {
   // float: right;
 }
 .user-suggestion {
-  height: 157px;
+  max-height: 157px;
   overflow-y: auto;
   position: absolute;
   min-width: 150px;
@@ -6269,7 +6269,7 @@ fieldset[disabled] .checkbox input[type='checkbox'],
 
 .friend-requests .notification-icon {
   margin-top: 0;
-  margin-left:auto;
+  margin-left: auto;
 }
 
 .friend-requests .notification-friend {
