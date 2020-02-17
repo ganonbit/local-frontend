@@ -1,19 +1,18 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import algoliasearch from 'algoliasearch/lite';
-import { InstantSearch, Index } from 'react-instantsearch-dom';
-
-import CustomTextArea from './CustomTextArea';
+import { InstantSearch } from 'react-instantsearch-dom';
+import TextArea from './TextArea';
 
 const searchClient = algoliasearch(
   '***REMOVED***',
   '***REMOVED***'
 );
 
-class CustomTextAreaWrapper extends Component {
+class CustomTextArea extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
   }
   render() {
     return (
@@ -21,8 +20,8 @@ class CustomTextAreaWrapper extends Component {
         indexName='production_avonation_users'
         searchClient={searchClient}
       >
-        <CustomTextArea
-          onCommentChange={this.props.onCommentChange}
+        <TextArea
+          onTextChange={this.props.onTextChange}
           initialValue={this.props.initialValue}
         />
       </InstantSearch>
@@ -30,4 +29,8 @@ class CustomTextAreaWrapper extends Component {
   }
 }
 
-export default CustomTextAreaWrapper;
+CustomTextArea.propTypes = {
+  onTextChange: PropTypes.func.isRequired,
+  initialValue: PropTypes.string.isRequired,
+};
+export default CustomTextArea;

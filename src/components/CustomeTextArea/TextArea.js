@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import InputTrigger from 'react-input-trigger';
 import { connectSearchBox } from 'react-instantsearch-dom';
+
 import { InfiniteUsers } from './Infinite-users';
 
 class TextArea extends Component {
@@ -18,8 +20,7 @@ class TextArea extends Component {
     this.handleTextareaInput = this.handleTextareaInput.bind(this);
     this.handleToggleSuggestor = this.handleToggleSuggestor.bind(this);
   }
-
-  componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps) {
     if (
       this.props.initialValue === nextProps.initialValue &&
       this.props.initialValue.length === 0
@@ -27,7 +28,6 @@ class TextArea extends Component {
       this.setState({ textareaValue: '' });
     }
   }
-
   handleToggleSuggestor(username) {
     this.setState({
       showSuggestor: false,
@@ -45,7 +45,7 @@ class TextArea extends Component {
         {
           textareaValue: newtext + username,
         },
-        () => this.props.onCommentChange(this.state.textareaValue)
+        () => this.props.onTextChange(this.state.textareaValue)
       );
     }
 
@@ -84,7 +84,7 @@ class TextArea extends Component {
       {
         textareaValue: value,
       },
-      () => this.props.onCommentChange(this.state.textareaValue)
+      () => this.props.onTextChange(this.state.textareaValue)
     );
   }
   render() {
@@ -117,7 +117,7 @@ class TextArea extends Component {
             type='text'
             className='form-control'
             onChange={this.handleTextareaInput}
-            value={this.state.textareaValue}
+            value={state.textareaValue}
             name='comment'
           />
         </InputTrigger>
@@ -125,9 +125,9 @@ class TextArea extends Component {
           id='dropdown'
           className='user-suggestion'
           style={{
-            display: this.state.showSuggestor ? 'block' : 'none',
-            top: this.state.top,
-            left: this.state.left,
+            display: state.showSuggestor ? 'block' : 'none',
+            top: state.top,
+            left: state.left,
           }}
         >
           <InfiniteUsers
@@ -142,5 +142,11 @@ class TextArea extends Component {
   }
 }
 
-const CustomTextArea = connectSearchBox(TextArea);
-export default CustomTextArea;
+TextArea.propTypes = {
+  onTextChange: PropTypes.func.isRequired,
+  initialValue: PropTypes.string.isRequired,
+  refine: PropTypes.func.isRequired,
+};
+
+const ConnectedTextArea = connectSearchBox(TextArea);
+export default ConnectedTextArea;
