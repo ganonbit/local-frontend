@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Modal, ModalBody } from 'react-bootstrap';
 
+import CustomTextArea from 'components/CustomeTextArea/TextAreaWrapper';
+
 import { MAX_POST_IMAGE_SIZE } from 'constants/ImageSize';
 import Avatar from '../Avatar';
 import { BeatLoader } from 'react-spinners';
@@ -60,11 +62,9 @@ const UploadImageModal = ({
                     <label className='control-label' htmlFor='share post'>
                       Share what you are thinking here...
                     </label>
-                    <textarea
-                      className='form-control'
-                      name='status'
-                      value={status}
-                      onChange={e => handleStatusChange(e)}
+                    <CustomTextArea
+                      onTextChange={value => handleStatusChange(value)}
+                      initialValue={status}
                     />
                   </div>
                 </form>

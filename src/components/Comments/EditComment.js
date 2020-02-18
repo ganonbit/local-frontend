@@ -5,7 +5,7 @@ import { EDIT_COMMENT } from 'graphql/comment';
 import { GET_POST } from 'graphql/post';
 import { Mutation, withApollo } from 'react-apollo';
 
-import CustomTextArea from './CustomTextAreaWrapper';
+import CustomTextArea from 'components/CustomeTextArea/TextAreaWrapper';
 
 let EditComment = ({ comment, onClose, postId }) => {
   const [commentContent, setCommentContent] = useState({
@@ -54,7 +54,7 @@ let EditComment = ({ comment, onClose, postId }) => {
             <div className='post__author author vcard inline-items'>
               <div className='form-group with-icon-right '>
                 <CustomTextArea
-                  onCommentChange={value => onCommentChange(value)}
+                  onTextChange={value => onCommentChange(value)}
                   initialValue={commentContent.comment}
                 />
                 <span className='d-block text-danger mt-1'> {error}</span>

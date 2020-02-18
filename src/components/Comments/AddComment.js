@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react';
 import { generatePath } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-import CustomTextArea from './CustomTextAreaWrapper';
+import CustomTextArea from 'components/CustomeTextArea/TextAreaWrapper';
 
 import { CREATE_COMMENT } from '../../graphql/comment';
 import { GET_POST } from '../../graphql/post';
@@ -87,7 +87,7 @@ function AddComment({ authorId, author, post, onCancel, userId }) {
                   </span>
                 )}
                 <CustomTextArea
-                  onCommentChange={e => onCommentChange(e)}
+                  onTextChange={e => onCommentChange(e)}
                   initialValue={commentContent.comment}
                 />
                 <div className='add-options-message'>

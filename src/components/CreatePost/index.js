@@ -23,23 +23,24 @@ const CreatePost = props => {
   });
   const { status, image, imagePreview } = values;
 
-  let handleStatusChange = e => {
-    const { name, value } = e.target;
-    setValues({ ...values, [name]: value });
+  let handleStatusChange = status => {
+    setValues({ ...values, status: status });
     setError(false);
   };
   let handleSubmitForm = (e, createPost) => {
     e.preventDefault();
     createPost()
-      .then(async ({ data }) => {
+      .then(
+        async ({ data }) => {
+          setIsShowing(false);
+        },
         setValues({
           ...values,
           status: '',
           image: '',
           imagePreview: '',
-        });
-        setIsShowing(false);
-      })
+        })
+      )
       .catch(() => setError(true));
   };
 
