@@ -2718,30 +2718,6 @@ button.btn-redeem {
   margin-top: 10px;
   // float: right;
 }
-.user-suggestion {
-  max-height: 157px;
-  overflow-y: auto;
-  position: absolute;
-  min-width: 150px;
-  z-index: 99;
-  border-radius: 3px;
-  background: white;
-  box-shadow: rgba(0, 0, 0, 0.4) 0px 1px 4px;
-  padding: 5px 0;
-}
-.user-suggestion div {
-  cursor: pointer;
-  padding: 5px 10px;
-  font-size: 16px;
-  color: #444444;
-}
-.user-suggestion div:hover {
-  color: #ffffff;
-  background: var(--theme-color);
-}
-.user-suggestion::-webkit-scrollbar {
-  display: none;
-}
 .h1,
 .h2,
 .h3,
@@ -19965,6 +19941,51 @@ button.react-share__ShareButton.network__share-button {
 ul.more-dropdown li a span {
   padding-left: 5px;
 }
+.user-suggestion {
+  max-height: 157px;
+  overflow-y: auto;
+  position: absolute;
+  min-width: 150px;
+  z-index: 99;
+  border-radius: 3px;
+  background: white;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 1px 4px;
+  padding: 0;
+}
+.user-suggestion div {
+  cursor: pointer;
+  padding: 5px 10px;
+  font-size: 16px;
+  color: #444444;
+  align-items: center;
+}
+.user-suggestion .user-suggestion-wrap:hover {
+  background: var(--theme-color);
+}
+.user-suggestion::-webkit-scrollbar {
+  display: none;
+}
+.user-avatar-img img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+.user-suggestion-detail h5 {
+  margin-bottom: 0;
+  font-size: 12px;
+  font-weight: 800;
+}
+.user-suggestion-detail span {
+  font-size: 10px;
+  display: block;
+  font-weight: 800;
+  color: grey;
+}
+.user-suggestion .user-suggestion-wrap:hover h5,
+.user-suggestion .user-suggestion-wrap:hover span {
+  color: #ffffff;
+}
+
 // Responsiveness Start Here
 
 @media (min-width: 1199px) {

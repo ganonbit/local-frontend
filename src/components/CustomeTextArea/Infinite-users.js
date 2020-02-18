@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 import { connectInfiniteHits } from 'react-instantsearch-core';
+import Avatar from '../Avatar';
 
 const Hits = ({
   hits,
@@ -16,12 +17,10 @@ const Hits = ({
     <>
       {hits.map((hit, index) => (
         <div
+          className='d-flex user-suggestion-wrap'
           key={index}
           onClick={() => {
             handleToggleSuggestor(`${hit.username}`);
-          }}
-          style={{
-            background: index === currentSelection ? '#eee' : '',
           }}
           onKeyDown={() => {
             handleToggleSuggestor(`${hit.username}`);
@@ -29,7 +28,13 @@ const Hits = ({
           role='button'
           tabIndex='0'
         >
-          {`${hit.firstName} ${hit.lastName}`}
+          <div className='user-avatar-img p-0'>
+            <Avatar image={hit.image} />
+          </div>
+          <div className='user-suggestion-detail py-0'>
+            <h5> {`${hit.firstName} ${hit.lastName}`}</h5>
+            <span>@{hit.username}</span>
+          </div>
         </div>
       ))}
     </>

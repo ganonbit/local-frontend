@@ -35,7 +35,6 @@ class TextArea extends Component {
       top: null,
       text: null,
     });
-
     if (username) {
       let newtext = this.state.textareaValue.slice(
         0,
