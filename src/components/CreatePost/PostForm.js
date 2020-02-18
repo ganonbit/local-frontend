@@ -9,6 +9,8 @@ import { useStore } from '../../store/index';
 
 import * as Routes from 'routes';
 
+import CustomTextArea from 'components/CustomeTextArea/TextAreaWrapper';
+
 const PostForm = ({
   status,
   handleStatusChange,
@@ -50,11 +52,9 @@ const PostForm = ({
         <label className='control-label' htmlFor='share'>
           Share what you are thinking here...
         </label>
-        <textarea
-          className='form-control'
-          name='status'
-          value={status}
-          onChange={e => handleStatusChange(e)}
+        <CustomTextArea
+          onTextChange={value => handleStatusChange(value)}
+          initialValue={status}
         />
         {apiError && (
           <span className='text-center d-block text-danger mt-1'>

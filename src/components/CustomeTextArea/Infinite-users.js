@@ -1,0 +1,53 @@
+import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
+
+import { connectInfiniteHits } from 'react-instantsearch-core';
+import Avatar from '../Avatar';
+
+const Hits = ({
+  hits,
+  handleToggleSuggestor,
+  showSuggestor,
+  currentSelection,
+}) => {
+  useEffect(() => {
+    showSuggestor && hits.length === 0 && handleToggleSuggestor(undefined);
+  }, [hits]);
+  return (
+    <>
+      {hits.map((hit, index) => (
+        <div
+          className='d-flex user-suggestion-wrap'
+          key={index}
+          onClick={() => {
+            handleToggleSuggestor(`${hit.username}`);
+          }}
+          onKeyDown={() => {
+            handleToggleSuggestor(`${hit.username}`);
+          }}
+          role='button'
+          tabIndex='0'
+        >
+          <div className='user-avatar-img p-0'>
+            <Avatar image={hit.image} />
+          </div>
+          <div className='user-suggestion-detail py-0'>
+            <h5> {`${hit.firstName} ${hit.lastName}`}</h5>
+            <span>@{hit.username}</span>
+          </div>
+        </div>
+      ))}
+    </>
+  );
+};
+
+Hits.propTypes = {
+  hits: PropTypes.object.isRequired,
+  handleToggleSuggestor: PropTypes.func.isRequired,
+  showSuggestor: PropTypes.bool.isRequired,
+  currentSelection: PropTypes.any,
+};
+
+const InfiniteUsers = connectInfiniteHits(Hits);
+
+export { InfiniteUsers };
