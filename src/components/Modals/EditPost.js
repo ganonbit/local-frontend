@@ -5,6 +5,7 @@ import imageCompression from 'browser-image-compression';
 import { Modal } from 'react-bootstrap';
 import { Mutation } from 'react-apollo';
 import { BeatLoader } from 'react-spinners';
+import CustomTextArea from 'components/CustomeTextArea/TextAreaWrapper';
 
 import { EDIT_POST, GET_POST } from 'graphql/post';
 import { MAX_POST_IMAGE_SIZE } from 'constants/ImageSize';
@@ -25,9 +26,9 @@ const EditPost = props => {
 
   let { imagePreview, postContent, error, id } = values;
 
-  let handleStatusChange = e => {
-    const { name, value } = e.target;
-    setValues({ ...values, [name]: value });
+  let handleStatusChange = value => {
+    // const { name, value } = e.target;
+    setValues({ ...values, postContent: value });
     setError(false);
   };
 
@@ -137,11 +138,9 @@ const EditPost = props => {
                         <label className='control-label' htmlFor='share'>
                           Share what you are thinking here...
                         </label>
-                        <textarea
-                          className='form-control'
-                          name='postContent'
-                          value={postContent}
-                          onChange={e => handleStatusChange(e)}
+                        <CustomTextArea
+                          onTextChange={e => handleStatusChange(e)}
+                          initialValue={postContent}
                         />
                       </div>
                     </form>
