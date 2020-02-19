@@ -1,8 +1,9 @@
 import React from 'react';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 export const Loading = () => (
   <div id='hellopreloader'>
     <div className='preloader'>
-      <img
+      <LazyLoadImage
         src='https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1575849612/static/avocado_loader_n5rjeh.gif'
         alt=''
       />

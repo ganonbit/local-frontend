@@ -3,7 +3,7 @@ import * as linkify from 'linkifyjs';
 import Linkify from 'linkifyjs/react';
 import hashtag from 'linkifyjs/plugins/hashtag';
 import mention from 'linkifyjs/plugins/mention';
-
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 import Preview from '../PostPreview';
 import linkDecorator from '../Common/linkDecorator';
 
@@ -54,7 +54,7 @@ export default function PostContent(props) {
       ) : null}
       {!image ? null : (
         <div className='post-img mt-3'>
-          <img alt='postImage' src={image} />
+          <LazyLoadImage alt='postImage' src={image} />
         </div>
       )}
     </div>

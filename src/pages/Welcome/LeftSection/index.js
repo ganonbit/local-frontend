@@ -2,6 +2,7 @@ import React from 'react';
 import SideMenu from './SideMenu';
 import LeftVideoSection from './LeftVideoSection';
 import { Link } from 'react-router-dom';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 export default function LeftSection() {
   return (
@@ -9,7 +10,7 @@ export default function LeftSection() {
       <LeftVideoSection />
       <div className='ui-block'>
         <Link to='/discover'>
-          <img
+          <LazyLoadImage
             className='health-bnr'
             src='https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1576838840/static/discover-bnr-img_tyvded.jpg'
             alt='get inspired! click here to check avocado posts'

@@ -1,11 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 const AvocadoGame = () => {
   return (
     <div className='ui-block'>
       <div className='widget w-action'>
         <div className='ui-block-title'>
-          <img
+          <LazyLoadImage
             src='https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1575849612/static/star-icon2_es9h9w.png'
             alt=''
           />
@@ -17,7 +18,7 @@ const AvocadoGame = () => {
             className='more'
           ></Link>
         </div>
-        <img
+        <LazyLoadImage
           src='https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1575849612/static/game-remote_zxpou0.png'
           alt='Olympus'
         />

@@ -1,4 +1,5 @@
 import React from 'react';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 import ListItem from './ListItem';
 import { Mobile } from '../Wrappers/Queries';
 import {
@@ -41,7 +42,7 @@ const SidebarMainContent = ({ onSetSidebarOpen, isAuth }) => {
     <div className='fixed-sidebar-left sidebar--large' id='sidebar-left-1'>
       <div className='logo'>
         <div className='img-wrap'>
-          <img
+          <LazyLoadImage
             src='https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1575849612/static/avocado-img_fwdb02.png'
             alt='Olympus'
           />

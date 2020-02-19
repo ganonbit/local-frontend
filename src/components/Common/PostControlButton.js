@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Like from 'components/Like';
 import SharePost from 'components/SharePost';
-
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 function PostControlButton({
   author,
   postId,
@@ -26,7 +26,7 @@ function PostControlButton({
           }}
           className='btn btn-control likes'
         >
-          <img
+          <LazyLoadImage
             src='https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1575849612/static/heart-icon_jd2hne.png'
             alt=''
           />
@@ -44,7 +44,7 @@ function PostControlButton({
           }}
           className='btn btn-control likes'
         >
-          <img
+          <LazyLoadImage
             src='https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1575849612/static/comments-icon_ffpa0l.png'
             alt=''
           />
@@ -52,7 +52,7 @@ function PostControlButton({
         </a>
       ) : (
         <a href className='btn btn-control comments' onClick={toggle}>
-          <img
+          <LazyLoadImage
             src='https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1575849612/static/comments-icon_ffpa0l.png'
             alt=''
           />
@@ -68,7 +68,7 @@ function PostControlButton({
           }}
           className='btn btn-control likes'
         >
-          <img
+          <LazyLoadImage
             src='https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1575849612/static/share-icon_rkyjac.png'
             alt=''
           />

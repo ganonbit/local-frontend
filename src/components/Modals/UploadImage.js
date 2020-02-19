@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Modal, ModalBody } from 'react-bootstrap';
-
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 import CustomTextArea from 'components/CustomeTextArea/TextAreaWrapper';
 
 import { MAX_POST_IMAGE_SIZE } from 'constants/ImageSize';
@@ -73,7 +73,7 @@ const UploadImageModal = ({
                   <div className='thumbnail-gallery-items'>
                     <ul className='d-flex p-0 m-3 list-unstyled'>
                       <li>
-                        <img
+                        <LazyLoadImage
                           className='video-bnr'
                           src={imagePreview}
                           alt='images'

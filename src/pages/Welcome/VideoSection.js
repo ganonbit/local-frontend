@@ -1,5 +1,6 @@
 import React, {createRef, useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 import * as Routes from 'routes';
 
@@ -85,7 +86,7 @@ const VideoSection = () => {
                   data-toggle='modal'
                   data-target='#myModal'
                 >
-                  <img
+                  <LazyLoadImage
                     className='mw-100'
                     src='https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1580838540/static/video-play-btn_sxo2c1-min_urt5rb.png'
                     alt=''

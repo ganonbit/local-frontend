@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 import * as Routes from 'routes';
 const copyYear = new Date().getFullYear();
 const WelcomeFooter = () => {
@@ -13,7 +14,7 @@ const WelcomeFooter = () => {
               <span>English (US)</span>
             </div>
             <div className='col-6 text-right'>
-              <img
+              <LazyLoadImage
                 src='https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1578333627/static/avocado-primary-logo_color_l9xyvo.png'
                 alt='avocado nation logo'
               />

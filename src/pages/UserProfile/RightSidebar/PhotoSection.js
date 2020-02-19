@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link, generatePath, withRouter } from 'react-router-dom';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 import { useQuery } from '@apollo/react-hooks';
 import { GET_USER_POSTS } from 'graphql/user';
@@ -25,7 +26,7 @@ const LatestPhotos = ({ match }) => {
                   id: data.getUserPosts.posts[i].id,
                 })}
               >
-                <img
+                <LazyLoadImage
                   src={data.getUserPosts.posts[i].image}
                   alt='friends-icons'
                 />

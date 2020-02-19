@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { HappyFaceIcon } from 'components/icons';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 const TopFriends = () => {
   const items = [];
@@ -8,7 +9,7 @@ const TopFriends = () => {
     items.push(
       <li className='d-flex justify-content-start align-items-center px-3 py-2' key={i}>
         <div className='author-thumb'>
-          <img
+          <LazyLoadImage
             src='https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1578579972/user/51abdbc5-b280-414e-99f9-23680491eedc.png'
             alt='author'
           />

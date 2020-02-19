@@ -1,4 +1,5 @@
 import React from 'react';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 export default function Favs() {
   return (
@@ -10,7 +11,7 @@ export default function Favs() {
       <ul className='widget w-friend-pages-added notification-list friend-requests'>
         <li className='d-flex justify-content-start align-items-center px-3 py-2'>
           <div className='author-thumb'>
-            <img
+            <LazyLoadImage
               src='https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1575849612/static/avatar41-sm.jpg'
               alt='author'
             />
@@ -38,7 +39,7 @@ export default function Favs() {
 
         <li className='inline-items'>
           <div className='author-thumb'>
-            <img
+            <LazyLoadImage
               src='https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1575849612/static/avatar42-sm.jpg'
               alt='author'
             />
@@ -66,7 +67,7 @@ export default function Favs() {
 
         <li className='inline-items'>
           <div className='author-thumb'>
-            <img
+            <LazyLoadImage
               src='https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1575849612/static/avatar43-sm.jpg'
               alt='author'
             />
@@ -94,7 +95,7 @@ export default function Favs() {
 
         <li className='inline-items'>
           <div className='author-thumb'>
-            <img
+            <LazyLoadImage
               src='https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1575849612/static/avatar44-sm.jpg'
               alt='author'
             />
@@ -122,7 +123,7 @@ export default function Favs() {
 
         <li className='inline-items'>
           <div className='author-thumb'>
-            <img
+            <LazyLoadImage
               src='https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1575849612/static/avatar45-sm.jpg'
               alt='author'
             />
@@ -150,7 +151,7 @@ export default function Favs() {
 
         <li className='inline-items'>
           <div className='author-thumb'>
-            <img
+            <LazyLoadImage
               src='https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1575849612/static/avatar46-sm.jpg'
               alt='author'
             />

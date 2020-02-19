@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import Headroom from 'react-headroom';
 import EmailVerificationModal from './EmailVerificationModal';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 import * as Routes from 'routes';
 
@@ -30,7 +31,7 @@ const MainLayout = ({ children, location }) => {
           <div className='header--standard-wrap'>
             <Link to={Routes.SIGN_IN} className='logo'>
               <div className='img-wrap'>
-                <img
+                <LazyLoadImage
                   src='https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1575849612/static/avocado-logo_i9pyxb.png'
                   alt='Avocado'
                 />
