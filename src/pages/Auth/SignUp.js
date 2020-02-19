@@ -36,8 +36,8 @@ const validationSchema = yup.object({
     .min(5, 'Password is too short - should be 5 chars minimum.'),
   captcha: yup
     .boolean()
-    .required('captcha must be validate.')
-    .oneOf([true], 'captcha must be validate.'),
+    .required('captcha must succeed.')
+    .oneOf([true], 'captcha must succeed.'),
 });
 
 const SignUp = ({ refetch }) => {
