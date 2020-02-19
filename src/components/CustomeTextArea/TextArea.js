@@ -12,13 +12,18 @@ class TextArea extends Component {
       top: null,
       left: null,
       showSuggestor: false,
-      text: null,
+      text: '',
       textareaValue: this.props.initialValue,
+      users: null,
+      currentSelection: -1,
     };
     this.toggleSuggestor = this.toggleSuggestor.bind(this);
     this.handleInput = this.handleInput.bind(this);
     this.handleTextareaInput = this.handleTextareaInput.bind(this);
     this.handleToggleSuggestor = this.handleToggleSuggestor.bind(this);
+    this.setUsers = this.setUsers.bind(this);
+    this.handleKeyDown = this.handleKeyDown.bind(this);
+    this.handleKeyPress = this.handleKeyPress.bind(this);
   }
   UNSAFE_componentWillReceiveProps(nextProps) {
     if (
@@ -26,6 +31,89 @@ class TextArea extends Component {
       this.props.initialValue.length === 0
     ) {
       this.setState({ textareaValue: '' });
+    }
+  }
+
+  setUsers(users) {
+    this.setState({ users: users });
+  }
+  handleKeyPress(event) {
+    const { which } = event;
+    if (which === 13 && this.state.currentSelection !== -1) {
+      event.preventDefault();
+    }
+  }
+  handleKeyDown(event) {
+    const { which } = event;
+    const { currentSelection, users } = this.state;
+    if (which === 40) {
+      // 40 is the character code of the down arrow
+      // event.preventDefault();
+      this.setState({
+        currentSelection: users.length
+          ? (currentSelection + 1) % (users.length < 3 ? users.length : 3)
+          : -1,
+      });
+    }
+
+    if (which === 38) {
+      // 40 is the character code of the down arrow
+      event.preventDefault();
+      this.setState({
+        currentSelection:
+          currentSelection - 1 < 0 || currentSelection - 1 > 3
+            ? 0
+            : currentSelection - 1,
+      });
+    }
+    if (which === 13) {
+      if (
+        this.state.users &&
+        this.state.users[this.state.currentSelection] &&
+        this.state.text
+      ) {
+        let newtext = this.state.textareaValue.slice(
+          0,
+          this.state.textareaValue.length - this.state.text.length
+        );
+        this.setState(
+          {
+            textareaValue:
+              newtext + this.state.users[this.state.currentSelection].username,
+            showSuggestor: false,
+            left: null,
+            top: null,
+            text: null,
+            currentSelection: -1,
+          },
+          () => {
+            this.props.onTextChange(this.state.textareaValue);
+          }
+        );
+        this.endHandler();
+      } else if (
+        this.state.users &&
+        this.state.users[this.state.currentSelection]
+      ) {
+        this.setState(
+          {
+            textareaValue:
+              this.state.textareaValue +
+              this.state.users[this.state.currentSelection].username,
+            showSuggestor: false,
+            left: null,
+            top: null,
+            text: null,
+            currentSelection: -1,
+          },
+          () => {
+            this.props.onTextChange(this.state.textareaValue);
+          }
+        );
+        this.endHandler();
+      } else {
+        return;
+      }
     }
   }
   handleToggleSuggestor(username) {
@@ -56,7 +144,7 @@ class TextArea extends Component {
 
     if (hookType === 'start') {
       this.setState({
-        showSuggestor: false,
+        showSuggestor: true,
         left: cursor.left,
         top: cursor.top + cursor.height,
       });
@@ -73,12 +161,12 @@ class TextArea extends Component {
     this.props.refine(metaInformation.text);
     this.setState({
       text: metaInformation.text,
-      showSuggestor: true,
     });
   }
 
   handleTextareaInput(event, refine) {
     const { value } = event.target;
+
     this.setState(
       {
         textareaValue: value,
@@ -93,6 +181,9 @@ class TextArea extends Component {
         style={{
           position: 'relative',
         }}
+        onKeyDown={this.handleKeyDown}
+        role='button'
+        tabIndex='0'
       >
         <InputTrigger
           trigger={{
@@ -118,6 +209,7 @@ class TextArea extends Component {
             onChange={this.handleTextareaInput}
             value={state.textareaValue}
             name='comment'
+            onKeyDown={this.handleKeyPress}
           />
         </InputTrigger>
         <div
@@ -134,6 +226,8 @@ class TextArea extends Component {
             showSuggestor={state.showSuggestor}
             top={state.top}
             left={state.left}
+            setUsers={this.setUsers}
+            currentSelection={state.currentSelection}
           />
         </div>
       </div>

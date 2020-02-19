@@ -6158,13 +6158,16 @@ fieldset[disabled] .checkbox input[type='checkbox'],
 
 .add-options-message {
   padding: 20px 25px;
-  float: left;
+  // float: left;
   width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .add-options-message button {
   margin-bottom: 0;
-  float: right;
+  // float: right;
 }
 
 .add-options-message button + button {
@@ -8175,7 +8178,7 @@ button.cancel-btn:hover {
 }
 
 .news-feed-form {
-  overflow: hidden;
+  // overflow: hidden;
 }
 
 .news-feed-form .form-group.with-icon::after {
