@@ -2,7 +2,7 @@ import * as React from 'react';
 import { generatePath } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { connectHits } from 'react-instantsearch-core';
-
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 import * as Routes from 'routes';
 
 class Hits extends React.Component {
@@ -29,7 +29,7 @@ class Hits extends React.Component {
             id: hit.objectID,
           })}
         >
-          <img className='video-bnr my-3' src={hit.image} alt='video' />
+          <LazyLoadImage className='video-bnr my-3' src={hit.image} alt='video' />
           <span className='chat-message-item'>
             {hit.numOfLikes} Likes {hit.numOfComments} Comments
           </span>

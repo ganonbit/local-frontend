@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Modal } from 'react-bootstrap';
 import { Mutation, withApollo } from 'react-apollo';
 import imageCompression from 'browser-image-compression';
-
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { UPLOAD_PHOTO, EDIT_ACCOUNT, GET_USER_POSTS } from 'graphql/user';
 import { MAX_POST_IMAGE_SIZE } from 'constants/ImageSize';
 
@@ -127,7 +127,7 @@ const UploadCoverImage = props => {
                     <div className='thumbnail-gallery-items'>
                       <ul className='d-flex p-0 m-3 list-unstyled justify-content-center'>
                         <li>
-                          <img
+                          <LazyLoadImage
                             className='video-bnr'
                             src={
                               !imagePreview

@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 const Preview = props => {
   return (
     <div className='post-preview'>
@@ -9,7 +9,7 @@ const Preview = props => {
         rel='noopener noreferrer'
       >
         {props.ogImage && props.ogImage.url ? (
-          <img src={props.ogImage.url} alt='Open Graph Website Preview' />
+          <LazyLoadImage src={props.ogImage.url} alt='Open Graph Website Preview' />
         ) : null}
       </a>
       <div>

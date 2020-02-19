@@ -1,4 +1,5 @@
 import React from 'react';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 const Badges = () => {
   return (
     <>
@@ -27,7 +28,7 @@ const Badges = () => {
             <div className='ui-block'>
               <div className='birthday-item inline-items badges'>
                 <div className='author-thumb'>
-                  <img
+                  <LazyLoadImage
                     src='https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1576788606/static/badge1_ngqyt5.png'
                     alt='author'
                   />
@@ -46,7 +47,7 @@ const Badges = () => {
             <div className='ui-block'>
               <div className='birthday-item inline-items badges'>
                 <div className='author-thumb'>
-                  <img
+                  <LazyLoadImage
                     src='https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1576788606/static/badge2_kmjarm.png'
                     alt='author'
                   />
@@ -65,7 +66,7 @@ const Badges = () => {
             <div className='ui-block'>
               <div className='birthday-item inline-items badges'>
                 <div className='author-thumb'>
-                  <img
+                  <LazyLoadImage
                     src='https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1576788606/static/badge3_gzdubj.png'
                     alt='author'
                   />
@@ -84,7 +85,7 @@ const Badges = () => {
             <div className='ui-block'>
               <div className='birthday-item inline-items badges'>
                 <div className='author-thumb'>
-                  <img
+                  <LazyLoadImage
                     src='https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1576788607/static/badge4_orr4ba.png'
                     alt='author'
                   />
@@ -104,7 +105,7 @@ const Badges = () => {
             <div className='ui-block'>
               <div className='birthday-item inline-items badges'>
                 <div className='author-thumb'>
-                  <img
+                  <LazyLoadImage
                     src='https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1576788607/static/badge5_ammdxc.png'
                     alt='author'
                   />
@@ -124,7 +125,7 @@ const Badges = () => {
             <div className='ui-block'>
               <div className='birthday-item inline-items badges'>
                 <div className='author-thumb'>
-                  <img
+                  <LazyLoadImage
                     src='https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1576788607/static/badge6_xzvi1x.png'
                     alt='author'
                   />
@@ -143,7 +144,7 @@ const Badges = () => {
             <div className='ui-block'>
               <div className='birthday-item inline-items badges'>
                 <div className='author-thumb'>
-                  <img
+                  <LazyLoadImage
                     src='https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1576788607/static/badge7_mvxvif.png'
                     alt='author'
                   />
@@ -162,7 +163,7 @@ const Badges = () => {
             <div className='ui-block'>
               <div className='birthday-item inline-items badges'>
                 <div className='author-thumb'>
-                  <img
+                  <LazyLoadImage
                     src='https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1576788607/static/badge8_ey2a1o.png'
                     alt='author'
                   />
@@ -181,7 +182,7 @@ const Badges = () => {
             <div className='ui-block'>
               <div className='birthday-item inline-items badges'>
                 <div className='author-thumb'>
-                  <img
+                  <LazyLoadImage
                     src='https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1576788608/static/badge10_zzyfxr.png'
                     alt='author'
                   />
@@ -200,7 +201,7 @@ const Badges = () => {
             <div className='ui-block'>
               <div className='birthday-item inline-items badges'>
                 <div className='author-thumb'>
-                  <img
+                  <LazyLoadImage
                     src='https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1576788608/static/badge11_gulkwa.png'
                     alt='author'
                   />
@@ -220,7 +221,7 @@ const Badges = () => {
             <div className='ui-block'>
               <div className='birthday-item inline-items badges'>
                 <div className='author-thumb'>
-                  <img
+                  <LazyLoadImage
                     src='https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1576788608/static/badge12_slmoxp.png'
                     alt='author'
                   />
@@ -239,7 +240,7 @@ const Badges = () => {
             <div className='ui-block'>
               <div className='birthday-item inline-items badges'>
                 <div className='author-thumb'>
-                  <img
+                  <LazyLoadImage
                     src='https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1576788606/static/badge13_byzmff.png'
                     alt='author'
                   />
@@ -258,7 +259,7 @@ const Badges = () => {
             <div className='ui-block'>
               <div className='birthday-item inline-items badges'>
                 <div className='author-thumb'>
-                  <img
+                  <LazyLoadImage
                     src='https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1576788606/static/badge15_mlnwdu.png'
                     alt='author'
                   />

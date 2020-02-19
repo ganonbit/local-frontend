@@ -3,7 +3,7 @@ import React from 'react';
 import { Query } from 'react-apollo';
 import { withApollo } from 'react-apollo';
 import PropTypes from 'prop-types';
-
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { Notification } from 'components/ProfileSetting';
 
 import { useStore } from 'store';
@@ -60,7 +60,7 @@ const Notifications = ({ client }) => {
             return (
               <>
                 <div className='d-flex justify-content-center my-2'>
-                  <img
+                  <LazyLoadImage
                     className='flex'
                     src='https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1579191490/static/loader_eyctc7.gif'
                     alt='loading...'

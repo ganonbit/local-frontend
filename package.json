@@ -52,6 +52,7 @@
     "react-input-trigger": "^1.1.2",
     "react-instantsearch-core": "^6.1.0",
     "react-instantsearch-dom": "^6.0.0",
+    "react-lazy-load-image-component": "^1.4.1",
     "react-responsive": "^8.0.1",
     "react-router-dom": "^5.0.0",
     "react-scripts": "3.0.1",

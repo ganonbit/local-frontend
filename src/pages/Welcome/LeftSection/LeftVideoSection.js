@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 const LeftVideoSection = () => {
   return (
     <div className='ui-block'>
@@ -10,7 +11,7 @@ const LeftVideoSection = () => {
       <div className='ui-block-content'>
         <ul className='widget w-last-video'>
           <li>
-            <img
+            <LazyLoadImage
               className='video-bnr'
               src='https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1575849612/static/avocado-mexico_sepsqy.png'
               alt='video'
@@ -18,7 +19,7 @@ const LeftVideoSection = () => {
             <div className='overlay'></div>
           </li>
           <li>
-            <img
+            <LazyLoadImage
               className='video-bnr'
               src='https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1575849612/static/avocado-mexico2_bexejr.png'
               alt='video'
@@ -26,7 +27,7 @@ const LeftVideoSection = () => {
             <div className='overlay'></div>
           </li>
           <li>
-            <img
+            <LazyLoadImage
               className='video-bnr'
               src='https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1575849612/static/video-bnr_z8anqe.png'
               alt='video'

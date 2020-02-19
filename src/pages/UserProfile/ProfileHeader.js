@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, generatePath } from 'react-router-dom';
 import { Mutation } from 'react-apollo';
 import PropTypes from 'prop-types';
-
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 import UploadProfileImage from './UploadProfileImage';
 import UploadCoverImage from './UploadCoverImage';
 
@@ -98,9 +98,9 @@ const ProfileHeader = ({ user, refetch, auth, isOwner, isSelma }) => {
               <div className='top-header'>
                 <div className='top-header-thumb'>
                   {user.coverImage ? (
-                    <img src={user.coverImage} alt='cover' />
+                    <LazyLoadImage src={user.coverImage} alt='cover' />
                   ) : (
-                    <img
+                    <LazyLoadImage
                       src='https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1580838904/static/profile-bg_edozor-min_at2lpf.jpg'
                       alt='nature'
                     />
@@ -114,9 +114,9 @@ const ProfileHeader = ({ user, refetch, auth, isOwner, isSelma }) => {
                     }}
                   >
                     {user.image ? (
-                      <img src={user.image} alt='profile' />
+                      <LazyLoadImage src={user.image} alt='profile' />
                     ) : (
-                      <img
+                      <LazyLoadImage
                         src='https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1576220262/static/Image_from_iOS_1_bnaxnc.jpg'
                         alt='nature'
                       />

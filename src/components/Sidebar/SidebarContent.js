@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, generatePath, withRouter } from 'react-router-dom';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 import Default, { Desktop, Mobile } from '../Wrappers/Queries';
 import OverlayTriggers from '../Common/ToolTip';
 import { useStore } from 'store';
@@ -14,7 +15,7 @@ const SidebarContent = ({ onSetSidebarOpen, isAuth, location }) => {
           <Default>
             <Link to={generatePath(Routes.HOME)} className='logo'>
               <div className='img-wrap'>
-                <img
+                <LazyLoadImage
                   src='https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1575849612/static/avocado-img_fwdb02.png'
                   alt='Olympus'
                 />
@@ -24,7 +25,7 @@ const SidebarContent = ({ onSetSidebarOpen, isAuth, location }) => {
           <Mobile>
             <div className='logo'>
               <div className='img-wrap'>
-                <img
+                <LazyLoadImage
                   src='https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1575849612/static/avocado-img_fwdb02.png'
                   alt='Olympus'
                   onClick={() => onSetSidebarOpen(true, 'fixed-sidebar open')}
@@ -36,7 +37,7 @@ const SidebarContent = ({ onSetSidebarOpen, isAuth, location }) => {
       ) : (
         <div className='logo'>
           <div className='img-wrap'>
-            <img
+            <LazyLoadImage
               src='https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1575849612/static/avocado-img_fwdb02.png'
               alt='Olympus'
             />
@@ -50,7 +51,7 @@ const SidebarContent = ({ onSetSidebarOpen, isAuth, location }) => {
               <li>
                 <div className='js-sidebar-open'>
                   <OverlayTriggers toolTipText='OPEN MENU' placement='right'>
-                    <img
+                    <LazyLoadImage
                       src='https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1575849612/static/menu-img_powmte.png'
                       alt='OPEN MENU'
                       onClick={() =>
@@ -63,7 +64,7 @@ const SidebarContent = ({ onSetSidebarOpen, isAuth, location }) => {
               <li>
                 <Link to={generatePath(Routes.HOME)}>
                   <OverlayTriggers toolTipText='NEWSFEED' placement='right'>
-                    <img
+                    <LazyLoadImage
                       src='https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1575849612/static/avocado-icon_rwvve0.png'
                       alt=''
                     />
@@ -73,7 +74,7 @@ const SidebarContent = ({ onSetSidebarOpen, isAuth, location }) => {
               <li>
                 <Link to={generatePath(Routes.DISCOVER)}>
                   <OverlayTriggers toolTipText='DISCOVER' placement='right'>
-                    <img
+                    <LazyLoadImage
                       src='https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1575849612/static/search-icon_vpzkxv.png'
                       alt=''
                     />
@@ -83,7 +84,7 @@ const SidebarContent = ({ onSetSidebarOpen, isAuth, location }) => {
               {/* <li>
               <Link to={generatePath(Routes.HOME)}>
                 <OverlayTriggers toolTipText='FAVS' placement='right'>
-                  <img
+                  <LazyLoadImage
                     src='https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1575849612/static/star-icon_qbwpz1.png'
                     alt=''
                   />
@@ -93,7 +94,7 @@ const SidebarContent = ({ onSetSidebarOpen, isAuth, location }) => {
               <li>
                 <Link to={generatePath(Routes.REWARDS)}>
                   <OverlayTriggers toolTipText='REWARDS' placement='right'>
-                    <img
+                    <LazyLoadImage
                       src='https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1575849612/static/star-icon_qbwpz1.png'
                       alt=''
                     />

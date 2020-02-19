@@ -1,7 +1,7 @@
 import React from 'react';
 import { Mutation, withApollo } from 'react-apollo';
 import { Link } from 'react-router-dom';
-
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 import {
   FacebookShareButton,
   TwitterShareButton,
@@ -94,7 +94,7 @@ const SharePost = ({ postId, post, postSharer, sharedPostId }) => {
               onClick={e => handleButtonClick(e, mutate)}
               className='btn btn-control share-link'
             >
-              <img
+              <LazyLoadImage
                 src='https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1575849612/static/share-icon_rkyjac.png'
                 alt=''
               />
@@ -103,7 +103,7 @@ const SharePost = ({ postId, post, postSharer, sharedPostId }) => {
             <ul className='more-dropdown'>
               <li>
                 <Link href onClick={e => handleButtonClick(e, mutate)}>
-                  <img
+                  <LazyLoadImage
                     src='https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1575849612/static/avocado-icon_rwvve0.png'
                     alt=''
                   />

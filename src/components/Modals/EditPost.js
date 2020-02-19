@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import imageCompression from 'browser-image-compression';
-
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { Modal } from 'react-bootstrap';
 import { Mutation } from 'react-apollo';
 import { BeatLoader } from 'react-spinners';
@@ -148,7 +148,7 @@ const EditPost = props => {
                       <div className='thumbnail-gallery-items'>
                         <ul className='d-flex p-0 m-3 list-unstyled'>
                           <li>
-                            <img
+                            <LazyLoadImage
                               className='video-bnr'
                               src={imagePreview}
                               alt='images'

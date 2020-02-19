@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 import * as Routes from 'routes';
 
@@ -11,7 +12,7 @@ const WelcomeHeader = () => {
     >
       <div className='page-title'>
         <Link to='/'>
-          <img
+          <LazyLoadImage
             src='https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1575849612/static/avocado-logo_i9pyxb.png'
             alt=''
           />

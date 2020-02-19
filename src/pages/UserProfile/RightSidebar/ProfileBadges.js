@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 import * as Routes from 'routes';
 export default function ProfileBadges() {
   return (
@@ -15,7 +16,7 @@ export default function ProfileBadges() {
         <ul className='widget w-badges'>
           <li>
             <Link to={Routes.BADGES}>
-              <img
+              <LazyLoadImage
                 className='badge-img'
                 src='https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1576788606/static/badge2_kmjarm.png'
                 alt='author'

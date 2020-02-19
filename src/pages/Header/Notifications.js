@@ -3,7 +3,7 @@ import { useStore } from 'store';
 import { generatePath, Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { withApollo } from 'react-apollo';
-
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { GET_AUTH_USER } from 'graphql/user';
 import { UPDATE_NOTIFICATION_SEEN } from 'graphql/notification';
 
@@ -41,7 +41,7 @@ const Notifications = ({ client }) => {
   return (
     <div className='icon-outer'>
       <div className='control-icon more has-items'>
-        <img
+        <LazyLoadImage
           src='https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1575849612/static/notification-img_cporyu.png'
           alt='notifi'
         />
