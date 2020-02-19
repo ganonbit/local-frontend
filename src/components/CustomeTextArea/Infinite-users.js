@@ -9,34 +9,44 @@ const Hits = ({
   handleToggleSuggestor,
   showSuggestor,
   currentSelection,
+  setUsers,
 }) => {
   useEffect(() => {
     showSuggestor && hits.length === 0 && handleToggleSuggestor(undefined);
+    setUsers(hits);
   }, [hits]);
+
+  let size = 3;
   return (
     <>
-      {hits.map((hit, index) => (
-        <div
-          className='d-flex user-suggestion-wrap'
-          key={index}
-          onClick={() => {
-            handleToggleSuggestor(`${hit.username}`);
-          }}
-          onKeyDown={() => {
-            handleToggleSuggestor(`${hit.username}`);
-          }}
-          role='button'
-          tabIndex='0'
-        >
-          <div className='user-avatar-img p-0'>
-            <Avatar image={hit.image} />
-          </div>
-          <div className='user-suggestion-detail py-0'>
-            <h5> {`${hit.firstName} ${hit.lastName}`}</h5>
-            <span>@{hit.username}</span>
-          </div>
-        </div>
-      ))}
+      {hits &&
+        hits.slice(0, size).map((hit, index) => {
+          return (
+            <div
+              className='d-flex user-suggestion-wrap'
+              key={index}
+              style={{
+                background: index === currentSelection ? '#009440' : '',
+              }}
+              onClick={() => {
+                handleToggleSuggestor(`${hit.username}`);
+              }}
+              onKeyDown={() => {
+                handleToggleSuggestor(`${hit.username}`);
+              }}
+              role='button'
+              tabIndex='0'
+            >
+              <div className='user-avatar-img p-0'>
+                <Avatar image={hit.image} />
+              </div>
+              <div className='user-suggestion-detail py-0'>
+                <h5> {`${hit.firstName} ${hit.lastName}`}</h5>
+                <span>@{hit.username}</span>
+              </div>
+            </div>
+          );
+        })}
     </>
   );
 };
