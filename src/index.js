@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from 'react-dom';
+import { hydrate, render } from 'react-dom';
 import App from './route/App';
 import { ApolloProvider } from 'react-apollo';
 import { ApolloProvider as ApolloHooksProvider } from '@apollo/react-hooks';
@@ -17,13 +17,27 @@ const websocketApiUrl = WEBSOCKET_API_URL
 
 // Create a Apollo client
 const apolloClient = createApolloClient(API_URL, websocketApiUrl);
-render(
-  <ApolloProvider client={apolloClient}>
-    <ApolloHooksProvider client={apolloClient}>
-      <StoreProvider>
-        <App />
-      </StoreProvider>
-    </ApolloHooksProvider>
-  </ApolloProvider>,
-  document.getElementById('root')
-);
+const rootElement = document.getElementById('root');
+if (rootElement.hasChildNodes()) {
+  hydrate(
+    <ApolloProvider client={apolloClient}>
+      <ApolloHooksProvider client={apolloClient}>
+        <StoreProvider>
+          <App />
+        </StoreProvider>
+      </ApolloHooksProvider>
+    </ApolloProvider>,
+    rootElement
+  )
+}
+else {
+  render( 
+    <ApolloProvider client={apolloClient}>
+      <ApolloHooksProvider client={apolloClient}>
+        <StoreProvider>
+          <App />
+        </StoreProvider>
+      </ApolloHooksProvider>
+    </ApolloProvider>,
+    rootElement);
+}

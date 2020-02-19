@@ -67,7 +67,7 @@
     "start:lambda": "netlify-lambda serve src/lambda",
     "build": "react-scripts build",
     "build:lambda": "netlify-lambda build src/lambda",
-    "postbuild": "npx postcss build/static/css/*.css --use autoprefixer -d build/static/css/",
+    "postbuild": "npx postcss build/static/css/*.css --use autoprefixer -d build/static/css/ && react-snap",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "format": "prettier --write \"./**/*.{js,json,md,css,sass}\""
@@ -89,6 +89,7 @@
     "jsxBracketSameLine": false
   },
   "devDependencies": {
-    "prettier": "^1.19.1"
+    "prettier": "^1.19.1",
+    "react-snap": "^1.23.0"
   }
 }
