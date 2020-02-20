@@ -98,11 +98,18 @@ const ProfileHeader = ({ user, refetch, auth, isOwner, isSelma }) => {
               <div className='top-header'>
                 <div className='top-header-thumb'>
                   {user.coverImage ? (
-                    <LazyLoadImage src={user.coverImage} alt='cover' />
+                    <LazyLoadImage
+                      src={user.coverImage}
+                      alt='cover'
+                      height={100}
+                      width={100}
+                    />
                   ) : (
                     <LazyLoadImage
                       src='https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1580838904/static/profile-bg_edozor-min_at2lpf.jpg'
                       alt='nature'
+                      height={100}
+                      width={100}
                     />
                   )}
                 </div>

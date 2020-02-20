@@ -56,6 +56,18 @@ class TextArea extends Component {
       });
     }
 
+    if (which === 27) {
+      this.setState(
+        {
+          showSuggestor: false,
+          left: null,
+          top: null,
+          text: null,
+          currentSelection: -1,
+        },
+        () => this.endHandler()
+      );
+    }
     if (which === 38) {
       // 40 is the character code of the down arrow
       event.preventDefault();
