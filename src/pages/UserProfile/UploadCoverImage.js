@@ -86,7 +86,7 @@ const UploadCoverImage = props => {
     e.preventDefault();
     if (error) return;
     if (values.image)
-      UploadCoverImage().then(async ({ data }) => {
+      uploadUserPhoto().then(async ({ data }) => {
         await refetch();
         onHide();
       });
