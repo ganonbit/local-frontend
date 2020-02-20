@@ -5,9 +5,12 @@ import { InstantSearch, Index } from 'react-instantsearch-dom';
 
 import CustomTextArea from './CustomTextArea';
 
+const algoliaApp = process.env.REACT_APP_ALGOLIA_APP_ID;
+const algoliaKey = process.env.REACT_APP_ALGOLIA_API_KEY;
+
 const searchClient = algoliasearch(
-  '70PRHCFRAW',
-  '4d23141a22d596a7d5e0c5c59f1d4037'
+  {algoliaApp},
+  {algoliaKey}
 );
 
 class CustomTextAreaWrapper extends Component {
