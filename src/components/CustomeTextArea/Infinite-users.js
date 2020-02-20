@@ -41,8 +41,16 @@ const Hits = ({
                 <Avatar image={hit.image} />
               </div>
               <div className='user-suggestion-detail py-0'>
-                <h5> {`${hit.firstName} ${hit.lastName}`}</h5>
-                <span>@{hit.username}</span>
+                <h5
+                  style={{ color: index === currentSelection ? '#ffffff' : '' }}
+                >
+                  {`${hit.firstName} ${hit.lastName}`}
+                </h5>
+                <span
+                  style={{ color: index === currentSelection ? '#ffffff' : '' }}
+                >
+                  @{hit.username}
+                </span>
               </div>
             </div>
           );
