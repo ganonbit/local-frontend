@@ -9,8 +9,8 @@ const algoliaApp = process.env.REACT_APP_ALGOLIA_APP_ID;
 const algoliaKey = process.env.REACT_APP_ALGOLIA_API_KEY;
 
 const searchClient = algoliasearch(
-  {algoliaApp},
-  {algoliaKey}
+  '70PRHCFRAW',
+  '306f2d2320334ca5946827fe2821910d'
 );
 class CustomTextArea extends Component {
   constructor(props) {
