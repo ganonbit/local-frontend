@@ -51,7 +51,7 @@ const SidebarContent = ({ onSetSidebarOpen, isAuth, location }) => {
               <li>
                 <div className='js-sidebar-open'>
                   <OverlayTriggers toolTipText='OPEN MENU' placement='right'>
-                    <LazyLoadImage
+                    <img
                       src='https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1575849612/static/menu-img_powmte.png'
                       alt='OPEN MENU'
                       onClick={() =>
@@ -64,7 +64,7 @@ const SidebarContent = ({ onSetSidebarOpen, isAuth, location }) => {
               <li>
                 <Link to={generatePath(Routes.HOME)}>
                   <OverlayTriggers toolTipText='NEWSFEED' placement='right'>
-                    <LazyLoadImage
+                    <img
                       src='https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1575849612/static/avocado-icon_rwvve0.png'
                       alt=''
                     />
@@ -74,7 +74,7 @@ const SidebarContent = ({ onSetSidebarOpen, isAuth, location }) => {
               <li>
                 <Link to={generatePath(Routes.DISCOVER)}>
                   <OverlayTriggers toolTipText='DISCOVER' placement='right'>
-                    <LazyLoadImage
+                    <img
                       src='https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1575849612/static/search-icon_vpzkxv.png'
                       alt=''
                     />
@@ -94,7 +94,7 @@ const SidebarContent = ({ onSetSidebarOpen, isAuth, location }) => {
               <li>
                 <Link to={generatePath(Routes.REWARDS)}>
                   <OverlayTriggers toolTipText='REWARDS' placement='right'>
-                    <LazyLoadImage
+                    <img
                       src='https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1575849612/static/star-icon_qbwpz1.png'
                       alt=''
                     />
