@@ -33,7 +33,7 @@ const SignIn = ({ refetch, history }) => {
   //   setReset(false);
   // };
 
-  const { handleSubmit, handleChange, values, errors } = useFormik({
+  const { handleSubmit, handleChange, values, errors,touched } = useFormik({
     initialValues: initialValues,
     validationSchema,
     onSubmit(values) {
@@ -77,7 +77,7 @@ const SignIn = ({ refetch, history }) => {
                       name='email'
                       value={values.email}
                       handleChange={handleChange}
-                      error={errors.email}
+                      error={touched.email && errors.email && (errors.email)}
                     />
                     <Field
                       fieldContainerclassName='lg'
@@ -86,7 +86,7 @@ const SignIn = ({ refetch, history }) => {
                       name='password'
                       value={values.password}
                       handleChange={handleChange}
-                      error={errors.password}
+                      error={touched.password && errors.password && (errors.password)}
                     />
                     <div className='remember'>
                       <span
