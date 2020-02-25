@@ -5,7 +5,7 @@ import { ApolloLink, Observable, split } from 'apollo-link';
 import { createUploadLink } from 'apollo-upload-client';
 import { getMainDefinition } from 'apollo-utilities';
 import { WebSocketLink } from 'apollo-link-ws';
-import { persistCache } from 'apollo-cache-persist';
+// import { persistCache } from 'apollo-cache-persist';
 
 /**
  * Creates a Apollo Link, that adds authentication token to request
@@ -88,14 +88,15 @@ const handleErrors = () => {
 export const createApolloClient = (apiUrl, websocketApiUrl) => {
   const cache = new InMemoryCache();
 
-  try {
-    persistCache({
-      cache: cache,
-      storage: window.localStorage,
-    });
-  } catch (error) {
-    console.error('Error restoring Apollo cache', error);
-  }
+  //need to fix it not updating cache on all users updates, only updates feed on adding/removing your own
+  // try {
+  //   persistCache({
+  //     cache: cache,
+  //     storage: window.localStorage,
+  //   });
+  // } catch (error) {
+  //   console.error('Error restoring Apollo cache', error);
+  // }
 
   const errorLink = handleErrors();
   const authLink = createAuthLink();
