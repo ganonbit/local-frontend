@@ -28,6 +28,7 @@ export const postAuthorPayload = `
     firstName
     lastName
     image
+    bio
     following {
       id
       user
