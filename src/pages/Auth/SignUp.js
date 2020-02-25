@@ -75,6 +75,7 @@ const SignUp = ({ refetch }) => {
     setFieldValue,
     values,
     errors,
+    touched,
   } = useFormik({
     initialValues: initialValues,
     validationSchema,
@@ -127,8 +128,9 @@ const SignUp = ({ refetch }) => {
                       value={values.firstName}
                       name='firstName'
                       handleChange={handleChange}
-                      error={errors.firstName}
+                      error={touched.firstName && errors.firstName && (errors.firstName)}
                     />
+                
                   </div>
                   <div className='d-none'>
                     <Field
@@ -138,7 +140,7 @@ const SignUp = ({ refetch }) => {
                       type='text'
                       value={values.invitedById}
                       name='invitedById'
-                      error={errors.invitedById}
+                      error={touched.invitedById && errors.invitedById && (errors.invitedById)}
                     />
                   </div>
                   <div className='col col-6 col-xl-6 col-lg-6 col-md-6 col-sm-12'>
@@ -150,7 +152,7 @@ const SignUp = ({ refetch }) => {
                       value={values.lastName}
                       handleChange={handleChange}
                       name='lastName'
-                      error={errors.lastName}
+                      error={touched.lastName && errors.lastName && (errors.lastName)}
                     />
                   </div>
                   <div className='col col-12 col-xl-12 col-lg-12 col-md-12 col-sm-12'>
@@ -161,7 +163,7 @@ const SignUp = ({ refetch }) => {
                       value={values.username}
                       handleChange={handleChange}
                       name='username'
-                      error={errors.username}
+                      error={touched.username && errors.username && (errors.username)}
                     />
                     <Field
                       fieldContainerclassName='lg'
@@ -170,7 +172,7 @@ const SignUp = ({ refetch }) => {
                       value={values.email}
                       handleChange={handleChange}
                       name='email'
-                      error={errors.email}
+                      error={touched.email && errors.email && (errors.email)}
                     />
 
                     <Field
@@ -180,7 +182,7 @@ const SignUp = ({ refetch }) => {
                       value={values.password}
                       handleChange={handleChange}
                       name='password'
-                      error={errors.password}
+                      error={touched.password && errors.password && errors.password}
                     />
                   </div>
                   <div className='col col-6 col-xl-6 col-lg-6 col-md-6 col-sm-12'>
@@ -238,7 +240,7 @@ const SignUp = ({ refetch }) => {
                       size='normal'
                       className='mb-2 captcha-block'
                     />
-                    {errors.captcha && (
+                    {touched.email && errors.captcha && (
                       <span className='material-input-error'>
                         {errors.captcha}
                       </span>
