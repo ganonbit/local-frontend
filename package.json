@@ -67,7 +67,7 @@
   "scripts": {
     "start": "react-scripts start",
     "start:lambda": "netlify-lambda serve src/lambda",
-    "build": "react-scripts build",
+    "build": "CI='' react-scripts build",
     "build:lambda": "netlify-lambda build src/lambda",
     "postbuild": "npx postcss build/static/css/*.css --use autoprefixer -d build/static/css/ && react-snap",
     "test": "react-scripts test",
