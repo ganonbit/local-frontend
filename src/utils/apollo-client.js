@@ -74,6 +74,7 @@ const handleErrors = () => {
       // network errors, we recommend that you use
       // apollo-link-retry
     }
+    
   }
 );
 };
