@@ -10,7 +10,7 @@ import Avatar from 'components/Avatar';
 
 import * as Routes from 'routes';
 
-const MessagesUsers = ({ authUser, location, isSelma }) => {
+const MessagesUsers = ({ authUser, location, isAdmin }) => {
   const { subscribeToMore, data, loading } = useQuery(GET_CONVERSATIONS, {
     variables: { authUserId: authUser.id },
   });
@@ -43,12 +43,12 @@ const MessagesUsers = ({ authUser, location, isSelma }) => {
   return (
     <div className='col col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12 pr-lg-0'>
       <ul className='notification-list chat-message'>
-        {isSelma
+        {isAdmin
           ? data &&
             data.getConversations.map(user => {
-              const isSelma = user.id === '5df7cd1ae8d6ec604b737ae5';
+              const isAdmin = user.id === '5df7cd1ae8d6ec604b737ae5';
               return (
-                !isSelma && (
+                !isAdmin && (
                   <li className='d-flex justify-content-start align-items-center px-3 py-2'>
                     <div className='author-thumb'>
                       <Avatar image={user.image} size={50} />
@@ -70,7 +70,7 @@ const MessagesUsers = ({ authUser, location, isSelma }) => {
           : data &&
             data.getConversations.map(user => {
               return (
-                !isSelma && (
+                !isAdmin && (
                   <li className='d-flex justify-content-start align-items-center px-3 py-2'>
                     <div className='author-thumb'>
                       <Avatar image={user.image} size={50} />

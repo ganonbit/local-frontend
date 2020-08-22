@@ -13,9 +13,9 @@ import { GET_USER, GET_CONVERSATIONS, GET_AUTH_USER } from 'graphql/user';
 
 import * as Routes from 'routes';
 
-const MessagesChat = ({ match, authUser, isSelma, firstUserMessages }) => {
+const MessagesChat = ({ match, authUser, isAdmin, firstUserMessages }) => {
   let userId =
-    isSelma && match.params.userId === '5df7cd1ae8d6ec604b737ae5'
+    isAdmin && match.params.userId === '5df7cd1ae8d6ec604b737ae5'
       ? firstUserMessages && firstUserMessages.id
       : match.params.userId;
 
@@ -101,7 +101,7 @@ const MessagesChat = ({ match, authUser, isSelma, firstUserMessages }) => {
         data={messages}
         match={match}
         isAuth={authUser.id === '5df7cd1ae8d6ec604b737ae5'}
-        isSelma={isSelma}
+        isAdmin={isAdmin}
       />
     </>
   );

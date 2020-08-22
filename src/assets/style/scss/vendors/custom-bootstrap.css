@@ -9808,7 +9808,7 @@ a.text-secondary:hover {
   img,
   pre,
   tr {
-    page-break-inside: avoid;
+    page-break-inside: localid;
   }
   *,
   ::after,
@@ -9841,7 +9841,7 @@ a.text-secondary:hover {
   }
   h2,
   h3 {
-    page-break-after: avoid;
+    page-break-after: localid;
   }
   @page {
     size: a3;

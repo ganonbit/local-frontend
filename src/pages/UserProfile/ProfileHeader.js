@@ -18,7 +18,7 @@ import { NotificationType } from 'constants/NotificationType';
 
 import * as Routes from 'routes';
 
-const ProfileHeader = ({ user, refetch, auth, isOwner, isSelma }) => {
+const ProfileHeader = ({ user, refetch, auth, isOwner, isAdmin }) => {
   const [activeFollow, setActiveFollow] = useState(true);
   const [isProfileShowing, setProfileIsShowing] = useState(false);
   const [isCoverShowing, setCoverIsShowing] = useState(false);
@@ -106,7 +106,7 @@ const ProfileHeader = ({ user, refetch, auth, isOwner, isSelma }) => {
                     />
                   ) : (
                     <LazyLoadImage
-                      src='https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1580838904/static/profile-bg_edozor-min_at2lpf.jpg'
+                      src='https://res.cloudinary.com/hylian/image/upload/f_auto,q_auto/v1580838904/static/profile-bg_edozor-min_at2lpf.jpg'
                       alt='nature'
                       height={100}
                       width={100}
@@ -124,7 +124,7 @@ const ProfileHeader = ({ user, refetch, auth, isOwner, isSelma }) => {
                       <LazyLoadImage src={user.image} alt='profile' />
                     ) : (
                       <LazyLoadImage
-                        src='https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1576220262/static/Image_from_iOS_1_bnaxnc.jpg'
+                        src='https://res.cloudinary.com/hylian/image/upload/f_auto,q_auto/v1576220262/static/Image_from_iOS_1_bnaxnc.jpg'
                         alt='nature'
                       />
                     )}
@@ -146,9 +146,9 @@ const ProfileHeader = ({ user, refetch, auth, isOwner, isSelma }) => {
                         {hasFollow ? 'Following' : 'Follow +'}
                       </button>
                     )}
-                    {isOwner || isSelma ? (
+                    {isOwner || isAdmin ? (
                       <div className='settings-block-btn'>
-                        {isSelma && (
+                        {isAdmin && (
                           <div className='btn btn-control bg-primary more'>
                             <Link
                               to={generatePath(Routes.MESSAGES, {
@@ -212,7 +212,7 @@ const ProfileHeader = ({ user, refetch, auth, isOwner, isSelma }) => {
                 </div>
 
                 <div className='profile-section'>
-                  {isOwner || isSelma ? (
+                  {isOwner || isAdmin ? (
                     <UploadProfileImage
                       show={isProfileShowing}
                       onHide={() => setProfileIsShowing(false)}
@@ -223,7 +223,7 @@ const ProfileHeader = ({ user, refetch, auth, isOwner, isSelma }) => {
                       refetch={refetch}
                     />
                   ) : null}
-                  {isOwner || isSelma ? (
+                  {isOwner || isAdmin ? (
                     <UploadCoverImage
                       show={isCoverShowing}
                       onHide={() => setCoverIsShowing(false)}
@@ -249,7 +249,7 @@ ProfileHeader.propTypes = {
   refetch: PropTypes.func.isRequired,
   auth: PropTypes.object.isRequired,
   isOwner: PropTypes.bool.isRequired,
-  isSelma: PropTypes.bool.isRequired,
+  isAdmin: PropTypes.bool.isRequired,
 };
 
 export default ProfileHeader;

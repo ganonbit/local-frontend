@@ -12,7 +12,7 @@ import { useStore } from 'store';
 
 export default function Profile(props) {
   const [{ auth }] = useStore();
-  const isSelma = !auth.user ? null : auth.user.role === 'selma';
+  const isAdmin = !auth.user ? null : auth.user.role === 'admin';
   const isOwner = !auth.user
     ? null
     : auth.user.username === props.match.params.username;
@@ -36,7 +36,7 @@ export default function Profile(props) {
           <div className='container'>
             <div className='row ' style={{ paddingLeft: 0, paddingRight: 0 }}>
               <ProfileHeader
-                isSelma={isSelma}
+                isAdmin={isAdmin}
                 isOwner={isOwner}
                 auth={auth}
                 username={props.match.params.username}
@@ -45,7 +45,7 @@ export default function Profile(props) {
               />
               <div className='col col-xl-6 order-xl-2 col-lg-12 order-lg-1 col-md-12 col-sm-12 col-12'>
                 <div id='newsfeed-items-grid'>
-                  {isOwner || isSelma ? <CreatePost /> : null}
+                  {isOwner || isAdmin ? <CreatePost /> : null}
 
                   <Post queryOptions={queryOptions} isAuth={true} />
                 </div>

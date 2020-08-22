@@ -16,7 +16,7 @@ const Avatar = ({ size, image }) => (
         width={100}
         alt='avatar'
         // className='avatar-img'
-        src='https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1576220262/static/Image_from_iOS_1_bnaxnc.jpg'
+        src='https://res.cloudinary.com/hylian/image/upload/f_auto,q_auto/v1576220262/static/Image_from_iOS_1_bnaxnc.jpg'
       />
     )}
   </div>

@@ -18,7 +18,7 @@ class CustomTextAreaWrapper extends Component {
   render() {
     return (
       <InstantSearch
-        indexName='production_avonation_users'
+        indexName='production_local_users'
         searchClient={searchClient}
       >
         <CustomTextArea

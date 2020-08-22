@@ -26,14 +26,14 @@ const Faqs = () => (
                 <Card>
                   <Card.Header>
                     <Accordion.Toggle as={Button} variant='link' eventKey='0'>
-                      What is Avocado Nation?
+                      What is Local Social?
                     </Accordion.Toggle>
                   </Card.Header>
                   <Accordion.Collapse eventKey='0'>
                     <Card.Body>
                       <p>
-                        Avocado Nation is THE online community for avocado
-                        lovers just like yourself! Here, sharing your avo-love
+                        Local Social is THE online community for local
+                        lovers just like yourself! Here, sharing your local-love
                         is rewarded! The more you discover, explore, share, and
                         interact with content on the site, the more points and
                         badges you get. When you hit 1,000 points, you can
@@ -70,7 +70,7 @@ const Faqs = () => (
                   <Accordion.Collapse eventKey='2'>
                     <Card.Body>
                       <p>
-                        Badges are the Avocado Nation way of saying thank you
+                        Badges are the Local Social way of saying thank you
                         and congrats for certain accomplishments as a member.
                         The more you participate the more you’ll earn. You can
                         see the full list <a href='/badges'>here</a>.
@@ -117,14 +117,14 @@ const Faqs = () => (
                 <Card>
                   <Card.Header>
                     <Accordion.Toggle as={Button} variant='link' eventKey='5'>
-                      Who is Selma Avocado?
+                      Who is Admin Local?
                     </Accordion.Toggle>
                   </Card.Header>
                   <Accordion.Collapse eventKey='5'>
                     <Card.Body>
                       <p>
-                        Selma Avocado is an animated expert and super fan of
-                        avocados and she helps run the Avocado Nation. She’ll
+                        Admin Local is an animated expert and super fan of
+                        locals and she helps run the Local Social. She’ll
                         deliver some key tips and content to the site to enhance
                         your experience.
                       </p>
@@ -143,7 +143,7 @@ const Faqs = () => (
                     <Card.Body>
                       <p>
                         Oh no! We want to build a community helps share the
-                        avocado love. To let me know about something, click on
+                        local love. To let me know about something, click on
                         the SUBMIT button in the dropdown menu in the top right
                         corner and tell me about it. I’ll take care of it within
                         48 hours.
@@ -155,7 +155,7 @@ const Faqs = () => (
                 <Card>
                   <Card.Header>
                     <Accordion.Toggle as={Button} variant='link' eventKey='6'>
-                      How do I tell my friends about Avocado Nation and get
+                      How do I tell my friends about Local Social and get
                       points for it?
                     </Accordion.Toggle>
                   </Card.Header>

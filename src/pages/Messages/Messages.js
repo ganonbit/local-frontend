@@ -14,7 +14,7 @@ import { useStore } from 'store';
  */
 const Messages = ({ match }) => {
   const [{ auth }] = useStore();
-  const isSelma = !auth.user ? null : auth.user.role === 'selma';
+  const isAdmin = !auth.user ? null : auth.user.role === 'admin';
 
   const { subscribeToMore, data, loading } = useQuery(GET_CONVERSATIONS, {
     variables: { authUserId: auth.user.id },
@@ -34,14 +34,14 @@ const Messages = ({ match }) => {
                 <MessagesUsers
                   authUser={auth.user}
                   match={match}
-                  isSelma={isSelma}
+                  isAdmin={isAdmin}
                   subscribeToMore={subscribeToMore}
                   data={data}
                 />
                 <MessagesChat
                   match={match}
                   authUser={auth.user}
-                  isSelma={isSelma}
+                  isAdmin={isAdmin}
                   firstUserMessages={data && data.getConversations[0]}
                 />
               </div>

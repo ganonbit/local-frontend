@@ -5,7 +5,7 @@ const HeaderTitle = () => {
     <div className='page-title'>
       <a href='/'>
         <LazyLoadImage
-          src='https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1575849612/static/avocado-logo_i9pyxb.png'
+          src='https://res.cloudinary.com/hylian/image/upload/f_auto,q_auto/v1575849612/static/local-logo_i9pyxb.png'
           alt='LOGO'
         />
       </a>

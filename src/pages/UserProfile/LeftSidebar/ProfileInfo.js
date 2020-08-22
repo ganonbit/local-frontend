@@ -50,10 +50,10 @@ let ProfileInfo = ({ user }) => {
             <Link to={Routes.TERM_AND_CONDITIONS}>Terms</Link>
           </li>
         </ul>
-        <h5>Avocado Nation © {copyYear}</h5>
+        <h5>Local Social © {copyYear}</h5>
         <img
-          src='https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1578333627/static/avocado-primary-logo_color_l9xyvo.png'
-          alt='avocado nation logo'
+          src='https://res.cloudinary.com/hylian/image/upload/f_auto,q_auto/v1578333627/static/local-primary-logo_color_l9xyvo.png'
+          alt='local social logo'
         />
       </div>
     </>

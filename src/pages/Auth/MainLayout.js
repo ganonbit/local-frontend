@@ -32,8 +32,8 @@ const MainLayout = ({ children, location }) => {
             <Link to={Routes.SIGN_IN} className='logo'>
               <div className='img-wrap'>
                 <LazyLoadImage
-                  src='https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1575849612/static/avocado-logo_i9pyxb.png'
-                  alt='Avocado'
+                  src='https://res.cloudinary.com/hylian/image/upload/f_auto,q_auto/v1575849612/static/local-logo_i9pyxb.png'
+                  alt='Local'
                 />
               </div>
             </Link>
@@ -47,7 +47,7 @@ const MainLayout = ({ children, location }) => {
               {location.pathname === Routes.SIGN_UP && (
                 <div className='landing-content'>
                   <h1>
-                    The first ever online community that rewards avocado fans!
+                    The first ever online community that rewards local fans!
                   </h1>
                   <p>
                     You’re one step closer to some delicious content. Be sure to
@@ -68,7 +68,7 @@ const MainLayout = ({ children, location }) => {
               {location.pathname === Routes.SIGN_IN && (
                 <div className='landing-content'>
                   <h1>
-                    Welcome back to the online community that rewards avocado
+                    Welcome back to the online community that rewards local
                     fans!
                   </h1>
                   <p>Get back to that delicious content.</p>

@@ -16,7 +16,7 @@ const Discover = () => {
   const [isShowing, setIsShowing] = useState(false);
   const [isIndex, setIndex] = useState(0);
   const { loading, data } = useQuery(GET_USER_POSTS, {
-    variables: { username: 'selma', skip: 0, limit: 25 },
+    variables: { username: 'admin', skip: 0, limit: 25 },
   });
   let onClickHandler = index => {
     setIsShowing(true);

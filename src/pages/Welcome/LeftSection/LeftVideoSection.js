@@ -13,7 +13,7 @@ const LeftVideoSection = () => {
           <li>
             <LazyLoadImage
               className='video-bnr'
-              src='https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1575849612/static/avocado-mexico_sepsqy.png'
+              src='https://res.cloudinary.com/hylian/image/upload/f_auto,q_auto/v1575849612/static/local-mexico_sepsqy.png'
               alt='video'
             />
             <div className='overlay'></div>
@@ -21,7 +21,7 @@ const LeftVideoSection = () => {
           <li>
             <LazyLoadImage
               className='video-bnr'
-              src='https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1575849612/static/avocado-mexico2_bexejr.png'
+              src='https://res.cloudinary.com/hylian/image/upload/f_auto,q_auto/v1575849612/static/local-mexico2_bexejr.png'
               alt='video'
             />
             <div className='overlay'></div>
@@ -29,7 +29,7 @@ const LeftVideoSection = () => {
           <li>
             <LazyLoadImage
               className='video-bnr'
-              src='https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1575849612/static/video-bnr_z8anqe.png'
+              src='https://res.cloudinary.com/hylian/image/upload/f_auto,q_auto/v1575849612/static/video-bnr_z8anqe.png'
               alt='video'
             />
           </li>

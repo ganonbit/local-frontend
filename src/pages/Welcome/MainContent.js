@@ -13,7 +13,7 @@ function MainContent({ match }) {
     query: isPublicPost ? GET_POST : GET_USER_POSTS,
     variables: isPublicPost
       ? { id: isPublicPost }
-      : { username: 'selma', skip: 0, limit: 5 },
+      : { username: 'admin', skip: 0, limit: 5 },
     callback: isPublicPost ? 'getPost' : 'getUserPosts',
   };
   return (

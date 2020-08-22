@@ -40,7 +40,7 @@ export default class Search extends React.Component {
       <>
         <Default>
           <InstantSearch
-            indexName='production_avonation_users'
+            indexName='production_local_users'
             searchClient={searchClient}
           >
             <div className='search-bar w-search notification-list friend-requests'>
@@ -48,14 +48,14 @@ export default class Search extends React.Component {
                 <CustomSearchBar />
 
                 <div className='search-result'>
-                  <Index indexName='production_avonation_users'>
+                  <Index indexName='production_local_users'>
                     <ConnectedUsers
                       hashTagQuery={state.hashTagQuery}
                       clearHashTagQuery={this.clearHashTagQuery}
                     />
                   </Index>
 
-                  <Index indexName='production_avonation_posts'>
+                  <Index indexName='production_local_posts'>
                     <ConnectedPosts />
                   </Index>
                 </div>
@@ -73,7 +73,7 @@ export default class Search extends React.Component {
           />
           {state.mobileToggleState && (
             <InstantSearch
-              indexName='production_avonation_users'
+              indexName='production_local_users'
               searchClient={searchClient}
             >
               <div className='search-bar w-search notification-list friend-requests'>
@@ -81,14 +81,14 @@ export default class Search extends React.Component {
                   <CustomSearchBar />
 
                   <div className='search-result'>
-                    <Index indexName='production_avonation_users'>
+                    <Index indexName='production_local_users'>
                       <ConnectedUsers
                         hashTagQuery={state.hashTagQuery}
                         clearHashTagQuery={this.clearHashTagQuery}
                       />
                     </Index>
 
-                    <Index indexName='production_avonation_posts'>
+                    <Index indexName='production_local_posts'>
                       <ConnectedPosts />
                     </Index>
                   </div>
