@@ -37,7 +37,7 @@ const PostHeader = props => {
   } = props;
 
   const [{ auth }] = useStore();
-  const isSelma = !auth.user ? null : auth.user.role === 'selma';
+  const isAdmin = !auth.user ? null : auth.user.role === 'admin';
   const isOwner = !auth.user ? null : auth.user.id === author.id;
   const rawTime = parseInt(createdAt);
   const postDate = new Date(rawTime);
@@ -144,7 +144,7 @@ const PostHeader = props => {
           />
 
           <ul className='more-dropdown'>
-            {(isAuth && isOwner) || (isAuth && isSelma) ? (
+            {(isAuth && isOwner) || (isAuth && isAdmin) ? (
               <li>
                 <Link
                   href
@@ -156,7 +156,7 @@ const PostHeader = props => {
                 </Link>
               </li>
             ) : null}
-            {(isAuth && isOwner) || (isAuth && isSelma) ? (
+            {(isAuth && isOwner) || (isAuth && isAdmin) ? (
               <li>
                 <Link
                   href

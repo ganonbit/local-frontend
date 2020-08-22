@@ -109,7 +109,7 @@ const FeedbackForm = ({ isAuth }) => {
         {/* <div className='header-spacer--standard'></div> */}
         <div className='stunning-header-content'>
           <h1 className='stunning-header-title'>
-            Avocado Nation Feedback Form
+            Local Social Feedback Form
           </h1>
           <ul className='breadcrumbs'>
             <li className='breadcrumbs-item active'>

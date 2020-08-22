@@ -28,7 +28,7 @@ const SharePost = ({ postId, post, postSharer, sharedPostId }) => {
     hasShared = true;
   }
 
-  let url = `https://beta.theavocadonation.com/post/${postId}`;
+  let url = `https://vigorous-chandrasekhar-bbd3e9.netlify.app/post/${postId}`;
 
   const handleButtonClick = async (event, mutate) => {
     event.preventDefault();
@@ -95,7 +95,7 @@ const SharePost = ({ postId, post, postSharer, sharedPostId }) => {
               className='btn btn-control share-link'
             >
               <LazyLoadImage
-                src='https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1575849612/static/share-icon_rkyjac.png'
+                src='https://res.cloudinary.com/hylian/image/upload/f_auto,q_auto/v1575849612/static/share-icon_rkyjac.png'
                 alt=''
               />
             </a>
@@ -104,10 +104,10 @@ const SharePost = ({ postId, post, postSharer, sharedPostId }) => {
               <li>
                 <Link href onClick={e => handleButtonClick(e, mutate)}>
                   <LazyLoadImage
-                    src='https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1575849612/static/avocado-icon_rwvve0.png'
+                    src='https://res.cloudinary.com/hylian/image/upload/f_auto,q_auto/v1575849612/static/local-icon_rwvve0.png'
                     alt=''
                   />
-                  <span>Avocado Share</span>
+                  <span>Local Share</span>
                 </Link>
               </li>
               <li>

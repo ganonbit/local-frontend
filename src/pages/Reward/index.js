@@ -49,7 +49,7 @@ const Reward = ({ user }) => {
                   <div className='point-inner-wrap'>
                     <ul>
                       <li>
-                        <span>Earning the Avocado Badge</span>
+                        <span>Earning the Local Badge</span>
                         <h6>500</h6>
                       </li>
                       <li>
@@ -59,12 +59,12 @@ const Reward = ({ user }) => {
                         <h6>50</h6>
                       </li>
                       {/* <li>
-                        <span>Posting an avocado dish photo</span>
+                        <span>Posting an local dish photo</span>
                         <h6>50</h6>
                       </li> */}
                       <li>
                         <span>
-                          Sharing content from Avocado Nation to your FB, TW, IG
+                          Sharing content from Local Social to your FB, TW, IG
                           or PN.
                         </span>
                         <h6>50</h6>
@@ -75,15 +75,15 @@ const Reward = ({ user }) => {
                       </li> */}
                       <li>
                         <span>
-                          Logging in to your Avocado Nation Profile every week
+                          Logging in to your Local Social Profile every week
                           in a month
                         </span>
                         <h6>100</h6>
                       </li>
                       {/* <li>
                         <span>
-                          Submitting an idea to Selma
-                          Avocado
+                          Submitting an idea to Admin
+                          Local
                         </span>
                         <h6>25</h6>
                       </li>

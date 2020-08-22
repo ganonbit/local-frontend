@@ -15,7 +15,7 @@ export default class TrendingPost extends React.Component {
   render() {
     return (
       <InstantSearch
-        indexName='production_avonation_posts_by_engagement_score'
+        indexName='production_local_posts_by_engagement_score'
         searchClient={searchClient}
       >
         <TopThreePosts />

@@ -15,35 +15,35 @@ const SidebarMainContent = ({ onSetSidebarOpen, isAuth }) => {
     {
       title: 'Collapse Menu',
       image:
-        'https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1575849612/static/close-icon_butmdd.png',
+        'https://res.cloudinary.com/hylian/image/upload/f_auto,q_auto/v1575849612/static/close-icon_butmdd.png',
       path: null,
     },
     {
       title: 'Newsfeed',
       image:
-        'https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1575849612/static/avocado-icon_rwvve0.png',
+        'https://res.cloudinary.com/hylian/image/upload/f_auto,q_auto/v1575849612/static/local-icon_rwvve0.png',
       path: '/',
     },
     {
       title: 'Discover',
       image:
-        'https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1575849612/static/search-icon_vpzkxv.png',
+        'https://res.cloudinary.com/hylian/image/upload/f_auto,q_auto/v1575849612/static/search-icon_vpzkxv.png',
       path: '/discover',
     },
     {
       title: 'Rewards',
       image:
-        'https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1575849612/static/star-icon_qbwpz1.png',
+        'https://res.cloudinary.com/hylian/image/upload/f_auto,q_auto/v1575849612/static/star-icon_qbwpz1.png',
       path: '/rewards',
     },
-    // { title: 'Favs', image: 'https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1575849612/static/star-icon_qbwpz1.png', path: '/' },
+    // { title: 'Favs', image: 'https://res.cloudinary.com/hylian/image/upload/f_auto,q_auto/v1575849612/static/star-icon_qbwpz1.png', path: '/' },
   ];
   return (
     <div className='fixed-sidebar-left sidebar--large' id='sidebar-left-1'>
       <div className='logo'>
         <div className='img-wrap'>
           <LazyLoadImage
-            src='https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1575849612/static/avocado-img_fwdb02.png'
+            src='https://res.cloudinary.com/hylian/image/upload/f_auto,q_auto/v1575849612/static/local-img_fwdb02.png'
             alt='Olympus'
           />
         </div>
@@ -82,7 +82,7 @@ const SidebarMainContent = ({ onSetSidebarOpen, isAuth }) => {
             <MobileAuthorSettings user={auth.user} />
 
             <div className='ui-block-title ui-block-title-small'>
-              <h6 className='title'>ABOUT AVOCADO NATION</h6>
+              <h6 className='title'>ABOUT LOCAL SOCIAL</h6>
             </div>
             <LegalLinks />
           </Mobile>

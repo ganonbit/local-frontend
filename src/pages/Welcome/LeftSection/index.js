@@ -12,8 +12,8 @@ export default function LeftSection() {
         <Link to='/discover'>
           <LazyLoadImage
             className='health-bnr'
-            src='https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1576838840/static/discover-bnr-img_tyvded.jpg'
-            alt='get inspired! click here to check avocado posts'
+            src='https://res.cloudinary.com/hylian/image/upload/f_auto,q_auto/v1576838840/static/discover-bnr-img_tyvded.jpg'
+            alt='get inspired! click here to check local posts'
           />
         </Link>
       </div>

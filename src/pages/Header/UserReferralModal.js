@@ -53,7 +53,7 @@ const UserReferralModal = () => {
           </div>
           <div className='modal-body text-center'>
             <span className='font-weight-bold'>
-              Use this link to invite a friend to join Avocado Nation!
+              Use this link to invite a friend to join Local Social!
             </span>
             <input
               className='mt-4'

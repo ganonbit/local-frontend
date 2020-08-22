@@ -16,7 +16,7 @@ const SidebarContent = ({ onSetSidebarOpen, isAuth, location }) => {
             <Link to={generatePath(Routes.HOME)} className='logo'>
               <div className='img-wrap'>
                 <LazyLoadImage
-                  src='https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1575849612/static/avocado-img_fwdb02.png'
+                  src='https://res.cloudinary.com/hylian/image/upload/f_auto,q_auto/v1575849612/static/local-img_fwdb02.png'
                   alt='Olympus'
                 />
               </div>
@@ -26,7 +26,7 @@ const SidebarContent = ({ onSetSidebarOpen, isAuth, location }) => {
             <div className='logo'>
               <div className='img-wrap'>
                 <LazyLoadImage
-                  src='https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1575849612/static/avocado-img_fwdb02.png'
+                  src='https://res.cloudinary.com/hylian/image/upload/f_auto,q_auto/v1575849612/static/local-img_fwdb02.png'
                   alt='Olympus'
                   onClick={() => onSetSidebarOpen(true, 'fixed-sidebar open')}
                 />
@@ -38,7 +38,7 @@ const SidebarContent = ({ onSetSidebarOpen, isAuth, location }) => {
         <div className='logo'>
           <div className='img-wrap'>
             <LazyLoadImage
-              src='https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1575849612/static/avocado-img_fwdb02.png'
+              src='https://res.cloudinary.com/hylian/image/upload/f_auto,q_auto/v1575849612/static/local-img_fwdb02.png'
               alt='Olympus'
             />
           </div>
@@ -52,7 +52,7 @@ const SidebarContent = ({ onSetSidebarOpen, isAuth, location }) => {
                 <div className='js-sidebar-open'>
                   <OverlayTriggers toolTipText='OPEN MENU' placement='right'>
                     <img
-                      src='https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1575849612/static/menu-img_powmte.png'
+                      src='https://res.cloudinary.com/hylian/image/upload/f_auto,q_auto/v1575849612/static/menu-img_powmte.png'
                       alt='OPEN MENU'
                       onClick={() =>
                         onSetSidebarOpen(true, 'fixed-sidebar open')
@@ -65,7 +65,7 @@ const SidebarContent = ({ onSetSidebarOpen, isAuth, location }) => {
                 <Link to={generatePath(Routes.HOME)}>
                   <OverlayTriggers toolTipText='NEWSFEED' placement='right'>
                     <img
-                      src='https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1575849612/static/avocado-icon_rwvve0.png'
+                      src='https://res.cloudinary.com/hylian/image/upload/f_auto,q_auto/v1575849612/static/local-icon_rwvve0.png'
                       alt=''
                     />
                   </OverlayTriggers>
@@ -75,7 +75,7 @@ const SidebarContent = ({ onSetSidebarOpen, isAuth, location }) => {
                 <Link to={generatePath(Routes.DISCOVER)}>
                   <OverlayTriggers toolTipText='DISCOVER' placement='right'>
                     <img
-                      src='https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1575849612/static/search-icon_vpzkxv.png'
+                      src='https://res.cloudinary.com/hylian/image/upload/f_auto,q_auto/v1575849612/static/search-icon_vpzkxv.png'
                       alt=''
                     />
                   </OverlayTriggers>
@@ -85,7 +85,7 @@ const SidebarContent = ({ onSetSidebarOpen, isAuth, location }) => {
               <Link to={generatePath(Routes.HOME)}>
                 <OverlayTriggers toolTipText='FAVS' placement='right'>
                   <LazyLoadImage
-                    src='https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1575849612/static/star-icon_qbwpz1.png'
+                    src='https://res.cloudinary.com/hylian/image/upload/f_auto,q_auto/v1575849612/static/star-icon_qbwpz1.png'
                     alt=''
                   />
                 </OverlayTriggers>
@@ -95,7 +95,7 @@ const SidebarContent = ({ onSetSidebarOpen, isAuth, location }) => {
                 <Link to={generatePath(Routes.REWARDS)}>
                   <OverlayTriggers toolTipText='REWARDS' placement='right'>
                     <img
-                      src='https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1575849612/static/star-icon_qbwpz1.png'
+                      src='https://res.cloudinary.com/hylian/image/upload/f_auto,q_auto/v1575849612/static/star-icon_qbwpz1.png'
                       alt=''
                     />
                   </OverlayTriggers>

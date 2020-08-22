@@ -31,7 +31,7 @@ function CommentsHeader(props) {
   } = props;
 
   const [{ auth }] = useStore();
-  const isSelma = !auth.user ? null : auth.user.role === 'selma';
+  const isAdmin = !auth.user ? null : auth.user.role === 'admin';
   const isOwner = !auth.user ? null : auth.user.id === author.id;
   const commentDate = new Date(parseInt(createdAt));
 
@@ -87,7 +87,7 @@ function CommentsHeader(props) {
             </time>
           </div>
         </div>
-        {(isAuth && isOwner) || (isAuth && isSelma) ? (
+        {(isAuth && isOwner) || (isAuth && isAdmin) ? (
           <div className='more'>
             <FontAwesomeIcon
               className='olymp-three-dots-icon'

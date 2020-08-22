@@ -15,7 +15,7 @@ const MainLayout = ({ children }) => {
                 <h1>Welcome to your account dashboard!</h1>
                 <p>
                   Here, you will find everything you need to help customize your
-                  Avocado Nation profile.
+                  Local Social profile.
                 </p>
               </div>
             </div>

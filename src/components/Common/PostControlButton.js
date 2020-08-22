@@ -27,7 +27,7 @@ function PostControlButton({
           className='btn btn-control likes'
         >
           <LazyLoadImage
-            src='https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1575849612/static/heart-icon_jd2hne.png'
+            src='https://res.cloudinary.com/hylian/image/upload/f_auto,q_auto/v1575849612/static/heart-icon_jd2hne.png'
             alt=''
           />
           <div className='ripple-container'></div>
@@ -45,7 +45,7 @@ function PostControlButton({
           className='btn btn-control likes'
         >
           <LazyLoadImage
-            src='https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1575849612/static/comments-icon_ffpa0l.png'
+            src='https://res.cloudinary.com/hylian/image/upload/f_auto,q_auto/v1575849612/static/comments-icon_ffpa0l.png'
             alt=''
           />
           <div className='ripple-container'></div>
@@ -53,7 +53,7 @@ function PostControlButton({
       ) : (
         <a href className='btn btn-control comments' onClick={toggle}>
           <LazyLoadImage
-            src='https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1575849612/static/comments-icon_ffpa0l.png'
+            src='https://res.cloudinary.com/hylian/image/upload/f_auto,q_auto/v1575849612/static/comments-icon_ffpa0l.png'
             alt=''
           />
         </a>
@@ -69,7 +69,7 @@ function PostControlButton({
           className='btn btn-control likes'
         >
           <LazyLoadImage
-            src='https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1575849612/static/share-icon_rkyjac.png'
+            src='https://res.cloudinary.com/hylian/image/upload/f_auto,q_auto/v1575849612/static/share-icon_rkyjac.png'
             alt=''
           />
           <div className='ripple-container'></div>

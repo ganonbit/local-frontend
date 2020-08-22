@@ -11,7 +11,7 @@ const Badges = () => {
               <div className='main-header-content'>
                 <h1>Collect Badges!</h1>
                 <p>
-                  Collect the below badges and up your avocado bragging rights.
+                  Collect the below badges and up your local bragging rights.
                   The list below will tell you how to unlock each badge. Once
                   earned, they’ll appear on your profile.
                 </p>
@@ -29,16 +29,16 @@ const Badges = () => {
               <div className='birthday-item inline-items badges'>
                 <div className='author-thumb'>
                   <LazyLoadImage
-                    src='https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1576788606/static/badge1_ngqyt5.png'
+                    src='https://res.cloudinary.com/hylian/image/upload/f_auto,q_auto/v1576788606/static/badge1_ngqyt5.png'
                     alt='author'
                   />
                 </div>
                 <div className='birthday-author-name'>
                   <a href='1#' className='h6 author-name'>
-                    Avocado Badge
+                    Local Badge
                   </a>
                   <div className='birthday-date'>
-                    A true avocado lover that has dominated Avocado Nation and
+                    A true local lover that has dominated Local Social and
                     has several badges to prove it.
                   </div>
                 </div>
@@ -48,7 +48,7 @@ const Badges = () => {
               <div className='birthday-item inline-items badges'>
                 <div className='author-thumb'>
                   <LazyLoadImage
-                    src='https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1576788606/static/badge2_kmjarm.png'
+                    src='https://res.cloudinary.com/hylian/image/upload/f_auto,q_auto/v1576788606/static/badge2_kmjarm.png'
                     alt='author'
                   />
                 </div>
@@ -67,7 +67,7 @@ const Badges = () => {
               <div className='birthday-item inline-items badges'>
                 <div className='author-thumb'>
                   <LazyLoadImage
-                    src='https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1576788606/static/badge3_gzdubj.png'
+                    src='https://res.cloudinary.com/hylian/image/upload/f_auto,q_auto/v1576788606/static/badge3_gzdubj.png'
                     alt='author'
                   />
                 </div>
@@ -77,7 +77,7 @@ const Badges = () => {
                   </a>
                   <div className='birthday-date'>
                     For those that browse beyond the horizon and check out the
-                    different areas Avocado Nation offers.
+                    different areas Local Social offers.
                   </div>
                 </div>
               </div>
@@ -86,16 +86,16 @@ const Badges = () => {
               <div className='birthday-item inline-items badges'>
                 <div className='author-thumb'>
                   <LazyLoadImage
-                    src='https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1576788607/static/badge4_orr4ba.png'
+                    src='https://res.cloudinary.com/hylian/image/upload/f_auto,q_auto/v1576788607/static/badge4_orr4ba.png'
                     alt='author'
                   />
                 </div>
                 <div className='birthday-author-name'>
                   <a href='1#' className='h6 author-name'>
-                    Avo Guru
+                    Local Guru
                   </a>
                   <div className='birthday-date'>
-                    Your wisdom is unmatched. Your avocado tips and comments and
+                    Your wisdom is unmatched. Your local tips and comments and
                     contributions here are for the history books. You&apos;re
                     walking a green path of enlightenment.
                   </div>
@@ -106,7 +106,7 @@ const Badges = () => {
               <div className='birthday-item inline-items badges'>
                 <div className='author-thumb'>
                   <LazyLoadImage
-                    src='https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1576788607/static/badge5_ammdxc.png'
+                    src='https://res.cloudinary.com/hylian/image/upload/f_auto,q_auto/v1576788607/static/badge5_ammdxc.png'
                     alt='author'
                   />
                 </div>
@@ -126,7 +126,7 @@ const Badges = () => {
               <div className='birthday-item inline-items badges'>
                 <div className='author-thumb'>
                   <LazyLoadImage
-                    src='https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1576788607/static/badge6_xzvi1x.png'
+                    src='https://res.cloudinary.com/hylian/image/upload/f_auto,q_auto/v1576788607/static/badge6_xzvi1x.png'
                     alt='author'
                   />
                 </div>
@@ -145,16 +145,16 @@ const Badges = () => {
               <div className='birthday-item inline-items badges'>
                 <div className='author-thumb'>
                   <LazyLoadImage
-                    src='https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1576788607/static/badge7_mvxvif.png'
+                    src='https://res.cloudinary.com/hylian/image/upload/f_auto,q_auto/v1576788607/static/badge7_mvxvif.png'
                     alt='author'
                   />
                 </div>
                 <div className='birthday-author-name'>
                   <a href='1#' className='h6 author-name'>
-                    Selma’s Pick
+                    Admin’s Pick
                   </a>
                   <div className='birthday-date'>
-                    Congrats, Selma&apos;s a tough critic, but clearly your
+                    Congrats, Admin&apos;s a tough critic, but clearly your
                     content is made of the right stuff.
                   </div>
                 </div>
@@ -164,7 +164,7 @@ const Badges = () => {
               <div className='birthday-item inline-items badges'>
                 <div className='author-thumb'>
                   <LazyLoadImage
-                    src='https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1576788607/static/badge8_ey2a1o.png'
+                    src='https://res.cloudinary.com/hylian/image/upload/f_auto,q_auto/v1576788607/static/badge8_ey2a1o.png'
                     alt='author'
                   />
                 </div>
@@ -183,17 +183,17 @@ const Badges = () => {
               <div className='birthday-item inline-items badges'>
                 <div className='author-thumb'>
                   <LazyLoadImage
-                    src='https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1576788608/static/badge10_zzyfxr.png'
+                    src='https://res.cloudinary.com/hylian/image/upload/f_auto,q_auto/v1576788608/static/badge10_zzyfxr.png'
                     alt='author'
                   />
                 </div>
                 <div className='birthday-author-name'>
                   <a href='1#' className='h6 author-name'>
-                    Avo Fit
+                    Local Fit
                   </a>
                   <div className='birthday-date'>
                     You keep it healthy and you&apos;re into wellness and we
-                    appreciate your contributions. Stay Avo Fit!
+                    appreciate your contributions. Stay Local Fit!
                   </div>
                 </div>
               </div>
@@ -202,7 +202,7 @@ const Badges = () => {
               <div className='birthday-item inline-items badges'>
                 <div className='author-thumb'>
                   <LazyLoadImage
-                    src='https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1576788608/static/badge11_gulkwa.png'
+                    src='https://res.cloudinary.com/hylian/image/upload/f_auto,q_auto/v1576788608/static/badge11_gulkwa.png'
                     alt='author'
                   />
                 </div>
@@ -212,7 +212,7 @@ const Badges = () => {
                   </a>
                   <div className='birthday-date'>
                     You&apos;re on all the social networks and we appreciate you
-                    sharing this avocado love. Keep sharing what you like to
+                    sharing this local love. Keep sharing what you like to
                     your other accounts!
                   </div>
                 </div>
@@ -222,7 +222,7 @@ const Badges = () => {
               <div className='birthday-item inline-items badges'>
                 <div className='author-thumb'>
                   <LazyLoadImage
-                    src='https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1576788608/static/badge12_slmoxp.png'
+                    src='https://res.cloudinary.com/hylian/image/upload/f_auto,q_auto/v1576788608/static/badge12_slmoxp.png'
                     alt='author'
                   />
                 </div>
@@ -231,7 +231,7 @@ const Badges = () => {
                     Top Fan
                   </a>
                   <div className='birthday-date'>
-                    Your activity on Avocado Nation has you ahead of the pack
+                    Your activity on Local Social has you ahead of the pack
                     this month. Congrats and keep up the pace!
                   </div>
                 </div>
@@ -241,7 +241,7 @@ const Badges = () => {
               <div className='birthday-item inline-items badges'>
                 <div className='author-thumb'>
                   <LazyLoadImage
-                    src='https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1576788606/static/badge13_byzmff.png'
+                    src='https://res.cloudinary.com/hylian/image/upload/f_auto,q_auto/v1576788606/static/badge13_byzmff.png'
                     alt='author'
                   />
                 </div>
@@ -260,7 +260,7 @@ const Badges = () => {
               <div className='birthday-item inline-items badges'>
                 <div className='author-thumb'>
                   <LazyLoadImage
-                    src='https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1576788606/static/badge15_mlnwdu.png'
+                    src='https://res.cloudinary.com/hylian/image/upload/f_auto,q_auto/v1576788606/static/badge15_mlnwdu.png'
                     alt='author'
                   />
                 </div>
@@ -269,8 +269,8 @@ const Badges = () => {
                     Photobomber
                   </a>
                   <div className='birthday-date'>
-                    Are you a photographer? To us you are. We love guac-
-                    avocado-toast-salad photos. Keep 'em coming.
+                    Are you a photographer? To us you are. We love thing-
+                    local-toast-salad photos. Keep 'em coming.
                   </div>
                 </div>
               </div>

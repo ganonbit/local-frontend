@@ -18,7 +18,7 @@ const Footer = ({ toggle }) => (
       </div>
     </OverlayTriggers>
     <button className='btn btn-primary btn-md-2'>
-      Share Your Avocado Love
+      Share Your Local Love
     </button>
   </div>
 );

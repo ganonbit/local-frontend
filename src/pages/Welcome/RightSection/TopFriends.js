@@ -10,13 +10,13 @@ const TopFriends = () => {
       <li className='d-flex justify-content-start align-items-center px-3 py-2' key={i}>
         <div className='author-thumb'>
           <LazyLoadImage
-            src='https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1578579972/user/51abdbc5-b280-414e-99f9-23680491eedc.png'
+            src='https://res.cloudinary.com/hylian/image/upload/f_auto,q_auto/v1578579972/user/51abdbc5-b280-414e-99f9-23680491eedc.png'
             alt='author'
           />
         </div>
         <div className='notification-event'>
           <Link to='#' className='h6 notification-friend'>
-            Selma Avocado
+            Admin Local
           </Link>
         </div>
         <span className='notification-icon'>

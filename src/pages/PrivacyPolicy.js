@@ -11,7 +11,7 @@ const PrivacyPolicy = ({ isAuth }) => (
     <div className='stunning-header bg-primary-opacity'>
       <div className='header-spacer--standard'></div>
       <div className='stunning-header-content'>
-        <h1 className='stunning-header-title'>AFM Privacy Policy </h1>
+        <h1 className='stunning-header-title'>HYLIANCODER Privacy Policy </h1>
         <ul className='breadcrumbs'>
           <li className='breadcrumbs-item active'>
             <span>Privacy Policy</span>
@@ -33,7 +33,7 @@ const PrivacyPolicy = ({ isAuth }) => (
               </p>
               <h6>Information Collected from Consumers</h6>
               <p>
-                Avocados From Mexico collects Consumer information in the
+                Local collects Consumer information in the
                 following ways:
               </p>
               <h6>Information provided by the Consumer: </h6>
@@ -121,8 +121,8 @@ const PrivacyPolicy = ({ isAuth }) => (
                 you choose to remove cookies or reject cookies, this could
                 affect certain features or services of our Site. For more
                 information about cookies and web beacons, please visit 
-                <a href='https://www.avocadosfrommexico.com/privacy/cookies'>
-                  www.avocadosfrommexico.com/privacy/cookies
+                <a href='https://ganon.io/privacy/cookies'>
+                  ganon.io/privacy/cookies
                 </a>{' '}
                 In addition, we use this information to administer the Service
                 and we analyze (and may engage third parties to analyze) this
@@ -140,7 +140,7 @@ const PrivacyPolicy = ({ isAuth }) => (
                 union membership) on or through the Service or otherwise.
               </p>
               <p>
-                AFM does not sell or share your personal data, or share with its
+                HYLIANCODER does not sell or share your personal data, or share with its
                 business partners information that directly identifies you (such
                 as your name, email address or other contact information) unless
                 you give us specific permission.
@@ -170,8 +170,8 @@ const PrivacyPolicy = ({ isAuth }) => (
                 We do not knowingly contact or collect information from children
                 under 13. If you believe we have inadvertently collected such
                 information, please contact us at{' '}
-                <a href='mailto:privacy@avocadosfrommexico.com'>
-                  privacy@avocadosfrommexico.com
+                <a href='mailto:privacy@ganon.io'>
+                  privacy@ganon.io
                 </a>{' '}
                 so we can promptly obtain parental consent or remove the
                 information. If you are under 16, or the age of majority in the
@@ -184,8 +184,8 @@ const PrivacyPolicy = ({ isAuth }) => (
                 is accurate and current. Please let us know if your personal
                 information changes during your relationship with us by updating
                 your registration profile or emailing us at{' '}
-                <a href='mailto:privacy@avocadosfrommexico.com'>
-                  privacy@avocadosfrommexico.com
+                <a href='mailto:privacy@ganon.io'>
+                  privacy@ganon.io
                 </a>
                 .
               </p>
@@ -255,7 +255,7 @@ const PrivacyPolicy = ({ isAuth }) => (
                 </li>
                 <li>
                   Communicate with you about promotions, upcoming events and
-                  news about products and services offered by Avocados From
+                  news about products and services offered by Locals From
                   Mexico and our selected partners;
                 </li>
                 <li>
@@ -300,7 +300,7 @@ const PrivacyPolicy = ({ isAuth }) => (
                 </li>
                 <li>
                   Communicate with you about promotions, upcoming events and
-                  news about products and services offered by Avocados From
+                  news about products and services offered by Locals From
                   Mexico and our selected partners;
                 </li>
                 <li>
@@ -309,7 +309,7 @@ const PrivacyPolicy = ({ isAuth }) => (
                 </li>
               </ul>
               <p>
-                Avocados From Mexico may store and process PI in the United
+                Local may store and process PI in the United
                 States and other countries. By using our Platform as a Consumer,
                 you consent to this transfer of your information into the U.S.
               </p>
@@ -317,7 +317,7 @@ const PrivacyPolicy = ({ isAuth }) => (
               <p>
                 If you request information from us, register for the Service,
                 subscribe to our newsletter or platform, or participate in our
-                surveys, promotions or events, we may send you Avocados From
+                surveys, promotions or events, we may send you Locals From
                 Mexico -related marketing communications if permitted by law but
                 will provide you with the ability to opt out. In general, we may
                 use information to:
@@ -334,7 +334,7 @@ const PrivacyPolicy = ({ isAuth }) => (
                 </li>
                 <li>
                   Communicate with you about promotions, upcoming events and
-                  news about products and services offered by Avocados From
+                  news about products and services offered by Locals From
                   Mexico and our selected partners;
                 </li>
               </ul>
@@ -399,10 +399,10 @@ const PrivacyPolicy = ({ isAuth }) => (
                 <li>
                   With third-party agents who work on our behalf as
                   sub-processors, provided such third parties agree to adhere to
-                  the same privacy principles as Avocados From Mexico;
+                  the same privacy principles as Local;
                 </li>
                 <li>
-                  To protect the rights and property of Avocados From Mexico,
+                  To protect the rights and property of Local,
                   our agents, Consumers and others including enforcement of our
                   agreements, policies and terms of use;
                 </li>
@@ -426,9 +426,9 @@ const PrivacyPolicy = ({ isAuth }) => (
                 to our sales and marketing activities to third parties for any
                 purpose.
               </p>
-              <h6>Avocados From Mexico’s commitments as a data controller</h6>
+              <h6>Local’s commitments as a data controller</h6>
               <p>
-                Avocados From Mexico may be classed as a data controller when we
+                Local may be classed as a data controller when we
                 collect your data for billing and managing accounts receivable,
                 for example. We are committed to:
               </p>
@@ -448,11 +448,11 @@ const PrivacyPolicy = ({ isAuth }) => (
               <h6>Your Choices</h6>
               <span>Access, Update, Correct or Delete Your Information:</span>
               <p>
-                All AFM Consumers may review, update, correct or delete the
-                personal information in the Avocados From Mexico Platform.
-                Avocados From Mexico’s Consumers may also contact us at 
-                <a href='mailto:privacy@avocadosfrommexico.com'>
-                  privacy@avocadosfrommexico.com
+                All HYLIANCODER Consumers may review, update, correct or delete the
+                personal information in the Local Platform.
+                Local’s Consumers may also contact us at 
+                <a href='mailto:privacy@ganon.io'>
+                  privacy@ganon.io
                 </a>
                  to accomplish the foregoing or if you have additional requests
                 or questions. If you are a job applicant and have provided this
@@ -462,7 +462,7 @@ const PrivacyPolicy = ({ isAuth }) => (
               <p>
                 Consumer may also designate an authorized agent to submit a
                 request to access, update, correct or delete personal
-                information from the Avocados From Mexico Platform by:
+                information from the Local Platform by:
               </p>
               <ul>
                 <li>
@@ -470,7 +470,7 @@ const PrivacyPolicy = ({ isAuth }) => (
                   such request on behalf of the Consumer; and
                 </li>
                 <li>
-                  Verifying their own identity directly with Avocados From
+                  Verifying their own identity directly with Locals From
                   Mexico.
                 </li>
               </ul>
@@ -489,17 +489,17 @@ const PrivacyPolicy = ({ isAuth }) => (
                 display advertising on our Site, to manage our advertising on
                 other sites, or to provide you targeted advertisements based
                 upon your interests on our Site or on third party sites. You may
-                opt out of receiving promotional emails from Avocados From
+                opt out of receiving promotional emails from Locals From
                 Mexico by following the instructions in those emails. If you opt
                 out, we may still send you non-promotional emails, such as
-                emails about your Avocados From Mexico subscriptions and/or
+                emails about your Local subscriptions and/or
                 promotions or our ongoing business relationship. An individual
                 wishing to limit the use or sharing of their data should contact
                 email 
-                <a href='mailto:privacy@avocadosfrommexico.com'>
-                  privacy@avocadosfrommexico.com
+                <a href='mailto:privacy@ganon.io'>
+                  privacy@ganon.io
                 </a>
-                . In accordance with California Statute § 999.313, Avocados From
+                . In accordance with California Statute § 999.313, Locals From
                 Mexico will confirm receipt within ten (10) days of any request
                 to access or delete your information and will respond within
                 forty-five (45) days. In some of our communications, we use
@@ -545,13 +545,13 @@ const PrivacyPolicy = ({ isAuth }) => (
                 no security or encryption method can be guaranteed to protect
                 information from hackers or human error. Information we collect
                 may be stored or processed on computers located in any country
-                where we do business. Avocados From Mexico may store and process
+                where we do business. Local may store and process
                 PII in the United States. By using our Platform as a Consumer,
                 you consent to this transfer of your information into the U.S.
               </p>
               <h6>International Transfer</h6>
               <p>
-                Avocados From Mexico is headquartered in the United States and
+                Local is headquartered in the United States and
                 has affiliates and service providers in other countries, and
                 your personal information may be transferred to the United
                 States or other locations outside of your state, province,
@@ -593,17 +593,17 @@ const PrivacyPolicy = ({ isAuth }) => (
                 <br />
                 If you have any questions or concerns at all about our Privacy
                 Policy, please feel free to email us at 
-                <a href='mailto:privacy@avocadosfrommexico.com'>
-                  privacy@avocadosfrommexico.com
+                <a href='mailto:privacy@ganon.io'>
+                  privacy@ganon.io
                 </a>
                 .<br />
                 Consumers may also address questions or concerns regarding the
                 Privacy Policy, or requests to access, update, correct, or
-                delete their personal information to AFM via mail:
+                delete their personal information to HYLIANCODER via mail:
               </p>
               <p>
                 <address style={{ fontFamily: 'initial' }}>
-                  Avocados From Mexico
+                  Local
                   <br />
                   222 West Las Colinas Boulevard, Suite 850
                   <br />
@@ -617,12 +617,12 @@ const PrivacyPolicy = ({ isAuth }) => (
               <p>
                 References to &quot;personal information&quot; in this Privacy
                 Policy are equivalent to &quot;personal data&quot; governed by
-                European data protection legislation. Avocados From Mexico is
+                European data protection legislation. Local is
                 the processor of your personal information for purposes of
                 European data protection legislation. Our Data Protection
                 Officer can be reached at{' '}
-                <a href='mailto:privacy@avocadosfrommexico.com'>
-                  privacy@avocadosfrommexico.com
+                <a href='mailto:privacy@ganon.io'>
+                  privacy@ganon.io
                 </a>
                 .
               </p>
@@ -633,8 +633,8 @@ const PrivacyPolicy = ({ isAuth }) => (
                 of your personal information, which are described above. If you
                 have questions about the legal basis of how we process your
                 personal information, contact us at{' '}
-                <a href='mailto:privacy@avocadosfrommexico.com'>
-                  privacy@avocadosfrommexico.com
+                <a href='mailto:privacy@ganon.io'>
+                  privacy@ganon.io
                 </a>
                 .
               </p>
@@ -667,7 +667,7 @@ const PrivacyPolicy = ({ isAuth }) => (
                 <li>For our platform:</li>
               </ul>
               <p>
-                Avocados From Mexico retains Customer data for so long as you
+                Local retains Customer data for so long as you
                 remain as a Customer and will delete Customer&apos;s information
                 within 12 months of either party&apos;s termination of
                 applicable Customer agreement upon written request. We retain
@@ -678,15 +678,15 @@ const PrivacyPolicy = ({ isAuth }) => (
               <h6>Rights of European Union Customers</h6>
               <p>
                 European data protection laws give you certain rights regarding
-                your personal information. Avocados From Mexico acknowledges
+                your personal information. Local acknowledges
                 that European Union (“EU”) and Swiss individuals have certain
                 legal rights including the right to complain to an EU
                 supervisory authority and the right to access the personal data
                 that we maintain about them. An EU or Swiss individual who seeks
                 access, or who seeks to correct, amend, or delete inaccurate
                 data, should direct their query to 
-                <a href='mailto:privacy@avocadosfrommexico.com'>
-                  privacy@avocadosfrommexico.com
+                <a href='mailto:privacy@ganon.io'>
+                  privacy@ganon.io
                 </a>
                 . If requested to remove data, we will respond within 30 days.
                 Under these circumstances, you have rights under data protection
@@ -761,8 +761,8 @@ const PrivacyPolicy = ({ isAuth }) => (
               </ul>
               <p>
                 You can submit these requests by email to 
-                <a href='mailto:privacy@avocadosfrommexico.com'>
-                  privacy@avocadosfrommexico.com
+                <a href='mailto:privacy@ganon.io'>
+                  privacy@ganon.io
                 </a>
                  or our postal address provided above. We may request specific
                 information from you to help us confirm your identity and
@@ -772,8 +772,8 @@ const PrivacyPolicy = ({ isAuth }) => (
                 submit a complaint about our use of your personal information or
                 response to your requests regarding your personal information,
                 you may contact us at 
-                <a href='mailto:privacy@avocadosfrommexico.com'>
-                  privacy@avocadosfrommexico.com
+                <a href='mailto:privacy@ganon.io'>
+                  privacy@ganon.io
                 </a>
                  or submit a complaint to the data protection regulator in your
                 jurisdiction.

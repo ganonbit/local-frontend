@@ -11,7 +11,7 @@ const TrendingTopics = () => {
         <li className='d-flex justify-content-start align-items-center px-3 py-2'>
           <div className='notification-event'>
             <Link to='#' className='h6 notification-friend'>
-              #avocados
+              #locals
             </Link>
             <span className='chat-message-item'>9k Likes</span>
           </div>
@@ -25,7 +25,7 @@ const TrendingTopics = () => {
         <li className='inline-items'>
           <div className='notification-event'>
             <Link to='#' className='h6 notification-friend'>
-              #guacamole
+              #thingamole
             </Link>
             <span className='chat-message-item'>6k Likes</span>
           </div>
@@ -39,7 +39,7 @@ const TrendingTopics = () => {
         <li className='inline-items'>
           <div className='notification-event'>
             <Link to='#' className='h6 notification-friend'>
-              #avocadotoast
+              #localtoast
             </Link>
             <span className='chat-message-item'>5k Likes</span>
           </div>
@@ -53,7 +53,7 @@ const TrendingTopics = () => {
         <li className='inline-items'>
           <div className='notification-event'>
             <Link to='#' className='h6 notification-friend'>
-              #avocadorose
+              #localrose
             </Link>
             <span className='chat-message-item'>4k Likes</span>
           </div>
@@ -67,7 +67,7 @@ const TrendingTopics = () => {
         <li className='inline-items'>
           <div className='notification-event'>
             <Link to='#' className='h6 notification-friend'>
-              #avonutrition
+              #localnutrition
             </Link>
             <span className='chat-message-item'>2k Likes</span>
           </div>
@@ -81,7 +81,7 @@ const TrendingTopics = () => {
         <li className='inline-items'>
           <div className='notification-event'>
             <Link to='#' className='h6 notification-friend'>
-              #avocadosocks
+              #localsocks
             </Link>
             <span className='chat-message-item'>1.5k Likes</span>
           </div>

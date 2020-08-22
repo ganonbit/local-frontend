@@ -10,13 +10,13 @@ const WelcomeFooter = () => {
         <div className='col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12 m-auto'>
           <div className='row'>
             <div className='col-6'>
-              <h5 className='mb-1'>Avocado Nation © {copyYear}</h5>
+              <h5 className='mb-1'>Local Social © {copyYear}</h5>
               <span>English (US)</span>
             </div>
             <div className='col-6 text-right'>
               <LazyLoadImage
-                src='https://res.cloudinary.com/weare270b/image/upload/f_auto,q_auto/v1578333627/static/avocado-primary-logo_color_l9xyvo.png'
-                alt='avocado nation logo'
+                src='https://res.cloudinary.com/hylian/image/upload/f_auto,q_auto/v1578333627/static/local-primary-logo_color_l9xyvo.png'
+                alt='local social logo'
               />
             </div>
           </div>

@@ -5,7 +5,7 @@ const CommunityGuideline = () => (
     <div className='stunning-header bg-primary-opacity'>
       {/* <div className='header-spacer--standard'></div> */}
       <div className='stunning-header-content'>
-        <h1 className='stunning-header-title'>Avocado Nation</h1>
+        <h1 className='stunning-header-title'>Local Social</h1>
       </div>
       <div className='content-bg-wrap stunning-header-bg1'></div>
     </div>
@@ -24,10 +24,10 @@ const CommunityGuideline = () => (
                 display advertising on our Site, to manage our advertising on
                 other sites, or to provide you targeted advertisements based
                 upon your interests on our Site or on third party sites. You may
-                opt out of receiving promotional emails from Avocados From
+                opt out of receiving promotional emails from Locals From
                 Mexico by following the instructions in those emails. If you opt
                 out, we may still send you non-promotional emails, such as
-                emails about your Avocados From Mexico subscriptions and/or
+                emails about your Local subscriptions and/or
                 promotions or our ongoing business relationship. An individual
                 wishing to limit the use or sharing of their data should contact
               </p>
