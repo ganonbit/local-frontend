@@ -75,8 +75,8 @@ const Reward = ({ user }) => {
                       </li> */}
                       <li>
                         <span>
-                          Logging in to your Local Social Profile every week
-                          in a month
+                          Logging in to your Local Social Profile every week in
+                          a month
                         </span>
                         <h6>100</h6>
                       </li>

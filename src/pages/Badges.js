@@ -38,8 +38,8 @@ const Badges = () => {
                     Local Badge
                   </a>
                   <div className='birthday-date'>
-                    A true local lover that has dominated Local Social and
-                    has several badges to prove it.
+                    A true local lover that has dominated Local Social and has
+                    several badges to prove it.
                   </div>
                 </div>
               </div>
@@ -212,8 +212,8 @@ const Badges = () => {
                   </a>
                   <div className='birthday-date'>
                     You&apos;re on all the social networks and we appreciate you
-                    sharing this local love. Keep sharing what you like to
-                    your other accounts!
+                    sharing this local love. Keep sharing what you like to your
+                    other accounts!
                   </div>
                 </div>
               </div>
@@ -231,8 +231,8 @@ const Badges = () => {
                     Top Fan
                   </a>
                   <div className='birthday-date'>
-                    Your activity on Local Social has you ahead of the pack
-                    this month. Congrats and keep up the pace!
+                    Your activity on Local Social has you ahead of the pack this
+                    month. Congrats and keep up the pace!
                   </div>
                 </div>
               </div>

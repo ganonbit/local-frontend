@@ -17,9 +17,7 @@ const Footer = ({ toggle }) => (
         <CameraIcon className='olymp-camera-icon' />
       </div>
     </OverlayTriggers>
-    <button className='btn btn-primary btn-md-2'>
-      Share Your Local Love
-    </button>
+    <button className='btn btn-primary btn-md-2'>Share Your Local Love</button>
   </div>
 );
 

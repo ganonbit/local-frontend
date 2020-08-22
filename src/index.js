@@ -28,10 +28,9 @@ if (rootElement.hasChildNodes()) {
       </ApolloHooksProvider>
     </ApolloProvider>,
     rootElement
-  )
-}
-else {
-  render( 
+  );
+} else {
+  render(
     <ApolloProvider client={apolloClient}>
       <ApolloHooksProvider client={apolloClient}>
         <StoreProvider>
@@ -39,5 +38,6 @@ else {
         </StoreProvider>
       </ApolloHooksProvider>
     </ApolloProvider>,
-    rootElement);
+    rootElement
+  );
 }

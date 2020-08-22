@@ -108,9 +108,7 @@ const FeedbackForm = ({ isAuth }) => {
       <div className='stunning-header bg-primary-opacity'>
         {/* <div className='header-spacer--standard'></div> */}
         <div className='stunning-header-content'>
-          <h1 className='stunning-header-title'>
-            Local Social Feedback Form
-          </h1>
+          <h1 className='stunning-header-title'>Local Social Feedback Form</h1>
           <ul className='breadcrumbs'>
             <li className='breadcrumbs-item active'>
               <span>CONTACT</span>

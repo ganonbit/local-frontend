@@ -33,7 +33,7 @@ const SinglePost = ({ post, isAuth }) => {
   let sharedPost = false;
 
   if (post.post === null && post.author === null) {
-    // TODO: this is a hotfix until we resolve sharing issue. 
+    // TODO: this is a hotfix until we resolve sharing issue.
     // right now if you share a post and the original post is deleted,
     // then it hangs because post is missing post.author
     return null;
@@ -94,11 +94,10 @@ const renderPost = (
     sharedPostId = post.id;
     postSharer = post.user;
     post = post.post;
-    if(post.author === null) {
+    if (post.author === null) {
       post.author = auth.user;
     }
   }
-
 
   return (
     <div key={post.id} className='ui-block'>

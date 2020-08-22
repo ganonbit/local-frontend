@@ -29,7 +29,11 @@ class Hits extends React.Component {
             id: hit.objectID,
           })}
         >
-          <LazyLoadImage className='video-bnr my-3' src={hit.image} alt='video' />
+          <LazyLoadImage
+            className='video-bnr my-3'
+            src={hit.image}
+            alt='video'
+          />
           <span className='chat-message-item'>
             {hit.numOfLikes} Likes {hit.numOfComments} Comments
           </span>

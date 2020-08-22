@@ -24,14 +24,13 @@ const TermsAndServices = ({ isAuth }) => (
               <h4>Welcome to Local Social!</h4>
               <p>
                 Local (HYLIANCODER) maintains the website 
-                <a href='/'>vigorous-chandrasekhar-bbd3e9.netlify.app</a> or{' '}
-                <a href='https://ganon.io'>
-                  ganon.io
-                </a>{' '}
-                (“Local Social” or the “Platform”) for your local
-                information, education, enjoyment and use. By accessing and
-                registering to the Platform, you agree to accept, without
-                limitation or qualification, these Terms of Service.
+                <a href='/'>
+                  vigorous-chandrasekhar-bbd3e9.netlify.app
+                </a> or <a href='https://ganon.io'>ganon.io</a> (“Local Social”
+                or the “Platform”) for your local information, education,
+                enjoyment and use. By accessing and registering to the Platform,
+                you agree to accept, without limitation or qualification, these
+                Terms of Service.
               </p>
               <h4>Age</h4>
               <p>
@@ -57,24 +56,25 @@ const TermsAndServices = ({ isAuth }) => (
               </p>
               <h4>Personal Information</h4>
               <p>
-                HYLIANCODER does not charge you to use the Platform. Instead, HYLIANCODER
-                supports the operation to offer you a richer experience with the
-                HYLIANCODER brand and the product you love, the local. HYLIANCODER will use
-                your personal data to learn what information is most relevant to
-                you, so that it can give you the best and most personalized
-                experience possible, always respecting your privacy.
+                HYLIANCODER does not charge you to use the Platform. Instead,
+                HYLIANCODER supports the operation to offer you a richer
+                experience with the HYLIANCODER brand and the product you love,
+                the local. HYLIANCODER will use your personal data to learn what
+                information is most relevant to you, so that it can give you the
+                best and most personalized experience possible, always
+                respecting your privacy.
               </p>
               <p>
-                HYLIANCODER does not sell or share your personal data, or share with its
-                business partners information that directly identifies you (such
-                as your name, email address or other contact information) unless
-                you give us specific permission.
+                HYLIANCODER does not sell or share your personal data, or share
+                with its business partners information that directly identifies
+                you (such as your name, email address or other contact
+                information) unless you give us specific permission.
               </p>
               <p>
-                <a href='/privacy-policy'>HYLIANCODER&apos;s Privacy Policy</a> explains
-                how HYLIANCODER collects and uses your personal data to determine some
-                of the content you see and to provide the other services
-                described below. You can also go to your{' '}
+                <a href='/privacy-policy'>HYLIANCODER&apos;s Privacy Policy</a>{' '}
+                explains how HYLIANCODER collects and uses your personal data to
+                determine some of the content you see and to provide the other
+                services described below. You can also go to your{' '}
                 <a href='/settings'>SETTINGS</a> at any time to review the
                 privacy choices you have about how your data may be used.
               </p>
@@ -87,9 +87,10 @@ const TermsAndServices = ({ isAuth }) => (
               </p>
               <h4>Agreement to Terms of Use</h4>
               <p>
-                HYLIANCODER makes Local Social available to you and others to help
-                advance its mission of building a strong community among local
-                lovers. In exchange for the use of the Platform, you agree that:
+                HYLIANCODER makes Local Social available to you and others to
+                help advance its mission of building a strong community among
+                local lovers. In exchange for the use of the Platform, you agree
+                that:
               </p>
               <ul>
                 <li>
@@ -101,9 +102,7 @@ const TermsAndServices = ({ isAuth }) => (
                   timeline for personal purposes.
                 </li>
               </ul>
-              <p>
-                Local Social is broadly available to everyone, except for:
-              </p>
+              <p>Local Social is broadly available to everyone, except for:</p>
               <ul>
                 <li>a person less than 13 years of age;</li>
                 <li>a convicted sex offender;</li>
@@ -118,12 +117,12 @@ const TermsAndServices = ({ isAuth }) => (
               </ul>
               <h4>What You may Share and Do on Local Social</h4>
               <p>
-                People may use Local Social to express their love for
-                locals, to connect with other members with the same interests,
-                and to share local content that is relevant to them and to the
-                other members of the community, but only in a manner consistent
-                with the safety and well-being of others and the integrity of
-                the community.{' '}
+                People may use Local Social to express their love for locals, to
+                connect with other members with the same interests, and to share
+                local content that is relevant to them and to the other members
+                of the community, but only in a manner consistent with the
+                safety and well-being of others and the integrity of the
+                community.{' '}
               </p>
               <p>
                 By accessing the Platform, therefore, you agree not to place any
@@ -159,141 +158,146 @@ const TermsAndServices = ({ isAuth }) => (
               </p>
               <p>
                 You may not access or collect data from the Platform using
-                automated means (without HYLIANCODER&apos;s prior permission) or attempt
-                to access data you do not have permission to access.
+                automated means (without HYLIANCODER&apos;s prior permission) or
+                attempt to access data you do not have permission to access.
               </p>
               <p>
                 HYLIANCODER will remove or restrict access to content that is in
-                violation of these provisions. HYLIANCODER encourages you to report any
-                content or conduct that you believe violates your rights
-                (including intellectual property rights) or these Terms of
-                Service.
+                violation of these provisions. HYLIANCODER encourages you
+                to report any content or conduct that you believe violates your
+                rights (including intellectual property rights) or these Terms
+                of Service.
               </p>
               <h4>Permission to Use Content that You Create and Share:</h4>
               <p>
                 If you share, post, or upload content in which you have
-                intellectual property rights, you grant HYLIANCODER a non-exclusive,
-                transferable, sub-licensable, royalty-free, and worldwide
-                license to host, use, distribute, modify, run, copy, publicly
-                perform or display, translate, and create derivative works of
-                your content (consistent with your 
+                intellectual property rights, you grant HYLIANCODER a
+                non-exclusive, transferable, sub-licensable, royalty-free, and
+                worldwide license to host, use, distribute, modify, run, copy,
+                publicly perform or display, translate, and create derivative
+                works of your content (consistent with your 
                 <a href='/privacy-policy'>privacy</a> and 
                 <a href='/settings'>application</a> settings).
               </p>
               <h4>Limits on using HYLIANCODER intellectual property</h4>
               <p>
-                You may not use HYLIANCODER content that is protected by copyright,
-                trademark of other intellectual property laws without HYLIANCODER&apos;s
-                prior written permission. You may not, without HYLIANCODER&apos;s
-                written permission (or permission under an open source license),
-                modify, create derivative works of, decompile, or otherwise
-                attempt to extract source code.
+                You may not use HYLIANCODER content that is protected by
+                copyright, trademark of other intellectual property laws without
+                HYLIANCODER&apos;s prior written permission. You may not,
+                without HYLIANCODER&apos;s written permission (or permission
+                under an open source license), modify, create derivative works
+                of, decompile, or otherwise attempt to extract source code.
               </p>
               <p>
                 Material from the Platform may not be altered. Modification or
                 use of the materials for any other purpose may violate
-                HYLIANCODER&apos;s intellectual property rights. If you download content
-                from the Platform, no title nor intellectual property rights are
-                transferred to you, but remain with HYLIANCODER, which owns full and
-                complete title.
+                HYLIANCODER&apos;s intellectual property rights. If you download
+                content from the Platform, no title nor intellectual property
+                rights are transferred to you, but remain with HYLIANCODER,
+                which owns full and complete title.
               </p>
               <h4>Limited Liability</h4>
               <p>
-                HYLIANCODER assumes no responsibility, and shall not be liable, for any
-                damages to, or for any viruses that may infect, your computer
-                equipment or other property as a result of your access to, use
-                of, or browsing in the Platform (including accessing hyperlinks)
-                or your downloading of any materials, data, text, images, video,
-                or audio from the Platform. HYLIANCODER assumes no responsibility, and
-                shall not be liable, for any interruptions or errors in access
-                to the website or the accuracy, timeliness, completeness,
-                security or reliability of any communications.
+                HYLIANCODER assumes no responsibility, and shall not be liable,
+                for any damages to, or for any viruses that may infect, your
+                computer equipment or other property as a result of your access
+                to, use of, or browsing in the Platform (including accessing
+                hyperlinks) or your downloading of any materials, data, text,
+                images, video, or audio from the Platform. HYLIANCODER assumes
+                no responsibility, and shall not be liable, for any
+                interruptions or errors in access to the website or the
+                accuracy, timeliness, completeness, security or reliability of
+                any communications.
               </p>
               <h4>Submissions</h4>
               <p>
                 Any remark, suggestion, idea, graphic, or other information
                 communicated to HYLIANCODER through the Platform
-                (&quot;Submission&quot;) shall forever be the property of HYLIANCODER.
-                HYLIANCODER may subsequently use the Submission for its business
-                (including without limitation, product or advertising ideas) and
-                will not incur any liability as a result of any similarities
-                that may appear in future HYLIANCODER operations. Without limitation,
-                HYLIANCODER will have exclusive ownership of all present and future
-                existing rights to the Submission for any commercial or other
-                purpose whatsoever without compensation to you. Identifiable
-                personal information submitted on the Platform is provided
-                voluntarily by the submitter. For full details regarding
-                HYLIANCODER&apos;s treatment of personal information, please see
-                HYLIANCODER&apos;s <a href='/privacy-policy'>Privacy Policy</a>.
+                (&quot;Submission&quot;) shall forever be the property of
+                HYLIANCODER. HYLIANCODER may subsequently use the Submission for
+                its business (including without limitation, product or
+                advertising ideas) and will not incur any liability as a result
+                of any similarities that may appear in future HYLIANCODER
+                operations. Without limitation, HYLIANCODER will have exclusive
+                ownership of all present and future existing rights to the
+                Submission for any commercial or other purpose whatsoever
+                without compensation to you. Identifiable personal information
+                submitted on the Platform is provided voluntarily by the
+                submitter. For full details regarding HYLIANCODER&apos;s
+                treatment of personal information, please see HYLIANCODER&apos;s{' '}
+                <a href='/privacy-policy'>Privacy Policy</a>.
               </p>
               <p>
                 Materials and third-party logos, brands and trade names
-                displayed by HYLIANCODER on the Platform are either HYLIANCODER&apos;s property,
-                or property that HYLIANCODER has permission to use. The use of these
-                materials by you or any other person is prohibited unless
-                specifically permitted by these Terms of Service, or in the case
-                of third-party property, where specific permission has been
-                obtained from such third party. Any unauthorized use of images
-                and third-party logos, brands and trade names may violate
-                applicable copyright or trademark law, privacy law, and may
-                potentially subject the unauthorized user to civil or criminal
-                liability.
+                displayed by HYLIANCODER on the Platform are either
+                HYLIANCODER&apos;s property, or property that HYLIANCODER has
+                permission to use. The use of these materials by you or any
+                other person is prohibited unless specifically permitted by
+                these Terms of Service, or in the case of third-party property,
+                where specific permission has been obtained from such third
+                party. Any unauthorized use of images and third-party logos,
+                brands and trade names may violate applicable copyright or
+                trademark law, privacy law, and may potentially subject the
+                unauthorized user to civil or criminal liability.
               </p>
               <h4>Disclaimer and Indemnification</h4>
               <p>
-                HYLIANCODER is not responsible for the content of any website linked to
-                or from the Platform. If you link to any other website, you do
-                so entirely at your own risk. While HYLIANCODER may provide links on the
-                Platform to other sites, such links are for your convenience and
-                information only and do not constitute an endorsement by HYLIANCODER of
-                the owner/sponsor of the website or the content of the website.
-                To the extent permitted by law, HYLIANCODER disclaims all warranties,
-                express and implied, as to the accuracy, validity, legality or
-                otherwise of any materials or information contained on such
-                sites.
+                HYLIANCODER is not responsible for the content of any website
+                linked to or from the Platform. If you link to any other
+                website, you do so entirely at your own risk. While HYLIANCODER
+                may provide links on the Platform to other sites, such links are
+                for your convenience and information only and do not constitute
+                an endorsement by HYLIANCODER of the owner/sponsor of the
+                website or the content of the website. To the extent permitted
+                by law, HYLIANCODER disclaims all warranties, express and
+                implied, as to the accuracy, validity, legality or otherwise of
+                any materials or information contained on such sites.
               </p>
               <p>
-                Although HYLIANCODER may monitor or review discussions, chats, postings,
-                transmissions, bulletin boards and the like on the Platform, HYLIANCODER
-                is under no obligation to do so and assumes no responsibility or
-                liability arising from the contents of any such communications
-                nor for any error, defamation, libel, obscenity, profanity, or
-                inaccuracy contained in any such communication. By accessing and
-                browsing the Platform, you agree that you shall indemnify and
-                hold harmless HYLIANCODER from any claim, action, damage, loss,
-                liability, cost, payment, charge or expense, including but not
-                limited to consequential loss, economic loss and legal expenses
-                suffered or incurred by HYLIANCODER arising out of any claim or action
-                that results from your accessing and use of the website; or in
-                connection with any breach by you of these Terms of Service.
+                Although HYLIANCODER may monitor or review discussions, chats,
+                postings, transmissions, bulletin boards and the like on the
+                Platform, HYLIANCODER is under no obligation to do so and
+                assumes no responsibility or liability arising from the contents
+                of any such communications nor for any error, defamation, libel,
+                obscenity, profanity, or inaccuracy contained in any such
+                communication. By accessing and browsing the Platform, you agree
+                that you shall indemnify and hold harmless HYLIANCODER from any
+                claim, action, damage, loss, liability, cost, payment, charge or
+                expense, including but not limited to consequential loss,
+                economic loss and legal expenses suffered or incurred by
+                HYLIANCODER arising out of any claim or action that results from
+                your accessing and use of the website; or in connection with any
+                breach by you of these Terms of Service.
               </p>
               <h4>Updates to Terms of Service</h4>
               <p>
-                HYLIANCODER may update these Terms of Service from time to time to
-                accurately reflect changes in services or practices. HYLIANCODER will
-                notify users of any updates and give opportunity for review and
-                comment before the updated terms go into effect. Once any
-                updated terms are in effect, you will be bound by them if you
-                continue to use the Platform. If you do not agree to the updated
-                terms, you can delete your account at any time.
+                HYLIANCODER may update these Terms of Service from time to time
+                to accurately reflect changes in services or practices.
+                HYLIANCODER will notify users of any updates and give
+                opportunity for review and comment before the updated terms go
+                into effect. Once any updated terms are in effect, you will be
+                bound by them if you continue to use the Platform. If you do not
+                agree to the updated terms, you can delete your account at any
+                time.
               </p>
               <h4>Account Suspension or Termination</h4>
               <p>
-                HYLIANCODER reserves the right to suspend or permanently disable access
-                to your account if you have materially or repeatedly breached
-                these Terms of Service, including HYLIANCODER&apos;s Community
-                Standards; if you have infringed the intellectual property
-                rights of third parties; or if HYLIANCODER is required by law to do so.
+                HYLIANCODER reserves the right to suspend or permanently disable
+                access to your account if you have materially or repeatedly
+                breached these Terms of Service, including HYLIANCODER&apos;s
+                Community Standards; if you have infringed the intellectual
+                property rights of third parties; or if HYLIANCODER is required
+                by law to do so.
               </p>
               <h4>Limits on liability </h4>
               <p>
-                Local Social is provided &quot;as is,&quot; and HYLIANCODER makes no
-                guarantees that it will always be safe, secure, or error-free;
-                or that it will function without disruptions, delays, or
-                imperfections. To the extent permitted by law, HYLIANCODER also
-                DISCLAIMS ALL WARRANTIES, WHETHER EXPRESS OR IMPLIED, INCLUDING
-                THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A
-                PARTICULAR PURPOSE, TITLE, AND NON-INFRINGEMENT.{' '}
+                Local Social is provided &quot;as is,&quot; and HYLIANCODER
+                makes no guarantees that it will always be safe, secure, or
+                error-free; or that it will function without disruptions,
+                delays, or imperfections. To the extent permitted by law,
+                HYLIANCODER also DISCLAIMS ALL WARRANTIES, WHETHER EXPRESS OR
+                IMPLIED, INCLUDING THE IMPLIED WARRANTIES OF MERCHANTABILITY,
+                FITNESS FOR A PARTICULAR PURPOSE, TITLE, AND NON-INFRINGEMENT.{' '}
               </p>
               <h4>Additional Terms</h4>
               <ul>
@@ -302,13 +306,14 @@ const TermsAndServices = ({ isAuth }) => (
                   you and HYLIANCODER regarding your use of the Platform.
                 </li>
                 <li>
-                  HYLIANCODER may use your feedback and other suggestions without any
-                  restriction or compensation to you, and is under no obligation
-                  to keep such feedback or suggestions confidential.
+                  HYLIANCODER may use your feedback and other suggestions
+                  without any restriction or compensation to you, and is under
+                  no obligation to keep such feedback or suggestions
+                  confidential.
                 </li>
                 <li>
-                  HYLIANCODER reserve all rights not expressly granted to you in these
-                  Terms of Service.
+                  HYLIANCODER reserve all rights not expressly granted to you in
+                  these Terms of Service.
                 </li>
               </ul>
               <p>© 2019 Local. All rights reserved. </p>

@@ -1,44 +1,41 @@
-import React, {createRef, useState, useEffect} from 'react';
+import React, { createRef, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 import * as Routes from 'routes';
 
 const VideoSection = () => {
-
   const [showVideo, setShowVideo] = useState(false);
-  
+
   const container = createRef();
 
-  const videoObserver = new
-      IntersectionObserver(onVideoIntersection, {
-        rootMargin: '100px 0px',
-        threshold: 0.25
-      });
+  const videoObserver = new IntersectionObserver(onVideoIntersection, {
+    rootMargin: '100px 0px',
+    threshold: 0.25,
+  });
 
-      useEffect(() => {
-        if (window && 'IntersectionObserver' in window) {
-            if (container && container.current) {
-                videoObserver.observe(container.current);
-            }
-        } else {
-            setShowVideo(true);
-        }
-    
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-      }, [container]);
-      
-
-      function onVideoIntersection(entries) {
-        if (!entries || entries.length <= 0) {
-            return;
-        }
-    
-        if (entries[0].isIntersecting) {
-            setShowVideo(true);
-            videoObserver.disconnect();
-        }
+  useEffect(() => {
+    if (window && 'IntersectionObserver' in window) {
+      if (container && container.current) {
+        videoObserver.observe(container.current);
+      }
+    } else {
+      setShowVideo(true);
     }
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [container]);
+
+  function onVideoIntersection(entries) {
+    if (!entries || entries.length <= 0) {
+      return;
+    }
+
+    if (entries[0].isIntersecting) {
+      setShowVideo(true);
+      videoObserver.disconnect();
+    }
+  }
 
   return (
     <div className='local-video-bnr welcome-video-banner mb-5'>
@@ -119,25 +116,29 @@ const VideoSection = () => {
               >
                 <span aria-hidden='true'>&times;</span>
               </button>
-              <div className='embed-responsive embed-responsive-16by9' ref={container}>
-              {
-                  showVideo ? 
-                <iframe
-                  className='embed-responsive-item'
-                  src='https://www.youtube.com/embed/AB0SPGFa480'
-                  id='video'
-                  title='welcome video'
-                  frameBorder="0"
-                  allowscriptaccess='always'
-                  allow="accelerometer;
+              <div
+                className='embed-responsive embed-responsive-16by9'
+                ref={container}
+              >
+                {showVideo ? (
+                  <iframe
+                    className='embed-responsive-item'
+                    src='https://www.youtube.com/embed/AB0SPGFa480'
+                    id='video'
+                    title='welcome video'
+                    frameBorder='0'
+                    allowscriptaccess='always'
+                    allow='accelerometer;
                            autoplay;
                            encrypted-media;
                            gyroscope;
-                           picture-in-picture"
-                  allowFullScreen
-                  loading='lazy'
-                ></iframe>: undefined
-              }
+                           picture-in-picture'
+                    allowFullScreen
+                    loading='lazy'
+                  ></iframe>
+                ) : (
+                  undefined
+                )}
               </div>
             </div>
           </div>
