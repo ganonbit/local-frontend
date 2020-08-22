@@ -32,10 +32,7 @@ const PrivacyPolicy = ({ isAuth }) => (
                 store your personal information.
               </p>
               <h6>Information Collected from Consumers</h6>
-              <p>
-                Local collects Consumer information in the
-                following ways:
-              </p>
+              <p>Local collects Consumer information in the following ways:</p>
               <h6>Information provided by the Consumer: </h6>
               <p>
                 If you are a Consumer, if you visit our digital platforms, or
@@ -140,10 +137,10 @@ const PrivacyPolicy = ({ isAuth }) => (
                 union membership) on or through the Service or otherwise.
               </p>
               <p>
-                HYLIANCODER does not sell or share your personal data, or share with its
-                business partners information that directly identifies you (such
-                as your name, email address or other contact information) unless
-                you give us specific permission.
+                HYLIANCODER does not sell or share your personal data, or share
+                with its business partners information that directly identifies
+                you (such as your name, email address or other contact
+                information) unless you give us specific permission.
               </p>
               <p>
                 If you send or disclose any sensitive personal information to us
@@ -170,13 +167,11 @@ const PrivacyPolicy = ({ isAuth }) => (
                 We do not knowingly contact or collect information from children
                 under 13. If you believe we have inadvertently collected such
                 information, please contact us at{' '}
-                <a href='mailto:privacy@ganon.io'>
-                  privacy@ganon.io
-                </a>{' '}
-                so we can promptly obtain parental consent or remove the
-                information. If you are under 16, or the age of majority in the
-                jurisdiction in which you reside, you may only use our Site and
-                Services with the consent of your parent or legal guardian.
+                <a href='mailto:privacy@ganon.io'>privacy@ganon.io</a> so we can
+                promptly obtain parental consent or remove the information. If
+                you are under 16, or the age of majority in the jurisdiction in
+                which you reside, you may only use our Site and Services with
+                the consent of your parent or legal guardian.
               </p>
               <h6>Changes to your personal information:</h6>
               <p>
@@ -184,10 +179,7 @@ const PrivacyPolicy = ({ isAuth }) => (
                 is accurate and current. Please let us know if your personal
                 information changes during your relationship with us by updating
                 your registration profile or emailing us at{' '}
-                <a href='mailto:privacy@ganon.io'>
-                  privacy@ganon.io
-                </a>
-                .
+                <a href='mailto:privacy@ganon.io'>privacy@ganon.io</a>.
               </p>
               <h6>How We Use Your Personal Information</h6>
               <p>
@@ -255,8 +247,8 @@ const PrivacyPolicy = ({ isAuth }) => (
                 </li>
                 <li>
                   Communicate with you about promotions, upcoming events and
-                  news about products and services offered by Locals From
-                  Mexico and our selected partners;
+                  news about products and services offered by Locals From Mexico
+                  and our selected partners;
                 </li>
                 <li>
                   Protect, investigate and deter against fraudulent,
@@ -300,8 +292,8 @@ const PrivacyPolicy = ({ isAuth }) => (
                 </li>
                 <li>
                   Communicate with you about promotions, upcoming events and
-                  news about products and services offered by Locals From
-                  Mexico and our selected partners;
+                  news about products and services offered by Locals From Mexico
+                  and our selected partners;
                 </li>
                 <li>
                   Protect, investigate and deter against fraudulent,
@@ -309,9 +301,9 @@ const PrivacyPolicy = ({ isAuth }) => (
                 </li>
               </ul>
               <p>
-                Local may store and process PI in the United
-                States and other countries. By using our Platform as a Consumer,
-                you consent to this transfer of your information into the U.S.
+                Local may store and process PI in the United States and other
+                countries. By using our Platform as a Consumer, you consent to
+                this transfer of your information into the U.S.
               </p>
               <h6>To communicate with you</h6>
               <p>
@@ -334,8 +326,8 @@ const PrivacyPolicy = ({ isAuth }) => (
                 </li>
                 <li>
                   Communicate with you about promotions, upcoming events and
-                  news about products and services offered by Locals From
-                  Mexico and our selected partners;
+                  news about products and services offered by Locals From Mexico
+                  and our selected partners;
                 </li>
               </ul>
               <p>
@@ -402,9 +394,9 @@ const PrivacyPolicy = ({ isAuth }) => (
                   the same privacy principles as Local;
                 </li>
                 <li>
-                  To protect the rights and property of Local,
-                  our agents, Consumers and others including enforcement of our
-                  agreements, policies and terms of use;
+                  To protect the rights and property of Local, our agents,
+                  Consumers and others including enforcement of our agreements,
+                  policies and terms of use;
                 </li>
                 <li>
                   In an emergency, including protection of the personal safety
@@ -428,9 +420,9 @@ const PrivacyPolicy = ({ isAuth }) => (
               </p>
               <h6>Local’s commitments as a data controller</h6>
               <p>
-                Local may be classed as a data controller when we
-                collect your data for billing and managing accounts receivable,
-                for example. We are committed to:
+                Local may be classed as a data controller when we collect your
+                data for billing and managing accounts receivable, for example.
+                We are committed to:
               </p>
               <ul>
                 <li>
@@ -448,12 +440,10 @@ const PrivacyPolicy = ({ isAuth }) => (
               <h6>Your Choices</h6>
               <span>Access, Update, Correct or Delete Your Information:</span>
               <p>
-                All HYLIANCODER Consumers may review, update, correct or delete the
-                personal information in the Local Platform.
-                Local’s Consumers may also contact us at 
-                <a href='mailto:privacy@ganon.io'>
-                  privacy@ganon.io
-                </a>
+                All HYLIANCODER Consumers may review, update, correct or delete
+                the personal information in the Local Platform. Local’s
+                Consumers may also contact us at 
+                <a href='mailto:privacy@ganon.io'>privacy@ganon.io</a>
                  to accomplish the foregoing or if you have additional requests
                 or questions. If you are a job applicant and have provided this
                 kind of information, you can also contact us via e-mail to
@@ -470,8 +460,7 @@ const PrivacyPolicy = ({ isAuth }) => (
                   such request on behalf of the Consumer; and
                 </li>
                 <li>
-                  Verifying their own identity directly with Locals From
-                  Mexico.
+                  Verifying their own identity directly with Locals From Mexico.
                 </li>
               </ul>
               <p>
@@ -489,19 +478,16 @@ const PrivacyPolicy = ({ isAuth }) => (
                 display advertising on our Site, to manage our advertising on
                 other sites, or to provide you targeted advertisements based
                 upon your interests on our Site or on third party sites. You may
-                opt out of receiving promotional emails from Locals From
-                Mexico by following the instructions in those emails. If you opt
-                out, we may still send you non-promotional emails, such as
-                emails about your Local subscriptions and/or
-                promotions or our ongoing business relationship. An individual
-                wishing to limit the use or sharing of their data should contact
-                email 
-                <a href='mailto:privacy@ganon.io'>
-                  privacy@ganon.io
-                </a>
-                . In accordance with California Statute § 999.313, Locals From
-                Mexico will confirm receipt within ten (10) days of any request
-                to access or delete your information and will respond within
+                opt out of receiving promotional emails from Locals From Mexico
+                by following the instructions in those emails. If you opt out,
+                we may still send you non-promotional emails, such as emails
+                about your Local subscriptions and/or promotions or our ongoing
+                business relationship. An individual wishing to limit the use or
+                sharing of their data should contact email 
+                <a href='mailto:privacy@ganon.io'>privacy@ganon.io</a>. In
+                accordance with California Statute § 999.313, Locals From Mexico
+                will confirm receipt within ten (10) days of any request to
+                access or delete your information and will respond within
                 forty-five (45) days. In some of our communications, we use
                 tracking means, such as a &quot;click-through URL&quot; linked
                 to content on the Site. We track this data to help us measure
@@ -545,18 +531,18 @@ const PrivacyPolicy = ({ isAuth }) => (
                 no security or encryption method can be guaranteed to protect
                 information from hackers or human error. Information we collect
                 may be stored or processed on computers located in any country
-                where we do business. Local may store and process
-                PII in the United States. By using our Platform as a Consumer,
-                you consent to this transfer of your information into the U.S.
+                where we do business. Local may store and process PII in the
+                United States. By using our Platform as a Consumer, you consent
+                to this transfer of your information into the U.S.
               </p>
               <h6>International Transfer</h6>
               <p>
-                Local is headquartered in the United States and
-                has affiliates and service providers in other countries, and
-                your personal information may be transferred to the United
-                States or other locations outside of your state, province,
-                country or other governmental jurisdiction where privacy laws
-                may not be as protective as those in your jurisdiction.
+                Local is headquartered in the United States and has affiliates
+                and service providers in other countries, and your personal
+                information may be transferred to the United States or other
+                locations outside of your state, province, country or other
+                governmental jurisdiction where privacy laws may not be as
+                protective as those in your jurisdiction.
               </p>
               <h6>Other Sites and Services</h6>
               <p>
@@ -593,9 +579,7 @@ const PrivacyPolicy = ({ isAuth }) => (
                 <br />
                 If you have any questions or concerns at all about our Privacy
                 Policy, please feel free to email us at 
-                <a href='mailto:privacy@ganon.io'>
-                  privacy@ganon.io
-                </a>
+                <a href='mailto:privacy@ganon.io'>privacy@ganon.io</a>
                 .<br />
                 Consumers may also address questions or concerns regarding the
                 Privacy Policy, or requests to access, update, correct, or
@@ -617,14 +601,11 @@ const PrivacyPolicy = ({ isAuth }) => (
               <p>
                 References to &quot;personal information&quot; in this Privacy
                 Policy are equivalent to &quot;personal data&quot; governed by
-                European data protection legislation. Local is
-                the processor of your personal information for purposes of
-                European data protection legislation. Our Data Protection
-                Officer can be reached at{' '}
-                <a href='mailto:privacy@ganon.io'>
-                  privacy@ganon.io
-                </a>
-                .
+                European data protection legislation. Local is the processor of
+                your personal information for purposes of European data
+                protection legislation. Our Data Protection Officer can be
+                reached at{' '}
+                <a href='mailto:privacy@ganon.io'>privacy@ganon.io</a>.
               </p>
               <h6>Legal Basis for Processing</h6>
               <p>
@@ -633,10 +614,7 @@ const PrivacyPolicy = ({ isAuth }) => (
                 of your personal information, which are described above. If you
                 have questions about the legal basis of how we process your
                 personal information, contact us at{' '}
-                <a href='mailto:privacy@ganon.io'>
-                  privacy@ganon.io
-                </a>
-                .
+                <a href='mailto:privacy@ganon.io'>privacy@ganon.io</a>.
               </p>
               <h6>Use for New Purposes</h6>
               <p>
@@ -667,30 +645,27 @@ const PrivacyPolicy = ({ isAuth }) => (
                 <li>For our platform:</li>
               </ul>
               <p>
-                Local retains Customer data for so long as you
-                remain as a Customer and will delete Customer&apos;s information
-                within 12 months of either party&apos;s termination of
-                applicable Customer agreement upon written request. We retain
-                User level data on the Platform as directed by our Customers and
-                for a reasonable time thereafter for audit purposes and as
-                otherwise required by law.
+                Local retains Customer data for so long as you remain as a
+                Customer and will delete Customer&apos;s information within 12
+                months of either party&apos;s termination of applicable Customer
+                agreement upon written request. We retain User level data on the
+                Platform as directed by our Customers and for a reasonable time
+                thereafter for audit purposes and as otherwise required by law.
               </p>
               <h6>Rights of European Union Customers</h6>
               <p>
                 European data protection laws give you certain rights regarding
-                your personal information. Local acknowledges
-                that European Union (“EU”) and Swiss individuals have certain
-                legal rights including the right to complain to an EU
-                supervisory authority and the right to access the personal data
-                that we maintain about them. An EU or Swiss individual who seeks
-                access, or who seeks to correct, amend, or delete inaccurate
-                data, should direct their query to 
-                <a href='mailto:privacy@ganon.io'>
-                  privacy@ganon.io
-                </a>
-                . If requested to remove data, we will respond within 30 days.
-                Under these circumstances, you have rights under data protection
-                laws in relation to your personal data, as follows:
+                your personal information. Local acknowledges that European
+                Union (“EU”) and Swiss individuals have certain legal rights
+                including the right to complain to an EU supervisory authority
+                and the right to access the personal data that we maintain about
+                them. An EU or Swiss individual who seeks access, or who seeks
+                to correct, amend, or delete inaccurate data, should direct
+                their query to 
+                <a href='mailto:privacy@ganon.io'>privacy@ganon.io</a>. If
+                requested to remove data, we will respond within 30 days. Under
+                these circumstances, you have rights under data protection laws
+                in relation to your personal data, as follows:
               </p>
               <ul>
                 <li>
@@ -761,9 +736,7 @@ const PrivacyPolicy = ({ isAuth }) => (
               </ul>
               <p>
                 You can submit these requests by email to 
-                <a href='mailto:privacy@ganon.io'>
-                  privacy@ganon.io
-                </a>
+                <a href='mailto:privacy@ganon.io'>privacy@ganon.io</a>
                  or our postal address provided above. We may request specific
                 information from you to help us confirm your identity and
                 process your request. Applicable law may require or permit us to
@@ -772,9 +745,7 @@ const PrivacyPolicy = ({ isAuth }) => (
                 submit a complaint about our use of your personal information or
                 response to your requests regarding your personal information,
                 you may contact us at 
-                <a href='mailto:privacy@ganon.io'>
-                  privacy@ganon.io
-                </a>
+                <a href='mailto:privacy@ganon.io'>privacy@ganon.io</a>
                  or submit a complaint to the data protection regulator in your
                 jurisdiction.
               </p>

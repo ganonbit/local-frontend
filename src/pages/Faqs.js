@@ -32,9 +32,9 @@ const Faqs = () => (
                   <Accordion.Collapse eventKey='0'>
                     <Card.Body>
                       <p>
-                        Local Social is THE online community for local
-                        lovers just like yourself! Here, sharing your local-love
-                        is rewarded! The more you discover, explore, share, and
+                        Local Social is THE online community for local lovers
+                        just like yourself! Here, sharing your local-love is
+                        rewarded! The more you discover, explore, share, and
                         interact with content on the site, the more points and
                         badges you get. When you hit 1,000 points, you can
                         exchange those points for prizes!
@@ -70,10 +70,10 @@ const Faqs = () => (
                   <Accordion.Collapse eventKey='2'>
                     <Card.Body>
                       <p>
-                        Badges are the Local Social way of saying thank you
-                        and congrats for certain accomplishments as a member.
-                        The more you participate the more you’ll earn. You can
-                        see the full list <a href='/badges'>here</a>.
+                        Badges are the Local Social way of saying thank you and
+                        congrats for certain accomplishments as a member. The
+                        more you participate the more you’ll earn. You can see
+                        the full list <a href='/badges'>here</a>.
                       </p>
                     </Card.Body>
                   </Accordion.Collapse>
@@ -143,8 +143,8 @@ const Faqs = () => (
                     <Card.Body>
                       <p>
                         Oh no! We want to build a community helps share the
-                        local love. To let me know about something, click on
-                        the SUBMIT button in the dropdown menu in the top right
+                        local love. To let me know about something, click on the
+                        SUBMIT button in the dropdown menu in the top right
                         corner and tell me about it. I’ll take care of it within
                         48 hours.
                       </p>
@@ -155,8 +155,8 @@ const Faqs = () => (
                 <Card>
                   <Card.Header>
                     <Accordion.Toggle as={Button} variant='link' eventKey='6'>
-                      How do I tell my friends about Local Social and get
-                      points for it?
+                      How do I tell my friends about Local Social and get points
+                      for it?
                     </Accordion.Toggle>
                   </Card.Header>
                   <Accordion.Collapse eventKey='7'>
