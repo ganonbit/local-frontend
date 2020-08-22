@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Modal, ModalBody } from 'react-bootstrap';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
-import CustomTextArea from 'components/CustomeTextArea/TextAreaWrapper';
+import CustomTextArea from 'components/CustomTextArea/TextAreaWrapper';
 
 import { MAX_POST_IMAGE_SIZE } from 'constants/ImageSize';
 import Avatar from '../Avatar';

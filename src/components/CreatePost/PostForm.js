@@ -9,7 +9,7 @@ import { useStore } from '../../store/index';
 
 import * as Routes from 'routes';
 
-import CustomTextArea from 'components/CustomeTextArea/TextAreaWrapper';
+import CustomTextArea from 'components/CustomTextArea/TextAreaWrapper';
 
 const PostForm = ({
   status,

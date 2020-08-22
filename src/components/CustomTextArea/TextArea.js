@@ -11,16 +11,16 @@ class TextArea extends Component {
     this.state = {
       top: null,
       left: null,
-      showSuggestor: false,
+      showSuggester: false,
       text: '',
       textareaValue: this.props.initialValue,
       users: null,
       currentSelection: -1,
     };
-    this.toggleSuggestor = this.toggleSuggestor.bind(this);
+    this.toggleSuggester = this.toggleSuggester.bind(this);
     this.handleInput = this.handleInput.bind(this);
     this.handleTextareaInput = this.handleTextareaInput.bind(this);
-    this.handleToggleSuggestor = this.handleToggleSuggestor.bind(this);
+    this.handleToggleSuggester = this.handleToggleSuggester.bind(this);
     this.setUsers = this.setUsers.bind(this);
     this.handleKeyDown = this.handleKeyDown.bind(this);
     this.handleKeyPress = this.handleKeyPress.bind(this);
@@ -59,7 +59,7 @@ class TextArea extends Component {
     if (which === 27) {
       this.setState(
         {
-          showSuggestor: false,
+          showSuggester: false,
           left: null,
           top: null,
           text: null,
@@ -92,7 +92,7 @@ class TextArea extends Component {
           {
             textareaValue:
               newtext + this.state.users[this.state.currentSelection].username,
-            showSuggestor: false,
+            showSuggester: false,
             left: null,
             top: null,
             text: null,
@@ -112,7 +112,7 @@ class TextArea extends Component {
             textareaValue:
               this.state.textareaValue +
               this.state.users[this.state.currentSelection].username,
-            showSuggestor: false,
+            showSuggester: false,
             left: null,
             top: null,
             text: null,
@@ -128,9 +128,9 @@ class TextArea extends Component {
       }
     }
   }
-  handleToggleSuggestor(username) {
+  handleToggleSuggester(username) {
     this.setState({
-      showSuggestor: false,
+      showSuggester: false,
       left: null,
       top: null,
       text: null,
@@ -151,19 +151,19 @@ class TextArea extends Component {
     this.endHandler();
   }
 
-  toggleSuggestor(metaInformation) {
+  toggleSuggester(metaInformation) {
     const { hookType, cursor } = metaInformation;
 
     if (hookType === 'start') {
       this.setState({
-        showSuggestor: true,
+        showSuggester: true,
         left: cursor.left,
         top: cursor.top + cursor.height,
       });
     }
     if (hookType === 'cancel') {
       this.setState({
-        showSuggestor: false,
+        showSuggester: false,
         left: null,
         top: null,
       });
@@ -203,10 +203,10 @@ class TextArea extends Component {
             shiftKey: true,
           }}
           onStart={metaData => {
-            this.toggleSuggestor(metaData);
+            this.toggleSuggester(metaData);
           }}
           onCancel={metaData => {
-            this.toggleSuggestor(metaData);
+            this.toggleSuggester(metaData);
           }}
           onType={metaData => {
             this.handleInput(metaData);
@@ -228,14 +228,14 @@ class TextArea extends Component {
           id='dropdown'
           className='user-suggestion'
           style={{
-            display: state.showSuggestor ? 'block' : 'none',
+            display: state.showSuggester ? 'block' : 'none',
             top: state.top,
             left: state.left,
           }}
         >
           <InfiniteUsers
-            handleToggleSuggestor={this.handleToggleSuggestor}
-            showSuggestor={state.showSuggestor}
+            handleToggleSuggester={this.handleToggleSuggester}
+            showSuggester={state.showSuggester}
             top={state.top}
             left={state.left}
             setUsers={this.setUsers}

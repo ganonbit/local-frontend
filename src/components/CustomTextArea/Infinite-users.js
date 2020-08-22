@@ -6,13 +6,13 @@ import Avatar from '../Avatar';
 
 const Hits = ({
   hits,
-  handleToggleSuggestor,
-  showSuggestor,
+  handleToggleSuggester,
+  showSuggester,
   currentSelection,
   setUsers,
 }) => {
   useEffect(() => {
-    showSuggestor && hits.length === 0 && handleToggleSuggestor(undefined);
+    showSuggester && hits.length === 0 && handleToggleSuggester(undefined);
     setUsers(hits);
   }, [hits]);
 
@@ -29,10 +29,10 @@ const Hits = ({
                 background: index === currentSelection ? '#009440' : '',
               }}
               onClick={() => {
-                handleToggleSuggestor(`${hit.username}`);
+                handleToggleSuggester(`${hit.username}`);
               }}
               onKeyDown={() => {
-                handleToggleSuggestor(`${hit.username}`);
+                handleToggleSuggester(`${hit.username}`);
               }}
               role='button'
               tabIndex='0'
@@ -61,8 +61,8 @@ const Hits = ({
 
 Hits.propTypes = {
   hits: PropTypes.object.isRequired,
-  handleToggleSuggestor: PropTypes.func.isRequired,
-  showSuggestor: PropTypes.bool.isRequired,
+  handleToggleSuggester: PropTypes.func.isRequired,
+  showSuggester: PropTypes.bool.isRequired,
   currentSelection: PropTypes.any,
 };
 
