@@ -30,7 +30,7 @@ const NewsFeedAdd = () => (
       </ul>
       <h5>Local Social © {copyYear}</h5>
       <LazyLoadImage
-        src='https://res.cloudinary.com/hylian/image/upload/f_auto,q_auto/v1578333627/static/local-primary-logo_color_l9xyvo.png'
+        src='https://res.cloudinary.com/hylian/image/upload/f_auto,q_auto/v1598090517/static/logo_transparent_cropped_jxkh58.png'
         alt='local social logo'
       />
     </div>
