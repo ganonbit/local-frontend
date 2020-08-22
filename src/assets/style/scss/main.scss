@@ -614,14 +614,6 @@
     width: 169px;
     height: 228px;
     background-color: #fdfbee;
-    -webkit-mask-image: url('https://res.cloudinary.com/hylian/image/upload/f_auto,q_auto/v1575849605/static/img-frame_adcgt8.png');
-    mask-image: url('https://res.cloudinary.com/hylian/image/upload/f_auto,q_auto/v1575849605/static/img-frame_adcgt8.png');
-    -webkit-mask-size: 100%;
-    mask-size: 100%;
-    -webkit-mask-repeat: no-repeat;
-    -moz-mask-size: 100%;
-    mask-repeat: no-repeat;
-    -moz-mask-repeat: no-repeat;
 
     img {
       border-radius: 0;
@@ -1219,7 +1211,7 @@ p.comments-section {
 
   &.headroom--not-top {
     box-shadow: 0 0 34px 0 rgba(63, 66, 87, 0.2);
-    background-color: #34923bad;
+    background-color: #923434ad;
 
     .logo {
       color: var(--theme-color-white);
@@ -3460,7 +3452,7 @@ button:hover {
 }
 
 .btn-purple {
-  background-color: #7c5ac2;
+  background-color:var(--theme-color-purple);
 }
 
 .btn-blue {
@@ -3687,7 +3679,7 @@ button:hover {
 }
 
 .chat-message {
-  background-color: #7c5ac2;
+  background-color:var(--theme-color-purple);
 }
 
 .btn--half-width {
@@ -4682,7 +4674,7 @@ fieldset[disabled] .checkbox {
 }
 
 .popover {
-  background-color: #009440;
+  background-color: var(--theme-color);
 
   ul {
     margin-bottom: 0;
@@ -4709,28 +4701,28 @@ fieldset[disabled] .checkbox {
 .bs-popover-bottom .arrow::before,
 .bs-popover-auto[x-placement^='bottom'] .arrow::after,
 .bs-popover-bottom .arrow::after {
-  border-bottom-color: #009440 !important;
+  border-bottom-color: var(--theme-color) !important;
 }
 
 .bs-popover-auto[x-placement^='top'] .arrow::after,
 .bs-popover-top .arrow::after,
 .bs-popover-auto[x-placement^='top'] .arrow::before,
 .bs-popover-top .arrow::before {
-  border-top-color: #009440 !important;
+  border-top-color: var(--theme-color) !important;
 }
 
 .bs-popover-auto[x-placement^='left'] .arrow::before,
 .bs-popover-left .arrow::before,
 .bs-popover-auto[x-placement^='left'] .arrow::after,
 .bs-popover-left .arrow::after {
-  border-left-color: #009440 !important;
+  border-left-color: var(--theme-color) !important;
 }
 
 .bs-popover-auto[x-placement^='right'] .arrow::before,
 .bs-popover-right .arrow::before,
 .bs-popover-auto[x-placement^='right'] .arrow::after,
 .bs-popover-right .arrow::after {
-  border-right-color: #009440 !important;
+  border-right-color: var(--theme-color) !important;
 }
 
 .fixed-sidebar {
@@ -5216,7 +5208,7 @@ fieldset[disabled] .checkbox {
   align-items: center;
   -webkit-box-pack: justify;
   justify-content: space-between;
-  background-color: #7c5ac2;
+  background-color:var(--theme-color-purple);
   fill: var(--theme-color-white);
   height: 70px;
 
@@ -6811,7 +6803,7 @@ fieldset[disabled] .checkbox {
   }
 
   .modal-header {
-    background-color: #7c5ac2;
+    background-color:var(--theme-color-purple);
     padding: 17px;
 
     .title {
@@ -6863,7 +6855,7 @@ fieldset[disabled] .checkbox {
 
     &:nth-child(2n) {
       .chat-message-item {
-        background-color: #7c5ac2;
+        background-color:var(--theme-color-purple);
         color: var(--theme-color-white);
       }
 
@@ -11827,7 +11819,7 @@ button.cancel-btn:hover {
     }
 
     &:hover .total-topic {
-      background-color: #7c5ac2;
+      background-color:var(--theme-color-purple);
       color: var(--theme-color-white);
     }
   }
@@ -12596,7 +12588,7 @@ button.cancel-btn:hover {
 }
 
 .bg-purple {
-  background-color: #7c5ac2;
+  background-color:var(--theme-color-purple);
 }
 
 .bg-blue {
@@ -12696,7 +12688,7 @@ button.cancel-btn:hover {
 }
 
 .c-purple {
-  color: #7c5ac2;
+  color:var(--theme-color-purple);
 }
 
 .c-green {
@@ -15037,7 +15029,7 @@ img.health-bnr {
 }
 
 .top-users .ui-block-title {
-  background: var(--theme-color-orange);
+  background: var(--theme-color-dark-purple);
 }
 
 .ui-block-title svg.olymp-three-dots-icon {
@@ -15245,7 +15237,7 @@ ul.user-btns li {
 .welcome-block h2 {
   font-size: 36px;
   line-height: 28px;
-  color: #009440;
+  color: var(--theme-color);
   font-weight: bold;
   margin-bottom: 30px;
 }
@@ -15266,14 +15258,14 @@ ul.user-btns li {
   span {
     font-size: 12px;
     line-height: 28px;
-    color: #3c680f;
+    color: var(--theme-color-light);
     display: block;
   }
 
   h2 {
     font-size: 24px;
     line-height: 28px;
-    color: #3c680f;
+    color: var(--theme-color-light);
     font-weight: 400;
     margin-bottom: 70px;
   }
@@ -15361,7 +15353,7 @@ ul.user-btns li {
 }
 
 .ui-block-photos {
-  background-color: var(--theme-color-pink-dark);
+  background-color: var(--theme-color-dark-purple);
 }
 
 .ui-block-title h6.title {
@@ -15680,7 +15672,7 @@ ul.sidebar-box {
 
 .left-menu {
   .left-menu-title {
-    color: #8fc42c;
+    color: var(--theme-color-secondary);
   }
 
   a:hover .left-menu-title {
@@ -15722,7 +15714,7 @@ ul.sidebar-box {
   }
 
   .left-menu-title {
-    color: #8fc42c;
+    color: var(--theme-color-secondary);
   }
 
   a:hover .left-menu-title {
@@ -15979,12 +15971,12 @@ li.add-more-posts {
       line-height: 1.3;
       font-weight: 700;
       color: var(--theme-color-white);
-      background: #009340;
+      background: var(--theme-color);
       text-transform: uppercase;
       padding: 19px 31px;
 
       &:nth-child(n + 2) {
-        color: #8fc42c;
+        color: var(--theme-color-secondary);
         background: var(--theme-color-white);
         padding: 19px 37px;
       }
@@ -15996,7 +15988,7 @@ li.add-more-posts {
   padding-bottom: 50px;
 
   h3 {
-    color: #8fc42c;
+    color: var(--theme-color-secondary);
     font-size: 40px;
     line-height: 1;
     text-align: center;
@@ -16027,7 +16019,7 @@ li.add-more-posts {
     line-height: 1.3;
     font-weight: 700;
     color: var(--theme-color-white);
-    background: #009340;
+    background: var(--theme-color);
     text-transform: uppercase;
     text-align: center;
     padding: 19px 0;
@@ -16053,7 +16045,7 @@ li.add-more-posts {
         font-size: 24px;
         line-height: 1;
         font-weight: 700;
-        color: #8fc42c;
+        color: var(--theme-color-secondary);
         text-transform: uppercase;
         margin-bottom: 0;
       }
@@ -16163,7 +16155,7 @@ li.add-more-posts {
 
 .welcome-video-banner {
   padding: 33px 0;
-  background: url('https://res.cloudinary.com/hylian/image/upload/f_auto,q_auto/v1580838904/static/welcome-banner-img_zvgt5q-min_m0yhgt.jpg')
+  background: url('https://res.cloudinary.com/hylian/image/upload/f_auto,q_auto/v1598091672/static/catto-bg_qfwjaj.jpg')
     center no-repeat;
   min-height: 467px;
   background-size: cover;
@@ -16171,7 +16163,7 @@ li.add-more-posts {
   h2 {
     font-size: 36px;
     line-height: 28px;
-    color: #8fc42c;
+    color: var(--theme-color-secondary);
     font-weight: bold;
     margin-bottom: 30px;
     text-transform: uppercase;
@@ -16193,7 +16185,7 @@ li.add-more-posts {
     h3 {
       font-size: 27px;
       line-height: 32px;
-      color: #3c680f;
+      color: var(--theme-color-light);
       font-weight: bold;
       margin-bottom: 90px;
     }
@@ -16210,7 +16202,7 @@ li.add-more-posts {
   h4 {
     font-size: 40px;
     line-height: 36px;
-    color: #8fc42c;
+    color: var(--theme-color-secondary);
     font-weight: bold;
     text-transform: uppercase;
     margin-bottom: 0;
@@ -16235,7 +16227,7 @@ p.register-now-title {
   margin: 0;
 
   a {
-    color: #1f9552;
+    color: var(--theme-color);
     text-decoration: underline;
   }
 }
@@ -16243,7 +16235,7 @@ p.register-now-title {
 .welcome-video-banner h2 {
   font-size: 30px;
   line-height: 25px;
-  color: #8fc42c;
+  color: var(--theme-color-secondary);
   font-weight: bold;
   margin-bottom: 20px;
   text-transform: uppercase;
@@ -16504,7 +16496,7 @@ body .fc {
 }
 
 .fc-bgevent {
-  background: #8fdf82;
+  background: #df8282;
   opacity: 0.3;
 }
 
@@ -20744,7 +20736,7 @@ button.following-btn {
 }
 
 .modal-header-title {
-  background: #009440;
+  background: var(--theme-color);
   border-radius: 0;
 
   h3 {
@@ -20757,8 +20749,8 @@ button.following-btn {
   line-height: 42px;
   padding: 0 25px !important;
   font-weight: 700;
-  background: #8fc42c;
-  border: #8fc42c;
+  background: var(--theme-color-secondary);
+  border: var(--theme-color-secondary);
   color: var(--theme-color-white);
 
   &:focus {
