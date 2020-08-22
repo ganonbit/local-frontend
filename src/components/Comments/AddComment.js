@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react';
 import { generatePath } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-import CustomTextArea from 'components/CustomeTextArea/TextAreaWrapper';
+import CustomTextArea from 'components/CustomTextArea/TextAreaWrapper';
 
 import { CREATE_COMMENT } from '../../graphql/comment';
 import { GET_POST } from '../../graphql/post';

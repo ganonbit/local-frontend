@@ -5,7 +5,7 @@ import { EDIT_COMMENT } from 'graphql/comment';
 import { GET_POST } from 'graphql/post';
 import { Mutation, withApollo } from 'react-apollo';
 
-import CustomTextArea from 'components/CustomeTextArea/TextAreaWrapper';
+import CustomTextArea from 'components/CustomTextArea/TextAreaWrapper';
 
 let EditComment = ({ comment, onClose, postId }) => {
   const [commentContent, setCommentContent] = useState({

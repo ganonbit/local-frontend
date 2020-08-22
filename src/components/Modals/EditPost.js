@@ -5,7 +5,7 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { Modal } from 'react-bootstrap';
 import { Mutation } from 'react-apollo';
 import { BeatLoader } from 'react-spinners';
-import CustomTextArea from 'components/CustomeTextArea/TextAreaWrapper';
+import CustomTextArea from 'components/CustomTextArea/TextAreaWrapper';
 
 import { EDIT_POST, GET_POST } from 'graphql/post';
 import { MAX_POST_IMAGE_SIZE } from 'constants/ImageSize';
