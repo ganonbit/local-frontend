@@ -8,11 +8,11 @@ clone repo to your desktop via `git clone git@github.com:hyliancoder/local-front
 
 run `yarn` to populate `node_modules` folder and to create your `yarn.lock` file needed
 
-### NOTE:until [fixed](https://github.com/netlify/cli/issues/659) by netlify use this specific version: `yarn global add netlify-cli@2.11.13`
+edit: this has been fixed in current ntl cli ~~ NOTE:until [fixed](https://github.com/netlify/cli/issues/659) by netlify use this specific version: `yarn global add netlify-cli@2.11.13`~~
 
 install `yarn global add netlify-cli` to use ntl dev to run netlify serverless/lambda functions locally while also running react at the same time in one command.
 
-to start the server locally you'll either need to request the `.env` file from me, or have it connect to the staging environment vis your own `.env` file. that allows us to safely use environment variables with passwords/credentials without fear of it getting exposed to clients/hackers as it is only used locally and not pushed to git.
+to start the server locally you'll either need to request the `.env` file from [me](@hyliancoder), or have it connect to the staging environment via your own `.env` file. that allows us to safely use environment variables with passwords/credentials without fear of it getting exposed to clients/hackers as it is only used locally and not pushed to git.
 
 run `yarn build:lambda` to get local build ready for lambda use.
 
