@@ -43,6 +43,7 @@ class Hits extends React.Component {
   };
 
   renderPostWithoutImage = (hit, count) => {
+    const maxTextLength = 100;
     if (!hit || !hit.content) {
       return null;
     }
@@ -66,7 +67,9 @@ class Hits extends React.Component {
             })}
           >
             <span className='notification-friend text-dark my-3'>
-              {hit.content}
+            {hit.content.length > maxTextLength ? 
+            `${hit.content.substring(0, maxTextLength)}...` : hit.content 
+            }
             </span>
             <span className='chat-message-item'>
               {hit.numOfLikes} Likes {hit.numOfComments} Comments

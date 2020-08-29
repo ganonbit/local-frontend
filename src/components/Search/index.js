@@ -11,10 +11,13 @@ import ConnectedPosts from './posts';
 
 const { REACT_APP_ALGOLIA_APP_ID, REACT_APP_ALGOLIA_API_KEY } = process.env;
 
+
+
 const searchClient = algoliasearch(
   REACT_APP_ALGOLIA_APP_ID,
   REACT_APP_ALGOLIA_API_KEY
 );
+
 export default class Search extends React.Component {
   constructor(props) {
     super(props);
@@ -39,7 +42,7 @@ export default class Search extends React.Component {
       <>
         <Default>
           <InstantSearch
-            indexName='production_local_users'
+            indexName='dev_endemic_users'
             searchClient={searchClient}
           >
             <div className='search-bar w-search notification-list friend-requests'>
@@ -47,14 +50,14 @@ export default class Search extends React.Component {
                 <CustomSearchBar />
 
                 <div className='search-result'>
-                  <Index indexName='production_local_users'>
+                  <Index indexName='dev_endemic_users'>
                     <ConnectedUsers
                       hashTagQuery={state.hashTagQuery}
                       clearHashTagQuery={this.clearHashTagQuery}
                     />
                   </Index>
 
-                  <Index indexName='production_local_posts'>
+                  <Index indexName='dev_endemic_users'>
                     <ConnectedPosts />
                   </Index>
                 </div>
@@ -72,7 +75,7 @@ export default class Search extends React.Component {
           />
           {state.mobileToggleState && (
             <InstantSearch
-              indexName='production_local_users'
+              indexName='dev_endemic_users'
               searchClient={searchClient}
             >
               <div className='search-bar w-search notification-list friend-requests'>
@@ -80,14 +83,14 @@ export default class Search extends React.Component {
                   <CustomSearchBar />
 
                   <div className='search-result'>
-                    <Index indexName='production_local_users'>
+                    <Index indexName='dev_endemic_users'>
                       <ConnectedUsers
                         hashTagQuery={state.hashTagQuery}
                         clearHashTagQuery={this.clearHashTagQuery}
                       />
                     </Index>
 
-                    <Index indexName='production_local_posts'>
+                    <Index indexName='dev_endemic_users'>
                       <ConnectedPosts />
                     </Index>
                   </div>

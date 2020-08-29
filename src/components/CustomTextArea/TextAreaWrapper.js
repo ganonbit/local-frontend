@@ -18,7 +18,7 @@ class CustomTextArea extends Component {
   render() {
     return (
       <InstantSearch
-        indexName='production_local_users'
+        indexName='dev_endemic_users'
         searchClient={searchClient}
       >
         <TextArea

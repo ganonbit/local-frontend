@@ -64,7 +64,7 @@ const SignIn = ({ refetch, history }) => {
               <form className='content' onSubmit={handleSubmit}>
                 {apiError && (
                   <p className='field-error'>
-                    {apiError.graphQLErrors[0].message}
+                    {console.log(apiError.graphQLErrors[0].message)}
                   </p>
                 )}
 
