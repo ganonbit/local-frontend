@@ -9,12 +9,11 @@ import CustomSearchBar from './search-bar';
 import ConnectedUsers from './users';
 import ConnectedPosts from './posts';
 
-const algoliaApp = process.env.REACT_APP_ALGOLIA_APP_ID;
-const algoliaKey = process.env.REACT_APP_ALGOLIA_API_KEY;
+const { REACT_APP_ALGOLIA_APP_ID, REACT_APP_ALGOLIA_API_KEY } = process.env;
 
 const searchClient = algoliasearch(
-  algoliaApp,
-  algoliaKey
+  REACT_APP_ALGOLIA_APP_ID,
+  REACT_APP_ALGOLIA_API_KEY
 );
 export default class Search extends React.Component {
   constructor(props) {

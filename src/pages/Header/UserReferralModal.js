@@ -3,12 +3,12 @@ import { useStore } from 'store';
 
 const UserReferralModal = () => {
   const [{ auth }] = useStore();
-  const frontendUrl = process.env.REACT_APP_FRONTEND_URL;
+  const { REACT_APP_FRONTEND_URL } = process.env;
   let refUrl = 'N/A';
-  if (frontendUrl.slice(-1) === '/' && auth.user.id) {
-    refUrl = `${frontendUrl}invite/${auth.user.id}`;
+  if (REACT_APP_FRONTEND_URL.slice(-1) === '/' && auth.user.id) {
+    refUrl = `${REACT_APP_FRONTEND_URL}invite/${auth.user.id}`;
   } else if (auth.user.id) {
-    refUrl = `${frontendUrl}/invite/${auth.user.id}`;
+    refUrl = `${REACT_APP_FRONTEND_URL}/invite/${auth.user.id}`;
   }
 
   const copyToClipboard = () => {

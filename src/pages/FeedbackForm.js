@@ -3,8 +3,10 @@ import WelcomeHeader from 'pages/Welcome/WelcomeHeader';
 
 import { Form, Button, Col, InputGroup, Dropdown } from 'react-bootstrap';
 
+const { REACT_APP_API_URL, REACT_APP_API_AUTH_KEY } = process.env;
+
 const FeedbackForm = ({ isAuth }) => {
-  const feedbackEndpoint = `${process.env.REACT_APP_API_URL}`;
+  const feedbackEndpoint = `${REACT_APP_API_URL}`;
   const [validated, setValidated] = useState(false);
   const [values, setValues] = useState({
     firstName: '',
@@ -47,7 +49,7 @@ const FeedbackForm = ({ isAuth }) => {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          authorization: `${process.env.REACT_APP_API_AUTH_KEY}`,
+          authorization: `${REACT_APP_API_AUTH_KEY}`,
         },
         body: JSON.stringify({ query: mutation }),
       });

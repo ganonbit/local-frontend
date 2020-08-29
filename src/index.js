@@ -6,17 +6,18 @@ import { ApolloProvider as ApolloHooksProvider } from '@apollo/react-hooks';
 import { createApolloClient } from 'utils/apollo-client';
 import { StoreProvider } from 'store/index';
 import './assets/style/index.scss';
-// GraphQL HTTP URL
-const API_URL = process.env.REACT_APP_API_URL;
-// GraphQL WebSocket (subscriptions) URL.
+
+const { REACT_APP_API_URL, REACT_APP_WEBSOCKET_API_URL } = process.env;
+// GraphQL HTTP & WebSocket (subscriptions) URL.
 // If its url is not set in .env then it has same url, host and pathname
-const WEBSOCKET_API_URL = process.env.REACT_APP_WEBSOCKET_API_URL;
-const websocketApiUrl = WEBSOCKET_API_URL
-  ? WEBSOCKET_API_URL
-  : API_URL.replace('https://', 'wss://').replace('http://', 'ws://');
+
+
+const websocketApiUrl = REACT_APP_WEBSOCKET_API_URL
+  ? REACT_APP_WEBSOCKET_API_URL
+  : REACT_APP_API_URL.replace('https://', 'wss://').replace('http://', 'ws://');
 
 // Create a Apollo client
-const apolloClient = createApolloClient(API_URL, websocketApiUrl);
+const apolloClient = createApolloClient(REACT_APP_API_URL, websocketApiUrl);
 const rootElement = document.getElementById('root');
 if (rootElement.hasChildNodes()) {
   hydrate(
