@@ -8,7 +8,7 @@ clone repo to your desktop via `git clone git@github.com:hyliancoder/local-front
 
 run `yarn` to populate `node_modules` folder and to create your `yarn.lock` file needed
 
-### NOTE:until [fixed](https://github.com/netlify/cli/issues/659) by netlify use this specific version: `yarn global add netlify-cli@2.11.13`
+this has been fixed in latest netlify-cli: ~NOTE:until [fixed](https://github.com/netlify/cli/issues/659) by netlify use this specific version: `yarn global add netlify-cli@2.11.13`~
 
 install `yarn global add netlify-cli` to use ntl dev to run netlify serverless/lambda functions locally while also running react at the same time in one command.
 
