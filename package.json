@@ -69,7 +69,7 @@
     "start:lambda": "netlify-lambda serve src/lambda",
     "build": "CI='' react-scripts build",
     "build:lambda": "netlify-lambda build src/lambda",
-    "postbuild": "npx postcss build/static/css/*.css --use autoprefixer -d build/static/css/",
+    "post-build": "npx postcss build/static/css/*.css --use autoprefixer -d build/static/css/",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "format": "prettier --write \"./**/*.{js,json,md,css,sass}\""

@@ -4,27 +4,27 @@
 
 ## Local development
 
-clone repo to your desktop via `git clone git@github.com:hyliancoder/local-frontend.git`
+- clone repo to your desktop via `git clone git@github.com:hyliancoder/local-frontend.git`
 
-run `yarn` to populate `node_modules` folder and to create your `yarn.lock` file needed
+- run `yarn` to populate `node_modules` folder and to create your `yarn.lock` file needed
+
+- rename/copy `.env.sample` to `.env` and update with your environment variables.
 
 this has been fixed in latest netlify-cli: ~NOTE:until [fixed](https://github.com/netlify/cli/issues/659) by netlify use this specific version: `yarn global add netlify-cli@2.11.13`~
 
-install `yarn global add netlify-cli` to use ntl dev to run netlify serverless/lambda functions locally while also running react at the same time in one command.
+- install `yarn global add netlify-cli` or run `npx ntl dev` in the below steps if you wish to not install to your local machine to use `ntl dev` command which is used to run netlify serverless/lambda functions locally while also running react at the same time in one command.
 
-to start the server locally you'll either need to request the `.env` file from me, or have it connect to the staging environment vis your own `.env` file. that allows us to safely use environment variables with passwords/credentials without fear of it getting exposed to clients/hackers as it is only used locally and not pushed to git.
+- run `yarn build:lambda` to get local build ready for lambda use.
 
-run `yarn build:lambda` to get local build ready for lambda use.
+- once that is setup run the command `ntl dev` (or `npx ntl dev` if prompted above) to run lambda functions locally and react locally in one command. \*note: if wanting to run the whole application locally, the api: `https://github.com/hyliancoder/local-api/` needs to be up and running first via it's [README](https://github.com/hyliancoder/local-api/src/master/README.md)
 
-once that is setup run the command `ntl dev` or `netlify dev` to run lambda functions locally and react locally in one command. \*note: if wanting to run the whole application locally, the api: `https://github.com/hyliancoder/local-api/` needs to be up and running first via it's [README](https://github.com/hyliancoder/local-api/src/master/README.md)
-
-After running the server, you can navigate to `http://localhost:8888`
+- After running the server, you can navigate to `http://localhost:8888` if using default netlify-cli ports.
 
 ## Frontend deployment to Netlify
 
 - Push repository on Bitbucket.
 - Create new site on [Netlify](https://www.netlify.com/) and connect that repository to it.
-- Add environment variables to Netlify based on `frontend/.env` file, make sure to replace API and Frontend URLs, e.g. `REACT_APP_API_URL=https://local-api.heroku.com/graphql` and `REACT_APP_FRONTEND_URL=https://vigorous-chandrasekhar-bbd3e9.netlify.com`
+- Add environment variables to Netlify based on `.env` file, making sure to replace API and Frontend URLs, e.g. `REACT_APP_API_URL=https://local-api.heroku.com/graphql` and `REACT_APP_FRONTEND_URL=https://vigorous-chandrasekhar-bbd3e9.netlify.com`
 
 - After every change to the master branch in Bitbucket, Netlify will build and deploy frontend automatically!
 
@@ -34,3 +34,13 @@ After running the server, you can navigate to `http://localhost:8888`
 
 - We're using the BEM standards for all new classes created.
 - Please review the standards [Here](http://getbem.com/) so that we're on the same page.
+
+## Extra commands
+
+### yarn post-build
+
+- Used to quickly run postcss post-build but pre-deploy or during netlify post-build via the netlify.toml file.
+
+### yarn format
+
+- quick command to run prettier on all files for consistency. prettier settings are set inside of package.json if you'd like to change to your own tastes.

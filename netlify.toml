@@ -1,5 +1,5 @@
 [build]
-command = "yarn format && yarn build && yarn build:lambda && yarn postbuild"
+command = "yarn format && yarn build && yarn build:lambda && yarn post-build"
 functions = "lambda"
 publish = "build"
 
