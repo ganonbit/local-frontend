@@ -13,8 +13,8 @@ const algoliaApp = process.env.REACT_APP_ALGOLIA_APP_ID;
 const algoliaKey = process.env.REACT_APP_ALGOLIA_API_KEY;
 
 const searchClient = algoliasearch(
-  '***REMOVED***',
-  '***REMOVED***'
+  algoliaApp,
+  algoliaKey
 );
 export default class Search extends React.Component {
   constructor(props) {
